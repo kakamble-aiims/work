@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<tryton>
+    <data>
+        <record id="one_thousand" model="exam.type.tada_hotel.gst">
+            <field name="tariff_per_night" eval="1000"/>
+            <field name="gst_rate" eval="12"/>
+            <field name="amount" eval="270"/>
+            <field name="cgst" eval="6"/>
+            <field name="sgst" eval="6"/>
+        </record>
+        <record id="two_thousand_five_hundred" model="exam.type.tada_hotel.gst">
+            <field name="tariff_per_night" eval="2500"/>
+            <field name="gst_rate" eval="18"/>
+            <field name="amount" eval="810"/>
+            <field name="cgst" eval="9"/>
+            <field name="sgst" eval="9"/>
+        </record>
+        <record id="seven_thousand_five_hundred" model="exam.type.tada_hotel.gst">
+            <field name="tariff_per_night" eval="7500"/>
+            <field name="gst_rate" eval="28"/>
+            <field name="amount" eval="2100"/>
+            <field name="cgst" eval="14"/>
+            <field name="sgst" eval="14"/>
+        </record>
+    </data>
+</tryton>

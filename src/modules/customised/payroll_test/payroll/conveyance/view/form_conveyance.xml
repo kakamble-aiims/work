@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+
+<form>
+    <label name="salary_code"/>
+    <field name="salary_code"/>
+    <label name="employee"/>
+    <field name="employee"/>
+    <label name="designation"/>
+    <field name="designation"/>
+    <label name="department"/>
+    <field name="department"/>
+    <label name="transport_amount"/>
+    <field name="transport_amount"/>
+    <label name="state"/>
+    <field name="state"/>
+    <button name="confirm" string="Confirm" colspan="4"
+    confirm="Are you sure? If you press OK, you will NOT be allowed to make changes."/>
+    <button name="submit" string="Submit" colspan="4"
+    confirm="Are you sure you want to submit?"/>
+    <button name="cancel" string="Cancel" colspan="4"
+    confirm="Are you sure you want to cancel?"/>
+    <button name="approve" string="Submit" colspan="4"
+    confirm="Approve and Send for Account Officer."/>
+    <!-- <label name="vehicle"/>
+    <field name="vehicle"/>
+    <label name="transport"/>
+    <field name="transport"/>
+    <label name="vehicle_selection"/>
+    <field name="vehicle_selection"/>
+    <label name="distance"/>
+    <field name="distance"/> -->
+</form>

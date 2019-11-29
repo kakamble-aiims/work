@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+
+<tryton>
+    <data>
+         <record id="hr_rule_conveyance_alw" model="salary.rule">
+            <field name="name">Conveyance Allowance</field>
+            <field name="priority" eval="1500"/>
+            <field name="code">CONVEYANCE_ALW</field>
+            <field name="category" ref="payroll.salaryrule_alw"/>
+            <field name="condition_select">python_code</field>
+            <field name="amount_select">code</field>
+        </record>
+    </data>
+</tryton>

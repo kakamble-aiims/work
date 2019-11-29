@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<tree>
+    <field name="exam_center"/>
+    <field name="journey_total_distance"/>
+    <field name="journey_total_amount"/>
+    <field name="employee"/>
+    <field name="date"/>
+</tree>

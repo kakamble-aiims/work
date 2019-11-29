@@ -1,0 +1,175 @@
+<?xml version="1.0"?>
+
+<tryton>
+    <data>
+
+        <!--data file of centers-->
+
+        <!--1. Main AIIMS-->
+        <record id="party_center_main_aiims" model="party.party">
+            <field name="is_institution">True</field>
+            <field name="active">True</field>
+            <field name="name">Main AIIMS</field>
+        </record>
+
+        <record id="center_main_aiims" model="gnuhealth.institution">
+            <field name="name" ref="party_center_main_aiims"/>
+            <field name="code">MAIN-AIIMS</field>
+            <field name="institution_type">hospital</field>
+            <field name="public_level">public</field>
+        </record> 
+
+        <!--2.CDER--> 
+        <record id="party_cder" model="party.party">
+            <field name="is_institution">True</field>
+            <field name="active">True</field>
+            <field name="name">Centre for Dental Education and Research</field>
+        </record>
+
+        <record id="center_cder" model="gnuhealth.institution">
+            <field name="name" ref="party_cder"/>
+            <field name="code">CDER</field>
+            <field name="institution_type">hospital</field>
+            <field name="public_level">public</field>
+        </record>
+
+        <!--4.IRCH--> 
+        <record id="party_irch" model="party.party">
+            <field name="is_institution">True</field>
+            <field name="active">True</field>
+            <field name="name">Dr. BR Ambedkar Institute Rotary Cancer Hospital</field>
+        </record>
+
+        <record id="center_irch" model="gnuhealth.institution">
+            <field name="name" ref="party_irch"/>
+            <field name="code">IRCH</field>
+            <field name="institution_type">hospital</field>
+            <field name="public_level">public</field>
+        </record>
+
+        <!--5.RPC-->
+        <record id="party_rpc" model="party.party">
+            <field name="is_institution">True</field>
+            <field name="active">True</field>
+            <field name="name">Dr. Rajendra Prasad Centre For Ophthalmic Science</field>
+        </record>
+
+        <record id="center_rpc" model="gnuhealth.institution">
+            <field name="name" ref="party_rpc"/>
+            <field name="code">RPC</field>
+            <field name="institution_type">hospital</field>
+            <field name="public_level">public</field>
+        </record>
+
+        <!--6.JPNATC-->
+        <record id="party_jpnatc" model="party.party">
+            <field name="is_institution">True</field>
+            <field name="active">True</field>
+            <field name="name">Jai Prakash Narayan Apex Trauma Center</field>
+        </record>
+
+        <record id="center_jpnatc" model="gnuhealth.institution">
+            <field name="name" ref="party_jpnatc"/>
+            <field name="code">JPNATC</field>
+            <field name="institution_type">hospital</field>
+            <field name="public_level">public</field>
+        </record>
+
+        <!--7.BALLABHGARH-->
+        <record id="party_ballabhgarh" model="party.party">
+            <field name="is_institution">True</field>
+            <field name="active">True</field>
+            <field name="name">Comprehensive Rural Health Services Project, Ballabhgarh</field>
+        </record>
+
+        <record id="center_ballabhgarh" model="gnuhealth.institution">
+            <field name="name" ref="party_ballabhgarh"/>
+            <field name="code">CRHSP</field>
+            <field name="institution_type">hospital</field>
+            <field name="public_level">public</field>
+        </record>
+
+        <!--8.NDDTC-->
+        <record id="party_nddtc" model="party.party">
+            <field name="is_institution">True</field>
+            <field name="active">True</field>
+            <field name="name">National Drug Dependence Treatment Centre</field>
+        </record>
+
+        <record id="center_nddtc" model="gnuhealth.institution">
+            <field name="name" ref="party_nddtc"/>
+            <field name="code">NDDTC</field>
+            <field name="institution_type">hospital</field>
+            <field name="public_level">public</field>
+        </record>
+
+        <!--9.NCI JHAJJAR-->
+        <record id="party_nci_jhajjar" model="party.party">
+            <field name="is_institution">True</field>
+            <field name="active">True</field>
+            <field name="name">National Cancer Institute JHAJJAR</field>
+        </record>
+
+        <record id="center_nci_jhajjar" model="gnuhealth.institution">
+            <field name="name" ref="party_nci_jhajjar"/>
+            <field name="code">NCI</field>
+            <field name="institution_type">hospital</field>
+            <field name="public_level">public</field>
+        </record>
+
+        <!--10.Cardio-Thoracic Centre-->
+        <record id="party_cardio_thoracic_sciences" model="party.party">
+            <field name="is_institution">True</field>
+            <field name="active">True</field>
+            <field name="name">Cardio-Thoracic Sciences Centre-AIIMS</field>
+        </record>
+
+        <record id="center_cardio_thoracic_sciences" model="gnuhealth.institution">
+            <field name="name" ref="party_cardio_thoracic_sciences"/>
+            <field name="code">CTSC</field>
+            <field name="institution_type">hospital</field>
+            <field name="public_level">public</field>
+        </record>
+
+        <!--11.Neurosciences Centre-->
+        <record id="party_neurosciences_centre" model="party.party">
+            <field name="is_institution">True</field>
+            <field name="active">True</field>
+            <field name="name">Neurosciences Centre</field>
+        </record>
+
+        <record id="center_neurosciences_centre" model="gnuhealth.institution">
+            <field name="name" ref="party_neurosciences_centre"/>
+            <field name="code">NC</field>
+            <field name="institution_type">hospital</field>
+            <field name="public_level">public</field>
+        </record>
+        <!--13.CNC-->
+        <record id="party_cnc" model="party.party">
+            <field name="is_institution">True</field>
+            <field name="active">True</field>
+            <field name="name">Cardio and Neruo Center</field>
+        </record>
+
+        <record id="center_cnc" model="gnuhealth.institution">
+            <field name="name" ref="party_cnc"/>
+            <field name="code">CNC</field>
+            <field name="institution_type">hospital</field>
+            <field name="public_level">public</field>
+        </record>
+
+        <!--14.Hospital-->
+        <record id="party_hospital" model="party.party">
+            <field name="is_institution">True</field>
+            <field name="active">True</field>
+            <field name="name">Main Hospital</field>
+        </record>
+
+        <record id="center_hospital" model="gnuhealth.institution">
+            <field name="name" ref="party_hospital"/>
+            <field name="code">HOSPITAL</field>
+            <field name="institution_type">hospital</field>
+            <field name="public_level">public</field>
+        </record>
+    </data>
+</tryton>

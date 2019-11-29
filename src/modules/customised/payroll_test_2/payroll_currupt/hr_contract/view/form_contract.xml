@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+
+<form>
+
+        <label name="salary_code"/>
+        <field name="salary_code"/>
+        <label name="employee"/>
+        <field name="employee"/>
+        <label name="name"/>
+        <field name="name"/>
+        <label name="center"/>
+        <field name="center"/>
+        <label name="department"/>
+        <field name="department"/>
+        <label name="designation"/>
+        <field name="designation"/>
+    <notebook colspan="6">
+        <page id="_contract_details" string="My Salary Details">
+            <group id="_contract_terms" string="Salary terms">
+                <label name="date_start"/>
+                <field name="date_start"/>
+                <label name="date_end"/>
+                <field name="date_end"/>
+                <label name="notes"/>
+                <field name="notes"/>
+                <label name="is_active"/>
+                <field name="is_active"/>
+                <label name="approve_date"/>
+                <field name="approve_date"/>
+                <label name="approve_by"/>
+                <field name="approve_by"/>
+            </group>
+        </page>
+        <page id="_salary_information" string="Salary Information">
+            <group id="_monthly_advantages_in_cash" string="Monthly Advantages in Cash">
+                <label name="basic"/>
+                <field name="basic"/>
+            </group>
+        </page>
+
+    </notebook>
+</form>

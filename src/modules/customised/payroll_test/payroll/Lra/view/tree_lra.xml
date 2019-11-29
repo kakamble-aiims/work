@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<tree>
+    <field name="salary_code"/>
+    <field name="account_no"/>
+    <field name="employee"/>
+    <field name="designation"/>
+    <field name="date"/>
+    <field name="employee_group"/>
+    <field name="imbursement"/>
+    
+</tree>

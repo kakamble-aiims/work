@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+
+<form>
+    <group id="salary_structure" col="4" colspan="4">
+        <label name="name"/>
+        <field name="name"/>
+        <!-- <label name="reference"/>
+        <field name="reference"/> -->
+        <label name="parent"/>
+        <field name="parent"/>
+    </group>
+    <notebook colspan="6">
+        <page id="_salary_rules" string="Salary Rules">
+            <field name="rules"/>
+        </page>
+        <!-- <page id="_details_by_salary_rule_category" string="Details By Salary Rule Category">
+            <field name="details_by_salary_rule_category" view_ids="payroll.payslip_line_view_tree"/> 
+        </page> -->
+    </notebook>
+</form>

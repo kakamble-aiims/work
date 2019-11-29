@@ -1,0 +1,1361 @@
+<?xml version="1.0"?>
+
+<tryton>
+    <data>
+        <record id="grade1" model="company.employee.grade">
+            <field name="name">1</field>
+        </record>
+        <record id="grade2" model="company.employee.grade">
+            <field name="name">2</field>
+        </record>
+        <record id="grade3" model="company.employee.grade">
+            <field name="name">3</field>
+        </record>
+        <record id="grade4" model="company.employee.grade">
+            <field name="name">4</field>
+        </record>
+        <record id="grade5" model="company.employee.grade">
+            <field name="name">5</field>
+        </record>
+        <record id="grade6" model="company.employee.grade">
+            <field name="name">6</field>
+        </record>
+        <record id="grade7" model="company.employee.grade">
+            <field name="name">7</field>
+        </record>
+        <record id="grade8" model="company.employee.grade">
+            <field name="name">8</field>
+        </record>
+        <record id="grade9" model="company.employee.grade">
+            <field name="name">9</field>
+        </record>
+        <record id="grade10" model="company.employee.grade">
+            <field name="name">10</field>
+        </record>
+        <record id="grade11" model="company.employee.grade">
+            <field name="name">11</field>
+        </record>
+        <record id="grade12" model="company.employee.grade">
+            <field name="name">12</field>
+        </record>
+        <record id="grade13" model="company.employee.grade">
+            <field name="name">13</field>
+        </record>
+        <record id="grade14" model="company.employee.grade">
+            <field name="name">13 A1</field>
+        </record>
+        <record id="grade15" model="company.employee.grade">
+            <field name="name">13 A2</field>
+        </record>
+        <record id="grade16" model="company.employee.grade">
+            <field name="name">14</field>
+        </record>
+        <record id="grade17" model="company.employee.grade">
+            <field name="name">14 A</field>
+        </record>
+        <record id="grade18" model="company.employee.grade">
+            <field name="name">15</field>
+        </record>
+        <record id="grade19" model="company.employee.grade">
+            <field name="name">16</field>
+        </record>
+
+
+        <record id="designation1" model="employee.designation">
+            <field name="name">Accounts Officer</field>
+            <field name="group">A</field>
+        </record>
+        <record id="designation2" model="employee.designation">
+            <field name="name">Administrative Officer</field>
+            <field name="group">A</field>
+        </record>
+        <record id="designation3" model="employee.designation">
+            <field name="name">AIDS Educator-Cum-Counsellor</field>
+            <field name="group">B</field>
+        </record>
+        <record id="designation4" model="employee.designation">
+            <field name="name">Animal House Attendant Grade I</field>
+            <field name="group">C</field>
+        </record>
+        <record id="designation5" model="employee.designation">
+            <field name="name">Animal House Attendant Grade II</field>
+            <field name="group">D</field>
+        </record>
+        <record id="designation6" model="employee.designation">
+            <field name="name">Animal House Attendant Grade III</field>
+            <field name="group">D</field>
+        </record>
+        <record id="designation7" model="employee.designation">
+            <field name="name">Artist</field>
+            <field name="group">C</field>
+        </record>
+        <record id="designation8" model="employee.designation">
+            <field name="name">Assistant (N.S.)</field>
+            <field name="group">B</field>
+        </record>
+        <record id="designation9" model="employee.designation">
+            <field name="name">Assistant Accounts Officer</field>
+            <field name="group">B</field>
+        </record>
+        <record id="designation10" model="employee.designation">
+            <field name="name">Assistant Administrative Officer</field>
+            <field name="group">B</field>
+        </record>
+        <record id="designation11" model="employee.designation">
+            <field name="name">Assistant Architect</field>
+            <field name="group">B</field>
+        </record>
+        <record id="designation12" model="employee.designation">
+            <field name="name">Assistant Blood Transfusion Officer</field>
+            <field name="group">A</field>
+        </record>
+        <record id="designation13" model="employee.designation">
+            <field name="name">Assistant Controller of Examinations</field>
+            <field name="group">A</field>
+        </record>
+        <record id="designation14" model="employee.designation">
+            <field name="name">Assistant Dietician</field>
+            <field name="group">B</field>
+        </record>
+        <record id="designation15" model="employee.designation">
+            <field name="name">Assistant Engineer (A/C&amp;R)</field>
+            <field name="group">B</field>
+        </record>
+        <record id="designation16" model="employee.designation">
+            <field name="name">Assistant Engineer (Civil)</field>
+            <field name="group">B</field>
+        </record>
+        <record id="designation17" model="employee.designation">
+            <field name="name">Assistant Engineer (Elect.)</field>
+            <field name="group">B</field>
+        </record>
+        <record id="designation18" model="employee.designation">
+            <field name="name">Assistant Engineer (Telephone)</field>
+            <field name="group">B</field>
+        </record>
+        <record id="designation19" model="employee.designation">
+            <field name="name">Assistant Engineer for Vigilance Cell (Civil)</field>
+            <field name="group">B</field>
+        </record>
+        <record id="designation20" model="employee.designation">
+            <field name="name">Assistant Laundry Supervisor</field>
+            <field name="group">C</field>
+        </record>
+        <record id="designation21" model="employee.designation">
+            <field name="name">Assistant Manager (HRD)</field>
+            <field name="group">B</field>
+        </record>
+        <record id="designation22" model="employee.designation">
+            <field name="name">Assistant Nursing Superintendent</field>
+            <field name="group">A</field>
+        </record>
+        <record id="designation23" model="employee.designation">
+            <field name="name">Assistant Public Relation Officer</field>
+            <field name="group">B</field>
+        </record>
+        <record id="designation24" model="employee.designation">
+            <field name="name">Assistant Security Officer</field>
+            <field name="group">B</field>
+        </record>
+        <record id="designation25" model="employee.designation">
+            <field name="name">Assistant Stores Officer</field>
+            <field name="group">B</field>
+        </record>
+        <record id="designation26" model="employee.designation">
+            <field name="name">Assistant Warden</field>
+            <field name="group">C</field>
+        </record>
+        <record id="designation27" model="employee.designation">
+            <field name="name">B.T.O./C.M.O.</field>
+            <field name="group">A</field>
+        </record>
+        <record id="designation28" model="employee.designation">
+            <field name="name">Beldar</field>
+            <field name="group">D</field>
+        </record>
+        <record id="designation29" model="employee.designation">
+            <field name="name">Bio Medical Engineer</field>
+            <field name="group">B</field>
+        </record>
+        <record id="designation30" model="employee.designation">
+            <field name="name">Biochemist</field>
+            <field name="group">A</field>
+        </record>
+        <record id="designation31" model="employee.designation">
+            <field name="name">Carpenter</field>
+            <field name="group">C</field>
+        </record>
+        <record id="designation32" model="employee.designation">
+            <field name="name">Chemist</field>
+            <field name="group">A</field>
+        </record>
+        <record id="designation33" model="employee.designation">
+            <field name="name">Chief Administrative Officer</field>
+            <field name="group">A</field>
+        </record>
+        <record id="designation34" model="employee.designation">
+            <field name="name">Chief Artist</field>
+            <field name="group">A</field>
+        </record>
+        <record id="designation35" model="employee.designation">
+            <field name="name">Chief Dietician</field>
+            <field name="group">A</field>
+        </record>
+        <record id="designation36" model="employee.designation">
+            <field name="name">Chief Librarian</field>
+            <field name="group">A</field>
+        </record>
+        <record id="designation37" model="employee.designation">
+            <field name="name">Chief Medical Record Officer</field>
+            <field name="group">A</field>
+        </record>
+        <record id="designation38" model="employee.designation">
+            <field name="name">Chief Medical Social Service Officer</field>
+            <field name="group">A</field>
+        </record>
+        <record id="designation39" model="employee.designation">
+            <field name="name">Chief Nursing Officer</field>
+            <field name="group">A</field>
+        </record>
+        <record id="designation40" model="employee.designation">
+            <field name="name">Chief Pharmacist</field>
+            <field name="group">B</field>
+        </record>
+        <record id="designation41" model="employee.designation">
+            <field name="name">Chief Physio/Occupational Therapist</field>
+            <field name="group">A</field>
+        </record>
+        <record id="designation42" model="employee.designation">
+            <field name="name">Chief Security Officer</field>
+            <field name="group">A</field>
+        </record>
+        <record id="designation43" model="employee.designation">
+            <field name="name">Chief Technical Officer (CWS)</field>
+            <field name="group">A</field>
+        </record>
+        <record id="designation44" model="employee.designation">
+            <field name="name">Chief Technical Officer (MLT)</field>
+            <field name="group">A</field>
+        </record>
+        <record id="designation45" model="employee.designation">
+            <field name="name">Chief Technical Officer (Ophth.)</field>
+            <field name="group">A</field>
+        </record>
+        <record id="designation46" model="employee.designation">
+            <field name="name">Chief Technical Officer (Radiology)</field>
+            <field name="group">A</field>
+        </record>
+        <record id="designation47" model="employee.designation">
+            <field name="name">Chief Technical Officer (Radio-Therapy)</field>
+            <field name="group">A</field>
+        </record>
+        <record id="designation48" model="employee.designation">
+            <field name="name">Child Psychologist</field>
+            <field name="group">A</field>
+        </record>
+        <record id="designation49" model="employee.designation">
+            <field name="name">Choudhary</field>
+            <field name="group">C</field>
+        </record>
+        <record id="designation50" model="employee.designation">
+            <field name="name">Cleaner</field>
+            <field name="group">D</field>
+        </record>
+        <record id="designation51" model="employee.designation">
+            <field name="name">Clinical Psychologist/Psychologist</field>
+            <field name="group">A</field>
+        </record>
+        <record id="designation52" model="employee.designation">
+            <field name="name">Cook Grade I</field>
+            <field name="group">C</field>
+        </record>
+        <record id="designation53" model="employee.designation">
+            <field name="name">Cook Grade II</field>
+            <field name="group">D</field>
+        </record>
+        <record id="designation54" model="employee.designation">
+            <field name="name">Cytoscreener</field>
+            <field name="group">A</field>
+        </record>
+        <record id="designation55" model="employee.designation">
+            <field name="name">Dark Room Assistant Grade I</field>
+            <field name="group">C</field>
+        </record>
+        <record id="designation56" model="employee.designation">
+            <field name="name">Dark Room Assistant Grade II</field>
+            <field name="group">C</field>
+        </record>
+        <record id="designation57" model="employee.designation">
+            <field name="name">Dark Room Assistant Grade III</field>
+            <field name="group">C</field>
+        </record>
+        <record id="designation58" model="employee.designation">
+            <field name="name">Data Entry Operator Grade A</field>
+            <field name="group">C</field>
+        </record>
+        <record id="designation59" model="employee.designation">
+            <field name="name">Data Entry Operator Grade B</field>
+            <field name="group">C</field>
+        </record>
+        <record id="designation60" model="employee.designation">
+            <field name="name">Data Entry Operator Grade C</field>
+            <field name="group">B</field>
+        </record>
+        <record id="designation61" model="employee.designation">
+            <field name="name">Data Entry Operator Grade D</field>
+            <field name="group">B</field>
+        </record>
+        <record id="designation62" model="employee.designation">
+            <field name="name">Data Entry Operator Grade E</field>
+            <field name="group">B</field>
+        </record>
+        <record id="designation63" model="employee.designation">
+            <field name="name">Dental Technician Grade I</field>
+            <field name="group">C</field>
+        </record>
+        <record id="designation64" model="employee.designation">
+            <field name="name">Dental Technician Grade II</field>
+            <field name="group">C</field>
+        </record>
+        <record id="designation65" model="employee.designation">
+            <field name="name">Deputy Chief Security Officer</field>
+            <field name="group">A</field>
+        </record>
+        <record id="designation66" model="employee.designation">
+            <field name="name">Deputy Director (Administration)</field>
+            <field name="group">A</field>
+        </record>
+        <record id="designation67" model="employee.designation">
+            <field name="name">Deputy Director (Computer Facility)</field>
+            <field name="group">A</field>
+        </record>
+        <record id="designation68" model="employee.designation">
+            <field name="name">Deputy Fire Officer</field>
+            <field name="group">B</field>
+        </record>
+        <record id="designation69" model="employee.designation">
+            <field name="name">Deputy General Manager (Cafeteria)</field>
+            <field name="group">C</field>
+        </record>
+        <record id="designation70" model="employee.designation">
+            <field name="name">Deputy Nursing Superintendent</field>
+            <field name="group">A</field>
+        </record>
+        <record id="designation71" model="employee.designation">
+            <field name="name">Deputy Warden</field>
+            <field name="group">C</field>
+        </record>
+        <record id="designation72" model="employee.designation">
+            <field name="name">Dietician</field>
+            <field name="group">B</field>
+        </record>
+        <record id="designation73" model="employee.designation">
+            <field name="name">Dispatch Rider</field>
+            <field name="group">C</field>
+        </record>
+        <record id="designation74" model="employee.designation">
+            <field name="name">Donor Organizer</field>
+            <field name="group">B</field>
+        </record>
+        <record id="designation75" model="employee.designation">
+            <field name="name">Draftsman Grade III</field>
+            <field name="group">C</field>
+        </record>
+        <record id="designation76" model="employee.designation">
+            <field name="name">Draughtsman Grade II</field>
+            <field name="group">B</field>
+        </record>
+        <record id="designation77" model="employee.designation">
+            <field name="name">Driver Grade I</field>
+            <field name="group">C</field>
+        </record>
+        <record id="designation78" model="employee.designation">
+            <field name="name">Driver Grade II</field>
+            <field name="group">C</field>
+        </record>
+        <record id="designation79" model="employee.designation">
+            <field name="name">Driver Ordinary Grade</field>
+            <field name="group">C</field>
+        </record>
+        <record id="designation80" model="employee.designation">
+            <field name="name">Driver Special Grade</field>
+            <field name="group">B</field>
+        </record>
+        <record id="designation81" model="employee.designation">
+            <field name="name">ECG Assistant</field>
+            <field name="group">C</field>
+        </record>
+        <record id="designation82" model="employee.designation">
+            <field name="name">Educational Media Generalist</field>
+            <field name="group">A</field>
+        </record>
+        <record id="designation83" model="employee.designation">
+            <field name="name">Educationalist</field>
+            <field name="group">A</field>
+        </record>
+        <record id="designation84" model="employee.designation">
+            <field name="name">Electrician</field>
+            <field name="group">C</field>
+        </record>
+        <record id="designation85" model="employee.designation">
+            <field name="name">Epidemiologist</field>
+            <field name="group">B</field>
+        </record>
+        <record id="designation86" model="employee.designation">
+            <field name="name">Executive Engineer (A/C &amp; R)</field>
+            <field name="group">A</field>
+        </record>
+        <record id="designation87" model="employee.designation">
+            <field name="name">Executive Engineer (Civil)</field>
+            <field name="group">A</field>
+        </record>
+        <record id="designation88" model="employee.designation">
+            <field name="name">Executive Engineer (Elect.)</field>
+            <field name="group">A</field>
+        </record>
+        <record id="designation89" model="employee.designation">
+            <field name="name">Ferroprinter</field>
+            <field name="group">C</field>
+        </record>
+        <record id="designation90" model="employee.designation">
+            <field name="name">Finance &amp; Chief Accounts Officer</field>
+            <field name="group">A</field>
+        </record>
+        <record id="designation91" model="employee.designation">
+            <field name="name">Financial Adviser</field>
+            <field name="group">A</field>
+        </record>
+        <record id="designation92" model="employee.designation">
+            <field name="name">Foreman(A/C&amp; R)</field>
+            <field name="group">C</field>
+        </record>
+        <record id="designation93" model="employee.designation">
+            <field name="name">Forman (Electrical)</field>
+            <field name="group">C</field>
+        </record>
+        <record id="designation94" model="employee.designation">
+            <field name="name">Gas Mechanic</field>
+            <field name="group">C</field>
+        </record>
+        <record id="designation95" model="employee.designation">
+            <field name="name">Gas Steward</field>
+            <field name="group">C</field>
+        </record>
+        <record id="designation96" model="employee.designation">
+            <field name="name">Gasman</field>
+            <field name="group">C</field>
+        </record>
+        <record id="designation97" model="employee.designation">
+            <field name="name">General Duty Medical Officer</field>
+            <field name="group">A</field>
+        </record>
+        <record id="designation98" model="employee.designation">
+            <field name="name">General Manager (Cafeteria)</field>
+            <field name="group">B</field>
+        </record>
+        <record id="designation99" model="employee.designation">
+            <field name="name">Head Bearer</field>
+            <field name="group">C</field>
+        </record>
+        <record id="designation100" model="employee.designation">
+            <field name="name">Head Cook</field>
+            <field name="group">C</field>
+        </record>
+        <record id="designation101" model="employee.designation">
+            <field name="name">Health Assistant</field>
+            <field name="group">C</field>
+        </record>
+        <record id="designation102" model="employee.designation">
+            <field name="name">Health Educator</field>
+            <field name="group">B</field>
+        </record>
+        <record id="designation103" model="employee.designation">
+            <field name="name">Hindi Officer</field>
+            <field name="group">A</field>
+        </record>
+        <record id="designation104" model="employee.designation">
+            <field name="name">Horticulturist</field>
+            <field name="group">B</field>
+        </record>
+        <record id="designation105" model="employee.designation">
+            <field name="name">Hospital Attendant Grade I</field>
+            <field name="group">C</field>
+        </record>
+        <record id="designation106" model="employee.designation">
+            <field name="name">Hospital Attendant Grade II</field>
+            <field name="group">D</field>
+        </record>
+        <record id="designation107" model="employee.designation">
+            <field name="name">Hospital Attendant Grade III</field>
+            <field name="group">D</field>
+        </record>
+        <record id="designation108" model="employee.designation">
+            <field name="name">Junior Accounts Officer</field>
+            <field name="group">B</field>
+        </record>
+        <record id="designation109" model="employee.designation">
+            <field name="name">Junior Engineer (A/C &amp; R)</field>
+            <field name="group">B</field>
+        </record>
+        <record id="designation110" model="employee.designation">
+            <field name="name">Junior Engineer (Civil)</field>
+            <field name="group">B</field>
+        </record>
+        <record id="designation111" model="employee.designation">
+            <field name="name">Junior Engineer (Elect)</field>
+            <field name="group">B</field>
+        </record>
+        <record id="designation112" model="employee.designation">
+            <field name="name">Junior Hindi Translator</field>
+            <field name="group">B</field>
+        </record>
+        <record id="designation113" model="employee.designation">
+            <field name="name">Junior Medical Lab Technologist</field>
+            <field name="group">C</field>
+        </record>
+        <record id="designation114" model="employee.designation">
+            <field name="name">Junior Medical Record Officer</field>
+            <field name="group">C</field>
+        </record>
+        <record id="designation115" model="employee.designation">
+            <field name="name">Junior Photographer</field>
+            <field name="group">C</field>
+        </record>
+        <record id="designation116" model="employee.designation">
+            <field name="name">Junior Physiotherapist/Occupational Therapist</field>
+            <field name="group">B</field>
+        </record>
+        <record id="designation117" model="employee.designation">
+            <field name="name">Junior Reception Officer</field>
+            <field name="group">B</field>
+        </record>
+        <record id="designation118" model="employee.designation">
+            <field name="name">Junior Statistician</field>
+            <field name="group">B</field>
+        </record>
+        <record id="designation119" model="employee.designation">
+            <field name="name">Junior Stores Officer</field>
+            <field name="group">B</field>
+        </record>
+        <record id="designation120" model="employee.designation">
+            <field name="name">Junior Warden</field>
+            <field name="group">C</field>
+        </record>
+        <record id="designation121" model="employee.designation">
+            <field name="name">Khalasi</field>
+            <field name="group">D</field>
+        </record>
+        <record id="designation122" model="employee.designation">
+            <field name="name">Laboratory Attendant Grade II</field>
+            <field name="group">C</field>
+        </record>
+        <record id="designation123" model="employee.designation">
+            <field name="name">Labour Officer</field>
+            <field name="group">A</field>
+        </record>
+        <record id="designation124" model="employee.designation">
+            <field name="name">Laundry Attendant</field>
+            <field name="group">D</field>
+        </record>
+        <record id="designation125" model="employee.designation">
+            <field name="name">Laundry Manager</field>
+            <field name="group">B</field>
+        </record>
+        <record id="designation126" model="employee.designation">
+            <field name="name">Laundry Operator Grade I</field>
+            <field name="group">C</field>
+        </record>
+        <record id="designation127" model="employee.designation">
+            <field name="name">Laundry Operator Grade II</field>
+            <field name="group">C</field>
+        </record>
+        <record id="designation128" model="employee.designation">
+            <field name="name">Laundry Operator Grade III</field>
+            <field name="group">D</field>
+        </record>
+        <record id="designation129" model="employee.designation">
+            <field name="name">Laundry Supervisor</field>
+            <field name="group">C</field>
+        </record>
+        <record id="designation130" model="employee.designation">
+            <field name="name">Librarian Grade I</field>
+            <field name="group">B</field>
+        </record>
+        <record id="designation131" model="employee.designation">
+            <field name="name">Librarian Grade II</field>
+            <field name="group">B</field>
+        </record>
+        <record id="designation132" model="employee.designation">
+            <field name="name">Librarian Grade III</field>
+            <field name="group">B</field>
+        </record>
+        <record id="designation133" model="employee.designation">
+            <field name="name">Librarian Selection Grade</field>
+            <field name="group">A</field>
+        </record>
+        <record id="designation134" model="employee.designation">
+            <field name="name">Library Attendant Grade I</field>
+            <field name="group">C</field>
+        </record>
+        <record id="designation135" model="employee.designation">
+            <field name="name">Library Attendant Grade II</field>
+            <field name="group">C</field>
+        </record>
+        <record id="designation136" model="employee.designation">
+            <field name="name">Library Guard</field>
+            <field name="group">C</field>
+        </record>
+        <record id="designation137" model="employee.designation">
+            <field name="name">Life Guard</field>
+            <field name="group">B</field>
+        </record>
+        <record id="designation138" model="employee.designation">
+            <field name="name">Lineman (Elect.)</field>
+            <field name="group">C</field>
+        </record>
+        <record id="designation139" model="employee.designation">
+            <field name="name">Lower Division Clerk</field>
+            <field name="group">C</field>
+        </record>
+        <record id="designation140" model="employee.designation">
+            <field name="name">Mali</field>
+            <field name="group">D</field>
+        </record>
+        <record id="designation141" model="employee.designation">
+            <field name="name">Manager (HRD)</field>
+            <field name="group">A</field>
+        </record>
+        <record id="designation142" model="employee.designation">
+            <field name="name">Masalchi / Bearer Grade I</field>
+            <field name="group">D</field>
+        </record>
+        <record id="designation143" model="employee.designation">
+            <field name="name">Masalchi / Bearer Grade II</field>
+            <field name="group">D</field>
+        </record>
+        <record id="designation144" model="employee.designation">
+            <field name="name">Mason</field>
+            <field name="group">C</field>
+        </record>
+        <record id="designation145" model="employee.designation">
+            <field name="name">Mechanic (A/C &amp; R)</field>
+            <field name="group">C</field>
+        </record>
+        <record id="designation146" model="employee.designation">
+            <field name="name">Mechanic (E&amp;M)</field>
+            <field name="group">C</field>
+        </record>
+        <record id="designation147" model="employee.designation">
+            <field name="name">Medical Lab Technologist</field>
+            <field name="group">C</field>
+        </record>
+        <record id="designation148" model="employee.designation">
+            <field name="name">Medical Record Attendant Grade I</field>
+            <field name="group">C</field>
+        </record>
+        <record id="designation149" model="employee.designation">
+            <field name="name">Medical Record Attendant Grade II</field>
+            <field name="group">D</field>
+        </record>
+        <record id="designation150" model="employee.designation">
+            <field name="name">Medical Record Officer</field>
+            <field name="group">B</field>
+        </record>
+        <record id="designation151" model="employee.designation">
+            <field name="name">Medical Record Technician</field>
+            <field name="group">C</field>
+        </record>
+        <record id="designation152" model="employee.designation">
+            <field name="name">Medical Social Service Officer Grade I</field>
+            <field name="group">B</field>
+        </record>
+        <record id="designation153" model="employee.designation">
+            <field name="name">Medical Social Service Officer Grade II</field>
+            <field name="group">B</field>
+        </record>
+        <record id="designation154" model="employee.designation">
+            <field name="name">Morgue Attendant Grade-I</field>
+            <field name="group">C</field>
+        </record>
+        <record id="designation155" model="employee.designation">
+            <field name="name">Morgue Attendant Grade-II</field>
+            <field name="group">C</field>
+        </record>
+        <record id="designation156" model="employee.designation">
+            <field name="name">Multipurpose Worker</field>
+            <field name="group">C</field>
+        </record>
+        <record id="designation157" model="employee.designation">
+            <field name="name">Nuclear Medicine Technologist</field>
+            <field name="group">C</field>
+        </record>
+        <record id="designation158" model="employee.designation">
+            <field name="name">Nursing Officer</field>
+            <field name="group">B</field>
+        </record>
+        <record id="designation159" model="employee.designation">
+            <field name="name">Nursing Superintendent</field>
+            <field name="group">A</field>
+        </record>
+        <record id="designation160" model="employee.designation">
+            <field name="name">Office Attendant Grade I</field>
+            <field name="group">D</field>
+        </record>
+        <record id="designation161" model="employee.designation">
+            <field name="name">Office Attendant Grade II</field>
+            <field name="group">D</field>
+        </record>
+        <record id="designation162" model="employee.designation">
+            <field name="name">Office Superintendent</field>
+            <field name="group">B</field>
+        </record>
+        <record id="designation163" model="employee.designation">
+            <field name="name">Office Superintendent</field>
+            <field name="group">B</field>
+        </record>
+        <record id="designation164" model="employee.designation">
+            <field name="name">Operation Theatre Assistant</field>
+            <field name="group">C</field>
+        </record>
+        <record id="designation165" model="employee.designation">
+            <field name="name">Operator (E&amp;M)/Lift Operator</field>
+            <field name="group">C</field>
+        </record>
+        <record id="designation166" model="employee.designation">
+            <field name="name">Ophthalmic Technician Grade I</field>
+            <field name="group">B</field>
+        </record>
+        <record id="designation167" model="employee.designation">
+            <field name="name">OSD to President</field>
+            <field name="group">A</field>
+        </record>
+        <record id="designation168" model="employee.designation">
+            <field name="name">Painter</field>
+            <field name="group">C</field>
+        </record>
+        <record id="designation169" model="employee.designation">
+            <field name="name">Painter</field>
+            <field name="group">C</field>
+        </record>
+        <record id="designation170" model="employee.designation">
+            <field name="name">Perfusionist</field>
+            <field name="group">B</field>
+        </record>
+        <record id="designation171" model="employee.designation">
+            <field name="name">Personal Assistant</field>
+            <field name="group">B</field>
+        </record>
+        <record id="designation172" model="employee.designation">
+            <field name="name">Pharmacist Grade I</field>
+            <field name="group">B</field>
+        </record>
+        <record id="designation173" model="employee.designation">
+            <field name="name">Pharmacist Grade II</field>
+            <field name="group">C</field>
+        </record>
+        <record id="designation174" model="employee.designation">
+            <field name="name">Physical Training Instructor</field>
+            <field name="group">B</field>
+        </record>
+        <record id="designation175" model="employee.designation">
+            <field name="name">Physiotherapist/Occupational Therapist</field>
+            <field name="group">B</field>
+        </record>
+        <record id="designation176" model="employee.designation">
+            <field name="name">Plumber</field>
+            <field name="group">C</field>
+        </record>
+        <record id="designation177" model="employee.designation">
+            <field name="name">Plumber</field>
+            <field name="group">C</field>
+        </record>
+        <record id="designation178" model="employee.designation">
+            <field name="name">Post Partum Attendant</field>
+            <field name="group">C</field>
+        </record>
+        <record id="designation179" model="employee.designation">
+            <field name="name">Principal Private Secretary</field>
+            <field name="group">A</field>
+        </record>
+        <record id="designation180" model="employee.designation">
+            <field name="name">Printing Machine Operator</field>
+            <field name="group">C</field>
+        </record>
+        <record id="designation181" model="employee.designation">
+            <field name="name">Private Secretary</field>
+            <field name="group">B</field>
+        </record>
+        <record id="designation182" model="employee.designation">
+            <field name="name">Programmer</field>
+            <field name="group">B</field>
+        </record>
+        <record id="designation183" model="employee.designation">
+            <field name="name">Projectionist Grade I</field>
+            <field name="group">B</field>
+        </record>
+        <record id="designation184" model="employee.designation">
+            <field name="name">Projectionist Grade II</field>
+            <field name="group">C</field>
+        </record>
+        <record id="designation185" model="employee.designation">
+            <field name="name">Public Health Nurse</field>
+            <field name="group">B</field>
+        </record>
+        <record id="designation186" model="employee.designation">
+            <field name="name">Public Health Nurse (Supervisor)</field>
+            <field name="group">A</field>
+        </record>
+        <record id="designation187" model="employee.designation">
+            <field name="name">Public Relation Officer</field>
+            <field name="group">A</field>
+        </record>
+        <record id="designation188" model="employee.designation">
+            <field name="name">Publication Assistant (Hindi/English)</field>
+            <field name="group">B</field>
+        </record>
+        <record id="designation189" model="employee.designation">
+            <field name="name">Quality Control Manager</field>
+            <field name="group">B</field>
+        </record>
+        <record id="designation190" model="employee.designation">
+            <field name="name">Receptionist</field>
+            <field name="group">C</field>
+        </record>
+        <record id="designation191" model="employee.designation">
+            <field name="name">Registrar</field>
+            <field name="group">A</field>
+        </record>
+        <record id="designation192" model="employee.designation">
+            <field name="name">Reprographic Technician</field>
+            <field name="group">C</field>
+        </record>
+        <record id="designation193" model="employee.designation">
+            <field name="name">Sanitary Attendant Grade I</field>
+            <field name="group">C</field>
+        </record>
+        <record id="designation194" model="employee.designation">
+            <field name="name">Sanitary Attendant Grade II</field>
+            <field name="group">D</field>
+        </record>
+        <record id="designation195" model="employee.designation">
+            <field name="name">Sanitary Attendant Grade III</field>
+            <field name="group">D</field>
+        </record>
+        <record id="designation196" model="employee.designation">
+            <field name="name">Sanitary Inspector Grade I</field>
+            <field name="group">C</field>
+        </record>
+        <record id="designation197" model="employee.designation">
+            <field name="name">Sanitary Inspector Grade II</field>
+            <field name="group">C</field>
+        </record>
+        <record id="designation198" model="employee.designation">
+            <field name="name">Sanitation Officer</field>
+            <field name="group">B</field>
+        </record>
+        <record id="designation199" model="employee.designation">
+            <field name="name">Scientist I</field>
+            <field name="group">A</field>
+        </record>
+        <record id="designation200" model="employee.designation">
+            <field name="name">Scientist I (Absorption)</field>
+            <field name="group">A</field>
+        </record>
+        <record id="designation201" model="employee.designation">
+            <field name="name">Scientist II</field>
+            <field name="group">A</field>
+        </record>
+        <record id="designation202" model="employee.designation">
+            <field name="name">Scientist II (Absorption)</field>
+            <field name="group">A</field>
+        </record>
+        <record id="designation203" model="employee.designation">
+            <field name="name">Scientist III</field>
+            <field name="group">A</field>
+        </record>
+        <record id="designation204" model="employee.designation">
+            <field name="name">Scientist III (Absorption)</field>
+            <field name="group">A</field>
+        </record>
+        <record id="designation205" model="employee.designation">
+            <field name="name">Scientist IV</field>
+            <field name="group">A</field>
+        </record>
+        <record id="designation206" model="employee.designation">
+            <field name="name">Scientist IV (Absorption)</field>
+            <field name="group">A</field>
+        </record>
+        <record id="designation207" model="employee.designation">
+            <field name="name">Scientist V (Absorption)</field>
+            <field name="group">A</field>
+        </record>
+        <record id="designation208" model="employee.designation">
+            <field name="name">Secretary Assistant to President</field>
+            <field name="group">A</field>
+        </record>
+        <record id="designation209" model="employee.designation">
+            <field name="name">Security Officer</field>
+            <field name="group">A</field>
+        </record>
+        <record id="designation210" model="employee.designation">
+            <field name="name">Security-cum-Fire Guard Grade I</field>
+            <field name="group">C</field>
+        </record>
+        <record id="designation211" model="employee.designation">
+            <field name="name">Security-cum-Fire Guard Grade II</field>
+            <field name="group">C</field>
+        </record>
+        <record id="designation212" model="employee.designation">
+            <field name="name">Security-cum-Fire Jamadar</field>
+            <field name="group">C</field>
+        </record>
+        <record id="designation213" model="employee.designation">
+            <field name="name">Senior Administrative Officer</field>
+            <field name="group">A</field>
+        </record>
+        <record id="designation214" model="employee.designation">
+            <field name="name">Senior Artist</field>
+            <field name="group">B</field>
+        </record>
+        <record id="designation215" model="employee.designation">
+            <field name="name">Senior Biochemist</field>
+            <field name="group">A</field>
+        </record>
+        <record id="designation216" model="employee.designation">
+            <field name="name">Senior Carpenter</field>
+            <field name="group">C</field>
+        </record>
+        <record id="designation217" model="employee.designation">
+            <field name="name">Senior Chemist</field>
+            <field name="group">A</field>
+        </record>
+        <record id="designation218" model="employee.designation">
+            <field name="name">Senior Dietician</field>
+            <field name="group">A</field>
+        </record>
+        <record id="designation219" model="employee.designation">
+            <field name="name">Senior Financial Advisor</field>
+            <field name="group">A</field>
+        </record>
+        <record id="designation220" model="employee.designation">
+            <field name="name">Senior Hindi Translator</field>
+            <field name="group">B</field>
+        </record>
+        <record id="designation221" model="employee.designation">
+            <field name="name">Senior Mali</field>
+            <field name="group">C</field>
+        </record>
+        <record id="designation222" model="employee.designation">
+            <field name="name">Senior Mali</field>
+            <field name="group">C</field>
+        </record>
+        <record id="designation223" model="employee.designation">
+            <field name="name">Senior Mason</field>
+            <field name="group">C</field>
+        </record>
+        <record id="designation224" model="employee.designation">
+            <field name="name">Senior Mechanic (A/C &amp; R)</field>
+            <field name="group">C</field>
+        </record>
+        <record id="designation225" model="employee.designation">
+            <field name="name">Senior Mechanic (E&amp;M)</field>
+            <field name="group">C</field>
+        </record>
+        <record id="designation226" model="employee.designation">
+            <field name="name">Senior Medical Physicist</field>
+            <field name="group">A</field>
+        </record>
+        <record id="designation227" model="employee.designation">
+            <field name="name">Senior Medical Physicist</field>
+            <field name="group">A</field>
+        </record>
+        <record id="designation228" model="employee.designation">
+            <field name="name">Senior Medical Record Officer</field>
+            <field name="group">B</field>
+        </record>
+        <record id="designation229" model="employee.designation">
+            <field name="name">Senior Office Attendant</field>
+            <field name="group">C</field>
+        </record>
+        <record id="designation230" model="employee.designation">
+            <field name="name">Senior Operator (E&amp;M)</field>
+            <field name="group">C</field>
+        </record>
+        <record id="designation231" model="employee.designation">
+            <field name="name">Senior Painter</field>
+            <field name="group">C</field>
+        </record>
+        <record id="designation232" model="employee.designation">
+            <field name="name">Senior Perfusionist</field>
+            <field name="group">B</field>
+        </record>
+        <record id="designation233" model="employee.designation">
+            <field name="name">Senior Pharmacist/Manufacturing Pharmacist</field>
+            <field name="group">B</field>
+        </record>
+        <record id="designation234" model="employee.designation">
+            <field name="name">Senior Photographer</field>
+            <field name="group">B</field>
+        </record>
+        <record id="designation235" model="employee.designation">
+            <field name="name">Senior Physio/Occupational Therapist</field>
+            <field name="group">A</field>
+        </record>
+        <record id="designation236" model="employee.designation">
+            <field name="name">Senior Plumber</field>
+            <field name="group">C</field>
+        </record>
+        <record id="designation237" model="employee.designation">
+            <field name="name">Senior Programmer</field>
+            <field name="group">A</field>
+        </record>
+        <record id="designation238" model="employee.designation">
+            <field name="name">Senior Sanitation Officer</field>
+            <field name="group">B</field>
+        </record>
+        <record id="designation239" model="employee.designation">
+            <field name="name">Senior Scientific Officer</field>
+            <field name="group">A</field>
+        </record>
+        <record id="designation240" model="employee.designation">
+            <field name="name">Senior Steward</field>
+            <field name="group">C</field>
+        </record>
+        <record id="designation241" model="employee.designation">
+            <field name="name">Senior Store Officer</field>
+            <field name="group">A</field>
+        </record>
+        <record id="designation242" model="employee.designation">
+            <field name="name">Senior Technical Editor</field>
+            <field name="group">A</field>
+        </record>
+        <record id="designation243" model="employee.designation">
+            <field name="name">Senior Technical Officer (CWS)</field>
+            <field name="group">A</field>
+        </record>
+        <record id="designation244" model="employee.designation">
+            <field name="name">Senior Technical Officer (E&amp;M Biophysics)</field>
+            <field name="group">A</field>
+        </record>
+        <record id="designation245" model="employee.designation">
+            <field name="name">Senior Technical Officer (ENT)</field>
+            <field name="group">A</field>
+        </record>
+        <record id="designation246" model="employee.designation">
+            <field name="name">Senior Technical Officer (Histo)</field>
+            <field name="group">A</field>
+        </record>
+        <record id="designation247" model="employee.designation">
+            <field name="name">Senior Technical Officer (MLT)</field>
+            <field name="group">B</field>
+        </record>
+        <record id="designation248" model="employee.designation">
+            <field name="name">Senior Technical Officer (Ophth.)</field>
+            <field name="group">B</field>
+        </record>
+        <record id="designation249" model="employee.designation">
+            <field name="name">Senior Technical Officer (Perfusion)</field>
+            <field name="group">B</field>
+        </record>
+        <record id="designation250" model="employee.designation">
+            <field name="name">Senior Technical Officer (Photo)</field>
+            <field name="group">B</field>
+        </record>
+        <record id="designation251" model="employee.designation">
+            <field name="name">Senior Technical Officer (R&amp;AL)</field>
+            <field name="group">A</field>
+        </record>
+        <record id="designation252" model="employee.designation">
+            <field name="name">Senior Technical Officer (Radiology)</field>
+            <field name="group">B</field>
+        </record>
+        <record id="designation253" model="employee.designation">
+            <field name="name">Senior Technical Officer (Radio-Therapy)</field>
+            <field name="group">B</field>
+        </record>
+        <record id="designation254" model="employee.designation">
+            <field name="name">Senior Veterinary Officer</field>
+            <field name="group">A</field>
+        </record>
+        <record id="designation255" model="employee.designation">
+            <field name="name">Senior Veterinary Officer (Surgeon)</field>
+            <field name="group">A</field>
+        </record>
+        <record id="designation256" model="employee.designation">
+            <field name="name">Senior Warden</field>
+            <field name="group">B</field>
+        </record>
+        <record id="designation257" model="employee.designation">
+            <field name="name">Sewerman</field>
+            <field name="group">C</field>
+        </record>
+        <record id="designation258" model="employee.designation">
+            <field name="name">Social Psychologist</field>
+            <field name="group">B</field>
+        </record>
+        <record id="designation259" model="employee.designation">
+            <field name="name">Sr. Hindi Officer</field>
+            <field name="group">A</field>
+        </record>
+        <record id="designation260" model="employee.designation">
+            <field name="name">Sr. Nursing Officer</field>
+            <field name="group">B</field>
+        </record>
+        <record id="designation261" model="employee.designation">
+            <field name="name">Statistical Assistant</field>
+            <field name="group">B</field>
+        </record>
+        <record id="designation262" model="employee.designation">
+            <field name="name">Statistician</field>
+            <field name="group">B</field>
+        </record>
+        <record id="designation263" model="employee.designation">
+            <field name="name">Stenographer</field>
+            <field name="group">C</field>
+        </record>
+        <record id="designation264" model="employee.designation">
+            <field name="name">Stenographer</field>
+            <field name="group">C</field>
+        </record>
+        <record id="designation265" model="employee.designation">
+            <field name="name">Steward</field>
+            <field name="group">C</field>
+        </record>
+        <record id="designation266" model="employee.designation">
+            <field name="name">Store Keeper</field>
+            <field name="group">B</field>
+        </record>
+        <record id="designation267" model="employee.designation">
+            <field name="name">Store Officer</field>
+            <field name="group">A</field>
+        </record>
+        <record id="designation268" model="employee.designation">
+            <field name="name">Superintending Engineer</field>
+            <field name="group">A</field>
+        </record>
+        <record id="designation269" model="employee.designation">
+            <field name="name">Superintending Physio/Occupational Therapist</field>
+            <field name="group">A</field>
+        </record>
+        <record id="designation270" model="employee.designation">
+            <field name="name">Supervising Medical Social Service Officer</field>
+            <field name="group">A</field>
+        </record>
+        <record id="designation271" model="employee.designation">
+            <field name="name">System Analyst</field>
+            <field name="group">A</field>
+        </record>
+        <record id="designation272" model="employee.designation">
+            <field name="name">Tailor Grade I</field>
+            <field name="group">C</field>
+        </record>
+        <record id="designation273" model="employee.designation">
+            <field name="name">Tailor Grade II</field>
+            <field name="group">C</field>
+        </record>
+        <record id="designation274" model="employee.designation">
+            <field name="name">Tailor Grade III</field>
+            <field name="group">D</field>
+        </record>
+        <record id="designation275" model="employee.designation">
+            <field name="name">Technical Assistant (ENT)</field>
+            <field name="group">B</field>
+        </record>
+        <record id="designation276" model="employee.designation">
+            <field name="name">Technical Assistant (O.T.)</field>
+            <field name="group">C</field>
+        </record>
+        <record id="designation277" model="employee.designation">
+            <field name="name">Technical Officer (CWS)</field>
+            <field name="group">B</field>
+        </record>
+        <record id="designation278" model="employee.designation">
+            <field name="name">Technical Officer (Dental)</field>
+            <field name="group">B</field>
+        </record>
+        <record id="designation279" model="employee.designation">
+            <field name="name">Technical Officer (ENT) Grade I</field>
+            <field name="group">B</field>
+        </record>
+        <record id="designation280" model="employee.designation">
+            <field name="name">Technical Officer (ENT) Grade II</field>
+            <field name="group">B</field>
+        </record>
+        <record id="designation281" model="employee.designation">
+            <field name="name">Technical Officer (MLT)</field>
+            <field name="group">B</field>
+        </record>
+        <record id="designation282" model="employee.designation">
+            <field name="name">Technical Officer (O.T.)</field>
+            <field name="group">B</field>
+        </record>
+        <record id="designation283" model="employee.designation">
+            <field name="name">Technical Officer (Ophth.)</field>
+            <field name="group">B</field>
+        </record>
+        <record id="designation284" model="employee.designation">
+            <field name="name">Technical Officer (R&amp;AL)</field>
+            <field name="group">B</field>
+        </record>
+        <record id="designation285" model="employee.designation">
+            <field name="name">Technical Officer (Radiology)</field>
+            <field name="group">B</field>
+        </record>
+        <record id="designation286" model="employee.designation">
+            <field name="name">Technical Officer (Radio-Therapy)</field>
+            <field name="group">B</field>
+        </record>
+        <record id="designation287" model="employee.designation">
+            <field name="name">Technician (O.T.)</field>
+            <field name="group">B</field>
+        </record>
+        <record id="designation288" model="employee.designation">
+            <field name="name">Technician (Radiology)</field>
+            <field name="group">B</field>
+        </record>
+        <record id="designation289" model="employee.designation">
+            <field name="name">Technician (Radio-Therapy) Grade I</field>
+            <field name="group">B</field>
+        </record>
+        <record id="designation290" model="employee.designation">
+            <field name="name">Technician (Radio-Therapy) Grade II</field>
+            <field name="group">B</field>
+        </record>
+        <record id="designation291" model="employee.designation">
+            <field name="name">Technician (Telephone) Grade I</field>
+            <field name="group">C</field>
+        </record>
+        <record id="designation292" model="employee.designation">
+            <field name="name">Technician (Telephone) Grade II</field>
+            <field name="group">C</field>
+        </record>
+        <record id="designation293" model="employee.designation">
+            <field name="name">Technician (Telephone) Grade III</field>
+            <field name="group">C</field>
+        </record>
+        <record id="designation294" model="employee.designation">
+            <field name="name">Technician (Telephone) Grade IV</field>
+            <field name="group">C</field>
+        </record>
+        <record id="designation295" model="employee.designation">
+            <field name="name">Telecom Operating Assistant Grade I</field>
+            <field name="group">C</field>
+        </record>
+        <record id="designation296" model="employee.designation">
+            <field name="name">Telecom Operating Assistant Grade I</field>
+            <field name="group">C</field>
+        </record>
+        <record id="designation297" model="employee.designation">
+            <field name="name">Telecom Operating Assistant Grade II</field>
+            <field name="group">C</field>
+        </record>
+        <record id="designation298" model="employee.designation">
+            <field name="name">Transplant Coordinator</field>
+            <field name="group">B</field>
+        </record>
+        <record id="designation299" model="employee.designation">
+            <field name="name">Tutor in Nursing/Senior Nursing Tutor</field>
+            <field name="group">A</field>
+        </record>
+        <record id="designation300" model="employee.designation">
+            <field name="name">Upper Division Clerk</field>
+            <field name="group">C</field>
+        </record>
+        <record id="designation301" model="employee.designation">
+            <field name="name">Upper Division Clerk</field>
+            <field name="group">C</field>
+        </record>
+        <record id="designation302" model="employee.designation">
+            <field name="name">Veterinary Officer</field>
+            <field name="group">A</field>
+        </record>
+        <record id="designation303" model="employee.designation">
+            <field name="name">Vocational Counsellor</field>
+            <field name="group">B</field>
+        </record>
+        <record id="designation304" model="employee.designation">
+            <field name="name">Warden</field>
+            <field name="group">B</field>
+        </record>
+        <record id="designation305" model="employee.designation">
+            <field name="name">Welfare Officer</field>
+            <field name="group">A</field>
+        </record>
+        <record id="designation306" model="employee.designation">
+            <field name="name">Wireman</field>
+            <field name="group">C</field>
+        </record>
+        <record id="designation307" model="employee.designation">
+            <field name="name">Workshop Assistant (CWS)</field>
+            <field name="group">C</field>
+        </record>
+        <record id="designation308" model="employee.designation">
+            <field name="name">Workshop Technician Grade I (CWS)</field>
+            <field name="group">C</field>
+        </record>
+        <record id="designation309" model="employee.designation">
+            <field name="name">Workshop Technician Grade I (R&amp; AL)</field>
+            <field name="group">C</field>
+        </record>
+        <record id="designation310" model="employee.designation">
+            <field name="name">Workshop Technician Grade II (CWS)</field>
+            <field name="group">C</field>
+        </record>
+        <record id="designation311" model="employee.designation">
+            <field name="name">Workshop Technician Grade II (R&amp; AL)</field>
+            <field name="group">C</field>
+        </record>
+        <record id="designation312" model="employee.designation">
+            <field name="name">Yoga Instructor</field>
+            <field name="group">B</field>
+        </record>
+        <record id="designation313" model="employee.designation">
+            <field name="name">Medical Physicist</field>
+            <field name="group">A</field>
+        </record>
+        <record id="designation314" model="employee.designation">
+            <field name="name">Chief Medical Officer (SAG)</field>
+            <field name="group">A</field>
+        </record>
+        <record id="designation315" model="employee.designation">
+            <field name="name">Assistant Professor</field>
+            <field name="group">A</field>
+        </record>
+        <record id="designation316" model="employee.designation">
+            <field name="name">Associate Professor</field>
+            <field name="group">A</field>
+        </record>
+        <record id="designation317" model="employee.designation">
+            <field name="name">Additional Professor</field>
+            <field name="group">A</field>
+        </record>
+        <record id="designation318" model="employee.designation">
+            <field name="name">professor</field>
+            <field name="group">A</field>
+        </record>
+        <record id="designation319" model="employee.designation">
+            <field name="name">Lecturer</field>
+            <field name="group">A</field>
+        </record>
+        <record id="designation320" model="employee.designation">
+            <field name="name">Principal</field>
+            <field name="group">A</field>
+        </record>
+        <record id="designation321" model="employee.designation">
+            <field name="name">Director</field>
+            <field name="group">A</field>
+        </record>
+        <record id="designation322" model="employee.designation">
+            <field name="name">Medical Superintendent</field>
+            <field name="group">A</field>
+        </record>
+        <record id="designation323" model="employee.designation">
+            <field name="name">Deputy Secretary</field>
+            <field name="group">A</field>
+        </record>
+        <record id="designation324" model="employee.designation">
+            <field name="name">Senior Nursing Officer</field>
+            <field name="group">A</field>
+        </record>
+    </data>
+</tryton>

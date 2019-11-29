@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+
+<tree editable="top">
+    <field name="date"/>
+    <field name="time_from"/>
+    <field name="time_to"/>
+    <field name="hours"/>
+    <field name="vehicle_no"/>
+</tree>

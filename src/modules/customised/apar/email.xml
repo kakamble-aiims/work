@@ -1,0 +1,249 @@
+<?xml version="1.0"?>
+
+<tryton>
+    <data>
+        <!-- Initiate APAR Process -->      
+  <!--       <record model="ir.action.report" id="report_initiate_apar_process">
+            <field name="name">Mail - Initiate APAR Process</field>
+            <field name="model">apar.department.form</field>
+            <field name="report_name">Initiate APAR Process</field>
+            <field name="report">apar/email/Initiate_APAR_Process.html</field>
+            <field name="template_extension">html</field>
+        </record>
+        <record id="mail_initiate_apar_process" model="notification.email">
+            <field name="content" ref="report_initiate_apar_process"/>
+            <field name="recipients" search="[('name', '=', 'establishment'), ('model', '=', 'apar.department.form')]"/>
+        </record>
+        <record id="trigger_initiate_apar_process" model="ir.trigger">
+            <field name="name">Trigger - Initiate APAR Process</field>
+            <field name="model" search="[('model', '=', 'apar.department.form')]"/>
+            <field name="condition">
+{"__class__": "Equal",
+"s1": {"__class__": "Get", "v": {"__class__": "Eval", "v": "self", "d": {}}, "k":"state", "d": ""},
+"s2": ""}
+</field>
+            <field name="action_function">trigger</field>
+            <field name="on_write">True</field>
+            <field name="action_model" search="[('model', '=', 'notification.email')]"/>
+            <field name="limit_number">1</field>
+            <field name="notification_email" ref="mail_initiate_apar_process"/>
+        </record> -->
+
+        <!-- Notification To Fill In APAR Form -->
+        <record model="ir.action.report" id="report_notification_apar_form">
+            <field name="name">Mail - Notification To Fill In APAR Form</field>
+            <field name="model">apar.employee.form</field>
+            <field name="report_name">Notification To Fill In APAR Form</field>
+            <field name="report">apar/email/Notification_to_fill_in_APAR_form.html</field>
+            <field name="template_extension">html</field>
+        </record>
+        <record id="mail_notification_apar_form" model="notification.email">
+            <field name="content" ref="report_notification_apar_form"/>
+            <field name="recipients" search="[('name', '=', 'employee'), ('model', '=', 'apar.employee.form')]"/>
+        </record>
+        <record id="trigger_notification_apar_form" model="ir.trigger">
+            <field name="name">Trigger - Notification To Fill In APAR Form</field>
+            <field name="model" search="[('model', '=', 'apar.employee.form')]"/>
+            <field name="condition">
+{"__class__": "Equal",
+"s1": {"__class__": "Get", "v": {"__class__": "Eval", "v": "self", "d": {}}, "k":"state", "d": ""},
+"s2": "self_appraisal"}
+</field>
+            <field name="action_function">trigger</field>
+            <field name="on_write">True</field>
+            <field name="action_model" search="[('model', '=', 'notification.email')]"/>
+            <field name="limit_number">1</field>
+            <field name="notification_email" ref="mail_notification_apar_form"/>
+        </record>
+
+        <!-- Notification To Grade APAR Form -->
+        <record model="ir.action.report" id="report_notification_grade_form">
+            <field name="name">Mail - Notification To Grade APAR Form</field>
+            <field name="model">apar.employee.form</field>
+            <field name="report_name">Notification To Grade APAR Form</field>
+            <field name="report">apar/email/Notification_to_grade_APAR_form.html</field>
+            <field name="template_extension">html</field>
+        </record>
+        <record id="mail_notification_grade_form" model="notification.email">
+            <field name="content" ref="report_notification_grade_form"/>
+            <field name="recipients" search="[('name', '=', 'reporting_officer'), ('model', '=', 'apar.employee.form')]"/>
+        </record>
+        <record id="trigger_notification_grade_form" model="ir.trigger">
+            <field name="name">Trigger - Notification To Grade APAR Form</field>
+            <field name="model" search="[('model', '=', 'apar.employee.form')]"/>
+            <field name="condition">                            
+{"__class__": "Equal",
+"s1": {"__class__": "Get", "v": {"__class__": "Eval", "v": "self", "d": {}}, "k":"state", "d": ""},
+"s2": "reporting_officer"}     
+</field>
+            <field name="action_function">trigger</field>
+            <field name="on_write">True</field>
+            <field name="action_model" search="[('model', '=', 'notification.email')]"/>
+            <field name="limit_number">1</field>
+            <field name="notification_email" ref="mail_notification_grade_form"/>
+        </record>
+
+        <!-- Notification To Review APAR Form -->
+        <record model="ir.action.report" id="report_notification_review_form">
+            <field name="name">Mail - Notification To Review APAR Form</field>
+            <field name="model">apar.employee.form</field>
+            <field name="report_name">Notification To Review APAR Form</field>
+            <field name="report">apar/email/Notification_to_review_APAR_form.html</field>
+            <field name="template_extension">html</field>
+        </record>
+        <record id="mail_notification_review_form" model="notification.email">
+            <field name="content" ref="report_notification_review_form"/>
+            <field name="recipients" search="[('name', '=', 'reviewing_officer'), ('model', '=', 'apar.employee.form')]"/>
+        </record>
+        <record id="trigger_notification_review_form" model="ir.trigger">
+            <field name="name">Trigger - Notification To Review APAR Form</field>
+            <field name="model" search="[('model', '=', 'apar.employee.form')]"/>
+            <field name="condition">
+{"__class__": "Equal",
+"s1": {"__class__": "Get", "v": {"__class__": "Eval", "v": "self", "d": {}}, "k":"state", "d": ""},
+"s2": "reviewing_officer"}     
+</field>        
+            <field name="action_function">trigger</field>
+            <field name="on_write">True</field>
+            <field name="action_model" search="[('model', '=', 'notification.email')]"/>
+            <field name="limit_number">1</field>
+            <field name="notification_email" ref="mail_notification_review_form"/>
+        </record>
+
+        <!-- Notification To Accept APAR Form -->
+        <record model="ir.action.report" id="report_notification_accept_form">
+            <field name="name">Mail - Notification To Accept APAR Form</field>
+            <field name="model">apar.employee.form</field>
+            <field name="report_name">Notification To Accept APAR Form</field>
+            <field name="report">apar/email/Notification_to_accept_APAR_form.html</field>
+            <field name="template_extension">html</field>
+        </record>
+        <record id="mail_notification_accept_form" model="notification.email">
+            <field name="content" ref="report_notification_accept_form"/>
+            <field name="recipients" search="[('name', '=', 'acceptance_authority'), ('model', '=', 'apar.employee.form')]"/>
+        </record>
+        <record id="trigger_notification_accept_form" model="ir.trigger">
+            <field name="name">Trigger - Notification To Accept APAR Form</field>
+            <field name="model" search="[('model', '=', 'apar.employee.form')]"/>
+            <field name="condition">
+{"__class__": "Equal",
+"s1": {"__class__": "Get", "v": {"__class__": "Eval", "v": "self", "d": {}}, "k":"state", "d": ""},
+"s2": "acceptance_authority"}     
+</field> 
+            <field name="action_function">trigger</field>
+            <field name="on_write">True</field>
+            <field name="action_model" search="[('model', '=', 'notification.email')]"/>
+            <field name="limit_number">1</field>
+            <field name="notification_email" ref="mail_notification_accept_form"/>
+        </record>
+
+        <!-- Notification To View Completed APAR For Signing -->
+        <record model="ir.action.report" id="report_notification_completed_signing">
+            <field name="name">Mail - Notification To View Completed APAR For Signing</field>
+            <field name="model">apar.employee.form</field>
+            <field name="report_name">Notification To View Completed APAR For Signing</field>
+            <field name="report">apar/email/Notification_to_view_completed_APAR_for_signing.html</field>
+            <field name="template_extension">html</field>
+        </record>
+        <record id="mail_notification_completed_signing" model="notification.email">
+            <field name="content" ref="report_notification_completed_signing"/>
+            <field name="recipients" search="[('name', '=', 'employee'), ('model', '=', 'apar.employee.form')]"/>
+        </record>
+        <record id="trigger_notification_completed_signing" model="ir.trigger">
+            <field name="name">Trigger - Notification To View Completed APAR For Signing</field>
+            <field name="model" search="[('model', '=', 'apar.employee.form')]"/>
+            <field name="condition">
+{"__class__": "Equal",
+"s1": {"__class__": "Get", "v": {"__class__": "Eval", "v": "self", "d": {}}, "k":"state", "d": ""},
+"s2": "disclose"}     
+</field>
+            <field name="action_function">trigger</field>
+            <field name="on_write">True</field>
+            <field name="action_model" search="[('model', '=', 'notification.email')]"/>
+            <field name="limit_number">1</field>
+            <field name="notification_email" ref="mail_notification_completed_signing"/>
+        </record>
+        
+        <!-- Confirmation Of Signed APAR -->
+        <record model="ir.action.report" id="report_confirmation_signed_apar">
+            <field name="name">Mail - Confirmation Of Signed APAR</field>
+            <field name="model">apar.employee.form</field>
+            <field name="report_name">Confirmation Of Signed APAR</field>
+            <field name="report">apar/email/Confirmation_of_Signed_APAR.html</field>
+            <field name="template_extension">html</field>
+        </record>
+        <record id="mail_confirmation_signed_apar" model="notification.email">
+            <field name="content" ref="report_confirmation_signed_apar"/>
+            <field name="recipients" search="[('name', '=', 'employee'), ('model', '=', 'apar.employee.form')]"/>
+        </record>
+        <record id="trigger_confirmation_signed_apar" model="ir.trigger">
+            <field name="name">Trigger - Confirmation Of Signed APAR</field>
+            <field name="model" search="[('model', '=', 'apar.employee.form')]"/>
+            <field name="condition">
+{"__class__": "Equal",
+"s1": {"__class__": "Get", "v": {"__class__": "Eval", "v": "self", "d": {}}, "k":"state", "d": ""},
+"s2": "signed"}     
+</field>
+            <field name="action_function">trigger</field>
+            <field name="on_write">True</field>
+            <field name="action_model" search="[('model', '=', 'notification.email')]"/>
+            <field name="limit_number">1</field>
+            <field name="notification_email" ref="mail_confirmation_signed_apar"/>
+        </record>
+
+        <!-- Confirmation Email Of Filing Representation -->
+        <record model="ir.action.report" id="report_confirmation_email_filing">
+            <field name="name">Mail - Confirmation Email Of Filing Representation</field>
+            <field name="model">apar.representation</field>
+            <field name="report_name">Confirmation Email Of Filing Representation</field>
+            <field name="report">apar/email/Confirmation_Email_of_filing_representation.html</field>
+            <field name="template_extension">html</field>
+        </record>
+        <record id="mail_confirmation_email_filing" model="notification.email">
+            <field name="content" ref="report_confirmation_email_filing"/>
+            <field name="recipients" search="[('name', '=', 'raised_by'), ('model', '=', 'apar.representation')]"/>
+        </record>
+        <record id="trigger_confirmation_email_filing" model="ir.trigger">
+            <field name="name">Trigger - Confirmation Email Of Filing Representation</field>
+            <field name="model" search="[('model', '=', 'apar.representation')]"/>
+            <field name="condition">
+{"__class__": "Equal",
+"s1": {"__class__": "Get", "v": {"__class__": "Eval", "v": "self", "d": {}}, "k":"state", "d": ""},
+"s2": "submitted_by_employee"}     
+</field>
+            <field name="action_function">trigger</field>
+            <field name="on_write">True</field>
+            <field name="action_model" search="[('model', '=', 'notification.email')]"/>
+            <field name="limit_number">1</field>
+            <field name="notification_email" ref="mail_confirmation_email_filing"/>
+        </record>
+
+        <!-- Closing of representation -->
+        <record model="ir.action.report" id="report_closing_representation">
+            <field name="name">Mail - Closing of representation</field>
+            <field name="model">apar.employee.form</field>
+            <field name="report_name">Closing Of Representation</field>
+            <field name="report">apar/email/Closing_of_Representation.html</field>
+            <field name="template_extension">html</field>
+        </record>
+        <record id="mail_closing_representation" model="notification.email">
+            <field name="content" ref="report_closing_representation"/>
+            <field name="recipients" search="[('name', '=', 'employee'), ('model', '=', 'apar.employee.form')]"/>
+        </record>
+        <record id="trigger_closing_representation" model="ir.trigger">
+            <field name="name">Trigger - closing of representation</field>
+            <field name="model" search="[('model', '=', 'apar.representation')]"/>
+            <field name="condition">
+{"__class__": "Equal",
+"s1": {"__class__": "Get", "v": {"__class__": "Eval", "v": "self", "d": {}}, "k":"state", "d": ""},
+"s2": "closed"}     
+</field>    
+            <field name="action_function">trigger</field>
+            <field name="on_write">True</field>
+            <field name="action_model" search="[('model', '=', 'notification.email')]"/>
+            <field name="limit_number">1</field>
+            <field name="notification_email" ref="mail_closing_representation"/>
+        </record>
+
+    </data>
+</tryton>

@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+
+<tryton>
+    <data>
+         <record id="hr_rule_honorarium" model="salary.rule">
+            <field name="name">Honorarium</field>
+            <field name="priority" eval="51002"/>
+            <field name="code">HONR</field>
+            <field name="category" ref="payroll.salaryrule_alw"/>
+            <field name="condition_select">always_true</field>
+            <field name="amount_select">code</field>
+        </record>
+    </data>
+</tryton>

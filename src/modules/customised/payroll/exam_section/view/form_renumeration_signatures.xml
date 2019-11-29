@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<form>
+    <label name="signed_by_user"/>
+    <field name="signed_by_user"/>
+    <label name="signed_by_employee"/>
+    <field name="signed_by_employee"/>
+    <label name="signed_on"/>
+    <field name="signed_on"/>
+    <label name="note"/>
+    <field name="note"/>
+    <label name="designation"/>
+    <field name="designation"/>
+    <label name="place"/>
+    <field name="place"/>
+</form>

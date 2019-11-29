@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<tryton>
+    <data>
+        <record id="salaryrule_basic" model="salaryrule.category">
+            <field name="name">Basic</field>
+            <field name="code">BASIC</field>
+        </record>
+        <record id="salaryrule_alw" model="salaryrule.category">
+            <field name="name">Allowance</field>
+            <field name="code">ALW</field>
+        </record>
+        <record id="salaryrule_gross" model="salaryrule.category">
+            <field name="name">Gross</field>
+            <field name="code">GROSS</field>
+        </record>
+        <record id="salaryrule_ded" model="salaryrule.category">
+            <field name="name">Deduction</field>
+            <field name="code">DED</field>
+        </record>
+        <record id="salaryrule_net" model="salaryrule.category">
+            <field name="name">Net</field>
+            <field name="code">NET</field>
+        </record>
+    </data>
+</tryton>

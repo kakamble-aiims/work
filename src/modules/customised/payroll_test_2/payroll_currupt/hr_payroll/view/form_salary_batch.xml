@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<form>
+	<group id="salary_batch" colspan="4" col="4">
+	    <label name="name"/>
+		<field name="name"/>
+		<button name="generate_payslip_batch_ytd" string="Generate Payslip Batch YTD" confirm="Are you sure you want to generate Payslips for this Batch?"/>
+	    <button name="generate_payslip_batch" string="Generate Payslip Batch" confirm="Are you sure you want to generate Payslip for this Batch?"/>
+	    <button name="batch_excel_workbook" string="Create Batch Report"/>
+	    <field name="employee" colspan="4"/>
+    </group>
+</form>

@@ -1,0 +1,1567 @@
+<?xml version="1.0"?>
+<tryton>
+    <data noupdate="1">
+        <record id="payment_basis_daily" model="exam_section.exam_type.payment_basis">
+            <field name="name">Daily</field>
+        </record>
+
+        <record id="payment_basis_hourly" model="exam_section.exam_type.payment_basis">
+            <field name="name">Hourly</field>
+        </record>
+
+        <record id="payment_basis_per_session" model="exam_section.exam_type.payment_basis">
+            <field name="name">Per Session</field>
+        </record>
+
+        <record id="payment_basis_per_copy" model="exam_section.exam_type.payment_basis">
+            <field name="name">Per Copy</field>
+        </record>
+
+        <record id="payment_basis_per_exam" model="exam_section.exam_type.payment_basis">
+            <field name="name">Per Exam</field>
+        </record>
+        
+        <record id="evaluation_of_thesis_phd" model="exam_section.exam_type.renumeration">
+            <field name="name">Evaluation of thesis</field>
+            <field name="code"></field>
+            <field name="type_pay">fix</field>
+            <field name="type_amount_fix" eval="3000"/>
+            <!--<field name="condition_pay">code</field>-->
+            <!--<<field name="employee_group"></field>-->
+            <field name="max_range" eval="0"/>
+            <field name="min_range" eval="0"/>
+            <field name="is_external" eval="False"/>
+            <field name="payment_basis" ref="payment_basis_per_copy"/>
+            <field name="exam_type" ref="exam_type_phd"/>
+        </record>
+        <record id="evaluation_of_thesis_phd_ext" model="exam_section.exam_type.renumeration">
+            <field name="name">Evaluation of thesis(External)</field>
+            <field name="code"></field>
+            <field name="type_pay">fix</field>
+            <field name="type_amount_fix" eval="3000"/>
+            <!--<field name="condition_pay">code</field>-->
+            <!--<<field name="employee_group"></field>-->
+            <field name="max_range" eval="0"/>
+            <field name="min_range" eval="0"/>
+            <field name="is_external" eval="True"/>
+            <field name="payment_basis" ref="payment_basis_per_copy"/>
+            <field name="exam_type" ref="exam_type_phd"/>
+        </record>
+        <record id="practical_viva_voce_examination_phd" model="exam_section.exam_type.renumeration">
+            <field name="name">For Oral/Practical/Viva Voce Examination</field>
+            <field name="code"></field>
+            <field name="type_pay">fix</field>
+            <field name="type_amount_fix" eval="750"/>
+            <!--<field name="condition_pay">code</field>-->
+            <!--<<field name="employee_group"></field>-->
+            <field name="max_range" eval="0"/>
+            <field name="min_range" eval="0"/>
+            <field name="is_external" eval="False"/>
+            <field name="payment_basis" ref="payment_basis_per_session"/>
+            <field name="exam_type" ref="exam_type_phd"/>
+        </record>
+        <record id="practical_viva_voce_examination_phd_ext" model="exam_section.exam_type.renumeration">
+            <field name="name">For Oral/Practical/Viva Voce Examination(External)</field>
+            <field name="code"></field>
+            <field name="type_pay">fix</field>
+            <field name="type_amount_fix" eval="1500"/>
+            <!--<field name="condition_pay">code</field>-->
+            <!--<<field name="employee_group"></field>-->
+            <field name="max_range" eval="0"/>
+            <field name="min_range" eval="0"/>
+            <field name="is_external" eval="True"/>
+            <field name="payment_basis" ref="payment_basis_per_session"/>
+            <field name="exam_type" ref="exam_type_phd"/>
+        </record>
+        <record id="evaluation_of_thesis_pg" model="exam_section.exam_type.renumeration">
+            <field name="name">Evaluation of thesis</field>
+            <field name="code"></field>
+            <field name="type_pay">fix</field>
+            <field name="type_amount_fix" eval="1500"/>
+            <!--<field name="condition_pay">code</field>-->
+            <!--<<field name="employee_group"></field>-->
+            <field name="max_range" eval="0"/>
+            <field name="min_range" eval="0"/>
+            <field name="is_external" eval="True"/>
+            <field name="payment_basis" ref="payment_basis_per_copy"/>
+            <field name="exam_type" ref="exam_type_pg_1"/>
+        </record>
+        <record id="practical_viva_voce_examination_pg" model="exam_section.exam_type.renumeration">
+            <field name="name">For Clinical/Practical/Viva Voce Examination</field>
+            <field name="code"></field>
+            <field name="type_pay">fix</field>
+            <field name="type_amount_fix" eval="1500"/>
+            <!--<field name="condition_pay">code</field>-->
+            <!--<<field name="employee_group"></field>-->
+            <field name="max_range" eval="6000"/>
+            <field name="min_range" eval="3000"/>
+            <field name="is_external" eval="False"/>
+            <field name="payment_basis" ref="payment_basis_per_copy"/>
+            <field name="exam_type" ref="exam_type_pg_2"/>
+        </record>
+        <record id="professional_theory_grp_a" model="exam_section.exam_type.renumeration">
+            <field name="name">Chief Supervisor(Senior Faculty)/Supervisor(Faculty) - Group A</field>
+            <field name="code"></field>
+            <field name="type_pay">fix</field>
+            <field name="type_amount_fix" eval="750"/>
+            <field name="condition_pay">group</field>
+            <field name="employee_group">A</field>
+            <field name="max_range" eval="0"/>
+            <field name="min_range" eval="0"/>
+            <field name="is_external" eval="False"/>
+            <field name="payment_basis" ref="payment_basis_per_session"/>
+            <field name="exam_type" ref="exam_type_professional_theory"/>
+        </record>
+        <record id="professional_theory_grp_b" model="exam_section.exam_type.renumeration">
+            <field name="name">Group B - Officer</field>
+            <field name="code"></field>
+            <field name="type_pay">fix</field>
+            <field name="type_amount_fix" eval="600"/>
+            <field name="condition_pay">group</field>
+            <field name="employee_group">B</field>
+            <field name="max_range" eval="0"/>
+            <field name="min_range" eval="0"/>
+            <field name="is_external" eval="False"/>
+            <field name="payment_basis" ref="payment_basis_per_session"/>
+            <field name="exam_type" ref="exam_type_professional_theory"/>
+        </record>
+        <record id="professional_theory_grp_c" model="exam_section.exam_type.renumeration">
+            <field name="name">Group C - Staff/Invigilator</field>
+            <field name="code"></field>
+            <field name="type_pay">fix</field>
+            <field name="type_amount_fix" eval="450"/>
+            <field name="condition_pay">group</field>
+            <field name="employee_group">C</field>
+            <field name="max_range" eval="0"/>
+            <field name="min_range" eval="0"/>
+            <field name="is_external" eval="False"/>
+            <field name="payment_basis" ref="payment_basis_per_session"/>
+            <field name="exam_type" ref="exam_type_professional_theory"/>
+        </record>
+        <record id="professional_theory_grp_d" model="exam_section.exam_type.renumeration">
+            <field name="name">Group D - Staff</field>
+            <field name="code"></field>
+            <field name="type_pay">fix</field>
+            <field name="type_amount_fix" eval="250"/>
+            <field name="condition_pay">group</field>
+            <field name="employee_group">D</field>
+            <field name="max_range" eval="0"/>
+            <field name="min_range" eval="0"/>
+            <field name="is_external" eval="False"/>
+            <field name="payment_basis" ref="payment_basis_per_session"/>
+            <field name="exam_type" ref="exam_type_professional_theory"/>
+        </record>
+        <record id="undergraduate_setting_question_paper" model="exam_section.exam_type.renumeration">
+            <field name="name">Setting of Question Paper</field>
+            <field name="code"></field>
+            <field name="type_pay">fix</field>
+            <field name="type_amount_fix" eval="750"/>
+            <!--<field name="condition_pay">code</field>-->
+            <!--<<field name="employee_group"></field>-->
+            <field name="max_range" eval="0"/>
+            <field name="min_range" eval="0"/>
+            <field name="is_external" eval="False"/>
+            <field name="payment_basis" ref="payment_basis_per_session"/>
+            <field name="exam_type" ref="exam_type_ug"/>
+        </record>
+        <record id="undergraduate_setting_question_paper_external" model="exam_section.exam_type.renumeration">
+            <field name="name">Setting of Question Paper(External)</field>
+            <field name="code"></field>
+            <field name="type_pay">fix</field>
+            <field name="type_amount_fix" eval="750"/>
+            <!--<field name="condition_pay">code</field>-->
+            <!--<<field name="employee_group"></field>-->
+            <field name="max_range" eval="0"/>
+            <field name="min_range" eval="0"/>
+            <field name="is_external" eval="True"/>
+            <field name="payment_basis" ref="payment_basis_per_session"/>
+            <field name="exam_type" ref="exam_type_ug"/>
+        </record>
+        <record id="undergraduate_evaluation_answer_sheet" model="exam_section.exam_type.renumeration">
+            <field name="name">Evaluation of answer sheets and conduct of Practical/Clinical/Viva Voce Exam</field>
+            <field name="code"></field>
+            <field name="type_pay">fix</field>
+            <field name="type_amount_fix" eval="75"/>
+            <!--<field name="condition_pay">code</field>-->
+            <!--<<field name="employee_group"></field>-->
+            <field name="max_range" eval="0"/>
+            <field name="min_range" eval="750"/>
+            <field name="is_external" eval="False"/>
+            <field name="payment_basis" ref="payment_basis_per_copy"/>
+            <field name="exam_type" ref="exam_type_ug"/>
+        </record>
+        <record id="undergraduate_evaluation_answer_sheet_external" model="exam_section.exam_type.renumeration">
+            <field name="name">Evaluation of answer sheets and conduct of Practical/Clinical/Viva Voce Exam(External)</field>
+            <field name="code"></field>
+            <field name="type_pay">fix</field>
+            <field name="type_amount_fix" eval="75"/>
+            <!--<field name="condition_pay">code</field>-->
+            <!--<<field name="employee_group"></field>-->
+            <field name="max_range" eval="0"/>
+            <field name="min_range" eval="750"/>
+            <field name="is_external" eval="True"/>
+            <field name="payment_basis" ref="payment_basis_per_copy"/>
+            <field name="exam_type" ref="exam_type_ug"/>
+        </record>
+        <record id="supritendent_exam_phd" model="exam_section.exam_type.renumeration">
+            <field name="name">
+                Centre Supritendent, i.e., Principal/Headmaster/Headmistress/his/
+                her nominee who is responsible for the overall
+                smooth conduct of the examination and for signing the documents
+            </field>
+            <field name="code"></field>
+            <field name="type_pay">fix</field>
+            <field name="type_amount_fix" eval="2250"/>
+            <!--<field name="condition_pay">code</field>-->
+            <!--<<field name="employee_group"></field>-->
+            <field name="max_range" eval="0"/>
+            <field name="min_range" eval="0"/>
+            <field name="is_external" eval="True"/>
+            <field name="payment_basis" ref="payment_basis_daily"/>
+            <field name="exam_type" ref="exam_type_phd"/>
+        </record>
+        <record id="supritendent_exam_pg_1" model="exam_section.exam_type.renumeration">
+            <field name="name">
+                Centre Supritendent, i.e., Principal/Headmaster/Headmistress/his/
+                her nominee who is responsible for the overall
+                smooth conduct of the examination and for signing the documents
+            </field>
+            <field name="code"></field>
+            <field name="type_pay">fix</field>
+            <field name="type_amount_fix" eval="2250"/>
+            <!--<field name="condition_pay">code</field>-->
+            <!--<<field name="employee_group"></field>-->
+            <field name="max_range" eval="0"/>
+            <field name="min_range" eval="0"/>
+            <field name="is_external" eval="True"/>
+            <field name="payment_basis" ref="payment_basis_daily"/>
+            <field name="exam_type" ref="exam_type_pg_1"/>
+        </record>
+        <record id="supritendent_exam_pg_2" model="exam_section.exam_type.renumeration">
+            <field name="name">
+                Centre Supritendent, i.e., Principal/Headmaster/Headmistress/his/
+                her nominee who is responsible for the overall
+                smooth conduct of the examination and for signing the documents
+            </field>
+            <field name="code"></field>
+            <field name="type_pay">fix</field>
+            <field name="type_amount_fix" eval="2250"/>
+            <!--<field name="condition_pay">code</field>-->
+            <!--<<field name="employee_group"></field>-->
+            <field name="max_range" eval="0"/>
+            <field name="min_range" eval="0"/>
+            <field name="is_external" eval="True"/>
+            <field name="payment_basis" ref="payment_basis_daily"/>
+            <field name="exam_type" ref="exam_type_pg_2"/>
+        </record>
+        <record id="supritendent_exam_ug" model="exam_section.exam_type.renumeration">
+            <field name="name">
+                Centre Supritendent, i.e., Principal/Headmaster/Headmistress/his/
+                her nominee who is responsible for the overall
+                smooth conduct of the examination and for signing the documents
+            </field>
+            <field name="code"></field>
+            <field name="type_pay">fix</field>
+            <field name="type_amount_fix" eval="2250"/>
+            <!--<field name="condition_pay">code</field>-->
+            <!--<<field name="employee_group"></field>-->
+            <field name="max_range" eval="0"/>
+            <field name="min_range" eval="0"/>
+            <field name="is_external" eval="True"/>
+            <field name="payment_basis" ref="payment_basis_daily"/>
+            <field name="exam_type" ref="exam_type_ug"/>
+        </record>
+        <record id="supritendent_exam_professional_theory" model="exam_section.exam_type.renumeration">
+            <field name="name">
+                Centre Supritendent, i.e., Principal/Headmaster/Headmistress/his/
+                her nominee who is responsible for the overall
+                smooth conduct of the examination and for signing the documents
+            </field>
+            <field name="code"></field>
+            <field name="type_pay">fix</field>
+            <field name="type_amount_fix" eval="2250"/>
+            <!--<field name="condition_pay">code</field>-->
+            <!--<<field name="employee_group"></field>-->
+            <field name="max_range" eval="0"/>
+            <field name="min_range" eval="0"/>
+            <field name="is_external" eval="True"/>
+            <field name="payment_basis" ref="payment_basis_daily"/>
+            <field name="exam_type" ref="exam_type_professional_theory"/>
+        </record>
+        <record id="supritendent_exam_professional_practical" model="exam_section.exam_type.renumeration">
+            <field name="name">
+                Centre Supritendent, i.e., Principal/Headmaster/Headmistress/his/
+                her nominee who is responsible for the overall
+                smooth conduct of the examination and for signing the documents
+            </field>
+            <field name="code"></field>
+            <field name="type_pay">fix</field>
+            <field name="type_amount_fix" eval="2250"/>
+            <!--<field name="condition_pay">code</field>-->
+            <!--<<field name="employee_group"></field>-->
+            <field name="max_range" eval="0"/>
+            <field name="min_range" eval="0"/>
+            <field name="is_external" eval="True"/>
+            <field name="payment_basis" ref="payment_basis_daily"/>
+            <field name="exam_type" ref="exam_type_professional_practical"/>
+        </record>
+        <record id="assistant_supritendent_exam_phd" model="exam_section.exam_type.renumeration">
+            <field name="name">
+                Assistant Supritendent or the
+                immediate Assistant to the Centre Supritendent
+                (ONE for every 500 candidates)
+            </field>
+            <field name="code"></field>
+            <field name="type_pay">fix</field>
+            <field name="type_amount_fix" eval="1500"/>
+            <!--<field name="condition_pay">code</field>-->
+            <!--<<field name="employee_group"></field>-->
+            <field name="max_range" eval="0"/>
+            <field name="min_range" eval="0"/>
+            <field name="is_external" eval="True"/>
+            <field name="payment_basis" ref="payment_basis_daily"/>
+            <field name="exam_type" ref="exam_type_phd"/>
+        </record>
+        <record id="assistant_supritendent_exam_pg_1" model="exam_section.exam_type.renumeration">
+            <field name="name">
+                Assistant Supritendent or the
+                immediate Assistant to the Centre Supritendent
+                (ONE for every 500 candidates)
+            </field>
+            <field name="code"></field>
+            <field name="type_pay">fix</field>
+            <field name="type_amount_fix" eval="1500"/>
+            <!--<field name="condition_pay">code</field>-->
+            <!--<<field name="employee_group"></field>-->
+            <field name="max_range" eval="0"/>
+            <field name="min_range" eval="0"/>
+            <field name="is_external" eval="True"/>
+            <field name="payment_basis" ref="payment_basis_daily"/>
+            <field name="exam_type" ref="exam_type_pg_1"/>
+        </record>
+        <record id="assistant_supritendent_exam_pg_2" model="exam_section.exam_type.renumeration">
+            <field name="name">
+                Assistant Supritendent or the
+                immediate Assistant to the Centre Supritendent
+                (ONE for every 500 candidates)
+            </field>
+            <field name="code"></field>
+            <field name="type_pay">fix</field>
+            <field name="type_amount_fix" eval="1500"/>
+            <!--<field name="condition_pay">code</field>-->
+            <!--<<field name="employee_group"></field>-->
+            <field name="max_range" eval="0"/>
+            <field name="min_range" eval="0"/>
+            <field name="is_external" eval="True"/>
+            <field name="payment_basis" ref="payment_basis_daily"/>
+            <field name="exam_type" ref="exam_type_pg_2"/>
+        </record>
+        <record id="assistant_supritendent_exam_professional_theory" model="exam_section.exam_type.renumeration">
+            <field name="name">
+                Assistant Supritendent or the
+                immediate Assistant to the Centre Supritendent
+                (ONE for every 500 candidates)
+            </field>
+            <field name="code"></field>
+            <field name="type_pay">fix</field>
+            <field name="type_amount_fix" eval="1500"/>
+            <!--<field name="condition_pay">code</field>-->
+            <!--<<field name="employee_group"></field>-->
+            <field name="max_range" eval="0"/>
+            <field name="min_range" eval="0"/>
+            <field name="is_external" eval="True"/>
+            <field name="payment_basis" ref="payment_basis_daily"/>
+            <field name="exam_type" ref="exam_type_professional_theory"/>
+        </record>
+        <record id="assistant_supritendent_exam_professional_practical" model="exam_section.exam_type.renumeration">
+            <field name="name">
+                Assistant Supritendent or the
+                immediate Assistant to the Centre Supritendent
+                (ONE for every 500 candidates)
+            </field>
+            <field name="code"></field>
+            <field name="type_pay">fix</field>
+            <field name="type_amount_fix" eval="1500"/>
+            <!--<field name="condition_pay">code</field>-->
+            <!--<<field name="employee_group"></field>-->
+            <field name="max_range" eval="0"/>
+            <field name="min_range" eval="0"/>
+            <field name="is_external" eval="True"/>
+            <field name="payment_basis" ref="payment_basis_daily"/>
+            <field name="exam_type" ref="exam_type_professional_practical"/>
+        </record>
+        <record id="assistant_supritendent_exam_ug" model="exam_section.exam_type.renumeration">
+            <field name="name">
+                Assistant Supritendent or the
+                immediate Assistant to the Centre Supritendent
+                (ONE for every 500 candidates)
+            </field>
+            <field name="code"></field>
+            <field name="type_pay">fix</field>
+            <field name="type_amount_fix" eval="1500"/>
+            <!--<field name="condition_pay">code</field>-->
+            <!--<<field name="employee_group"></field>-->
+            <field name="max_range" eval="0"/>
+            <field name="min_range" eval="0"/>
+            <field name="is_external" eval="True"/>
+            <field name="payment_basis" ref="payment_basis_daily"/>
+            <field name="exam_type" ref="exam_type_ug"/>
+        </record>
+        <record id="administrative_staff_phd" model="exam_section.exam_type.renumeration">
+            <field name="name">
+                Administrative Staff(who assist the Supritendent/Assistant Supritendent
+                in all matters related to the examination)
+                (ONE for every 1000 candidates)
+            </field>
+            <field name="code"></field>
+            <field name="type_pay">fix</field>
+            <field name="type_amount_fix" eval="900"/>
+            <!--<field name="condition_pay">code</field>-->
+            <!--<<field name="employee_group"></field>-->
+            <field name="max_range" eval="0"/>
+            <field name="min_range" eval="0"/>
+            <field name="is_external" eval="True"/>
+            <field name="payment_basis" ref="payment_basis_daily"/>
+            <field name="exam_type" ref="exam_type_phd"/>
+        </record>
+        <record id="administrative_staff_pg_1" model="exam_section.exam_type.renumeration">
+            <field name="name">
+                Administrative Staff(who assist the Supritendent/Assistant Supritendent
+                in all matters related to the examination)
+                (ONE for every 1000 candidates)
+            </field>
+            <field name="code"></field>
+            <field name="type_pay">fix</field>
+            <field name="type_amount_fix" eval="900"/>
+            <!--<field name="condition_pay">code</field>-->
+            <!--<<field name="employee_group"></field>-->
+            <field name="max_range" eval="0"/>
+            <field name="min_range" eval="0"/>
+            <field name="is_external" eval="True"/>
+            <field name="payment_basis" ref="payment_basis_daily"/>
+            <field name="exam_type" ref="exam_type_pg_1"/>
+        </record>
+        <record id="administrative_staff_pg_2" model="exam_section.exam_type.renumeration">
+            <field name="name">
+                Administrative Staff(who assist the Supritendent/Assistant Supritendent
+                in all matters related to the examination)
+                (ONE for every 1000 candidates)
+            </field>
+            <field name="code"></field>
+            <field name="type_pay">fix</field>
+            <field name="type_amount_fix" eval="900"/>
+            <!--<field name="condition_pay">code</field>-->
+            <!--<<field name="employee_group"></field>-->
+            <field name="max_range" eval="0"/>
+            <field name="min_range" eval="0"/>
+            <field name="is_external" eval="True"/>
+            <field name="payment_basis" ref="payment_basis_daily"/>
+            <field name="exam_type" ref="exam_type_pg_2"/>
+        </record>
+        <record id="administrative_staff_ug" model="exam_section.exam_type.renumeration">
+            <field name="name">
+                Administrative Staff(who assist the Supritendent/Assistant Supritendent
+                in all matters related to the examination)
+                (ONE for every 1000 candidates)
+            </field>
+            <field name="code"></field>
+            <field name="type_pay">fix</field>
+            <field name="type_amount_fix" eval="900"/>
+            <!--<field name="condition_pay">code</field>-->
+            <!--<<field name="employee_group"></field>-->
+            <field name="max_range" eval="0"/>
+            <field name="min_range" eval="0"/>
+            <field name="is_external" eval="True"/>
+            <field name="payment_basis" ref="payment_basis_daily"/>
+            <field name="exam_type" ref="exam_type_ug"/>
+        </record>
+        <record id="administrative_staff_professional_theory" model="exam_section.exam_type.renumeration">
+            <field name="name">
+                Administrative Staff(who assist the Supritendent/Assistant Supritendent
+                in all matters related to the examination)
+                (ONE for every 1000 candidates)
+            </field>
+            <field name="code"></field>
+            <field name="type_pay">fix</field>
+            <field name="type_amount_fix" eval="900"/>
+            <!--<field name="condition_pay">code</field>-->
+            <!--<<field name="employee_group"></field>-->
+            <field name="max_range" eval="0"/>
+            <field name="min_range" eval="0"/>
+            <field name="is_external" eval="True"/>
+            <field name="payment_basis" ref="payment_basis_daily"/>
+            <field name="exam_type" ref="exam_type_professional_theory"/>
+        </record>
+        <record id="administrative_staff_professional_practical" model="exam_section.exam_type.renumeration">
+            <field name="name">
+                Administrative Staff(who assist the Supritendent/Assistant Supritendent
+                in all matters related to the examination)
+                (ONE for every 1000 candidates)
+            </field>
+            <field name="code"></field>
+            <field name="type_pay">fix</field>
+            <field name="type_amount_fix" eval="900"/>
+            <!--<field name="condition_pay">code</field>-->
+            <!--<<field name="employee_group"></field>-->
+            <field name="max_range" eval="0"/>
+            <field name="min_range" eval="0"/>
+            <field name="payment_basis" ref="payment_basis_daily"/>
+            <field name="is_external" eval="True"/>
+            <field name="exam_type" ref="exam_type_professional_practical"/>
+        </record>
+        <record id="invigilators_phd" model="exam_section.exam_type.renumeration">
+            <field name="name">
+                Invigilators (should be teachers by profession)
+                    i. Two invigilators per room where 20-25
+                       candidates are seated
+                    ii. Three inivgilators for a room/hall
+                        where more than 25 and up to 50
+                        candidates are seated
+                    iii. Four invigilators for a room/hall where
+                         more than 50 and up to 100 candidates
+                         are seated
+                    iv. For every 50 additional candidates or part
+                        there of 1 invigilator extra
+            </field>
+            <field name="code"></field>
+            <field name="type_pay">fix</field>
+            <field name="type_amount_fix" eval="900"/>
+            <!--<field name="condition_pay">code</field>-->
+            <!--<<field name="employee_group"></field>-->
+            <field name="max_range" eval="0"/>
+            <field name="min_range" eval="0"/>
+            <field name="is_external" eval="True"/>
+            <field name="payment_basis" ref="payment_basis_per_session"/>
+            <field name="exam_type" ref="exam_type_phd"/>
+        </record>
+        <record id="invigilators_pg_1" model="exam_section.exam_type.renumeration">
+            <field name="name">
+                Invigilators (should be teachers by profession)
+                    i. Two invigilators per room where 20-25
+                       candidates are seated
+                    ii. Three inivgilators for a room/hall
+                        where more than 25 and up to 50
+                        candidates are seated
+                    iii. Four invigilators for a room/hall where
+                         more than 50 and up to 100 candidates
+                         are seated
+                    iv. For every 50 additional candidates or part
+                        there of 1 invigilator extra
+            </field>
+            <field name="code"></field>
+            <field name="type_pay">fix</field>
+            <field name="type_amount_fix" eval="900"/>
+            <!--<field name="condition_pay">code</field>-->
+            <!--<<field name="employee_group"></field>-->
+            <field name="max_range" eval="0"/>
+            <field name="min_range" eval="0"/>
+            <field name="is_external" eval="True"/>
+            <field name="payment_basis" ref="payment_basis_per_session"/>
+            <field name="exam_type" ref="exam_type_pg_1"/>
+        </record>
+        <record id="invigilators_pg_2" model="exam_section.exam_type.renumeration">
+            <field name="name">
+                Invigilators (should be teachers by profession)
+                    i. Two invigilators per room where 20-25
+                       candidates are seated
+                    ii. Three inivgilators for a room/hall
+                        where more than 25 and up to 50
+                        candidates are seated
+                    iii. Four invigilators for a room/hall where
+                         more than 50 and up to 100 candidates
+                         are seated
+                    iv. For every 50 additional candidates or part
+                        there of 1 invigilator extra
+            </field>
+            <field name="code"></field>
+            <field name="type_pay">fix</field>
+            <field name="type_amount_fix" eval="900"/>
+            <!--<field name="condition_pay">code</field>-->
+            <!--<<field name="employee_group"></field>-->
+            <field name="max_range" eval="0"/>
+            <field name="min_range" eval="0"/>
+            <field name="is_external" eval="True"/>
+            <field name="payment_basis" ref="payment_basis_per_session"/>
+            <field name="exam_type" ref="exam_type_pg_2"/>
+        </record>
+        <record id="invigilators_professional_theory" model="exam_section.exam_type.renumeration">
+            <field name="name">
+                Invigilators (should be teachers by profession)
+                    i. Two invigilators per room where 20-25
+                       candidates are seated
+                    ii. Three inivgilators for a room/hall
+                        where more than 25 and up to 50
+                        candidates are seated
+                    iii. Four invigilators for a room/hall where
+                         more than 50 and up to 100 candidates
+                         are seated
+                    iv. For every 50 additional candidates or part
+                        there of 1 invigilator extra
+            </field>
+            <field name="code"></field>
+            <field name="type_pay">fix</field>
+            <field name="type_amount_fix" eval="900"/>
+            <!--<field name="condition_pay">code</field>-->
+            <!--<<field name="employee_group"></field>-->
+            <field name="max_range" eval="0"/>
+            <field name="min_range" eval="0"/>
+            <field name="is_external" eval="True"/>
+            <field name="payment_basis" ref="payment_basis_per_session"/>
+            <field name="exam_type" ref="exam_type_professional_theory"/>
+        </record>
+        <record id="invigilators_professional_practical" model="exam_section.exam_type.renumeration">
+            <field name="name">
+                Invigilators (should be teachers by profession)
+                    i. Two invigilators per room where 20-25
+                       candidates are seated
+                    ii. Three inivgilators for a room/hall
+                        where more than 25 and up to 50
+                        candidates are seated
+                    iii. Four invigilators for a room/hall where
+                         more than 50 and up to 100 candidates
+                         are seated
+                    iv. For every 50 additional candidates or part
+                        there of 1 invigilator extra
+            </field>
+            <field name="code"></field>
+            <field name="type_pay">fix</field>
+            <field name="type_amount_fix" eval="900"/>
+            <!--<field name="condition_pay">code</field>-->
+            <!--<<field name="employee_group"></field>-->
+            <field name="max_range" eval="0"/>
+            <field name="min_range" eval="0"/>
+            <field name="is_external" eval="True"/>
+            <field name="payment_basis" ref="payment_basis_per_session"/>
+            <field name="exam_type" ref="exam_type_professional_practical"/>
+        </record>
+        <record id="invigilators_ug" model="exam_section.exam_type.renumeration">
+            <field name="name">
+                Invigilators (should be teachers by profession)
+                    i. Two invigilators per room where 20-25
+                       candidates are seated
+                    ii. Three inivgilators for a room/hall
+                        where more than 25 and up to 50
+                        candidates are seated
+                    iii. Four invigilators for a room/hall where
+                         more than 50 and up to 100 candidates
+                         are seated
+                    iv. For every 50 additional candidates or part
+                        there of 1 invigilator extra
+            </field>
+            <field name="code"></field>
+            <field name="type_pay">fix</field>
+            <field name="type_amount_fix" eval="900"/>
+            <!--<field name="condition_pay">code</field>-->
+            <!--<<field name="employee_group"></field>-->
+            <field name="max_range" eval="0"/>
+            <field name="min_range" eval="0"/>
+            <field name="is_external" eval="True"/>
+            <field name="payment_basis" ref="payment_basis_per_session"/>
+            <field name="exam_type" ref="exam_type_ug"/>
+        </record>
+        <record id="class_4_employee_exam_phd" model="exam_section.exam_type.renumeration">
+            <field name="name">
+                Class IV employees: Electrician, Sweeper, Watchman,
+                Water boy, and Peon as per details:
+                    1. Electrician: ONE on the day of examination
+                    2. Sweeper: ONE for 200 candidates for two days
+                    3. Watchman: TWO for one day i.e. the day of the
+                                 examination
+                    4. Water Boy: One for 200 candidates for one day i.e.
+                                  on the day of the examination
+                    5. Peon: Two for an examination irrespective of number
+                             of candidates for two days               
+            </field>
+            <field name="code"></field>
+            <field name="type_pay">fix</field>
+            <field name="type_amount_fix" eval="450"/>
+            <!--<field name="condition_pay">code</field>-->
+            <!--<<field name="employee_group"></field>-->
+            <field name="max_range" eval="0"/>
+            <field name="min_range" eval="0"/>
+            <field name="is_external" eval="True"/>
+            <field name="payment_basis" ref="payment_basis_daily"/>
+            <field name="exam_type" ref="exam_type_phd"/>
+        </record>
+        <record id="class_4_employee_exam_pg_1" model="exam_section.exam_type.renumeration">
+            <field name="name">
+                Class IV employees: Electrician, Sweeper, Watchman,
+                Water boy, and Peon as per details:
+                    1. Electrician: ONE on the day of examination
+                    2. Sweeper: ONE for 200 candidates for two days
+                    3. Watchman: TWO for one day i.e. the day of the
+                                 examination
+                    4. Water Boy: One for 200 candidates for one day i.e.
+                                  on the day of the examination
+                    5. Peon: Two for an examination irrespective of number
+                             of candidates for two days               
+            </field>
+            <field name="code"></field>
+            <field name="type_pay">fix</field>
+            <field name="type_amount_fix" eval="450"/>
+            <!--<field name="condition_pay">code</field>-->
+            <!--<<field name="employee_group"></field>-->
+            <field name="max_range" eval="0"/>
+            <field name="min_range" eval="0"/>
+            <field name="is_external" eval="True"/>
+            <field name="payment_basis" ref="payment_basis_daily"/>
+            <field name="exam_type" ref="exam_type_pg_1"/>
+        </record>
+        <record id="class_4_employee_exam_pg_2" model="exam_section.exam_type.renumeration">
+            <field name="name">
+                Class IV employees: Electrician, Sweeper, Watchman,
+                Water boy, and Peon as per details:
+                    1. Electrician: ONE on the day of examination
+                    2. Sweeper: ONE for 200 candidates for two days
+                    3. Watchman: TWO for one day i.e. the day of the
+                                 examination
+                    4. Water Boy: One for 200 candidates for one day i.e.
+                                  on the day of the examination
+                    5. Peon: Two for an examination irrespective of number
+                             of candidates for two days               
+            </field>
+            <field name="code"></field>
+            <field name="type_pay">fix</field>
+            <field name="type_amount_fix" eval="450"/>
+            <field name="payment_basis" ref="payment_basis_daily"/>
+            <!--<field name="condition_pay">code</field>-->
+            <!--<<field name="employee_group"></field>-->
+            <field name="max_range" eval="0"/>
+            <field name="min_range" eval="0"/>
+            <field name="is_external" eval="True"/>
+            <field name="exam_type" ref="exam_type_pg_2"/>
+        </record>
+        <record id="class_4_employee_exam_ug" model="exam_section.exam_type.renumeration">
+            <field name="name">
+                Class IV employees: Electrician, Sweeper, Watchman,
+                Water boy, and Peon as per details:
+                    1. Electrician: ONE on the day of examination
+                    2. Sweeper: ONE for 200 candidates for two days
+                    3. Watchman: TWO for one day i.e. the day of the
+                                 examination
+                    4. Water Boy: One for 200 candidates for one day i.e.
+                                  on the day of the examination
+                    5. Peon: Two for an examination irrespective of number
+                             of candidates for two days               
+            </field>
+            <field name="code"></field>
+            <field name="type_pay">fix</field>
+            <field name="type_amount_fix" eval="450"/>
+            <!--<field name="condition_pay">code</field>-->
+            <!--<<field name="employee_group"></field>-->
+            <field name="max_range" eval="0"/>
+            <field name="min_range" eval="0"/>
+            <field name="is_external" eval="True"/>
+            <field name="payment_basis" ref="payment_basis_daily"/>
+            <field name="exam_type" ref="exam_type_ug"/>
+        </record>
+        <record id="class_4_employee_exam_professional_theory" model="exam_section.exam_type.renumeration">
+            <field name="name">
+                Class IV employees: Electrician, Sweeper, Watchman,
+                Water boy, and Peon as per details:
+                    1. Electrician: ONE on the day of examination
+                    2. Sweeper: ONE for 200 candidates for two days
+                    3. Watchman: TWO for one day i.e. the day of the
+                                 examination
+                    4. Water Boy: One for 200 candidates for one day i.e.
+                                  on the day of the examination
+                    5. Peon: Two for an examination irrespective of number
+                             of candidates for two days               
+            </field>
+            <field name="code"></field>
+            <field name="type_pay">fix</field>
+            <field name="type_amount_fix" eval="450"/>
+            <!--<field name="condition_pay">code</field>-->
+            <!--<<field name="employee_group"></field>-->
+            <field name="max_range" eval="0"/>
+            <field name="min_range" eval="0"/>
+            <field name="is_external" eval="True"/>
+            <field name="payment_basis" ref="payment_basis_daily"/>
+            <field name="exam_type" ref="exam_type_professional_theory"/>
+        </record>
+        <record id="class_4_employee_exam_professional_practical" model="exam_section.exam_type.renumeration">
+            <field name="name">
+                Class IV employees: Electrician, Sweeper, Watchman,
+                Water boy, and Peon as per details:
+                    1. Electrician: ONE on the day of examination
+                    2. Sweeper: ONE for 200 candidates for two days
+                    3. Watchman: TWO for one day i.e. the day of the
+                                 examination
+                    4. Water Boy: One for 200 candidates for one day i.e.
+                                  on the day of the examination
+                    5. Peon: Two for an examination irrespective of number
+                             of candidates for two days               
+            </field>
+            <field name="code"></field>
+            <field name="type_pay">fix</field>
+            <field name="type_amount_fix" eval="450"/>
+            <!--<field name="condition_pay">code</field>-->
+            <!--<<field name="employee_group"></field>-->
+            <field name="max_range" eval="0"/>
+            <field name="min_range" eval="0"/>
+            <field name="is_external" eval="True"/>
+            <field name="payment_basis" ref="payment_basis_daily"/>
+            <field name="exam_type" ref="exam_type_professional_practical"/>
+        </record>
+        <record id="frisking_personnel_exam_phd" model="exam_section.exam_type.renumeration">
+            <field name="name">Person deputed for frisking work</field>
+            <field name="code"></field>
+            <field name="type_pay">fix</field>
+            <field name="type_amount_fix" eval="900"/>
+            <!--<field name="condition_pay">code</field>-->
+            <!--<<field name="employee_group"></field>-->
+            <field name="max_range" eval="0"/>
+            <field name="min_range" eval="0"/>
+            <field name="is_external" eval="True"/>
+            <field name="payment_basis" ref="payment_basis_per_exam"/>
+            <field name="exam_type" ref="exam_type_phd"/>
+        </record>
+        <record id="frisking_personnel_exam_pg_1" model="exam_section.exam_type.renumeration">
+            <field name="name">Person deputed for frisking work</field>
+            <field name="code"></field>
+            <field name="type_pay">fix</field>
+            <field name="type_amount_fix" eval="900"/>
+            <!--<field name="condition_pay">code</field>-->
+            <!--<<field name="employee_group"></field>-->
+            <field name="max_range" eval="0"/>
+            <field name="min_range" eval="0"/>
+            <field name="is_external" eval="True"/>
+            <field name="payment_basis" ref="payment_basis_per_exam"/>
+            <field name="exam_type" ref="exam_type_pg_1"/>
+        </record>
+        <record id="frisking_personnel_exam_pg_2" model="exam_section.exam_type.renumeration">
+            <field name="name">Person deputed for frisking work</field>
+            <field name="code"></field>
+            <field name="type_pay">fix</field>
+            <field name="type_amount_fix" eval="900"/>
+            <!--<field name="condition_pay">code</field>-->
+            <!--<<field name="employee_group"></field>-->
+            <field name="max_range" eval="0"/>
+            <field name="min_range" eval="0"/>
+            <field name="is_external" eval="True"/>
+            <field name="payment_basis" ref="payment_basis_per_exam"/>
+            <field name="exam_type" ref="exam_type_pg_2"/>
+        </record>
+        <record id="frisking_personnel_exam_ug" model="exam_section.exam_type.renumeration">
+            <field name="name">Person deputed for frisking work</field>
+            <field name="code"></field>
+            <field name="type_pay">fix</field>
+            <field name="type_amount_fix" eval="900"/>
+            <!--<field name="condition_pay">code</field>-->
+            <!--<<field name="employee_group"></field>-->
+            <field name="max_range" eval="0"/>
+            <field name="min_range" eval="0"/>
+            <field name="is_external" eval="True"/>
+            <field name="payment_basis" ref="payment_basis_per_exam"/>
+            <field name="exam_type" ref="exam_type_ug"/>
+        </record>
+        <record id="frisking_personnel_exam_professional_theory" model="exam_section.exam_type.renumeration">
+            <field name="name">Person deputed for frisking work</field>
+            <field name="code"></field>
+            <field name="type_pay">fix</field>
+            <field name="type_amount_fix" eval="900"/>
+            <!--<field name="condition_pay">code</field>-->
+            <!--<<field name="employee_group"></field>-->
+            <field name="max_range" eval="0"/>
+            <field name="min_range" eval="0"/>
+            <field name="is_external" eval="True"/>
+            <field name="payment_basis" ref="payment_basis_per_exam"/>
+            <field name="exam_type" ref="exam_type_professional_theory"/>
+        </record>
+        <record id="frisking_personnel_exam_professional_practical" model="exam_section.exam_type.renumeration">
+            <field name="name">Person deputed for frisking work</field>
+            <field name="code"></field>
+            <field name="type_pay">fix</field>
+            <field name="type_amount_fix" eval="900"/>
+            <!--<field name="condition_pay">code</field>-->
+            <!--<<field name="employee_group"></field>-->
+            <field name="max_range" eval="0"/>
+            <field name="min_range" eval="0"/>
+            <field name="is_external" eval="True"/>
+            <field name="payment_basis" ref="payment_basis_per_exam"/>
+            <field name="exam_type" ref="exam_type_professional_practical"/>
+        </record>
+        <record id="refreshment_exam_phd" model="exam_section.exam_type.renumeration">
+            <field name="name">Refreshment Charges for persons deployed during the examination</field>
+            <field name="code"></field>
+            <field name="type_pay">fix</field>
+            <field name="type_amount_fix" eval="30"/>
+            <!--<field name="condition_pay">code</field>-->
+            <!--<<field name="employee_group"></field>-->
+            <field name="max_range" eval="0"/>
+            <field name="min_range" eval="0"/>
+            <field name="is_external" eval="True"/>
+            <field name="payment_basis" ref="payment_basis_per_exam"/>
+            <field name="exam_type" ref="exam_type_phd"/>
+        </record>
+        <record id="refreshment_exam_pg_1" model="exam_section.exam_type.renumeration">
+            <field name="name">Refreshment Charges for persons deployed during the examination</field>
+            <field name="code"></field>
+            <field name="type_pay">fix</field>
+            <field name="type_amount_fix" eval="30"/>
+            <!--<field name="condition_pay">code</field>-->
+            <!--<<field name="employee_group"></field>-->
+            <field name="max_range" eval="0"/>
+            <field name="min_range" eval="0"/>
+            <field name="is_external" eval="True"/>
+            <field name="payment_basis" ref="payment_basis_per_exam"/>
+            <field name="exam_type" ref="exam_type_pg_1"/>
+        </record>
+        <record id="refreshment_exam_pg_2" model="exam_section.exam_type.renumeration">
+            <field name="name">Refreshment Charges for persons deployed during the examination</field>
+            <field name="code"></field>
+            <field name="type_pay">fix</field>
+            <field name="type_amount_fix" eval="30"/>
+            <!--<field name="condition_pay">code</field>-->
+            <!--<<field name="employee_group"></field>-->
+            <field name="max_range" eval="0"/>
+            <field name="min_range" eval="0"/>
+            <field name="is_external" eval="True"/>
+            <field name="payment_basis" ref="payment_basis_per_exam"/>
+            <field name="exam_type" ref="exam_type_pg_2"/>
+        </record>
+        <record id="refreshment_exam_ug" model="exam_section.exam_type.renumeration">
+            <field name="name">Refreshment Charges for persons deployed during the examination</field>
+            <field name="code"></field>
+            <field name="type_pay">fix</field>
+            <field name="type_amount_fix" eval="30"/>
+            <!--<field name="condition_pay">code</field>-->
+            <!--<<field name="employee_group"></field>-->
+            <field name="max_range" eval="0"/>
+            <field name="min_range" eval="0"/>
+            <field name="is_external" eval="True"/>
+            <field name="payment_basis" ref="payment_basis_per_exam"/>
+            <field name="exam_type" ref="exam_type_ug"/>
+        </record>
+        <record id="refreshment_exam_professional_theory" model="exam_section.exam_type.renumeration">
+            <field name="name">Refreshment Charges for persons deployed during the examination</field>
+            <field name="code"></field>
+            <field name="type_pay">fix</field>
+            <field name="type_amount_fix" eval="30"/>
+            <!--<field name="condition_pay">code</field>-->
+            <!--<<field name="employee_group"></field>-->
+            <field name="max_range" eval="0"/>
+            <field name="min_range" eval="0"/>
+            <field name="is_external" eval="True"/>
+            <field name="payment_basis" ref="payment_basis_per_exam"/>
+            <field name="exam_type" ref="exam_type_professional_theory"/>
+        </record>
+        <record id="refreshment_exam_professional_practical" model="exam_section.exam_type.renumeration">
+            <field name="name">Refreshment Charges for persons deployed during the examination</field>
+            <field name="code"></field>
+            <field name="type_pay">fix</field>
+            <field name="type_amount_fix" eval="30"/>
+            <!--<field name="condition_pay">code</field>-->
+            <!--<<field name="employee_group"></field>-->
+            <field name="max_range" eval="0"/>
+            <field name="min_range" eval="0"/>
+            <field name="is_external" eval="True"/>
+            <field name="payment_basis" ref="payment_basis_per_exam"/>
+            <field name="exam_type" ref="exam_type_professional_practical"/>
+        </record>
+        <record id="hiring_school_college_phd" model="exam_section.exam_type.renumeration">
+            <field name="name">Hiring Charges for School/College</field>
+            <field name="code"></field>
+            <field name="type_pay">fix</field>
+            <field name="type_amount_fix" eval="30"/>
+            <!--<field name="condition_pay">code</field>-->
+            <!--<<field name="employee_group"></field>-->
+            <field name="max_range" eval="0"/>
+            <field name="min_range" eval="0"/>
+            <field name="is_external" eval="True"/>
+            <field name="payment_basis" ref="payment_basis_per_exam"/>
+            <field name="exam_type" ref="exam_type_phd"/>
+        </record>
+        <record id="hiring_school_college_pg_1" model="exam_section.exam_type.renumeration">
+            <field name="name">Hiring Charges for School/College</field>
+            <field name="code"></field>
+            <field name="type_pay">fix</field>
+            <field name="type_amount_fix" eval="30"/>
+            <!--<field name="condition_pay">code</field>-->
+            <!--<<field name="employee_group"></field>-->
+            <field name="max_range" eval="0"/>
+            <field name="min_range" eval="0"/>
+            <field name="is_external" eval="True"/>
+            <field name="payment_basis" ref="payment_basis_per_copy"/>
+            <field name="exam_type" ref="exam_type_pg_1"/>
+        </record>
+        <record id="hiring_school_college_pg_2" model="exam_section.exam_type.renumeration">
+            <field name="name">Hiring Charges for School/College</field>
+            <field name="code"></field>
+            <field name="type_pay">fix</field>
+            <field name="type_amount_fix" eval="30"/>
+            <!--<field name="condition_pay">code</field>-->
+            <!--<<field name="employee_group"></field>-->
+            <field name="max_range" eval="0"/>
+            <field name="min_range" eval="0"/>
+            <field name="is_external" eval="True"/>
+            <field name="payment_basis" ref="payment_basis_per_copy"/>
+            <field name="exam_type" ref="exam_type_pg_2"/>
+        </record>
+        <record id="hiring_school_college_ug" model="exam_section.exam_type.renumeration">
+            <field name="name">Hiring Charges for School/College</field>
+            <field name="code"></field>
+            <field name="type_pay">fix</field>
+            <field name="type_amount_fix" eval="30"/>
+            <!--<field name="condition_pay">code</field>-->
+            <!--<<field name="employee_group"></field>-->
+            <field name="max_range" eval="0"/>
+            <field name="min_range" eval="0"/>
+            <field name="is_external" eval="True"/>
+            <field name="payment_basis" ref="payment_basis_per_copy"/>
+            <field name="exam_type" ref="exam_type_ug"/>
+        </record>
+        <record id="hiring_school_college_professional_theory" model="exam_section.exam_type.renumeration">
+            <field name="name">Hiring Charges for School/College</field>
+            <field name="code"></field>
+            <field name="type_pay">fix</field>
+            <field name="type_amount_fix" eval="30"/>
+            <!--<field name="condition_pay">code</field>-->
+            <!--<<field name="employee_group"></field>-->
+            <field name="max_range" eval="0"/>
+            <field name="min_range" eval="0"/>
+            <field name="is_external" eval="True"/>
+            <field name="payment_basis" ref="payment_basis_per_copy"/>
+            <field name="exam_type" ref="exam_type_professional_theory"/>
+        </record>
+        <record id="hiring_school_college_professional_practical" model="exam_section.exam_type.renumeration">
+            <field name="name">Hiring Charges for School/College</field>
+            <field name="code"></field>
+            <field name="type_pay">fix</field>
+            <field name="type_amount_fix" eval="30"/>
+            <!--<field name="condition_pay">code</field>-->
+            <!--<<field name="employee_group"></field>-->
+            <field name="max_range" eval="0"/>
+            <field name="min_range" eval="0"/>
+            <field name="is_external" eval="True"/>
+            <field name="payment_basis" ref="payment_basis_per_copy"/>
+            <field name="exam_type" ref="exam_type_professional_practical"/>
+        </record>
+        <record id="officer_in_charge_phd" model="exam_section.exam_type.renumeration">
+            <field name="name">Faculty/Officer In-Charge</field>
+            <field name="code"></field>
+            <field name="type_pay">fix</field>
+            <field name="type_amount_fix" eval="0"/>
+            <!--<field name="condition_pay">code</field>-->
+            <field name="employee_group">A</field>
+            <field name="max_range" eval="4500"/>
+            <field name="min_range" eval="0"/>
+            <field name="is_external" eval="False"/>
+            <field name="payment_basis" ref="payment_basis_per_exam"/>
+            <field name="exam_type" ref="exam_type_phd"/>
+        </record>
+        <record id="officer_in_charge_pg_1" model="exam_section.exam_type.renumeration">
+            <field name="name">Faculty/Officer In-Charge</field>
+            <field name="code"></field>
+            <field name="type_pay">fix</field>
+            <field name="type_amount_fix" eval="0"/>
+            <!--<field name="condition_pay">code</field>-->
+            <field name="employee_group">A</field>
+            <field name="max_range" eval="4500"/>
+            <field name="min_range" eval="0"/>
+            <field name="is_external" eval="False"/>
+            <field name="payment_basis" ref="payment_basis_per_exam"/>
+            <field name="exam_type" ref="exam_type_pg_1"/>
+        </record>
+        <record id="officer_in_charge_pg_2" model="exam_section.exam_type.renumeration">
+            <field name="name">Faculty/Officer In-Charge</field>
+            <field name="code"></field>
+            <field name="type_pay">fix</field>
+            <field name="type_amount_fix" eval="0"/>
+            <!--<field name="condition_pay">code</field>-->
+            <field name="employee_group">A</field>
+            <field name="max_range" eval="4500"/>
+            <field name="min_range" eval="0"/>
+            <field name="is_external" eval="False"/>
+            <field name="payment_basis" ref="payment_basis_per_exam"/>
+            <field name="exam_type" ref="exam_type_pg_2"/>
+        </record>
+        <record id="officer_in_charge_professional_theory" model="exam_section.exam_type.renumeration">
+            <field name="name">Faculty/Officer In-Charge</field>
+            <field name="code"></field>
+            <field name="type_pay">fix</field>
+            <field name="type_amount_fix" eval="0"/>
+            <!--<field name="condition_pay">code</field>-->
+            <field name="employee_group">A</field>
+            <field name="max_range" eval="4500"/>
+            <field name="min_range" eval="0"/>
+            <field name="is_external" eval="False"/>
+            <field name="payment_basis" ref="payment_basis_per_exam"/>
+            <field name="exam_type" ref="exam_type_professional_theory"/>
+        </record>
+        <record id="officer_in_charge_professional_practical" model="exam_section.exam_type.renumeration">
+            <field name="name">Faculty/Officer In-Charge</field>
+            <field name="code"></field>
+            <field name="type_pay">fix</field>
+            <field name="type_amount_fix" eval="0"/>
+            <!--<field name="condition_pay">code</field>-->
+            <field name="employee_group">A</field>
+            <field name="max_range" eval="4500"/>
+            <field name="min_range" eval="0"/>
+            <field name="is_external" eval="False"/>
+            <field name="payment_basis" ref="payment_basis_per_exam"/>
+            <field name="exam_type" ref="exam_type_professional_practical"/>
+        </record>
+        <record id="officer_in_charge_ug" model="exam_section.exam_type.renumeration">
+            <field name="name">Faculty/Officer In-Charge</field>
+            <field name="code"></field>
+            <field name="type_pay">fix</field>
+            <field name="type_amount_fix" eval="0"/>
+            <!--<field name="condition_pay">code</field>-->
+            <field name="employee_group">A</field>
+            <field name="max_range" eval="4500"/>
+            <field name="min_range" eval="0"/>
+            <field name="is_external" eval="False"/>
+            <field name="payment_basis" ref="payment_basis_per_exam"/>
+            <field name="exam_type" ref="exam_type_ug"/>
+        </record>
+        <record id="assisting_officer_staff_phd" model="exam_section.exam_type.renumeration">
+            <field name="name">Assisting Officer/Staff</field>
+            <field name="code"></field>
+            <field name="type_pay">fix</field>
+            <field name="type_amount_fix" eval="0"/>
+            <!--<field name="condition_pay">code</field>-->
+            <!--<<field name="employee_group"></field>-->
+            <field name="max_range">3750</field>
+            <field name="min_range" eval="0"/>
+            <field name="is_external" eval="False"/>
+            <field name="payment_basis" ref="payment_basis_per_exam"/>
+            <field name="exam_type" ref="exam_type_phd"/>
+        </record>
+        <record id="assisting_officer_staff_pg_1" model="exam_section.exam_type.renumeration">
+            <field name="name">Assisting Officer/Staff</field>
+            <field name="code"></field>
+            <field name="type_pay">fix</field>
+            <field name="type_amount_fix" eval="0"/>
+            <!--<field name="condition_pay">code</field>-->
+            <!--<<field name="employee_group"></field>-->
+            <field name="max_range">3750</field>
+            <field name="min_range" eval="0"/>
+            <field name="is_external" eval="False"/>
+            <field name="payment_basis" ref="payment_basis_per_exam"/>
+            <field name="exam_type" ref="exam_type_pg_1"/>
+        </record>
+        <record id="assisting_officer_staff_pg_2" model="exam_section.exam_type.renumeration">
+            <field name="name">Assisting Officer/Staff</field>
+            <field name="code"></field>
+            <field name="type_pay">fix</field>
+            <field name="type_amount_fix" eval="0"/>
+            <!--<field name="condition_pay">code</field>-->
+            <!--<<field name="employee_group"></field>-->
+            <field name="max_range">3750</field>
+            <field name="min_range" eval="0"/>
+            <field name="is_external" eval="False"/>
+            <field name="payment_basis" ref="payment_basis_per_exam"/>
+            <field name="exam_type" ref="exam_type_pg_2"/>
+        </record>
+        <record id="assisting_officer_staff_ug" model="exam_section.exam_type.renumeration">
+            <field name="name">Assisting Officer/Staff</field>
+            <field name="code"></field>
+            <field name="type_pay">fix</field>
+            <field name="type_amount_fix" eval="0"/>
+            <!--<field name="condition_pay">code</field>-->
+            <!--<<field name="employee_group"></field>-->
+            <field name="max_range">3750</field>
+            <field name="min_range" eval="0"/>
+            <field name="is_external" eval="False"/>
+            <field name="payment_basis" ref="payment_basis_per_exam"/>
+            <field name="exam_type" ref="exam_type_ug"/>
+        </record>
+        <record id="assisting_officer_staff_professional_theory" model="exam_section.exam_type.renumeration">
+            <field name="name">Assisting Officer/Staff</field>
+            <field name="code"></field>
+            <field name="type_pay">fix</field>
+            <field name="type_amount_fix" eval="0"/>
+            <!--<field name="condition_pay">code</field>-->
+            <!--<<field name="employee_group"></field>-->
+            <field name="max_range">3750</field>
+            <field name="min_range" eval="0"/>
+            <field name="is_external" eval="False"/>
+            <field name="payment_basis" ref="payment_basis_per_exam"/>
+            <field name="exam_type" ref="exam_type_professional_theory"/>
+        </record>
+        <record id="assisting_officer_staff_professional_practical" model="exam_section.exam_type.renumeration">
+            <field name="name">Assisting Officer/Staff</field>
+            <field name="code"></field>
+            <field name="type_pay">fix</field>
+            <field name="type_amount_fix" eval="0"/>
+            <!--<field name="condition_pay">code</field>-->
+            <!--<<field name="employee_group"></field>-->
+            <field name="max_range">3750</field>
+            <field name="min_range" eval="0"/>
+            <field name="is_external" eval="False"/>
+            <field name="payment_basis" ref="payment_basis_per_exam"/>
+            <field name="exam_type" ref="exam_type_professional_practical"/>
+        </record>
+        <record id="faculty_officers_grp_a_phd" model="exam_section.exam_type.renumeration">
+            <field name="name">Faculty/Group - A Officers</field>
+            <field name="code"></field>
+            <field name="type_pay">fix</field>
+            <field name="type_amount_fix" eval="2250"/>
+            <field name="condition_pay">group</field>
+            <field name="employee_group">A</field>
+            <field name="max_range" eval="0"/>
+            <field name="min_range" eval="0"/>
+            <field name="is_external" eval="False"/>
+            <field name="payment_basis" ref="payment_basis_daily"/>
+            <field name="exam_type" ref="exam_type_phd"/>
+        </record>
+        <record id="faculty_officers_grp_a_pg_1" model="exam_section.exam_type.renumeration">
+            <field name="name">Faculty/Group - A Officers</field>
+            <field name="code"></field>
+            <field name="type_pay">fix</field>
+            <field name="type_amount_fix" eval="2250"/>
+            <field name="condition_pay">group</field>
+            <field name="employee_group">A</field>
+            <field name="max_range" eval="0"/>
+            <field name="min_range" eval="0"/>
+            <field name="is_external" eval="False"/>
+            <field name="payment_basis" ref="payment_basis_daily"/>
+            <field name="exam_type" ref="exam_type_pg_1"/>
+        </record>
+        <record id="faculty_officers_grp_a_pg_2" model="exam_section.exam_type.renumeration">
+            <field name="name">Faculty/Group - A Officers</field>
+            <field name="code"></field>
+            <field name="type_pay">fix</field>
+            <field name="type_amount_fix" eval="2250"/>
+            <field name="condition_pay">group</field>
+            <field name="employee_group">A</field>
+            <field name="max_range" eval="0"/>
+            <field name="min_range" eval="0"/>
+            <field name="is_external" eval="False"/>
+            <field name="payment_basis" ref="payment_basis_daily"/>
+            <field name="exam_type" ref="exam_type_pg_2"/>
+        </record>
+        <record id="faculty_officers_grp_a_ug" model="exam_section.exam_type.renumeration">
+            <field name="name">Faculty/Group - A Officers</field>
+            <field name="code"></field>
+            <field name="type_pay">fix</field>
+            <field name="type_amount_fix" eval="2250"/>
+            <field name="condition_pay">group</field>
+            <field name="employee_group">A</field>
+            <field name="max_range" eval="0"/>
+            <field name="min_range" eval="0"/>
+            <field name="is_external" eval="False"/>
+            <field name="payment_basis" ref="payment_basis_daily"/>
+            <field name="exam_type" ref="exam_type_ug"/>
+        </record>
+        <record id="faculty_officers_grp_a_professional_theory" model="exam_section.exam_type.renumeration">
+            <field name="name">Faculty/Group - A Officers</field>
+            <field name="code"></field>
+            <field name="type_pay">fix</field>
+            <field name="type_amount_fix" eval="2250"/>
+            <field name="condition_pay">group</field>
+            <field name="employee_group">A</field>
+            <field name="max_range" eval="0"/>
+            <field name="min_range" eval="0"/>
+            <field name="is_external" eval="False"/>
+            <field name="payment_basis" ref="payment_basis_daily"/>
+            <field name="exam_type" ref="exam_type_professional_theory"/>
+        </record>
+        <record id="faculty_officers_grp_a_professional_practical" model="exam_section.exam_type.renumeration">
+            <field name="name">Faculty/Group - A Officers</field>
+            <field name="code"></field>
+            <field name="type_pay">fix</field>
+            <field name="type_amount_fix" eval="2250"/>
+            <field name="condition_pay">group</field>
+            <field name="employee_group">A</field>
+            <field name="max_range" eval="0"/>
+            <field name="min_range" eval="0"/>
+            <field name="is_external" eval="False"/>
+            <field name="payment_basis" ref="payment_basis_daily"/>
+            <field name="exam_type" ref="exam_type_professional_practical"/>
+        </record>
+        <record id="officers_grp_b_phd" model="exam_section.exam_type.renumeration">
+            <field name="name">Group - B Officers</field>
+            <field name="code"></field>
+            <field name="type_pay">fix</field>
+            <field name="type_amount_fix" eval="1500"/>
+            <field name="condition_pay">group</field>
+            <field name="employee_group">B</field>
+            <field name="max_range" eval="0"/>
+            <field name="min_range" eval="0"/>
+            <field name="is_external" eval="False"/>
+            <field name="payment_basis" ref="payment_basis_daily"/>
+            <field name="exam_type" ref="exam_type_phd"/>
+        </record>
+        <record id="officers_grp_b_pg_1" model="exam_section.exam_type.renumeration">
+            <field name="name">Group - B Officers</field>
+            <field name="code"></field>
+            <field name="type_pay">fix</field>
+            <field name="type_amount_fix" eval="1500"/>
+            <field name="condition_pay">group</field>
+            <field name="employee_group">B</field>
+            <field name="max_range" eval="0"/>
+            <field name="min_range" eval="0"/>
+            <field name="is_external" eval="False"/>
+            <field name="payment_basis" ref="payment_basis_daily"/>
+            <field name="exam_type" ref="exam_type_pg_1"/>
+        </record>
+        <record id="officers_grp_b_pg_2" model="exam_section.exam_type.renumeration">
+            <field name="name">Group - B Officers</field>
+            <field name="code"></field>
+            <field name="type_pay">fix</field>
+            <field name="type_amount_fix" eval="1500"/>
+            <field name="condition_pay">group</field>
+            <field name="employee_group">B</field>
+            <field name="max_range" eval="0"/>
+            <field name="min_range" eval="0"/>
+            <field name="is_external" eval="False"/>
+            <field name="payment_basis" ref="payment_basis_daily"/>
+            <field name="exam_type" ref="exam_type_pg_2"/>
+        </record>
+        <record id="officers_grp_b_ug" model="exam_section.exam_type.renumeration">
+            <field name="name">Group - B Officers</field>
+            <field name="code"></field>
+            <field name="type_pay">fix</field>
+            <field name="type_amount_fix" eval="1500"/>
+            <field name="condition_pay">group</field>
+            <field name="employee_group">B</field>
+            <field name="max_range" eval="0"/>
+            <field name="min_range" eval="0"/>
+            <field name="is_external" eval="False"/>
+            <field name="payment_basis" ref="payment_basis_daily"/>
+            <field name="exam_type" ref="exam_type_ug"/>
+        </record>
+        <record id="officers_grp_b_professional_theory" model="exam_section.exam_type.renumeration">
+            <field name="name">Group - B Officers</field>
+            <field name="code"></field>
+            <field name="type_pay">fix</field>
+            <field name="type_amount_fix" eval="1500"/>
+            <field name="condition_pay">group</field>
+            <field name="employee_group">B</field>
+            <field name="max_range" eval="0"/>
+            <field name="min_range" eval="0"/>
+            <field name="is_external" eval="False"/>
+            <field name="payment_basis" ref="payment_basis_daily"/>
+            <field name="exam_type" ref="exam_type_professional_theory"/>
+        </record>
+        <record id="officers_grp_b_professiona_practical" model="exam_section.exam_type.renumeration">
+            <field name="name">Group - B Officers</field>
+            <field name="code"></field>
+            <field name="type_pay">fix</field>
+            <field name="type_amount_fix" eval="1500"/>
+            <field name="condition_pay">group</field>
+            <field name="employee_group">B</field>
+            <field name="max_range" eval="0"/>
+            <field name="min_range" eval="0"/>
+            <field name="is_external" eval="False"/>
+            <field name="payment_basis" ref="payment_basis_daily"/>
+            <field name="exam_type" ref="exam_type_professional_practical"/>
+        </record>
+        <record id="staff_grp_c_phd" model="exam_section.exam_type.renumeration">
+            <field name="name">Group - C Staff</field>
+            <field name="code"></field>
+            <field name="type_pay">fix</field>
+            <field name="type_amount_fix" eval="1050"/>
+            <field name="condition_pay">group</field>
+            <field name="employee_group">C</field>
+            <field name="max_range" eval="0"/>
+            <field name="min_range" eval="0"/>
+            <field name="is_external" eval="False"/>
+            <field name="payment_basis" ref="payment_basis_daily"/>
+            <field name="exam_type" ref="exam_type_phd"/>
+        </record>
+        <record id="staff_grp_c_pg_1" model="exam_section.exam_type.renumeration">
+            <field name="name">Group - C Staff</field>
+            <field name="code"></field>
+            <field name="type_pay">fix</field>
+            <field name="type_amount_fix" eval="1050"/>
+            <field name="condition_pay">group</field>
+            <field name="employee_group">C</field>
+            <field name="max_range" eval="0"/>
+            <field name="min_range" eval="0"/>
+            <field name="is_external" eval="False"/>
+            <field name="payment_basis" ref="payment_basis_daily"/>
+            <field name="exam_type" ref="exam_type_pg_1"/>
+        </record>
+        <record id="staff_grp_c_pg_2" model="exam_section.exam_type.renumeration">
+            <field name="name">Group - C Staff</field>
+            <field name="code"></field>
+            <field name="type_pay">fix</field>
+            <field name="type_amount_fix" eval="1050"/>
+            <field name="condition_pay">group</field>
+            <field name="employee_group">C</field>
+            <field name="max_range" eval="0"/>
+            <field name="min_range" eval="0"/>
+            <field name="is_external" eval="False"/>
+            <field name="payment_basis" ref="payment_basis_daily"/>
+            <field name="exam_type" ref="exam_type_pg_2"/>
+        </record>
+        <record id="staff_grp_c_ug" model="exam_section.exam_type.renumeration">
+            <field name="name">Group - C Staff</field>
+            <field name="code"></field>
+            <field name="type_pay">fix</field>
+            <field name="type_amount_fix" eval="1050"/>
+            <field name="condition_pay">group</field>
+            <field name="employee_group">C</field>
+            <field name="max_range" eval="0"/>
+            <field name="min_range" eval="0"/>
+            <field name="is_external" eval="False"/>
+            <field name="payment_basis" ref="payment_basis_daily"/>
+            <field name="exam_type" ref="exam_type_ug"/>
+        </record>
+        <record id="staff_grp_c_professional_theory" model="exam_section.exam_type.renumeration">
+            <field name="name">Group - C Staff</field>
+            <field name="code"></field>
+            <field name="type_pay">fix</field>
+            <field name="type_amount_fix" eval="1050"/>
+            <field name="condition_pay">group</field>
+            <field name="employee_group">C</field>
+            <field name="max_range" eval="0"/>
+            <field name="min_range" eval="0"/>
+            <field name="is_external" eval="False"/>
+            <field name="payment_basis" ref="payment_basis_daily"/>
+            <field name="exam_type" ref="exam_type_professional_theory"/>
+        </record>
+        <record id="staff_grp_c_professional_practical" model="exam_section.exam_type.renumeration">
+            <field name="name">Group - C Staff</field>
+            <field name="code"></field>
+            <field name="type_pay">fix</field>
+            <field name="type_amount_fix" eval="1050"/>
+            <field name="condition_pay">group</field>
+            <field name="employee_group">C</field>
+            <field name="max_range" eval="0"/>
+            <field name="min_range" eval="0"/>
+            <field name="is_external" eval="False"/>
+            <field name="payment_basis" ref="payment_basis_daily"/>
+            <field name="exam_type" ref="exam_type_professional_practical"/>
+        </record>
+        <record id="staff_grp_d_phd" model="exam_section.exam_type.renumeration">
+            <field name="name">Group - D Staff</field>
+            <field name="code"></field>
+            <field name="type_pay">fix</field>
+            <field name="type_amount_fix" eval="600"/>
+            <field name="condition_pay">group</field>
+            <field name="employee_group">D</field>
+            <field name="max_range" eval="0"/>
+            <field name="min_range" eval="0"/>
+            <field name="is_external" eval="False"/>
+            <field name="payment_basis" ref="payment_basis_daily"/>
+            <field name="exam_type" ref="exam_type_phd"/>
+        </record>
+        <record id="staff_grp_d_pg_1" model="exam_section.exam_type.renumeration">
+            <field name="name">Group - D Staff</field>
+            <field name="code"></field>
+            <field name="type_pay">fix</field>
+            <field name="type_amount_fix" eval="600"/>
+            <field name="condition_pay">group</field>
+            <field name="employee_group">D</field>
+            <field name="max_range" eval="0"/>
+            <field name="min_range" eval="0"/>
+            <field name="is_external" eval="False"/>
+            <field name="payment_basis" ref="payment_basis_daily"/>
+            <field name="exam_type" ref="exam_type_pg_1"/>
+        </record>
+        <record id="staff_grp_d_pg_2" model="exam_section.exam_type.renumeration">
+            <field name="name">Group - D Staff</field>
+            <field name="code"></field>
+            <field name="type_pay">fix</field>
+            <field name="type_amount_fix" eval="600"/>
+            <field name="condition_pay">group</field>
+            <field name="employee_group">D</field>
+            <field name="max_range" eval="0"/>
+            <field name="min_range" eval="0"/>
+            <field name="is_external" eval="False"/>
+            <field name="payment_basis" ref="payment_basis_daily"/>
+            <field name="exam_type" ref="exam_type_pg_2"/>
+        </record>
+        <record id="staff_grp_d_ug" model="exam_section.exam_type.renumeration">
+            <field name="name">Group - D Staff</field>
+            <field name="code"></field>
+            <field name="type_pay">fix</field>
+            <field name="type_amount_fix" eval="600"/>
+            <field name="condition_pay">group</field>
+            <field name="employee_group">D</field>
+            <field name="max_range" eval="0"/>
+            <field name="min_range" eval="0"/>
+            <field name="is_external" eval="False"/>
+            <field name="payment_basis" ref="payment_basis_daily"/>
+            <field name="exam_type" ref="exam_type_ug"/>
+        </record>
+        <record id="staff_grp_d_professional_theory" model="exam_section.exam_type.renumeration">
+            <field name="name">Group - D Staff</field>
+            <field name="code"></field>
+            <field name="type_pay">fix</field>
+            <field name="type_amount_fix" eval="600"/>
+            <field name="condition_pay">group</field>
+            <field name="employee_group">D</field>
+            <field name="max_range" eval="0"/>
+            <field name="min_range" eval="0"/>
+            <field name="is_external" eval="False"/>
+            <field name="payment_basis" ref="payment_basis_daily"/>
+            <field name="exam_type" ref="exam_type_professional_theory"/>
+        </record>
+        <record id="staff_grp_d_professional_practical" model="exam_section.exam_type.renumeration">
+            <field name="name">Group - D Staff</field>
+            <field name="code"></field>
+            <field name="type_pay">fix</field>
+            <field name="type_amount_fix" eval="600"/>
+            <field name="condition_pay">group</field>
+            <field name="employee_group">D</field>
+            <field name="max_range" eval="0"/>
+            <field name="min_range" eval="0"/>
+            <field name="is_external" eval="False"/>
+            <field name="payment_basis" ref="payment_basis_daily"/>
+            <field name="exam_type" ref="exam_type_professional_practical"/>
+        </record>
+        <record id="professional_practical_grp_a" model="exam_section.exam_type.renumeration">
+            <field name="name">Sr. Resident/Demonstrator/Lecturer(in College of Nursing) - Group A (Any one for 10 students)</field>
+            <field name="code"></field>
+            <field name="type_pay">fix</field>
+            <field name="type_amount_fix" eval="450"/>
+            <field name="condition_pay">group</field>
+            <field name="employee_group">A</field>
+            <field name="max_range" eval="0"/>
+            <field name="min_range" eval="0"/>
+            <field name="is_external" eval="False"/>
+            <field name="payment_basis" ref="payment_basis_per_exam"/>
+            <field name="exam_type" ref="exam_type_professional_practical"/>
+        </record>
+        <record id="professional_practical_grp_b" model="exam_section.exam_type.renumeration">
+            <field name="name">
+                Dy. Nsg. Supdt/Asstt.Nsg. Supdt./Nursing Sister
+                /Tutor/Tech. Officer/Tech. Asstt. Group - B
+            </field>
+            <field name="code"></field>
+            <field name="type_pay">fix</field>
+            <field name="type_amount_fix" eval="400"/>
+            <field name="condition_pay">group</field>
+            <field name="employee_group">B</field>
+            <field name="max_range" eval="0"/>
+            <field name="min_range" eval="0"/>
+            <field name="is_external" eval="False"/>
+            <field name="payment_basis" ref="payment_basis_per_exam"/>
+            <field name="exam_type" ref="exam_type_professional_practical"/>
+        </record>
+        <record id="professional_practical_grp_c" model="exam_section.exam_type.renumeration">
+            <field name="name">Lab Tech./Lab Asstt./Lab. Attdt. Group - C</field>
+            <field name="code"></field>
+            <field name="type_pay">fix</field>
+            <field name="type_amount_fix" eval="300"/>
+            <field name="condition_pay">group</field>
+            <field name="employee_group">C</field>
+            <field name="max_range" eval="0"/>
+            <field name="min_range" eval="0"/>
+            <field name="is_external" eval="False"/>
+            <field name="payment_basis" ref="payment_basis_per_exam"/>
+            <field name="exam_type" ref="exam_type_professional_practical"/>
+        </record>
+        <record id="professional_practical_grp_d" model="exam_section.exam_type.renumeration">
+            <field name="name">
+                Nursing Orderly/Nursing Aya/Office Attnd peon/
+                Sanitary Attdt. Group - D
+            </field>
+            <field name="code"></field>
+            <field name="type_pay">fix</field>
+            <field name="type_amount_fix" eval="250"/>
+            <field name="condition_pay">group</field>
+            <field name="employee_group">D</field>
+            <field name="max_range" eval="0"/>
+            <field name="min_range" eval="0"/>
+            <field name="is_external" eval="False"/>
+            <field name="payment_basis" ref="payment_basis_per_exam"/>
+            <field name="exam_type" ref="exam_type_professional_practical"/>
+        </record>
+    </data>
+</tryton>

@@ -1,0 +1,251 @@
+<?xml version="1.0"?>
+<tryton>
+    <data>
+
+        <record id="template_programmer" model="apar.form.template">
+            <field name="name">For System Analyst/ Sr. Programmer/ Programmer Cadre</field>
+            <field name="form_number">8</field>
+        </record>
+
+        <record id="template_programmer_part2" model="apar.form.template.part">
+            <field name="name">Self Appraisal for the Year(To be filled by the Ratee Officer)</field>
+            <field name="number">2</field>
+            <field name="template" ref="template_programmer"/>
+            <field name="type_">self_appraisal</field>
+        </record>
+        <record id="template_programmer_part3" model="apar.form.template.part">
+            <field name="name">Appraisal(To be filled by Reporting Officer and To be reviewed by Reviewing Officer)</field>
+            <field name="number">3 and 4</field>
+            <field name="template" ref="template_programmer"/>
+            <field name="type_">appraisal</field>
+        </record>
+        <record id="template_programmer_part5" model="apar.form.template.part">
+            <field name="name">Review(To be filled by the Reviewing Officer)</field>
+            <field name="number">5</field>
+            <field name="template" ref="template_programmer"/>
+            <field name="type_">reviewing</field>
+        </record>
+
+
+        <record id="section_programmer_1" model="apar.form.template.section">
+            <field name="name">Assessment of work output</field>
+            <field name="weightage">40</field>
+            <field name="number">3.1</field>
+            <field name="part" ref="template_programmer_part3"/>
+        </record>
+
+        <record id="section_programmer_2" model="apar.form.template.section">
+            <field name="name">Assessment of Personal Attributes</field>
+            <field name="weightage">30</field>
+            <field name="number">3.2</field>
+            <field name="part" ref="template_programmer_part3"/>
+        </record>
+        <record id="section_programmer_3" model="apar.form.template.section">
+            <field name="name">Assessment of functional Competency</field>
+            <field name="weightage">30</field>
+            <field name="number">3.3</field>
+            <field name="part" ref="template_programmer_part3"/>
+        </record>
+
+        <record id="question_programmer_1" model="apar.form.template.question">
+            <field name="question_no">2.1</field>
+            <field name="name">Brief description of duties of post:</field>
+            <field name="part" ref="template_programmer_part2"/>
+        </record>
+        <record id="question_programmer_2" model="apar.form.template.question">
+            <field name="question_no">2.2</field>
+            <field name="name">Please specify technical and analytical work involving the research, analysis &#xA; and design of moderately complex management information system (8 to 10 items &#xA; priority-wise / in order of importance that were set for you and your achievements &#xA; against each targets.</field>
+            <field name="part" ref="template_programmer_part2"/>
+        </record>
+        <record id="question_programmer_3" model="apar.form.template.question">
+            <field name="question_no">2.3</field>
+            <field name="name">Please comment briefly on your achievements with reference to targets/objectives &#xA; referred to in column 2.2. Please also indicate significantly higher achievements &#xA; in relation to the targets and your contribution thereto.</field>
+            <field name="part" ref="template_programmer_part2"/>
+        </record>
+        <record id="question_programmer_4" model="apar.form.template.question">
+            <field name="question_no">2.4</field>
+            <field name="name">Please comments briefly on the shortfalls with reference to the targets referred &#xA; to in column 2.2. Please specify the constraints, if any, in achieving the targets.</field>
+            <field name="part" ref="template_programmer_part2"/>
+        </record>
+        <record id="question_programmer_5" model="apar.form.template.question">
+            <field name="question_no">2.5(a)</field>
+            <field name="name">Have you filed your immovable property return as due. If yes, please mention date</field>
+            <field name="part" ref="template_programmer_part2"/>
+        </record>
+        <record id="question_programmer_6" model="apar.form.template.question">
+            <field name="question_no">2.5(b)</field>
+            <field name="name">Have you set the annual work plan for all officers for the current year, &#xA; in respect of whom you are the reporting authority?</field>
+            <field name="part" ref="template_programmer_part2"/>
+        </record>
+        <record id="question_programmer_7" model="apar.form.template.question">
+            <field name="question_no">2.5(c)</field>
+            <field name="name">Have you written the APAR of all officers in respect of whom you are &#xA; the reporting authority?</field>
+            <field name="part" ref="template_programmer_part2"/>
+        </record>
+        <record id="question_programmer_8" model="apar.form.template.question">
+            <field name="question_no">2.6</field>
+            <field name="name">Any other additional and unforeseen assignments carried out/ Initiatives &#xA; under taken worth mentioning.</field>
+            <field name="part" ref="template_programmer_part2"/>
+        </record>
+        <record id="question_programmer_9" model="apar.form.template.question">
+            <field name="question_no">3</field>
+            <field name="name">Do you agree with the self appraisal of the officer with regard to targets &#xA; and achievements? Indicate reasons and extent of disagreement with references &#xA; to 3.1 below, if any.</field>
+            <field name="part" ref="template_programmer_part3"/>
+        </record>
+        <record id="question_programmer_10" model="apar.form.template.question">
+            <field name="question_no">4.1</field>
+            <field name="name">Integrity: Please comment on integrity of the employee.</field>
+            <field name="part" ref="template_programmer_part3"/>
+        </record>
+        <record id="question_programmer_11" model="apar.form.template.question">
+            <field name="question_no">4.2.i</field>
+            <field name="name">State of health</field>
+            <field name="part" ref="template_programmer_part3"/>
+        </record>
+        <record id="question_programmer_12" model="apar.form.template.question">
+            <field name="question_no">4.2.ii</field>
+            <field name="name">Aptitude and potential: please mention about the aptitude of the officer and &#xA; areas in which he/she has potential to develop along-with training needs.</field>
+            <field name="part" ref="template_programmer_part3"/>
+        </record>
+        <record id="question_programmer_13" model="apar.form.template.question">
+            <field name="question_no">4.3</field>
+            <field name="name">Pen Picture in about 70 words</field>
+            <field name="part" ref="template_programmer_part3"/>
+        </record>
+        <record id="question_programmer_14" model="apar.form.template.question">
+            <field name="question_no">3.1.1</field>
+            <field name="name">Extent of accomplishment of planned work as per para 2.2 above </field>
+            <field name="section" ref="section_programmer_1"/>
+        </record>
+        <record id="question_programmer_15" model="apar.form.template.question">
+            <field name="question_no">3.1.2</field>
+            <field name="name">Quality of Output</field>
+            <field name="section" ref="section_programmer_1"/>
+        </record>
+        <record id="question_programmer_16" model="apar.form.template.question">
+            <field name="question_no">3.1.3</field>
+            <field name="name">Accomplishment of exceptional work/unforeseen tasks performed as para 2.6 above</field>
+            <field name="section" ref="section_programmer_1"/>
+        </record>
+        <record id="question_programmer_17" model="apar.form.template.question">
+            <field name="question_no">3.2.1</field>
+            <field name="name">Attitude to work</field>
+            <field name="section" ref="section_programmer_2"/>
+        </record>
+        <record id="question_programmer_18" model="apar.form.template.question">
+            <field name="question_no">3.2.2</field>
+            <field name="name">Initiative, drive and resourcefulness</field>
+            <field name="section" ref="section_programmer_2"/>
+        </record>
+        <record id="question_programmer_19" model="apar.form.template.question">
+            <field name="question_no">3.2.3</field>
+            <field name="name">Discipline </field>
+            <field name="section" ref="section_programmer_2"/>
+        </record>
+        <record id="question_programmer_20" model="apar.form.template.question">
+            <field name="question_no">3.2.4</field>
+            <field name="name">Communication Skills</field>
+            <field name="section" ref="section_programmer_2"/>
+        </record>
+        <record id="question_programmer_21" model="apar.form.template.question">
+            <field name="question_no">3.2.5</field>
+            <field name="name">Capacity to work in team spirit</field>
+            <field name="section" ref="section_programmer_2"/>
+        </record>
+        <record id="question_programmer_22" model="apar.form.template.question">
+            <field name="question_no">3.2.6</field>
+            <field name="name">Capacity to work in a time schedule</field>
+            <field name="section" ref="section_programmer_2"/>
+        </record>
+        <record id="question_programmer_23" model="apar.form.template.question">
+            <field name="question_no">3.2.7</field>
+            <field name="name">Inter-personal relations with employees and patients </field>
+            <field name="section" ref="section_programmer_2"/>
+        </record>
+        <record id="question_programmer_24" model="apar.form.template.question">
+            <field name="question_no">3.2.8</field>
+            <field name="name">Dependability and willingness to take responsibility </field>
+            <field name="section" ref="section_programmer_2"/>
+        </record>
+        <record id="question_programmer_25" model="apar.form.template.question">
+            <field name="question_no">3.2.9</field>
+            <field name="name">Developing capacity of data processing and collection method</field>
+            <field name="section" ref="section_programmer_2"/>
+        </record>
+        <record id="question_programmer_26" model="apar.form.template.question">
+            <field name="question_no">3.2.10</field>
+            <field name="name">Development capacity of machine languages</field>
+            <field name="section" ref="section_programmer_2"/>
+        </record>
+        <record id="question_programmer_27" model="apar.form.template.question">
+            <field name="question_no">3.2.11</field>
+            <field name="name">Capacity to define security system and control procedures</field>
+            <field name="section" ref="section_programmer_2"/>
+        </record>
+        <record id="question_programmer_28" model="apar.form.template.question">
+            <field name="question_no">3.3.1</field>
+            <field name="name"> Knowledge of Rules/Regulations/ Procedures in the area of function and ability to apply them effectively. </field>
+            <field name="section" ref="section_programmer_3"/>
+        </record>
+        <record id="question_programmer_29" model="apar.form.template.question">
+            <field name="question_no">3.3.2</field>
+            <field name="name">Strategic planning ability</field>
+            <field name="section" ref="section_programmer_3"/>
+        </record>
+        <record id="question_programmer_30" model="apar.form.template.question">
+            <field name="question_no">3.3.3</field>
+            <field name="name">Decision making ability</field>
+            <field name="section" ref="section_programmer_3"/>
+        </record>
+        <record id="question_programmer_31" model="apar.form.template.question">
+            <field name="question_no">3.3.4</field>
+            <field name="name">Analytical ability</field>
+            <field name="section" ref="section_programmer_3"/>
+        </record>
+        <record id="question_programmer_32" model="apar.form.template.question">
+            <field name="question_no">3.3.5</field>
+            <field name="name">Coordination ability</field>
+            <field name="section" ref="section_programmer_3"/>
+        </record>
+        <record id="question_programmer_33" model="apar.form.template.question">
+            <field name="question_no">3.3.6</field>
+            <field name="name">Knowledge of modern System Analysis, Data processing concept techniques and operating principles</field>
+            <field name="section" ref="section_programmer_3"/>
+        </record>
+        <record id="question_programmer_34" model="apar.form.template.question">
+            <field name="question_no">3.3.7</field>
+            <field name="name">Supervising works experience in management and organization </field>
+            <field name="section" ref="section_programmer_3"/>
+        </record>
+        <record id="question_programmer_35" model="apar.form.template.question">
+            <field name="question_no">3.3.8</field>
+            <field name="name">Capacity to utilize CRT display terminal</field>
+            <field name="section" ref="section_programmer_3"/>
+        </record>
+        <record id="question_programmer_36" model="apar.form.template.question">
+            <field name="question_no">3.3.9</field>
+            <field name="name">Capacity to apply innovative solutions to problem solving on complex programming &#xA; equipment and analysis method and procedures accurately.</field>
+            <field name="section" ref="section_programmer_3"/>
+        </record>
+        <record id="question_programmer_37" model="apar.form.template.question">
+            <field name="question_no">5.1</field>
+            <field name="name">Length of service under Reviewing Authority</field>
+            <field name="part" ref="template_programmer_part5"/>
+        </record>
+        <record id="question_programmer_38" model="apar.form.template.question">
+            <field name="question_no">5.2</field>
+            <field name="name">Do you agree with assessment made by the Reporting Officer with respect to the &#xA; work output and various attributes in Part-III. In case you do not agree with any of &#xA; the numerical assessment or attitudes, please record your assessments &#xA; in column provided for in that Part and initial your entries.</field>
+            <field name="part" ref="template_programmer_part5"/>
+        </record>
+        <record id="question_programmer_39" model="apar.form.template.question">
+            <field name="question_no">5.3</field>
+            <field name="name">In case of difference of opinion details and reasons for the same may be given remarks</field>
+            <field name="part" ref="template_programmer_part5"/>
+        </record>
+        <record id="question_programmer_40" model="apar.form.template.question">
+            <field name="question_no">5.4</field>
+            <field name="name">Remarks/ Observation on the Pen Picture by the Reporting Officer</field>
+            <field name="part" ref="template_programmer_part5"/>
+        </record>
+    </data>
+</tryton>

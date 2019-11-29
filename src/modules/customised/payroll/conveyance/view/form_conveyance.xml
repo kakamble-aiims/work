@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+
+<form>
+    <label name="salary_code"/>
+    <field name="salary_code"/>
+    <label name="employee"/>
+    <field name="employee"/>
+    <label name="designation"/>
+    <field name="designation"/>
+    <label name="department"/>
+    <field name="department"/>
+    <label name="vehicle"/>
+    <field name="vehicle"/>
+    <label name="transport"/>
+    <field name="transport"/>
+    <label name="vehicle_selection"/>
+    <field name="vehicle_selection"/>
+    <label name="transport_amount"/>
+    <field name="transport_amount"/>
+    <label name="distance"/>
+    <field name="distance"/>
+    <label name="state"/>
+    <field name="state"/>
+    <button colspan="2" name="confirm" string="Confirm"/>
+	<button colspan="2" name="submit" string="Submit"/>
+	<button colspan="2" name="cancel" string="Cancel"/>
+    <button colspan="2" name="approve" string="Approve"/>
+</form>

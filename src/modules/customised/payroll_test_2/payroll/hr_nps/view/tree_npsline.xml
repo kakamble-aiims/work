@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<tree>
+    <field name="employee"/>
+    <field name="designation"/>
+    <field name="department"/>
+    <field name="pay_month"/>
+    <field name="nps_deduction"/>
+    <field name="amount"/>
+    <field name="nps_fund"/>
+    <field name="payslip"/>
+</tree>

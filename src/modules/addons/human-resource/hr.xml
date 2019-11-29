@@ -1,0 +1,320 @@
+<?xml version="1.0"?>
+
+<tryton>
+    <data>
+        <menuitem id="menu_hr" name="HR Management"/>
+        <menuitem id="menu_hr_configuration" name="Configuration" parent="menu_hr"/>
+
+
+        <!-- Copying the Center menu in HR -->
+
+        <menuitem action="health.action_gnuhealth_institution"
+            id="aiims_menu_institution" icon="gnuhealth-health-center"
+            parent="menu_hr_configuration" sequence="40"/>
+
+        <!-- Tree View-->
+        <record id="tree_department_view" model="ir.ui.view">
+            <field name="name">tree_department</field>
+            <field name="model">company.department</field>
+            <field name="type">tree</field>
+        </record>
+        
+        <!-- Form View -->
+        <record id="form_department_view" model="ir.ui.view">
+            <field name="name">form_department</field>
+            <field name="model">company.department</field>
+            <field name="type">form</field>
+        </record>
+        
+        <!-- Action -->
+        <record id="action_health_department" model="ir.action.act_window">
+            <field name="name">Department</field>
+            <field name="res_model">company.department</field>
+        </record>
+        
+        <!-- Action link to tree -->
+        <record id="act_tree_view_department" model="ir.action.act_window.view">
+            <field name="view" ref="tree_department_view"/>
+            <field name="act_window" ref="action_health_department"/>
+            <field name="sequence" eval="10"/>
+        </record>
+
+        <!-- Action link to form -->
+        <record id="act_form_view_department" model="ir.action.act_window.view">
+            <field name="view" ref="form_department_view"/>
+            <field name="act_window" ref="action_health_department"/>
+            <field name="sequence" eval="20"/>
+        </record>
+
+        <menuitem id="menu_department" name="Departments"
+            parent="menu_hr"
+            action="action_health_department" sequence="50"/>
+
+
+        <!-- Tree View-->
+        <record id="tree_employee_view" model="ir.ui.view">
+            <field name="name">tree_employee</field>
+            <field name="model">company.employee</field>
+            <field name="type">tree</field>
+            <field name="priority">10</field>
+        </record>
+        
+        <!-- Form View -->
+        <record id="form_employee_view" model="ir.ui.view">
+            <field name="name">form_employee</field>
+            <field name="model">company.employee</field>
+            <field name="type">form</field>
+            <field name="priority">8</field>
+        </record>
+        
+        <!-- Action -->
+        <record id="act_employee" model="ir.action.act_window">
+            <field name="name">AIIMS Employee</field>
+            <field name="domain" 
+                eval="[
+                    'OR',
+                        ('id', '=', Eval('employee', None)),
+                        ['OR',
+                            ('department.head', '=', Eval('employee', None)),
+                            ('department.establishment.admin', '=', Eval('employee', None))]
+                    ]"
+                pyson="1"/>
+            <field name="res_model">company.employee</field>
+        </record>
+        
+        <!-- Action link to tree -->
+        <record id="act_tree_view_employee" model="ir.action.act_window.view">
+            <field name="view" ref="tree_employee_view"/>
+            <field name="act_window" ref="act_employee"/>
+            <field name="sequence" eval="10"/>
+        </record>
+
+        <!-- Action link to form -->
+        <record id="act_form_view_employee" model="ir.action.act_window.view">
+            <field name="view" ref="form_employee_view"/>
+            <field name="act_window" ref="act_employee"/>
+            <field name="sequence" eval="20"/>
+        </record>
+        
+        <menuitem id="menu_hr_employee" parent="menu_hr" action="act_employee" name="Employee"/>
+
+        <record id="tree_employee_postings_view" model="ir.ui.view">
+            <field name="name">tree_employee_postings</field>
+            <field name="model">employee.posting</field>
+            <field name="type">tree</field>
+        </record>
+
+        <!--Grade Pay-->
+        <record id="tree_grade_pay_view" model="ir.ui.view">
+            <field name="name">tree_grade_pay</field>
+            <field name="model">company.employee.grade_pay</field>
+            <field name="type">tree</field>
+        </record>
+
+        <!-- Form View -->
+        <record id="form_grade_pay_view" model="ir.ui.view">
+            <field name="name">form_grade_pay</field>
+            <field name="model">company.employee.grade_pay</field>
+            <field name="type">form</field>
+        </record>
+
+        <!-- Action -->
+        <record id="act_gradepay" model="ir.action.act_window">
+            <field name="name">Grade Pay</field>
+            <field name="res_model">company.employee.grade_pay</field>
+        </record>
+
+        <!-- Action link to tree -->
+        <record id="act_tree_view_gradepay" model="ir.action.act_window.view">
+            <field name="view" ref="tree_grade_pay_view"/>
+            <field name="act_window" ref="act_gradepay"/>
+            <field name="sequence" eval="10"/>
+        </record>
+
+        <!-- Action link to form -->
+        <record id="act_form_view_gradepay" model="ir.action.act_window.view">
+            <field name="view" ref="form_grade_pay_view"/>
+            <field name="act_window" ref="act_gradepay"/>
+            <field name="sequence" eval="20"/>
+        </record>
+        
+        <menuitem id="menu_hr_grade_pay" parent="menu_hr_configuration" action="act_gradepay" name="Grade Pay" sequence="30"/>
+
+        <!--Employee Grade-->
+        <record id="tree_grade_view" model="ir.ui.view">
+            <field name="name">tree_grade</field>
+            <field name="model">company.employee.grade</field>
+            <field name="type">tree</field>
+        </record>
+
+        <!-- Form View -->
+        <record id="form_grade_view" model="ir.ui.view">
+            <field name="name">form_grade</field>
+            <field name="model">company.employee.grade</field>
+            <field name="type">form</field>
+        </record>
+
+        <!-- Action -->
+        <record id="act_grade" model="ir.action.act_window">
+            <field name="name">Employee Grade</field>
+            <field name="res_model">company.employee.grade</field>
+        </record>
+
+        <!-- Action link to tree -->
+        <record id="act_tree_view_grade" model="ir.action.act_window.view">
+            <field name="view" ref="tree_grade_view"/>
+            <field name="act_window" ref="act_grade"/>
+            <field name="sequence" eval="10"/>
+        </record>
+
+        <!-- Action link to form -->
+        <record id="act_form_view_grade" model="ir.action.act_window.view">
+            <field name="view" ref="form_grade_view"/>
+            <field name="act_window" ref="act_grade"/>
+            <field name="sequence" eval="20"/>
+        </record>
+        
+        <menuitem id="menu_hr_grade" parent="menu_hr_configuration" action="act_grade" name="Employee Grade" sequence="30"/>
+
+        <!--Employee Designations-->
+        <record id="tree_designation_view" model="ir.ui.view">
+            <field name="name">tree_designation</field>
+            <field name="model">employee.designation</field>
+            <field name="type">tree</field>
+        </record>
+
+        <!-- Form View -->
+        <record id="form_designation_view" model="ir.ui.view">
+            <field name="name">form_designation</field>
+            <field name="model">employee.designation</field>
+            <field name="type">form</field>
+        </record>
+
+        <!-- Action -->
+        <record id="act_designation" model="ir.action.act_window">
+            <field name="name">Designations</field>
+            <field name="res_model">employee.designation</field>
+        </record>
+
+        <!-- Action link to tree -->
+        <record id="act_tree_view_designation" model="ir.action.act_window.view">
+            <field name="view" ref="tree_designation_view"/>
+            <field name="act_window" ref="act_designation"/>
+            <field name="sequence" eval="10"/>
+        </record>
+
+        <!-- Action link to form -->
+        <record id="act_form_view_designation" model="ir.action.act_window.view">
+            <field name="view" ref="form_designation_view"/>
+            <field name="act_window" ref="act_designation"/>
+            <field name="sequence" eval="20"/>
+        </record>
+        
+        <menuitem id="menu_hr_designation" parent="menu_hr_configuration" action="act_designation" name="Designations" sequence="50"/>
+
+        <record model="ir.ui.view" id="party_view_form">
+            <field name="model">party.party</field>
+            <field name="inherit" ref="party.party_view_form" />
+            <field name="name">party_form</field>
+        </record>
+
+        <record id="form_bank_accounts_view" model="ir.ui.view">
+            <field name="name">form_bank_accounts</field>
+            <field name="model">bank.accounts</field>
+            <field name="type">form</field>
+        </record>
+        <record id="tree_bank_accounts_view" model="ir.ui.view">
+            <field name="name">tree_bank_accounts</field>
+            <field name="model">bank.accounts</field>
+            <field name="type">tree</field>
+        </record>
+
+        <record id="form_bank_view" model="ir.ui.view">
+            <field name="name">form_bank</field>
+            <field name="model">bank.bank</field>
+            <field name="type">form</field>
+        </record>
+        <record id="tree_bank_view" model="ir.ui.view">
+            <field name="name">tree_bank</field>
+            <field name="model">bank.bank</field>
+            <field name="type">tree</field>
+        </record>
+
+        <record id="form_dependents_view" model="ir.ui.view">
+            <field name="name">form_dependents</field>
+            <field name="model">company.employee.dependents</field>
+            <field name="type">form</field>
+        </record>
+        <record id="tree_dependents_view" model="ir.ui.view">
+            <field name="name">tree_dependents</field>
+            <field name="model">company.employee.dependents</field>
+            <field name="type">tree</field>
+        </record>
+
+        <!-- Action -->
+        <record id="act_dependents" model="ir.action.act_window">
+            <field name="name">Dependents</field>
+            <field name="res_model">company.employee.dependents</field>
+        </record>
+
+        <!-- Action link to tree -->
+        <record id="act_tree_view_dependents" model="ir.action.act_window.view">
+            <field name="view" ref="tree_dependents_view"/>
+            <field name="act_window" ref="act_dependents"/>
+            <field name="sequence" eval="10"/>
+        </record>
+
+        <!-- Action link to form -->
+        <record id="act_form_view_dependents" model="ir.action.act_window.view">
+            <field name="view" ref="form_dependents_view"/>
+            <field name="act_window" ref="act_dependents"/>
+            <field name="sequence" eval="20"/>
+        </record>
+        
+        <menuitem id="menu_hr_dependents" parent="menu_hr_configuration" action="act_dependents" name="Dependents" sequence="60"/>
+
+        <record id="calendar_leave_view" model="ir.ui.view">
+            <field name="name">calendar_leave</field>
+            <field name="model">company.employee.leave</field>
+            <field name="type">calendar</field>
+        </record>
+        <record id="form_leave_view" model="ir.ui.view">
+            <field name="name">form_leave</field>
+            <field name="model">company.employee.leave</field>
+            <field name="type">form</field>
+        </record>
+        <record id="tree_leave_view" model="ir.ui.view">
+            <field name="name">tree_leave</field>
+            <field name="model">company.employee.leave</field>
+            <field name="type">tree</field>
+        </record>
+        
+        <record id="act_leave" model="ir.action.act_window">
+            <field name="name">Leave</field>
+            <field name="res_model">company.employee.leave</field>
+        </record>
+
+        <!-- Action link to tree -->
+        <record id="act_calendar_view_leave" model="ir.action.act_window.view">
+            <field name="view" ref="calendar_leave_view"/>
+            <field name="act_window" ref="act_leave"/>
+            <field name="sequence" eval="10"/>
+        </record>
+        
+        <!-- Action link to tree -->
+        <record id="act_tree_view_leave" model="ir.action.act_window.view">
+            <field name="view" ref="tree_leave_view"/>
+            <field name="act_window" ref="act_leave"/>
+            <field name="sequence" eval="30"/>
+        </record>
+
+        <!-- Action link to form -->
+        <record id="act_form_view_leave" model="ir.action.act_window.view">
+            <field name="view" ref="form_leave_view"/>
+            <field name="act_window" ref="act_leave"/>
+            <field name="sequence" eval="20"/>
+        </record>
+        
+        <menuitem id="menu_hr_leave" parent="menu_hr_configuration" action="act_leave" name="Leave" sequence="70"/>
+    </data>
+</tryton>

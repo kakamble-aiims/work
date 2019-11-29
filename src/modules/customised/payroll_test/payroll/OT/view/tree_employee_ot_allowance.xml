@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+
+<tree>
+    <field name="employee"/>
+    <field name="date_from"/>
+    <field name="date_to"/>
+    <field name="duty_hrs_from"/>
+    <field name="duty_hrs_to"/>
+    <field name="salary_code"/>
+    <field name="ota_rate"/>
+    <field name="vehicle_no"/>
+</tree>

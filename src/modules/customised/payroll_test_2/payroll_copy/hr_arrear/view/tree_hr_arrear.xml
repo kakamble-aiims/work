@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<tree>
+    <field name="employee"/>
+    <field name="salary_code"/>
+    <field name="department"/>
+    <field name="designation"/>
+    <field name="gpf_code"/>
+    <field name="grade_pay"/>
+    <field name="state"/>
+</tree>

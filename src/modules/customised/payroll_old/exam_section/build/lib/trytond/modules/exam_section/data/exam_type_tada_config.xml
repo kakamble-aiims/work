@@ -1,0 +1,1387 @@
+<?xml version="1.0"?>
+<tryton>
+    <data>
+        
+        <!-- TA/DA Lines -->
+        
+        <record id="group_a_ta_da_phd" model="exam_section.exam_type.ta_da">
+            <field name="group">A</field>
+            <field name="hotel_charges">7500</field>
+            <field name="food_charges">1200</field>
+            <field name="exam_type" ref="exam_type_phd"/>
+        </record>
+        <record id="group_a_2_ta_da_phd" model="exam_section.exam_type.ta_da">
+            <field name="group">A</field>
+            <field name="hotel_charges">4500</field>
+            <field name="food_charges">1000</field>
+            <field name="exam_type" ref="exam_type_phd"/>
+        </record>
+        <record id="group_a_3_ta_da_phd" model="exam_section.exam_type.ta_da">
+            <field name="group">A</field>
+            <field name="hotel_charges">2250</field>
+            <field name="food_charges">900</field>
+            <field name="exam_type" ref="exam_type_phd"/>
+        </record>
+        <record id="group_b_ta_da_phd" model="exam_section.exam_type.ta_da">
+            <field name="group">B</field>
+            <field name="hotel_charges">750</field>
+            <field name="food_charges">800</field>
+            <field name="exam_type" ref="exam_type_phd"/>
+        </record>
+        <record id="group_c_ta_da_phd" model="exam_section.exam_type.ta_da">
+            <field name="group">C</field>
+            <field name="hotel_charges">400</field>
+            <field name="food_charges">500</field>
+            <field name="exam_type" ref="exam_type_phd"/>
+        </record>
+
+
+        <record id="group_a_ta_da_pg_1" model="exam_section.exam_type.ta_da">
+            <field name="group">A</field>
+            <field name="hotel_charges">7500</field>
+            <field name="food_charges">1200</field>
+            <field name="exam_type" ref="exam_type_pg_1"/>
+        </record>
+        <record id="group_a_2_ta_da_pg_1" model="exam_section.exam_type.ta_da">
+            <field name="group">A</field>
+            <field name="hotel_charges">4500</field>
+            <field name="food_charges">1000</field>
+            <field name="exam_type" ref="exam_type_pg_1"/>
+        </record>
+        <record id="group_a_3_ta_da_pg_1" model="exam_section.exam_type.ta_da">
+            <field name="group">A</field>
+            <field name="hotel_charges">2250</field>
+            <field name="food_charges">900</field>
+            <field name="exam_type" ref="exam_type_pg_1"/>
+        </record>
+        <record id="group_b_ta_da_pg_1" model="exam_section.exam_type.ta_da">
+            <field name="group">B</field>
+            <field name="hotel_charges">750</field>
+            <field name="food_charges">800</field>
+            <field name="exam_type" ref="exam_type_pg_1"/>
+        </record>
+        <record id="group_c_ta_da_pg_1" model="exam_section.exam_type.ta_da">
+            <field name="group">C</field>
+            <field name="hotel_charges">400</field>
+            <field name="food_charges">500</field>
+            <field name="exam_type" ref="exam_type_pg_1"/>
+        </record>
+
+
+        <record id="group_a_ta_da_pg_2" model="exam_section.exam_type.ta_da">
+            <field name="group">A</field>
+            <field name="hotel_charges">7500</field>
+            <field name="food_charges">1200</field>
+            <field name="exam_type" ref="exam_type_pg_2"/>
+        </record>
+        <record id="group_a_2_ta_da_pg_2" model="exam_section.exam_type.ta_da">
+            <field name="group">A</field>
+            <field name="hotel_charges">4500</field>
+            <field name="food_charges">1000</field>
+            <field name="exam_type" ref="exam_type_pg_2"/>
+        </record>
+        <record id="group_a_3_ta_da_pg_2" model="exam_section.exam_type.ta_da">
+            <field name="group">A</field>
+            <field name="hotel_charges">2250</field>
+            <field name="food_charges">900</field>
+            <field name="exam_type" ref="exam_type_pg_2"/>
+        </record>
+        <record id="group_b_ta_da_pg_2" model="exam_section.exam_type.ta_da">
+            <field name="group">B</field>
+            <field name="hotel_charges">750</field>
+            <field name="food_charges">800</field>
+            <field name="exam_type" ref="exam_type_pg_2"/>
+        </record>
+        <record id="group_c_ta_da_pg_2" model="exam_section.exam_type.ta_da">
+            <field name="group">C</field>
+            <field name="hotel_charges">400</field>
+            <field name="food_charges">500</field>
+            <field name="exam_type" ref="exam_type_pg_2"/>
+        </record>
+
+
+        <record id="group_a_ta_da_ug" model="exam_section.exam_type.ta_da">
+            <field name="group">A</field>
+            <field name="hotel_charges">7500</field>
+            <field name="food_charges">1200</field>
+            <field name="exam_type" ref="exam_type_ug"/>
+        </record>
+        <record id="group_a_2_ta_da_ug" model="exam_section.exam_type.ta_da">
+            <field name="group">A</field>
+            <field name="hotel_charges">4500</field>
+            <field name="food_charges">1000</field>
+            <field name="exam_type" ref="exam_type_ug"/>
+        </record>
+        <record id="group_a_3_ta_da_ug" model="exam_section.exam_type.ta_da">
+            <field name="group">A</field>
+            <field name="hotel_charges">2250</field>
+            <field name="food_charges">900</field>
+            <field name="exam_type" ref="exam_type_ug"/>
+        </record>
+        <record id="group_b_ta_da_ug" model="exam_section.exam_type.ta_da">
+            <field name="group">B</field>
+            <field name="hotel_charges">750</field>
+            <field name="food_charges">800</field>
+            <field name="exam_type" ref="exam_type_ug"/>
+        </record>
+        <record id="group_c_ta_da_ug" model="exam_section.exam_type.ta_da">
+            <field name="group">C</field>
+            <field name="hotel_charges">400</field>
+            <field name="food_charges">500</field>
+            <field name="exam_type" ref="exam_type_ug"/>
+        </record>
+
+
+        <record id="group_a_ta_da_professional_theory" model="exam_section.exam_type.ta_da">
+            <field name="group">A</field>
+            <field name="hotel_charges">7500</field>
+            <field name="food_charges">1200</field>
+            <field name="exam_type" ref="exam_type_professional_theory"/>
+        </record>
+        <record id="group_a_2_ta_da_professional_theory" model="exam_section.exam_type.ta_da">
+            <field name="group">A</field>
+            <field name="hotel_charges">4500</field>
+            <field name="food_charges">1000</field>
+            <field name="exam_type" ref="exam_type_professional_theory"/>
+        </record>
+        <record id="group_a_3_ta_da_professional_theory" model="exam_section.exam_type.ta_da">
+            <field name="group">A</field>
+            <field name="hotel_charges">2250</field>
+            <field name="food_charges">900</field>
+            <field name="exam_type" ref="exam_type_professional_theory"/>
+        </record>
+        <record id="group_b_ta_da_professional_theory" model="exam_section.exam_type.ta_da">
+            <field name="group">B</field>
+            <field name="hotel_charges">750</field>
+            <field name="food_charges">800</field>
+            <field name="exam_type" ref="exam_type_professional_theory"/>
+        </record>
+        <record id="group_c_ta_da_professional_theory" model="exam_section.exam_type.ta_da">
+            <field name="group">C</field>
+            <field name="hotel_charges">400</field>
+            <field name="food_charges">500</field>
+            <field name="exam_type" ref="exam_type_professional_theory"/>
+        </record>
+
+
+        <record id="group_a_ta_da_professional_practical" model="exam_section.exam_type.ta_da">
+            <field name="group">A</field>
+            <field name="hotel_charges">7500</field>
+            <field name="food_charges">1200</field>
+            <field name="exam_type" ref="exam_type_professional_practical"/>
+        </record>
+        <record id="group_a_2_ta_da_professional_practical" model="exam_section.exam_type.ta_da">
+            <field name="group">A</field>
+            <field name="hotel_charges">4500</field>
+            <field name="food_charges">1000</field>
+            <field name="exam_type" ref="exam_type_professional_practical"/>
+        </record>
+        <record id="group_a_3_ta_da_professional_practical" model="exam_section.exam_type.ta_da">
+            <field name="group">A</field>
+            <field name="hotel_charges">2250</field>
+            <field name="food_charges">900</field>
+            <field name="exam_type" ref="exam_type_professional_practical"/>
+        </record>
+        <record id="group_b_ta_da_professional_practical" model="exam_section.exam_type.ta_da">
+            <field name="group">B</field>
+            <field name="hotel_charges">750</field>
+            <field name="food_charges">800</field>
+            <field name="exam_type" ref="exam_type_professional_practical"/>
+        </record>
+        <record id="group_c_ta_da_professional_practical" model="exam_section.exam_type.ta_da">
+            <field name="group">C</field>
+            <field name="hotel_charges">400</field>
+            <field name="food_charges">500</field>
+            <field name="exam_type" ref="exam_type_professional_practical"/>
+        </record>        
+
+        <!-- Grade Pay -->
+
+        <record id="grade_pay_10000" model="company.employee.grade_pay">
+            <field name="name">10000</field>
+        </record>
+        <record id="grade_pay_10500" model="company.employee.grade_pay">
+            <field name="name">10500</field>
+        </record>
+        <record id="grade_pay_9500" model="company.employee.grade_pay">
+            <field name="name">9500</field>
+        </record>
+        <record id="grade_pay_9000" model="company.employee.grade_pay">
+            <field name="name">9000</field>
+        </record>
+        <record id="grade_pay_8900" model="company.employee.grade_pay">
+            <field name="name">8900</field>
+        </record>
+        <record id="grade_pay_8700" model="company.employee.grade_pay">
+            <field name="name">8700</field>
+        </record>
+        <record id="grade_pay_7600" model="company.employee.grade_pay">
+            <field name="name">7600</field>
+        </record>
+        <record id="grade_pay_6600" model="company.employee.grade_pay">
+            <field name="name">6600</field>
+        </record>
+        <record id="grade_pay_5400" model="company.employee.grade_pay">
+            <field name="name">5400</field>
+        </record>
+        <record id="grade_pay_4800" model="company.employee.grade_pay">
+            <field name="name">4800</field>
+        </record>
+        <record id="grade_pay_4600" model="company.employee.grade_pay">
+            <field name="name">4600</field>
+        </record>
+        <record id="grade_pay_4200" model="company.employee.grade_pay">
+            <field name="name">4200</field>
+        </record>
+        <record id="grade_pay_2800" model="company.employee.grade_pay">
+            <field name="name">2800</field>
+        </record>
+        <record id="grade_pay_2400" model="company.employee.grade_pay">
+            <field name="name">2400</field>
+        </record>
+        <record id="grade_pay_2000" model="company.employee.grade_pay">
+            <field name="name">2000</field>
+        </record>
+        <record id="grade_pay_1900" model="company.employee.grade_pay">
+            <field name="name">1900</field>
+        </record>
+
+        <!-- Pay Level -->
+
+        <record id="pay_level_18" model="company.employee.grade">
+            <field name="name">18</field>
+        </record>
+        <record id="pay_level_17" model="company.employee.grade">
+            <field name="name">17</field>
+        </record>
+        <record id="pay_level_16" model="company.employee.grade">
+            <field name="name">16</field>
+        </record>
+        <record id="pay_level_15" model="company.employee.grade">
+            <field name="name">15</field>
+        </record>
+        <record id="pay_level_14" model="company.employee.grade">
+            <field name="name">14</field>
+        </record>
+        <record id="pay_level_13_a" model="company.employee.grade">
+            <field name="name">13A</field>
+        </record>
+        <record id="pay_level_13" model="company.employee.grade">
+            <field name="name">13</field>
+        </record>
+        <record id="pay_level_12" model="company.employee.grade">
+            <field name="name">12</field>
+        </record>
+        <record id="pay_level_11" model="company.employee.grade">
+            <field name="name">11</field>
+        </record>
+        <record id="pay_level_10" model="company.employee.grade">
+            <field name="name">10</field>
+        </record>
+        <record id="pay_level_9" model="company.employee.grade">
+            <field name="name">9</field>
+        </record>
+        <record id="pay_level_8" model="company.employee.grade">
+            <field name="name">8</field>
+        </record>
+        <record id="pay_level_7" model="company.employee.grade">
+            <field name="name">7</field>
+        </record>
+        <record id="pay_level_6" model="company.employee.grade">
+            <field name="name">6</field>
+        </record>
+        <record id="pay_level_5" model="company.employee.grade">
+            <field name="name">5</field>
+        </record>
+        <record id="pay_level_4" model="company.employee.grade">
+            <field name="name">4</field>
+        </record>
+        <record id="pay_level_3" model="company.employee.grade">
+            <field name="name">3</field>
+        </record>
+        <record id="pay_level_2" model="company.employee.grade">
+            <field name="name">2</field>
+        </record>
+        <record id="pay_level_1" model="company.employee.grade">
+            <field name="name">1</field>
+        </record>
+
+        <!-- Grade Pay-TA/DA Line -->
+
+        <record id="grade_pay_10500_group_a_ta_da_phd"
+            model="exam.type.tada_grade.pay">
+            <field name="grade_pay" ref="grade_pay_10500"/>
+            <field name="ta_da_line" ref="group_a_ta_da_phd"/>
+        </record>
+        <record id="grade_pay_10000_group_a_ta_da_phd"
+            model="exam.type.tada_grade.pay">
+            <field name="grade_pay" ref="grade_pay_10000"/>
+            <field name="ta_da_line" ref="group_a_ta_da_phd"/>
+        </record>
+        <record id="grade_pay_9500_group_a_2_ta_da_phd"
+            model="exam.type.tada_grade.pay">
+            <field name="grade_pay" ref="grade_pay_9500"/>
+            <field name="ta_da_line" ref="group_a_2_ta_da_phd"/>
+        </record>
+        <record id="grade_pay_9000_group_a_2_ta_da_phd"
+            model="exam.type.tada_grade.pay">
+            <field name="grade_pay" ref="grade_pay_9000"/>
+            <field name="ta_da_line" ref="group_a_2_ta_da_phd"/>
+        </record>
+        <record id="grade_pay_8900_group_a_2_ta_da_phd"
+            model="exam.type.tada_grade.pay">
+            <field name="grade_pay" ref="grade_pay_8900"/>
+            <field name="ta_da_line" ref="group_a_2_ta_da_phd"/>
+        </record>
+        <record id="grade_pay_8700_group_a_2_ta_da_phd"
+            model="exam.type.tada_grade.pay">
+            <field name="grade_pay" ref="grade_pay_8700"/>
+            <field name="ta_da_line" ref="group_a_2_ta_da_phd"/>
+        </record>
+        <record id="grade_pay_7600_group_a_2_ta_da_phd"
+            model="exam.type.tada_grade.pay">
+            <field name="grade_pay" ref="grade_pay_7600"/>
+            <field name="ta_da_line" ref="group_a_2_ta_da_phd"/>
+        </record>
+        <record id="grade_pay_6600_group_a_3_ta_da_phd"
+            model="exam.type.tada_grade.pay">
+            <field name="grade_pay" ref="grade_pay_6600"/>
+            <field name="ta_da_line" ref="group_a_3_ta_da_phd"/>
+        </record>
+        <record id="grade_pay_5400_group_a_3_ta_da_phd"
+            model="exam.type.tada_grade.pay">
+            <field name="grade_pay" ref="grade_pay_5400"/>
+            <field name="ta_da_line" ref="group_a_3_ta_da_phd"/>
+        </record>
+        <record id="grade_pay_4800_group_b_ta_da_phd"
+            model="exam.type.tada_grade.pay">
+            <field name="grade_pay" ref="grade_pay_4800"/>
+            <field name="ta_da_line" ref="group_b_ta_da_phd"/>
+        </record>
+        <record id="grade_pay_4600_group_b_ta_da_phd"
+            model="exam.type.tada_grade.pay">
+            <field name="grade_pay" ref="grade_pay_4600"/>
+            <field name="ta_da_line" ref="group_b_ta_da_phd"/>
+        </record>
+        <record id="grade_pay_4200_group_b_ta_da_phd"
+            model="exam.type.tada_grade.pay">
+            <field name="grade_pay" ref="grade_pay_4200"/>
+            <field name="ta_da_line" ref="group_b_ta_da_phd"/>
+        </record>
+        <record id="grade_pay_2800_group_c_ta_da_phd"
+            model="exam.type.tada_grade.pay">
+            <field name="grade_pay" ref="grade_pay_2800"/>
+            <field name="ta_da_line" ref="group_c_ta_da_phd"/>
+        </record>
+        <record id="grade_pay_2400_group_c_ta_da_phd"
+            model="exam.type.tada_grade.pay">
+            <field name="grade_pay" ref="grade_pay_2400"/>
+            <field name="ta_da_line" ref="group_c_ta_da_phd"/>
+        </record>
+        <record id="grade_pay_2000_group_c_ta_da_phd"
+            model="exam.type.tada_grade.pay">
+            <field name="grade_pay" ref="grade_pay_2000"/>
+            <field name="ta_da_line" ref="group_c_ta_da_phd"/>
+        </record>
+        <record id="grade_pay_1900_group_c_ta_da_phd"
+            model="exam.type.tada_grade.pay">
+            <field name="grade_pay" ref="grade_pay_1900"/>
+            <field name="ta_da_line" ref="group_c_ta_da_phd"/>
+        </record>
+
+
+        <record id="grade_pay_10500_group_a_ta_da_pg_1"
+            model="exam.type.tada_grade.pay">
+            <field name="grade_pay" ref="grade_pay_10500"/>
+            <field name="ta_da_line" ref="group_a_ta_da_pg_1"/>
+        </record>
+        <record id="grade_pay_10000_group_a_ta_da_pg_1"
+            model="exam.type.tada_grade.pay">
+            <field name="grade_pay" ref="grade_pay_10000"/>
+            <field name="ta_da_line" ref="group_a_ta_da_pg_1"/>
+        </record>
+        <record id="grade_pay_9500_group_a_2_ta_da_pg_1"
+            model="exam.type.tada_grade.pay">
+            <field name="grade_pay" ref="grade_pay_9500"/>
+            <field name="ta_da_line" ref="group_a_2_ta_da_pg_1"/>
+        </record>
+        <record id="grade_pay_9000_group_a_2_ta_da_pg_1"
+            model="exam.type.tada_grade.pay">
+            <field name="grade_pay" ref="grade_pay_9000"/>
+            <field name="ta_da_line" ref="group_a_2_ta_da_pg_1"/>
+        </record>
+        <record id="grade_pay_8900_group_a_2_ta_da_pg_1"
+            model="exam.type.tada_grade.pay">
+            <field name="grade_pay" ref="grade_pay_8900"/>
+            <field name="ta_da_line" ref="group_a_2_ta_da_pg_1"/>
+        </record>
+        <record id="grade_pay_8700_group_a_2_ta_da_pg_1"
+            model="exam.type.tada_grade.pay">
+            <field name="grade_pay" ref="grade_pay_8700"/>
+            <field name="ta_da_line" ref="group_a_2_ta_da_pg_1"/>
+        </record>
+        <record id="grade_pay_7600_group_a_2_ta_da_pg_1"
+            model="exam.type.tada_grade.pay">
+            <field name="grade_pay" ref="grade_pay_7600"/>
+            <field name="ta_da_line" ref="group_a_2_ta_da_pg_1"/>
+        </record>
+        <record id="grade_pay_6600_group_a_3_ta_da_pg_1"
+            model="exam.type.tada_grade.pay">
+            <field name="grade_pay" ref="grade_pay_6600"/>
+            <field name="ta_da_line" ref="group_a_3_ta_da_pg_1"/>
+        </record>
+        <record id="grade_pay_5400_group_a_3_ta_da_pg_1"
+            model="exam.type.tada_grade.pay">
+            <field name="grade_pay" ref="grade_pay_5400"/>
+            <field name="ta_da_line" ref="group_a_3_ta_da_pg_1"/>
+        </record>
+        <record id="grade_pay_4800_group_b_ta_da_pg_1"
+            model="exam.type.tada_grade.pay">
+            <field name="grade_pay" ref="grade_pay_4800"/>
+            <field name="ta_da_line" ref="group_b_ta_da_pg_1"/>
+        </record>
+        <record id="grade_pay_4600_group_b_ta_da_pg_1"
+            model="exam.type.tada_grade.pay">
+            <field name="grade_pay" ref="grade_pay_4600"/>
+            <field name="ta_da_line" ref="group_b_ta_da_pg_1"/>
+        </record>
+        <record id="grade_pay_4200_group_b_ta_da_pg_1"
+            model="exam.type.tada_grade.pay">
+            <field name="grade_pay" ref="grade_pay_4200"/>
+            <field name="ta_da_line" ref="group_b_ta_da_pg_1"/>
+        </record>
+        <record id="grade_pay_2800_group_c_ta_da_pg_1"
+            model="exam.type.tada_grade.pay">
+            <field name="grade_pay" ref="grade_pay_2800"/>
+            <field name="ta_da_line" ref="group_c_ta_da_pg_1"/>
+        </record>
+        <record id="grade_pay_2400_group_c_ta_da_pg_1"
+            model="exam.type.tada_grade.pay">
+            <field name="grade_pay" ref="grade_pay_2400"/>
+            <field name="ta_da_line" ref="group_c_ta_da_pg_1"/>
+        </record>
+        <record id="grade_pay_2000_group_c_ta_da_pg_1"
+            model="exam.type.tada_grade.pay">
+            <field name="grade_pay" ref="grade_pay_2000"/>
+            <field name="ta_da_line" ref="group_c_ta_da_pg_1"/>
+        </record>
+        <record id="grade_pay_1900_group_c_ta_da_pg_1"
+            model="exam.type.tada_grade.pay">
+            <field name="grade_pay" ref="grade_pay_1900"/>
+            <field name="ta_da_line" ref="group_c_ta_da_pg_1"/>
+        </record>
+
+
+        <record id="grade_pay_10500_group_a_ta_da_pg_2"
+            model="exam.type.tada_grade.pay">
+            <field name="grade_pay" ref="grade_pay_10500"/>
+            <field name="ta_da_line" ref="group_a_ta_da_pg_2"/>
+        </record>
+        <record id="grade_pay_10000_group_a_ta_da_pg_2"
+            model="exam.type.tada_grade.pay">
+            <field name="grade_pay" ref="grade_pay_10000"/>
+            <field name="ta_da_line" ref="group_a_ta_da_pg_2"/>
+        </record>
+        <record id="grade_pay_9500_group_a_2_ta_da_pg_2"
+            model="exam.type.tada_grade.pay">
+            <field name="grade_pay" ref="grade_pay_9500"/>
+            <field name="ta_da_line" ref="group_a_2_ta_da_pg_2"/>
+        </record>
+        <record id="grade_pay_9000_group_a_2_ta_da_pg_2"
+            model="exam.type.tada_grade.pay">
+            <field name="grade_pay" ref="grade_pay_9000"/>
+            <field name="ta_da_line" ref="group_a_2_ta_da_pg_2"/>
+        </record>
+        <record id="grade_pay_8900_group_a_2_ta_da_pg_2"
+            model="exam.type.tada_grade.pay">
+            <field name="grade_pay" ref="grade_pay_8900"/>
+            <field name="ta_da_line" ref="group_a_2_ta_da_pg_2"/>
+        </record>
+        <record id="grade_pay_8700_group_a_2_ta_da_pg_2"
+            model="exam.type.tada_grade.pay">
+            <field name="grade_pay" ref="grade_pay_8700"/>
+            <field name="ta_da_line" ref="group_a_2_ta_da_pg_2"/>
+        </record>
+        <record id="grade_pay_7600_group_a_2_ta_da_pg_2"
+            model="exam.type.tada_grade.pay">
+            <field name="grade_pay" ref="grade_pay_7600"/>
+            <field name="ta_da_line" ref="group_a_2_ta_da_pg_2"/>
+        </record>
+        <record id="grade_pay_6600_group_a_3_ta_da_pg_2"
+            model="exam.type.tada_grade.pay">
+            <field name="grade_pay" ref="grade_pay_6600"/>
+            <field name="ta_da_line" ref="group_a_3_ta_da_pg_2"/>
+        </record>
+        <record id="grade_pay_5400_group_a_3_ta_da_pg_2"
+            model="exam.type.tada_grade.pay">
+            <field name="grade_pay" ref="grade_pay_5400"/>
+            <field name="ta_da_line" ref="group_a_3_ta_da_pg_2"/>
+        </record>
+        <record id="grade_pay_4800_group_b_ta_da_pg_2"
+            model="exam.type.tada_grade.pay">
+            <field name="grade_pay" ref="grade_pay_4800"/>
+            <field name="ta_da_line" ref="group_b_ta_da_pg_2"/>
+        </record>
+        <record id="grade_pay_4600_group_b_ta_da_pg_2"
+            model="exam.type.tada_grade.pay">
+            <field name="grade_pay" ref="grade_pay_4600"/>
+            <field name="ta_da_line" ref="group_b_ta_da_pg_2"/>
+        </record>
+        <record id="grade_pay_4200_group_b_ta_da_pg_2"
+            model="exam.type.tada_grade.pay">
+            <field name="grade_pay" ref="grade_pay_4200"/>
+            <field name="ta_da_line" ref="group_b_ta_da_pg_2"/>
+        </record>
+        <record id="grade_pay_2800_group_c_ta_da_pg_2"
+            model="exam.type.tada_grade.pay">
+            <field name="grade_pay" ref="grade_pay_2800"/>
+            <field name="ta_da_line" ref="group_c_ta_da_pg_2"/>
+        </record>
+        <record id="grade_pay_2400_group_c_ta_da_pg_2"
+            model="exam.type.tada_grade.pay">
+            <field name="grade_pay" ref="grade_pay_2400"/>
+            <field name="ta_da_line" ref="group_c_ta_da_pg_2"/>
+        </record>
+        <record id="grade_pay_2000_group_c_ta_da_pg_2"
+            model="exam.type.tada_grade.pay">
+            <field name="grade_pay" ref="grade_pay_2000"/>
+            <field name="ta_da_line" ref="group_c_ta_da_pg_2"/>
+        </record>
+        <record id="grade_pay_1900_group_c_ta_da_pg_2"
+            model="exam.type.tada_grade.pay">
+            <field name="grade_pay" ref="grade_pay_1900"/>
+            <field name="ta_da_line" ref="group_c_ta_da_pg_2"/>
+        </record>
+
+
+        <record id="grade_pay_10500_group_a_ta_da_ug"
+            model="exam.type.tada_grade.pay">
+            <field name="grade_pay" ref="grade_pay_10500"/>
+            <field name="ta_da_line" ref="group_a_ta_da_ug"/>
+        </record>
+        <record id="grade_pay_10000_group_a_ta_da_ug"
+            model="exam.type.tada_grade.pay">
+            <field name="grade_pay" ref="grade_pay_10000"/>
+            <field name="ta_da_line" ref="group_a_ta_da_ug"/>
+        </record>
+        <record id="grade_pay_9500_group_a_2_ta_da_ug"
+            model="exam.type.tada_grade.pay">
+            <field name="grade_pay" ref="grade_pay_9500"/>
+            <field name="ta_da_line" ref="group_a_2_ta_da_ug"/>
+        </record>
+        <record id="grade_pay_9000_group_a_2_ta_da_ug"
+            model="exam.type.tada_grade.pay">
+            <field name="grade_pay" ref="grade_pay_9000"/>
+            <field name="ta_da_line" ref="group_a_2_ta_da_ug"/>
+        </record>
+        <record id="grade_pay_8900_group_a_2_ta_da_ug"
+            model="exam.type.tada_grade.pay">
+            <field name="grade_pay" ref="grade_pay_8900"/>
+            <field name="ta_da_line" ref="group_a_2_ta_da_ug"/>
+        </record>
+        <record id="grade_pay_8700_group_a_2_ta_da_ug"
+            model="exam.type.tada_grade.pay">
+            <field name="grade_pay" ref="grade_pay_8700"/>
+            <field name="ta_da_line" ref="group_a_2_ta_da_ug"/>
+        </record>
+        <record id="grade_pay_7600_group_a_2_ta_da_ug"
+            model="exam.type.tada_grade.pay">
+            <field name="grade_pay" ref="grade_pay_7600"/>
+            <field name="ta_da_line" ref="group_a_2_ta_da_ug"/>
+        </record>
+        <record id="grade_pay_6600_group_a_3_ta_da_ug"
+            model="exam.type.tada_grade.pay">
+            <field name="grade_pay" ref="grade_pay_6600"/>
+            <field name="ta_da_line" ref="group_a_3_ta_da_ug"/>
+        </record>
+        <record id="grade_pay_5400_group_a_3_ta_da_ug"
+            model="exam.type.tada_grade.pay">
+            <field name="grade_pay" ref="grade_pay_5400"/>
+            <field name="ta_da_line" ref="group_a_3_ta_da_ug"/>
+        </record>
+        <record id="grade_pay_4800_group_b_ta_da_ug"
+            model="exam.type.tada_grade.pay">
+            <field name="grade_pay" ref="grade_pay_4800"/>
+            <field name="ta_da_line" ref="group_b_ta_da_ug"/>
+        </record>
+        <record id="grade_pay_4600_group_b_ta_da_ug"
+            model="exam.type.tada_grade.pay">
+            <field name="grade_pay" ref="grade_pay_4600"/>
+            <field name="ta_da_line" ref="group_b_ta_da_ug"/>
+        </record>
+        <record id="grade_pay_4200_group_b_ta_da_ug"
+            model="exam.type.tada_grade.pay">
+            <field name="grade_pay" ref="grade_pay_4200"/>
+            <field name="ta_da_line" ref="group_b_ta_da_ug"/>
+        </record>
+        <record id="grade_pay_2800_group_c_ta_da_ug"
+            model="exam.type.tada_grade.pay">
+            <field name="grade_pay" ref="grade_pay_2800"/>
+            <field name="ta_da_line" ref="group_c_ta_da_ug"/>
+        </record>
+        <record id="grade_pay_2400_group_c_ta_da_ug"
+            model="exam.type.tada_grade.pay">
+            <field name="grade_pay" ref="grade_pay_2400"/>
+            <field name="ta_da_line" ref="group_c_ta_da_ug"/>
+        </record>
+        <record id="grade_pay_2000_group_c_ta_da_ug"
+            model="exam.type.tada_grade.pay">
+            <field name="grade_pay" ref="grade_pay_2000"/>
+            <field name="ta_da_line" ref="group_c_ta_da_ug"/>
+        </record>
+        <record id="grade_pay_1900_group_c_ta_da_ug"
+            model="exam.type.tada_grade.pay">
+            <field name="grade_pay" ref="grade_pay_1900"/>
+            <field name="ta_da_line" ref="group_c_ta_da_ug"/>
+        </record>
+
+
+        <record id="grade_pay_10500_group_a_ta_da_professional_theory"
+            model="exam.type.tada_grade.pay">
+            <field name="grade_pay" ref="grade_pay_10500"/>
+            <field name="ta_da_line" ref="group_a_ta_da_professional_theory"/>
+        </record>
+        <record id="grade_pay_10000_group_a_ta_da_professional_theory"
+            model="exam.type.tada_grade.pay">
+            <field name="grade_pay" ref="grade_pay_10000"/>
+            <field name="ta_da_line" ref="group_a_ta_da_professional_theory"/>
+        </record>
+        <record id="grade_pay_9500_group_a_2_ta_da_professional_theory"
+            model="exam.type.tada_grade.pay">
+            <field name="grade_pay" ref="grade_pay_9500"/>
+            <field name="ta_da_line" ref="group_a_2_ta_da_professional_theory"/>
+        </record>
+        <record id="grade_pay_9000_group_a_2_ta_da_professional_theory"
+            model="exam.type.tada_grade.pay">
+            <field name="grade_pay" ref="grade_pay_9000"/>
+            <field name="ta_da_line" ref="group_a_2_ta_da_professional_theory"/>
+        </record>
+        <record id="grade_pay_8900_group_a_2_ta_da_professional_theory"
+            model="exam.type.tada_grade.pay">
+            <field name="grade_pay" ref="grade_pay_8900"/>
+            <field name="ta_da_line" ref="group_a_2_ta_da_professional_theory"/>
+        </record>
+        <record id="grade_pay_8700_group_a_2_ta_da_professional_theory"
+            model="exam.type.tada_grade.pay">
+            <field name="grade_pay" ref="grade_pay_8700"/>
+            <field name="ta_da_line" ref="group_a_2_ta_da_professional_theory"/>
+        </record>
+        <record id="grade_pay_7600_group_a_2_ta_da_professional_theory"
+            model="exam.type.tada_grade.pay">
+            <field name="grade_pay" ref="grade_pay_7600"/>
+            <field name="ta_da_line" ref="group_a_2_ta_da_professional_theory"/>
+        </record>
+        <record id="grade_pay_6600_group_a_3_ta_da_professional_theory"
+            model="exam.type.tada_grade.pay">
+            <field name="grade_pay" ref="grade_pay_6600"/>
+            <field name="ta_da_line" ref="group_a_3_ta_da_professional_theory"/>
+        </record>
+        <record id="grade_pay_5400_group_a_3_ta_da_professional_theory"
+            model="exam.type.tada_grade.pay">
+            <field name="grade_pay" ref="grade_pay_5400"/>
+            <field name="ta_da_line" ref="group_a_3_ta_da_professional_theory"/>
+        </record>
+        <record id="grade_pay_4800_group_b_ta_da_professional_theory"
+            model="exam.type.tada_grade.pay">
+            <field name="grade_pay" ref="grade_pay_4800"/>
+            <field name="ta_da_line" ref="group_b_ta_da_professional_theory"/>
+        </record>
+        <record id="grade_pay_4600_group_b_ta_da_professional_theory"
+            model="exam.type.tada_grade.pay">
+            <field name="grade_pay" ref="grade_pay_4600"/>
+            <field name="ta_da_line" ref="group_b_ta_da_professional_theory"/>
+        </record>
+        <record id="grade_pay_4200_group_b_ta_da_professional_theory"
+            model="exam.type.tada_grade.pay">
+            <field name="grade_pay" ref="grade_pay_4200"/>
+            <field name="ta_da_line" ref="group_b_ta_da_professional_theory"/>
+        </record>
+        <record id="grade_pay_2800_group_c_ta_da_professional_theory"
+            model="exam.type.tada_grade.pay">
+            <field name="grade_pay" ref="grade_pay_2800"/>
+            <field name="ta_da_line" ref="group_c_ta_da_professional_theory"/>
+        </record>
+        <record id="grade_pay_2400_group_c_ta_da_professional_theory"
+            model="exam.type.tada_grade.pay">
+            <field name="grade_pay" ref="grade_pay_2400"/>
+            <field name="ta_da_line" ref="group_c_ta_da_professional_theory"/>
+        </record>
+        <record id="grade_pay_2000_group_c_ta_da_professional_theory"
+            model="exam.type.tada_grade.pay">
+            <field name="grade_pay" ref="grade_pay_2000"/>
+            <field name="ta_da_line" ref="group_c_ta_da_professional_theory"/>
+        </record>
+        <record id="grade_pay_1900_group_c_ta_da_professional_theory"
+            model="exam.type.tada_grade.pay">
+            <field name="grade_pay" ref="grade_pay_1900"/>
+            <field name="ta_da_line" ref="group_c_ta_da_professional_theory"/>
+        </record>
+
+
+        <record id="grade_pay_10500_group_a_ta_da_professional_practical"
+            model="exam.type.tada_grade.pay">
+            <field name="grade_pay" ref="grade_pay_10500"/>
+            <field name="ta_da_line" ref="group_a_ta_da_professional_practical"/>
+        </record>
+        <record id="grade_pay_10000_group_a_ta_da_professional_practical"
+            model="exam.type.tada_grade.pay">
+            <field name="grade_pay" ref="grade_pay_10000"/>
+            <field name="ta_da_line" ref="group_a_ta_da_professional_practical"/>
+        </record>
+        <record id="grade_pay_9500_group_a_2_ta_da_professional_practical"
+            model="exam.type.tada_grade.pay">
+            <field name="grade_pay" ref="grade_pay_9500"/>
+            <field name="ta_da_line" ref="group_a_2_ta_da_professional_practical"/>
+        </record>
+        <record id="grade_pay_9000_group_a_2_ta_da_professional_practical"
+            model="exam.type.tada_grade.pay">
+            <field name="grade_pay" ref="grade_pay_9000"/>
+            <field name="ta_da_line" ref="group_a_2_ta_da_professional_practical"/>
+        </record>
+        <record id="grade_pay_8900_group_a_2_ta_da_professional_practical"
+            model="exam.type.tada_grade.pay">
+            <field name="grade_pay" ref="grade_pay_8900"/>
+            <field name="ta_da_line" ref="group_a_2_ta_da_professional_practical"/>
+        </record>
+        <record id="grade_pay_8700_group_a_2_ta_da_professional_practical"
+            model="exam.type.tada_grade.pay">
+            <field name="grade_pay" ref="grade_pay_8700"/>
+            <field name="ta_da_line" ref="group_a_2_ta_da_professional_practical"/>
+        </record>
+        <record id="grade_pay_7600_group_a_2_ta_da_professional_practical"
+            model="exam.type.tada_grade.pay">
+            <field name="grade_pay" ref="grade_pay_7600"/>
+            <field name="ta_da_line" ref="group_a_2_ta_da_professional_practical"/>
+        </record>
+        <record id="grade_pay_6600_group_a_3_ta_da_professional_practical"
+            model="exam.type.tada_grade.pay">
+            <field name="grade_pay" ref="grade_pay_6600"/>
+            <field name="ta_da_line" ref="group_a_3_ta_da_professional_practical"/>
+        </record>
+        <record id="grade_pay_5400_group_a_3_ta_da_professional_practical"
+            model="exam.type.tada_grade.pay">
+            <field name="grade_pay" ref="grade_pay_5400"/>
+            <field name="ta_da_line" ref="group_a_3_ta_da_professional_practical"/>
+        </record>
+        <record id="grade_pay_4800_group_b_ta_da_professional_practical"
+            model="exam.type.tada_grade.pay">
+            <field name="grade_pay" ref="grade_pay_4800"/>
+            <field name="ta_da_line" ref="group_b_ta_da_professional_practical"/>
+        </record>
+        <record id="grade_pay_4600_group_b_ta_da_professional_practical"
+            model="exam.type.tada_grade.pay">
+            <field name="grade_pay" ref="grade_pay_4600"/>
+            <field name="ta_da_line" ref="group_b_ta_da_professional_practical"/>
+        </record>
+        <record id="grade_pay_4200_group_b_ta_da_professional_practical"
+            model="exam.type.tada_grade.pay">
+            <field name="grade_pay" ref="grade_pay_4200"/>
+            <field name="ta_da_line" ref="group_b_ta_da_professional_practical"/>
+        </record>
+        <record id="grade_pay_2800_group_c_ta_da_professional_practical"
+            model="exam.type.tada_grade.pay">
+            <field name="grade_pay" ref="grade_pay_2800"/>
+            <field name="ta_da_line" ref="group_c_ta_da_professional_practical"/>
+        </record>
+        <record id="grade_pay_2400_group_c_ta_da_professional_practical"
+            model="exam.type.tada_grade.pay">
+            <field name="grade_pay" ref="grade_pay_2400"/>
+            <field name="ta_da_line" ref="group_c_ta_da_professional_practical"/>
+        </record>
+        <record id="grade_pay_2000_group_c_ta_da_professional_practical"
+            model="exam.type.tada_grade.pay">
+            <field name="grade_pay" ref="grade_pay_2000"/>
+            <field name="ta_da_line" ref="group_c_ta_da_professional_practical"/>
+        </record>
+        <record id="grade_pay_1900_group_c_ta_da_professional_practical"
+            model="exam.type.tada_grade.pay">
+            <field name="grade_pay" ref="grade_pay_1900"/>
+            <field name="ta_da_line" ref="group_c_ta_da_professional_practical"/>
+        </record>
+
+        <!-- Pay Level-TA/DA Line -->
+        <record id="pay_level_18_group_a_ta_da_phd"
+            model="exam.type.tada_pay.level">
+            <field name="pay_level" ref="pay_level_18"/>
+            <field name="ta_da_line" ref="group_a_ta_da_phd"/>
+        </record>
+        <record id="pay_level_17_group_a_ta_da_phd"
+            model="exam.type.tada_pay.level">
+            <field name="pay_level" ref="pay_level_17"/>
+            <field name="ta_da_line" ref="group_a_ta_da_phd"/>
+        </record>
+        <record id="pay_level_16_group_a_ta_da_phd"
+            model="exam.type.tada_pay.level">
+            <field name="pay_level" ref="pay_level_16"/>
+            <field name="ta_da_line" ref="group_a_ta_da_phd"/>
+        </record>
+        <record id="pay_level_15_group_a_ta_da_phd"
+            model="exam.type.tada_pay.level">
+            <field name="pay_level" ref="pay_level_15"/>
+            <field name="ta_da_line" ref="group_a_ta_da_phd"/>
+        </record>
+        <record id="pay_level_14_group_a_ta_da_phd"
+            model="exam.type.tada_pay.level">
+            <field name="pay_level" ref="pay_level_14"/>
+            <field name="ta_da_line" ref="group_a_ta_da_phd"/>
+        </record>
+        <record id="pay_level_13_a_group_a_2_ta_da_phd"
+            model="exam.type.tada_pay.level">
+            <field name="pay_level" ref="pay_level_13_a"/>
+            <field name="ta_da_line" ref="group_a_2_ta_da_phd"/>
+        </record>
+        <record id="pay_level_13_group_a_2_ta_da_phd"
+            model="exam.type.tada_pay.level">
+            <field name="pay_level" ref="pay_level_13"/>
+            <field name="ta_da_line" ref="group_a_2_ta_da_phd"/>
+        </record>
+        <record id="pay_level_12_group_a_2_ta_da_phd"
+            model="exam.type.tada_pay.level">
+            <field name="pay_level" ref="pay_level_12"/>
+            <field name="ta_da_line" ref="group_a_2_ta_da_phd"/>
+        </record>
+        <record id="pay_level_11_group_a_3_ta_da_phd"
+            model="exam.type.tada_pay.level">
+            <field name="pay_level" ref="pay_level_11"/>
+            <field name="ta_da_line" ref="group_a_3_ta_da_phd"/>
+        </record>
+        <record id="pay_level_10_group_a_3_ta_da_phd"
+            model="exam.type.tada_pay.level">
+            <field name="pay_level" ref="pay_level_10"/>
+            <field name="ta_da_line" ref="group_a_3_ta_da_phd"/>
+        </record>
+        <record id="pay_level_9_group_a_3_ta_da_phd"
+            model="exam.type.tada_pay.level">
+            <field name="pay_level" ref="pay_level_9"/>
+            <field name="ta_da_line" ref="group_a_3_ta_da_phd"/>
+        </record>
+        <record id="pay_level_8_group_b_ta_da_phd"
+            model="exam.type.tada_pay.level">
+            <field name="pay_level" ref="pay_level_8"/>
+            <field name="ta_da_line" ref="group_b_ta_da_phd"/>
+        </record>
+        <record id="pay_level_7_group_b_ta_da_phd"
+            model="exam.type.tada_pay.level">
+            <field name="pay_level" ref="pay_level_7"/>
+            <field name="ta_da_line" ref="group_b_ta_da_phd"/>
+        </record>
+        <record id="pay_level_6_group_b_ta_da_phd"
+            model="exam.type.tada_pay.level">
+            <field name="pay_level" ref="pay_level_6"/>
+            <field name="ta_da_line" ref="group_b_ta_da_phd"/>
+        </record>
+        <record id="pay_level_5_group_c_ta_da_phd"
+            model="exam.type.tada_pay.level">
+            <field name="pay_level" ref="pay_level_5"/>
+            <field name="ta_da_line" ref="group_c_ta_da_phd"/>
+        </record>
+        <record id="pay_level_4_group_c_ta_da_phd"
+            model="exam.type.tada_pay.level">
+            <field name="pay_level" ref="pay_level_4"/>
+            <field name="ta_da_line" ref="group_c_ta_da_phd"/>
+        </record>
+        <record id="pay_level_3_group_c_ta_da_phd"
+            model="exam.type.tada_pay.level">
+            <field name="pay_level" ref="pay_level_3"/>
+            <field name="ta_da_line" ref="group_c_ta_da_phd"/>
+        </record>
+        <record id="pay_level_2_group_c_ta_da_phd"
+            model="exam.type.tada_pay.level">
+            <field name="pay_level" ref="pay_level_2"/>
+            <field name="ta_da_line" ref="group_c_ta_da_phd"/>
+        </record>
+        <record id="pay_level_1_group_c_ta_da_phd"
+            model="exam.type.tada_pay.level">
+            <field name="pay_level" ref="pay_level_1"/>
+            <field name="ta_da_line" ref="group_c_ta_da_phd"/>
+        </record>
+
+
+        <record id="pay_level_18_group_a_ta_da_pg_1"
+            model="exam.type.tada_pay.level">
+            <field name="pay_level" ref="pay_level_18"/>
+            <field name="ta_da_line" ref="group_a_ta_da_pg_1"/>
+        </record>
+        <record id="pay_level_17_group_a_ta_da_pg_1"
+            model="exam.type.tada_pay.level">
+            <field name="pay_level" ref="pay_level_17"/>
+            <field name="ta_da_line" ref="group_a_ta_da_pg_1"/>
+        </record>
+        <record id="pay_level_16_group_a_ta_da_pg_1"
+            model="exam.type.tada_pay.level">
+            <field name="pay_level" ref="pay_level_16"/>
+            <field name="ta_da_line" ref="group_a_ta_da_pg_1"/>
+        </record>
+        <record id="pay_level_15_group_a_ta_da_pg_1"
+            model="exam.type.tada_pay.level">
+            <field name="pay_level" ref="pay_level_15"/>
+            <field name="ta_da_line" ref="group_a_ta_da_pg_1"/>
+        </record>
+        <record id="pay_level_14_group_a_ta_da_pg_1"
+            model="exam.type.tada_pay.level">
+            <field name="pay_level" ref="pay_level_14"/>
+            <field name="ta_da_line" ref="group_a_ta_da_pg_1"/>
+        </record>
+        <record id="pay_level_13_a_group_a_2_ta_da_pg_1"
+            model="exam.type.tada_pay.level">
+            <field name="pay_level" ref="pay_level_13_a"/>
+            <field name="ta_da_line" ref="group_a_2_ta_da_pg_1"/>
+        </record>
+        <record id="pay_level_13_group_a_2_ta_da_pg_1"
+            model="exam.type.tada_pay.level">
+            <field name="pay_level" ref="pay_level_13"/>
+            <field name="ta_da_line" ref="group_a_2_ta_da_pg_1"/>
+        </record>
+        <record id="pay_level_12_group_a_2_ta_da_pg_1"
+            model="exam.type.tada_pay.level">
+            <field name="pay_level" ref="pay_level_12"/>
+            <field name="ta_da_line" ref="group_a_2_ta_da_pg_1"/>
+        </record>
+        <record id="pay_level_11_group_a_3_ta_da_pg_1"
+            model="exam.type.tada_pay.level">
+            <field name="pay_level" ref="pay_level_11"/>
+            <field name="ta_da_line" ref="group_a_3_ta_da_pg_1"/>
+        </record>
+        <record id="pay_level_10_group_a_3_ta_da_pg_1"
+            model="exam.type.tada_pay.level">
+            <field name="pay_level" ref="pay_level_10"/>
+            <field name="ta_da_line" ref="group_a_3_ta_da_pg_1"/>
+        </record>
+        <record id="pay_level_9_group_a_3_ta_da_pg_1"
+            model="exam.type.tada_pay.level">
+            <field name="pay_level" ref="pay_level_9"/>
+            <field name="ta_da_line" ref="group_a_3_ta_da_pg_1"/>
+        </record>
+        <record id="pay_level_8_group_b_ta_da_pg_1"
+            model="exam.type.tada_pay.level">
+            <field name="pay_level" ref="pay_level_8"/>
+            <field name="ta_da_line" ref="group_b_ta_da_pg_1"/>
+        </record>
+        <record id="pay_level_7_group_b_ta_da_pg_1"
+            model="exam.type.tada_pay.level">
+            <field name="pay_level" ref="pay_level_7"/>
+            <field name="ta_da_line" ref="group_b_ta_da_pg_1"/>
+        </record>
+        <record id="pay_level_6_group_b_ta_da_pg_1"
+            model="exam.type.tada_pay.level">
+            <field name="pay_level" ref="pay_level_6"/>
+            <field name="ta_da_line" ref="group_b_ta_da_pg_1"/>
+        </record>
+        <record id="pay_level_5_group_c_ta_da_pg_1"
+            model="exam.type.tada_pay.level">
+            <field name="pay_level" ref="pay_level_5"/>
+            <field name="ta_da_line" ref="group_c_ta_da_pg_1"/>
+        </record>
+        <record id="pay_level_4_group_c_ta_da_pg_1"
+            model="exam.type.tada_pay.level">
+            <field name="pay_level" ref="pay_level_4"/>
+            <field name="ta_da_line" ref="group_c_ta_da_pg_1"/>
+        </record>
+        <record id="pay_level_3_group_c_ta_da_pg_1"
+            model="exam.type.tada_pay.level">
+            <field name="pay_level" ref="pay_level_3"/>
+            <field name="ta_da_line" ref="group_c_ta_da_pg_1"/>
+        </record>
+        <record id="pay_level_2_group_c_ta_da_pg_1"
+            model="exam.type.tada_pay.level">
+            <field name="pay_level" ref="pay_level_2"/>
+            <field name="ta_da_line" ref="group_c_ta_da_pg_1"/>
+        </record>
+        <record id="pay_level_1_group_c_ta_da_pg_1"
+            model="exam.type.tada_pay.level">
+            <field name="pay_level" ref="pay_level_1"/>
+            <field name="ta_da_line" ref="group_c_ta_da_pg_1"/>
+        </record>
+
+
+        <record id="pay_level_18_group_a_ta_da_pg_2"
+            model="exam.type.tada_pay.level">
+            <field name="pay_level" ref="pay_level_18"/>
+            <field name="ta_da_line" ref="group_a_ta_da_pg_2"/>
+        </record>
+        <record id="pay_level_17_group_a_ta_da_pg_2"
+            model="exam.type.tada_pay.level">
+            <field name="pay_level" ref="pay_level_17"/>
+            <field name="ta_da_line" ref="group_a_ta_da_pg_2"/>
+        </record>
+        <record id="pay_level_16_group_a_ta_da_pg_2"
+            model="exam.type.tada_pay.level">
+            <field name="pay_level" ref="pay_level_16"/>
+            <field name="ta_da_line" ref="group_a_ta_da_pg_2"/>
+        </record>
+        <record id="pay_level_15_group_a_ta_da_pg_2"
+            model="exam.type.tada_pay.level">
+            <field name="pay_level" ref="pay_level_15"/>
+            <field name="ta_da_line" ref="group_a_ta_da_pg_2"/>
+        </record>
+        <record id="pay_level_14_group_a_ta_da_pg_2"
+            model="exam.type.tada_pay.level">
+            <field name="pay_level" ref="pay_level_14"/>
+            <field name="ta_da_line" ref="group_a_ta_da_pg_2"/>
+        </record>
+        <record id="pay_level_13_a_group_a_2_ta_da_pg_2"
+            model="exam.type.tada_pay.level">
+            <field name="pay_level" ref="pay_level_13_a"/>
+            <field name="ta_da_line" ref="group_a_2_ta_da_pg_2"/>
+        </record>
+        <record id="pay_level_13_group_a_2_ta_da_pg_2"
+            model="exam.type.tada_pay.level">
+            <field name="pay_level" ref="pay_level_13"/>
+            <field name="ta_da_line" ref="group_a_2_ta_da_pg_2"/>
+        </record>
+        <record id="pay_level_12_group_a_2_ta_da_pg_2"
+            model="exam.type.tada_pay.level">
+            <field name="pay_level" ref="pay_level_12"/>
+            <field name="ta_da_line" ref="group_a_2_ta_da_pg_2"/>
+        </record>
+        <record id="pay_level_11_group_a_3_ta_da_pg_2"
+            model="exam.type.tada_pay.level">
+            <field name="pay_level" ref="pay_level_11"/>
+            <field name="ta_da_line" ref="group_a_3_ta_da_pg_2"/>
+        </record>
+        <record id="pay_level_10_group_a_3_ta_da_pg_2"
+            model="exam.type.tada_pay.level">
+            <field name="pay_level" ref="pay_level_10"/>
+            <field name="ta_da_line" ref="group_a_3_ta_da_pg_2"/>
+        </record>
+        <record id="pay_level_9_group_a_3_ta_da_pg_2"
+            model="exam.type.tada_pay.level">
+            <field name="pay_level" ref="pay_level_9"/>
+            <field name="ta_da_line" ref="group_a_3_ta_da_pg_2"/>
+        </record>
+        <record id="pay_level_8_group_b_ta_da_pg_2"
+            model="exam.type.tada_pay.level">
+            <field name="pay_level" ref="pay_level_8"/>
+            <field name="ta_da_line" ref="group_b_ta_da_pg_2"/>
+        </record>
+        <record id="pay_level_7_group_b_ta_da_pg_2"
+            model="exam.type.tada_pay.level">
+            <field name="pay_level" ref="pay_level_7"/>
+            <field name="ta_da_line" ref="group_b_ta_da_pg_2"/>
+        </record>
+        <record id="pay_level_6_group_b_ta_da_pg_2"
+            model="exam.type.tada_pay.level">
+            <field name="pay_level" ref="pay_level_6"/>
+            <field name="ta_da_line" ref="group_b_ta_da_pg_2"/>
+        </record>
+        <record id="pay_level_5_group_c_ta_da_pg_2"
+            model="exam.type.tada_pay.level">
+            <field name="pay_level" ref="pay_level_5"/>
+            <field name="ta_da_line" ref="group_c_ta_da_pg_2"/>
+        </record>
+        <record id="pay_level_4_group_c_ta_da_pg_2"
+            model="exam.type.tada_pay.level">
+            <field name="pay_level" ref="pay_level_4"/>
+            <field name="ta_da_line" ref="group_c_ta_da_pg_2"/>
+        </record>
+        <record id="pay_level_3_group_c_ta_da_pg_2"
+            model="exam.type.tada_pay.level">
+            <field name="pay_level" ref="pay_level_3"/>
+            <field name="ta_da_line" ref="group_c_ta_da_pg_2"/>
+        </record>
+        <record id="pay_level_2_group_c_ta_da_pg_2"
+            model="exam.type.tada_pay.level">
+            <field name="pay_level" ref="pay_level_2"/>
+            <field name="ta_da_line" ref="group_c_ta_da_pg_2"/>
+        </record>
+        <record id="pay_level_1_group_c_ta_da_pg_2"
+            model="exam.type.tada_pay.level">
+            <field name="pay_level" ref="pay_level_1"/>
+            <field name="ta_da_line" ref="group_c_ta_da_pg_2"/>
+        </record>
+
+
+        <record id="pay_level_18_group_a_ta_da_ug"
+            model="exam.type.tada_pay.level">
+            <field name="pay_level" ref="pay_level_18"/>
+            <field name="ta_da_line" ref="group_a_ta_da_ug"/>
+        </record>
+        <record id="pay_level_17_group_a_ta_da_ug"
+            model="exam.type.tada_pay.level">
+            <field name="pay_level" ref="pay_level_17"/>
+            <field name="ta_da_line" ref="group_a_ta_da_ug"/>
+        </record>
+        <record id="pay_level_16_group_a_ta_da_ug"
+            model="exam.type.tada_pay.level">
+            <field name="pay_level" ref="pay_level_16"/>
+            <field name="ta_da_line" ref="group_a_ta_da_ug"/>
+        </record>
+        <record id="pay_level_15_group_a_ta_da_ug"
+            model="exam.type.tada_pay.level">
+            <field name="pay_level" ref="pay_level_15"/>
+            <field name="ta_da_line" ref="group_a_ta_da_ug"/>
+        </record>
+        <record id="pay_level_14_group_a_ta_da_ug"
+            model="exam.type.tada_pay.level">
+            <field name="pay_level" ref="pay_level_14"/>
+            <field name="ta_da_line" ref="group_a_ta_da_ug"/>
+        </record>
+        <record id="pay_level_13_a_group_a_2_ta_da_ug"
+            model="exam.type.tada_pay.level">
+            <field name="pay_level" ref="pay_level_13_a"/>
+            <field name="ta_da_line" ref="group_a_2_ta_da_ug"/>
+        </record>
+        <record id="pay_level_13_group_a_2_ta_da_ug"
+            model="exam.type.tada_pay.level">
+            <field name="pay_level" ref="pay_level_13"/>
+            <field name="ta_da_line" ref="group_a_2_ta_da_ug"/>
+        </record>
+        <record id="pay_level_12_group_a_2_ta_da_ug"
+            model="exam.type.tada_pay.level">
+            <field name="pay_level" ref="pay_level_12"/>
+            <field name="ta_da_line" ref="group_a_2_ta_da_ug"/>
+        </record>
+        <record id="pay_level_11_group_a_3_ta_da_ug"
+            model="exam.type.tada_pay.level">
+            <field name="pay_level" ref="pay_level_11"/>
+            <field name="ta_da_line" ref="group_a_3_ta_da_ug"/>
+        </record>
+        <record id="pay_level_10_group_a_3_ta_da_ug"
+            model="exam.type.tada_pay.level">
+            <field name="pay_level" ref="pay_level_10"/>
+            <field name="ta_da_line" ref="group_a_3_ta_da_ug"/>
+        </record>
+        <record id="pay_level_9_group_a_3_ta_da_ug"
+            model="exam.type.tada_pay.level">
+            <field name="pay_level" ref="pay_level_9"/>
+            <field name="ta_da_line" ref="group_a_3_ta_da_ug"/>
+        </record>
+        <record id="pay_level_8_group_b_ta_da_ug"
+            model="exam.type.tada_pay.level">
+            <field name="pay_level" ref="pay_level_8"/>
+            <field name="ta_da_line" ref="group_b_ta_da_ug"/>
+        </record>
+        <record id="pay_level_7_group_b_ta_da_ug"
+            model="exam.type.tada_pay.level">
+            <field name="pay_level" ref="pay_level_7"/>
+            <field name="ta_da_line" ref="group_b_ta_da_ug"/>
+        </record>
+        <record id="pay_level_6_group_b_ta_da_ug"
+            model="exam.type.tada_pay.level">
+            <field name="pay_level" ref="pay_level_6"/>
+            <field name="ta_da_line" ref="group_b_ta_da_ug"/>
+        </record>
+        <record id="pay_level_5_group_c_ta_da_ug"
+            model="exam.type.tada_pay.level">
+            <field name="pay_level" ref="pay_level_5"/>
+            <field name="ta_da_line" ref="group_c_ta_da_ug"/>
+        </record>
+        <record id="pay_level_4_group_c_ta_da_ug"
+            model="exam.type.tada_pay.level">
+            <field name="pay_level" ref="pay_level_4"/>
+            <field name="ta_da_line" ref="group_c_ta_da_ug"/>
+        </record>
+        <record id="pay_level_3_group_c_ta_da_ug"
+            model="exam.type.tada_pay.level">
+            <field name="pay_level" ref="pay_level_3"/>
+            <field name="ta_da_line" ref="group_c_ta_da_ug"/>
+        </record>
+        <record id="pay_level_2_group_c_ta_da_ug"
+            model="exam.type.tada_pay.level">
+            <field name="pay_level" ref="pay_level_2"/>
+            <field name="ta_da_line" ref="group_c_ta_da_ug"/>
+        </record>
+        <record id="pay_level_1_group_c_ta_da_ug"
+            model="exam.type.tada_pay.level">
+            <field name="pay_level" ref="pay_level_1"/>
+            <field name="ta_da_line" ref="group_c_ta_da_ug"/>
+        </record>
+
+
+        <record id="pay_level_18_group_a_ta_da_professional_theory"
+            model="exam.type.tada_pay.level">
+            <field name="pay_level" ref="pay_level_18"/>
+            <field name="ta_da_line" ref="group_a_ta_da_professional_theory"/>
+        </record>
+        <record id="pay_level_17_group_a_ta_da_professional_theory"
+            model="exam.type.tada_pay.level">
+            <field name="pay_level" ref="pay_level_17"/>
+            <field name="ta_da_line" ref="group_a_ta_da_professional_theory"/>
+        </record>
+        <record id="pay_level_16_group_a_ta_da_professional_theory"
+            model="exam.type.tada_pay.level">
+            <field name="pay_level" ref="pay_level_16"/>
+            <field name="ta_da_line" ref="group_a_ta_da_professional_theory"/>
+        </record>
+        <record id="pay_level_15_group_a_ta_da_professional_theory"
+            model="exam.type.tada_pay.level">
+            <field name="pay_level" ref="pay_level_15"/>
+            <field name="ta_da_line" ref="group_a_ta_da_professional_theory"/>
+        </record>
+        <record id="pay_level_14_group_a_ta_da_professional_theory"
+            model="exam.type.tada_pay.level">
+            <field name="pay_level" ref="pay_level_14"/>
+            <field name="ta_da_line" ref="group_a_ta_da_professional_theory"/>
+        </record>
+        <record id="pay_level_13_a_group_a_2_ta_da_professional_theory"
+            model="exam.type.tada_pay.level">
+            <field name="pay_level" ref="pay_level_13_a"/>
+            <field name="ta_da_line" ref="group_a_2_ta_da_professional_theory"/>
+        </record>
+        <record id="pay_level_13_group_a_2_ta_da_professional_theory"
+            model="exam.type.tada_pay.level">
+            <field name="pay_level" ref="pay_level_13"/>
+            <field name="ta_da_line" ref="group_a_2_ta_da_professional_theory"/>
+        </record>
+        <record id="pay_level_12_group_a_2_ta_da_professional_theory"
+            model="exam.type.tada_pay.level">
+            <field name="pay_level" ref="pay_level_12"/>
+            <field name="ta_da_line" ref="group_a_2_ta_da_professional_theory"/>
+        </record>
+        <record id="pay_level_11_group_a_3_ta_da_professional_theory"
+            model="exam.type.tada_pay.level">
+            <field name="pay_level" ref="pay_level_11"/>
+            <field name="ta_da_line" ref="group_a_3_ta_da_professional_theory"/>
+        </record>
+        <record id="pay_level_10_group_a_3_ta_da_professional_theory"
+            model="exam.type.tada_pay.level">
+            <field name="pay_level" ref="pay_level_10"/>
+            <field name="ta_da_line" ref="group_a_3_ta_da_professional_theory"/>
+        </record>
+        <record id="pay_level_9_group_a_3_ta_da_professional_theory"
+            model="exam.type.tada_pay.level">
+            <field name="pay_level" ref="pay_level_9"/>
+            <field name="ta_da_line" ref="group_a_3_ta_da_professional_theory"/>
+        </record>
+        <record id="pay_level_8_group_b_ta_da_professional_theory"
+            model="exam.type.tada_pay.level">
+            <field name="pay_level" ref="pay_level_8"/>
+            <field name="ta_da_line" ref="group_b_ta_da_professional_theory"/>
+        </record>
+        <record id="pay_level_7_group_b_ta_da_professional_theory"
+            model="exam.type.tada_pay.level">
+            <field name="pay_level" ref="pay_level_7"/>
+            <field name="ta_da_line" ref="group_b_ta_da_professional_theory"/>
+        </record>
+        <record id="pay_level_6_group_b_ta_da_professional_theory"
+            model="exam.type.tada_pay.level">
+            <field name="pay_level" ref="pay_level_6"/>
+            <field name="ta_da_line" ref="group_b_ta_da_professional_theory"/>
+        </record>
+        <record id="pay_level_5_group_c_ta_da_professional_theory"
+            model="exam.type.tada_pay.level">
+            <field name="pay_level" ref="pay_level_5"/>
+            <field name="ta_da_line" ref="group_c_ta_da_professional_theory"/>
+        </record>
+        <record id="pay_level_4_group_c_ta_da_professional_theory"
+            model="exam.type.tada_pay.level">
+            <field name="pay_level" ref="pay_level_4"/>
+            <field name="ta_da_line" ref="group_c_ta_da_professional_theory"/>
+        </record>
+        <record id="pay_level_3_group_c_ta_da_professional_theory"
+            model="exam.type.tada_pay.level">
+            <field name="pay_level" ref="pay_level_3"/>
+            <field name="ta_da_line" ref="group_c_ta_da_professional_theory"/>
+        </record>
+        <record id="pay_level_2_group_c_ta_da_professional_theory"
+            model="exam.type.tada_pay.level">
+            <field name="pay_level" ref="pay_level_2"/>
+            <field name="ta_da_line" ref="group_c_ta_da_professional_theory"/>
+        </record>
+        <record id="pay_level_1_group_c_ta_da_professional_theory"
+            model="exam.type.tada_pay.level">
+            <field name="pay_level" ref="pay_level_1"/>
+            <field name="ta_da_line" ref="group_c_ta_da_professional_theory"/>
+        </record>
+
+
+        <record id="pay_level_18_group_a_ta_da_professional_practical"
+            model="exam.type.tada_pay.level">
+            <field name="pay_level" ref="pay_level_18"/>
+            <field name="ta_da_line" ref="group_a_ta_da_professional_practical"/>
+        </record>
+        <record id="pay_level_17_group_a_ta_da_professional_practical"
+            model="exam.type.tada_pay.level">
+            <field name="pay_level" ref="pay_level_17"/>
+            <field name="ta_da_line" ref="group_a_ta_da_professional_practical"/>
+        </record>
+        <record id="pay_level_16_group_a_ta_da_professional_practical"
+            model="exam.type.tada_pay.level">
+            <field name="pay_level" ref="pay_level_16"/>
+            <field name="ta_da_line" ref="group_a_ta_da_professional_practical"/>
+        </record>
+        <record id="pay_level_15_group_a_ta_da_professional_practical"
+            model="exam.type.tada_pay.level">
+            <field name="pay_level" ref="pay_level_15"/>
+            <field name="ta_da_line" ref="group_a_ta_da_professional_practical"/>
+        </record>
+        <record id="pay_level_14_group_a_ta_da_professional_practical"
+            model="exam.type.tada_pay.level">
+            <field name="pay_level" ref="pay_level_14"/>
+            <field name="ta_da_line" ref="group_a_ta_da_professional_practical"/>
+        </record>
+        <record id="pay_level_13_a_group_a_2_ta_da_professional_practical"
+            model="exam.type.tada_pay.level">
+            <field name="pay_level" ref="pay_level_13_a"/>
+            <field name="ta_da_line" ref="group_a_2_ta_da_professional_practical"/>
+        </record>
+        <record id="pay_level_13_group_a_2_ta_da_professional_practical"
+            model="exam.type.tada_pay.level">
+            <field name="pay_level" ref="pay_level_13"/>
+            <field name="ta_da_line" ref="group_a_2_ta_da_professional_practical"/>
+        </record>
+        <record id="pay_level_12_group_a_2_ta_da_professional_practical"
+            model="exam.type.tada_pay.level">
+            <field name="pay_level" ref="pay_level_12"/>
+            <field name="ta_da_line" ref="group_a_2_ta_da_professional_practical"/>
+        </record>
+        <record id="pay_level_11_group_a_3_ta_da_professional_practical"
+            model="exam.type.tada_pay.level">
+            <field name="pay_level" ref="pay_level_11"/>
+            <field name="ta_da_line" ref="group_a_3_ta_da_professional_practical"/>
+        </record>
+        <record id="pay_level_10_group_a_3_ta_da_professional_practical"
+            model="exam.type.tada_pay.level">
+            <field name="pay_level" ref="pay_level_10"/>
+            <field name="ta_da_line" ref="group_a_3_ta_da_professional_practical"/>
+        </record>
+        <record id="pay_level_9_group_a_3_ta_da_professional_practical"
+            model="exam.type.tada_pay.level">
+            <field name="pay_level" ref="pay_level_9"/>
+            <field name="ta_da_line" ref="group_a_3_ta_da_professional_practical"/>
+        </record>
+        <record id="pay_level_8_group_b_ta_da_professional_practical"
+            model="exam.type.tada_pay.level">
+            <field name="pay_level" ref="pay_level_8"/>
+            <field name="ta_da_line" ref="group_b_ta_da_professional_practical"/>
+        </record>
+        <record id="pay_level_7_group_b_ta_da_professional_practical"
+            model="exam.type.tada_pay.level">
+            <field name="pay_level" ref="pay_level_7"/>
+            <field name="ta_da_line" ref="group_b_ta_da_professional_practical"/>
+        </record>
+        <record id="pay_level_6_group_b_ta_da_professional_practical"
+            model="exam.type.tada_pay.level">
+            <field name="pay_level" ref="pay_level_6"/>
+            <field name="ta_da_line" ref="group_b_ta_da_professional_practical"/>
+        </record>
+        <record id="pay_level_5_group_c_ta_da_professional_practical"
+            model="exam.type.tada_pay.level">
+            <field name="pay_level" ref="pay_level_5"/>
+            <field name="ta_da_line" ref="group_c_ta_da_professional_practical"/>
+        </record>
+        <record id="pay_level_4_group_c_ta_da_professional_practical"
+            model="exam.type.tada_pay.level">
+            <field name="pay_level" ref="pay_level_4"/>
+            <field name="ta_da_line" ref="group_c_ta_da_professional_practical"/>
+        </record>
+        <record id="pay_level_3_group_c_ta_da_professional_practical"
+            model="exam.type.tada_pay.level">
+            <field name="pay_level" ref="pay_level_3"/>
+            <field name="ta_da_line" ref="group_c_ta_da_professional_practical"/>
+        </record>
+        <record id="pay_level_2_group_c_ta_da_professional_practical"
+            model="exam.type.tada_pay.level">
+            <field name="pay_level" ref="pay_level_2"/>
+            <field name="ta_da_line" ref="group_c_ta_da_professional_practical"/>
+        </record>
+        <record id="pay_level_1_group_c_ta_da_professional_practical"
+            model="exam.type.tada_pay.level">
+            <field name="pay_level" ref="pay_level_1"/>
+            <field name="ta_da_line" ref="group_c_ta_da_professional_practical"/>
+        </record>
+
+
+        <!--  -->
+    </data>
+</tryton>

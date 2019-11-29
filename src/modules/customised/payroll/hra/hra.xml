@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+
+<tryton>
+    <data>
+        <menuitem id="menu_allowance" name="Allowance" parent="hr.menu_hr" sequence="5"/>
+        <menuitem id="menu_hra" name="HRA" parent="menu_allowance" sequence="10"/>
+        <!-- Form View -->
+        <record id="form_hra_view" model="ir.ui.view">
+            <field name="name">form_hra</field>
+            <field name="model">hra.allowance</field>
+            <field name="type">form</field>
+        </record>
+
+        <!-- Tree View -->
+        <record id="tree_hra_view" model="ir.ui.view">
+            <field name="name">tree_hra</field>
+            <field name="model">hra.allowance</field>
+            <field name="type">tree</field>
+        </record>
+
+        <!-- Action -->
+        <record id="action_hra" model="ir.action.act_window">
+            <field name="name">hra Allowance</field>
+            <field name="res_model">hra.allowance</field>
+        </record>
+
+        <!-- Link to Tree -->
+        <record id="act_hra_tree" model="ir.action.act_window.view">
+            <field name="act_window" ref="action_hra"/>
+            <field name="view" ref="tree_hra_view"/>
+            <field name="sequence" eval="10"/>
+        </record>
+
+        <!-- Link to Form -->
+        <record id="act_hra_form" model="ir.action.act_window.view">
+            <field name="act_window" ref="action_hra"/>
+            <field name="view" ref="form_hra_view"/>
+            <field name="sequence">20</field>
+        </record>
+
+        <!-- Menu -->
+        <menuitem id="menu_hra_subitem" name="HRA Allowance" parent="menu_hra" action="action_hra"/>
+    </data>
+</tryton>

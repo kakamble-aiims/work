@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<tree editable="top">
+    <field name="type_"/>
+    <field name="from_date"/>
+    <field name="to_date"/>
+    <field name="no_of_nights_stayed"/>
+    <field name="no_of_days_food"/>
+    <field name="amount"/>
+    <field name="have_bill"/>
+    <field name="bill"/>
+</tree>

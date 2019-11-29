@@ -1,0 +1,144 @@
+<?xml version="1.0"?>
+
+<tryton>
+    <data>
+        <menuitem id="menu_bills" name="Bills" parent="hr_hra.menu_allowance"/>
+        <!-- Form View -->
+        <record id="form_bills_view" model="ir.ui.view">
+            <field name="name">form_bills</field>
+            <field name="model">newspaper.bill</field>
+            <field name="type">form</field>
+        </record>
+
+        <!-- Tree View -->
+        <record id="tree_bills_view" model="ir.ui.view">
+            <field name="name">tree_bills</field>
+            <field name="model">newspaper.bill</field>
+            <field name="type">tree</field>
+        </record>
+
+        <!-- Action -->
+        <record id="action_bills" model="ir.action.act_window">
+            <field name="name">Newspaper Allowance</field>
+            <field name="res_model">newspaper.bill</field>
+        </record>
+
+        <!-- Link to Tree -->
+        <record id="act_bills_tree" model="ir.action.act_window.view">
+            <field name="act_window" ref="action_bills"/>
+            <field name="view" ref="tree_bills_view"/>
+            <field name="sequence" eval="10"/>
+        </record>
+
+        <!-- Link to Form -->
+        <record id="act_bills_form" model="ir.action.act_window.view">
+            <field name="act_window" ref="action_bills"/>
+            <field name="view" ref="form_bills_view"/>
+            <field name="sequence">20</field>
+        </record>
+
+        <!-- Newspaper Allowance LIST -->
+        <record id="form_newspaper_list_view" model="ir.ui.view">
+            <field name="name">form_newspaper_list</field>
+            <field name="model">newspaper.list</field>
+            <field name="type">form</field>
+        </record>
+        <record id="tree_newspaper_list_view" model="ir.ui.view">
+            <field name="name">tree_newspaper_list</field>
+            <field name="model">newspaper.list</field>
+            <field name="type">tree</field>
+        </record>
+
+        <!-- wiz class -->
+        <record id="form_wiz_newspaper_view" model="ir.ui.view">
+            <field name="name">form_wiz</field>
+            <field name="model">newspaper.employee.list</field>
+            <field name="type">form</field>
+        </record>
+        <record id="tree_wiz_newspaper_view" model="ir.ui.view">
+            <field name="name">tree_wiz</field>
+            <field name="model">company.employee</field>
+            <field name="type">tree</field>
+        </record>
+
+         <!--XML Record Wizard-->
+         <record id="act_wizard_Newspaper_Allowance_wizard" model="ir.action.wizard">
+            <field name="name">Newspaper Allowance</field>
+            <field name="wiz_name">newspaper.allowance.wiz</field>
+            <field name="window" eval="True"/>
+        </record>
+
+    <!-- Telephone Allowance -->    
+         <!-- Form View -->
+        <record id="form_telephone_view" model="ir.ui.view">
+            <field name="name">form_telephone</field>
+            <field name="model">telephone.bill</field>
+            <field name="type">form</field>
+        </record>
+
+        <!-- Tree View -->
+        <record id="tree_telephone_view" model="ir.ui.view">
+            <field name="name">tree_telephone</field>
+            <field name="model">telephone.bill</field>
+            <field name="type">tree</field>
+        </record>
+
+        <!-- Action -->
+        <record id="action_telephone" model="ir.action.act_window">
+            <field name="name">Telephone Allowance</field>
+            <field name="res_model">telephone.bill</field>
+        </record>
+
+        <!-- Link to Tree -->
+        <record id="act_telephone_tree" model="ir.action.act_window.view">
+            <field name="act_window" ref="action_telephone"/>
+            <field name="view" ref="tree_telephone_view"/>
+            <field name="sequence" eval="10"/>
+        </record>
+
+        <!-- Link to Form -->
+        <record id="act_telephone_form" model="ir.action.act_window.view">
+            <field name="act_window" ref="action_telephone"/>
+            <field name="view" ref="form_telephone_view"/>
+            <field name="sequence">20</field>
+        </record>
+
+        <!-- Telephone Allowance LIST -->
+        <record id="form_telephone_list_view" model="ir.ui.view">
+            <field name="name">form_telephone_list</field>
+            <field name="model">telephone.list</field>
+            <field name="type">form</field>
+        </record>
+        <record id="tree_telephone_list_view" model="ir.ui.view">
+            <field name="name">tree_telephone_list</field>
+            <field name="model">telephone.list</field>
+            <field name="type">tree</field>
+        </record>
+
+        <!-- wiz class -->
+        <record id="form_wiz_telephone_view" model="ir.ui.view">
+            <field name="name">form_wiz</field>
+            <field name="model">telephone.employee.list</field>
+            <field name="type">form</field>
+        </record>
+        <record id="tree_wiz_telephone_view" model="ir.ui.view">
+            <field name="name">tree_wiz</field>
+            <field name="model">company.employee</field>
+            <field name="type">tree</field>
+        </record>
+
+         <!--XML Record Wizard-->
+         <record id="act_wizard_telephone_Allowance_wizard" model="ir.action.wizard">
+            <field name="name">Telephone Allowance</field>
+            <field name="wiz_name">telephone.allowance.wiz</field>
+            <field name="window" eval="True"/>
+        </record>
+
+
+        <!-- Menu -->
+        <menuitem id="menu_bills_subitem" name="Newspaper Bill" parent="menu_bills" action="action_bills"/>
+        <menuitem id="menu_newspaper_subitem_wiz" name="Newspaper Bill" parent="menu_bills" action="act_wizard_Newspaper_Allowance_wizard"/>
+        <menuitem id="menu_telephone_subitem" name="Telephone Bill" parent="menu_bills" action="action_telephone"/>
+         <menuitem id="menu_telephone_subitem_wiz" name="Telephone Bill" parent="menu_bills" action="act_wizard_telephone_Allowance_wizard"/>
+    </data>
+</tryton>

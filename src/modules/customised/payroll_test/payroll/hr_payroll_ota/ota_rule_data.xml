@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<tryton>
+    <data>
+        <record id="hr_rule_ota" model="hr.salary.rule">
+            <field name="name">Over Time Allowance</field>
+            <field name="priority" eval="1700"/>
+            <field name="code">OTA</field>
+            <field name="category" ref="payroll.salaryrule_alw"/>
+            <field name="condition_select">python_code</field>
+            <field name="amount_select">code</field>
+            <!-- <field name="amount_python_code"></field> -->
+        </record>
+    </data>    
+</tryton>    

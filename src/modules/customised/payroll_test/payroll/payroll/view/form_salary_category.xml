@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+
+<form>
+    <group id="salary_category" col="4" colspan="4">
+        <label name="name"/>
+        <field name="name"/>
+        <label name="code"/>
+        <field name="code"/>
+        <label name="parent"/>
+        <field name="parent"/>
+    </group>
+    <group id="note" colspan="2">
+        <label name="note"/>
+        <field name="note"/>
+    </group>
+</form>

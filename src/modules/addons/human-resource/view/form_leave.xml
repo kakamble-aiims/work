@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<form>
+    <label name="employee"/>
+    <field name="employee"/>
+    <label name="type_of_leave"/>
+    <field name="type_of_leave"/>
+    <label name="from_date"/>
+    <field name="from_date"/>
+    <label name="to_date"/>
+    <field name="to_date"/>
+    <label name="remarks"/>
+    <field name="remarks"/>
+</form>

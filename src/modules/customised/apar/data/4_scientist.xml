@@ -1,0 +1,372 @@
+<?xml version="1.0"?>
+<tryton>
+    <data>
+
+        <record id="template_scientist" model="apar.form.template">
+            <field name="name">For Scientist</field>
+            <field name="form_number">4</field>
+        </record>
+
+       <record id="template_scientist_part2a" model="apar.form.template.part">
+            <field name="name">Research</field>
+            <field name="number">2a</field>
+            <field name="template" ref="template_scientist"/>
+            <field name="type_">self_appraisal</field>
+        </record>
+         <record id="template_scientist_part2b" model="apar.form.template.part">
+            <field name="name">Educational Activities</field>
+            <field name="number">2b</field>
+            <field name="template" ref="template_scientist"/>
+            <field name="type_">self_appraisal</field>
+        </record>
+         <record id="template_scientist_part2c" model="apar.form.template.part">
+            <field name="name">Other Activities</field>
+            <field name="number">2c</field>
+            <field name="template" ref="template_scientist"/>
+            <field name="type_">self_appraisal</field>
+        </record>
+         <record id="template_scientist_part2d" model="apar.form.template.part">
+            <field name="name">Miscellanous Issues</field>
+            <field name="number">2d</field>
+            <field name="template" ref="template_scientist"/>
+            <field name="type_">self_appraisal</field>
+        </record>
+         <record id="template_scientist_part3" model="apar.form.template.part">
+            <field name="name">To Be Filled in by the Reporting Officer</field>
+            <field name="number">3 and 4</field>
+            <field name="template" ref="template_scientist"/>
+            <field name="type_">appraisal</field>
+        </record>
+          <record id="section_scientist_3a" model="apar.form.template.section">
+            <field name="name">Assessment on Research</field>
+            <field name="weightage">65</field>
+            <field name="number">3.1</field>
+            <field name="part" ref="template_scientist_part3"/>
+        </record>
+
+         <record id="section_scientist_3b" model="apar.form.template.section">
+            <field name="name">Assessment on Education</field>
+            <field name="weightage">15</field>
+            <field name="number">3.2</field>
+            <field name="part" ref="template_scientist_part3"/>
+        </record>
+         <record id="section_scientist_3c" model="apar.form.template.section">
+            <field name="name">Assessment on Other Activities</field>
+            <field name="weightage">10</field>
+            <field name="number">3.3</field>
+            <field name="part" ref="template_scientist_part3"/>
+        </record>
+         <record id="section_scientist_3d" model="apar.form.template.section">
+            <field name="name">Assessment on Personal Attributes</field>
+            <field name="weightage">10</field>
+            <field name="number">3.4</field>
+            <field name="part" ref="template_scientist_part3"/>
+        </record>
+        <record id="template_scientist_question1" model="apar.form.template.question">
+            <field name="question_no">A1</field>
+            <field name="name">What is/are your core area(s) of scientific work?</field>
+            <field name="part" ref="template_scientist_part2a"/>
+        </record>
+          <record id="template_scientist_question2" model="apar.form.template.question">
+            <field name="question_no">A2.i</field>
+            <field name="name">Research Projects: Title of the Project</field>
+            <field name="part" ref="template_scientist_part2a"/>
+        </record>
+        <record id="template_scientist_question3" model="apar.form.template.question">
+            <field name="question_no">A2.ii</field>
+            <field name="name">Research Projects: Your role (PI/Co-PI/Co-Inv) </field>
+            <field name="part" ref="template_scientist_part2a"/>
+        </record>
+         <record id="template_scientist_question4" model="apar.form.template.question">
+            <field name="question_no">A2.iii</field>
+            <field name="name">Research Projects: Collaborating Scientist(s)/ Department(s)/ Institution(s) </field>
+            <field name="part" ref="template_scientist_part2a"/>
+        </record>
+         <record id="template_scientist_question5" model="apar.form.template.question">
+            <field name="question_no">A2.iv</field>
+            <field name="name">Research Projects: Sanctioned Budget; Funding Agency; Duration </field>
+            <field name="part" ref="template_scientist_part2a"/>
+        </record>
+
+         <record id="template_scientist_question6" model="apar.form.template.question">
+            <field name="question_no">A3.i</field>
+            <field name="name">Publications: Mention your journals (use vancouver style)</field>
+            <field name="part" ref="template_scientist_part2a"/>
+        </record>
+         <record id="template_scientist_question7" model="apar.form.template.question">
+            <field name="question_no">A3.ii</field>
+            <field name="name">Publications: Mention Chapter in Books/Monographs</field>
+            <field name="part" ref="template_scientist_part2a"/>
+        </record>
+         <record id="template_scientist_question8" model="apar.form.template.question">
+            <field name="question_no">A4</field>
+            <field name="name">Patents / diagnostics / product innovations, etc</field>
+            <field name="part" ref="template_scientist_part2a"/>
+        </record>
+         <record id="template_scientist_question9" model="apar.form.template.question">
+            <field name="question_no">A5</field>
+            <field name="name">Intra-institutional and extramural collaborations &#xA;(national/international)</field>
+            <field name="part" ref="template_scientist_part2a"/>
+        </record>
+         <record id="template_scientist_question10" model="apar.form.template.question">
+            <field name="question_no">A6</field>
+            <field name="name">Mention the Conferences / Symposia / Workshops and the title of paper &#xA; presented as Lead Author</field>
+            <field name="part" ref="template_scientist_part2a"/>
+        </record>
+        <record id="template_scientist_question11" model="apar.form.template.question">
+            <field name="question_no">A6</field>
+            <field name="name">Mention the Conferences / Symposia / Workshops and the title of paper &#xA; presented as Co-Author</field>
+            <field name="part" ref="template_scientist_part2a"/>
+        </record>
+         <record id="template_scientist_question12" model="apar.form.template.question">
+            <field name="question_no">A7.a</field>
+            <field name="name">Please mention Awards /Prize / Recognition</field>
+            <field name="part" ref="template_scientist_part2a"/>
+        </record>
+
+ <record id="template_scientist_question13" model="apar.form.template.question">
+            <field name="question_no">A7.b</field>
+            <field name="name">Please mention Membership / Fellowship of &#xA; Scientific Societies / Associations</field>
+            <field name="part" ref="template_scientist_part2a"/>
+        </record>
+         <record id="template_scientist_question14" model="apar.form.template.question">
+            <field name="question_no">B1.i.a</field>
+            <field name="name">Details of Ph.d students whom you worked with as Chief Supervisor</field>
+            <field name="part" ref="template_scientist_part2b"/>
+        </record>
+         <record id="template_scientist_question15" model="apar.form.template.question">
+            <field name="question_no">B1.i.b</field>
+            <field name="name">Details of Ph.d students whom you worked with as Co-Supervisor</field>
+            <field name="part" ref="template_scientist_part2b"/>
+        </record>
+        <record id="template_scientist_question16" model="apar.form.template.question">
+            <field name="question_no">B1.i.c</field>
+            <field name="name">Details of Ph.d students whom you worked with as DC member</field>
+            <field name="part" ref="template_scientist_part2b"/>
+        </record>
+         <record id="template_scientist_question17" model="apar.form.template.question">
+            <field name="question_no">B1.ii.a</field>
+            <field name="name">Details of MD/MS students whom you worked with as Chief Supervisor</field>
+            <field name="part" ref="template_scientist_part2b"/>
+        </record>
+         <record id="template_scientist_question18" model="apar.form.template.question">
+            <field name="question_no">B1.ii.b</field>
+            <field name="name">Details of MD/MS students whom you worked with as Co-Supervisor</field>
+            <field name="part" ref="template_scientist_part2b"/>
+        </record>
+        <record id="template_scientist_question19" model="apar.form.template.question">
+            <field name="question_no">B1.ii.c</field>
+            <field name="name">Details of MD/MS students whom you worked with as DC member</field>
+            <field name="part" ref="template_scientist_part2b"/>
+        </record>
+         <record id="template_scientist_question20" model="apar.form.template.question">
+            <field name="question_no">B1.iii.a</field>
+            <field name="name">Details of M.Sc students whom you worked with as Chief Supervisor</field>
+            <field name="part" ref="template_scientist_part2b"/>
+        </record>
+         <record id="template_scientist_question21" model="apar.form.template.question">
+            <field name="question_no">B1.iii.b</field>
+            <field name="name">Details of M.Sc students whom you worked with as Co-Supervisor</field>
+            <field name="part" ref="template_scientist_part2b"/>
+        </record>
+        <record id="template_scientist_question22" model="apar.form.template.question">
+            <field name="question_no">B1.iii.c</field>
+            <field name="name">Details of M.Sc students whom you worked with as DC member</field>
+            <field name="part" ref="template_scientist_part2b"/>
+        </record>
+         <record id="template_scientist_question23" model="apar.form.template.question">
+            <field name="question_no">B1.iv.a</field>
+            <field name="name">Details of other students whom you worked with as Chief Supervisor</field>
+            <field name="part" ref="template_scientist_part2b"/>
+        </record>
+         <record id="template_scientist_question24" model="apar.form.template.question">
+            <field name="question_no">B1.iv.b</field>
+            <field name="name">Details of other students whom you worked with as Co-Supervisor</field>
+            <field name="part" ref="template_scientist_part2b"/>
+        </record>
+        <record id="template_scientist_question25" model="apar.form.template.question">
+            <field name="question_no">B1.iv.c</field>
+            <field name="name">Details of other students whom you worked with as DC member</field>
+            <field name="part" ref="template_scientist_part2b"/>
+        </record>
+         <record id="template_scientist_question26" model="apar.form.template.question">
+            <field name="question_no">B2.i.a</field>
+            <field name="name">Details of short term trainees whom you worked with as Chief Supervisor</field>
+            <field name="part" ref="template_scientist_part2b"/>
+        </record>
+         <record id="template_scientist_question27" model="apar.form.template.question">
+            <field name="question_no">B2.i.b</field>
+            <field name="name">Details of short term trainees whom you worked with as Co-Supervisor</field>
+            <field name="part" ref="template_scientist_part2b"/>
+        </record>
+        <record id="template_scientist_question28" model="apar.form.template.question">
+            <field name="question_no">B2.ii.a</field>
+            <field name="name">Details of long term trainees whom you worked with as Chief Supervisor</field>
+            <field name="part" ref="template_scientist_part2b"/>
+        </record>
+         <record id="template_scientist_question29" model="apar.form.template.question">
+            <field name="question_no">B2.ii.b</field>
+            <field name="name">Details of long term trainees whom you worked with as Co-Supervisor</field>
+            <field name="part" ref="template_scientist_part2b"/>
+        </record>
+        <record id="template_scientist_question30" model="apar.form.template.question">
+            <field name="question_no">B3</field>
+            <field name="name">Please mention Other educational activities (Lectures, Seminars, Journal clubs, etc)</field>
+            <field name="part" ref="template_scientist_part2b"/>
+        </record>
+
+        <record id="template_scientist_question32" model="apar.form.template.question">
+            <field name="question_no">C1.i</field>
+            <field name="name">Please mention your contribution in Patient Care</field>
+            <field name="part" ref="template_scientist_part2c"/>
+        </record>
+         <record id="template_scientist_question33" model="apar.form.template.question">
+            <field name="question_no">C1.ii</field>
+            <field name="name">Please mention your contribution in Laboratory/diagnostic services</field>
+            <field name="part" ref="template_scientist_part2c"/>
+        </record>
+        <record id="template_scientist_question34" model="apar.form.template.question">
+            <field name="question_no">C1.iii</field>
+            <field name="name">Please mention your contribution in Other Services (Provide details on &#xA;role assigned and performance)</field>
+            <field name="part" ref="template_scientist_part2c"/>
+        </record>
+        <record id="template_scientist_question35" model="apar.form.template.question">
+            <field name="question_no">C2.i</field>
+            <field name="name">Please mention your contribution in  Organizing Conferences/Workshops/Symposia</field>
+            <field name="part" ref="template_scientist_part2c"/>
+        </record>
+        <record id="template_scientist_question36" model="apar.form.template.question">
+            <field name="question_no">C2.ii</field>
+            <field name="name">Please mention your contribution in Membership of Scientific Committees</field>
+            <field name="part" ref="template_scientist_part2c"/>
+        </record>
+        <record id="template_scientist_question37" model="apar.form.template.question">
+            <field name="question_no">C2.iii</field>
+            <field name="name">Please mention your Additional responsibilities at AIIMS</field>
+            <field name="part" ref="template_scientist_part2c"/>
+        </record>
+        <record id="template_scientist_question38" model="apar.form.template.question">
+            <field name="question_no">C2.iv</field>
+            <field name="name">Please mention any other contributions as applicable</field>
+            <field name="part" ref="template_scientist_part2c"/>
+        </record>
+        <record id="template_scientist_question39" model="apar.form.template.question">
+            <field name="question_no">C3</field>
+            <field name="name">Please mention contribution to academic work/education/scientific/public service outside AIIMS </field>
+            <field name="part" ref="template_scientist_part2c"/>
+        </record>
+         <record id="template_scientist_question40" model="apar.form.template.question">
+            <field name="question_no">C4</field>
+            <field name="name">Please mention any other activity/work you wish to record</field>
+            <field name="part" ref="template_scientist_part2c"/>
+        </record>
+         <record id="template_scientist_question41" model="apar.form.template.question">
+            <field name="question_no">D1</field>
+            <field name="name">What is your plan for next year?</field>
+            <field name="part" ref="template_scientist_part2d"/>
+        </record>
+         <record id="template_scientist_question42" model="apar.form.template.question">
+            <field name="question_no">D2</field>
+            <field name="name">What is your long term vision / goal?</field>
+            <field name="part" ref="template_scientist_part2d"/>
+        </record>
+          <record id="template_scientist_question43" model="apar.form.template.question">
+            <field name="question_no">D3</field>
+            <field name="name">Any other information you wish to share?</field>
+            <field name="part" ref="template_scientist_part2d"/>
+        </record>
+        <record id="template_scientist_question44" model="apar.form.template.question">
+            <field name="question_no">D4</field>
+            <field name="name">Please state whether annual return on immovable property for the proceeding &#xA;calendar year was filed within the prescribed date, i.e. 31st January of the year &#xA; following the calendar year</field>
+            <field name="part" ref="template_scientist_part2d"/>
+        </record>
+        
+
+ <record id="template_scientist_question45" model="apar.form.template.question">
+            <field name="question_no">3.1.a</field>
+            <field name="name">Total marks obtained on the answers given in Part 3A - Research (out of 10)</field>
+            <field name="section" ref="section_scientist_3a"/>
+        </record>
+        <record id="template_scientist_question46" model="apar.form.template.question">
+            <field name="question_no">3.1.b</field>
+            <field name="name">Total marks obtained on the answers given in Part 3B - Education (out of 10)</field>
+           <field name="section" ref="section_scientist_3b"/>
+        </record>
+ <record id="template_scientist_question47" model="apar.form.template.question">
+            <field name="question_no">3.1.c</field>
+            <field name="name">Total marks obtained on the answers given in Part 3C - Other Activities (out of 10)</field>
+           <field name="section" ref="section_scientist_3c"/>
+        </record>
+        <record id="template_scientist_question48" model="apar.form.template.question">
+            <field name="question_no">3.1.d</field>
+            <field name="name">Total marks obtained on the answers given in Part 3D - Personal Attributes (out of 10)</field>
+            <field name="section" ref="section_scientist_3d"/>
+        </record>
+ <record id="template_scientist_question49" model="apar.form.template.question">
+            <field name="question_no">3.2</field>
+            <field name="name">Comments</field>
+            <field name="part" ref="template_scientist_part3"/>
+        </record>
+         <record id="template_scientist_question50" model="apar.form.template.question">
+            <field name="question_no">4.1</field>
+            <field name="name">Do you agree with the observation of the Reporting Officer?</field>
+            <field name="part" ref="template_scientist_part3"/>
+        </record>
+         <record id="template_scientist_question51" model="apar.form.template.question">
+            <field name="question_no">4.2</field>
+            <field name="name">Do you agree with the Reporting Officer’s overall assessment of the Scientist?</field>
+            <field name="part" ref="template_scientist_part3"/>
+        </record>
+         <record id="template_scientist_question52" model="apar.form.template.question">
+            <field name="question_no">4.3</field>
+            <field name="name">Assessment of Integrity</field>
+            <field name="part" ref="template_scientist_part3"/>
+        </record>
+          <record id="template_scientist_question53" model="apar.form.template.question">
+            <field name="question_no">4.4</field>
+            <field name="name">General remarks by the reviewing</field>
+            <field name="part" ref="template_scientist_part3"/>
+        </record>
+         <record id="template_scientist_question54" model="apar.form.template.question">
+            <field name="question_no">4.5</field>
+            <field name="name">Has the scientist been informed of any makings below ‘normal’ with which &#xA; you agree? If he/she has not been, please state why?</field>
+            <field name="part" ref="template_scientist_part3"/>
+        </record>
+         <record id="template_scientist_question55" model="apar.form.template.question">
+            <field name="question_no">3.4.1</field>
+            <field name="name">Initiative and drive</field>
+            <field name="section" ref="section_scientist_3d"/>
+        </record>
+         <record id="template_scientist_question56" model="apar.form.template.question">
+            <field name="question_no">3.4.2</field>
+            <field name="name">Punctuality</field>
+            <field name="section" ref="section_scientist_3d"/>
+        </record>
+         <record id="template_scientist_question57" model="apar.form.template.question">
+            <field name="question_no">3.4.3</field>
+            <field name="name">Sincerity</field>
+            <field name="section" ref="section_scientist_3d"/>
+        </record>
+          <record id="template_scientist_question58" model="apar.form.template.question">
+            <field name="question_no">3.4.5</field>
+            <field name="name">Discipline</field>
+            <field name="section" ref="section_scientist_3d"/>
+        </record>
+          <record id="template_scientist_question59" model="apar.form.template.question">
+            <field name="question_no">3.4.6</field>
+            <field name="name">Integrity</field>
+            <field name="section" ref="section_scientist_3d"/>
+        </record>
+         <record id="template_scientist_question60" model="apar.form.template.question">
+            <field name="question_no">3.4.7</field>
+            <field name="name">Capacity to work in a team</field>
+            <field name="section" ref="section_scientist_3d"/>
+        </record>
+         <record id="template_scientist_question61" model="apar.form.template.question">
+            <field name="question_no">3.4.8</field>
+            <field name="name">Administrative ability</field>
+            <field name="section" ref="section_scientist_3d"/>
+        </record>
+ 
+    </data>
+</tryton>

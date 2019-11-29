@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+
+<form>
+    <group id="apar_department" col="6" colspan="4">
+        <label name="establishment" />
+        <field name="establishment" readonly="1"/>
+        <label name="department" />
+        <field name="department" readonly="1"/>
+        <label name="head" />
+        <field name="head" readonly="1"/>
+        <group id="dates" colspan="2">
+            <label name="date_from" string="APAR for the period: Date From"/>
+            <field name="date_from" readonly="1"/>
+            <label name="date_to" />
+            <field name="date_to" readonly="1"/>
+        </group>
+        <label name="state" />
+        <field name="state" />
+        <button name="forward_to_employees"
+            string="Forward All Forms to Employee"
+            icon="tryton-forward"
+            confirm="I have checked all the Employee Forms of the department and now
+            forwarding the respective Ratee Officers. (Press OK to send the forms)."
+        />
+    </group>
+    <field name="employee_forms" colspan="6" />
+    <group id="timestamps">
+        <label name="forward_to_employee_by" />
+        <field name="forward_to_employee_by" />
+        <label name="date_forward_to_employee" />
+        <field name="date_forward_to_employee" />
+    </group>
+</form>

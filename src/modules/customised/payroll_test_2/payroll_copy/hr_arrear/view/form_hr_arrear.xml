@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+
+<form>
+    <group id="labels" col="8">
+    <label name="employee"/>
+    <field name="employee"/>
+    <label name="salary_code"/>
+    <field name="salary_code"/>
+    <label name="department"/>
+    <field name="department"/>
+    <label name="designation"/>
+    <field name="designation"/>
+    <label name="gpf_code"/>
+    <field name="gpf_code"/>
+    <label name="grade_pay"/>
+    <field name="grade_pay"/>
+    <label name="from_date"/>
+    <field name="from_date"/>
+    <label name="to_date"/>
+    <field name="to_date"/>
+    <label name="new_basic_salary"/>
+    <field name="new_basic_salary"/>
+    <label name="state"/>
+    <field name="state"/>
+    </group>
+    <newline/>
+    <button  name="drawn_per_month" string="Fetch Data For Drawn Per Month"/>
+    <newline/>
+    <group id="fields" col="2">
+    <field name="drawn"/>
+    <field name="due"/>
+    </group>
+    <newline/>
+    <group id="buttons" colspan="2">
+        <button  name="submit" string="Submit"/>
+        <button  name="forward_to_ao" string="Forward To AO"/>
+        <button  name="approve" string="Approve"/>
+        <button  name="cancel" string="Cancel"/>
+    </group>
+</form>

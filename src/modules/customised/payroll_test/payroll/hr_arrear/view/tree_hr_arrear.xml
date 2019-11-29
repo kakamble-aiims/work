@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<tree>
+    <field name="employee_name"/>
+    <field name="code"/>
+    <field name="department"/>
+    <field name="designation"/>
+    <field name="gpf_code"/>
+    <field name="grade_pay"/>
+    <button colspan="2" name="submit" string="Submit" confirm="Are you sure you want to submit?"/>
+	<button colspan="2" name="cancel" string="Cancel" confirm="Are you sure you want to cancel?"/>
+    <button colspan="2" name="approve" string="Approve" confirm="Are you sure you want to approve?"/>
+</tree>

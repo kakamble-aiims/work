@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<form>
+    <label name="code"/>
+    <field name="code"/>
+    <label name="city"/>
+    <field name="city"/>
+    <label name="state"/>
+    <field name="state"/>
+    <newline/>
+    <label name="address"/>
+    <field name="address" colspan="3"/>
+</form>

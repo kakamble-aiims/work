@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+
+<tryton>
+    <data>
+        <menuitem id="menu_nps" name="Nps Payroll"/>
+        <menuitem id="menu_nps_subitem" name="Nps Payroll" parent="menu_nps"/>
+        <record id="form_nps_view_inherit" model="ir.ui.view">
+            <field name="name">form_nps_inherit</field>
+            <field name="model">npsdetails.nps</field>
+            <field name="inherit" ref="nps.form_nps_view"/>
+        </record>
+
+    </data>
+</tryton>

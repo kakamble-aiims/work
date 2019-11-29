@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<tree>
+    <field name="name"/>
+    <field name="date_from"/>
+    <field name="date_to"/>
+    <!-- <button name="confirm_data" string="Confirm"/>
+    <button name="approve" string="Approve"/>
+    <button name="send_in_progress" string="Start Process"/>
+    <button name="generate_ta_da_bills" string="Generate TA/DA Bills"/>
+    <button name="submit_ta_da_bills" string="Submit TA/DA Bills"/>
+    <button name="approve_ta_da" string="Approve TA/DA Bills"/>
+    <button name="send_for_budget_allocation" string="Send for Budget Allocation"/>
+    <button name="send_for_final_process" string="Send for Final Process"/> -->
+</tree> 

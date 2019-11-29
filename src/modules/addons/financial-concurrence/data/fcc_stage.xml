@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<tryton>
+<data>
+<record id="fcc_stage_1" model="financial.concurrence.stage">
+    <field name="name">Proposal Initiation</field>    
+</record>
+<record id="fcc_stage_2" model="financial.concurrence.stage">
+    <field name="name"> Tendering Process</field>
+</record>
+<record id="fcc_stage_3" model="financial.concurrence.stage">
+    <field name="name">Techno-commercial Evaluation</field>
+</record>
+<record id="fcc_stage_4" model="financial.concurrence.stage">
+    <field name="name">Closed System</field>
+</record>
+<record id="fcc_stage_5" model="financial.concurrence.stage">
+    <field name="name">Last purchased price (old So’s)?Like to Like compare</field>
+</record>
+<record id="fcc_stage_6" model="financial.concurrence.stage">
+    <field name="name">Complaints/Representation</field>
+</record>
+<record id="fcc_stage_7" model="financial.concurrence.stage">
+    <field name="name">Rate Reasonability</field>
+</record>
+<record id="fcc_stage_8" model="financial.concurrence.stage">
+    <field name="name">Re-tender Cases</field>
+</record>
+<record id="fcc_stage_9" model="financial.concurrence.stage">
+    <field name="name">CAMC/AMC</field>
+</record>
+<record id="fcc_stage_10" model="financial.concurrence.stage">
+    <field name="name">Rate Contract</field>
+</record>
+<record id="fcc_stage_11" model="financial.concurrence.stage">
+    <field name="name">Currencies</field>
+</record>
+<record id="fcc_stage_12" model="financial.concurrence.stage">
+    <field name="name">Customs</field>
+</record>
+<record id="fcc_stage_13" model="financial.concurrence.stage">
+    <field name="name">Pre-awarded Committees</field>
+</record>
+<record id="fcc_stage_14" model="financial.concurrence.stage">
+    <field name="name">Final Price (Cost to AIIMS)</field>
+</record>
+<record id="fcc_stage_15" model="financial.concurrence.stage">
+    <field name="name">Concurrence (Financial Division)</field>
+</record>
+</data>
+</tryton>

@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<form>
+    <label name="name"/>
+    <field name="name" colspan="2"/>
+    <button name="generate_payslip_batch" string="Generate Payslip Batch" confirm="Are you sure you want to generate Payslip for this Batch?"/>
+    <field name="employees" colspan="4"/>
+</form>

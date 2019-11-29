@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<form>
+    <label name="name"/>
+    <field name="name"/>
+    <label name="employee"/>
+    <field name="employee"/>
+    <label name="date_of_birth"/>
+    <field name="date_of_birth"/>
+    <label name="relationship"/>
+    <field name="relationship"/>
+    <label name="mobile"/>
+    <field name="mobile"/>
+</form>

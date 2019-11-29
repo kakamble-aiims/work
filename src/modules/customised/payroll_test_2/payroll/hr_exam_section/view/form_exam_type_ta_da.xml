@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<form>
+    <label name="group"/>
+    <field name="group"/>
+    <newline/>
+    <field name="grade_pays"/>
+    <newline/>
+    <field name="pay_level"/>
+    <newline/>
+    <label name="hotel_charges"/>
+    <field name="hotel_charges"/>
+    <label name="food_charges"/>
+    <field name="food_charges"/>
+    <label name="maximum"/>
+    <field name="maximum"/>
+    <label name="minimum"/>
+    <field name="minimum"/>
+</form>

@@ -1,0 +1,120 @@
+<?xml version="1.0"?>
+
+<tryton>
+    <data>
+    
+        <!-- Form View -->
+        <record id="form_conveyance_view" model="ir.ui.view">
+            <field name="name">form_conveyance</field>
+            <field name="model">employee_conveyance.allowance</field>
+            <field name="type">form</field>
+        </record>
+
+        <!-- Tree View -->
+        <record id="tree_conveyance_view" model="ir.ui.view">
+            <field name="name">tree_conveyance</field>
+            <field name="model">employee_conveyance.allowance</field>
+            <field name="type">tree</field>
+        </record>
+
+        <!-- Action -->
+        <record id="action_conveyance" model="ir.action.act_window">
+            <field name="name">Conveyance Allowance</field>
+            <field name="res_model">employee_conveyance.allowance</field>
+        </record>
+
+        <!-- Link to Tree -->
+        <record id="act_conveyance_tree" model="ir.action.act_window.view">
+            <field name="act_window" ref="action_conveyance"/>
+            <field name="view" ref="tree_conveyance_view"/>
+            <field name="sequence" eval="10"/>
+        </record>
+
+        <!-- Link to Form -->
+        <record id="act_conveyance_form" model="ir.action.act_window.view">
+            <field name="act_window" ref="action_conveyance"/>
+            <field name="view" ref="form_conveyance_view"/>
+            <field name="sequence">20</field>
+        </record>
+        <!-- Buttons -->
+        <!-- Hr Conveyance -->
+        <record id="button_computer_confirm" model="ir.model.button">
+            <field name="name">confirm</field>
+            <field name="model" search="[('model', '=', 'employee_conveyance.allowance')]"/>
+        </record>
+        <record id="button_computer_submit" model="ir.model.button">
+            <field name="name">submit</field>
+            <field name="model" search="[('model', '=', 'employee_conveyance.allowance')]"/>
+        </record>
+        <record id="button_computer_cancel" model="ir.model.button">
+            <field name="name">cancel</field>
+            <field name="model" search="[('model', '=', 'employee_conveyance.allowance')]"/>
+        </record>
+        <record id="button_computer_approve" model="ir.model.button">
+            <field name="name">approve</field>
+            <field name="model" search="[('model', '=', 'employee_conveyance.allowance')]"/>
+        </record>
+        <!-- Menu -->
+
+        <!--create form and tree for tree view tabs -->
+        <record model="ir.ui.view" id="conveyance_view_form">
+            <field name="model">employee_conveyance.allowance</field>
+            <field name="type">form</field>
+            <field name="name">form_conveyance_view</field>
+        </record>
+        <record model="ir.ui.view" id="conveyance_view_tree">
+            <field name="model">employee_conveyance.allowance</field>
+            <field name="type">tree</field>
+            <field name="name">tree_conveyance_view</field>
+        </record>
+
+        <!--create the tabs on the tree view-->
+        <record model="ir.action.act_window.domain" id="act_conveyance_form_domain_draft">
+            <field name="name">Draft</field>
+            <field name="sequence" eval="10"/>
+            <field name="domain"
+                eval="[('state', '=', 'draft')]"
+                pyson="1"/>
+            <field name="count" eval="True"/>
+            <field name="act_window" ref="action_conveyance"/>
+        </record>
+        <record model="ir.action.act_window.domain" id="act_conveyance_form_domain_confirm">
+            <field name="name">Confirm</field>
+            <field name="sequence" eval="20"/>
+            <field name="domain"
+                eval="[('state', '=', 'confirm')]"
+                pyson="1"/>
+            <field name="count" eval="True"/>
+            <field name="act_window" ref="action_conveyance"/>
+        </record>
+        <record model="ir.action.act_window.domain" id="act_conveyance_form_domain_account_officer">
+            <field name="name">Account Officer</field>
+            <field name="sequence" eval="40"/>
+            <field name="domain"
+                eval="[('state', '=', 'account_officer')]"
+                pyson="1"/>
+            <field name="count" eval="True"/>
+            <field name="act_window" ref="action_conveyance"/>
+        </record>
+        <record model="ir.action.act_window.domain" id="act_conveyance_form_domain_cancel">
+            <field name="name">Cancel</field>
+            <field name="sequence" eval="30"/>
+            <field name="domain"
+                eval="[('state', '=', 'cancel')]"
+                pyson="1"/>
+            <field name="count" eval="True"/>
+            <field name="act_window" ref="action_conveyance"/>
+        </record>
+        <record model="ir.action.act_window.domain" id="act_conveyance_form_domain_approved">
+            <field name="name">Approved</field>
+            <field name="sequence" eval="60"/>
+            <field name="domain"
+                eval="[('state', '=', 'approve')]"
+                pyson="1"/>
+            <field name="count" eval="True"/>
+            <field name="act_window" ref="action_conveyance"/>
+        </record>
+    <!-- Menu -->
+        <menuitem id="menu_conveyance_subitem" name="Conveyance Allowance" parent="hr_hra.menu_allowance" action="action_conveyance"/>
+    </data>
+</tryton>

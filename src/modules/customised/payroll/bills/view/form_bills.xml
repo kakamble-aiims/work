@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+
+<form>
+    <label name="salary_code"/>
+    <field name="salary_code"/>
+    <label name="employee"/>
+    <field name="employee"/>
+    <label name="month"/>
+    <field name="month"/>
+    <label name="bill_amount"/>
+    <field name="bill_amount"/>
+    <label name="bill_attachment"/>
+    <field name="bill_attachment"/>
+    
+    
+    
+</form>

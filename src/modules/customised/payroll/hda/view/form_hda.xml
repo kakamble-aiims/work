@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+
+<form>
+    <label name="salary_code"/>
+    <field name="salary_code"/>
+    <label name="employee"/>
+    <field name="employee"/>
+    <label name="qualification"/>
+    <field name="qualification"/>
+    <label name="state"/>
+    <field name="state"/>
+	<button colspan="2" name="submit" string="Submit"/>
+	<button colspan="2" name="cancel" string="Cancel"/>
+    <button colspan="2" name="approve" string="Approve"/>
+</form>

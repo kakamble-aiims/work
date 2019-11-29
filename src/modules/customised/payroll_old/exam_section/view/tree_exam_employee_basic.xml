@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<tree editable="top">
+    <field name="employee"/>
+    <field name="center"/>
+    <field name="exam"/>
+</tree>

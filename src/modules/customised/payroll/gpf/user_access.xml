@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<tryton>
+    <data>
+        <record model="res.user-res.group" 
+            id="user_admin_group_gpf_admin">
+            <field name="user" ref="res.user_admin"/>
+            <field name="group" ref="group_employee"/>
+        </record>
+       <record model="ir.model.access" id="access_gpf_incress">
+            <field name="model" search="[('model', '=', 'gpf.subscription')]"/>
+            <field name="group" ref="group_employee"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+         <record model="ir.ui.menu-res.group" id="menu_main_gpf_incress">
+            <field name="menu" ref="menu_gpf"/>
+            <field name="group" ref="group_employee"/>
+        </record>
+         <record model="ir.ui.menu-res.group" id="menu_gpf_incress">
+            <field name="menu" ref="menu_gpf"/>
+            <field name="group" ref="group_employee"/>
+        </record>
+    </data>
+</tryton>

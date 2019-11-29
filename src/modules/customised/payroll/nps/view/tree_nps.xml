@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+
+<tree>
+    <field name="ddo_regno"/>    
+    <field name="pran_no"/> 
+    <field name="employee"/>    
+    <field name="govt_cont"/> 
+    <field name="sub_cont"/>    
+    <field name="pay_month"/> 
+    <field name="pay_year"/> 
+    <field name="cont_type"/>    
+    <field name="remarks"/> 
+    <field name="code"/>    
+    <field name="bpay"/> 
+    <field name="npa"/>    
+    <field name="da"/> 
+    <field name="nps_no"/>
+
+</tree>

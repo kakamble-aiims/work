@@ -1,0 +1,244 @@
+<?xml version="1.0"?>
+<tryton>
+    <data>
+
+        <record id="template_physiotherapy" model="apar.form.template">
+            <field name="name">N.F.S.G. and Chief Physiotherapist/Physiotherapist/BTO</field>
+            <field name="form_number">14</field>
+        </record>
+
+        <record id="template_physiotherapy_part2" model="apar.form.template.part">
+            <field name="name">Self Appraisal for the Year(To be filled by the Ratee Officer)</field>
+            <field name="number">2</field>
+            <field name="template" ref="template_physiotherapy"/>
+            <field name="type_">self_appraisal</field>
+        </record>
+        <record id="template_physiotherapy_part3" model="apar.form.template.part">
+            <field name="name">Appraisal(To be filled by Reporting Officer and To be reviewed by Reviewing Officer)</field>
+            <field name="number">3 and 4</field>
+            <field name="template" ref="template_physiotherapy"/>
+            <field name="type_">appraisal</field>
+        </record>
+        <record id="template_physiotherapy_part5" model="apar.form.template.part">
+            <field name="name">Review(To be filled by the Reviewing Officer)</field>
+            <field name="number">5</field>
+            <field name="template" ref="template_physiotherapy"/>
+            <field name="type_">reviewing</field>
+        </record>
+
+
+        <record id="section_physiotherapy_1" model="apar.form.template.section">
+            <field name="name">Assessment of work output</field>
+            <field name="weightage">40</field>
+            <field name="number">3.1</field>
+            <field name="part" ref="template_physiotherapy_part3"/>
+        </record>
+
+        <record id="section_physiotherapy_2" model="apar.form.template.section">
+            <field name="name">Assessment of Personal Attributes</field>
+            <field name="weightage">30</field>
+            <field name="number">3.2</field>
+            <field name="part" ref="template_physiotherapy_part3"/>
+        </record>
+        <record id="section_physiotherapy_3" model="apar.form.template.section">
+            <field name="name">Assessment of functional Competency</field>
+            <field name="weightage">30</field>
+            <field name="number">3.3</field>
+            <field name="part" ref="template_physiotherapy_part3"/>
+        </record>
+
+
+      
+<record id="template_physiotherapy_question1" model="apar.form.template.question">
+            <field name="question_no">2.1</field>
+            <field name="name">Brief description of duties of post:</field>
+            <field name="part" ref="template_physiotherapy_part2"/>
+        </record>
+<record id="template_physiotherapy_question2" model="apar.form.template.question">
+            <field name="question_no">2.2</field>
+            <field name="name">Please specify the quantitative/physical/Financial targets/ objectives &#xA; (8 to 10 items priority-wise/in order of importance) that were set for you and your &#xA; achievements against each target.</field>
+            <field name="part" ref="template_physiotherapy_part2"/>
+        </record>
+<record id="template_physiotherapy_question3" model="apar.form.template.question">
+            <field name="question_no">2.3</field>
+            <field name="name">Please comment briefly on your achievements with reference to targets/objectives &#xA; referred to in column 2.2. Please also indicate significantly higher achievements &#xA; in relation to the targets and your contribution thereto.</field>
+            <field name="part" ref="template_physiotherapy_part2"/>
+        </record>
+<record id="template_physiotherapy_question4" model="apar.form.template.question">
+            <field name="question_no">2.4</field>
+            <field name="name">Please comment briefly on the shortfalls with reference to the targets referred to in column. &#xA; Please specify the constraints, if any, in achieving the targets.</field>
+            <field name="part" ref="template_physiotherapy_part2"/>
+        </record>
+<record id="template_physiotherapy_question5" model="apar.form.template.question">
+            <field name="question_no">2.5a</field>
+            <field name="name">Have you filled your immovable property return as due? If yes, please mention date.</field>
+            <field name="part" ref="template_physiotherapy_part2"/>
+        </record>
+<record id="template_physiotherapy_question6" model="apar.form.template.question">
+            <field name="question_no">2.5b</field>
+            <field name="name">Have you set the annual work plan for all officers for the current year, &#xA; in respect of whom you are the Reporting Authority?</field>
+            <field name="part" ref="template_physiotherapy_part2"/>
+        </record>
+<record id="template_physiotherapy_question7" model="apar.form.template.question">
+            <field name="question_no">2.5c</field>
+            <field name="name">Have you written the APAR of all the officers in respect of whom &#xA; you are the Reporting Authority?</field>
+            <field name="part" ref="template_physiotherapy_part2"/>
+        </record>
+<record id="template_physiotherapy_question8" model="apar.form.template.question">
+            <field name="question_no">2.6</field>
+            <field name="name">Any other additional and unforeseen assignments carried out/Initiatives undertaken worth mentioning.</field>
+            <field name="part" ref="template_physiotherapy_part2"/>
+        </record>
+<record id="template_physiotherapy_question9" model="apar.form.template.question">
+            <field name="question_no">3.4</field>
+            <field name="name">Overall grading of Part-III on scale of 1-10</field>
+            <field name="part" ref="template_physiotherapy_part3"/>
+        </record>
+<record id="template_physiotherapy_question10" model="apar.form.template.question">
+            <field name="question_no">4.1</field>
+            <field name="name">Integrity: Please comment on integrity of the employee:</field>
+            <field name="part" ref="template_physiotherapy_part3"/>
+        </record>
+<record id="template_physiotherapy_question11" model="apar.form.template.question">
+            <field name="question_no">4.2.1</field>
+            <field name="name">State of health</field>
+            <field name="part" ref="template_physiotherapy_part3"/>
+        </record>
+<record id="template_physiotherapy_question12" model="apar.form.template.question">
+            <field name="question_no">4.2.2</field>
+            <field name="name">Aptitude and towards weaker section and SC/ST/OBC</field>
+            <field name="part" ref="template_physiotherapy_part3"/>
+        </record>
+<record id="template_physiotherapy_question13" model="apar.form.template.question">
+            <field name="question_no">4.2.3</field>
+            <field name="name">Aptitude and potential: please mention about the aptitude of the officer &#xA; and areas in which he/she has potential to develop along-with training needs.</field>
+            <field name="part" ref="template_physiotherapy_part3"/>
+        </record>
+<record id="template_physiotherapy_question14" model="apar.form.template.question">
+            <field name="question_no">4.3</field>
+            <field name="name">Pen Picture in about 70 words:</field>
+            <field name="part" ref="template_physiotherapy_part3"/>
+        </record>
+<record id="template_physiotherapy_question15" model="apar.form.template.question">
+            <field name="question_no">5.1</field>
+            <field name="name">Length of service under Reviewing Authority:</field>
+            <field name="part" ref="template_physiotherapy_part5"/>
+        </record>
+<record id="template_physiotherapy_question16" model="apar.form.template.question">
+            <field name="question_no">5.2</field>
+            <field name="name">Do you agree with assessment made by the Reporting Officer with respect to the &#xA; work output and various attributes in Part-III. In case you do not agree with any of &#xA; the numerical assessment or attitudes, please record your assessments &#xA; in column provided for in that Part and initial your entries.</field>
+            <field name="part" ref="template_physiotherapy_part5"/>
+        </record>
+<record id="template_physiotherapy_question17" model="apar.form.template.question">
+            <field name="question_no">5.3</field>
+            <field name="name">In case of difference of opinion details and reasons for the same may be given remarks</field>
+            <field name="part" ref="template_physiotherapy_part5"/>
+        </record>
+<record id="template_physiotherapy_question18" model="apar.form.template.question">
+            <field name="question_no">5.4</field>
+            <field name="name">Remarks/ Observation on the Pen Picture by the Reporting Officer:</field>
+            <field name="part" ref="template_physiotherapy_part5"/>
+        </record>
+       <record id="template_physiotherapy_question_20" model="apar.form.template.question">
+            <field name="question_no">3.1.1</field>
+            <field name="name">Extent of accomplishment of planned work as per para 2.2 above</field>
+            <field name="section" ref="section_physiotherapy_1"/>
+        </record>
+<record id="template_physiotherapy_question_21" model="apar.form.template.question">
+            <field name="question_no">3.1.2</field>
+            <field name="name">Quality of output</field>
+            <field name="section" ref="section_physiotherapy_1"/>
+        </record>
+<record id="template_physiotherapy_question_22" model="apar.form.template.question">
+            <field name="question_no">3.1.3</field>
+            <field name="name">Accomplishment of exceptional work/unforeseen tasks performed as per para 2.6 above</field>
+            <field name="section" ref="section_physiotherapy_1"/>
+        </record>
+<record id="template_physiotherapy_question_23" model="apar.form.template.question">
+            <field name="question_no">3.2.1</field>
+            <field name="name">Attitude to work </field>
+            <field name="section" ref="section_physiotherapy_2"/>
+        </record>
+<record id="template_physiotherapy_question_24" model="apar.form.template.question">
+            <field name="question_no">3.2.2</field>
+            <field name="name">Sense of Responsibility</field>
+            <field name="section" ref="section_physiotherapy_2"/>
+        </record>
+<record id="template_physiotherapy_question_25" model="apar.form.template.question">
+            <field name="question_no">3.2.3</field>
+            <field name="name">Maintenance of discipline</field>
+            <field name="section" ref="section_physiotherapy_2"/>
+        </record>
+<record id="template_physiotherapy_question_26" model="apar.form.template.question">
+            <field name="question_no">3.2.4</field>
+            <field name="name">Communication Skills</field>
+            <field name="section" ref="section_physiotherapy_2"/>
+        </record>
+<record id="template_physiotherapy_question_27" model="apar.form.template.question">
+            <field name="question_no">3.2.5</field>
+            <field name="name">Capacity to work in team spirit</field>
+            <field name="section" ref="section_physiotherapy_2"/>
+        </record>
+<record id="template_physiotherapy_question_28" model="apar.form.template.question">
+            <field name="question_no">3.2.6</field>
+            <field name="name">Capacity to work in time schedule</field>
+            <field name="section" ref="section_physiotherapy_2"/>
+        </record>
+<record id="template_physiotherapy_question_29" model="apar.form.template.question">
+            <field name="question_no">3.2.7</field>
+            <field name="name">Inter-personal relations with Employees and Patients</field>
+            <field name="section" ref="section_physiotherapy_2"/>
+        </record>
+<record id="template_physiotherapy_question_30" model="apar.form.template.question">
+            <field name="question_no">3.2.8</field>
+            <field name="name">Dependability and willingness to take responsibility </field>
+            <field name="section" ref="section_physiotherapy_2"/>
+        </record>
+<record id="template_physiotherapy_question_31" model="apar.form.template.question">
+            <field name="question_no">3.3.1</field>
+            <field name="name">Knowledge of Rules/ Regulations / Procedures in the area of &#xA; function and ability to apply them effectively.</field>
+            <field name="section" ref="section_physiotherapy_3"/>
+        </record>
+<record id="template_physiotherapy_question_32" model="apar.form.template.question">
+            <field name="question_no">3.3.2</field>
+            <field name="name">Strategic planning ability</field>
+            <field name="section" ref="section_physiotherapy_3"/>
+        </record>
+<record id="template_physiotherapy_question_33" model="apar.form.template.question">
+            <field name="question_no">3.3.3</field>
+            <field name="name">Decision making ability</field>
+            <field name="section" ref="section_physiotherapy_3"/>
+        </record>
+<record id="template_physiotherapy_question_34" model="apar.form.template.question">
+            <field name="question_no">3.3.4</field>
+            <field name="name">Analytical ability</field>
+            <field name="section" ref="section_physiotherapy_3"/>
+        </record>
+<record id="template_physiotherapy_question_35" model="apar.form.template.question">
+            <field name="question_no">3.3.5</field>
+            <field name="name">Coordination, ability</field>
+            <field name="section" ref="section_physiotherapy_3"/>
+        </record>
+<record id="template_physiotherapy_question_36" model="apar.form.template.question">
+            <field name="question_no">3.3.6</field>
+            <field name="name">Knowledge to handle Rehabilitation patients of all ages from infants to elderly.</field>
+            <field name="section" ref="section_physiotherapy_3"/>
+        </record>
+<record id="template_physiotherapy_question_37" model="apar.form.template.question">
+            <field name="question_no">3.3.7</field>
+            <field name="name">Treatment knowledge to patients to illness and injures patients.</field>
+            <field name="section" ref="section_physiotherapy_3"/>
+        </record>
+<record id="template_physiotherapy_question_38" model="apar.form.template.question">
+            <field name="question_no">3.3.8</field>
+            <field name="name">Knowledge in therapist develop treatment plan using techniques to &#xA;promote the ability to move, reduce pain, restore function and prevent disability.</field>
+            <field name="section" ref="section_physiotherapy_3"/>
+        </record>
+<record id="template_physiotherapy_question_39" model="apar.form.template.question">
+            <field name="question_no">3.3.9</field>
+            <field name="name">Management organization and supervision of works</field>
+            <field name="section" ref="section_physiotherapy_3"/>
+        </record>
+
+    </data>
+</tryton>

@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+
+<form>
+    <group id="employee_details_form" colspan="6" col="6">
+        <label name="employee"/>
+        <field name="employee"/>
+        <label name="date_from"/>
+        <field name="date_from"/>
+        <label name="date_to"/>
+        <field name="date_to"/>
+        <label name="duty_hrs_from"/>
+        <field name="duty_hrs_from"/>
+        <label name="duty_hrs_to"/>
+        <field name="duty_hrs_to"/>
+        <label name="salary_code"/>
+        <field name="salary_code"/>
+        <label name="ota_rate"/>
+        <field name="ota_rate"/>
+        <label name="vehicle_no"/>
+        <field name="vehicle_no"/>
+        <label name="state"/>
+        <field name="state"/>
+        
+    </group>
+    <group id="emb_workflow_ids" colspan="4" col="6">
+        <button name="submit_to_ro" string="Forward to RO" colspan="2"/>
+        <button name="confirm" string="Confirm"/>
+        <button name="cancel" string="Cancel"/>
+        <button name="submit_to_hod" string="Forward to HOD"/>
+        <button name="cancel_submission_ro" string="Cancel"/>
+        <button name="cancel_submission_hod" string="Cancel"/>
+        <button name="submit_to_ao" string="Forward to AO"/>
+        <button name="approve_for_ao" string="Approve" colspan="2"/>
+        <button name="cancel_submission_ao" string="Cancel"/>
+         <field name="ot_employee_log" colspan="6"/>
+    </group>
+</form>

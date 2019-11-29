@@ -1,0 +1,307 @@
+<?xml version="1.0"?>
+<tryton>
+    <data>
+
+        <!-- Users -->
+        <record model="res.group" id="group_apar_technical_admin">
+            <field name="name">APAR Technical Admin</field>
+        </record>
+        <record model="res.group" id="group_ratee_officer">
+            <field name="name">Ratee Officer</field>
+        </record>
+        <record model="res.group" id="group_acr_cell_admin">
+            <field name="name">ACR Cell Admin</field>
+        </record>
+        <record model="res.group" id="group_reporting_officer">
+            <field name="name">Reporting Officer</field>
+        </record>
+        <record model="res.group" id="group_reviewing_officer">
+            <field name="name">Reviewing Officer</field>
+        </record>
+        <record model="res.group" id="group_accepting_authority">
+            <field name="name">Accepting Authority</field>
+        </record>
+
+        <!-- Tree View-->
+        <record id="tree_apar_department_view" model="ir.ui.view">
+            <field name="name">tree_apar_department</field>
+            <field name="model">apar.department.form</field>
+            <field name="type">tree</field>
+        </record>
+
+        <record id="form_apar_department_view" model="ir.ui.view">
+            <field name="name">form_apar_department</field>
+            <field name="model">apar.department.form</field>
+            <field name="type">form</field>
+        </record>
+
+        <!-- Action -->
+        <record id="act_apar_department" model="ir.action.act_window">
+            <field name="name">Department Forms</field>
+            <field name="res_model">apar.department.form</field>
+        </record>
+
+        <!-- Action link to tree -->
+        <record id="act_tree_view_apar_department" model="ir.action.act_window.view">
+            <field name="view" ref="tree_apar_department_view"/>
+            <field name="act_window" ref="act_apar_department"/>
+            <field name="sequence" eval="10"/>
+        </record>
+
+        <!-- Action link to form -->
+        <record id="act_form_view_apar_department" model="ir.action.act_window.view">
+            <field name="view" ref="form_apar_department_view"/>
+            <field name="act_window" ref="act_apar_department"/>
+            <field name="sequence" eval="20"/>
+        </record>
+
+        <!-- Tree View-->
+        <record id="tree_employee_form_view" model="ir.ui.view">
+            <field name="name">tree_employee_form</field>
+            <field name="model">apar.employee.form</field>
+            <field name="type">tree</field>
+        </record>
+
+        <!-- Form View -->
+        <record id="form_employee_form_view" model="ir.ui.view">
+            <field name="name">form_employee_form</field>
+            <field name="model">apar.employee.form</field>
+            <field name="type">form</field>
+        </record>
+
+        <!-- Action -->
+        <record id="act_apar_employee_form" model="ir.action.act_window">
+            <field name="name">Employee Forms</field>
+            <field name="res_model">apar.employee.form</field>
+        </record>
+
+        <!-- Action link to tree -->
+        <record id="act_tree_view_apar_employee_form" model="ir.action.act_window.view">
+            <field name="view" ref="tree_employee_form_view"/>
+            <field name="act_window" ref="act_apar_employee_form"/>
+            <field name="sequence" eval="10"/>
+        </record>
+
+        <!-- Action link to form -->
+        <record id="act_form_view_apar_employee_form" model="ir.action.act_window.view">
+            <field name="view" ref="form_employee_form_view"/>
+            <field name="act_window" ref="act_apar_employee_form"/>
+            <field name="sequence" eval="20"/>
+        </record>
+
+        <record id="tree_employee_form_part" model="ir.ui.view">
+            <field name="name">tree_employee_form_part</field>
+            <field name="model">apar.employee.form.part</field>
+            <field name="type">tree</field>
+        </record>
+
+        <record id="form_employee_form_part" model="ir.ui.view">
+            <field name="name">form_employee_form_part</field>
+            <field name="model">apar.employee.form.part</field>
+            <field name="type">form</field>
+        </record>
+
+        <record id="tree_employee_form_signature" model="ir.ui.view">
+            <field name="name">tree_employee_form_signature</field>
+            <field name="model">apar.employee.form.signature</field>
+            <field name="type">tree</field>
+        </record>
+
+        <record id="form_employee_form_signature" model="ir.ui.view">
+            <field name="name">form_employee_form_signature</field>
+            <field name="model">apar.employee.form.signature</field>
+            <field name="type">form</field>
+        </record>
+
+        <record id="tree_employee_form_line" model="ir.ui.view">
+            <field name="name">tree_employee_form_line</field>
+            <field name="model">apar.employee.form.line</field>
+            <field name="type">tree</field>
+        </record>
+
+        <record id="form_employee_form_line" model="ir.ui.view">
+            <field name="name">form_employee_form_line</field>
+            <field name="model">apar.employee.form.line</field>
+            <field name="type">form</field>
+        </record>
+
+        <record id="tree_form_section" model="ir.ui.view">
+            <field name="name">tree_form_section</field>
+            <field name="model">apar.employee.form.section</field>
+            <field name="type">tree</field>
+        </record>
+
+        <record id="form_form_section" model="ir.ui.view">
+            <field name="name">form_form_section</field>
+            <field name="model">apar.employee.form.section</field>
+            <field name="type">form</field>
+        </record>
+
+        <record id="tree_form_section_line" model="ir.ui.view">
+            <field name="name">tree_form_section_line</field>
+            <field name="model">apar.employee.form.section.line</field>
+            <field name="type">tree</field>
+        </record>
+
+        <!--Action -->
+        <record id="act_apar_my_apar" model="ir.action.act_window">
+            <field name="name">My APAR</field>
+            <field name="res_model">apar.employee.form</field>
+            <field name="domain"
+                eval="[
+                    'AND',
+                        ('state', 'not in', ('draft')),
+                    ['OR', 
+                    ('employee', '=', Eval('user', {}).get('employee', None)),
+                    ('employee', '=', Eval('employee', {}))]
+                ]"
+                pyson="1"/>
+        </record>
+        <record id="act_tree_view_apar_my_apar" model="ir.action.act_window.view">
+            <field name="view" ref="tree_employee_form_view"/>
+            <field name="act_window" ref="act_apar_my_apar"/>
+            <field name="sequence" eval="10"/>
+        </record>
+        <record id="act_form_view_apar_my_apar" model="ir.action.act_window.view">
+            <field name="view" ref="form_employee_form_view"/>
+            <field name="act_window" ref="act_apar_my_apar"/>
+            <field name="sequence" eval="20"/>
+        </record>
+        <record id="act_apar_reportee_apar" model="ir.action.act_window">
+            <field name="name">Reportee's APAR</field>
+            <field name="res_model">apar.employee.form</field>
+            <field name="domain"
+                eval="[
+                    'AND',
+                        ('state', '=', 'reporting_officer'),
+                    ['OR', 
+                     ('reporting_officer', '=', Eval('user', {}).get('employee', None)),
+                     ('reporting_officer', '=', Eval('employee', {}))]]" 
+                pyson="1"/>
+        </record>
+        <record id="act_tree_view_apar_reportee_apar" model="ir.action.act_window.view">
+            <field name="view" ref="tree_employee_form_view"/>
+            <field name="act_window" ref="act_apar_reportee_apar"/>
+            <field name="sequence" eval="10"/>
+        </record>
+        <record id="act_form_view_apar_reportee_apar" model="ir.action.act_window.view">
+            <field name="view" ref="form_employee_form_view"/>
+            <field name="act_window" ref="act_apar_reportee_apar"/>
+            <field name="sequence" eval="20"/>
+        </record>
+
+        <record id="act_apar_reviewed_apar" model="ir.action.act_window">
+            <field name="name">APAR to be reviewed</field>
+            <field name="res_model">apar.employee.form</field>
+            <field name="domain" 
+            eval="[
+                    'AND',
+                        ('state', '=', 'reviewing_officer'),
+                    ['OR', 
+                     ('reviewing_officer', '=', Eval('user', {}).get('employee', None)),
+                     ('reviewing_officer', '=', Eval('employee', {}))]]" 
+            pyson="1"/>
+        </record>
+        <record id="act_tree_view_apar_reviewed_apar" model="ir.action.act_window.view">
+            <field name="view" ref="tree_employee_form_view"/>
+            <field name="act_window" ref="act_apar_reviewed_apar"/>
+            <field name="sequence" eval="10"/>
+        </record>
+        <record id="act_form_view_apar_reviewed_apar" model="ir.action.act_window.view">
+            <field name="view" ref="form_employee_form_view"/>
+            <field name="act_window" ref="act_apar_reviewed_apar"/>
+            <field name="sequence" eval="20"/>
+        </record>
+
+        <record id="act_apar_accepted_apar" model="ir.action.act_window">
+            <field name="name">APAR to be accepted</field>
+            <field name="res_model">apar.employee.form</field>
+            <field name="domain"
+            eval="[
+                    'AND',
+                        ('state', '=', 'accepting_authority'),
+                    ['OR', 
+                     ('acceptance_authority', '=', Eval('user', {}).get('employee', None)),
+                     ('acceptance_authority', '=', Eval('employee', {}))]]" 
+            pyson="1"/>
+        </record>
+        <record id="act_tree_view_apar_accepted_apar" model="ir.action.act_window.view">
+            <field name="view" ref="tree_employee_form_view"/>
+            <field name="act_window" ref="act_apar_accepted_apar"/>
+            <field name="sequence" eval="10"/>
+        </record>
+        <record id="act_form_view_apar_accepted_apar" model="ir.action.act_window.view">
+            <field name="view" ref="form_employee_form_view"/>
+            <field name="act_window" ref="act_apar_accepted_apar"/>
+            <field name="sequence" eval="20"/>
+        </record>
+
+        <!-- <record id="act_apar_representation" model="ir.action.act_window">
+            <field name="name">My Representation</field>
+            <field name="res_model"></field>
+        </record> -->
+
+        
+        <record id="apar_employee_label" model="ir.action.report">
+            <field name="name">APAR</field>
+            <field name="model">apar.employee.form</field>
+            <field name="report_name">apar</field>
+            <field name="report">apar/apar.fodt</field>
+            <field name="extension">pdf</field>
+        </record>
+        <record id="apar_employee_label_keyword" model="ir.action.keyword">
+            <field name="keyword">form_print</field>
+            <field name="model">apar.employee.form,-1</field>
+            <field name="action" ref="apar_employee_label"/>
+        </record>
+
+        <record id="act_wizard_generate_department" model="ir.action.wizard">
+            <field name="name">Generate Department Forms</field>
+            <field name="wiz_name">apar.generate_forms</field>
+            <field name="window" eval="False"/>
+        </record>
+        <record id="form_wizard_department_forms" model="ir.ui.view">
+            <field name="model">apar.generate_forms.show</field>
+            <field name="type">form</field>
+            <field name="name">generate_department_form</field>
+        </record>
+        <record model="ir.rule.group" id="rule_group_apar_department">
+            <field name="model" search="[('model', '=', 'apar.department.form')]"/>
+            <field name="global_p" eval="False"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_delete" eval="False"/>
+            <field name="perm_create" eval="False"/>
+        </record>
+        <record model="ir.rule.group" id="rule_group_employee_none">
+            <field name="model" search="[('model', '=', 'res.user')]"/>
+            <field name="global_p" eval="False"/>
+            <field name="perm_read" eval="False"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+            <field name="perm_create" eval="False"/>
+        </record>
+        <record model="ir.rule" id="rule_head_apar_department">
+            <field name="domain"
+                eval="[['head', '=', Get(Eval('user', {}), 'employee', None)]]"
+                pyson="1"/>
+            <field name="rule_group" ref="rule_group_apar_department"/>
+        </record>
+        <record model="ir.rule" id="rule_estab_admin_apar_department">
+            <field name="domain"
+                eval="[['department.establishment.admin', '=', Get(Eval('user', {}), 'employee', None)]]"
+                pyson="1"/>
+            <field name="rule_group" ref="rule_group_apar_department"/>
+        </record>
+        <record model="ir.rule.group-res.group" id="rule_group_apar_department_hod">
+            <field name="rule_group" ref="rule_group_apar_department"/>
+            <field name="group" ref="aiims_health_extn.group_head_of_department"/>
+        </record>
+        <record model="ir.rule" id="rule_none"> 
+            <field name="domain"
+                eval="['AND', ('id', '>', '7'), ('employee', '=', None)]"
+                pyson="1"/>
+            <field name="rule_group" ref="rule_group_employee_none"/>
+        </record>    
+    </data>
+</tryton>

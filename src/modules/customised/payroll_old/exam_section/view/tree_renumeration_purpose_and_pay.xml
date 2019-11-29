@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<tree editable="top">
+    <field name="purpose" widget="selection"/>
+    <field name="external" tree_invisible="1"/>
+    <field name="exam_type" tree_invisible="1"/>
+    <field name="payment_basis"/>
+    <field name="unit"/>
+    <!-- <button name="show_exam_type" string="Show Exam Type"/> -->
+    <field name="amount"/>
+</tree>

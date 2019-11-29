@@ -1,0 +1,116 @@
+<?xml version="1.0"?>
+<form>
+    <group id="loan">
+        <group id="hba_loan" colspan="4" col="4">
+            <label name="salary_code"/>
+            <field name="salary_code"/>
+            <label name="employee"/>
+            <field name="employee"/>
+            <label name="designation"/>
+            <field name="designation"/>
+            <label name="department"/>
+            <field name="department"/>
+            <label name="post_held"/>
+            <field name="post_held"/>
+            <label name="place_of_posting"/>
+            <field name="place_of_posting"/>
+            <label name="scale_pay"/>
+            <field name="scale_pay"/>
+            <label name="pension_rule"/>
+            <field name="pension_rule"/>
+            <label name="retirement_date"/>
+            <field name="retirement_date"/>
+            <label name="advance"/>
+            <field name="advance"/>
+            <label name="advance_amount"/>
+            <field name="advance_amount"/>
+            <label name="source"/>
+            <field name="source"/>
+            <label name="attest_copy"/>
+            <field name="attest_copy"/>
+            <label name="advance_needed"/>
+            <field name="advance_needed"/>
+            <label name="amount_required"/>
+            <field name="amount_required"/>
+            <label name="num_installment"/>
+            <field name="num_installment"/>
+            <label name="state"/>
+            <field name="state"/>
+        </group>
+        <group id="hba_notebook" colspan="4" col="4">
+            <notebook colspan="6">
+                  <page string="Plot" id="plot">
+                        <group col="2" colspan="2" id="ploat_data" yfill="1">
+                              <label name="location_address"/>
+                              <field name="location_address"/>
+                              <label name="location_type"/>
+                              <field name="location_type"/>
+                              <label name="clearly"/>
+                              <field name="clearly"/>
+                              <label name="area"/>
+                              <field name="area"/>
+                              <label name="cost"/>
+                              <field name="cost"/>
+                              <label name="amount"/>
+                              <field name="amount"/>
+                              <label name="acquired"/>
+                              <field name="acquired"/>
+                              <label name="unexpired"/>
+                              <field name="unexpired"/>
+                        </group>
+                  </page>
+                  <page string="Construction" id="construction">
+                        <field name="construction"/>
+                  </page>
+                  <page string="Existing House" id="existing_house">
+                        <group col="2" colspan="2" id="existing_house" yfill="1">
+                              <label name="location_address"/>
+                              <field name="location_address"/>
+                              <label name="plinth_area"/>
+                              <field name="plinth_area"/>
+                              <label name="enlargement"/>
+                              <field name="enlargement"/>
+                              <label name="cunstr_cost"/>
+                              <field name="cunstr_cost"/>
+                              <label name="enlargement_cost"/>
+                              <field name="enlargement_cost"/>
+                              <label name="total_plinth"/>
+                              <field name="total_plinth"/>
+                              <label name="total_cost"/>
+                              <field name="total_cost"/>
+                        </group>
+                  </page>
+                  <page string="Purchase of a ready built house/flat" id="build_house">
+                        <label name="location_address"/>
+                        <field name="location_address"/>
+                        <label name="plinth_area"/>
+                        <field name="plinth_area"/>
+                        <label name="constructed"/>
+                        <field name="constructed"/>
+                        <label name="price_settled"/>
+                        <field name="price_settled"/>
+                        <label name="agency"/>
+                        <field name="agency"/>
+                        <label name="already_paid"/>
+                        <field name="already_paid"/>
+                        <label name="to_be_paid"/>
+                        <field name="to_be_paid"/>
+                  </page>
+                  <page string="Own House" id="own_house">
+                        <field name="own_house"/>
+                  </page>
+                  <page string="Loan Installment" id="loan_installment">
+                        <field name="loan_line"/>
+                  </page>
+            </notebook>
+      </group>
+      <group id="state" colspan="4" col="4">
+            <label name="cancel_reason"/>
+            <field name="cancel_reason"/>
+            <button name="submitted_to_ao" string="Submit"/>
+            <button name="forward_to_jo" string="Forward to AO"/>
+            <button name="forward_to_ao" string="Approve"/>
+            <button name="cancel" string="Cancel"/>
+      </group>
+    </group>
+</form>

@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<tree editable="top">
+    <field name="employee"/>
+    <field name="renumeration_bill"/>
+    <field name="ta_da_bill"/>
+    <field name="date_payable"/>
+</tree>

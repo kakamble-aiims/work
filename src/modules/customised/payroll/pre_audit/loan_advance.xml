@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<tryton>
+    <data>
+        <menuitem id="loan_advance" name="Loan/Advance"/>
+        <record id="form_application_loan_advance_view" model="ir.ui.view">
+            <field name="name">form_application_loan_advance</field>
+            <field name="model">loan_advance.application</field>
+            <field name="type">form</field>
+        </record>
+        <record id="tree_application_loan_advance_view" model="ir.ui.view">
+            <field name="name">tree_application_loan_advance</field>
+            <field name="model">loan_advance.application</field>
+            <field name="type">tree</field>
+        </record>
+        <record id="act_application" model="ir.action.act_window">
+            <field name="name">Advance Application</field>
+            <field name="res_model">loan_advance.application</field>
+        </record>
+        <record id="act_application_form_view" model="ir.action.act_window.view">
+            <field name="sequence" eval="20"/>
+            <field name="act_window" ref="act_application"/>
+            <field name="view" ref="form_application_loan_advance_view"/>
+        </record>
+        <record id="act_application_tree_view" model="ir.action.act_window.view">
+            <field name="sequence" eval="10"/>
+            <field name="act_window" ref="act_application"/>
+            <field name="view" ref="tree_application_loan_advance_view"/>
+        </record>
+        <menuitem id="advance_application" name="Advance Application" parent="loan_advance" action="act_application"/>
+        <record id="form_application_signature_view" model="ir.ui.view">
+            <field name="name">form_application_signature</field>
+            <field name="model">loan_advance.application_signature</field>
+            <field name="type">form</field>
+        </record>
+    </data>
+</tryton>

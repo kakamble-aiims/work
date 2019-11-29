@@ -1,0 +1,229 @@
+<?xml version="1.0"?>
+<tryton>
+    <data>
+    <!-- TODO: Do a revision of "priority" -->
+        <!-- salary Rules -->
+        <record id="hr_rule_basic" model="hr.salary.rule">
+            <field name="name">Basic Salary</field>
+            <field name="priority" eval="1"/>
+            <field name="code">BASIC</field>
+            <field name="category" ref="hr_payroll.salaryrule_basic"/>
+            <field name="condition_select">always_true</field>
+            <field name="amount_select">code</field>
+        </record>
+        <record id="hr_rule_new_basic" model="hr.salary.rule">
+            <field name="name">New Basic Salary</field>
+            <field name="priority" eval="5"/>
+            <field name="code">NEW_BASIC</field>
+            <field name="category" ref="salaryrule_basic"/>
+            <field name="condition_select">python_code</field>
+            <field name="amount_select">percentage</field>
+            <field name="amount_percentage" eval="20"/>
+        </record>
+        <record id="hr_rule_npa" model="hr.salary.rule">
+            <field name="name">Non Practising Allowance</field>
+            <field name="priority" eval="50"/>
+            <field name="code">NPA</field>
+            <field name="category" ref="hr_payroll.salaryrule_alw"/>
+            <field name="condition_select">always_true</field>
+            <field name="amount_select">code</field>
+        </record>
+        <record id="hr_rule_da" model="hr.salary.rule">
+            <field name="name">Dearness allowance</field>
+            <field name="priority" eval="70"/>
+            <field name="code">DA</field>
+            <field name="category" ref="hr_payroll.salaryrule_alw"/>
+            <field name="condition_select">always_true</field>
+            <field name="amount_select">percentage</field>
+            <field name="amount_percentage">12</field>
+        </record>
+        <record id="hr_rule_trans_alw" model="hr.salary.rule">
+            <field name="name">Transport Allowance</field>
+            <field name="priority" eval="100"/>
+            <field name="code">TRANSPORT_ALW</field>
+            <field name="category" ref="hr_payroll.salaryrule_alw"/>
+            <field name="condition_select">always_true</field>
+            <field name="amount_select">code</field>
+        </record>
+        <record id="hr_rule_taxable" model="hr.salary.rule">
+            <field name="name">Gross Salary</field>
+            <field name="priority" eval="2000"/>
+            <field name="code">GROSS</field>
+            <field name="category" ref="hr_payroll.salaryrule_gross"/>
+            <field name="condition_select">always_true</field>
+            <field name="amount_select">code</field>
+
+        </record>
+        <record id="hr_rule_nbt" model="hr.salary.rule">
+            <field name="name">Net Before Tax</field>
+            <field name="priority" eval="2100"/>
+            <field name="code">NBT</field>
+            <field name="category" ref="hr_payroll.salaryrule_net"/>
+            <field name="condition_select">always_true</field>
+            <field name="amount_select">code</field>
+        </record>
+        <record id="hr_rule_net" model="hr.salary.rule">
+            <field name="name">Net Salary</field>
+            <field name="priority" eval="3600"/>
+            <field name="code">NET</field>
+            <field name="category" ref="hr_payroll.salaryrule_net"/>
+            <field name="condition_select">always_true</field>
+            <field name="amount_select">code</field>
+        </record>
+
+        <!-- <record id="hr_rule_remuneration" model="hr.salary.rule">
+            <field name="name">Remuneration</field>
+            <field name="priority" eval="25000"/>
+            <field name="code">REM</field>
+            <field name="category" ref="hr_payroll.salaryrule_rem"/>
+            <field name="condition_select">always_true</field>
+            <field name="amount_select">code</field>
+        </record> -->
+
+         <record id="hr_rule_tds" model="hr.salary.rule">
+            <field name="name">TDS</field>
+            <field name="priority" eval="2200"/>
+            <field name="code">TDS</field>
+            <field name="category" ref="hr_payroll.salaryrule_tax"/>
+            <field name="condition_select">always_true</field>
+            <field name="amount_select">code</field>
+        </record>
+
+         <!-- <record id="hr_rule_net_before_tax" model="hr.salary.rule">
+            <field name="name">Net Salary(Before Tax)</field>
+            <field name="priority" eval="4900"/>
+            <field name="code">NBT</field>
+            <field name="category" ref="hr_payroll.salaryrule_NBT"/>
+            <field name="condition_select">always_true</field>
+            <field name="amount_select">code</field>
+        </record> -->
+        <!-- allowances -->
+        <record id="hr_rule_nurse_alw" model="hr.salary.rule">
+            <field name="name">Nursing Allowance</field>
+            <field name="priority" eval="1500"/>
+            <field name="code">NURSING_ALW</field>
+            <field name="category" ref="hr_payroll.salaryrule_alw"/>
+            <field name="condition_select">python_code</field>
+            <field name="amount_select">fix</field>
+        </record>
+        <record id="hr_rule_hpca" model="hr.salary.rule">
+            <field name="name">Hospital Patient Care Allowance</field>
+            <field name="priority" eval="200"/>
+            <field name="code">HPCA</field>
+            <field name="category" ref="hr_payroll.salaryrule_alw"/>
+            <field name="condition_select">python_code</field>
+            <field name="amount_select">fix</field>
+        </record>
+        <record id="hr_rule_uniform_alw" model="hr.salary.rule">
+            <field name="name">Uniform Allowance</field>
+            <field name="priority" eval="4100"/>
+            <field name="code">UNIFORM_ALW</field>
+            <field name="category" ref="hr_payroll.salaryrule_rem"/>
+            <field name="condition_select">python_code</field>
+            <field name="amount_select">fix</field>
+        </record>
+        <record id="hr_rule_dep_alw" model="hr.salary.rule">
+            <field name="priority" eval="800"/>
+            <field name="code">DEP_ALW</field>
+            <field name="name">Deputation Allowance</field>
+            <field name="category" ref="hr_payroll.salaryrule_alw"/>
+            <field name="condition_select">python_code</field>
+            <field name="amount_select">code</field>
+        </record>
+        <record id="hr_rule_tool_alw" model="hr.salary.rule">
+            <field name="name">Tool Allowance</field>
+            <field name="priority" eval="300"/>
+            <field name="code">TOOL_ALW</field>
+            <field name="category" ref="hr_payroll.salaryrule_alw"/>
+            <field name="condition_select">python_code</field>
+            <field name="amount_select">code</field>
+        </record>
+        <!-- <record id="hr_rule_cea" model="hr.salary.rule">
+            <field name="name">Children Education Allowance</field>
+            <field name="priority" eval="800"/>
+            <field name="code">CEA</field>
+            <field name="category" ref="hr_payroll.salaryrule_alw"/>
+            <field name="condition_select">python_code</field>
+            <field name="amount_select">code</field>
+        </record> -->
+        <record id="hr_rule_qpay" model="hr.salary.rule">
+            <field name="name">Qualification Pay</field>
+            <field name="priority" eval="900"/>
+            <field name="code">QPAY</field>
+            <field name="category" ref="hr_payroll.salaryrule_alw"/>
+            <field name="condition_select">python_code</field>
+            <field name="amount_select">code</field>
+        </record>
+        <record id="hr_rule_dress_alw" model="hr.salary.rule">
+            <field name="name">Dress Allowance</field>
+            <field name="priority" eval="400"/>
+            <field name="code">DRESS_ALW</field>
+            <field name="category" ref="hr_payroll.salaryrule_alw"/>
+            <field name="condition_select">python_code</field>
+            <field name="amount_select">code</field>
+        </record>
+        <record id="hr_rule_chta" model="hr.salary.rule">
+            <field name="name">Cash Handling and Treasury Allowance</field>
+            <field name="priority" eval="700"/>
+            <field name="code">CHTA</field>
+            <field name="category" ref="hr_payroll.salaryrule_alw"/>
+            <field name="condition_select">python_code</field>
+            <field name="amount_select">code</field>
+        </record>
+        <!-- Deductions -->
+        <!-- <record id="hr_rule_tds" model="hr.salary.rule">
+            <field name="name">TDS</field>
+            <field name="priority" eval="22000"/>
+            <field name="code">TDS</field>
+            <field name="category" ref="hr_payroll.salaryrule_tax"/>
+            <field name="condition_select">always_true</field>
+            <field name="amount_select">code</field>
+        </record> -->
+        
+        <record id="hr_rule_ehs" model="hr.salary.rule">
+            <field name="name">Employee Health Scheme</field>
+            <field name="priority" eval="2300"/>
+            <field name="code">EHS</field>
+            <field name="category" ref="hr_payroll.salaryrule_ded"/>
+            <field name="condition_select">always_true</field>
+            <field name="amount_select">code</field>
+        </record>
+        
+        <record id="hr_rule_ku" model="hr.salary.rule">
+            <field name="name">Karamchari Union</field>
+            <field name="priority" eval="2400"/>
+            <field name="code">KU</field>
+            <field name="category" ref="hr_payroll.salaryrule_ded"/>
+            <field name="condition_select">python_code</field>
+            <field name="amount_select">fix</field>
+            <field name="amount_fix">10</field>
+        </record>
+        <record id="hr_rule_nu" model="hr.salary.rule">
+            <field name="name">Nursing Union</field>
+            <field name="priority" eval="2500"/>
+            <field name="code">NU</field>
+            <field name="category" ref="hr_payroll.salaryrule_ded"/>
+            <field name="condition_select">python_code</field>
+            <field name="amount_select">fix</field>
+            <field name="amount_fix">20</field>
+        </record>
+        <record id="hr_rule_oa" model="hr.salary.rule">
+            <field name="name">Officer Association</field>
+            <field name="priority" eval="2600"/>
+            <field name="code">OA</field>
+            <field name="category" ref="hr_payroll.salaryrule_ded"/>
+            <field name="condition_select">python_code</field>
+            <field name="amount_select">fix</field>
+            <field name="amount_fix">20</field>
+        </record>
+        <record id="hr_rule_" model="hr.salary.rule">
+            <field name="name">Faculty Fund + Faculty Club</field>
+            <field name="priority" eval="2700"/>
+            <field name="code">FAC_FUND_CLUB</field>
+            <field name="category" ref="hr_payroll.salaryrule_ded"/>
+            <field name="condition_select">python_code</field>
+            <field name="amount_select">fix</field>
+            <field name="amount_fix">500</field>
+        </record>
+    </data>
+</tryton>

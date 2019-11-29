@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<tryton>
+    <data>
+        <!--APAR-->
+        <menuitem name="APAR" id="menu_apar" parent="hr.menu_hr" sequence="10"/>
+
+        <menuitem name="My APAR" id="menu_apar_my_apar" parent="menu_apar" action="act_apar_my_apar" sequence="20"/>
+
+        <menuitem name="Reportee's APAR" id="menu_apar_reportee_apar" parent="menu_apar" action="act_apar_reportee_apar" sequence="30"/>
+
+        <menuitem name="APAR to be reviewed" id="menu_apar_reviewed_apar" parent="menu_apar" action="act_apar_reviewed_apar" sequence="40"/>
+
+        <menuitem name="APAR to be accepted" id="menu_apar_accepted_apar" parent="menu_apar" action="act_apar_accepted_apar" sequence="50"/>
+
+        <menuitem name="My Representation" id="menu_apar_representation" 
+            parent="menu_apar" action="act_apar_representation" sequence="60"/>
+
+        <menuitem name="Representations" id="menu_apar_representations" 
+            parent="menu_apar" action="act_apar_representations" sequence="60"/>
+
+        <menuitem name="Department Forms" id="menu_apar_department" parent="menu_apar" action="act_apar_department" sequence="70"/>
+
+        <menuitem name="Employee Forms" id="menu_apar_employee_forms" parent="menu_apar" action="act_apar_employee_form" sequence="90"/>
+
+        <menuitem name="Generate Department Forms" id="menu_wizard_generate_department" parent="menu_apar" action="act_wizard_generate_department"/>
+
+        <!--Configuration-->
+
+        <menuitem name="APAR" id="menu_config_apar" 
+            parent="hr.menu_hr_configuration" sequence="10"/>
+
+        <menuitem name="Templates" id="menu_config_apar_template" parent="menu_config_apar" action="act_apar_form_template"/>
+
+        <menuitem name="Parts" id="menu_config_apar_part" parent="menu_config_apar" action="act_apar_form_template_part"/>
+
+        <menuitem name="Sections" id="menu_config_apar_section" parent="menu_config_apar" action="act_apar_form_template_section"/>
+
+        <menuitem name="Questions" id="menu_config_apar_question" parent="menu_config_apar" action="act_apar_form_template_question"/>
+
+        <menuitem name="Configuration" id="menu_config_apar_configuration" parent="menu_config_apar" action="act_apar_form_template_configuration"/>
+
+    </data>
+</tryton>

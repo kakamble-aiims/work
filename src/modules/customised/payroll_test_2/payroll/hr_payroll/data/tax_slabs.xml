@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<tryton>
+    <data>
+        <record id="tax_slab_1" model="income_tax.slab">
+            <field name="from_amount">0</field>
+            <field name="to_amount">250000</field>
+            <field name="base">0</field>
+            <field name="percentage">0</field>
+        </record>
+        <record id="tax_slab_2" model="income_tax.slab">
+            <field name="from_amount">250001</field>
+            <field name="to_amount">500000</field>
+            <field name="base">0</field>
+            <field name="percentage">5</field>
+        </record>
+        <record id="tax_slab_3" model="income_tax.slab">
+            <field name="from_amount">500001</field>
+            <field name="to_amount">1000000</field>
+            <field name="base">12500</field>
+            <field name="percentage">20</field>
+        </record>
+        <record id="tax_slab_4" model="income_tax.slab">
+            <field name="from_amount">1000000</field>
+            <!-- <field name="to_amount">BASIC</field> -->
+            <field name="base">112500</field>
+            <field name="percentage">30</field>
+        </record>
+    </data>
+</tryton>

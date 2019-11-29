@@ -1,0 +1,12 @@
+Metadata-Version: 1.2
+Name: trytond-exam-section
+Version: 5.0.9
+Summary: Tryton module to manage data for Breast Cancer Clinic 
+Home-page: http://www.aiims.edu/
+Author: AIIMS CF
+Author-email: aiimscf@aiims.edu
+License: GPL-3
+Download-URL: http://downloads.tryton.org/5.0/
+Description: UNKNOWN
+Platform: any
+Requires-Python: >=3.4

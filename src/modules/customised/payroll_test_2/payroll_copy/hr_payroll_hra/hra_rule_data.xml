@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<tryton>
+    <data>
+            <record id="hr_rule_hra" model="hr.salary.rule">
+            <field name="name">House Rent Allowance</field>
+            <field name="priority" eval="300"/>
+            <field name="code">HRA</field>
+            <field name="category" ref="hr_payroll.salaryrule_alw"/>
+            <field name="condition_select">python_code</field>
+            <field name="amount_select">percentage</field>
+            <!-- <field name="percentage_based">new_basic</field> -->
+           <field name="amount_percentage">24</field>
+        </record>
+    </data> 
+</tryton>    

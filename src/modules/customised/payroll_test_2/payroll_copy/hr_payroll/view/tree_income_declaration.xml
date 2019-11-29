@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<tree editable="top">
+    <field name="source"/>
+    <field name="note"/>
+    <field name="type_"/>
+    <field name="amount"/>
+    <field name="total_amount"/>
+</tree>

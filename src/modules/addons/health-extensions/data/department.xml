@@ -1,0 +1,2770 @@
+<?xml version="1.0"?>
+
+<tryton>
+    <data>
+
+        <record id="institution1" model="company.department">
+            <field name="name">Administration</field>
+            <field name="type_">Non-Medical</field>
+            <field name="code">ADMIN</field>
+            <field name="institution" ref="center_main_aiims" />
+            <field name="establishment" ref="establishment1" />
+
+        </record>
+        <record id="institution2" model="company.department">
+            <field name="name">Academics</field>
+            <field name="type_">Non-Medical</field>
+            <field name="code">ACAD</field>
+            <field name="institution" ref="center_main_aiims" />
+            <field name="establishment" ref="establishment1" />
+
+        </record>
+        <record id="institution3" model="company.department">
+            <field name="name">Hospital</field>
+            <field name="type_">Medical</field>
+            <field name="code">HOSPT</field>
+            <field name="institution" ref="center_main_aiims" />
+            <field name="establishment" ref="establishment1" />
+
+        </record>
+        <record id="institution4" model="company.department">
+            <field name="name">Examination Section</field>
+            <field name="type_">Non-Medical</field>
+            <field name="code">EXAM</field>
+            <field name="institution" ref="center_main_aiims" />
+            <field name="establishment" ref="establishment1" />
+
+        </record>
+        <record id="institution5" model="company.department">
+            <field name="name">Research</field>
+            <field name="type_">Non-Medical</field>
+            <field name="code">RESECH</field>
+            <field name="institution" ref="center_main_aiims" />
+            <field name="establishment" ref="establishment1" />
+
+        </record>
+        <record id="institution6" model="company.department">
+            <field name="name">Anaesthesiology, Pain Medicine and Critical Care</field>
+            <field name="type_">Medical</field>
+            <field name="code">ANESTH</field>
+            <field name="institution" ref="center_main_aiims" />
+            <field name="establishment" ref="establishment1" />
+
+        </record>
+        <record id="institution7" model="company.department">
+            <field name="name">Anatomy</field>
+            <field name="type_">Medical</field>
+            <field name="code">ANATO</field>
+            <field name="institution" ref="center_main_aiims" />
+            <field name="establishment" ref="establishment1" />
+
+        </record>
+        <record id="institution8" model="company.department">
+            <field name="name">Biochemistry</field>
+            <field name="type_">Medical</field>
+            <field name="code">BIOCHEM</field>
+            <field name="institution" ref="center_main_aiims" />
+            <field name="establishment" ref="establishment1" />
+
+        </record>
+        <record id="institution9" model="company.department">
+            <field name="name">Biomedical Engineering</field>
+            <field name="type_">Non-Medical</field>
+            <field name="code">BIOCHENG</field>
+            <field name="institution" ref="center_main_aiims" />
+            <field name="establishment" ref="establishment1" />
+
+        </record>
+        <record id="institution10" model="company.department">
+            <field name="name">Biophysics</field>
+            <field name="type_">Medical</field>
+            <field name="code">BIOPHY</field>
+            <field name="institution" ref="center_main_aiims" />
+            <field name="establishment" ref="establishment1" />
+
+        </record>
+        <record id="institution11" model="company.department">
+            <field name="name">Biostatistics</field>
+            <field name="type_">Medical</field>
+            <field name="code">BIOSTAT</field>
+            <field name="institution" ref="center_main_aiims" />
+            <field name="establishment" ref="establishment1" />
+
+        </record>
+        <record id="institution12" model="company.department">
+            <field name="name">Biotechnology</field>
+            <field name="type_">Medical</field>
+            <field name="code">BIOTECH</field>
+            <field name="institution" ref="center_main_aiims" />
+            <field name="establishment" ref="establishment1" />
+
+        </record>
+        <record id="institution13" model="company.department">
+            <field name="name">Cardiology</field>
+            <field name="type_">Medical</field>
+            <field name="code">CARDIO</field>
+            <field name="institution" ref="center_main_aiims" />
+            <field name="establishment" ref="establishment1" />
+
+        </record>
+        <record id="institution14" model="company.department">
+            <field name="name">Centre for Community Medicine</field>
+            <field name="type_">Medical</field>
+            <field name="code">COMMEDIC</field>
+            <field name="institution" ref="center_main_aiims" />
+            <field name="establishment" ref="establishment1" />
+
+        </record>
+        <record id="institution15" model="company.department">
+            <field name="name">College of Nursing</field>
+            <field name="type_">Non-Medical</field>
+            <field name="code">COLGNUR</field>
+            <field name="institution" ref="center_main_aiims" />
+            <field name="establishment" ref="establishment1" />
+
+        </record>
+        <record id="institution16" model="company.department">
+            <field name="name">Dermatology &amp; Venereology</field>
+            <field name="type_">Medical</field>
+            <field name="code">DERMVEN</field>
+            <field name="institution" ref="center_main_aiims" />
+            <field name="establishment" ref="establishment1" />
+
+        </record>
+        <record id="institution17" model="company.department">
+            <field name="name">Dietetics</field>
+            <field name="type_">Medical</field>
+            <field name="code">DIETET</field>
+            <field name="institution" ref="center_main_aiims" />
+            <field name="establishment" ref="establishment1" />
+
+        </record>
+        <record id="institution18" model="company.department">
+            <field name="name">Emergency Medicine</field>
+            <field name="type_">Medical</field>
+            <field name="code">EMGMED</field>
+            <field name="institution" ref="center_main_aiims" />
+            <field name="establishment" ref="establishment1" />
+
+        </record>
+        <record id="institution19" model="company.department">
+            <field name="name">Endocrinology, Metabolism &amp; Diabetes</field>
+            <field name="type_">Medical</field>
+            <field name="code">ENDMETA</field>
+            <field name="institution" ref="center_main_aiims" />
+            <field name="establishment" ref="establishment1" />
+
+        </record>
+        <record id="institution20" model="company.department">
+            <field name="name">Forensic Medicine and Toxicology</field>
+            <field name="type_">Medical</field>
+            <field name="code">FORMEDTOX</field>
+            <field name="institution" ref="center_main_aiims" />
+            <field name="establishment" ref="establishment1" />
+
+        </record>
+        <record id="institution21" model="company.department">
+            <field name="name">Geriatric Medicine</field>
+            <field name="type_">Medical</field>
+            <field name="code">GERIAMED</field>
+            <field name="institution" ref="center_main_aiims" />
+            <field name="establishment" ref="establishment1" />
+
+        </record>
+        <record id="institution22" model="company.department">
+            <field name="name">Gastroenterology and Human Nutrition</field>
+            <field name="type_">Medical</field>
+            <field name="code">GASTHUM</field>
+            <field name="institution" ref="center_main_aiims" />
+            <field name="establishment" ref="establishment1" />
+
+        </record>
+        <record id="institution23" model="company.department">
+            <field name="name">Gastrointestinal Surgery</field>
+            <field name="type_">Medical</field>
+            <field name="code">GASSUR</field>
+            <field name="institution" ref="center_main_aiims" />
+            <field name="establishment" ref="establishment1" />
+
+        </record>
+        <record id="institution24" model="company.department">
+            <field name="name">Haematology</field>
+            <field name="type_">Medical</field>
+            <field name="code">HAEMA</field>
+            <field name="institution" ref="center_main_aiims" />
+            <field name="establishment" ref="establishment1" />
+
+        </record>
+        <record id="institution25" model="company.department">
+            <field name="name">Laboratory Medicine</field>
+            <field name="type_">Medical</field>
+            <field name="code">LABMED</field>
+            <field name="institution" ref="center_main_aiims" />
+            <field name="establishment" ref="establishment1" />
+
+        </record>
+        <record id="institution26" model="company.department">
+            <field name="name">Medicine</field>
+            <field name="type_">Medical</field>
+            <field name="code">MEDCN</field>
+            <field name="institution" ref="center_main_aiims" />
+            <field name="establishment" ref="establishment1" />
+
+        </record>
+        <record id="institution27" model="company.department">
+            <field name="name">Microbiology</field>
+            <field name="type_">Medical</field>
+            <field name="code">MICRO</field>
+            <field name="institution" ref="center_main_aiims" />
+            <field name="establishment" ref="establishment1" />
+
+        </record>
+        <record id="institution28" model="company.department">
+            <field name="name">Nephrology</field>
+            <field name="type_">Medical</field>
+            <field name="code">NEPH</field>
+            <field name="institution" ref="center_main_aiims" />
+            <field name="establishment" ref="establishment1" />
+
+        </record>
+        <record id="institution29" model="company.department">
+            <field name="name">Nuclear Medicine</field>
+            <field name="type_">Medical</field>
+            <field name="code">NECLRMED</field>
+            <field name="institution" ref="center_main_aiims" />
+            <field name="establishment" ref="establishment1" />
+
+        </record>
+        <record id="institution30" model="company.department">
+            <field name="name">Nuclear Magnetic Resonance Imaging</field>
+            <field name="type_">Medical</field>
+            <field name="code">NUCMAG</field>
+            <field name="institution" ref="center_main_aiims" />
+            <field name="establishment" ref="establishment1" />
+
+        </record>
+        <record id="institution31" model="company.department">
+            <field name="name">Nursing Department</field>
+            <field name="type_">Medical</field>
+            <field name="code">NURDEP</field>
+            <field name="institution" ref="center_main_aiims" />
+            <field name="establishment" ref="establishment1" />
+
+        </record>
+        <record id="institution32" model="company.department">
+            <field name="name">Obstetrics and Gynaecology</field>
+            <field name="type_">Medical</field>
+            <field name="code">OBSGYN</field>
+            <field name="institution" ref="center_main_aiims" />
+            <field name="establishment" ref="establishment1" />
+
+        </record>
+        <record id="institution33" model="company.department">
+            <field name="name">Orthopaedics</field>
+            <field name="type_">Medical</field>
+            <field name="code">ORTHO</field>
+            <field name="institution" ref="center_main_aiims" />
+            <field name="establishment" ref="establishment1" />
+
+        </record>
+        <record id="institution34" model="company.department">
+            <field name="name">Otorhinolaryngology</field>
+            <field name="type_">Medical</field>
+            <field name="code">OTORTH</field>
+            <field name="institution" ref="center_main_aiims" />
+            <field name="establishment" ref="establishment1" />
+
+        </record>
+        <record id="institution35" model="company.department">
+            <field name="name">Paediatrics</field>
+            <field name="type_">Medical</field>
+            <field name="code">PAEDIA</field>
+            <field name="institution" ref="center_main_aiims" />
+            <field name="establishment" ref="establishment1" />
+
+        </record>
+        <record id="institution36" model="company.department">
+            <field name="name">Paediatric Surgery</field>
+            <field name="type_">Medical</field>
+            <field name="code">PAEDIASUR</field>
+            <field name="institution" ref="center_main_aiims" />
+            <field name="establishment" ref="establishment1" />
+
+        </record>
+        <record id="institution37" model="company.department">
+            <field name="name">Pathology</field>
+            <field name="type_">Medical</field>
+            <field name="code">PATHLG</field>
+            <field name="institution" ref="center_main_aiims" />
+            <field name="establishment" ref="establishment1" />
+
+        </record>
+        <record id="institution38" model="company.department">
+            <field name="name">Pharmacology</field>
+            <field name="type_">Medical</field>
+            <field name="code">PHARMA</field>
+            <field name="institution" ref="center_main_aiims" />
+            <field name="establishment" ref="establishment1" />
+
+        </record>
+        <record id="institution39" model="company.department">
+            <field name="name">Physiology</field>
+            <field name="type_">Medical</field>
+            <field name="code">PHYSIO</field>
+            <field name="institution" ref="center_main_aiims" />
+            <field name="establishment" ref="establishment1" />
+
+        </record>
+        <record id="institution40" model="company.department">
+            <field name="name">Physical Medicine &amp; Rehabilitation</field>
+            <field name="type_">Medical</field>
+            <field name="code">PHYNEDREH</field>
+            <field name="institution" ref="center_main_aiims" />
+            <field name="establishment" ref="establishment1" />
+
+        </record>
+        <record id="institution41" model="company.department">
+            <field name="name">Plastic Surgery</field>
+            <field name="type_">Medical</field>
+            <field name="code">PLSTSUR</field>
+            <field name="institution" ref="center_main_aiims" />
+            <field name="establishment" ref="establishment1" />
+
+        </record>
+        <record id="institution42" model="company.department">
+            <field name="name">Psychiatry</field>
+            <field name="type_">Medical</field>
+            <field name="code">PSYCHI</field>
+            <field name="institution" ref="center_main_aiims" />
+            <field name="establishment" ref="establishment1" />
+
+        </record>
+        <record id="institution43" model="company.department">
+            <field name="name">Pulmonary Medicine and Sleep Disorders</field>
+            <field name="type_">Medical</field>
+            <field name="code">PULMONA</field>
+            <field name="institution" ref="center_main_aiims" />
+            <field name="establishment" ref="establishment1" />
+
+        </record>
+        <record id="institution44" model="company.department">
+            <field name="name">Radio Diagnosis</field>
+            <field name="type_">Medical</field>
+            <field name="code">RADIODIAG</field>
+            <field name="institution" ref="center_main_aiims" />
+            <field name="establishment" ref="establishment1" />
+
+        </record>
+        <record id="institution45" model="company.department">
+            <field name="name">Reproductive Biology</field>
+            <field name="type_">Medical</field>
+            <field name="code">REPBIO</field>
+            <field name="institution" ref="center_main_aiims" />
+            <field name="establishment" ref="establishment1" />
+
+        </record>
+        <record id="institution46" model="company.department">
+            <field name="name">Research Section</field>
+            <field name="type_">Medical</field>
+            <field name="code">RESESEC</field>
+            <field name="institution" ref="center_main_aiims" />
+            <field name="establishment" ref="establishment1" />
+
+        </record>
+        <record id="institution47" model="company.department">
+            <field name="name">Rheumatology</field>
+            <field name="type_">Medical</field>
+            <field name="code">RHEUM</field>
+            <field name="institution" ref="center_main_aiims" />
+            <field name="establishment" ref="establishment1" />
+
+        </record>
+        <record id="institution48" model="company.department">
+            <field name="name">Surgical Disciplines</field>
+            <field name="type_">Medical</field>
+            <field name="code">SURDISC</field>
+            <field name="institution" ref="center_main_aiims" />
+            <field name="establishment" ref="establishment1" />
+
+        </record>
+        <record id="institution49" model="company.department">
+            <field name="name">Transplant Immunology &amp; Immunogenetics</field>
+            <field name="type_">Medical</field>
+            <field name="code">TRANIMM</field>
+            <field name="institution" ref="center_main_aiims" />
+            <field name="establishment" ref="establishment1" />
+
+        </record>
+        <record id="institution50" model="company.department">
+            <field name="name">Transfusion Medicine (Blood Bank)</field>
+            <field name="type_">Medical</field>
+            <field name="code">TRAMED</field>
+            <field name="institution" ref="center_main_aiims" />
+            <field name="establishment" ref="establishment1" />
+
+        </record>
+        <record id="institution51" model="company.department">
+            <field name="name">Urology</field>
+            <field name="type_">Medical</field>
+            <field name="code">UROLG</field>
+            <field name="institution" ref="center_main_aiims" />
+            <field name="establishment" ref="establishment1" />
+
+        </record>
+        <record id="institution52" model="company.department">
+            <field name="name">B.B. Dikshit Library</field>
+            <field name="type_">Non-Medical</field>
+            <field name="code">BBDIKLIB</field>
+            <field name="institution" ref="center_main_aiims" />
+            <field name="establishment" ref="establishment1" />
+
+        </record>
+        <record id="institution53" model="company.department">
+            <field name="name">Cadaver Training and Research Facility</field>
+            <field name="type_">Non-Medical</field>
+            <field name="code">CADTRRES</field>
+            <field name="institution" ref="center_main_aiims" />
+            <field name="establishment" ref="establishment1" />
+
+        </record>
+        <record id="institution54" model="company.department">
+            <field name="name">Central Animal Facility</field>
+            <field name="type_">Non-Medical</field>
+            <field name="code">CENTANFAC</field>
+            <field name="institution" ref="center_main_aiims" />
+            <field name="establishment" ref="establishment1" />
+
+        </record>
+        <record id="institution55" model="company.department">
+            <field name="name">Computer Facility</field>
+            <field name="type_">Non-Medical</field>
+            <field name="code">COMFACIL</field>
+            <field name="institution" ref="center_main_aiims" />
+            <field name="establishment" ref="establishment1" />
+
+        </record>
+
+        <record id="institution57" model="company.department">
+            <field name="name">EHS</field>
+            <field name="type_">Non-Medical</field>
+            <field name="code">ESH</field>
+            <field name="institution" ref="center_main_aiims" />
+            <field name="establishment" ref="establishment1" />
+
+        </record>
+        <record id="institution58" model="company.department">
+            <field name="name">Electron Microscope Facility</field>
+            <field name="type_">Non-Medical</field>
+            <field name="code">ELEMICRO</field>
+            <field name="institution" ref="center_main_aiims" />
+            <field name="establishment" ref="establishment1" />
+
+        </record>
+        <record id="institution59" model="company.department">
+            <field name="name">K.L. Wig CMET</field>
+            <field name="type_">Non-Medical</field>
+            <field name="code">KLWIGCMET</field>
+            <field name="institution" ref="center_main_aiims" />
+            <field name="establishment" ref="establishment1" />
+
+        </record>
+        <record id="institution60" model="company.department">
+            <field name="name">Medical Social &amp; Welfare Services</field>
+            <field name="type_">Non-Medical</field>
+            <field name="code">MEDSOCWEL</field>
+            <field name="institution" ref="center_main_aiims" />
+            <field name="establishment" ref="establishment1" />
+
+        </record>
+        <record id="institution61" model="company.department">
+            <field name="name">National Poisons Information Centre</field>
+            <field name="type_">Non-Medical</field>
+            <field name="code">NATPOIS</field>
+            <field name="institution" ref="center_main_aiims" />
+            <field name="establishment" ref="establishment1" />
+
+        </record>
+        <record id="institution62" model="company.department">
+            <field name="name">Organ Retrieval Banking Organisation</field>
+            <field name="type_">Non-Medical</field>
+            <field name="code">ORGNRET</field>
+            <field name="institution" ref="center_main_aiims" />
+            <field name="establishment" ref="establishment1" />
+
+        </record>
+        <record id="institution63" model="company.department">
+            <field name="name">Patent Cell</field>
+            <field name="type_">Non-Medical</field>
+            <field name="code">PATCELL</field>
+            <field name="institution" ref="center_main_aiims" />
+            <field name="establishment" ref="establishment1" />
+
+        </record>
+        <record id="institution64" model="company.department">
+            <field name="name">Telemedicine Facility</field>
+            <field name="type_">Non-Medical</field>
+            <field name="code">TELFAC</field>
+            <field name="institution" ref="center_main_aiims" />
+            <field name="establishment" ref="establishment1" />
+
+        </record>
+        <record id="institution65" model="company.department">
+            <field name="name">Transport Facility</field>
+            <field name="type_">Non-Medical</field>
+            <field name="code">TRANFAC</field>
+            <field name="institution" ref="center_main_aiims" />
+            <field name="establishment" ref="establishment1" />
+
+        </record>
+        <record id="institution66" model="company.department">
+            <field name="name">Medical Social Welfare Unit (Main Hospital )</field>
+            <field name="type_">Non-Medical</field>
+            <field name="code">MEDSOM</field>
+            <field name="institution" ref="center_main_aiims" />
+            <field name="establishment" ref="establishment1" />
+
+        </record>
+        <record id="institution67" model="company.department">
+            <field name="name">Engineering Services Division (ESD)</field>
+            <field name="type_">Non-Medical</field>
+            <field name="code">ENGSER</field>
+            <field name="institution" ref="center_main_aiims" />
+            <field name="establishment" ref="establishment1" />
+
+        </record>
+        <record id="institution68" model="company.department">
+            <field name="name">Stem Cell Facility</field>
+            <field name="type_">Non-Medical</field>
+            <field name="code">STEMCELFAC</field>
+            <field name="institution" ref="center_main_aiims" />
+            <field name="establishment" ref="establishment1" />
+
+        </record>
+        <record id="institution69" model="company.department">
+            <field name="name">BIO-MEDICAL WASTE MANAGEMENT</field>
+            <field name="type_">Non-Medical</field>
+            <field name="code">BIOMEDWAST</field>
+            <field name="institution" ref="center_main_aiims" />
+            <field name="establishment" ref="establishment1" />
+
+        </record>
+        <record id="institution70" model="company.department">
+            <field name="name">Central Sterile Services</field>
+            <field name="type_">Non-Medical</field>
+            <field name="code">CENTSTRSER</field>
+            <field name="institution" ref="center_main_aiims" />
+            <field name="establishment" ref="establishment1" />
+
+        </record>
+        <record id="institution71" model="company.department">
+            <field name="name">Store (DO)</field>
+            <field name="type_">Non-Medical</field>
+            <field name="code">STOREDO</field>
+            <field name="institution" ref="center_main_aiims" />
+            <field name="establishment" ref="establishment1" />
+
+        </record>
+        <record id="institution72" model="company.department">
+            <field name="name">Finance division</field>
+            <field name="type_">Non-Medical</field>
+            <field name="code">FINEDIV</field>
+            <field name="institution" ref="center_main_aiims" />
+            <field name="establishment" ref="establishment1" />
+
+        </record>
+        <record id="institution73" model="company.department">
+            <field name="name">CNC</field>
+            <field name="type_">Medical</field>
+            <field name="code">CNC</field>
+            <field name="institution" ref="center_main_aiims" />
+            <field name="establishment" ref="establishment1" />
+
+        </record>
+        <record id="institution74" model="company.department">
+            <field name="name">neuro</field>
+            <field name="type_">Medical</field>
+            <field name="code">NEUROC</field>
+            <field name="institution" ref="center_main_aiims" />
+            <field name="establishment" ref="establishment1" />
+
+        </record>
+        <record id="institution75" model="company.department">
+            <field name="name">Radiotherapy</field>
+            <field name="type_">Medical</field>
+            <field name="code">RADITHE</field>
+            <field name="institution" ref="center_main_aiims" />
+            <field name="establishment" ref="establishment1" />
+
+        </record>
+        <record id="institution76" model="company.department">
+            <field name="name">Central Workshop</field>
+            <field name="type_">Non-Medical</field>
+            <field name="code">CENTWORK</field>
+            <field name="institution" ref="center_main_aiims" />
+            <field name="establishment" ref="establishment1" />
+
+        </record>
+        <record id="institution77" model="company.department">
+            <field name="name">Ballabhgarh</field>
+            <field name="type_">Medical</field>
+            <field name="code">BALLBH</field>
+            <field name="institution" ref="center_main_aiims" />
+            <field name="establishment" ref="establishment1" />
+
+        </record>
+        <record id="institution78" model="company.department">
+            <field name="name">Trauma Centre</field>
+            <field name="type_">Medical</field>
+            <field name="code">TRAUMECEN</field>
+            <field name="institution" ref="center_main_aiims" />
+            <field name="establishment" ref="establishment1" />
+
+        </record>
+        <record id="institution79" model="company.department">
+            <field name="name">CAO Office</field>
+            <field name="type_">Non-Medical</field>
+            <field name="code">CAOOFF</field>
+            <field name="institution" ref="center_main_aiims" />
+            <field name="establishment" ref="establishment1" />
+
+        </record>
+        <record id="institution80" model="company.department">
+            <field name="name">OPD, Pharmacy Incharge</field>
+            <field name="type_">Medical</field>
+            <field name="code">PODPHARIN</field>
+            <field name="institution" ref="center_main_aiims" />
+            <field name="establishment" ref="establishment1" />
+
+        </record>
+        <record id="institution81" model="company.department">
+            <field name="name">Clinical and Epidemiology Unit</field>
+            <field name="type_">Medical</field>
+            <field name="code">CLINIEPID</field>
+            <field name="institution" ref="center_main_aiims" />
+            <field name="establishment" ref="establishment1" />
+
+        </record>
+        <record id="institution82" model="company.department">
+            <field name="name">Paediatric Genetics (Unit)</field>
+            <field name="type_">Medical</field>
+            <field name="code">PA</field>
+            <field name="institution" ref="center_main_aiims" />
+            <field name="establishment" ref="establishment1" />
+
+        </record>
+        <record id="institution83" model="company.department">
+            <field name="name">Jhajjar</field>
+            <field name="type_">Medical</field>
+            <field name="code">JHAJJAR</field>
+            <field name="institution" ref="center_main_aiims" />
+            <field name="establishment" ref="establishment1" />
+
+        </record>
+        <record id="institution84" model="company.department">
+            <field name="name">SET Facility</field>
+            <field name="type_">Non-Medical</field>
+            <field name="code">SETFACILI</field>
+            <field name="institution" ref="center_main_aiims" />
+            <field name="establishment" ref="establishment1" />
+
+        </record>
+	<record id="institution360" model="company.department">
+            <field name="name">IRCH</field>
+            <field name="type_">Non-Medical</field>
+            <field name="code">IRCH</field>
+            <field name="institution" ref="center_main_aiims" />
+            <field name="establishment" ref="establishment1" />
+
+        </record>
+	<record id="institution361" model="company.department">
+            <field name="name">CMIR</field>
+            <field name="type_">Non-Medical</field>
+            <field name="code">CMIR</field>
+            <field name="institution" ref="center_main_aiims" />
+            <field name="establishment" ref="establishment1" />
+
+        </record>
+	<record id="institution362" model="company.department">
+            <field name="name">Hospital Administration</field>
+            <field name="type_">Non-Medical</field>
+            <field name="code">HOSPADM</field>
+            <field name="institution" ref="center_main_aiims" />
+            <field name="establishment" ref="establishment1" />
+
+        </record>
+        <record id="institution85" model="company.department">
+            <field name="name">Estab I</field>
+            <field name="type_">Non-Medical</field>
+            <field name="code">ESTABI</field>
+            <field name="institution" ref="center_main_aiims" />
+            <field name="establishment" ref="establishment1" />
+            <field name="parent" ref="institution1"/>
+        </record>
+        <record id="institution86" model="company.department">
+            <field name="name">Estab II</field>
+            <field name="type_">Non-Medical</field>
+            <field name="code">ESTABII</field>
+            <field name="institution" ref="center_main_aiims" />
+            <field name="establishment" ref="establishment1" />
+            <field name="parent" ref="institution1"/>
+        </record>
+        <record id="institution87" model="company.department">
+            <field name="name">Faculty Cell</field>
+            <field name="type_">Non-Medical</field>
+            <field name="code">FACULCELL</field>
+            <field name="institution" ref="center_main_aiims" />
+            <field name="establishment" ref="establishment1" />
+            <field name="parent" ref="institution1"/>
+        </record>
+        <record id="institution88" model="company.department">
+            <field name="name">Finance</field>
+            <field name="type_">Non-Medical</field>
+            <field name="code">FINANC</field>
+            <field name="institution" ref="center_main_aiims" />
+            <field name="establishment" ref="establishment1" />
+            <field name="parent" ref="institution1"/>
+        </record>
+        <record id="institution89" model="company.department">
+            <field name="name">General Section</field>
+            <field name="type_">Non-Medical</field>
+            <field name="code">GENSECT</field>
+            <field name="institution" ref="center_main_aiims" />
+            <field name="establishment" ref="establishment1" />
+            <field name="parent" ref="institution1"/>
+        </record>
+        <record id="institution90" model="company.department">
+            <field name="name">Co-ordination Cell</field>
+            <field name="type_">Non-Medical</field>
+            <field name="code">COORDCELL</field>
+            <field name="institution" ref="center_main_aiims" />
+            <field name="establishment" ref="establishment1" />
+            <field name="parent" ref="institution1"/>
+        </record>
+        <record id="institution91" model="company.department">
+            <field name="name">Vigilance Cell</field>
+            <field name="type_">Non-Medical</field>
+            <field name="code">VIGILCELL</field>
+            <field name="institution" ref="center_main_aiims" />
+            <field name="establishment" ref="establishment1" />
+            <field name="parent" ref="institution1"/>
+        </record>
+        <record id="institution92" model="company.department">
+            <field name="name">Estate Section</field>
+            <field name="type_">Non-Medical</field>
+            <field name="code">ESTATESEC</field>
+            <field name="institution" ref="center_main_aiims" />
+            <field name="establishment" ref="establishment1" />
+            <field name="parent" ref="institution1"/>
+        </record>
+        <record id="institution93" model="company.department">
+            <field name="name">Patent Cell</field>
+            <field name="type_">Non-Medical</field>
+            <field name="code">PATIENTCEL</field>
+            <field name="institution" ref="center_main_aiims" />
+            <field name="establishment" ref="establishment1" />
+            <field name="parent" ref="institution1"/>
+        </record>
+        <record id="institution94" model="company.department">
+            <field name="name">RTI</field>
+            <field name="type_">Non-Medical</field>
+            <field name="code">RIT</field>
+            <field name="institution" ref="center_main_aiims" />
+            <field name="establishment" ref="establishment1" />
+            <field name="parent" ref="institution1"/>
+        </record>
+        <record id="institution95" model="company.department">
+            <field name="name">Recruitment Cell</field>
+            <field name="type_">Non-Medical</field>
+            <field name="code">RECCELL</field>
+            <field name="institution" ref="center_main_aiims" />
+            <field name="establishment" ref="establishment1" />
+            <field name="parent" ref="institution1"/>
+        </record>
+        <record id="institution96" model="company.department">
+            <field name="name">Engg Services</field>
+            <field name="type_">Non-Medical</field>
+            <field name="code">ENGGSER</field>
+            <field name="institution" ref="center_main_aiims" />
+            <field name="establishment" ref="establishment1" />
+            <field name="parent" ref="institution1"/>
+        </record>
+        <record id="institution97" model="company.department">
+            <field name="name">Central Stores</field>
+            <field name="type_">Non-Medical</field>
+            <field name="code">CENTSTIR</field>
+            <field name="institution" ref="center_main_aiims" />
+            <field name="establishment" ref="establishment1" />
+            <field name="parent" ref="institution1"/>
+        </record>
+        <record id="institution98" model="company.department">
+            <field name="name">Hospital Establishment</field>
+            <field name="type_">Non-Medical</field>
+            <field name="code">HOSPESTB</field>
+            <field name="institution" ref="center_main_aiims" />
+            <field name="establishment" ref="establishment1" />
+            <field name="parent" ref="institution3"/>
+        </record>
+        <record id="institution99" model="company.department">
+            <field name="name">OPD Casualty</field>
+            <field name="type_">Medical</field>
+            <field name="code">OPDCASUAL</field>
+            <field name="institution" ref="center_main_aiims" />
+            <field name="establishment" ref="establishment1" />
+            <field name="parent" ref="institution3"/>
+        </record>
+        <record id="institution100" model="company.department">
+            <field name="name">Clinical Labs</field>
+            <field name="type_">Medical</field>
+            <field name="code">CLINICLAB</field>
+            <field name="institution" ref="center_main_aiims" />
+            <field name="establishment" ref="establishment1" />
+            <field name="parent" ref="institution3"/>
+        </record>
+        <record id="institution101" model="company.department">
+            <field name="name">Wards,Private Wards &amp; Operation</field>
+            <field name="type_">Medical</field>
+            <field name="code">WARDPRI</field>
+            <field name="institution" ref="center_main_aiims" />
+            <field name="establishment" ref="establishment1" />
+            <field name="parent" ref="institution3"/>
+        </record>
+        <record id="institution102" model="company.department">
+            <field name="name">Hospital Stores</field>
+            <field name="type_">Non-Medical</field>
+            <field name="code">HOSSTORE</field>
+            <field name="institution" ref="center_main_aiims" />
+            <field name="establishment" ref="establishment1" />
+            <field name="parent" ref="institution3"/>
+        </record>
+        <record id="institution103" model="company.department">
+            <field name="name">Nursing Services</field>
+            <field name="type_">Non-Medical</field>
+            <field name="code">NURSER</field>
+            <field name="institution" ref="center_main_aiims" />
+            <field name="establishment" ref="establishment1" />
+            <field name="parent" ref="institution3"/>
+        </record>
+        <record id="institution104" model="company.department">
+            <field name="name">Medical Records</field>
+            <field name="type_">Non-Medical</field>
+            <field name="code">MEDRECR</field>
+            <field name="institution" ref="center_main_aiims" />
+            <field name="establishment" ref="establishment1" />
+            <field name="parent" ref="institution3"/>
+        </record>
+        <record id="institution105" model="company.department">
+            <field name="name">EHS</field>
+            <field name="type_">Non-Medical</field>
+            <field name="code">EHSS</field>
+            <field name="institution" ref="center_main_aiims" />
+            <field name="establishment" ref="establishment1" />
+            <field name="parent" ref="institution3"/>
+        </record>
+        <record id="institution106" model="company.department">
+            <field name="name">Hospital Peripheral Services, Laundry, Blood Bank, Sanitation, Dietetics,CSSD</field>
+            <field name="type_">Non-Medical</field>
+            <field name="code">HOSPERISER</field>
+            <field name="institution" ref="center_main_aiims" />
+            <field name="establishment" ref="establishment1" />
+            <field name="parent" ref="institution3"/>
+        </record>
+        <record id="institution107" model="company.department">
+            <field name="name">MSWS</field>
+            <field name="type_">Non-Medical</field>
+            <field name="code">MSWS</field>
+            <field name="institution" ref="center_main_aiims" />
+            <field name="establishment" ref="establishment1" />
+            <field name="parent" ref="institution3"/>
+        </record>
+        <record id="institution108" model="company.department">
+            <field name="name">Director's Office</field>
+            <field name="type_">Non-Medical</field>
+            <field name="code">DIRECOFC</field>
+            <field name="institution" ref="center_main_aiims" />
+            <field name="establishment" ref="establishment1" />
+            <field name="parent" ref="institution1"/>
+        </record>
+        <record id="institution109" model="company.department">
+            <field name="name">DDA Office</field>
+            <field name="type_">Non-Medical</field>
+            <field name="code">DDAOFC</field>
+            <field name="institution" ref="center_main_aiims" />
+            <field name="establishment" ref="establishment1" />
+            <field name="parent" ref="institution1"/>
+        </record>
+        <record id="institution110" model="company.department">
+            <field name="name">DS Office</field>
+            <field name="type_">Non-Medical</field>
+            <field name="code">DSOFFIC</field>
+            <field name="institution" ref="center_main_aiims" />
+            <field name="establishment" ref="establishment1" />
+            <field name="parent" ref="institution1"/>
+        </record>
+        <record id="institution111" model="company.department">
+            <field name="name">Media &amp; Protocol Division</field>
+            <field name="type_">Non-Medical</field>
+            <field name="code">MEDPROTO</field>
+            <field name="institution" ref="center_main_aiims" />
+            <field name="establishment" ref="establishment1" />
+            <field name="parent" ref="institution1"/>
+        </record>
+        <record id="institution112" model="company.department">
+            <field name="name">Hindi Section</field>
+            <field name="type_">Non-Medical</field>
+            <field name="code">HINDISEC</field>
+            <field name="institution" ref="center_main_aiims" />
+            <field name="establishment" ref="establishment1" />
+            <field name="parent" ref="institution1"/>
+        </record>
+        <record id="institution113" model="company.department">
+            <field name="name">Sanitation</field>
+            <field name="type_">Non-Medical</field>
+            <field name="code">SANITASN</field>
+            <field name="institution" ref="center_main_aiims" />
+            <field name="establishment" ref="establishment1" />
+            <field name="parent" ref="institution1"/>
+        </record>
+        <record id="institution114" model="company.department">
+            <field name="name">Central Store Depot (CSD)</field>
+            <field name="type_">Non-Medical</field>
+            <field name="code">CENTSTORDE</field>
+            <field name="institution" ref="center_main_aiims" />
+            <field name="establishment" ref="establishment1" />
+            <field name="parent" ref="institution1"/>
+        </record>
+        <record id="institution115" model="company.department">
+            <field name="name">E.H.S. Cell</field>
+            <field name="type_">Non-Medical</field>
+            <field name="code">EHSCELL</field>
+            <field name="institution" ref="center_main_aiims" />
+            <field name="establishment" ref="establishment1" />
+            <field name="parent" ref="institution1"/>
+        </record>
+        <record id="institution116" model="company.department">
+            <field name="name">Examination Section</field>
+            <field name="type_">Non-Medical</field>
+            <field name="code">EXMSEC</field>
+            <field name="institution" ref="center_main_aiims" />
+            <field name="establishment" ref="establishment1" />
+            <field name="parent" ref="institution1"/>
+        </record>
+        <record id="institution117" model="company.department">
+            <field name="name">Legal Cell</field>
+            <field name="type_">Non-Medical</field>
+            <field name="code">LEGCELL</field>
+            <field name="institution" ref="center_main_aiims" />
+            <field name="establishment" ref="establishment1" />
+            <field name="parent" ref="institution1"/>
+        </record>
+        <record id="institution118" model="company.department">
+            <field name="name">SC/ST Cell</field>
+            <field name="type_">Non-Medical</field>
+            <field name="code">SCSTCELL</field>
+            <field name="institution" ref="center_main_aiims" />
+            <field name="establishment" ref="establishment1" />
+            <field name="parent" ref="institution1"/>
+        </record>
+        <record id="institution119" model="company.department">
+            <field name="name">ACR CEll</field>
+            <field name="type_">Non-Medical</field>
+            <field name="code">ACRCELL</field>
+            <field name="institution" ref="center_main_aiims" />
+            <field name="establishment" ref="establishment1" />
+            <field name="parent" ref="institution1"/>
+        </record>
+        <record id="institution120" model="company.department">
+            <field name="name">Security</field>
+            <field name="type_">Non-Medical</field>
+            <field name="code">SECURITY</field>
+            <field name="institution" ref="center_main_aiims" />
+            <field name="establishment" ref="establishment1" />
+            <field name="parent" ref="institution1"/>
+        </record>
+        <record id="institution121" model="company.department">
+            <field name="name">Audit Section</field>
+            <field name="type_">Non-Medical</field>
+            <field name="code">AUDITCEL</field>
+            <field name="institution" ref="center_main_aiims" />
+            <field name="establishment" ref="establishment1" />
+            <field name="parent" ref="institution88"/>
+        </record>
+        <record id="institution122" model="company.department">
+            <field name="name">Budget</field>
+            <field name="type_">Non-Medical</field>
+            <field name="code">BUDGET</field>
+            <field name="institution" ref="center_main_aiims" />
+            <field name="establishment" ref="establishment1" />
+            <field name="parent" ref="institution88"/>
+        </record>
+        <record id="institution123" model="company.department">
+            <field name="name">Cash</field>
+            <field name="type_">Non-Medical</field>
+            <field name="code">CASH</field>
+            <field name="institution" ref="center_main_aiims" />
+            <field name="establishment" ref="establishment1" />
+            <field name="parent" ref="institution88"/>
+        </record>
+        <record id="institution124" model="company.department">
+            <field name="name">Cashier</field>
+            <field name="type_">Non-Medical</field>
+            <field name="code">CASHIER</field>
+            <field name="institution" ref="center_main_aiims" />
+            <field name="establishment" ref="establishment1" />
+            <field name="parent" ref="institution88"/>
+        </record>
+        <record id="institution125" model="company.department">
+            <field name="name">Cheque Section</field>
+            <field name="type_">Non-Medical</field>
+            <field name="code">CNEQSEC</field>
+            <field name="institution" ref="center_main_aiims" />
+            <field name="establishment" ref="establishment1" />
+            <field name="parent" ref="institution88"/>
+        </record>
+        <record id="institution126" model="company.department">
+            <field name="name">G.P.F.</field>
+            <field name="type_">Non-Medical</field>
+            <field name="code">GPF</field>
+            <field name="institution" ref="center_main_aiims" />
+            <field name="establishment" ref="establishment1" />
+            <field name="parent" ref="institution88"/>
+        </record>
+        <record id="institution127" model="company.department">
+            <field name="name">Pension Cell</field>
+            <field name="type_">Non-Medical</field>
+            <field name="code">PENSNCELL</field>
+            <field name="institution" ref="center_main_aiims" />
+            <field name="establishment" ref="establishment1" />
+            <field name="parent" ref="institution88"/>
+        </record>
+        <record id="institution128" model="company.department">
+            <field name="name">Pre-Audit Section</field>
+            <field name="type_">Non-Medical</field>
+            <field name="code">PREAUDITSEC</field>
+            <field name="institution" ref="center_main_aiims" />
+            <field name="establishment" ref="establishment1" />
+            <field name="parent" ref="institution88"/>
+        </record>
+        <record id="institution129" model="company.department">
+            <field name="name">Store Account</field>
+            <field name="type_">Non-Medical</field>
+            <field name="code">STRACCT</field>
+            <field name="institution" ref="center_main_aiims" />
+            <field name="establishment" ref="establishment1" />
+            <field name="parent" ref="institution88"/>
+        </record>
+        <record id="institution130" model="company.department">
+            <field name="name">Works Audit</field>
+            <field name="type_">Non-Medical</field>
+            <field name="code">WORKAUDIT</field>
+            <field name="institution" ref="center_main_aiims" />
+            <field name="establishment" ref="establishment1" />
+            <field name="parent" ref="institution88"/>
+        </record>
+        <record id="institution131" model="company.department">
+            <field name="name">Sr. FA Office</field>
+            <field name="type_">Non-Medical</field>
+            <field name="code">SRFAOFC</field>
+            <field name="institution" ref="center_main_aiims" />
+            <field name="establishment" ref="establishment1" />
+            <field name="parent" ref="institution88"/>
+        </record>
+        <record id="institution132" model="company.department">
+            <field name="name">FA Office</field>
+            <field name="type_">Non-Medical</field>
+            <field name="code">FAOFFICE</field>
+            <field name="institution" ref="center_main_aiims" />
+            <field name="establishment" ref="establishment1" />
+            <field name="parent" ref="institution88"/>
+        </record>
+        <record id="institution133" model="company.department">
+            <field name="name">F&amp;CO Office</field>
+            <field name="type_">Non-Medical</field>
+            <field name="code">FCOOFFICE</field>
+            <field name="institution" ref="center_main_aiims" />
+            <field name="establishment" ref="establishment1" />
+            <field name="parent" ref="institution88"/>
+        </record>
+        <record id="institution134" model="company.department">
+            <field name="name">MS Office</field>
+            <field name="type_">Non-Medical</field>
+            <field name="code">MSOFFICE</field>
+            <field name="institution" ref="center_main_aiims" />
+            <field name="establishment" ref="establishment1" />
+            <field name="parent" ref="institution1"/>
+        </record>
+        <record id="institution135" model="company.department">
+            <field name="name">CDER</field>
+            <field name="type_">Non-Medical</field>
+            <field name="code">CDER</field>
+            <field name="institution" ref="center_main_aiims" />
+            <field name="establishment" ref="establishment1" />
+            <field name="parent" ref="institution1"/>
+        </record>
+        <record id="institution136" model="company.department">
+            <field name="name">Grievance Cell</field>
+            <field name="type_">Non-Medical</field>
+            <field name="code">GRIEVCELL</field>
+            <field name="institution" ref="center_main_aiims" />
+            <field name="establishment" ref="establishment1" />
+
+        </record>
+        <record id="institution137" model="company.department">
+            <field name="name">Legal Cell</field>
+            <field name="type_">Non-Medical</field>
+            <field name="code">LEGLCELL</field>
+            <field name="institution" ref="center_main_aiims" />
+            <field name="establishment" ref="establishment1" />
+
+        </record>
+        <record id="institution138" model="company.department">
+            <field name="name">Audit</field>
+            <field name="type_">Non-Medical</field>
+            <field name="code">AUDIT</field>
+            <field name="institution" ref="center_main_aiims" />
+            <field name="establishment" ref="establishment1" />
+
+        </record>
+        <record id="institution139" model="company.department">
+            <field name="name">Orthodontics and dentofacial deformities</field>
+            <field name="type_">Non-Medical</field>
+            <field name="code">ORTHDEN</field>
+            <field name="institution" ref="center_cder" />
+            <field name="establishment" ref="establishment2" />
+
+
+        </record>
+        <record id="institution140" model="company.department">
+            <field name="name">Oral &amp; maxillofacial surgery</field>
+            <field name="type_">Medical</field>
+            <field name="code">ORLMAXS</field>
+            <field name="institution" ref="center_cder" />
+            <field name="establishment" ref="establishment2" />
+
+        </record>
+        <record id="institution141" model="company.department">
+            <field name="name">Prosthodontics &amp; crown bridge</field>
+            <field name="type_">Non-Medical</field>
+            <field name="code">PROCRW</field>
+            <field name="institution" ref="center_cder" />
+            <field name="establishment" ref="establishment2" />
+
+        </record>
+        <record id="institution142" model="company.department">
+            <field name="name">Pedodontics &amp; preventive dentistry</field>
+            <field name="type_">Non-Medical</field>
+            <field name="code">PEDPREDE</field>
+            <field name="institution" ref="center_cder" />
+            <field name="establishment" ref="establishment2" />
+
+        </record>
+        <record id="institution143" model="company.department">
+            <field name="name">Conservative dentistry &amp; endodontics</field>
+            <field name="type_">Non-Medical</field>
+            <field name="code">CONDEN</field>
+            <field name="institution" ref="center_cder" />
+            <field name="establishment" ref="establishment2" />
+
+        </record>
+        <record id="institution144" model="company.department">
+            <field name="name">Anaesthesia</field>
+            <field name="type_">Medical</field>
+            <field name="code">ANAESTH</field>
+            <field name="institution" ref="center_cder" />
+            <field name="establishment" ref="establishment2" />
+
+        </record>
+        <record id="institution145" model="company.department">
+            <field name="name">Oral pathology</field>
+            <field name="type_">Medical</field>
+            <field name="code">ORALPATH</field>
+            <field name="institution" ref="center_cder" />
+            <field name="establishment" ref="establishment2" />
+
+        </record>
+        <record id="institution146" model="company.department">
+            <field name="name">Oral medicine &amp; radiology</field>
+            <field name="type_">Medical</field>
+            <field name="code">PRLMEDRAD</field>
+            <field name="institution" ref="center_cder" />
+            <field name="establishment" ref="establishment2" />
+
+        </record>
+        <record id="institution147" model="company.department">
+            <field name="name">Public health dentistry</field>
+            <field name="type_">Non-Medical</field>
+            <field name="code">PUBHELTH</field>
+            <field name="institution" ref="center_cder" />
+            <field name="establishment" ref="establishment2" />
+
+        </record>
+        <record id="institution148" model="company.department">
+            <field name="name">Periodontology</field>
+            <field name="type_">Medical</field>
+            <field name="code">PERIODON</field>
+            <field name="institution" ref="center_cder" />
+            <field name="establishment" ref="establishment2" />
+
+        </record>
+        <record id="institution149" model="company.department">
+            <field name="name">Dentrofacial Orthopaedics</field>
+            <field name="type_">Medical</field>
+            <field name="code">DENTORTH</field>
+            <field name="institution" ref="center_cder" />
+            <field name="establishment" ref="establishment2" />
+
+        </record>
+	<record id="institution350" model="company.department">
+            <field name="name">Establishment</field>
+            <field name="type_">Non-Medical</field>
+            <field name="code">ESTABLISH</field>
+            <field name="institution" ref="center_cder" />
+            <field name="establishment" ref="establishment2" />
+
+        </record>
+	<record id="institution351" model="company.department">
+            <field name="name">MS Office</field>
+            <field name="type_">Non-Medical</field>
+            <field name="code">MSOFC</field>
+            <field name="institution" ref="center_cder" />
+            <field name="establishment" ref="establishment2" />
+
+        </record>
+        <record id="institution150" model="company.department">
+            <field name="name">Onco-Anaesthesia</field>
+            <field name="type_">Medical</field>
+            <field name="code">ONCOANAESTH</field>
+            <field name="institution" ref="center_irch" />
+            <field name="establishment" ref="establishment3" />
+
+
+        </record>
+        <record id="institution151" model="company.department">
+            <field name="name">Laboratory Oncology</field>
+            <field name="type_">Medical</field>
+            <field name="code">LABONCO</field>
+            <field name="institution" ref="center_irch" />
+            <field name="establishment" ref="establishment3" />
+
+        </record>
+        <record id="institution152" model="company.department">
+            <field name="name">Medical Physics</field>
+            <field name="type_">Medical</field>
+            <field name="code">MEDPHYSIC</field>
+            <field name="institution" ref="center_irch" />
+            <field name="establishment" ref="establishment3" />
+
+        </record>
+        <record id="institution153" model="company.department">
+            <field name="name">Medical Oncology</field>
+            <field name="type_">Medical</field>
+            <field name="code">MEDONCO</field>
+            <field name="institution" ref="center_irch" />
+            <field name="establishment" ref="establishment3" />
+
+        </record>
+        <record id="institution154" model="company.department">
+            <field name="name">Radio Diagnosis</field>
+            <field name="type_">Medical</field>
+            <field name="code">RADIODIAG</field>
+            <field name="institution" ref="center_irch" />
+            <field name="establishment" ref="establishment3" />
+
+        </record>
+        <record id="institution155" model="company.department">
+            <field name="name">RadioThearpy</field>
+            <field name="type_">Medical</field>
+            <field name="code">RADIOTHEAP</field>
+            <field name="institution" ref="center_irch" />
+            <field name="establishment" ref="establishment3" />
+
+        </record>
+        <record id="institution156" model="company.department">
+            <field name="name">Surgical Oncology</field>
+            <field name="type_">Medical</field>
+            <field name="code">SURGONCO</field>
+            <field name="institution" ref="center_irch" />
+            <field name="establishment" ref="establishment3" />
+
+        </record>
+        <record id="institution157" model="company.department">
+            <field name="name">Delhi Cancer Registry</field>
+            <field name="type_">Non-Medical</field>
+            <field name="code">DLHICANREG</field>
+            <field name="institution" ref="center_irch" />
+            <field name="establishment" ref="establishment3" />
+
+        </record>
+        <record id="institution158" model="company.department">
+            <field name="name">Account Section</field>
+            <field name="type_">Non-Medical</field>
+            <field name="code">ACCSECTION</field>
+            <field name="institution" ref="center_irch" />
+            <field name="establishment" ref="establishment3" />
+
+        </record>
+        <record id="institution159" model="company.department">
+            <field name="name">Medical Record Section</field>
+            <field name="type_">Non-Medical</field>
+            <field name="code">MEDRECSEC</field>
+            <field name="institution" ref="center_irch" />
+            <field name="establishment" ref="establishment3" />
+
+        </record>
+        <record id="institution160" model="company.department">
+            <field name="name">Nursing Office</field>
+            <field name="type_">Non-Medical</field>
+            <field name="code">NUROFFICE</field>
+            <field name="institution" ref="center_irch" />
+            <field name="establishment" ref="establishment3" />
+
+        </record>
+        <record id="institution161" model="company.department">
+            <field name="name">Transport Unit</field>
+            <field name="type_">Non-Medical</field>
+            <field name="code">TRANSUNIT</field>
+            <field name="institution" ref="center_irch" />
+            <field name="establishment" ref="establishment3" />
+
+        </record>
+        <record id="institution162" model="company.department">
+            <field name="name">MSSO unit</field>
+            <field name="type_">Non-Medical</field>
+            <field name="code">MSSOUNIT</field>
+            <field name="institution" ref="center_irch" />
+            <field name="establishment" ref="establishment3" />
+
+        </record>
+        <record id="institution163" model="company.department">
+            <field name="name">Stores Section</field>
+            <field name="type_">Non-Medical</field>
+            <field name="code">STORESEC</field>
+            <field name="institution" ref="center_irch" />
+            <field name="establishment" ref="establishment3" />
+
+        </record>
+        <record id="institution164" model="company.department">
+            <field name="name">Establishment Section</field>
+            <field name="type_">Non-Medical</field>
+            <field name="code">ESTBSEC</field>
+            <field name="institution" ref="center_irch" />
+            <field name="establishment" ref="establishment3" />
+
+        </record>
+        <record id="institution165" model="company.department">
+            <field name="name">Hospital Admin.</field>
+            <field name="type_">Non-Medical</field>
+            <field name="code">HOSPADMN</field>
+            <field name="institution" ref="center_irch" />
+            <field name="establishment" ref="establishment3" />
+
+        </record>
+        <record id="institution166" model="company.department">
+            <field name="name">Sanitation</field>
+            <field name="type_">Non-Medical</field>
+            <field name="code">SANITA</field>
+            <field name="institution" ref="center_irch" />
+            <field name="establishment" ref="establishment3" />
+
+        </record>
+        <record id="institution167" model="company.department">
+            <field name="name">Dietetics</field>
+            <field name="type_">Non-Medical</field>
+            <field name="code">DIETETIC</field>
+            <field name="institution" ref="center_irch" />
+            <field name="establishment" ref="establishment3" />
+
+        </record>
+        <record id="institution168" model="company.department">
+            <field name="name">Cataract, Refractive surgery, Vitreoretina, Uvea &amp; ROP (Unit I)</field>
+            <field name="type_">Medical</field>
+            <field name="code">CATREFSURG</field>
+            <field name="institution" ref="center_rpc" />
+            <field name="establishment" ref="establishment4" />
+
+        </record>
+        <record id="institution169" model="company.department">
+            <field name="name">Vitreoretina, Uvea &amp; ROP (unit II)</field>
+            <field name="type_">Medical</field>
+            <field name="code">VITROP</field>
+            <field name="institution" ref="center_rpc" />
+            <field name="establishment" ref="establishment4" />
+
+        </record>
+        <record id="institution170" model="company.department">
+            <field name="name">Cornea &amp; Refractive Surgery, Pediatric Cataract(Unit-III)</field>
+            <field name="type_">Medical</field>
+            <field name="code">CORNEA</field>
+            <field name="institution" ref="center_rpc" />
+            <field name="establishment" ref="establishment4" />
+
+        </record>
+        <record id="institution171" model="company.department">
+            <field name="name">Glaucoma &amp; Pediatric Cataract(Unit-IV)</field>
+            <field name="type_">Medical</field>
+            <field name="code">GLAUCOPED</field>
+            <field name="institution" ref="center_rpc" />
+            <field name="establishment" ref="establishment4" />
+
+        </record>
+        <record id="institution172" model="company.department">
+            <field name="name">Squint, Neuro Ophthalmology, Pediatric Ophthalmology and Oculoplasty (Unit-V)</field>
+            <field name="type_">Medical</field>
+            <field name="code">SQNEURO</field>
+            <field name="institution" ref="center_rpc" />
+            <field name="establishment" ref="establishment4" />
+
+        </record>
+        <record id="institution173" model="company.department">
+            <field name="name">Cornea,Squint and Neuro-ophthalmology (Unit-VI)</field>
+            <field name="type_">Medical</field>
+            <field name="code">CORSQNEU</field>
+            <field name="institution" ref="center_rpc" />
+            <field name="establishment" ref="establishment4" />
+
+        </record>
+        <record id="institution174" model="company.department">
+            <field name="name">Anesthesia and Radiology</field>
+            <field name="type_">Medical</field>
+            <field name="code">ANERADIO</field>
+            <field name="institution" ref="center_rpc" />
+            <field name="establishment" ref="establishment4" />
+
+        </record>
+        <record id="institution175" model="company.department">
+            <field name="name">Community Ophthalmology</field>
+            <field name="type_">Medical</field>
+            <field name="code">COMOPTH</field>
+            <field name="institution" ref="center_rpc" />
+            <field name="establishment" ref="establishment4" />
+
+        </record>
+        <record id="institution176" model="company.department">
+            <field name="name">Ocular Biochemistry</field>
+            <field name="type_">Medical</field>
+            <field name="code">OCULBIO</field>
+            <field name="institution" ref="center_rpc" />
+            <field name="establishment" ref="establishment4" />
+
+        </record>
+        <record id="institution177" model="company.department">
+            <field name="name">Ocular Microbiology</field>
+            <field name="type_">Medical</field>
+            <field name="code">OCULRMIC</field>
+            <field name="institution" ref="center_rpc" />
+            <field name="establishment" ref="establishment4" />
+
+        </record>
+        <record id="institution178" model="company.department">
+            <field name="name">Ocular Pathology</field>
+            <field name="type_">Medical</field>
+            <field name="code">OCULRPATH</field>
+            <field name="institution" ref="center_rpc" />
+            <field name="establishment" ref="establishment4" />
+
+        </record>
+        <record id="institution179" model="company.department">
+            <field name="name">Ocular Pharmacology</field>
+            <field name="type_">Medical</field>
+            <field name="code">OCULRPHAR</field>
+            <field name="institution" ref="center_rpc" />
+            <field name="establishment" ref="establishment4" />
+
+        </record>
+        <record id="institution180" model="company.department">
+            <field name="name">Estabishment Section</field>
+            <field name="type_">Non-Medical</field>
+            <field name="code">ESTSECTION</field>
+            <field name="institution" ref="center_rpc" />
+            <field name="establishment" ref="establishment4" />
+
+        </record>
+        <record id="institution181" model="company.department">
+            <field name="name">Account Section</field>
+            <field name="type_">Non-Medical</field>
+            <field name="code">ACCSECT</field>
+            <field name="institution" ref="center_rpc" />
+            <field name="establishment" ref="establishment4" />
+
+        </record>
+        <record id="institution182" model="company.department">
+            <field name="name">Store Section</field>
+            <field name="type_">Non-Medical</field>
+            <field name="code">STORSEC</field>
+            <field name="institution" ref="center_rpc" />
+            <field name="establishment" ref="establishment4" />
+
+        </record>
+        <record id="institution183" model="company.department">
+            <field name="name">MS Office</field>
+            <field name="type_">Non-Medical</field>
+            <field name="code">MSOFFICE</field>
+            <field name="institution" ref="center_rpc" />
+            <field name="establishment" ref="establishment4" />
+
+        </record>
+        <record id="institution184" model="company.department">
+            <field name="name">Chief Office</field>
+            <field name="type_">Non-Medical</field>
+            <field name="code">CHIFOFC</field>
+            <field name="institution" ref="center_rpc" />
+            <field name="establishment" ref="establishment4" />
+
+        </record>
+        <record id="institution185" model="company.department">
+            <field name="name">Transport Office</field>
+            <field name="type_">Non-Medical</field>
+            <field name="code">TRNSOFC</field>
+            <field name="institution" ref="center_rpc" />
+            <field name="establishment" ref="establishment4" />
+
+        </record>
+        <record id="institution186" model="company.department">
+            <field name="name">NS Office</field>
+            <field name="type_">Non-Medical</field>
+            <field name="code">NSOFFICE</field>
+            <field name="institution" ref="center_rpc" />
+            <field name="establishment" ref="establishment4" />
+
+        </record>
+        <record id="institution187" model="company.department">
+            <field name="name">Dietics</field>
+            <field name="type_">Non-Medical</field>
+            <field name="code">DIETICS</field>
+            <field name="institution" ref="center_rpc" />
+            <field name="establishment" ref="establishment4" />
+
+        </record>
+        <record id="institution188" model="company.department">
+            <field name="name">Investigative Lab</field>
+            <field name="type_">Medical</field>
+            <field name="code">INVESTLAB</field>
+            <field name="institution" ref="center_rpc" />
+            <field name="establishment" ref="establishment4" />
+
+        </record>
+        <record id="institution189" model="company.department">
+            <field name="name">Cornea Lab</field>
+            <field name="type_">Medical</field>
+            <field name="code">CORNEALAB</field>
+            <field name="institution" ref="center_rpc" />
+            <field name="establishment" ref="establishment4" />
+
+        </record>
+        <record id="institution190" model="company.department">
+            <field name="name">Retina Lab</field>
+            <field name="type_">Medical</field>
+            <field name="code">RETINALAB</field>
+            <field name="institution" ref="center_rpc" />
+            <field name="establishment" ref="establishment4" />
+
+        </record>
+        <record id="institution191" model="company.department">
+            <field name="name">Glaucoma Lab</field>
+            <field name="type_">Medical</field>
+            <field name="code">GLAUCOLAB</field>
+            <field name="institution" ref="center_rpc" />
+            <field name="establishment" ref="establishment4" />
+
+        </record>
+        <record id="institution192" model="company.department">
+            <field name="name">Photography Section</field>
+            <field name="type_">Non-Medical</field>
+            <field name="code">PHOTOSEC</field>
+            <field name="institution" ref="center_rpc" />
+            <field name="establishment" ref="establishment4" />
+
+        </record>
+        <record id="institution193" model="company.department">
+            <field name="name">Audio Visual Department</field>
+            <field name="type_">Non-Medical</field>
+            <field name="code">AUDIODEP</field>
+            <field name="institution" ref="center_rpc" />
+            <field name="establishment" ref="establishment4" />
+
+        </record>
+        <record id="institution194" model="company.department">
+            <field name="name">OT </field>
+            <field name="type_">Medical</field>
+            <field name="code">OT</field>
+            <field name="institution" ref="center_rpc" />
+            <field name="establishment" ref="establishment4" />
+
+        </record>
+        <record id="institution195" model="company.department">
+            <field name="name">Contact Lens Lab</field>
+            <field name="type_">Medical</field>
+            <field name="code">CONTLENLAB</field>
+            <field name="institution" ref="center_rpc" />
+            <field name="establishment" ref="establishment4" />
+
+        </record>
+        <record id="institution196" model="company.department">
+            <field name="name">Electrophysiology Lab</field>
+            <field name="type_">Medical</field>
+            <field name="code">ELECTROLAB</field>
+            <field name="institution" ref="center_rpc" />
+            <field name="establishment" ref="establishment4" />
+
+        </record>
+        <record id="institution197" model="company.department">
+            <field name="name">National Eye Bank</field>
+            <field name="type_">Medical</field>
+            <field name="code">NATEYEBNK</field>
+            <field name="institution" ref="center_rpc" />
+            <field name="establishment" ref="establishment4" />
+
+        </record>
+        <record id="institution198" model="company.department">
+            <field name="name">Laser Lab</field>
+            <field name="type_">Medical</field>
+            <field name="code">LASELAB</field>
+            <field name="institution" ref="center_rpc" />
+            <field name="establishment" ref="establishment4" />
+
+        </record>
+        <record id="institution199" model="company.department">
+            <field name="name">IOL Lab</field>
+            <field name="type_">Medical</field>
+            <field name="code">IOLLAB</field>
+            <field name="institution" ref="center_rpc" />
+            <field name="establishment" ref="establishment4" />
+
+        </record>
+        <record id="institution200" model="company.department">
+            <field name="name">Anesthesia &amp; CC</field>
+            <field name="type_">Medical</field>
+            <field name="code">ANESTHCC</field>
+            <field name="institution" ref="center_jpnatc" />
+            <field name="establishment" ref="establishment5" />
+
+        </record>
+        <record id="institution201" model="company.department">
+            <field name="name">Emergency Medicine</field>
+            <field name="type_">Medical</field>
+            <field name="code">EMGMEDIC</field>
+            <field name="institution" ref="center_jpnatc" />
+            <field name="establishment" ref="establishment5" />
+
+        </record>
+        <record id="institution202" model="company.department">
+            <field name="name">Division of forensic pathology and molecular laboratory</field>
+            <field name="type_">Medical</field>
+            <field name="code">DIVISIONFOR</field>
+            <field name="institution" ref="center_jpnatc" />
+            <field name="establishment" ref="establishment5" />
+
+        </record>
+        <record id="institution203" model="company.department">
+            <field name="name">Laboratory Medicine</field>
+            <field name="type_">Medical</field>
+            <field name="code">LABMED</field>
+            <field name="institution" ref="center_jpnatc" />
+            <field name="establishment" ref="establishment5" />
+
+        </record>
+        <record id="institution204" model="company.department">
+            <field name="name">Neuroanaesthesia</field>
+            <field name="type_">Medical</field>
+            <field name="code">NEUROANAES</field>
+            <field name="institution" ref="center_jpnatc" />
+            <field name="establishment" ref="establishment5" />
+
+        </record>
+        <record id="institution205" model="company.department">
+            <field name="name">Neurosurgery</field>
+            <field name="type_">Medical</field>
+            <field name="code">NEUROSURG</field>
+            <field name="institution" ref="center_jpnatc" />
+            <field name="establishment" ref="establishment5" />
+
+        </record>
+        <record id="institution206" model="company.department">
+            <field name="name">Orthopedics</field>
+            <field name="type_">Medical</field>
+            <field name="code">ORTHPED</field>
+            <field name="institution" ref="center_jpnatc" />
+            <field name="establishment" ref="establishment5" />
+
+        </record>
+        <record id="institution207" model="company.department">
+            <field name="name">Radiology</field>
+            <field name="type_">Medical</field>
+            <field name="code">RADIOLG</field>
+            <field name="institution" ref="center_jpnatc" />
+            <field name="establishment" ref="establishment5" />
+
+        </record>
+        <record id="institution208" model="company.department">
+            <field name="name">Trauma Surgery And Critical Care</field>
+            <field name="type_">Medical</field>
+            <field name="code">TRAUMSURG</field>
+            <field name="institution" ref="center_jpnatc" />
+            <field name="establishment" ref="establishment5" />
+
+        </record>
+        <record id="institution209" model="company.department">
+            <field name="name">Information Technology</field>
+            <field name="type_">Non-Medical</field>
+            <field name="code">INFOTECH</field>
+            <field name="institution" ref="center_jpnatc" />
+            <field name="establishment" ref="establishment5" />
+
+        </record>
+        <record id="institution210" model="company.department">
+            <field name="name">Medical Record Section</field>
+            <field name="type_">Non-Medical</field>
+            <field name="code">MEDRECSEC</field>
+            <field name="institution" ref="center_jpnatc" />
+            <field name="establishment" ref="establishment5" />
+
+        </record>
+        <record id="institution211" model="company.department">
+            <field name="name">Plastic Reconstructive and Burn surgery</field>
+            <field name="type_">Medical</field>
+            <field name="code">PLSTRECBUR</field>
+            <field name="institution" ref="center_jpnatc" />
+            <field name="establishment" ref="establishment5" />
+
+        </record>
+        <record id="institution212" model="company.department">
+            <field name="name">Establishment Section</field>
+            <field name="type_">Non-Medical</field>
+            <field name="code">ESTAB</field>
+            <field name="institution" ref="center_jpnatc" />
+            <field name="establishment" ref="establishment5" />
+
+        </record>
+        <record id="institution213" model="company.department">
+            <field name="name">Account Section</field>
+            <field name="type_">Non-Medical</field>
+            <field name="code">ACCSEC</field>
+            <field name="institution" ref="center_jpnatc" />
+            <field name="establishment" ref="establishment5" />
+
+        </record>
+        <record id="institution214" model="company.department">
+            <field name="name">Stores Section</field>
+            <field name="type_">Non-Medical</field>
+            <field name="code">STORSEC</field>
+            <field name="institution" ref="center_jpnatc" />
+            <field name="establishment" ref="establishment5" />
+
+        </record>
+        <record id="institution215" model="company.department">
+            <field name="name">Sanitation</field>
+            <field name="type_">Non-Medical</field>
+            <field name="code">SANITASN</field>
+            <field name="institution" ref="center_jpnatc" />
+            <field name="establishment" ref="establishment5" />
+
+        </record>
+        <record id="institution216" model="company.department">
+            <field name="name">DNS Office</field>
+            <field name="type_">Non-Medical</field>
+            <field name="code">DNSOFC</field>
+            <field name="institution" ref="center_jpnatc" />
+            <field name="establishment" ref="establishment5" />
+
+        </record>
+        <record id="institution217" model="company.department">
+            <field name="name">Forensic Medicine</field>
+            <field name="type_">Medical</field>
+            <field name="code">FORMEDC</field>
+            <field name="institution" ref="center_jpnatc" />
+            <field name="establishment" ref="establishment5" />
+
+        </record>
+        <record id="institution218" model="company.department">
+            <field name="name">Critical and Intensive Care</field>
+            <field name="type_">Medical</field>
+            <field name="code">CRIINTCARE</field>
+            <field name="institution" ref="center_jpnatc" />
+            <field name="establishment" ref="establishment5" />
+
+        </record>
+        <record id="institution219" model="company.department">
+            <field name="name">Surgery</field>
+            <field name="type_">Medical</field>
+            <field name="code">SURGRY</field>
+            <field name="institution" ref="center_jpnatc" />
+            <field name="establishment" ref="establishment5" />
+
+        </record>
+        <record id="institution220" model="company.department">
+            <field name="name">Paediatric Surgery</field>
+            <field name="type_">Medical</field>
+            <field name="code">PAEDSURG</field>
+            <field name="institution" ref="center_jpnatc" />
+            <field name="establishment" ref="establishment5" />
+
+        </record>
+        <record id="institution221" model="company.department">
+            <field name="name">Cardiology</field>
+            <field name="type_">Medical</field>
+            <field name="code">CARDIO</field>
+            <field name="institution" ref="center_jpnatc" />
+            <field name="establishment" ref="establishment5" />
+
+        </record>
+        <record id="institution222" model="company.department">
+            <field name="name">Nephrology</field>
+            <field name="type_">Medical</field>
+            <field name="code">NEPHROL</field>
+            <field name="institution" ref="center_jpnatc" />
+            <field name="establishment" ref="establishment5" />
+
+        </record>
+        <record id="institution223" model="company.department">
+            <field name="name">Obst. &amp; Gyane</field>
+            <field name="type_">Medical</field>
+            <field name="code">OBSTGYANE</field>
+            <field name="institution" ref="center_jpnatc" />
+            <field name="establishment" ref="establishment5" />
+
+        </record>
+        <record id="institution224" model="company.department">
+            <field name="name">Urology</field>
+            <field name="type_">Medical</field>
+            <field name="code">UROLOGY</field>
+            <field name="institution" ref="center_jpnatc" />
+            <field name="establishment" ref="establishment5" />
+
+        </record>
+
+        <record id="institution229" model="company.department">
+            <field name="name">Transfusion Medicine</field>
+            <field name="type_">Medical</field>
+            <field name="code">TRANSMED</field>
+            <field name="institution" ref="center_jpnatc" />
+            <field name="establishment" ref="establishment5" />
+        </record>
+	<record id="institution230" model="company.department">
+            <field name="name">Radio Imaging</field>
+            <field name="type_">Medical</field>
+            <field name="code">TRANSMED</field>
+            <field name="institution" ref="center_jpnatc" />
+            <field name="establishment" ref="establishment5" />
+
+        </record>
+        <record id="institution231" model="company.department">
+            <field name="name">Depart Ballabhgarh</field>
+            <field name="type_">Non-Medical</field>
+            <field name="code">DEPTBALLABH</field>
+            <field name="institution" ref="center_ballabhgarh" />
+            <field name="establishment" ref="establishment6" />
+
+        </record>
+        <record id="institution232" model="company.department">
+            <field name="name">Depart Ballabhgarh 2</field>
+            <field name="type_">Non-Medical</field>
+            <field name="code">DEPTBALLABH2</field>
+            <field name="institution" ref="center_ballabhgarh" />
+            <field name="establishment" ref="establishment6" />
+
+        </record>
+        <record id="institution233" model="company.department">
+            <field name="name">NDDTC</field>
+            <field name="type_">Non-Medical</field>
+            <field name="code">NDDTC</field>
+            <field name="institution" ref="center_nddtc" />
+            <field name="establishment" ref="establishment7" />
+        </record>
+        <record id="institution234" model="company.department">
+            <field name="name">Establishment</field>
+            <field name="type_">Non-Medical</field>
+            <field name="code">ESTABLISH</field>
+            <field name="institution" ref="center_nddtc" />
+            <field name="establishment" ref="establishment7" />
+        </record>
+        <record id="institution235" model="company.department">
+            <field name="name">Account</field>
+            <field name="type_">Non-Medical</field>
+            <field name="code">ACCOUNT</field>
+            <field name="institution" ref="center_nddtc" />
+            <field name="establishment" ref="establishment7" />
+        </record>
+        <record id="institution236" model="company.department">
+            <field name="name">Store</field>
+            <field name="type_">Non-Medical</field>
+            <field name="code">STORE</field>
+            <field name="institution" ref="center_nddtc" />
+            <field name="establishment" ref="establishment7" />
+        </record>
+        <record id="institution237" model="company.department">
+            <field name="name">Psychiatry</field>
+            <field name="type_">Non-Medical</field>
+            <field name="code">PSYCHIA</field>
+            <field name="institution" ref="center_nddtc" />
+            <field name="establishment" ref="establishment7" />
+        </record>
+        <record id="institution238" model="company.department">
+            <field name="name">Jhajjar 1</field>
+            <field name="type_">Non-Medical</field>
+            <field name="code">JHAJJAR1</field>
+            <field name="institution" ref="center_nci_jhajjar" />
+
+        </record>
+        <record id="institution239" model="company.department">
+            <field name="name">Jhajjar 2 store</field>
+            <field name="type_">Non-Medical</field>
+            <field name="code">JHAJJAR2STR</field>
+            <field name="institution" ref="center_nci_jhajjar" />
+
+        </record>
+        <record id="institution240" model="company.department">
+            <field name="name">Cardiology</field>
+            <field name="type_">Medical</field>
+            <field name="code">CARDIO</field>
+            <field name="institution" ref="center_cardio_thoracic_sciences" />
+            <field name="establishment" ref="establishment8" />
+        </record>
+        <record id="institution241" model="company.department">
+            <field name="name">Cardiac Anaesthesiology</field>
+            <field name="type_">Medical</field>
+            <field name="code">CARDIANAE</field>
+            <field name="institution" ref="center_cardio_thoracic_sciences" />
+            <field name="establishment" ref="establishment8" />
+        </record>
+        <record id="institution242" model="company.department">
+            <field name="name">Cardiac Pathology</field>
+            <field name="type_">Medical</field>
+            <field name="code">CARDIPATH</field>
+            <field name="institution" ref="center_cardio_thoracic_sciences" />
+            <field name="establishment" ref="establishment8" />
+        </record>
+        <record id="institution243" model="company.department">
+            <field name="name">Cardiac Radiology</field>
+            <field name="type_">Medical</field>
+            <field name="code">CARDRADIO</field>
+            <field name="institution" ref="center_cardio_thoracic_sciences" />
+            <field name="establishment" ref="establishment8" />
+        </record>
+        <record id="institution244" model="company.department">
+            <field name="name">Cardiothoracic &amp; Vascular Surgery</field>
+            <field name="type_">Medical</field>
+            <field name="code">CARDVASSUR</field>
+            <field name="institution" ref="center_cardio_thoracic_sciences" />
+            <field name="establishment" ref="establishment8" />
+        </record>
+        <record id="institution245" model="company.department">
+            <field name="name">Cardiac Biochemistry</field>
+            <field name="type_">Medical</field>
+            <field name="code">CARDBIO</field>
+            <field name="institution" ref="center_cardio_thoracic_sciences" />
+            <field name="establishment" ref="establishment8" />
+        </record>
+        <record id="institution246" model="company.department">
+            <field name="name">ORBO &amp; Stem Cell Facility</field>
+            <field name="type_">Medical</field>
+            <field name="code">ORBOSTEM</field>
+            <field name="institution" ref="center_cardio_thoracic_sciences" />
+            <field name="establishment" ref="establishment8" />
+        </record>
+        <record id="institution247" model="company.department">
+            <field name="name">Hospital Administration (CNC)</field>
+            <field name="type_">Medical</field>
+            <field name="code">HOSPADM</field>
+            <field name="institution" ref="center_cardio_thoracic_sciences" />
+            <field name="establishment" ref="establishment8" />
+        </record>
+        <record id="institution248" model="company.department">
+            <field name="name">Nuclear Medicine</field>
+            <field name="type_">Medical</field>
+            <field name="code">NUCLMED</field>
+            <field name="institution" ref="center_cardio_thoracic_sciences" />
+            <field name="establishment" ref="establishment8" />
+        </record>
+        <record id="institution249" model="company.department">
+            <field name="name">Blood Transfusion Services (BTS, CNC)</field>
+            <field name="type_">Medical</field>
+            <field name="code">BLOODTRANS</field>
+            <field name="institution" ref="center_cardio_thoracic_sciences" />
+            <field name="establishment" ref="establishment8" />
+        </record>
+        <record id="institution250" model="company.department">
+            <field name="name">DNS</field>
+            <field name="type_">Medical</field>
+            <field name="code">DNS</field>
+            <field name="institution" ref="center_cardio_thoracic_sciences" />
+            <field name="establishment" ref="establishment8" />
+        </record>
+        <record id="institution251" model="company.department">
+            <field name="name">N.S.</field>
+            <field name="type_">Medical</field>
+            <field name="code">NS</field>
+            <field name="institution" ref="center_cardio_thoracic_sciences" />
+            <field name="establishment" ref="establishment8" />
+        </record>
+        <record id="institution252" model="company.department">
+            <field name="name">CT Record Section</field>
+            <field name="type_">Medical</field>
+            <field name="code">CTRECORDSEC</field>
+            <field name="institution" ref="center_cardio_thoracic_sciences" />
+            <field name="establishment" ref="establishment8" />
+        </record>
+        <record id="institution253" model="company.department">
+            <field name="name">Intensive and Critical Care</field>
+            <field name="type_">Medical</field>
+            <field name="code">INTCRITCARE</field>
+            <field name="institution" ref="center_cardio_thoracic_sciences" />
+            <field name="establishment" ref="establishment8" />
+        </record>
+        <record id="institution254" model="company.department">
+            <field name="name">Neurology</field>
+            <field name="type_">Medical</field>
+            <field name="code">NEUROLG</field>
+            <field name="institution" ref="center_neurosciences_centre" />
+            <field name="establishment" ref="establishment8" />
+        </record>
+        <record id="institution255" model="company.department">
+            <field name="name">Neuroanaesthesiology and Critical Care</field>
+            <field name="type_">Medical</field>
+            <field name="code">NEUROCRIT</field>
+            <field name="institution" ref="center_neurosciences_centre" />
+            <field name="establishment" ref="establishment8" />
+        </record>
+        <record id="institution256" model="company.department">
+            <field name="name">Neuro Pathology</field>
+            <field name="type_">Medical</field>
+            <field name="code">NEUROPATH</field>
+            <field name="institution" ref="center_neurosciences_centre" />
+            <field name="establishment" ref="establishment8" />
+        </record>
+        <record id="institution257" model="company.department">
+            <field name="name">Neuro Radiology</field>
+            <field name="type_">Medical</field>
+            <field name="code">NEURORADIO</field>
+            <field name="institution" ref="center_neurosciences_centre" />
+            <field name="establishment" ref="establishment8" />
+        </record>
+        <record id="institution258" model="company.department">
+            <field name="name">Neurosurgery</field>
+            <field name="type_">Medical</field>
+            <field name="code">NERUSURG</field>
+            <field name="institution" ref="center_neurosciences_centre" />
+            <field name="establishment" ref="establishment8" />
+        </record>
+        <record id="institution259" model="company.department">
+            <field name="name">Neuro Biochemistry</field>
+            <field name="type_">Medical</field>
+            <field name="code">NEUROBIO</field>
+            <field name="institution" ref="center_neurosciences_centre" />
+            <field name="establishment" ref="establishment8" />
+        </record>
+        <record id="institution260" model="company.department">
+            <field name="name">Neuro Psychology</field>
+            <field name="type_">Medical</field>
+            <field name="code">NEUROPSYCH</field>
+            <field name="institution" ref="center_neurosciences_centre" />
+            <field name="establishment" ref="establishment8" />
+        </record>
+        <record id="institution261" model="company.department">
+            <field name="name">N.S.</field>
+            <field name="type_">Non-Medical</field>
+            <field name="code">NS</field>
+            <field name="institution" ref="center_neurosciences_centre" />
+            <field name="establishment" ref="establishment8" />
+        </record>
+        <record id="institution262" model="company.department">
+            <field name="name">DNS</field>
+            <field name="type_">Non-Medical</field>
+            <field name="code">DNS</field>
+            <field name="institution" ref="center_neurosciences_centre" />
+            <field name="establishment" ref="establishment8" />
+        </record>
+        <record id="institution263" model="company.department">
+            <field name="name">NS Record Section</field>
+            <field name="type_">Non-Medical</field>
+            <field name="code">NSRECSECT</field>
+            <field name="institution" ref="center_neurosciences_centre" />
+            <field name="establishment" ref="establishment8" />
+        </record>
+        <record id="institution264" model="company.department">
+            <field name="name">Admin Store  1</field>
+            <field name="type_">Non-Medical</field>
+            <field name="code">ADMNSTR1</field>
+            <field name="institution" ref="center_main_aiims" />
+            <field name="establishment" ref="establishment1" />
+
+        </record>
+        <record id="institution265" model="company.department">
+            <field name="name">Admin Store  2 and Finance</field>
+            <field name="type_">Non-Medical</field>
+            <field name="code">ADMNSTR2FIN</field>
+            <field name="institution" ref="center_main_aiims" />
+            <field name="establishment" ref="establishment1" />
+
+        </record>
+        <record id="institution266" model="company.department">
+            <field name="name">A.M.S</field>
+            <field name="type_">Non-Medical</field>
+            <field name="code">AMS</field>
+            <field name="institution" ref="center_cnc" />
+            <field name="establishment" ref="establishment8" />
+        </record>
+        <record id="institution267" model="company.department">
+            <field name="name">Blood Bank</field>
+            <field name="type_">Medical</field>
+            <field name="code">BLOODBNK</field>
+            <field name="institution" ref="center_cnc" />
+            <field name="establishment" ref="establishment8" />
+        </record>
+        <record id="institution268" model="company.department">
+            <field name="name">Accounts Section</field>
+            <field name="type_">Non-Medical</field>
+            <field name="code">ACCSEC</field>
+            <field name="institution" ref="center_cnc" />
+            <field name="establishment" ref="establishment8" />
+        </record>
+        <record id="institution269" model="company.department">
+            <field name="name">Sanitation Office</field>
+            <field name="type_">Non-Medical</field>
+            <field name="code">SANIOFC</field>
+            <field name="institution" ref="center_cnc" />
+            <field name="establishment" ref="establishment8" />
+        </record>
+        <record id="institution270" model="company.department">
+            <field name="name">Store Section</field>
+            <field name="type_">Non-Medical</field>
+            <field name="code">SOTRESECT</field>
+            <field name="institution" ref="center_cnc" />
+            <field name="establishment" ref="establishment8" />
+        </record>
+        <record id="institution271" model="company.department">
+            <field name="name">Billing Section</field>
+            <field name="type_">Non-Medical</field>
+            <field name="code">BILLSEC</field>
+            <field name="institution" ref="center_cnc" />
+            <field name="establishment" ref="establishment8" />
+        </record>
+        <record id="institution272" model="company.department">
+            <field name="name">O.P.D</field>
+            <field name="type_">Medical</field>
+            <field name="code">OPD</field>
+            <field name="institution" ref="center_cnc" />
+            <field name="establishment" ref="establishment8" />
+        </record>
+        <record id="institution273" model="company.department">
+            <field name="name">Reception</field>
+            <field name="type_">Non-Medical</field>
+            <field name="code">RECEPTION</field>
+            <field name="institution" ref="center_cnc" />
+            <field name="establishment" ref="establishment8" />
+        </record>
+        <record id="institution274" model="company.department">
+            <field name="name">Establishment Section</field>
+            <field name="type_">Non-Medical</field>
+            <field name="code">ESTABSECTION</field>
+            <field name="institution" ref="center_cnc" />
+            <field name="establishment" ref="establishment8" />
+        </record>
+        <record id="institution275" model="company.department">
+            <field name="name">AB1 WARD</field>
+            <field name="type_">Medical</field>
+            <field name="code">AB1WARD</field>
+            <field name="institution" ref="center_hospital" />
+            <field name="establishment" ref="establishment9" />
+
+        </record>
+        <record id="institution276" model="company.department">
+            <field name="name">AB2 WARD</field>
+            <field name="type_">Medical</field>
+            <field name="code">AB2WARD</field>
+            <field name="institution" ref="center_hospital" />
+            <field name="establishment" ref="establishment9" />
+
+        </record>
+        <record id="institution277" model="company.department">
+            <field name="name">AB2 ICU</field>
+            <field name="type_">Medical</field>
+            <field name="code">AB2ICU</field>
+            <field name="institution" ref="center_hospital" />
+            <field name="establishment" ref="establishment9" />
+
+        </record>
+        <record id="institution278" model="company.department">
+            <field name="name">AB3 WARD</field>
+            <field name="type_">Medical</field>
+            <field name="code">AB3WARD</field>
+            <field name="institution" ref="center_hospital" />
+            <field name="establishment" ref="establishment9" />
+
+        </record>
+        <record id="institution279" model="company.department">
+            <field name="name">AB4 WARD</field>
+            <field name="type_">Medical</field>
+            <field name="code">AB4WARD</field>
+            <field name="institution" ref="center_hospital" />
+            <field name="establishment" ref="establishment9" />
+
+        </record>
+        <record id="institution280" model="company.department">
+            <field name="name">AB4 DIALYSIS</field>
+            <field name="type_">Medical</field>
+            <field name="code">AB4DIALYSIS</field>
+            <field name="institution" ref="center_hospital" />
+            <field name="establishment" ref="establishment9" />
+
+        </record>
+        <record id="institution281" model="company.department">
+            <field name="name">AB5 WARD</field>
+            <field name="type_">Medical</field>
+            <field name="code">AB5WARD</field>
+            <field name="institution" ref="center_hospital" />
+            <field name="establishment" ref="establishment9" />
+
+        </record>
+        <record id="institution282" model="company.department">
+            <field name="name">AB5 ICU</field>
+            <field name="type_">Medical</field>
+            <field name="code">AB5ICU</field>
+            <field name="institution" ref="center_hospital" />
+            <field name="establishment" ref="establishment9" />
+
+        </record>
+        <record id="institution283" model="company.department">
+            <field name="name">AB6 WARD</field>
+            <field name="type_">Medical</field>
+            <field name="code">AB6WARD</field>
+            <field name="institution" ref="center_hospital" />
+            <field name="establishment" ref="establishment9" />
+
+        </record>
+        <record id="institution284" model="company.department">
+            <field name="name">AB7 WARD</field>
+            <field name="type_">Medical</field>
+            <field name="code">AB7WARD</field>
+            <field name="institution" ref="center_hospital" />
+            <field name="establishment" ref="establishment9" />
+
+        </record>
+        <record id="institution285" model="company.department">
+            <field name="name">AB8 ICU</field>
+            <field name="type_">Medical</field>
+            <field name="code">AB8ICU</field>
+            <field name="institution" ref="center_hospital" />
+            <field name="establishment" ref="establishment9" />
+
+        </record>
+        <record id="institution286" model="company.department">
+            <field name="name">C1 WARD</field>
+            <field name="type_">Medical</field>
+            <field name="code">C1WARD</field>
+            <field name="institution" ref="center_hospital" />
+            <field name="establishment" ref="establishment9" />
+
+        </record>
+        <record id="institution287" model="company.department">
+            <field name="name">C2 WARD</field>
+            <field name="type_">Medical</field>
+            <field name="code">C2WARD</field>
+            <field name="institution" ref="center_hospital" />
+            <field name="establishment" ref="establishment9" />
+
+        </record>
+        <record id="institution288" model="company.department">
+            <field name="name">C2 SLEEP LAB</field>
+            <field name="type_">Medical</field>
+            <field name="code">C2SLEEPLAB</field>
+            <field name="institution" ref="center_hospital" />
+            <field name="establishment" ref="establishment9" />
+
+        </record>
+        <record id="institution289" model="company.department">
+            <field name="name">C3 LABOUR ROOM + MATERNITY OT</field>
+            <field name="type_">Medical</field>
+            <field name="code">C3LABMATER</field>
+            <field name="institution" ref="center_hospital" />
+            <field name="establishment" ref="establishment9" />
+
+        </record>
+        <record id="institution290" model="company.department">
+            <field name="name">C3 NEONATAL ICU-A</field>
+            <field name="type_">Medical</field>
+            <field name="code">C3NEONATAL</field>
+            <field name="institution" ref="center_hospital" />
+            <field name="establishment" ref="establishment9" />
+
+        </record>
+        <record id="institution291" model="company.department">
+            <field name="name">C4 WARD</field>
+            <field name="type_">Medical</field>
+            <field name="code">C4WARD</field>
+            <field name="institution" ref="center_hospital" />
+            <field name="establishment" ref="establishment9" />
+
+        </record>
+        <record id="institution292" model="company.department">
+            <field name="name">C5 WARD</field>
+            <field name="type_">Medical</field>
+            <field name="code">C5WARD</field>
+            <field name="institution" ref="center_hospital" />
+            <field name="establishment" ref="establishment9" />
+
+        </record>
+        <record id="institution293" model="company.department">
+            <field name="name">C6 WARD</field>
+            <field name="type_">Medical</field>
+            <field name="code">C6WARD</field>
+            <field name="institution" ref="center_hospital" />
+            <field name="establishment" ref="establishment9" />
+
+        </record>
+        <record id="institution294" model="company.department">
+            <field name="name">C7 WARD</field>
+            <field name="type_">Medical</field>
+            <field name="code">C7WARD</field>
+            <field name="institution" ref="center_hospital" />
+            <field name="establishment" ref="establishment9" />
+
+        </record>
+        <record id="institution295" model="company.department">
+            <field name="name">D1 WARD</field>
+            <field name="type_">Medical</field>
+            <field name="code">D1WARD</field>
+            <field name="institution" ref="center_hospital" />
+            <field name="establishment" ref="establishment9" />
+
+        </record>
+        <record id="institution296" model="company.department">
+            <field name="name">D2 WARD</field>
+            <field name="type_">Medical</field>
+            <field name="code">D2WARD</field>
+            <field name="institution" ref="center_hospital" />
+            <field name="establishment" ref="establishment9" />
+
+        </record>
+        <record id="institution297" model="company.department">
+            <field name="name">D3 WARD</field>
+            <field name="type_">Medical</field>
+            <field name="code">D3WARD</field>
+            <field name="institution" ref="center_hospital" />
+            <field name="establishment" ref="establishment9" />
+
+        </record>
+        <record id="institution298" model="company.department">
+            <field name="name">D4 WARD</field>
+            <field name="type_">Medical</field>
+            <field name="code">D4WARD</field>
+            <field name="institution" ref="center_hospital" />
+            <field name="establishment" ref="establishment9" />
+
+        </record>
+        <record id="institution299" model="company.department">
+            <field name="name">D5 WARD</field>
+            <field name="type_">Medical</field>
+            <field name="code">D5WARD</field>
+            <field name="institution" ref="center_hospital" />
+            <field name="establishment" ref="establishment9" />
+
+        </record>
+        <record id="institution300" model="company.department">
+            <field name="name">D5 ICU</field>
+            <field name="type_">Medical</field>
+            <field name="code">D5ICU</field>
+            <field name="institution" ref="center_hospital" />
+            <field name="establishment" ref="establishment9" />
+
+        </record>
+        <record id="institution301" model="company.department">
+            <field name="name">D5 DIALYSIS UNIT</field>
+            <field name="type_">Medical</field>
+            <field name="code">D5DIALYUNIT</field>
+            <field name="institution" ref="center_hospital" />
+            <field name="establishment" ref="establishment9" />
+
+        </record>
+        <record id="institution302" model="company.department">
+            <field name="name">D6 WARD</field>
+            <field name="type_">Medical</field>
+            <field name="code">D6WARD</field>
+            <field name="institution" ref="center_hospital" />
+            <field name="establishment" ref="establishment9" />
+
+        </record>
+        <record id="institution303" model="company.department">
+            <field name="name">D6 ICU</field>
+            <field name="type_">Medical</field>
+            <field name="code">D6ICU</field>
+            <field name="institution" ref="center_hospital" />
+            <field name="establishment" ref="establishment9" />
+
+        </record>
+        <record id="institution304" model="company.department">
+            <field name="name">D7 WARD</field>
+            <field name="type_">Medical</field>
+            <field name="code">D7WARD</field>
+            <field name="institution" ref="center_hospital" />
+            <field name="establishment" ref="establishment9" />
+
+        </record>
+        <record id="institution305" model="company.department">
+            <field name="name">D7 HDU</field>
+            <field name="type_">Medical</field>
+            <field name="code">D7HDU</field>
+            <field name="institution" ref="center_hospital" />
+            <field name="establishment" ref="establishment9" />
+
+        </record>
+        <record id="institution306" model="company.department">
+            <field name="name">PULMONARY MEDICINE WARD</field>
+            <field name="type_">Medical</field>
+            <field name="code">PULMEDWARD</field>
+            <field name="institution" ref="center_hospital" />
+            <field name="establishment" ref="establishment9" />
+
+        </record>
+        <record id="institution307" model="company.department">
+            <field name="name">GERIATRIC MEDICINE WARD</field>
+            <field name="type_">Medical</field>
+            <field name="code">GERIAMED</field>
+            <field name="institution" ref="center_hospital" />
+            <field name="establishment" ref="establishment9" />
+
+        </record>
+        <record id="institution308" model="company.department">
+            <field name="name">NEONATAL ICU-B + KMC</field>
+            <field name="type_">Medical</field>
+            <field name="code">NEOICUKMC</field>
+            <field name="institution" ref="center_hospital" />
+            <field name="establishment" ref="establishment9" />
+
+        </record>
+        <record id="institution309" model="company.department">
+            <field name="name">MATERNAL CHILD UNIT</field>
+            <field name="type_">Medical</field>
+            <field name="code">MATERCHILD</field>
+            <field name="institution" ref="center_hospital" />
+            <field name="establishment" ref="establishment9" />
+
+        </record>
+        <record id="institution310" model="company.department">
+            <field name="name">RHEUMATOLOGY DAY CARE</field>
+            <field name="type_">Medical</field>
+            <field name="code">RHEUMADAYCR</field>
+            <field name="institution" ref="center_hospital" />
+            <field name="establishment" ref="establishment9" />
+
+        </record>
+        <record id="institution311" model="company.department">
+            <field name="name">OLD PRIVATE WARD FIRST FLOOR</field>
+            <field name="type_">Medical</field>
+            <field name="code">OLDPRVTWRD1</field>
+            <field name="institution" ref="center_hospital" />
+            <field name="establishment" ref="establishment9" />
+
+        </record>
+        <record id="institution312" model="company.department">
+            <field name="name">OLD PRIVATE WARD SECOND FLOOR</field>
+            <field name="type_">Medical</field>
+            <field name="code">OLDPRVTWRD2</field>
+            <field name="institution" ref="center_hospital" />
+            <field name="establishment" ref="establishment9" />
+
+        </record>
+        <record id="institution313" model="company.department">
+            <field name="name">OLD PRIVATE WARD THIRD FLOOR</field>
+            <field name="type_">Medical</field>
+            <field name="code">OLDPRVTWRD3</field>
+            <field name="institution" ref="center_hospital" />
+            <field name="establishment" ref="establishment9" />
+
+        </record>
+        <record id="institution314" model="company.department">
+            <field name="name">OLD PRIVATE WARD FOURTH FLOOR</field>
+            <field name="type_">Medical</field>
+            <field name="code">OLDPRVTWRD4</field>
+            <field name="institution" ref="center_hospital" />
+            <field name="establishment" ref="establishment9" />
+
+        </record>
+        <record id="institution315" model="company.department">
+            <field name="name">OLD PRIVATE WARD FIFTH FLOOR</field>
+            <field name="type_">Medical</field>
+            <field name="code">OLDPRVTWRD5</field>
+            <field name="institution" ref="center_hospital" />
+            <field name="establishment" ref="establishment9" />
+
+        </record>
+        <record id="institution316" model="company.department">
+            <field name="name">NEW PRIVATE WARD GROUND FLOOR</field>
+            <field name="type_">Medical</field>
+            <field name="code">NEWPVTWRD0</field>
+            <field name="institution" ref="center_hospital" />
+            <field name="establishment" ref="establishment9" />
+
+        </record>
+        <record id="institution317" model="company.department">
+            <field name="name">NEW PRIVATE WARD FIRST FLOOR</field>
+            <field name="type_">Medical</field>
+            <field name="code">NEWPVTWRD1</field>
+            <field name="institution" ref="center_hospital" />
+            <field name="establishment" ref="establishment9" />
+
+        </record>
+        <record id="institution318" model="company.department">
+            <field name="name">NEW PRIVATE WARD SECOND FLOOR</field>
+            <field name="type_">Medical</field>
+            <field name="code">NEWPVTWRD2</field>
+            <field name="institution" ref="center_hospital" />
+            <field name="establishment" ref="establishment9" />
+
+        </record>
+        <record id="institution319" model="company.department">
+            <field name="name">NEW PRIVATE WARD THIRD FLOOR</field>
+            <field name="type_">Medical</field>
+            <field name="code">NEWPVTWRD3</field>
+            <field name="institution" ref="center_hospital" />
+            <field name="establishment" ref="establishment9" />
+
+        </record>
+        <record id="institution320" model="company.department">
+            <field name="name">CNO OFFICE</field>
+            <field name="type_">Non-Medical</field>
+            <field name="code">CNO-OFFICE</field>
+            <field name="institution" ref="center_hospital" />
+            <field name="establishment" ref="establishment9" />
+
+        </record>
+        <record id="institution321" model="company.department">
+            <field name="name">INFECTION CONTROL</field>
+            <field name="type_">Non-Medical</field>
+            <field name="code">INFECTIONCTRL</field>
+            <field name="institution" ref="center_hospital" />
+            <field name="establishment" ref="establishment9" />
+
+        </record>
+        <record id="institution322" model="company.department">
+            <field name="name">IVF OT</field>
+            <field name="type_">Non-Medical</field>
+            <field name="code">IVFTO</field>
+            <field name="institution" ref="center_hospital" />
+            <field name="establishment" ref="establishment9" />
+
+        </record>
+        <record id="institution323" model="company.department">
+            <field name="name">MAIN BLOOD BANK</field>
+            <field name="type_">Medical</field>
+            <field name="code">MNBLDBANK</field>
+            <field name="institution" ref="center_hospital" />
+            <field name="establishment" ref="establishment9" />
+
+        </record>
+        <record id="institution324" model="company.department">
+            <field name="name">MAIN EMERGENCY</field>
+            <field name="type_">Medical</field>
+            <field name="code">MAINEMG</field>
+            <field name="institution" ref="center_hospital" />
+            <field name="establishment" ref="establishment9" />
+
+        </record>
+        <record id="institution325" model="company.department">
+            <field name="name">MAIN OT</field>
+            <field name="type_">Medical</field>
+            <field name="code">MAINOT</field>
+            <field name="institution" ref="center_hospital" />
+            <field name="establishment" ref="establishment9" />
+
+        </record>
+        <record id="institution326" model="company.department">
+            <field name="name">NEW EMERGENCY WARD</field>
+            <field name="type_">Medical</field>
+            <field name="code">NEWEMGWARD</field>
+            <field name="institution" ref="center_hospital" />
+            <field name="establishment" ref="establishment9" />
+
+        </record>
+        <record id="institution327" model="company.department">
+            <field name="name">NIS</field>
+            <field name="type_">Medical</field>
+            <field name="code">NIS</field>
+            <field name="institution" ref="center_hospital" />
+            <field name="establishment" ref="establishment9" />
+
+        </record>
+        <record id="institution328" model="company.department">
+            <field name="name">ORTHOPAEDICS</field>
+            <field name="type_">Medical</field>
+            <field name="code">ORTHOPAD</field>
+            <field name="institution" ref="center_hospital" />
+            <field name="establishment" ref="establishment9" />
+
+        </record>
+        <record id="institution329" model="company.department">
+            <field name="name">RAK OPD</field>
+            <field name="type_">Medical</field>
+            <field name="code">RAKOPD</field>
+            <field name="institution" ref="center_hospital" />
+            <field name="establishment" ref="establishment9" />
+
+        </record>
+        <record id="institution330" model="company.department">
+            <field name="name">NEW PRIVATE WARD X-RAY</field>
+            <field name="type_">Medical</field>
+            <field name="code">NPRVTWRDRAU</field>
+            <field name="institution" ref="center_hospital" />
+            <field name="establishment" ref="establishment9" />
+
+        </record>
+        <record id="institution331" model="company.department">
+            <field name="name">ORBO</field>
+            <field name="type_">Medical</field>
+            <field name="code">ORBO</field>
+            <field name="institution" ref="center_hospital" />
+            <field name="establishment" ref="establishment9" />
+
+        </record>
+        <record id="institution332" model="company.department">
+            <field name="name">Lab. Medicine</field>
+            <field name="type_">Medical</field>
+            <field name="code">LABMEDI</field>
+            <field name="institution" ref="center_hospital" />
+            <field name="establishment" ref="establishment9" />
+
+        </record>
+        <record id="institution333" model="company.department">
+            <field name="name">MSW Unit</field>
+            <field name="type_">Medical</field>
+            <field name="code">MSWUNIT</field>
+            <field name="institution" ref="center_hospital" />
+            <field name="establishment" ref="establishment9" />
+
+        </record>
+        <record id="institution334" model="company.department">
+            <field name="name">Paediatrics</field>
+            <field name="type_">Medical</field>
+            <field name="code">PAEDIAT</field>
+            <field name="institution" ref="center_hospital" />
+            <field name="establishment" ref="establishment9" />
+
+        </record>
+        <record id="institution335" model="company.department">
+            <field name="name">Obst &amp; Gynaecology</field>
+            <field name="type_">Medical</field>
+            <field name="code">OBSTGYNE</field>
+            <field name="institution" ref="center_hospital" />
+            <field name="establishment" ref="establishment9" />
+
+        </record>
+        <record id="institution336" model="company.department">
+            <field name="name">Orthopaedics OT</field>
+            <field name="type_">Medical</field>
+            <field name="code">ORTHOOT</field>
+            <field name="institution" ref="center_hospital" />
+            <field name="establishment" ref="establishment9" />
+
+        </record>
+        <record id="institution337" model="company.department">
+            <field name="name">Urology OT</field>
+            <field name="type_">Medical</field>
+            <field name="code">UROLOGYOT</field>
+            <field name="institution" ref="center_hospital" />
+            <field name="establishment" ref="establishment9" />
+
+        </record>
+        <record id="institution338" model="company.department">
+            <field name="name">Maternity OT</field>
+            <field name="type_">Medical</field>
+            <field name="code">METEROT</field>
+            <field name="institution" ref="center_hospital" />
+            <field name="establishment" ref="establishment9" />
+
+        </record>
+        <record id="institution339" model="company.department">
+            <field name="name">Jhajjar OPD</field>
+            <field name="type_">Medical</field>
+            <field name="code">JHAJROPD</field>
+            <field name="institution" ref="center_hospital" />
+            <field name="establishment" ref="establishment9" />
+
+        </record>
+        <record id="institution340" model="company.department">
+            <field name="name">Trilokpuri</field>
+            <field name="type_">Non-Medical</field>
+            <field name="code">TRILOKPURI</field>
+            <field name="institution" ref="center_hospital" />
+            <field name="establishment" ref="establishment9" />
+
+        </record>
+        <record id="institution341" model="company.department">
+            <field name="name">ECG Lab</field>
+            <field name="type_">Medical</field>
+            <field name="code">ECGLAB</field>
+            <field name="institution" ref="center_hospital" />
+            <field name="establishment" ref="establishment9" />
+
+        </record>
+        <record id="institution342" model="company.department">
+            <field name="name">PMR</field>
+            <field name="type_">Medical</field>
+            <field name="code">PMR</field>
+            <field name="institution" ref="center_hospital" />
+            <field name="establishment" ref="establishment9" />
+
+        </record>
+        <record id="institution343" model="company.department">
+            <field name="name">HDCC</field>
+            <field name="type_">Non-Medical</field>
+            <field name="code">HDCC</field>
+            <field name="institution" ref="center_hospital" />
+            <field name="establishment" ref="establishment9" />
+
+        </record>
+        <record id="institution344" model="company.department">
+            <field name="name">C2 ICU</field>
+            <field name="type_">Medical</field>
+            <field name="code">C2ICU</field>
+            <field name="institution" ref="center_hospital" />
+            <field name="establishment" ref="establishment9" />
+
+        </record>
+        <record id="institution345" model="company.department">
+            <field name="name">RELIEVER</field>
+            <field name="type_">Non-Medical</field>
+            <field name="code">RELIEVR</field>
+            <field name="institution" ref="center_hospital" />
+            <field name="establishment" ref="establishment9" />
+
+        </record>
+        <record id="institution346" model="company.department">
+            <field name="name">CSSD</field>
+            <field name="type_">Non-Medical</field>
+            <field name="code">CSSD</field>
+            <field name="institution" ref="center_hospital" />
+            <field name="establishment" ref="establishment9" />
+
+        </record>
+        <record id="institution347" model="company.department">
+            <field name="name">SET Facility</field>
+            <field name="type_">Non-Medical</field>
+            <field name="code">SETFACILITY</field>
+            <field name="institution" ref="center_hospital" />
+            <field name="establishment" ref="establishment9" />
+
+        </record>
+        <record id="institution348" model="company.department">
+            <field name="name">Research Section</field>
+            <field name="type_">Non-Medical</field>
+            <field name="code">RESERSECTION</field>
+            <field name="institution" ref="center_hospital" />
+            <field name="establishment" ref="establishment9" />
+
+        </record>
+	<record id="institution355" model="company.department">
+            <field name="name">Emergency Medicine</field>
+            <field name="type_">Medical</field>
+            <field name="code">EMRGMED</field>
+            <field name="institution" ref="center_hospital" />
+            <field name="establishment" ref="establishment9" />
+
+        </record>
+	<record id="institution356" model="company.department">
+            <field name="name">PM House</field>
+            <field name="type_">Non-Medical</field>
+            <field name="code">PMHOU</field>
+            <field name="institution" ref="center_hospital" />
+            <field name="establishment" ref="establishment9" />
+
+        </record>
+    </data>
+</tryton>

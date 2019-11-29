@@ -1,0 +1,156 @@
+<?xml version="1.0"?>
+<tryton>
+    <data>
+    
+
+        <record id="form_employee_designation" model="ir.ui.view">
+            <field name="name">form_employee_designation</field>
+            <field name="model">employee.designation</field>
+            <field name="inherit" ref="hr.form_designation_view" />
+        </record>
+
+        <!-- Tree View-->
+        <record id="tree_AparFormTemplate_view" model="ir.ui.view">
+            <field name="name">tree_AparFormTemplate</field>
+            <field name="model">apar.form.template</field>
+            <field name="type">tree</field>
+        </record>
+
+        <!-- Form View -->
+        <record id="form_AparFormTemplate_view" model="ir.ui.view">
+            <field name="name">form_AparFormTemplate</field>
+            <field name="model">apar.form.template</field>
+            <field name="type">form</field>
+        </record>
+        <!-- Tree View-->
+        <record id="tree_AparFormTemplatePart_view" model="ir.ui.view">
+            <field name="name">tree_AparFormTemplatePart</field>
+            <field name="model">apar.form.template.part</field>
+            <field name="type">tree</field>
+        </record>
+
+        <!-- Form View -->
+        <record id="form_AparFormTemplatePart_view" model="ir.ui.view">
+            <field name="name">form_AparFormTemplatePart</field>
+            <field name="model">apar.form.template.part</field>
+            <field name="type">form</field>
+        </record>
+
+        <!-- Tree View-->
+        <record id="tree_AparFormTemplateQuestion_view" model="ir.ui.view">
+            <field name="name">tree_AparFormTemplateQuestion</field>
+            <field name="model">apar.form.template.question</field>
+            <field name="type">tree</field>
+        </record>
+
+        <!-- Form View -->
+        <record id="form_AparFormTemplateQuestion_view" model="ir.ui.view">
+            <field name="name">form_AparFormTemplateQuestion</field>
+            <field name="model">apar.form.template.question</field>
+            <field name="type">form</field>
+        </record>
+
+        <!-- Form View -->
+        <record id="form_AparFormTemplateConfiguration_view" model="ir.ui.view">
+            <field name="name">form_AparFormTemplateConfiguration</field>
+            <field name="model">apar.form.template.configuration</field>
+            <field name="type">form</field>
+        </record>
+        <!-- Tree View-->
+        <record id="tree_AparFormTemplateSection_view" model="ir.ui.view">
+            <field name="name">tree_AparFormTemplateSection</field>
+            <field name="model">apar.form.template.section</field>
+            <field name="type">tree</field>
+        </record>
+
+        <!-- Form View -->
+        <record id="form_AparFormTemplateSection_view" model="ir.ui.view">
+            <field name="name">form_AparFormTemplateSection</field>
+            <field name="model">apar.form.template.section</field>
+            <field name="type">form</field>
+        </record>
+
+        <!--Action-->
+        <record id="act_apar_form_template" model="ir.action.act_window">
+            <field name="name">Templates</field>
+            <field name="res_model">apar.form.template</field>
+        </record>
+
+        <record id="act_apar_form_template_part" model="ir.action.act_window">
+            <field name="name">Parts</field>
+            <field name="res_model">apar.form.template.part</field>
+        </record>
+
+        <record id="act_apar_form_template_section" model="ir.action.act_window">
+            <field name="name">Sections</field>
+            <field name="res_model">apar.form.template.section</field>
+        </record>
+
+        <record id="act_apar_form_template_question" model="ir.action.act_window">
+            <field name="name">Questions</field>
+            <field name="res_model">apar.form.template.question</field>
+        </record>
+
+        <record id="act_apar_form_template_configuration" model="ir.action.act_window">
+            <field name="name">Configuration</field>
+            <field name="res_model">apar.form.template.configuration</field>
+        </record>
+
+        <!--Action link to tree-->
+        <record id="act_tree_view_AparFormTemplate" model="ir.action.act_window.view">
+            <field name="view" ref="tree_AparFormTemplate_view"/>
+            <field name="act_window" ref="act_apar_form_template"/>
+            <field name="sequence" eval="10"/>
+        </record>
+
+        <record id="act_tree_view_AparFormTemplatePart" model="ir.action.act_window.view">
+            <field name="view" ref="tree_AparFormTemplatePart_view"/>
+            <field name="act_window" ref="act_apar_form_template_part"/>
+            <field name="sequence" eval="10"/>
+        </record>
+
+        <record id="act_tree_view_AparFormTemplateSection" model="ir.action.act_window.view">
+            <field name="view" ref="tree_AparFormTemplateSection_view"/>
+            <field name="act_window" ref="act_apar_form_template_section"/>
+            <field name="sequence" eval="10"/>
+        </record>
+
+        <record id="act_tree_view_AparFormTemplateQuestion" model="ir.action.act_window.view">
+            <field name="view" ref="tree_AparFormTemplateQuestion_view"/>
+            <field name="act_window" ref="act_apar_form_template_question"/>
+            <field name="sequence" eval="10"/>
+        </record>
+
+        <!--Action link to form-->
+        <record id="act_form_view_AparFormTemplate" model="ir.action.act_window.view">
+            <field name="view" ref="form_AparFormTemplate_view"/>
+            <field name="act_window" ref="act_apar_form_template"/>
+            <field name="sequence" eval="20"/>
+        </record>
+
+        <record id="act_form_view_AparFormTemplatePart" model="ir.action.act_window.view">
+            <field name="view" ref="form_AparFormTemplatePart_view"/>
+            <field name="act_window" ref="act_apar_form_template_part"/>
+            <field name="sequence" eval="20"/>
+        </record>
+
+        <record id="act_form_view_AparFormTemplateSection" model="ir.action.act_window.view">
+            <field name="view" ref="form_AparFormTemplateSection_view"/>
+            <field name="act_window" ref="act_apar_form_template_section"/>
+            <field name="sequence" eval="20"/>
+        </record>
+
+        <record id="act_form_view_AparFormTemplateConfiguration" model="ir.action.act_window.view">
+            <field name="view" ref="form_AparFormTemplateConfiguration_view"/>
+            <field name="act_window" ref="act_apar_form_template_configuration"/>
+            <field name="sequence" eval="20"/>
+        </record>
+
+        <record id="act_form_view_AparFormTemplateQuestion" model="ir.action.act_window.view">
+            <field name="view" ref="form_AparFormTemplateQuestion_view"/>
+            <field name="act_window" ref="act_apar_form_template_question"/>
+            <field name="sequence" eval="20"/>
+        </record>
+
+    </data>
+</tryton>

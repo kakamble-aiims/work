@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+
+<tryton>
+    <data>
+
+        <record model="health.establishment" id="establishment1">
+            <field name="name">Main AIIMS</field>
+            <field name="center" ref="center_main_aiims"/>
+        </record>
+
+        <record model="health.establishment" id="establishment2">
+            <field name="name">Centre for Dental Education and Research</field>
+            <field name="center" ref="center_cder"/>
+        </record>
+        <record model="health.establishment" id="establishment3">
+            <field name="name">Dr. BR Ambedkar Institute Rotary Cancer Hospital</field>
+            <field name="center" ref="center_irch"/>
+        </record>
+        <record model="health.establishment" id="establishment4">
+            <field name="name">Dr. Rajendra Prasad Centre For Ophthalmic Science</field>
+            <field name="center" ref="center_rpc"/>
+        </record>
+        <record model="health.establishment" id="establishment5">
+            <field name="name">Jai Prakash Narayan Apex Trauma Center</field>
+            <field name="center" ref="center_jpnatc"/>
+        </record>
+        <record model="health.establishment" id="establishment6">
+            <field name="name">Comprehensive Rural Health Services Project, Ballabhgarh</field>
+            <field name="center" ref="center_ballabhgarh"/>
+        </record>
+        <record model="health.establishment" id="establishment7">
+            <field name="name">National Drug Dependence Treatment Centre</field>
+            <field name="center" ref="center_nddtc"/>
+        </record>
+        <record model="health.establishment" id="establishment8">
+            <field name="name">Cadiothoriac and Neuroscience Center</field>
+            <field name="center" ref="center_cnc"/>
+        </record>
+        <record model="health.establishment" id="establishment9">
+            <field name="name">Hospital</field>
+            <field name="center" ref="center_hospital"/>
+        </record>
+
+
+    </data>
+</tryton>

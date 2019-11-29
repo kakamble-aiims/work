@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<tryton>
+    <data>
+        <menuitem id="menu_estate" name="Estate"/>
+
+        <record id="form_allotment_view" model="ir.ui.view">
+            <field name="model">estate.allotment</field>
+            <field name="name">form_allotment</field>
+            <field name="type">form</field>
+        </record>
+        <record id="tree_allotment_view" model="ir.ui.view">
+            <field name="model">estate.allotment</field>
+            <field name="name">tree_allotment</field>
+            <field name="type">tree</field>
+        </record>
+        <record id="tree_quarter_type_view" model="ir.ui.view">
+            <field name="model">estate.quarter_type</field>
+            <field name="name">tree_quarter_type</field>
+            <field name="type">tree</field>
+        </record>
+        <record id="form_quarter_type_view" model="ir.ui.view">
+            <field name="model">estate.quarter_type</field>
+            <field name="name">form_quarter_type</field>
+            <field name="type">form</field>
+        </record>
+
+        <record id="action_estate_allotment" model="ir.action.act_window">
+            <field name="name">Allotment</field>
+            <field name="res_model">estate.allotment</field>
+        </record>
+
+        <record id="act_estate_form_allotment" model="ir.action.act_window.view">
+            <field name="act_window" ref="action_estate_allotment"/>
+            <field name="view" ref="form_allotment_view"/>
+            <field name="sequence">20</field>
+        </record>
+
+        <record id="act_estate_tree_allotment" model="ir.action.act_window.view">
+            <field name="act_window" ref="action_estate_allotment"/>
+            <field name="view" ref="tree_allotment_view"/>
+            <field name="sequence">10</field>
+        </record>
+
+        <menuitem id="menu_estate_allotment" name="Allotment" parent="menu_estate" action="action_estate_allotment"/>
+    </data>
+</tryton>

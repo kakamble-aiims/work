@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+
+<form>
+    <label name="salary_code"/>
+    <field name="salary_code"/>
+    <label name="account_no"/>
+    <field name="account_no"/>
+    <label name="employee"/>
+    <field name="employee"/>
+    <label name="designation"/>
+    <field name="designation"/>
+    <label name="date"/>
+    <field name="date"/>
+    <label name="employee_group"/>
+    <field name="employee_group"/>
+    <label name="imbursement"/>
+    <field name="imbursement"/>
+    <label name="state"/>
+    <field name="state"/>
+    <button colspan="2" name="submit" string="Submit"/>
+    <button colspan="2" name="cancel" string="Cancel"/>
+    <button colspan="2" name="approve" string="Approve"/>
+
+</form>

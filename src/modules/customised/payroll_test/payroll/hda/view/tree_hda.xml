@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<tree>
+    <field name="salary_code"/>
+    <field name="employee"/>
+    <field name="designation"/>
+    <field name="department"/>
+    <field name="hda_amount"/>
+     <field name="state"/>
+    <!-- <field name="qualification"/> -->
+    
+</tree>

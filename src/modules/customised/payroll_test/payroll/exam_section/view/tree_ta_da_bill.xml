@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<tree>
+    <field name="employee"/>
+    <field name="exam"/>
+    <field name="designation"/>
+    <field name="department"/>
+    <field name="submit_date"/>
+    <field name="approved_date"/>
+    <field name="total_amount"/>
+    <field name="state"/>
+</tree>

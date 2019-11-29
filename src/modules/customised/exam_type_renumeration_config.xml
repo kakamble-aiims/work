@@ -1,0 +1,353 @@
+<?xml version="1.0"?>
+<tryton>
+    <data>
+        <record id="" model="exam_section.exam_type.renumeration">
+            <field name="name">Evaluation of thesis</field>
+            <field name="code"></field>
+            <field name="type_pay">fix</field>
+            <field name="type_amount_fix">1500</field>
+            <field name="condition_pay"></field>
+            <field name="employee_group"></field>
+            <field name="max_range"></field>
+            <field name="min_range"></field>
+            <field name="is_external"></field>
+            <field name="exam_type"></field>
+        </record>
+        <record id="" model="exam_section.exam_type.renumeration">
+            <field name="name">For Oral/Practical/Clinical/Viva Voce Examination</field>
+            <field name="code"></field>
+            <field name="type_pay"></field>
+            <field name="type_amount_fix"></field>
+            <field name="condition_pay"></field>
+            <field name="employee_group"></field>
+            <field name="max_range">6000</field>
+            <field name="min_range">3000</field>
+            <field name="is_external"></field>
+            <field name="exam_type"></field>
+        </record>
+        <record id="" model="exam_section.exam_type.renumeration">
+            <field name="name">Professional Exam(Theory)</field>
+            <field name="code"></field>
+            <field name="type_pay"></field>
+            <field name="type_amount_fix"></field>
+            <field name="condition_pay"></field>
+            <field name="employee_group"></field>
+            <field name="max_range"></field>
+            <field name="min_range"></field>
+            <field name="is_external"></field>
+            <field name="exam_type"></field>
+        </record>
+        <record id="" model="exam_section.exam_type.renumeration">
+            <field name="name">Setting of Question Paper</field>
+            <field name="code"></field>
+            <field name="type_pay">fix</field>
+            <field name="type_amount_fix">750</field>
+            <field name="condition_pay"></field>
+            <field name="employee_group"></field>
+            <field name="max_range"></field>
+            <field name="min_range"></field>
+            <field name="is_external"></field>
+            <field name="exam_type"></field>
+        </record>
+        <record id="" model="exam_section.exam_type.renumeration">
+            <field name="name">Evaluation of answer sheets and conduct of Practical/Clinical/Viva Voce Examination</field>
+            <field name="code"></field>
+            <field name="type_pay">fix</field>
+            <field name="type_amount_fix">75</field>
+            <field name="condition_pay"></field>
+            <field name="employee_group"></field>
+            <field name="max_range"></field>
+            <field name="min_range">750</field>
+            <field name="is_external"></field>
+            <field name="exam_type"></field>
+        </record>
+        <record id="" model="exam_section.exam_type.renumeration">
+            <field name="name">Supritendent</field>
+            <field name="code"></field>
+            <field name="type_pay">fix</field>
+            <field name="type_amount_fix">4500</field>
+            <field name="condition_pay"></field>
+            <field name="employee_group">A</field>
+            <field name="max_range"></field>
+            <field name="min_range"></field>
+            <field name="is_external"></field>
+            <field name="exam_type"></field>
+        </record>
+        <record id="" model="exam_section.exam_type.renumeration">
+            <field name="name">Assistant Supritendent</field>
+            <field name="code"></field>
+            <field name="type_pay"></field>
+            <field name="type_amount_fix">fix</field>
+            <field name="condition_pay">3000</field>
+            <field name="employee_group"></field>
+            <field name="max_range"></field>
+            <field name="min_range"></field>
+            <field name="is_external"></field>
+            <field name="exam_type"></field>
+        </record>
+        <record id="" model="exam_section.exam_type.renumeration">
+            <field name="name">Administrative Staff</field>
+            <field name="code"></field>
+            <field name="type_pay">fix</field>
+            <field name="type_amount_fix">2700</field>
+            <field name="condition_pay"></field>
+            <field name="employee_group"></field>
+            <field name="max_range"></field>
+            <field name="min_range"></field>
+            <field name="is_external"></field>
+            <field name="exam_type"></field>
+        </record>
+        <record id="" model="exam_section.exam_type.renumeration">
+            <field name="name">Inivgilator</field>
+            <field name="code"></field>
+            <field name="type_pay">fix</field>
+            <field name="type_amount_fix">900</field>
+            <field name="condition_pay"></field>
+            <field name="employee_group"></field>
+            <field name="max_range"></field>
+            <field name="min_range"></field>
+            <field name="is_external"></field>
+            <field name="exam_type"></field>
+        </record>
+        <record id="" model="exam_section.exam_type.renumeration">
+            <field name="name">Electrician, Sweeper, etc</field>
+            <field name="code"></field>
+            <field name="type_pay">fix</field>
+            <field name="type_amount_fix">450</field>
+            <field name="condition_pay"></field>
+            <field name="employee_group"></field>
+            <field name="max_range"></field>
+            <field name="min_range"></field>
+            <field name="is_external"></field>
+            <field name="exam_type"></field>
+        </record>
+        <record id="" model="exam_section.exam_type.renumeration">
+            <field name="name">Frisking personnel</field>
+            <field name="code"></field>
+            <field name="type_pay">fix</field>
+            <field name="type_amount_fix">900</field>
+            <field name="condition_pay"></field>
+            <field name="employee_group"></field>
+            <field name="max_range"></field>
+            <field name="min_range"></field>
+            <field name="is_external"></field>
+            <field name="exam_type"></field>
+        </record>
+        <record id="" model="exam_section.exam_type.renumeration">
+            <field name="name">Refreshment</field>
+            <field name="code"></field>
+            <field name="type_pay">fix</field>
+            <field name="type_amount_fix">30</field>
+            <field name="condition_pay"></field>
+            <field name="employee_group"></field>
+            <field name="max_range"></field>
+            <field name="min_range"></field>
+            <field name="is_external"></field>
+            <field name="exam_type"></field>
+        </record>
+        <record id="" model="exam_section.exam_type.renumeration">
+            <field name="name">Hiring School</field>
+            <field name="code"></field>
+            <field name="type_pay">fix</field>
+            <field name="type_amount_fix">30</field>
+            <field name="condition_pay"></field>
+            <field name="employee_group"></field>
+            <field name="max_range"></field>
+            <field name="min_range"></field>
+            <field name="is_external"></field>
+            <field name="exam_type"></field>
+        </record>
+        <record id="" model="exam_section.exam_type.renumeration">
+            <field name="name">Officer In-Charge</field>
+            <field name="code"></field>
+            <field name="type_pay"></field>
+            <field name="type_amount_fix"></field>
+            <field name="condition_pay"></field>
+            <field name="employee_group"></field>
+            <field name="max_range">4500</field>
+            <field name="min_range"></field>
+            <field name="is_external"></field>
+            <field name="exam_type"></field>
+        </record>
+        <record id="" model="exam_section.exam_type.renumeration">
+            <field name="name">Assistant Officer In-Charge</field>
+            <field name="code"></field>
+            <field name="type_pay"></field>
+            <field name="type_amount_fix"></field>
+            <field name="condition_pay"></field>
+            <field name="employee_group"></field>
+            <field name="max_range">3750</field>
+            <field name="min_range"></field>
+            <field name="is_external"></field>
+            <field name="exam_type"></field>
+        </record>
+        <record id="" model="exam_section.exam_type.renumeration">
+            <field name="name"></field>
+            <field name="code"></field>
+            <field name="type_pay"></field>
+            <field name="type_amount_fix"></field>
+            <field name="condition_pay"></field>
+            <field name="employee_group"></field>
+            <field name="max_range"></field>
+            <field name="min_range"></field>
+            <field name="is_external"></field>
+            <field name="exam_type"></field>
+        </record>
+        <record id="" model="exam_section.exam_type.renumeration">
+            <field name="name"></field>
+            <field name="code"></field>
+            <field name="type_pay"></field>
+            <field name="type_amount_fix"></field>
+            <field name="condition_pay"></field>
+            <field name="employee_group"></field>
+            <field name="max_range"></field>
+            <field name="min_range"></field>
+            <field name="is_external"></field>
+            <field name="exam_type"></field>
+        </record>
+        <record id="" model="exam_section.exam_type.renumeration">
+            <field name="name"></field>
+            <field name="code"></field>
+            <field name="type_pay"></field>
+            <field name="type_amount_fix"></field>
+            <field name="condition_pay"></field>
+            <field name="employee_group"></field>
+            <field name="max_range"></field>
+            <field name="min_range"></field>
+            <field name="is_external"></field>
+            <field name="exam_type"></field>
+        </record>
+        <record id="" model="exam_section.exam_type.renumeration">
+            <field name="name"></field>
+            <field name="code"></field>
+            <field name="type_pay"></field>
+            <field name="type_amount_fix"></field>
+            <field name="condition_pay"></field>
+            <field name="employee_group"></field>
+            <field name="max_range"></field>
+            <field name="min_range"></field>
+            <field name="is_external"></field>
+            <field name="exam_type"></field>
+        </record>
+        <record id="" model="exam_section.exam_type.renumeration">
+            <field name="name"></field>
+            <field name="code"></field>
+            <field name="type_pay"></field>
+            <field name="type_amount_fix"></field>
+            <field name="condition_pay"></field>
+            <field name="employee_group"></field>
+            <field name="max_range"></field>
+            <field name="min_range"></field>
+            <field name="is_external"></field>
+            <field name="exam_type"></field>
+        </record>
+        <record id="" model="exam_section.exam_type.renumeration">
+            <field name="name"></field>
+            <field name="code"></field>
+            <field name="type_pay"></field>
+            <field name="type_amount_fix"></field>
+            <field name="condition_pay"></field>
+            <field name="employee_group"></field>
+            <field name="max_range"></field>
+            <field name="min_range"></field>
+            <field name="is_external"></field>
+            <field name="exam_type"></field>
+        </record>
+        <record id="" model="exam_section.exam_type.renumeration">
+            <field name="name"></field>
+            <field name="code"></field>
+            <field name="type_pay"></field>
+            <field name="type_amount_fix"></field>
+            <field name="condition_pay"></field>
+            <field name="employee_group"></field>
+            <field name="max_range"></field>
+            <field name="min_range"></field>
+            <field name="is_external"></field>
+            <field name="exam_type"></field>
+        </record>
+        <record id="" model="exam_section.exam_type.renumeration">
+            <field name="name"></field>
+            <field name="code"></field>
+            <field name="type_pay"></field>
+            <field name="type_amount_fix"></field>
+            <field name="condition_pay"></field>
+            <field name="employee_group"></field>
+            <field name="max_range"></field>
+            <field name="min_range"></field>
+            <field name="is_external"></field>
+            <field name="exam_type"></field>
+        </record>
+        <record id="" model="exam_section.exam_type.renumeration">
+            <field name="name"></field>
+            <field name="code"></field>
+            <field name="type_pay"></field>
+            <field name="type_amount_fix"></field>
+            <field name="condition_pay"></field>
+            <field name="employee_group"></field>
+            <field name="max_range"></field>
+            <field name="min_range"></field>
+            <field name="is_external"></field>
+            <field name="exam_type"></field>
+        </record>
+        <record id="" model="exam_section.exam_type.renumeration">
+            <field name="name"></field>
+            <field name="code"></field>
+            <field name="type_pay"></field>
+            <field name="type_amount_fix"></field>
+            <field name="condition_pay"></field>
+            <field name="employee_group"></field>
+            <field name="max_range"></field>
+            <field name="min_range"></field>
+            <field name="is_external"></field>
+            <field name="exam_type"></field>
+        </record>
+        <record id="" model="exam_section.exam_type.renumeration">
+            <field name="name"></field>
+            <field name="code"></field>
+            <field name="type_pay"></field>
+            <field name="type_amount_fix"></field>
+            <field name="condition_pay"></field>
+            <field name="employee_group"></field>
+            <field name="max_range"></field>
+            <field name="min_range"></field>
+            <field name="is_external"></field>
+            <field name="exam_type"></field>
+        </record>
+        <record id="" model="exam_section.exam_type.renumeration">
+            <field name="name"></field>
+            <field name="code"></field>
+            <field name="type_pay"></field>
+            <field name="type_amount_fix"></field>
+            <field name="condition_pay"></field>
+            <field name="employee_group"></field>
+            <field name="max_range"></field>
+            <field name="min_range"></field>
+            <field name="is_external"></field>
+            <field name="exam_type"></field>
+        </record>
+        <record id="" model="exam_section.exam_type.renumeration">
+            <field name="name"></field>
+            <field name="code"></field>
+            <field name="type_pay"></field>
+            <field name="type_amount_fix"></field>
+            <field name="condition_pay"></field>
+            <field name="employee_group"></field>
+            <field name="max_range"></field>
+            <field name="min_range"></field>
+            <field name="is_external"></field>
+            <field name="exam_type"></field>
+        </record>
+        <record id="" model="exam_section.exam_type.renumeration">
+            <field name="name"></field>
+            <field name="code"></field>
+            <field name="type_pay"></field>
+            <field name="type_amount_fix"></field>
+            <field name="condition_pay"></field>
+            <field name="employee_group"></field>
+            <field name="max_range"></field>
+            <field name="min_range"></field>
+            <field name="is_external"></field>
+            <field name="exam_type"></field>
+        </record>
+    </data>
+</tryton>

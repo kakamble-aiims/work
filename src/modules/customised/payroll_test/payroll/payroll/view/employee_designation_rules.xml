@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<data>
+    <!-- position = after, before, inside, replace-->
+    <xpath expr="/form/field[@name='group']" position="after">
+       <!-- <notebook colspan="6">
+            <page id="_salary_rules_designation" string="Salary Rules"> -->
+        <field name="salary_rules_designation" view_ids="payroll.tree_salary_rules_designation_view" colspan="6"/>
+            <!-- </page>
+        </notebook> -->
+    </xpath>
+    
+    
+</data>

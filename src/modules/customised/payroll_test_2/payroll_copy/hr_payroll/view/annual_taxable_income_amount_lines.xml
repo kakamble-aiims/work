@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+	<tree>
+		<field name="month"/>
+		<field name="year"/>
+        <field name="amount"/>
+		<field name="state"/>
+	</tree>

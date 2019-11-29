@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<tryton>
+    <data>
+        <record id="hr_rule_arrear" model="hr.salary.rule">
+            <field name="name">Arrear Allowance</field>
+            <field name="priority" eval="1000"/>
+            <field name="code">Arrear</field>
+            <field name="category" ref="hr_payroll.salaryrule_alw"/>
+            <field name="condition_select">python_code</field>
+            <field name="amount_select">code</field>
+        </record>
+    </data>    
+</tryton>    

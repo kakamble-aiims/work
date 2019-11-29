@@ -1,0 +1,134 @@
+<?xml version="1.0"?>
+
+<tryton>
+    <data>
+        <!-- Form View -->
+        <record id="form_icu_view" model="ir.ui.view">
+            <field name="name">form_icu</field>
+            <field name="model">hr.allowance.icu</field>
+            <field name="type">form</field>
+        </record>
+
+        <!-- Tree View -->
+        <record id="tree_icu_view" model="ir.ui.view">
+            <field name="name">tree_icu</field>
+            <field name="model">hr.allowance.icu</field>
+            <field name="type">tree</field>
+        </record>
+
+        <!-- Action -->
+        <record id="action_icu" model="ir.action.act_window">
+            <field name="name">ICU Allowance</field>
+            <field name="res_model">hr.allowance.icu</field>
+        </record>
+
+        <!-- Link to Tree -->
+        <record id="act_icu_tree" model="ir.action.act_window.view">
+            <field name="act_window" ref="action_icu"/>
+            <field name="view" ref="tree_icu_view"/>
+            <field name="sequence" eval="10"/>
+        </record>
+
+        <!-- Link to Form -->
+        <record id="act_icu_form" model="ir.action.act_window.view">
+            <field name="act_window" ref="action_icu"/>
+            <field name="view" ref="form_icu_view"/>
+            <field name="sequence">20</field>
+        </record>
+
+        <!--ICU LIST -->
+        <record id="form_iculist_view" model="ir.ui.view">
+            <field name="name">form_iculist</field>
+            <field name="model">icu.list</field>
+            <field name="type">form</field>
+        </record>
+        <record id="tree_iculist_view" model="ir.ui.view">
+            <field name="name">tree_icu_list</field>
+            <field name="model">icu.list</field>
+            <field name="type">tree</field>
+        </record>
+
+        <!-- wiz class -->
+        <record id="form_wiz_icu_view" model="ir.ui.view">
+            <field name="name">form_wiz</field>
+            <field name="model">icu.employee.list</field>
+            <field name="type">form</field>
+        </record>
+        <record id="tree_wiz_icu_view" model="ir.ui.view">
+            <field name="name">tree_wiz</field>
+            <field name="model">company.employee</field>
+            <field name="type">tree</field>
+        </record>
+
+         <!--XML Record Wizard-->
+         <record id="act_wizard_icu_allowance_wizard" model="ir.action.wizard">
+            <field name="name">ICU Allowance</field>
+            <field name="wiz_name">icu.allowance.wiz</field>
+            <field name="window" eval="True"/>
+        </record>
+
+        <!-- Menu -->
+
+        <menuitem id="menu_icu_subitem_wiz" name="ICU Allowance" parent="hr_hra.menu_allowance" action="act_wizard_icu_allowance_wizard"/>
+
+        <!--Create the form and tree for the tabs-->
+        <record model="ir.ui.view" id="icu_view_form">
+            <field name="model">hr.allowance.icu</field>
+            <field name="type">form</field>
+            <field name="name">form_icu</field>
+        </record>
+        <record model="ir.ui.view" id="icu_view_tree">
+            <field name="model">hr.allowance.icu</field>
+            <field name="type">tree</field>
+            <field name="name">tree_icu</field>
+        </record>
+        <!--create the tabs on the tree view-->
+        <record model="ir.action.act_window.domain" id="act_icu_form_domain_draft">
+            <field name="name">Draft</field>
+            <field name="sequence" eval="10"/>
+            <field name="domain"
+                eval="[('state', '=', 'draft')]"
+                pyson="1"/>
+            <field name="count" eval="True"/>
+            <field name="act_window" ref="action_icu"/>
+        </record>
+        <record model="ir.action.act_window.domain" id="act_icu_form_domain_submit">
+            <field name="name">Submit</field>
+            <field name="sequence" eval="20"/>
+            <field name="domain"
+                eval="[('state', '=', 'submit')]"
+                pyson="1"/>
+            <field name="count" eval="True"/>
+            <field name="act_window" ref="action_icu"/>
+        </record>
+        <record model="ir.action.act_window.domain" id="act_icu_form_domain_cancel">
+            <field name="name">Cancel</field>
+            <field name="sequence" eval="40"/>
+            <field name="domain"
+                eval="[('state', '=', 'cancel')]"
+                pyson="1"/>
+            <field name="count" eval="True"/>
+            <field name="act_window" ref="action_icu"/>
+        </record>
+        <record model="ir.action.act_window.domain" id="act_icu_form_domain_cash_section_officer">
+            <field name="name">Cash section officer</field>
+            <field name="sequence" eval="30"/>
+            <field name="domain"
+                eval="[('state', '=', 'cash_section_officer')]"
+                pyson="1"/>
+            <field name="count" eval="True"/>
+            <field name="act_window" ref="action_icu"/>
+        </record>
+        <record model="ir.action.act_window.domain" id="act_icu_form_domain_approved">
+            <field name="name">Approve</field>
+            <field name="sequence" eval="50"/>
+            <field name="domain"
+                eval="[('state', '=', 'Approved')]"
+                pyson="1"/>
+            <field name="count" eval="True"/>
+            <field name="act_window" ref="action_icu"/>
+        </record>
+        <!-- Menu -->
+        <menuitem id="menu_icu_subitem" name="ICU Allowance" parent="hr_hra.menu_allowance" action="action_icu"/>
+    </data>
+</tryton>

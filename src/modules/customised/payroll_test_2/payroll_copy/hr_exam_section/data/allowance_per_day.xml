@@ -1,0 +1,21 @@
+<?xml version='1.0'?>
+<tryton>
+    <data>
+        <record id="ta_da_allowance_grp_a" model="exam_section.ta_da.allowance_per_day">
+            <field name="group">A</field>
+            <field name="rate">2250</field>
+        </record>
+        <record id="ta_da_allowance_grp_b" model="exam_section.ta_da.allowance_per_day">
+            <field name="group">B</field>
+            <field name="rate">1500</field>
+        </record>
+        <record id="ta_da_allowance_grp_c" model="exam_section.ta_da.allowance_per_day">
+            <field name="group">C</field>
+            <field name="rate">1050</field>
+        </record>
+        <record id="ta_da_allowance_grp_d" model="exam_section.ta_da.allowance_per_day">
+            <field name="group">D</field>
+            <field name="rate">600</field>
+        </record>
+    </data>
+</tryton>

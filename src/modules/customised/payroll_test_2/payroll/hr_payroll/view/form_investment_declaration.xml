@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+
+<form>
+    <label name="salary_code"/>
+    <field name="salary_code"/>
+    <label name="employee"/>
+    <field name="employee"/>
+    <label name="gender"/>
+    <field name="gender"/>
+    <label name="pan_number"/>
+    <field name="pan_number"/>
+    <label name="date_of_joining"/>
+    <field name="date_of_joining"/>
+    <label name="dob"/>
+    <field name="dob"/>
+    <label name="name"/>
+    <field name="name"/>
+    <label name="fiscal_year"/>
+    <field name="fiscal_year"/>
+    <label name="start_date"/>
+    <field name="start_date"/>
+    <label name="end_date"/>
+    <field name="end_date"/>
+    <label name="income_tax_assessment_year"/>
+    <field name="income_tax_assessment_year"/>
+    <label name="state"/>
+    <field name="state"/>
+    <newline/>
+    <notebook>
+        <page string="Investment Declaration" id="investment">
+            <field name="declaration_lines" colspan="4"/>
+            <group col="2" colspan="2" id="investment_declared" yfill="1">
+                <button name="calculate_net_tax_exempted" string="Calculate"/>
+                <field name="net_tax_exempted" xalign="1.0" xexpand="0"/>
+            </group>
+        </page>
+        <page string="Income Declaration" id="income">
+            <field name="income_declaration_lines" colspan="4"/>
+            <group col="2" colspan="2" id="income_declared" yfill="1">
+                <label name="total_income_declared" xalign="1.0" xexpand="1"/>
+                <field name="total_income_declared" xalign="1.0" xexpand="0"/>
+            </group>
+        </page>
+    </notebook>
+</form>

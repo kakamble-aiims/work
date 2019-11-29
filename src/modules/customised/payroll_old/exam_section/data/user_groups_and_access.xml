@@ -1,0 +1,206 @@
+<?xml version="1.0"?>
+<tryton>
+    <data>
+        <record model="res.group" id="group_admin_exam">
+            <field name="name">Administrator(Exam)</field>
+        </record>
+        <record model="res.group" id="group_admin_officer_exam">
+            <field name="name">Administrative Officer(Exam)</field>
+        </record>
+        <record model="res.group" id="group_asst_admin_officer_exam">
+            <field name="name">Assistant Administrative Officer(Exam)</field>
+        </record>
+        <record model="res.group" id="group_assistant_controller_exam">
+            <field name="name">Assistant Controller of Exam Section</field>
+        </record>
+        <record model="res.group" id="group_assistant_dean_exam">
+            <field name="name">Assistant Dean Examination Section</field>
+        </record>
+        <record model="res.group" id="group_dean_exam">
+            <field name="name">Dean Examination Section</field>
+        </record>
+        <record model="res.group" id="group_budget">
+            <field name="name">Budget Section</field>
+        </record>
+        <record model="res.group" id="group_cash">
+            <field name="name">Cash Section</field>
+        </record>
+        <record model="res.group" id="group_payee_officer">
+            <field name="name">Payee Officer</field>
+        </record>
+        
+        <record id="user_admin_exam" model="res.user-res.group">
+            <field name="user" ref="res.user_admin"/>
+            <field name="group" ref="group_admin_exam"/>
+        </record>
+        <record model="ir.ui.menu-res.group" id="exam_type_admin">
+            <field name="menu" ref="menu_exam_type"/>
+            <field name="group" ref="group_admin_exam"/>
+        </record>
+        <record model="ir.ui.menu-res.group" id="exam_type_ao">
+            <field name="menu" ref="menu_exam_type"/>
+            <field name="group" ref="group_admin_officer_exam"/>
+        </record>
+        <record model="ir.ui.menu-res.group" id="exam_type_aao">
+            <field name="menu" ref="menu_exam_type"/>
+            <field name="group" ref="group_asst_admin_officer_exam"/>
+        </record>
+        <record model="ir.ui.menu-res.group" id="exam_type_ace">
+            <field name="menu" ref="menu_exam_type"/>
+            <field name="group" ref="group_assistant_controller_exam"/>
+        </record>
+        <record model="ir.ui.menu-res.group" id="exam_type_ade">
+            <field name="menu" ref="menu_exam_type"/>
+            <field name="group" ref="group_assistant_dean_exam"/>
+        </record>
+        <record model="ir.ui.menu-res.group" id="exam_type_de">
+            <field name="menu" ref="menu_exam_type"/>
+            <field name="group" ref="group_dean_exam"/>
+        </record>
+
+        <record model="ir.ui.menu-res.group" id="exam_admin">
+            <field name="menu" ref="menu_exam"/>
+            <field name="group" ref="group_admin_exam"/>
+        </record>
+        <record model="ir.ui.menu-res.group" id="exam_ao">
+            <field name="menu" ref="menu_exam"/>
+            <field name="group" ref="group_admin_officer_exam"/>
+        </record>
+        <record model="ir.ui.menu-res.group" id="exam_aao">
+            <field name="menu" ref="menu_exam"/>
+            <field name="group" ref="group_asst_admin_officer_exam"/>
+        </record>
+        <record model="ir.ui.menu-res.group" id="exam_ace">
+            <field name="menu" ref="menu_exam"/>
+            <field name="group" ref="group_assistant_controller_exam"/>
+        </record>
+        <record model="ir.ui.menu-res.group" id="exam_ade">
+            <field name="menu" ref="menu_exam"/>
+            <field name="group" ref="group_assistant_dean_exam"/>
+        </record>
+        <record model="ir.ui.menu-res.group" id="exam_de">
+            <field name="menu" ref="menu_exam"/>
+            <field name="group" ref="group_dean_exam"/>
+        </record>
+        <record model="ir.ui.menu-res.group" id="exam_po">
+            <field name="menu" ref="menu_exam_employee"/>
+            <field name="group" ref="group_payee_officer"/>
+        </record>
+        
+        <record id="access_exam_ao" model="ir.model.access">
+            <field name="group" ref="group_admin_officer_exam"/>
+            <field name="model"
+                search="[('model', '=', 'exam_section.exam')]"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+        <record id="access_exam_aao" model="ir.model.access">
+            <field name="group" ref="group_asst_admin_officer_exam"/>
+            <field name="model"
+                search="[('model', '=', 'exam_section.exam')]"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+        <record id="access_exam_ace" model="ir.model.access">
+            <field name="group" ref="group_assistant_controller_exam"/>
+            <field name="model"
+                search="[('model', '=', 'exam_section.exam')]"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+        <record id="access_exam_ade" model="ir.model.access">
+            <field name="group" ref="group_assistant_dean_exam"/>
+            <field name="model"
+                search="[('model', '=', 'exam_section.exam')]"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+        <record id="access_exam_de" model="ir.model.access">
+            <field name="group" ref="group_dean_exam"/>
+            <field name="model"
+                search="[('model', '=', 'exam_section.exam')]"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+        <record id="access_exam_payee_officer" model="ir.model.access">
+            <field name="group" ref="group_payee_officer"/>
+            <field name="model"
+                search="[('model', '=', 'exam_section.exam')]"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+        <record id="access_ta_da_payee_officer" model="ir.model.access">
+            <field name="group" ref="group_payee_officer"/>
+            <field name="model"
+                search="[('model', '=', 'exam_section.ta_da_bill')]"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+        <record id="access_renumeration_payee_officer" 
+            model="ir.model.access">
+            <field name="group" ref="group_payee_officer"/>
+            <field name="model" 
+                search="[('model', '=', 'exam_section.renumeration_bill')]"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+
+        <record id="access_employees_payee_officer"
+            model="ir.model.access">
+            <field name="group" ref="group_payee_officer"/>
+            <field name="model"
+                search="[('model', '=', 'exam.employees')]"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+        <record id="exam_field_employees_payee_officer"
+            model="ir.model.field.access">
+            <field name="field" 
+                search="[('model.model', '=', 'exam.employees'), ('name', '=', 'exam')]"/>
+            <field name="group" ref="group_payee_officer"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>   
+        </record>
+        <record id="ta_da_bill_field_employees_payee_officer"
+            model="ir.model.field.access">
+            <field name="field" 
+                search="[('model.model', '=', 'exam.employees'), ('name', '=', 'ta_da_bill')]"/>
+            <field name="group" ref="group_payee_officer"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>   
+        </record>
+        <record model="ir.model.button"
+            id="button_confirm_ta_da">
+            <field name="name">confirm</field>
+            <field name="model"
+                search="[('model', '=', 'exam_section.ta_da_bill')]"/>
+        </record>
+        <record model="ir.model.button-res.group"
+            id="button_access_confirm_ta_da_payee_officer">
+            <field name="button" ref="button_confirm_ta_da"/>
+            <field name="group" ref="group_payee_officer"/>
+        </record>
+    </data>
+</tryton>

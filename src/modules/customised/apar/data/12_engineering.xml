@@ -1,0 +1,256 @@
+<?xml version="1.0"?>
+<tryton>
+    <data>
+
+        <record id="template_engineering" model="apar.form.template">
+            <field name="name">For Superintendent Engineer/ Executive Engineer/ Assistant Engineer</field>
+            <field name="form_number">12</field>
+        </record>
+
+        <record id="template_engineering_part2" model="apar.form.template.part">
+            <field name="name">Self Appraisal for the Year(To be filled by the Ratee Officer)</field>
+            <field name="number">2</field>
+            <field name="template" ref="template_engineering"/>
+            <field name="type_">self_appraisal</field>
+        </record>
+        <record id="template_engineering_part3" model="apar.form.template.part">
+            <field name="name">Appraisal(To be filled by Reporting Officer and To be reviewed by Reviewing Officer)</field>
+            <field name="number">3 and 4</field>
+            <field name="template" ref="template_engineering"/>
+            <field name="type_">appraisal</field>
+        </record>
+        <record id="template_engineering_part5" model="apar.form.template.part">
+            <field name="name">Review(To be filled by the Reviewing Officer)</field>
+            <field name="number">5</field>
+            <field name="template" ref="template_engineering"/>
+            <field name="type_">reviewing</field>
+        </record>
+        <record id="template_engineering_part6" model="apar.form.template.part">
+            <field name="name">Acceptance</field>
+            <field name="number">6</field>
+            <field name="template" ref="template_engineering"/>
+            <field name="type_">accepting</field>
+        </record>
+
+
+        <record id="section_engineering_1" model="apar.form.template.section">
+            <field name="name">Assessment of work output</field>
+            <field name="weightage">40</field>
+            <field name="number">3.1</field>
+            <field name="part" ref="template_engineering_part3"/>
+        </record>
+
+        <record id="section_engineering_2" model="apar.form.template.section">
+            <field name="name">Assessment of Personal Attributes</field>
+            <field name="weightage">30</field>
+            <field name="number">3.2</field>
+            <field name="part" ref="template_engineering_part3"/>
+        </record>
+        <record id="section_engineering_3" model="apar.form.template.section">
+            <field name="name">Assessment of functional Competency</field>
+            <field name="weightage">30</field>
+            <field name="number">3.3</field>
+            <field name="part" ref="template_engineering_part3"/>
+        </record>
+
+       <record id="template_engineering_question1" model="apar.form.template.question">
+            <field name="question_no">2.1</field>
+            <field name="name">Brief description of duties of post:</field>
+            <field name="part" ref="template_engineering_part2"/>
+        </record>
+<record id="template_engineering_question2" model="apar.form.template.question">
+            <field name="question_no">2.2</field>
+            <field name="name">Please specify the quantitative / physical / financial targets/ objectives &#xA; (8 to 10 items priority-wise / in order of importance) that were set for you and &#xA; your achievements against each targets.</field>
+            <field name="part" ref="template_engineering_part2"/>
+        </record>
+<record id="template_engineering_question3" model="apar.form.template.question">
+            <field name="question_no">2.3</field>
+            <field name="name">Please comment briefly on your achievements with reference to targets/objectives &#xA; referred to in column 2.2. Please also indicate significantly higher achievements &#xA; in relation to the targets and your contribution thereto.</field>
+            <field name="part" ref="template_engineering_part2"/>
+        </record>
+<record id="template_engineering_question4" model="apar.form.template.question">
+            <field name="question_no">2.4</field>
+            <field name="name">Please comment briefly on the shortfalls with reference to the targets referred to &#xA; in column. Please specify the constraints, if any, in achieving &#xA; the targets.</field>
+            <field name="part" ref="template_engineering_part2"/>
+        </record>
+<record id="template_engineering_question5" model="apar.form.template.question">
+            <field name="question_no">2.5a</field>
+            <field name="name">Have you filed your immovable property return as due. If yes, please mention date</field>
+            <field name="part" ref="template_engineering_part2"/>
+        </record>
+<record id="template_engineering_question6" model="apar.form.template.question">
+            <field name="question_no">2.5b</field>
+            <field name="name">Have you set the annual work plan for all officers for the current year, &#xA; in respect of whom you are thereporting authority?</field>
+            <field name="part" ref="template_engineering_part2"/>
+        </record>
+<record id="template_engineering_question7" model="apar.form.template.question">
+            <field name="question_no">2.5c</field>
+            <field name="name">Have you written the APAR of all officers in respect of whom you are the reporting authority?</field>
+            <field name="part" ref="template_engineering_part2"/>
+        </record>
+<record id="template_engineering_question8" model="apar.form.template.question">
+            <field name="question_no">2.6</field>
+            <field name="name">Any other additional and unforeseen assignments carried out/ Initiatives &#xA; under taken worth mentioning.</field>
+            <field name="part" ref="template_engineering_part2"/>
+        </record>
+<record id="template_engineering_question9" model="apar.form.template.question">
+            <field name="question_no">3</field>
+            <field name="name">Do you agree with the self appraisal of the officer with regard to targets &#xA; and achievements? Indicate reasons and extent of disagreement with &#xA; references to 3.1 below, if any.</field>
+            <field name="part" ref="template_engineering_part3"/>
+        </record>
+<record id="template_engineering_question10" model="apar.form.template.question">
+            <field name="question_no">4.1</field>
+            <field name="name">Integrity: Please comment on integrity of the employee.</field>
+            <field name="part" ref="template_engineering_part3"/>
+        </record>
+<record id="template_engineering_question11" model="apar.form.template.question">
+            <field name="question_no">4.3</field>
+            <field name="name">Pen Picture in about 70 words:</field>
+            <field name="part" ref="template_engineering_part3"/>
+        </record>
+<record id="template_engineering_question12" model="apar.form.template.question">
+            <field name="question_no">5.1</field>
+            <field name="name">Length of service under Reviewing Authority:</field>
+            <field name="part" ref="template_engineering_part5"/>
+        </record>
+<record id="template_engineering_question13" model="apar.form.template.question">
+            <field name="question_no">5.2</field>
+            <field name="name">Do you agree with assessment made by the Reporting Officer with respect to the &#xA; work output and various attributes in Part-III. In case you do not agree with any of the &#xA; numerical assessment or attitudes, please record your assessments &#xA; in column provided for in that Part and initial your entries.</field>
+            <field name="part" ref="template_engineering_part5"/>
+        </record>
+<record id="template_engineering_question14" model="apar.form.template.question">
+            <field name="question_no">5.3</field>
+            <field name="name">In case of difference of opinion details and reasons for the same may be given remarks</field>
+            <field name="part" ref="template_engineering_part5"/>
+        </record>
+<record id="template_engineering_question15" model="apar.form.template.question">
+            <field name="question_no">5.4</field>
+            <field name="name">Remarks/ Observation on the Pen Picture by the Reporting Officer:</field>
+            <field name="part" ref="template_engineering_part5"/>
+        </record>
+        <record id="template_engineering_question40" model="apar.form.template.question">
+            <field name="question_no">6.1</field>
+            <field name="name">Do you agree with the assessment made by the Reporting officer/ Reviewing officer and details of difference of opinion, if any, with reasons for the same. In such case, acceptance authority will also give overall grade on scale of 1 to 10:</field>
+            <field name="part" ref="template_engineering_part6"/>
+        </record>
+
+        <record id="template_engineering_question17" model="apar.form.template.question">
+            <field name="question_no">i</field>
+            <field name="name">Extent of accomplishment of planned work as per para 2.2 above</field>
+            <field name="section" ref="section_engineering_1"/>
+        </record>
+<record id="template_engineering_question18" model="apar.form.template.question">
+            <field name="question_no">ii</field>
+            <field name="name">Quality of Output</field>
+            <field name="section" ref="section_engineering_1"/>
+        </record>
+<record id="template_engineering_question19" model="apar.form.template.question">
+            <field name="question_no">iii</field>
+            <field name="name">Accomplishment of exceptional work/unforeseen tasks performed as para 2.6 above</field>
+            <field name="section" ref="section_engineering_1"/>
+        </record>
+<record id="template_engineering_question20" model="apar.form.template.question">
+            <field name="question_no">i</field>
+            <field name="name">Attitude to work</field>
+            <field name="section" ref="section_engineering_2"/>
+        </record>
+<record id="template_engineering_question21" model="apar.form.template.question">
+            <field name="question_no">ii</field>
+            <field name="name">Initiative, drive and resourcefulness</field>
+            <field name="section" ref="section_engineering_2"/>
+        </record>
+<record id="template_engineering_question22" model="apar.form.template.question">
+            <field name="question_no">iii</field>
+            <field name="name">Discipline</field>
+            <field name="section" ref="section_engineering_2"/>
+        </record>
+<record id="template_engineering_question23" model="apar.form.template.question">
+            <field name="question_no">iv</field>
+            <field name="name">Communication Skills</field>
+            <field name="section" ref="section_engineering_2"/>
+        </record>
+<record id="template_engineering_question24" model="apar.form.template.question">
+            <field name="question_no">v</field>
+            <field name="name">Capacity to work in team spirit</field>
+            <field name="section" ref="section_engineering_2"/>
+        </record>
+<record id="template_engineering_question25" model="apar.form.template.question">
+            <field name="question_no">vi</field>
+            <field name="name">Capacity to work in time schedule</field>
+            <field name="section" ref="section_engineering_2"/>
+        </record>
+<record id="template_engineering_question26" model="apar.form.template.question">
+            <field name="question_no">vii</field>
+            <field name="name">Inter-personal relations with clients and customers</field>
+            <field name="section" ref="section_engineering_2"/>
+        </record>
+<record id="template_engineering_question27" model="apar.form.template.question">
+            <field name="question_no">viii</field>
+            <field name="name">Dependability and willingness to take responsibility</field>
+            <field name="section" ref="section_engineering_2"/>
+        </record>
+<record id="template_engineering_question28" model="apar.form.template.question">
+            <field name="question_no">i</field>
+            <field name="name">Knowledge of Rules/Regulations/Procedures in the area of function and ability &#xA; to apply them effectively.</field>
+            <field name="section" ref="section_engineering_3"/>
+        </record>
+<record id="template_engineering_question29" model="apar.form.template.question">
+            <field name="question_no">ii</field>
+            <field name="name">Strategic planning ability</field>
+            <field name="section" ref="section_engineering_3"/>
+        </record>
+<record id="template_engineering_question30" model="apar.form.template.question">
+            <field name="question_no">iii</field>
+            <field name="name">Decision making ability</field>
+            <field name="section" ref="section_engineering_3"/>
+        </record>
+<record id="template_engineering_question31" model="apar.form.template.question">
+            <field name="question_no">iv</field>
+            <field name="name">Analytical ability</field>
+            <field name="section" ref="section_engineering_3"/>
+        </record>
+<record id="template_engineering_question32" model="apar.form.template.question">
+            <field name="question_no">v</field>
+            <field name="name">Coordination ability</field>
+            <field name="section" ref="section_engineering_3"/>
+        </record>
+<record id="template_engineering_question33" model="apar.form.template.question">
+            <field name="question_no">vi</field>
+            <field name="name">Ability to motivate and develop subordinates</field>
+            <field name="section" ref="section_engineering_3"/>
+        </record>
+<record id="template_engineering_question34" model="apar.form.template.question">
+            <field name="question_no">vii</field>
+            <field name="name">Executive Engineer: Knowledge and Proficiency in Planning and Designing, &#xA; Specification and Codes, Valuation, Vigilance Techniques &#xA; Architects: Practicability of design attention to maintenance problems etc., Creativity and originally for aesthetic, imaginative and innovative designs &#xA; Horticulture: &#xA; Landscaping and Designing flower shows, Horticulture Methodology</field>
+            <field name="section" ref="section_engineering_3"/>
+        </record>
+<record id="template_engineering_question35" model="apar.form.template.question">
+            <field name="question_no">viii</field>
+            <field name="name">Management organization and supervision of works</field>
+            <field name="section" ref="section_engineering_3"/>
+        </record>
+<record id="template_engineering_question36" model="apar.form.template.question">
+            <field name="question_no">ix</field>
+            <field name="name">Promptness in initiating extra substituted items, finalizing measurements, &#xA;test checks, recording completion certificate, responding to CTE’s observation &#xA; (N.A. for Architects)</field>
+            <field name="section" ref="section_engineering_3"/>
+        </record>
+
+        <record id="template_engineering_question37" model="apar.form.template.question">
+            <field name="question_no">4.2.1</field>
+            <field name="name">State of health</field>
+            <field name="part" ref="template_engineering_part3"/>
+        </record>
+<record id="template_engineering_question38" model="apar.form.template.question">
+            <field name="question_no">4.2.2</field>
+            <field name="name">Aptitude and towards weaker section and SC/ST/OBC.</field>
+            <field name="part" ref="template_engineering_part3"/>
+        </record>
+<record id="template_engineering_question39" model="apar.form.template.question">
+            <field name="question_no">4.2.3</field>
+            <field name="name">Aptitude and potential: please mention about the aptitude of the officer &#xA; and areas in which he/she has potential to develop along-with training needs.</field>
+            <field name="part" ref="template_engineering_part3"/>
+        </record>
+       
+
+    </data>
+</tryton>

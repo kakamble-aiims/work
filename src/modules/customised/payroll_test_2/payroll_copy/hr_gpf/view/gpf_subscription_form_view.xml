@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<form>
+    <group id="gpf_subscription" colspan="4" col="6">
+        <label name="salary_code"/>
+        <field name="salary_code"/>
+        <label name="employee"/>
+        <field name="employee"/>
+        <label name="doj"/>
+        <field name="doj"/>
+        <label name="designation"/>
+        <field name="designation"/>
+        <label name="department"/>
+        <field name="department"/>
+        <label name="gpf_number"/>
+        <field name="gpf_number"/>
+        <label name="state"/>
+        <field name="state"/>
+        <label name="change_sub"/>
+        <field name="change_sub"/>
+        <newline/>
+        <label name="basic_pay"/>
+        <field name="basic_pay"/>
+        <label name="pre_amount"/>
+        <field name="pre_amount"/>
+        <label name="curr_amount"/>
+        <field name="curr_amount"/>
+        <label name="approve_date"/>
+        <field name="approve_date"/>
+        <label name="otp"/>
+        <field name="otp"/>
+        <label name="reason"/>
+        <field name="reason"/>
+        <label name="contract"/>
+        <field name="contract"/>
+    </group>
+    <group id="button_ids" colspan="4" col="6">
+        <button name="waiting_for_otp" string="Send For OTP" colspan="2"/>
+        <button name="submitted_to_ao" string="Forwarded to AO"/>
+        <button name="approved" string="Approve"/>
+        <button name="cancel_gpf" string="Cancel"/>
+    </group>
+        
+</form>

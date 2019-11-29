@@ -1,0 +1,134 @@
+<?xml version="1.0"?>
+<tryton>
+<data>
+<record id="fcc_section_1" model="account.concurrence.checklist.line.item">
+    <field name="section">Center Name</field>    
+</record>
+<record id="fcc_section_2" model="account.concurrence.checklist.line.item">
+    <field name="section">Center Code</field>    
+</record>
+<record id="fcc_section_3" model="account.concurrence.checklist.line.item">
+    <field name="section">Department Name</field>
+</record>
+<record id="fcc_section_4" model="account.concurrence.checklist.line.item">
+    <field name="section">Department Code</field>
+</record>
+<record id="fcc_section_5" model="account.concurrence.checklist.line.item">
+    <field name="section">DO Name</field>
+</record>
+<record id="fcc_section_6" model="account.concurrence.checklist.line.item">
+    <field name="section">DO Code</field>
+</record>
+<record id="fcc_section_7" model="account.concurrence.checklist.line.item">
+    <field name="section">Store Name</field>
+</record>
+<record id="fcc_section_8" model="account.concurrence.checklist.line.item">
+    <field name="section">Store Code</field>
+</record>
+<record id="fcc_section_9" model="account.concurrence.checklist.line.item">
+    <field name="section">Department Name</field>
+</record>
+<record id="fcc_section_10" model="account.concurrence.checklist.line.item">
+    <field name="section">Department Code</field>
+</record>
+<record id="fcc_section_11" model="account.concurrence.checklist.line.item">
+    <field name="section">DO Code</field>
+</record>
+<record id="fcc_section_12" model="account.concurrence.checklist.line.item">
+    <field name="section">Stores</field>
+</record>
+<record id="fcc_section_13" model="account.concurrence.checklist.line.item">
+    <field name="section">Department </field>
+</record>
+<record id="fcc_section_14" model="account.concurrence.checklist.line.item">
+    <field name="section">Evaluation Commitee</field>
+</record>
+<record id="fcc_section_15" model="account.concurrence.checklist.line.item">
+    <field name="section">PAC by Department</field>
+</record>
+<record id="fcc_section_16" model="account.concurrence.checklist.line.item">
+    <field name="section">With But-Back components(Condemnation Committee)</field>
+</record>
+<record id="fcc_section_17" model="account.concurrence.checklist.line.item">
+    <field name="section">With Buy-Back components(Departments)</field>
+</record>
+<record id="fcc_section_18" model="account.concurrence.checklist.line.item">
+    <field name="section">With Buy-Back components(Stores)</field>
+</record>
+<record id="fcc_section_19" model="account.concurrence.checklist.line.item">
+    <field name="section">Departments</field>
+</record>
+<record id="fcc_section_20" model="account.concurrence.checklist.line.item">
+    <field name="section">Stores</field>
+</record>
+<record id="fcc_section_21" model="account.concurrence.checklist.line.item">
+    <field name="section">Stores</field>
+</record>
+<record id="fcc_section_22" model="account.concurrence.checklist.line.item">
+    <field name="section">Departments</field>
+</record>
+<record id="fcc_section_23" model="account.concurrence.checklist.line.item">
+    <field name="section">Committees</field>
+</record>
+<record id="fcc_section_24" model="account.concurrence.checklist.line.item">
+    <field name="section">Departments</field>
+</record>
+<record id="fcc_section_25" model="account.concurrence.checklist.line.item">
+    <field name="section">HODs</field>
+</record>
+<record id="fcc_section_26" model="account.concurrence.checklist.line.item">
+    <field name="section">Stores</field>
+</record>
+<record id="fcc_section_27" model="account.concurrence.checklist.line.item">
+    <field name="section">Stores</field>
+</record>
+<record id="fcc_section_28" model="account.concurrence.checklist.line.item">
+    <field name="section">Departments</field>
+</record>
+<record id="fcc_section_29" model="account.concurrence.checklist.line.item">
+    <field name="section">Stores</field>
+</record>
+<record id="fcc_section_30" model="account.concurrence.checklist.line.item">
+    <field name="section">Departments</field>
+</record>
+<record id="fcc_section_31" model="account.concurrence.checklist.line.item">
+    <field name="section"> Stores</field>
+</record>
+<record id="fcc_section_32" model="account.concurrence.checklist.line.item">
+    <field name="section"> Stores</field>
+</record>
+<record id="fcc_section_33" model="account.concurrence.checklist.line.item">
+    <field name="section"> Store Purchase Committee</field>
+</record>
+<record id="fcc_section_34" model="account.concurrence.checklist.line.item">
+    <field name="section"> Negotiation Committee</field>
+</record>
+<record id="fcc_section_35" model="account.concurrence.checklist.line.item">
+    <field name="section"> Departments</field>
+</record>
+<record id="fcc_section_36" model="account.concurrence.checklist.line.item">
+    <field name="section"> Stores</field>
+</record>
+<record id="fcc_section_37" model="account.concurrence.checklist.line.item">
+    <field name="section">Dealing/Asstt.</field>
+</record>
+<record id="fcc_section_38" model="account.concurrence.checklist.line.item">
+    <field name="section"> JAO </field>
+</record>
+<record id="fcc_section_39" model="account.concurrence.checklist.line.item">
+    <field name="section"> AAO</field>
+</record>
+<record id="fcc_section_40" model="account.concurrence.checklist.line.item">
+    <field name="section"> AO</field>
+</record>
+<record id="fcc_section_41" model="account.concurrence.checklist.line.item">
+    <field name="section"> F&amp;CAO</field>
+</record>
+<record id="fcc_section_42" model="account.concurrence.checklist.line.item">
+    <field name="section"> FA</field>
+</record>
+<record id="fcc_section_43" model="account.concurrence.checklist.line.item">
+    <field name="section">Sr. FA</field>
+</record>
+</data>
+</tryton>

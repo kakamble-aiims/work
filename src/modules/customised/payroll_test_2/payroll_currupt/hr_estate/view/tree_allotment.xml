@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<tree>
+    <field name="employee"/>
+    <field name="quarter_no"/>
+    <field name="quarter_type"/>
+    <field name="location"/>
+    <field name="date_of_allocation"/>
+    <field name="date_of_occupation"/>
+    <field name="date_of_vacation"/>
+</tree>

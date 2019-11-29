@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<form>
+    <group id="center_employee_date" colspan="6">
+        <label name="exam_center"/>
+        <field name="exam_center"/>
+        <label name="employee"/>
+        <field name="employee"/>
+        <label name="date"/>
+        <field name="date"/>
+    </group>
+    <newline/>
+    <field name="journey"/>
+    <newline/>
+    <group id="journey" colspan="4">
+        <label name="journey_total_distance"/>
+        <field name="journey_total_distance"/>
+        <label name="journey_total_amount"/>
+        <field name="journey_total_amount"/>
+    </group>
+</form>

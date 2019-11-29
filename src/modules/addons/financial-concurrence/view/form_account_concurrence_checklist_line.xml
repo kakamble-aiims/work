@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<form>
+    <label name="stage"/>
+    <field name="stage"/>
+    <label name="section"/>
+    <field name="section"/>
+    <label name="particulars"/>
+    <field name="particulars" widget="selection"/>  
+    <label name="comments"/>
+    <field name="comments"/>
+    <label name="remarks"/>
+    <field name="remarks"/>     
+    <label name="page_number"/>
+    <field name="page_number"/>
+
+</form>

@@ -1,0 +1,2128 @@
+<?xml version="1.0"?>
+<tryton>
+    <data>
+
+        <!--Establishment Admin-->
+        <record model="res.user-res.group" 
+            id="user_admin_group_establishment_admin">
+            <field name="user" ref="res.user_admin"/>
+            <field name="group" 
+                ref="aiims_health_extn.group_establishment_admin"/>
+        </record>
+        <record model="res.user-res.group" 
+            id="user_trigger_group_establishment_admin">
+            <field name="user" ref="res.user_trigger"/>
+            <field name="group" 
+                ref="aiims_health_extn.group_establishment_admin"/>
+        </record>
+        <record model="ir.ui.menu-res.group" 
+            id="menu_apar_group_establishment_admin">
+            <field name="menu" ref="hr.menu_hr"/>
+            <field name="group" 
+                ref="aiims_health_extn.group_establishment_admin"/>
+        </record>
+
+        <record model="ir.ui.menu-res.group" 
+            id="menu_apar_group_establishment_admin_1">
+            <field name="menu" ref="menu_apar_department"/>
+            <field name="group" 
+                ref="aiims_health_extn.group_establishment_admin"/>
+        </record>
+
+        <record model="ir.ui.menu-res.group" 
+            id="menu_apar_group_establishment_admin_2">
+            <field name="menu" ref="menu_apar_employee_forms"/>
+            <field name="group" 
+                ref="aiims_health_extn.group_establishment_admin"/>
+        </record>
+
+        <record model="ir.ui.menu-res.group" 
+            id="menu_apar_group_establishment_admin_5">
+            <field name="menu" ref="hr.menu_department"/>
+            <field name="group" 
+                ref="aiims_health_extn.group_establishment_admin"/>
+        </record>
+        <record model="ir.ui.menu-res.group" 
+            id="menu_hr_department_group_establishment_admin_6">
+            <field name="menu" ref="menu_wizard_generate_department"/>
+            <field name="group" 
+                ref="aiims_health_extn.group_establishment_admin"/>
+        </record>
+
+        <!--Head of Department-->
+        <record model="res.user-res.group" 
+            id="user_admin_group_head_of_department">
+            <field name="user" ref="res.user_admin"/>
+            <field name="group" 
+                ref="aiims_health_extn.group_head_of_department"/>
+        </record>
+        <record model="res.user-res.group" 
+            id="user_trigger_group_head_of_department">
+            <field name="user" ref="res.user_trigger"/>
+            <field name="group" 
+                ref="aiims_health_extn.group_head_of_department"/>
+        </record>
+        <record model="ir.ui.menu-res.group" 
+            id="menu_apar_group_head_of_department">
+            <field name="menu" ref="hr.menu_hr"/>
+            <field name="group" 
+                ref="aiims_health_extn.group_head_of_department"/>
+        </record>
+
+        <record model="ir.ui.menu-res.group" 
+            id="menu_apar_group_head_of_department_1">
+            <field name="menu" ref="menu_apar_department"/>
+            <field name="group" 
+                ref="aiims_health_extn.group_head_of_department"/>
+        </record>
+
+        <record model="ir.ui.menu-res.group" 
+            id="menu_apar_group_head_of_department_2">
+            <field name="menu" ref="menu_apar_representations"/>
+            <field name="group" 
+                ref="aiims_health_extn.group_head_of_department"/>
+        </record>
+
+        <!--APAR Technical Admin-->
+        <record model="res.user-res.group" 
+            id="user_admin_group_apar_technical_admin">
+            <field name="user" ref="res.user_admin"/>
+            <field name="group" ref="group_apar_technical_admin"/>
+        </record>
+        <record model="res.user-res.group" 
+            id="user_trigger_group_apar_technical_admin">
+            <field name="user" ref="res.user_trigger"/>
+            <field name="group" ref="group_apar_technical_admin"/>
+        </record>
+        <record model="ir.ui.menu-res.group" 
+            id="menu_apar_technical_admin">
+            <field name="menu" ref="hr.menu_hr"/>
+            <field name="group" ref="group_apar_technical_admin"/>
+        </record>
+
+        <record model="ir.ui.menu-res.group" id="menu_apar_technical_admin_1">
+            <field name="menu" ref="menu_apar_department"/>
+            <field name="group" ref="group_apar_technical_admin"/>
+        </record>
+
+        <record model="ir.ui.menu-res.group" id="menu_apar_technical_admin_2">
+            <field name="menu" ref="menu_apar_employee_forms"/>
+            <field name="group" ref="group_apar_technical_admin"/>
+        </record>
+
+        <record model="ir.ui.menu-res.group" id="menu_apar_technical_admin_3">
+            <field name="menu" ref="hr.menu_hr_configuration"/>
+            <field name="group" ref="group_apar_technical_admin"/>
+        </record>
+
+        <record model="ir.ui.menu-res.group" id="menu_apar_technical_admin_5">
+            <field name="menu" ref="menu_apar_representation"/>
+            <field name="group" ref="group_apar_technical_admin"/>
+        </record>
+
+        <record model="ir.ui.menu-res.group" id="menu_apar_technical_admin_7">
+            <field name="menu" ref="menu_apar_representations"/>
+            <field name="group" ref="group_apar_technical_admin"/>
+        </record>
+
+        <record model="ir.ui.menu-res.group" id="menu_apar_technical_admin_6">
+            <field name="menu" ref="menu_wizard_generate_department"/>
+            <field name="group" ref="group_apar_technical_admin"/>
+        </record>
+
+
+        <!--Ratee Officer-->
+        <record model="res.user-res.group" 
+            id="user_admin_group_ratee_officer">
+            <field name="user" ref="res.user_admin"/>
+            <field name="group" ref="group_ratee_officer"/>
+        </record>
+        <record model="res.user-res.group" 
+            id="user_trigger_group_ratee_officer">
+            <field name="user" ref="res.user_trigger"/>
+            <field name="group" ref="group_ratee_officer"/>
+        </record>
+        <record model="ir.ui.menu-res.group" id="menu_apar_ratee_officer">
+            <field name="menu" ref="hr.menu_hr"/>
+            <field name="group" ref="group_ratee_officer"/>
+        </record>
+
+        <record model="ir.ui.menu-res.group" id="menu_apar_ratee_officer_1">
+            <field name="menu" ref="menu_apar_my_apar"/>
+            <field name="group" ref="group_ratee_officer"/>
+        </record>
+
+        <record model="ir.ui.menu-res.group" id="menu_apar_ratee_officer_2">
+            <field name="menu" ref="menu_apar_representation"/>
+            <field name="group" ref="group_ratee_officer"/>
+        </record>
+
+
+        <!--Reporting Officer -->
+        <record model="res.user-res.group" 
+            id="user_admin_group_reporting_officer">
+            <field name="user" ref="res.user_admin"/>
+            <field name="group" ref="group_reporting_officer"/>
+        </record>
+        <record model="res.user-res.group" 
+            id="user_trigger_group_reporting_officer">
+            <field name="user" ref="res.user_trigger"/>
+            <field name="group" ref="group_reporting_officer"/>
+        </record>
+        <record model="ir.ui.menu-res.group" id="menu_apar_reporting_officer">
+            <field name="menu" ref="hr.menu_hr"/>
+            <field name="group" ref="group_reporting_officer"/>
+        </record>
+
+        <record model="ir.ui.menu-res.group" 
+            id="menu_apar_reporting_officer_1">
+            <field name="menu" ref="menu_apar_reportee_apar"/>
+            <field name="group" ref="group_reporting_officer"/>
+        </record>
+
+        <record model="ir.ui.menu-res.group" 
+            id="menu_apar_reporting_officer_2">
+            <field name="menu" ref="menu_apar_representations"/>
+            <field name="group" ref="group_reporting_officer"/>
+        </record>
+
+        <!--Reviewing Officer-->
+        <record model="res.user-res.group" 
+            id="user_admin_group_reviewing_officer">
+            <field name="user" ref="res.user_admin"/>
+            <field name="group" ref="group_reviewing_officer"/>
+        </record>
+        <record model="res.user-res.group" 
+            id="user_trigger_group_reviewing_officer">
+            <field name="user" ref="res.user_trigger"/>
+            <field name="group" ref="group_reviewing_officer"/>
+        </record>
+        <record model="ir.ui.menu-res.group" id="menu_apar_reviewing_officer">
+            <field name="menu" ref="hr.menu_hr"/>
+            <field name="group" ref="group_reviewing_officer"/>
+        </record>
+
+        <record model="ir.ui.menu-res.group" 
+            id="menu_apar_reviewing_officer_1">
+            <field name="menu" ref="menu_apar_reviewed_apar"/>
+            <field name="group" ref="group_reviewing_officer"/>
+        </record>
+
+        <record model="ir.ui.menu-res.group" 
+            id="menu_apar_reviewing_officer_2">
+            <field name="menu" ref="menu_apar_representations"/>
+            <field name="group" ref="group_reviewing_officer"/>
+        </record>
+
+        <!--accepting authority-->
+        <record model="res.user-res.group" 
+            id="user_admin_group_accepting_authority">
+            <field name="user" ref="res.user_admin"/>
+            <field name="group" ref="group_accepting_authority"/>
+        </record>
+        <record model="res.user-res.group" 
+            id="user_trigger_group_accepting_authority">
+            <field name="user" ref="res.user_trigger"/>
+            <field name="group" ref="group_accepting_authority"/>
+        </record>
+        <record model="ir.ui.menu-res.group" 
+            id="menu_apar_accepting_authority">
+            <field name="menu" ref="hr.menu_hr"/>
+            <field name="group" ref="group_accepting_authority"/>
+        </record>
+
+        <record model="ir.ui.menu-res.group" 
+            id="menu_apar_accepting_authority_1">
+            <field name="menu" ref="menu_apar_accepted_apar"/>
+            <field name="group" ref="group_accepting_authority"/>
+        </record>
+
+        <record model="ir.ui.menu-res.group" 
+            id="menu_apar_accepting_authority_2">
+            <field name="menu" ref="menu_apar_representations"/>
+            <field name="group" ref="group_accepting_authority"/>
+        </record>
+
+
+        <!--ACR Cell Admin-->
+        <record model="res.user-res.group" 
+            id="user_admin_group_acr_cell_admin">
+            <field name="user" ref="res.user_admin"/>
+            <field name="group" ref="group_acr_cell_admin"/>
+        </record>
+        <record model="res.user-res.group" 
+            id="user_trigger_group_acr_cell_admin">
+            <field name="user" ref="res.user_trigger"/>
+            <field name="group" ref="group_acr_cell_admin"/>
+        </record>
+        <record model="ir.ui.menu-res.group" 
+            id="menu_apar_group_acr_cell_admin">
+            <field name="menu" ref="hr.menu_hr"/>
+            <field name="group" ref="group_acr_cell_admin"/>
+        </record>
+
+        <record model="ir.ui.menu-res.group" 
+            id="menu_apar_group_acr_cell_admin_1">
+            <field name="menu" ref="menu_apar_department"/>
+            <field name="group" ref="group_acr_cell_admin"/>
+        </record>
+
+        <record model="ir.ui.menu-res.group" 
+            id="menu_apar_group_acr_cell_admin_3">
+            <field name="menu" ref="menu_apar_employee_forms"/>
+            <field name="group" ref="group_acr_cell_admin"/>
+        </record>
+
+        <record model="ir.ui.menu-res.group" 
+            id="menu_apar_group_acr_cell_admin_4">
+            <field name="menu" ref="menu_apar_representations"/>
+            <field name="group" ref="group_acr_cell_admin"/>
+        </record>
+
+        <!-- User Rule Allocation -->
+        <!-- Company Department -->
+        <record model="ir.model.access" 
+            id="access_company_department_establishment_admin">
+            <field name="model" 
+                search="[('model', '=', 'company.department')]"/>
+            <field name="group" 
+                ref="aiims_health_extn.group_establishment_admin"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+
+         <!-- field in department form -->
+        <record model="ir.model.field.access" 
+            id="access_company_department_field_establishment_admin_name">
+            <field name="field" 
+                search="[('model.model', '=', 'company.department'), ('name', '=', 'name'),]"/>
+            <field name="group" 
+                ref="aiims_health_extn.group_establishment_admin"/>
+            <field name="perm_read" eval="True"/>
+        </record>
+
+        <record model="ir.model.field.access" 
+            id="access_company_department_field_establishment_admin_code">
+            <field name="field" 
+                search="[('model.model', '=', 'company.department'), ('name', '=', 'code'),]"/>
+            <field name="group" 
+                ref="aiims_health_extn.group_establishment_admin"/>
+            <field name="perm_read" eval="True"/>
+        </record>
+
+        <record model="ir.model.field.access" 
+            id="access_company_department_field_establishment_admin_parent">
+            <field name="field" 
+                search="[('model.model', '=', 'company.department'), ('name', '=', 'parent'),]"/>
+            <field name="group" 
+                ref="aiims_health_extn.group_establishment_admin"/>
+            <field name="perm_read" eval="True"/>
+        </record>
+
+        <record model="ir.model.field.access" 
+            id="access_company_department_field_establishment_admin_head">
+            <field name="field" 
+                search="[('model.model', '=', 'company.department'), ('name', '=', 'head'),]"/>
+            <field name="group" 
+                ref="aiims_health_extn.group_establishment_admin"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+        </record>
+
+        <record model="ir.model.field.access" 
+            id="access_company_department_field_establishment_admin_employees">
+            <field name="field" 
+                search="[('model.model', '=', 'company.department'), ('name', '=', 'employees'),]"/>
+            <field name="group" 
+                ref="aiims_health_extn.group_establishment_admin"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+        </record>
+
+        <record model="ir.model.field.access" 
+            id="access_company_department_field_establishment_admin_postings">
+            <field name="field" 
+                search="[('model.model', '=', 'company.department'), ('name', '=', 'postings'),]"/>
+            <field name="group" 
+                ref="aiims_health_extn.group_establishment_admin"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+        </record>
+
+        <record model="ir.model.field.access" 
+            id="access_company_department_field_establishment_admin_childs">
+            <field name="field" 
+                search="[('model.model', '=', 'company.department'), ('name', '=', 'childs'),]"/>
+            <field name="group" 
+                ref="aiims_health_extn.group_establishment_admin"/>
+            <field name="perm_read" eval="True"/>
+        </record>
+
+        <record model="ir.model.field.access" 
+            id="access_company_department_field_establishment_admin_note">
+            <field name="field" 
+                search="[('model.model', '=', 'company.department'), ('name', '=', 'note'),]"/>
+            <field name="group" 
+                ref="aiims_health_extn.group_establishment_admin"/>
+            <field name="perm_read" eval="True"/>
+        </record>
+
+        <record model="ir.model.field.access" 
+            id="access_company_department_field_establishment_admin_type_">
+            <field name="field" 
+                search="[('model.model', '=', 'company.department'), ('name', '=', 'type_'),]"/>
+            <field name="group" 
+                ref="aiims_health_extn.group_establishment_admin"/>
+            <field name="perm_read" eval="True"/>
+        </record>
+
+        <record model="ir.model.field.access" 
+            id="access_company_department_field_establishment_admin_specialty">
+            <field name="field" 
+                search="[('model.model', '=', 'company.department'), ('name', '=', 'specialty'),]"/>
+            <field name="group" 
+                ref="aiims_health_extn.group_establishment_admin"/>
+            <field name="perm_read" eval="True"/>
+        </record>
+
+        <record model="ir.model.field.access" 
+            id="access_company_department_field_establishment_admin_establishment">
+            <field name="field" 
+                search="[('model.model', '=', 'company.department'), ('name', '=', 'establishment'),]"/>
+            <field name="group" 
+                ref="aiims_health_extn.group_establishment_admin"/>
+            <field name="perm_read" eval="True"/>
+        </record>
+
+        <record model="ir.model.field.access" 
+            id="access_company_department_field_establishment_admin_institution">
+            <field name="field" 
+                search="[('model.model', '=', 'company.department'), ('name', '=', 'institution'),]"/>
+            <field name="group" 
+                ref="aiims_health_extn.group_establishment_admin"/>
+            <field name="perm_read" eval="True"/>
+        </record>
+
+        <record model="ir.model.access" 
+            id="access_company_department_head_of_department">
+            <field name="model" 
+                search="[('model', '=', 'company.department')]"/>
+            <field name="group" 
+                ref="aiims_health_extn.group_head_of_department"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+
+       
+
+        <record model="ir.model.access" 
+            id="access_company_department_apar_technical_admin">
+            <field name="model" 
+                search="[('model', '=', 'company.department')]"/>
+            <field name="group" ref="group_apar_technical_admin"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_delete" eval="True"/>
+        </record>
+
+        <record model="ir.model.access" 
+            id="access_company_department_ratee_officer">
+            <field name="model" 
+                search="[('model', '=', 'company.department')]"/>
+            <field name="group" ref="group_ratee_officer"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+
+        <record model="ir.model.access" 
+            id="access_company_department_reporting_officer">
+            <field name="model" 
+                search="[('model', '=', 'company.department')]"/>
+            <field name="group" ref="group_reporting_officer"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+
+        <record model="ir.model.access" 
+            id="access_company_department_reviewing_officer">
+            <field name="model" 
+                search="[('model', '=', 'company.department')]"/>
+            <field name="group" ref="group_reviewing_officer"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+
+        <record model="ir.model.access" 
+            id="access_company_department_accepting_authority">
+            <field name="model" 
+                search="[('model', '=', 'company.department')]"/>
+            <field name="group" ref="group_accepting_authority"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+
+        <record model="ir.model.access" id="access_company_department_acr_cell_admin">
+            <field name="model" 
+            search="[('model', '=', 'company.department')]"/>
+            <field name="group" ref="group_acr_cell_admin"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+
+        <!--APAR Department form-->
+        <record model="ir.model.access" 
+            id="access_apar_department_form_establishment_admin">
+            <field name="model" 
+                search="[('model', '=', 'apar.department.form')]"/>
+            <field name="group" 
+                ref="aiims_health_extn.group_establishment_admin"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+
+        <record model="ir.model.access" 
+            id="access_apar_department_form_head_of_department">
+            <field name="model" 
+                search="[('model', '=', 'apar.department.form')]"/>
+            <field name="group" 
+                ref="aiims_health_extn.group_head_of_department"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+
+        <record model="ir.model.access" 
+            id="access_apar_department_form_apar_technical_admin">
+            <field name="model" 
+                search="[('model', '=', 'apar.department.form')]"/>
+            <field name="group" ref="group_apar_technical_admin"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_delete" eval="True"/>
+        </record>
+
+        <record model="ir.model.access" 
+            id="access_apar_department_form_ratee_officer">
+            <field name="model" 
+                search="[('model', '=', 'apar.department.form')]"/>
+            <field name="group" ref="group_ratee_officer"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+
+        <record model="ir.model.access" 
+            id="access_apar_department_form_reporting_officer">
+            <field name="model" 
+                search="[('model', '=', 'apar.department.form')]"/>
+            <field name="group" ref="group_reporting_officer"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+
+        <record model="ir.model.access" 
+            id="access_apar_department_form_reviewing_officer">
+            <field name="model" 
+                search="[('model', '=', 'apar.department.form')]"/>
+            <field name="group" ref="group_reviewing_officer"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+
+        <record model="ir.model.access" 
+            id="access_apar_department_form_accepting_authority">
+            <field name="model" 
+                search="[('model', '=', 'apar.department.form')]"/>
+            <field name="group" ref="group_accepting_authority"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+
+        <record model="ir.model.access" id="access_apar_department_form_acr_cell_admin">
+            <field name="model" 
+            search="[('model', '=', 'apar.department.form')]"/>
+            <field name="group" ref="group_acr_cell_admin"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+
+        <!--Company Employee-->
+        <record model="ir.model.access" 
+            id="access_company_employee_establishment_admin">
+            <field name="model" search="[('model', '=', 'company.employee')]"/>
+            <field name="group" 
+                ref="aiims_health_extn.group_establishment_admin"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+
+        <record model="ir.model.access" 
+            id="access_company_employee_head_of_department">
+            <field name="model" search="[('model', '=', 'company.employee')]"/>
+            <field name="group" 
+                ref="aiims_health_extn.group_head_of_department"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+
+        <record model="ir.model.access" 
+            id="access_company_employee_apar_technical_admin">
+            <field name="model" search="[('model', '=', 'company.employee')]"/>
+            <field name="group" ref="group_apar_technical_admin"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_delete" eval="True"/>
+        </record>
+
+        <record model="ir.model.access" 
+            id="access_company_employee_ratee_officer">
+            <field name="model" search="[('model', '=', 'company.employee')]"/>
+            <field name="group" ref="group_ratee_officer"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+
+        <record model="ir.model.access" 
+            id="access_company_employee_reporting_officer">
+            <field name="model" search="[('model', '=', 'company.employee')]"/>
+            <field name="group" ref="group_reporting_officer"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+
+        <record model="ir.model.access" 
+            id="access_company_employee_reviewing_officer">
+            <field name="model" search="[('model', '=', 'company.employee')]"/>
+            <field name="group" ref="group_reviewing_officer"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+
+        <record model="ir.model.access" 
+            id="access_company_employee_accepting_authority">
+            <field name="model" search="[('model', '=', 'company.employee')]"/>
+            <field name="group" ref="group_accepting_authority"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+
+        <record model="ir.model.access" id="access_company_employee_acr_cell_admin">
+            <field name="model" 
+            search="[('model', '=', 'company.employee')]"/>
+            <field name="group" ref="group_acr_cell_admin"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+
+        <!--health.establishment-->
+        <record model="ir.model.access" 
+            id="access_health_establishment_establishment_admin">
+            <field name="model" 
+                search="[('model', '=', 'health.establishment')]"/>
+            <field name="group" 
+                ref="aiims_health_extn.group_establishment_admin"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+
+        <record model="ir.model.access" 
+            id="access_health_establishment_head_of_department">
+            <field name="model" 
+                search="[('model', '=', 'health.establishment')]"/>
+            <field name="group" 
+                ref="aiims_health_extn.group_head_of_department"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+
+        <record model="ir.model.access" 
+            id="access_health_establishment_apar_technical_admin">
+            <field name="model" 
+                search="[('model', '=', 'health.establishment')]"/>
+            <field name="group" ref="group_apar_technical_admin"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_delete" eval="True"/>
+        </record>
+
+        <record model="ir.model.access" 
+            id="access_health_establishment_ratee_officer">
+            <field name="model" 
+                search="[('model', '=', 'health.establishment')]"/>
+            <field name="group" ref="group_ratee_officer"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+
+        <record model="ir.model.access" 
+            id="access_health_establishment_reporting_officer">
+            <field name="model" 
+                search="[('model', '=', 'health.establishment')]"/>
+            <field name="group" ref="group_reporting_officer"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+
+        <record model="ir.model.access" 
+            id="access_health_establishment_reviewing_officer">
+            <field name="model" 
+                search="[('model', '=', 'health.establishment')]"/>
+            <field name="group" ref="group_reviewing_officer"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+
+        <record model="ir.model.access" 
+            id="access_health_establishment_accepting_authority">
+            <field name="model" 
+                search="[('model', '=', 'health.establishment')]"/>
+            <field name="group" ref="group_accepting_authority"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+
+        <record model="ir.model.access" id="access_health_establishment_acr_cell_admin">
+            <field name="model" 
+            search="[('model', '=', 'health.establishment')]"/>
+            <field name="group" ref="group_acr_cell_admin"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+
+        <!--apar.employee.form-->
+        <record model="ir.model.access" id="access_apar_employee_form_establishment_admin">
+            <field name="model" 
+                search="[('model', '=', 'apar.employee.form')]"/>
+            <field name="group" 
+                ref="aiims_health_extn.group_establishment_admin"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+
+        <record model="ir.model.access" id="access_apar_employee_form_head_of_department">
+            <field name="model" 
+                search="[('model', '=', 'apar.employee.form')]"/>
+            <field name="group" 
+                ref="aiims_health_extn.group_head_of_department"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+
+        <record model="ir.model.access" 
+            id="access_apar_employee_form_apar_technical_admin">
+            <field name="model" 
+                search="[('model', '=', 'apar.employee.form')]"/>
+            <field name="group" ref="group_apar_technical_admin"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_delete" eval="True"/>
+        </record>
+
+        <record model="ir.model.access" 
+            id="access_apar_employee_form_ratee_officer">
+            <field name="model" 
+                search="[('model', '=', 'apar.employee.form')]"/>
+            <field name="group" ref="group_ratee_officer"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+
+        <record model="ir.model.access" 
+            id="access_apar_employee_form_reporting_officer">
+            <field name="model" 
+                search="[('model', '=', 'apar.employee.form')]"/>
+            <field name="group" ref="group_reporting_officer"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+
+        <record model="ir.model.access" id="access_apar_employee_form_reviewing_officer">
+            <field name="model" 
+                search="[('model', '=', 'apar.employee.form')]"/>
+            <field name="group" ref="group_reviewing_officer"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+
+        <record model="ir.model.access" 
+            id="access_apar_employee_form_accepting_authority">
+            <field name="model" 
+                search="[('model', '=', 'apar.employee.form')]"/>
+            <field name="group" ref="group_accepting_authority"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+
+        <record model="ir.model.access" id="access_apar_employee_form_acr_cell_admin">
+            <field name="model" search="[('model', '=', 'apar.employee.form')]"/>
+            <field name="group" ref="group_acr_cell_admin"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+
+        <!--apar.employee.form.part-->
+        <record model="ir.model.access" 
+            id="access_apar_employee_form_part_establishment_admin">
+            <field name="model" 
+                search="[('model', '=', 'apar.employee.form.part')]"/>
+            <field name="group" 
+                ref="aiims_health_extn.group_establishment_admin"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+
+        <record model="ir.model.access" 
+            id="access_apar_employee_form_part_head_of_department">
+            <field name="model" 
+                search="[('model', '=', 'apar.employee.form.part')]"/>
+            <field name="group" 
+                ref="aiims_health_extn.group_head_of_department"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+
+        <record model="ir.model.access" 
+            id="access_apar_employee_form_part_apar_technical_admin">
+            <field name="model" 
+                search="[('model', '=', 'apar.employee.form.part')]"/>
+            <field name="group" ref="group_apar_technical_admin"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_delete" eval="True"/>
+        </record>
+
+        <record model="ir.model.access" 
+            id="access_apar_employee_form_part_ratee_officer">
+            <field name="model" 
+                search="[('model', '=', 'apar.employee.form.part')]"/>
+            <field name="group" ref="group_ratee_officer"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+
+        <record model="ir.model.access" 
+            id="access_apar_employee_form_part_reporting_officer">
+            <field name="model" 
+                search="[('model', '=', 'apar.employee.form.part')]"/>
+            <field name="group" ref="group_reporting_officer"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+
+        <record model="ir.model.access" 
+            id="access_apar_employee_form_part_reviewing_officer">
+            <field name="model" 
+                search="[('model', '=', 'apar.employee.form.part')]"/>
+            <field name="group" ref="group_reviewing_officer"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+
+        <record model="ir.model.access" 
+            id="access_apar_employee_form_part_accepting_authority">
+            <field name="model" 
+                search="[('model', '=', 'apar.employee.form.part')]"/>
+            <field name="group" ref="group_accepting_authority"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+
+        <record model="ir.model.access" id="access_apar_employee_form_part_acr_cell_admin">
+            <field name="model" search="[('model', '=', 'apar.employee.form.part')]"/>
+            <field name="group" ref="group_acr_cell_admin"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+
+        <!--apar.employee.form.signature-->
+        <record model="ir.model.access" 
+            id="access_apar_employee_form_signature_establishment_admin">
+            <field name="model" 
+                search="[('model', '=', 'apar.employee.form.signature')]"/>
+            <field name="group" 
+                ref="aiims_health_extn.group_establishment_admin"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+
+        <record model="ir.model.access" 
+            id="access_apar_employee_form_signature_head_of_department">
+            <field name="model" 
+                search="[('model', '=', 'apar.employee.form.signature')]"/>
+            <field name="group" 
+                ref="aiims_health_extn.group_head_of_department"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+
+        <record model="ir.model.access" 
+            id="access_apar_employee_form_signature_apar_technical_admin">
+            <field name="model" 
+                search="[('model', '=', 'apar.employee.form.signature')]"/>
+            <field name="group" ref="group_apar_technical_admin"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_delete" eval="True"/>
+        </record>
+
+        <record model="ir.model.access" 
+            id="access_apar_employee_form_signature_ratee_officer">
+            <field name="model" 
+                search="[('model', '=', 'apar.employee.form.signature')]"/>
+            <field name="group" ref="group_ratee_officer"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+
+        <record model="ir.model.access" 
+            id="access_apar_employee_form_signature_reporting_officer">
+            <field name="model" 
+                search="[('model', '=', 'apar.employee.form.signature')]"/>
+            <field name="group" ref="group_reporting_officer"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+
+        <record model="ir.model.access" 
+            id="access_apar_employee_form_signature_reviewing_officer">
+            <field name="model" 
+                search="[('model', '=', 'apar.employee.form.signature')]"/>
+            <field name="group" ref="group_reviewing_officer"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+
+        <record model="ir.model.access" 
+            id="access_apar_employee_form_signature_accepting_authority">
+            <field name="model" 
+                search="[('model', '=', 'apar.employee.form.signature')]"/>
+            <field name="group" ref="group_accepting_authority"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+
+        <record model="ir.model.access" id="access_apar_employee_form_signature_acr_cell_admin">
+            <field name="model" search="[('model', '=', 'apar.employee.form.signature')]"/>
+            <field name="group" ref="group_acr_cell_admin"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+
+        <!--apar.employee.form.line-->
+        <record model="ir.model.access" 
+            id="access_apar_employee_form_line_establishment_admin">
+            <field name="model" 
+                search="[('model', '=', 'apar.employee.form.line')]"/>
+            <field name="group" 
+                ref="aiims_health_extn.group_establishment_admin"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+
+        <record model="ir.model.access" 
+            id="access_apar_employee_form_line_head_of_department">
+            <field name="model" 
+                search="[('model', '=', 'apar.employee.form.line')]"/>
+            <field name="group" 
+                ref="aiims_health_extn.group_head_of_department"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+
+        <record model="ir.model.access" 
+            id="access_apar_employee_form_line_apar_technical_admin">
+            <field name="model" 
+                search="[('model', '=', 'apar.employee.form.line')]"/>
+            <field name="group" ref="group_apar_technical_admin"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_delete" eval="True"/>
+        </record>
+
+        <record model="ir.model.access" 
+            id="access_apar_employee_form_line_ratee_officer">
+            <field name="model" 
+                search="[('model', '=', 'apar.employee.form.line')]"/>
+            <field name="group" ref="group_ratee_officer"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+
+        <record model="ir.model.access" 
+            id="access_apar_employee_form_line_reporting_officer">
+            <field name="model" 
+                search="[('model', '=', 'apar.employee.form.line')]"/>
+            <field name="group" ref="group_reporting_officer"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+
+        <record model="ir.model.access" 
+            id="access_apar_employee_form_line_reviewing_officer">
+            <field name="model" 
+                search="[('model', '=', 'apar.employee.form.line')]"/>
+            <field name="group" ref="group_reviewing_officer"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+
+        <record model="ir.model.access" 
+            id="access_apar_employee_form_line_accepting_authority">
+            <field name="model" 
+                search="[('model', '=', 'apar.employee.form.line')]"/>
+            <field name="group" ref="group_accepting_authority"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+
+        <record model="ir.model.access" id="access_apar_employee_form_line_acr_cell_admin">
+            <field name="model" search="[('model', '=', 'apar.employee.form.line')]"/>
+            <field name="group" ref="group_acr_cell_admin"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+
+        <!--apar.employee.form.section-->
+        <record model="ir.model.access" 
+            id="access_apar_employee_form_section_establishment_admin">
+            <field name="model" 
+                search="[('model', '=', 'apar.employee.form.section')]"/>
+            <field name="group" 
+                ref="aiims_health_extn.group_establishment_admin"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+
+        <record model="ir.model.access" 
+            id="access_apar_employee_form_section_head_of_department">
+            <field name="model" 
+                search="[('model', '=', 'apar.employee.form.section')]"/>
+            <field name="group" 
+                ref="aiims_health_extn.group_head_of_department"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+
+        <record model="ir.model.access" 
+            id="access_apar_employee_form_section_apar_technical_admin">
+            <field name="model" 
+                search="[('model', '=', 'apar.employee.form.section')]"/>
+            <field name="group" ref="group_apar_technical_admin"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_delete" eval="True"/>
+        </record>
+
+        <record model="ir.model.access" 
+            id="access_apar_employee_form_section_ratee_officer">
+            <field name="model" 
+                search="[('model', '=', 'apar.employee.form.section')]"/>
+            <field name="group" ref="group_ratee_officer"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+
+        <record model="ir.model.access" 
+            id="access_apar_employee_form_section_reporting_officer">
+            <field name="model" 
+                search="[('model', '=', 'apar.employee.form.section')]"/>
+            <field name="group" ref="group_reporting_officer"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+
+        <record model="ir.model.access" 
+            id="access_apar_employee_form_section_reviewing_officer">
+            <field name="model" 
+                search="[('model', '=', 'apar.employee.form.section')]"/>
+            <field name="group" ref="group_reviewing_officer"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+
+        <record model="ir.model.access" 
+            id="access_apar_employee_form_section_accepting_authority">
+            <field name="model" 
+                search="[('model', '=', 'apar.employee.form.section')]"/>
+            <field name="group" ref="group_accepting_authority"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+
+        <record model="ir.model.access" id="access_apar_employee_form_section_acr_cell_admin">
+            <field name="model" search="[('model', '=', 'apar.employee.form.section')]"/>
+            <field name="group" ref="group_acr_cell_admin"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+
+        <!--apar.employee.form.section.line-->
+        <record model="ir.model.access" 
+            id="access_apar_employee_form_section_line_establishment_admin">
+            <field name="model" 
+                search="[('model', '=', 'apar.employee.form.section.line')]"/>
+            <field name="group" 
+                ref="aiims_health_extn.group_establishment_admin"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+
+        <record model="ir.model.access" 
+            id="access_apar_employee_form_section_line_head_of_department">
+            <field name="model" 
+                search="[('model', '=', 'apar.employee.form.section.line')]"/>
+            <field name="group" 
+                ref="aiims_health_extn.group_head_of_department"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+
+        <record model="ir.model.access" 
+            id="access_apar_employee_form_section_line_apar_technical_admin">
+            <field name="model" 
+                search="[('model', '=', 'apar.employee.form.section.line')]"/>
+            <field name="group" ref="group_apar_technical_admin"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_delete" eval="True"/>
+        </record>
+
+        <record model="ir.model.access" 
+            id="access_apar_employee_form_section_line_ratee_officer">
+            <field name="model" 
+                search="[('model', '=', 'apar.employee.form.section.line')]"/>
+            <field name="group" ref="group_ratee_officer"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+
+        <record model="ir.model.access" 
+            id="access_apar_employee_form_section_line_reporting_officer">
+            <field name="model" 
+                search="[('model', '=', 'apar.employee.form.section.line')]"/>
+            <field name="group" ref="group_reporting_officer"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+
+        <record model="ir.model.access" 
+            id="access_apar_employee_form_section_line_reviewing_officer">
+            <field name="model" 
+                search="[('model', '=', 'apar.employee.form.section.line')]"/>
+            <field name="group" ref="group_reviewing_officer"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+
+        <record model="ir.model.access" 
+            id="access_apar_employee_form_section_line_accepting_authority">
+            <field name="model" 
+                search="[('model', '=', 'apar.employee.form.section.line')]"/>
+            <field name="group" ref="group_accepting_authority"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+
+        <record model="ir.model.access" id="access_apar_employee_form_section_line_acr_cell_admin">
+            <field name="model" search="[('model', '=', 'apar.employee.form.section.line')]"/>
+            <field name="group" ref="group_acr_cell_admin"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+
+        <!--apar.form.template.question-->
+        <record model="ir.model.access" 
+            id="access_apar_form_template_question_establishment_admin">
+            <field name="model" 
+                search="[('model', '=', 'apar.form.template.question')]"/>
+            <field name="group" 
+                ref="aiims_health_extn.group_establishment_admin"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+
+        <record model="ir.model.access" 
+            id="access_apar_form_template_question_head_of_department">
+            <field name="model" 
+                search="[('model', '=', 'apar.form.template.question')]"/>
+            <field name="group" 
+                ref="aiims_health_extn.group_head_of_department"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+
+        <record model="ir.model.access" 
+            id="access_apar_form_template_question_apar_technical_admin">
+            <field name="model" 
+                search="[('model', '=', 'apar.form.template.question')]"/>
+            <field name="group" ref="group_apar_technical_admin"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_delete" eval="True"/>
+        </record>
+
+        <record model="ir.model.access" 
+            id="access_apar_form_template_question_ratee_officer">
+            <field name="model" 
+                search="[('model', '=', 'apar.form.template.question')]"/>
+            <field name="group" ref="group_ratee_officer"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+
+        <record model="ir.model.access" 
+            id="access_apar_form_template_question_reporting_officer">
+            <field name="model" 
+                search="[('model', '=', 'apar.form.template.question')]"/>
+            <field name="group" ref="group_reporting_officer"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+
+        <record model="ir.model.access" 
+            id="access_apar_form_template_question_reviewing_officer">
+            <field name="model" 
+                search="[('model', '=', 'apar.form.template.question')]"/>
+            <field name="group" ref="group_reviewing_officer"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+
+        <record model="ir.model.access" 
+            id="access_apar_form_template_question_accepting_authority">
+            <field name="model" 
+                search="[('model', '=', 'apar.form.template.question')]"/>
+            <field name="group" ref="group_accepting_authority"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+
+        <record model="ir.model.access" id="access_apar_form_template_question_acr_cell_admin">
+            <field name="model" search="[('model', '=', 'apar.form.template.question')]"/>
+            <field name="group" ref="group_acr_cell_admin"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+
+         <!--apar.generate_forms.show-->
+        <record model="ir.model.access" 
+            id="access_apar_generate_forms_show_establishment_admin">
+            <field name="model" 
+                search="[('model', '=', 'apar.generate_forms.show')]"/>
+            <field name="group" 
+                ref="aiims_health_extn.group_establishment_admin"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+
+        <record model="ir.model.access" 
+            id="access_apar_generate_forms_show_head_of_department">
+            <field name="model" 
+                search="[('model', '=', 'apar.generate_forms.show')]"/>
+            <field name="group" 
+                ref="aiims_health_extn.group_head_of_department"/>
+            <field name="perm_read" eval="False"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+
+        <record model="ir.model.access" 
+            id="access_apar_generate_forms_show_apar_technical_admin">
+            <field name="model" 
+                search="[('model', '=', 'apar.generate_forms.show')]"/>
+            <field name="group" ref="group_apar_technical_admin"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_delete" eval="True"/>
+        </record>
+
+        <record model="ir.model.access" 
+            id="access_apar_generate_forms_show_ratee_officer">
+            <field name="model" 
+                search="[('model', '=', 'apar.generate_forms.show')]"/>
+            <field name="group" ref="group_ratee_officer"/>
+            <field name="perm_read" eval="False"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+
+        <record model="ir.model.access" 
+            id="access_apar_generate_forms_show_reporting_officer">
+            <field name="model" 
+                search="[('model', '=', 'apar.generate_forms.show')]"/>
+            <field name="group" ref="group_reporting_officer"/>
+            <field name="perm_read" eval="False"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+
+        <record model="ir.model.access" 
+            id="access_apar_generate_forms_show_reviewing_officer">
+            <field name="model" 
+                search="[('model', '=', 'apar.generate_forms.show')]"/>
+            <field name="group" ref="group_reviewing_officer"/>
+            <field name="perm_read" eval="False"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+
+        <record model="ir.model.access" 
+            id="access_apar_generate_forms_show_accepting_authority">
+            <field name="model" 
+                search="[('model', '=', 'apar.generate_forms.show')]"/>
+            <field name="group" ref="group_accepting_authority"/>
+            <field name="perm_read" eval="False"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+
+        <record model="ir.model.access" id="access_apar_generate_forms_show_acr_cell_admin">
+            <field name="model" search="[('model', '=', 'apar.generate_forms.show')]"/>
+            <field name="group" ref="group_acr_cell_admin"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+
+        <!--apar.representation-->
+        <record model="ir.model.access" 
+            id="access_apar_representation_establishment_admin">
+            <field name="model" 
+                search="[('model', '=', 'apar.representation')]"/>
+            <field name="group" 
+                ref="aiims_health_extn.group_establishment_admin"/>
+            <field name="perm_read" eval="False"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+
+        <record model="ir.model.access" 
+            id="access_apar_representation_head_of_department">
+            <field name="model" 
+                search="[('model', '=', 'apar.representation')]"/>
+            <field name="group" 
+                ref="aiims_health_extn.group_head_of_department"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+
+        <record model="ir.model.access" 
+            id="access_apar_representation_apar_technical_admin">
+            <field name="model" 
+                search="[('model', '=', 'apar.representation')]"/>
+            <field name="group" ref="group_apar_technical_admin"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_delete" eval="True"/>
+        </record>
+
+        <record model="ir.model.access" 
+            id="access_apar_representation_ratee_officer">
+            <field name="model" 
+                search="[('model', '=', 'apar.representation')]"/>
+            <field name="group" ref="group_ratee_officer"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+
+        <record model="ir.model.access" 
+            id="access_apar_representation_reporting_officer">
+            <field name="model" 
+                search="[('model', '=', 'apar.representation')]"/>
+            <field name="group" ref="group_reporting_officer"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+
+        <record model="ir.model.access" 
+            id="access_apar_representation_reviewing_officer">
+            <field name="model" 
+                search="[('model', '=', 'apar.representation')]"/>
+            <field name="group" ref="group_reviewing_officer"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+
+        <record model="ir.model.access" 
+            id="access_apar_representation_accepting_authority">
+            <field name="model" 
+                search="[('model', '=', 'apar.representation')]"/>
+            <field name="group" ref="group_accepting_authority"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+
+        <record model="ir.model.access" id="access_apar_representation_acr_cell_admin">
+            <field name="model" search="[('model', '=', 'apar.representation')]"/>
+            <field name="group" ref="group_acr_cell_admin"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+
+        <!--apar.representation.raise.show-->
+        <record model="ir.model.access" 
+            id="access_apar_representation_raise_show_establishment_admin">
+            <field name="model" 
+                search="[('model', '=', 'apar.representation.raise.show')]"/>
+            <field name="group" 
+                ref="aiims_health_extn.group_establishment_admin"/>
+            <field name="perm_read" eval="False"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+
+        <record model="ir.model.access" 
+            id="access_apar_representation_raise_show_head_of_department">
+            <field name="model" 
+                search="[('model', '=', 'apar.representation.raise.show')]"/>
+            <field name="group" 
+                ref="aiims_health_extn.group_head_of_department"/>
+            <field name="perm_read" eval="False"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+
+        <record model="ir.model.access" 
+            id="access_apar_representation_raise_show_apar_technical_admin">
+            <field name="model" 
+                search="[('model', '=', 'apar.representation.raise.show')]"/>
+            <field name="group" ref="group_apar_technical_admin"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+
+        <record model="ir.model.access" 
+            id="access_apar_representation_raise_show_ratee_officer">
+            <field name="model" 
+                search="[('model', '=', 'apar.representation.raise.show')]"/>
+            <field name="group" ref="group_ratee_officer"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+
+        <record model="ir.model.access" 
+            id="access_apar_representation_raise_show_reporting_officer">
+            <field name="model" 
+                search="[('model', '=', 'apar.representation.raise.show')]"/>
+            <field name="group" ref="group_reporting_officer"/>
+            <field name="perm_read" eval="False"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+
+        <record model="ir.model.access" 
+            id="access_apar_representation_raise_show_reviewing_officer">
+            <field name="model" 
+                search="[('model', '=', 'apar.representation.raise.show')]"/>
+            <field name="group" ref="group_reviewing_officer"/>
+            <field name="perm_read" eval="False"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+
+        <record model="ir.model.access" 
+            id="access_apar_representation_raise_show_accepting_authority">
+            <field name="model" 
+                search="[('model', '=', 'apar.representation.raise.show')]"/>
+            <field name="group" ref="group_accepting_authority"/>
+            <field name="perm_read" eval="False"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+
+        <record model="ir.model.access" id="access_apar_representation_raise_show_acr_cell_admin">
+            <field name="model" search="[('model', '=', 'apar.representation.raise.show')]"/>
+            <field name="group" ref="group_acr_cell_admin"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+
+        <!--party.party-->
+        <record model="ir.model.access" 
+            id="access_party_party_establishment_admin">
+            <field name="model" 
+                search="[('model', '=', 'party.party')]"/>
+            <field name="group" 
+                ref="aiims_health_extn.group_establishment_admin"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+
+        <record model="ir.model.access" 
+            id="access_party_party_head_of_department">
+            <field name="model" 
+                search="[('model', '=', 'party.party')]"/>
+            <field name="group" 
+                ref="aiims_health_extn.group_head_of_department"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+
+        <record model="ir.model.access" 
+            id="access_party_party_apar_technical_admin">
+            <field name="model" 
+                search="[('model', '=', 'party.party')]"/>
+            <field name="group" ref="group_apar_technical_admin"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_delete" eval="True"/>
+        </record>
+
+        <record model="ir.model.access" 
+            id="access_party_party_ratee_officer">
+            <field name="model" 
+                search="[('model', '=', 'party.party')]"/>
+            <field name="group" ref="group_ratee_officer"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+
+        <record model="ir.model.access" 
+            id="access_party_party_reporting_officer">
+            <field name="model" 
+                search="[('model', '=', 'party.party')]"/>
+            <field name="group" ref="group_reporting_officer"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+
+        <record model="ir.model.access" 
+            id="access_party_party_reviewing_officer">
+            <field name="model" 
+                search="[('model', '=', 'party.party')]"/>
+            <field name="group" ref="group_reviewing_officer"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+
+        <record model="ir.model.access" 
+            id="access_party_party_accepting_authority">
+            <field name="model" 
+                search="[('model', '=', 'party.party')]"/>
+            <field name="group" ref="group_accepting_authority"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+
+        <record model="ir.model.access" id="access_party_party_acr_cell_admin">
+            <field name="model" search="[('model', '=', 'party.party')]"/>
+            <field name="group" ref="group_acr_cell_admin"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+
+        <!--employee.posting-->
+        <record model="ir.model.access" 
+            id="access_employee_posting_establishment_admin">
+            <field name="model" 
+                search="[('model', '=', 'employee.posting')]"/>
+            <field name="group" 
+                ref="aiims_health_extn.group_establishment_admin"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+
+        <record model="ir.model.access" 
+            id="access_employee_posting_head_of_department">
+            <field name="model" 
+                search="[('model', '=', 'employee.posting')]"/>
+            <field name="group" 
+                ref="aiims_health_extn.group_head_of_department"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+
+        <record model="ir.model.access" 
+            id="access_employee_posting_apar_technical_admin">
+            <field name="model" 
+                search="[('model', '=', 'employee.posting')]"/>
+            <field name="group" ref="group_apar_technical_admin"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_delete" eval="True"/>
+        </record>
+
+        <record model="ir.model.access" 
+            id="access_employee_posting_ratee_officer">
+            <field name="model" 
+                search="[('model', '=', 'employee.posting')]"/>
+            <field name="group" ref="group_ratee_officer"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+
+        <record model="ir.model.access" 
+            id="access_employee_posting_reporting_officer">
+            <field name="model" 
+                search="[('model', '=', 'employee.posting')]"/>
+            <field name="group" ref="group_reporting_officer"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+
+        <record model="ir.model.access" 
+            id="access_employee_posting_reviewing_officer">
+            <field name="model" 
+                search="[('model', '=', 'employee.posting')]"/>
+            <field name="group" ref="group_reviewing_officer"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+
+        <record model="ir.model.access" 
+            id="access_employee_posting_accepting_authority">
+            <field name="model" 
+                search="[('model', '=', 'employee.posting')]"/>
+            <field name="group" ref="group_accepting_authority"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+
+        <record model="ir.model.access" id="access_employee_posting_acr_cell_admin">
+            <field name="model" search="[('model', '=', 'employee.posting')]"/>
+            <field name="group" ref="group_acr_cell_admin"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+
+
+        <!-- Button Hierarchy -->
+        <!-- submit -->
+        <record model="ir.model.button" id="apar_department_form_submit">
+            <field name="name">submit</field>
+            <field name="string">Submit to HOD</field>
+            <field name="model" 
+                search="[('model', '=', 'apar.department.form')]"/>
+        </record>
+
+        <record model="ir.model.button-res.group" 
+            id="apar_department_form_submit_group_establishment_admin">
+            <field name="button" ref="apar_department_form_submit"/>
+            <field name="group" ref="aiims_health_extn.group_establishment_admin"/>
+        </record>
+        <record model="ir.model.button-res.group" 
+            id="apar_department_form_submit_group_apar_technical_admin">
+            <field name="button" ref="apar_department_form_submit"/>
+            <field name="group" ref="group_apar_technical_admin"/>
+        </record>
+
+        <!-- forward_to_employees -->
+        <record model="ir.model.button" id="apar_department_form_forward_to_employees">
+            <field name="name">forward_to_employees</field>
+            <field name="string">Forward forms to Employee</field>
+            <field name="model" 
+                search="[('model', '=', 'apar.department.form')]"/>
+        </record>
+
+        <record model="ir.model.button-res.group" 
+            id="apar_department_form_forward_to_employees_group_head_of_department">
+            <field name="button" ref="apar_department_form_forward_to_employees"/>
+            <field name="group" ref="aiims_health_extn.group_establishment_admin"/>
+        </record>
+        <record model="ir.model.button-res.group" 
+            id="apar_department_form_forward_to_employees_group_apar_technical_admin">
+            <field name="button" ref="apar_department_form_forward_to_employees"/>
+            <field name="group" ref="group_apar_technical_admin"/>
+        </record>
+        <!--submit_to_hod -->
+        <record model="ir.model.button" id="apar_employee_form_submit_to_hod">
+            <field name="name">submit_to_hod</field>
+            <field name="string">Forward to Department</field>
+            <field name="model" 
+                search="[('model', '=', 'apar.employee.form')]"/>
+        </record>
+
+        <record model="ir.model.button-res.group" 
+            id="apar_employee_form_submit_to_hod_group_apar_technical_admin">
+            <field name="button" ref="apar_employee_form_submit_to_hod"/>
+            <field name="group" ref="group_apar_technical_admin"/>
+        </record>
+
+        <!--forward_to_employee -->
+        <record model="ir.model.button" id="apar_employee_form_forward_to_employee">
+            <field name="name">forward_to_employee</field>
+            <field name="string">Forward to Employee</field>
+            <field name="model" 
+                search="[('model', '=', 'apar.employee.form')]"/>
+        </record>
+
+        <record model="ir.model.button-res.group" 
+            id="apar_employee_form_forward_to_employees_group_head_of_department">
+            <field name="button" ref="apar_employee_form_forward_to_employee"/>
+            <field name="group" ref="aiims_health_extn.group_establishment_admin"/>
+        </record>
+
+        <record model="ir.model.button-res.group" 
+            id="apar_employee_form_forward_to_employee_group_apar_technical_admin">
+            <field name="button" ref="apar_employee_form_forward_to_employee"/>
+            <field name="group" ref="group_apar_technical_admin"/>
+        </record>
+
+        <!--submit_to_reporting -->
+        <record model="ir.model.button" id="apar_employee_form_submit_to_reporting">
+            <field name="name">submit_to_reporting</field>
+            <field name="string">Submit to Reporting Officer</field>
+            <field name="model" 
+                search="[('model', '=', 'apar.employee.form')]"/>
+        </record>
+
+        <record model="ir.model.button-res.group" 
+            id="apar_employee_form_submit_to_reporting_group_ratee_officer">
+            <field name="button" ref="apar_employee_form_submit_to_reporting"/>
+            <field name="group" ref="group_ratee_officer"/>
+        </record>
+        <record model="ir.model.button-res.group" 
+            id="apar_employee_form_submit_to_reporting_group_apar_technical_admin">
+            <field name="button" ref="apar_employee_form_submit_to_reporting"/>
+            <field name="group" ref="group_apar_technical_admin"/>
+        </record>
+
+        <!--submit_to_reviewing -->
+        <record model="ir.model.button" id="apar_employee_form_submit_to_reviewing">
+            <field name="name">submit_to_reviewing</field>
+            <field name="string">Submit to Reviewing Officer</field>
+            <field name="model" 
+                search="[('model', '=', 'apar.employee.form')]"/>
+        </record>
+
+        <record model="ir.model.button-res.group" 
+            id="apar_employee_form_submit_to_reviewing_group_reporting_officer">
+            <field name="button" ref="apar_employee_form_submit_to_reviewing"/>
+            <field name="group" ref="group_reporting_officer"/>
+        </record>
+        <record model="ir.model.button-res.group" 
+            id="apar_employee_form_submit_to_reviewing_group_apar_technical_admin">
+            <field name="button" ref="apar_employee_form_submit_to_reviewing"/>
+            <field name="group" ref="group_apar_technical_admin"/>
+        </record>
+
+        <!--submit_to_accepting -->
+        <record model="ir.model.button" id="apar_employee_form_submit_to_accepting">
+            <field name="name">submit_to_accepting</field>
+            <field name="string">Submit to Accepting Authority</field>
+            <field name="model" 
+                search="[('model', '=', 'apar.employee.form')]"/>
+        </record>
+
+        <record model="ir.model.button-res.group" 
+            id="apar_employee_form_submit_to_accepting_group_reviewing_officer">
+            <field name="button" ref="apar_employee_form_submit_to_accepting"/>
+            <field name="group" ref="group_reviewing_officer"/>
+        </record>
+        <record model="ir.model.button-res.group" 
+            id="apar_employee_form_submit_to_accepting_group_apar_technical_admin">
+            <field name="button" ref="apar_employee_form_submit_to_accepting"/>
+            <field name="group" ref="group_apar_technical_admin"/>
+        </record>
+
+        <!--disclose -->
+        <record model="ir.model.button" id="apar_employee_form_disclose">
+            <field name="name">disclose</field>
+            <field name="string">Submit</field>
+            <field name="model" 
+                search="[('model', '=', 'apar.employee.form')]"/>
+        </record>
+
+        <record model="ir.model.button-res.group" 
+            id="apar_employee_form_disclose_group_accepting_authority">
+            <field name="button" ref="apar_employee_form_disclose"/>
+            <field name="group" ref="group_accepting_authority"/>
+        </record>
+        <record model="ir.model.button-res.group" 
+            id="apar_employee_form_disclose_group_reviewing_officer">
+            <field name="button" ref="apar_employee_form_disclose"/>
+            <field name="group" ref="group_reviewing_officer"/>
+        </record>
+        <record model="ir.model.button-res.group" 
+            id="apar_employee_form_disclose_group_apar_technical_admin">
+            <field name="button" ref="apar_employee_form_disclose"/>
+            <field name="group" ref="group_apar_technical_admin"/>
+        </record>
+
+        <!--sign_and_submit -->
+        <record model="ir.model.button" id="apar_employee_form_sign_and_submit">
+            <field name="name">sign_and_submit</field>
+            <field name="string">Sign and Submit</field>
+            <field name="model" 
+                search="[('model', '=', 'apar.employee.form')]"/>
+        </record>
+
+        <record model="ir.model.button-res.group" 
+            id="apar_employee_form_sign_and_submit_group_apar_technical_admin">
+            <field name="button" ref="apar_employee_form_sign_and_submit"/>
+            <field name="group" ref="group_apar_technical_admin"/>
+        </record>
+        <record model="ir.model.button-res.group" 
+            id="apar_employee_form_sign_and_submit_group_ratee_officer">
+            <field name="button" ref="apar_employee_form_sign_and_submit"/>
+            <field name="group" ref="group_ratee_officer"/>
+        </record>
+
+        <!--raise_representation -->
+        <record model="ir.model.button" id="apar_employee_form_raise_representation">
+            <field name="name">raise_representation</field>
+            <field name="string">Raise Representation</field>
+            <field name="model" 
+                search="[('model', '=', 'apar.employee.form')]"/>
+        </record>
+
+        <record model="ir.model.button-res.group" 
+            id="apar_employee_form_raise_representation_group_ratee_officer">
+            <field name="button" ref="apar_employee_form_raise_representation"/>
+            <field name="group" ref="group_ratee_officer"/>
+        </record>
+        <record model="ir.model.button-res.group" 
+            id="apar_employee_form_raise_representation_group_apar_technical_admin">
+            <field name="button" ref="apar_employee_form_raise_representation"/>
+            <field name="group" ref="group_apar_technical_admin"/>
+        </record>
+
+        <!--Representation Button-->
+        <!--submit-->
+        <record model="ir.model.button" id="apar_employee_form_raise_representation_submit">
+            <field name="name">submit</field>
+            <field name="string">Submit</field>
+            <field name="model" 
+                search="[('model', '=', 'apar.representation')]"/>
+        </record>
+
+        <record model="ir.model.button-res.group" 
+            id="apar_employee_form_raise_representation_submit_group_ratee_officer">
+            <field name="button" ref="apar_employee_form_raise_representation_submit"/>
+            <field name="group" ref="group_ratee_officer"/>
+        </record>
+        <record model="ir.model.button-res.group" 
+            id="apar_employee_form_raise_representation_submit_group_apar_technical_admin">
+            <field name="button" ref="apar_employee_form_raise_representation_submit"/>
+            <field name="group" ref="group_apar_technical_admin"/>
+        </record>
+
+        <!--forward_to_reporting-->
+        <record model="ir.model.button" id="apar_representation_forward_to_reporting">
+            <field name="name">forward_to_reporting</field>
+            <field name="string">Forward to Reporting</field>
+            <field name="model" 
+                search="[('model', '=', 'apar.representation')]"/>
+        </record>
+
+        <record model="ir.model.button-res.group" 
+            id="apar_representation_forward_to_reporting_acr_cell_admin">
+            <field name="button" ref="apar_representation_forward_to_reporting"/>
+            <field name="group" ref="group_acr_cell_admin"/>
+        </record>
+        <record model="ir.model.button-res.group" 
+            id="apar_representation_forward_to_reporting_group_apar_technical_admin">
+            <field name="button" ref="apar_representation_forward_to_reporting"/>
+            <field name="group" ref="group_apar_technical_admin"/>
+        </record>
+
+        <!--forward_to_reviewing-->
+        <record model="ir.model.button" id="apar_representation_forward_to_reviewing">
+            <field name="name">forward_to_reviewing</field>
+            <field name="string">Forward to Reviewing</field>
+            <field name="model" 
+                search="[('model', '=', 'apar.representation')]"/>
+        </record>
+
+        <record model="ir.model.button-res.group" 
+            id="apar_representation_forward_to_reviewing_reporting_officer">
+            <field name="button" ref="apar_representation_forward_to_reviewing"/>
+            <field name="group" ref="group_reporting_officer"/>
+        </record>
+        <record model="ir.model.button-res.group" 
+            id="apar_representation_forward_to_reviewing_group_apar_technical_admin">
+            <field name="button" ref="apar_representation_forward_to_reviewing"/>
+            <field name="group" ref="group_apar_technical_admin"/>
+        </record>
+
+        <!--forward_to_accepting-->
+        <record model="ir.model.button" id="apar_representation_forward_to_accepting">
+            <field name="name">forward_to_accepting</field>
+            <field name="string">Forward to Accepting Authority</field>
+            <field name="model" 
+                search="[('model', '=', 'apar.representation')]"/>
+        </record>
+
+        <record model="ir.model.button-res.group" 
+            id="apar_representation_forward_to_accepting_reviewing_officer">
+            <field name="button" ref="apar_representation_forward_to_accepting"/>
+            <field name="group" ref="group_reviewing_officer"/>
+        </record>
+        <record model="ir.model.button-res.group" 
+            id="apar_representation_forward_to_accepting_group_apar_technical_admin">
+            <field name="button" ref="apar_representation_forward_to_accepting"/>
+            <field name="group" ref="group_apar_technical_admin"/>
+        </record>
+
+        <!--forward_to_HoD-->
+        <record model="ir.model.button" id="apar_representation_forward_to_HoD">
+            <field name="name">forward_to_HoD</field>
+            <field name="string">Forward to Head of Department</field>
+            <field name="model" 
+                search="[('model', '=', 'apar.representation')]"/>
+        </record>
+
+        <record model="ir.model.button-res.group" 
+            id="apar_representation_forward_to_HoD_accepting_authority">
+            <field name="button" ref="apar_representation_forward_to_HoD"/>
+            <field name="group" ref="group_accepting_authority"/>
+        </record>
+        <record model="ir.model.button-res.group" 
+            id="apar_representation_forward_to_HoD_reviewing_officer">
+            <field name="button" ref="apar_representation_forward_to_HoD"/>
+            <field name="group" ref="group_reviewing_officer"/>
+        </record>
+        <record model="ir.model.button-res.group" 
+            id="apar_representation_forward_to_HoD_group_apar_technical_admin">
+            <field name="button" ref="apar_representation_forward_to_HoD"/>
+            <field name="group" ref="group_apar_technical_admin"/>
+        </record>
+
+        <!--forward_to_acr-->
+        <record model="ir.model.button" id="apar_representation_forward_to_ACR">
+            <field name="name">forward_to_acr</field>
+            <field name="string">Forward to ACR</field>
+            <field name="model" 
+                search="[('model', '=', 'apar.representation')]"/>
+        </record>
+
+        <record model="ir.model.button-res.group" 
+            id="apar_representation_forward_to_acr_acr_cell_admin">
+            <field name="button" ref="apar_representation_forward_to_ACR"/>
+            <field name="group" ref="group_acr_cell_admin"/>
+        </record>
+        <record model="ir.model.button-res.group" 
+            id="apar_representation_forward_to_acr_group_apar_technical_admin">
+            <field name="button" ref="apar_representation_forward_to_ACR"/>
+            <field name="group" ref="group_apar_technical_admin"/>
+        </record>
+
+    </data>
+</tryton>

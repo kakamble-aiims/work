@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<form>
+    <!-- <label name="quarter_type"/>
+    <field name="quarter_type"/> -->
+    <label name="name"/>
+    <field name="name"/>
+    <label name="license_fee"/>
+    <field name="license_fee"/>
+    <label name="water_charges"/>
+    <field name="water_charges"/>
+    <label name="locations"/>
+    <field name="locations"/>
+</form>

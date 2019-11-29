@@ -1,0 +1,140 @@
+<?xml version="1.0"?>
+<tryton>
+    <data>
+
+        <record id="template_nursing" model="apar.form.template">
+            <field name="name">Sister Grade (I &amp; II)</field>
+            <field name="form_number">3</field>
+        </record>
+
+         <record id="template_nursing_part2" model="apar.form.template.part">
+            <field name="name">Self Appraisal for the Year(To be filled by the Ratee Officer)</field>
+            <field name="number">2</field>
+            <field name="template" ref="template_nursing"/>
+            <field name="type_">self_appraisal</field>
+        </record>
+        <record id="template_nursing_part3" model="apar.form.template.part">
+            <field name="name">Appraisal(To be filled by Reporting Officer and To be reviewed by Reviewing Officer)</field>
+            <field name="number">3 and 4</field>
+            <field name="template" ref="template_nursing"/>
+            <field name="type_">appraisal</field>
+        </record>
+ <record id="section_nursing_1" model="apar.form.template.section">
+            <field name="name">Assessment of work output and personal attributes</field>
+            <field name="weightage">60</field>
+            <field name="number">3.1</field>
+            <field name="part" ref="template_nursing_part3"/>
+        </record>
+
+        <record id="section_nursing_2" model="apar.form.template.section">
+            <field name="name">Assessment of functional competency</field>
+            <field name="weightage">40</field>
+            <field name="number">3.2</field>
+            <field name="part" ref="template_nursing_part3"/>
+        </record>
+
+        <record id="template_nursing_question1" model="apar.form.template.question">
+            <field name="question_no">2.1</field>
+            <field name="name">Brief description of duties of post:</field>
+            <field name="part" ref="template_nursing_part2"/>
+        </record>
+<record id="template_nursing_question2" model="apar.form.template.question">
+            <field name="question_no">2.2</field>
+            <field name="name">Brief resume of work done and achievements with particular mention of the &#xA; specific tasks and actions assigned to your during the period in about 100 words.</field>
+            <field name="part" ref="template_nursing_part2"/>
+        </record>
+<record id="template_nursing_question3" model="apar.form.template.question">
+            <field name="question_no">2.3</field>
+            <field name="name">Any other additional and unforeseen assignments carried out/Initiatives undertaken worth mentioning.</field>
+            <field name="part" ref="template_nursing_part2"/>
+        </record>
+<record id="template_nursing_question4" model="apar.form.template.question">
+            <field name="question_no">2.4</field>
+            <field name="name">Have you filled your immovable property return as due? If yes, please mention date.</field>
+            <field name="part" ref="template_nursing_part2"/>
+        </record>
+<record id="template_nursing_question5" model="apar.form.template.question">
+            <field name="question_no">4.1</field>
+            <field name="name">Length of service under Reviewing Authority:</field>
+            <field name="part" ref="template_nursing_part3"/>
+        </record>
+<record id="template_nursing_question6" model="apar.form.template.question">
+            <field name="question_no">4.2</field>
+            <field name="name">Do you agree with assessment made by the Reporting Officer with respect to the work output &#xA; and various attributes in Part-III. In case you do not agree with any of the &#xA; numerical assessment or attitudes, please record your assessments in column &#xA; provided for in that Part and initial your entries.</field>
+            <field name="part" ref="template_nursing_part3"/>
+        </record>
+<record id="template_nursing_question7" model="apar.form.template.question">
+            <field name="question_no">4.3</field>
+            <field name="name">In case of difference of opinion, details and reasons for the same may be given &#xA; remarks/observation on the Pen Picture by the Reporting Officer:</field>
+            <field name="part" ref="template_nursing_part3"/>
+        </record>
+<record id="template_nursing_question9" model="apar.form.template.question">
+            <field name="question_no">i</field>
+            <field name="name">Attitude to work</field>
+            <field name="section" ref="section_nursing_1"/>
+        </record>
+<record id="template_nursing_question10" model="apar.form.template.question">
+            <field name="question_no">ii</field>
+            <field name="name">Sense of responsibility</field>
+            <field name="section" ref="section_nursing_1"/>
+        </record>
+<record id="template_nursing_question11" model="apar.form.template.question">
+            <field name="question_no">iii</field>
+            <field name="name">Maintenance of discipline</field>
+            <field name="section" ref="section_nursing_1"/>
+        </record>
+<record id="template_nursing_question12" model="apar.form.template.question">
+            <field name="question_no">iv</field>
+            <field name="name">Communication Skills</field>
+            <field name="section" ref="section_nursing_1"/>
+        </record>
+<record id="template_nursing_question13" model="apar.form.template.question">
+            <field name="question_no">v</field>
+            <field name="name">Capacity to work in team spirit</field>
+            <field name="section" ref="section_nursing_1"/>
+        </record>
+<record id="template_nursing_question14" model="apar.form.template.question">
+            <field name="question_no">vi</field>
+            <field name="name">Capacity to work in time schedule</field>
+            <field name="section" ref="section_nursing_1"/>
+        </record>
+<record id="template_nursing_question15" model="apar.form.template.question">
+            <field name="question_no">vii</field>
+            <field name="name">Inter-personal relations with indoor and outdoor patients</field>
+            <field name="section" ref="section_nursing_1"/>
+        </record>
+<record id="template_nursing_question16" model="apar.form.template.question">
+            <field name="question_no">viii</field>
+            <field name="name">Dependability and willingness to take responsibility</field>
+            <field name="section" ref="section_nursing_1"/>
+        </record>
+<record id="template_nursing_question17" model="apar.form.template.question">
+            <field name="question_no">i</field>
+            <field name="name">Strategic planning ability</field>
+            <field name="section" ref="section_nursing_2"/>
+        </record>
+<record id="template_nursing_question18" model="apar.form.template.question">
+            <field name="question_no">ii</field>
+            <field name="name">Decision making ability</field>
+            <field name="section" ref="section_nursing_2"/>
+        </record>
+<record id="template_nursing_question19" model="apar.form.template.question">
+            <field name="question_no">iii</field>
+            <field name="name">Analytical ability</field>
+            <field name="section" ref="section_nursing_2"/>
+        </record>
+<record id="template_nursing_question20" model="apar.form.template.question">
+            <field name="question_no">iv</field>
+            <field name="name">Coordination ability</field>
+            <field name="section" ref="section_nursing_2"/>
+        </record>
+<record id="template_nursing_question21" model="apar.form.template.question">
+            <field name="question_no">v</field>
+            <field name="name">Ability to motivate and develop subordinates</field>
+            <field name="section" ref="section_nursing_2"/>
+        </record>
+
+
+
+    </data>
+</tryton>

@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+
+<form>
+    <label name="name"/>
+    <field name="name"/>
+    <label name="branch"/>
+    <field name="branch"/>
+    <label name="ifsc_code"/>
+    <field name="ifsc_code"/>
+    <label name="bank"/>
+    <field name="bank"/>
+</form>

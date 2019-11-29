@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+
+<form>
+    <label name="ddo_regno"/>
+    <field name="ddo_regno"/>
+    <label name="pran_no"/>
+    <field name="pran_no"/>
+    <label name="employee"/>
+    <field name="employee"/>
+    <label name="govt_cont"/>
+    <field name="govt_cont"/>
+    <label name="sub_cont"/>
+    <field name="sub_cont"/>
+    <label name="pay_month"/>
+    <field name="pay_month"/>
+    <label name="pay_year"/>
+    <field name="pay_year"/>
+    <label name="cont_type"/>
+    <field name="cont_type"/>
+    <label name="remarks"/>
+    <field name="remarks"/>
+    <label name="code"/>
+    <field name="code"/>
+    <label name="bpay"/>
+    <field name="bpay"/>
+    <label name="npa"/>
+    <field name="npa"/>
+    <label name="da"/>
+    <field name="da"/>
+    <label name="nps_no"/>
+    <field name="nps_no"/>
+    <group id="workflow_nps" col="4" colspan="2">
+        <label name="state"/>
+        <field name="state"/>
+        <button name ="confirm" string="Confirm details" confirm="Are you sure you want to confirm?"/>
+        <button name ="cancel" string="Cancel" confirm="Are you sure you want to cancel?"/>
+        <button name ="done" string="Done" confirm="Done"/>
+    </group>
+    
+</form>

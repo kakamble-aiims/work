@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<form>
+    <label name="state"/>
+    <field name="state"/>
+    <label name="employee"/>
+    <field name="employee"/>
+    <label name="center_name"/>
+    <field name="center_name"/>
+    <label name="department_name"/>
+    <field name="department_name"/>
+    <label name="salary_code"/>
+    <field name="salary_code"/>
+    <newline/>
+    <label name="quarter_no"/>
+    <field name="quarter_no"/>
+    <label name="location"/>
+    <field name="location"/>
+    <label name="quarter_type"/>
+    <field name="quarter_type" widget="selection"/>
+    <label name="date_of_allocation"/>
+    <field name="date_of_allocation"/>
+    <label name="date_of_occupation"/>
+    <field name="date_of_occupation"/>
+    <label name="date_of_vacation"/>
+    <field name="date_of_vacation"/>
+    <newline/>
+    <label name="license_fee"/>
+    <field name="license_fee"/>
+    <label name="water_charges"/>
+    <field name="water_charges"/>
+    <newline/>
+    <label name="garage"/>
+    <field name="garage"/>
+    <label name="servant_quarter"/>
+    <field name="servant_quarter"/>
+    <newline/>
+    <label name="garage_fee"/>
+    <field name="garage_fee"/>
+    <label name="servant_quarter_fee"/>
+    <field name="servant_quarter_fee"/>
+    <button name="confirm_details" string="Confirm" colspan="4" confirm="Are you sure these details are correct? Once confirmed, you will NOT be allowed to make changes"/>
+    <!-- <button name="submit" string="Submit" colspan="4"/> -->
+</form>

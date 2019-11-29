@@ -1,0 +1,115 @@
+<?xml version="1.0"?>
+
+<tryton>
+    <data>
+
+        <!-- Account Concurrence Checklist Model -->
+        <menuitem id="menu_account_concurrence_checklist" name="Checklist Item"/>
+        <!-- Tree View-->
+        <record id="tree_account_concurrence_checklist_view" model="ir.ui.view">
+            <field name="name">tree_account_concurrence_checklist</field>
+            <field name="model">account.concurrence.checklist</field>
+            <field name="type">tree</field>
+        </record>
+        
+        <!-- Form View -->
+        <record id="form_account_concurrence_checklist_view" model="ir.ui.view">
+            <field name="name">form_account_concurrence_checklist</field>
+            <field name="model">account.concurrence.checklist</field>
+            <field name="type">form</field>
+        </record>
+        
+        <!-- Action -->
+        <record id="act_account_concurrence_checklist" model="ir.action.act_window">
+            <field name="name">Account Concurrence Checklist</field>
+            <field name="res_model">account.concurrence.checklist</field>
+        </record>
+        
+        <!-- Action link to tree -->
+        <record id="act_tree_view_account_concurrence_checklist" 
+            model="ir.action.act_window.view">
+            <field name="view" ref="tree_account_concurrence_checklist_view"/>
+            <field name="act_window" ref="act_account_concurrence_checklist"/>
+            <field name="sequence" eval="10"/>
+        </record>
+
+        <!-- Action link to form -->
+        <record id="act_form_view_account_concurrence_checklist_view" 
+            model="ir.action.act_window.view">
+            <field name="view" ref="form_account_concurrence_checklist_view"/>
+            <field name="act_window" ref="act_account_concurrence_checklist"/>
+            <field name="sequence" eval="20"/>
+        </record>
+        
+        <menuitem id="menu_child_account_concurrence_checklist" 
+            parent="menu_account_concurrence_checklist" 
+            action="act_account_concurrence_checklist" 
+            name="Account Concurrence Checklist" sequence="10"/>
+
+
+            <!-- Account Concurrence Checklist Line Model -->
+       
+        <!-- Tree View-->
+        <record id="tree_account_concurrence_checklist_line_view" model="ir.ui.view">
+            <field name="name">tree_account_concurrence_checklist_line</field>
+            <field name="model">account.concurrence.checklist.line</field>
+            <field name="type">tree</field>
+        </record>
+        
+        <!-- Form View -->
+        <record id="form_account_concurrence_checklist_line_view" model="ir.ui.view">
+            <field name="name">form_account_concurrence_checklist_line</field>
+            <field name="model">account.concurrence.checklist.line</field>
+            <field name="type">form</field>
+        </record>
+
+            <!-- Financial Concurrence Stage -->
+
+        <!-- Tree View-->
+      <!--   <record id="tree_financial_concurrence_stage_view" model="ir.ui.view">
+            <field name="name">financial_concurrence_stage</field>
+            <field name="model">financial.concurrence.stage</field>
+            <field name="type">tree</field>
+        </record> -->
+        
+        <!-- Form View -->
+        <record id="form_financial_concurrence_stage_view" model="ir.ui.view">
+            <field name="name">form_financial_concurrence_stage</field>
+            <field name="model">financial.concurrence.stage</field>
+            <field name="type">form</field>
+        </record>
+
+            <!-- Financial Concurrence Section -->
+        
+        <!-- Tree View-->
+       <!--  <record id="tree_financial_concurrence_section_view" model="ir.ui.view">
+            <field name="name">financial_concurrence_section</field>
+            <field name="model">financial.concurrence.section</field>
+            <field name="type">tree</field>
+        </record> -->
+        
+        <!-- Form View -->
+        <!-- <record id="form_financial_concurrence_section_view" model="ir.ui.view">
+            <field name="name">form_financial_concurrence_section</field>
+            <field name="model">financial.concurrence.section</field>
+            <field name="type">form</field>
+        </record> -->
+
+        <!-- Account Concurrence Checklist Line Items Model -->
+       
+        <!-- Tree View-->
+       <!--  <record id="tree_account_concurrence_checklist_line_item_view" model="ir.ui.view">
+            <field name="name">tree_account_concurrence_checklist_line_item</field>
+            <field name="model">account.concurrence.checklist.line.item</field>
+            <field name="type">tree</field>
+        </record>
+         -->
+        <!-- Form View -->
+        <record id="form_account_concurrence_checklist_line_item_view" model="ir.ui.view">
+            <field name="name">form_account_concurrence_checklist_line_item</field>
+            <field name="model">account.concurrence.checklist.line.item</field>
+            <field name="type">form</field>
+        </record>
+        
+    </data>
+</tryton>

@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<data>
+    <xpath expr="/form/notebook/page[@id='qualifications']" position="after">
+    	<page id="_bank_details" string="Bank Details">
+            <label name="bank_name"/>
+            <field name="bank_name"/>
+            <newline/>
+            <label name="ifsc"/>
+            <field name="ifsc"/>
+            <button name="ifsc_button" string="Verify IFSC Code" colspan="2"/>
+            <newline/>
+            <label name="bank_address"/>
+            <field name="bank_address"/>
+            <newline/>
+            <label name="account_no"/>
+            <field name="account_no"/>
+            <button name="account_no_verify" string="Verify Account Number status" colspan="2"/>
+            <label name="bank_status"/>
+            <field name="bank_status"/>
+        </page>
+    </xpath>
+</data>

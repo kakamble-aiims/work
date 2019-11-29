@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+	<tree editable="bottom">
+		<field name="from_amount"/>
+        <field name="to_amount"/>
+        <field name="base"/>
+        <field name="percentage"/>
+	</tree>

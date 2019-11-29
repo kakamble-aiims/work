@@ -1,0 +1,66 @@
+--- notification.py
++++ notification.py
+@@ -24,6 +24,10 @@ def _formataddr(name, email):
+         name = str(Header(name, 'utf-8'))
+     return formataddr((name, email))
+ 
++DOMAIN = [
++    ('model.model', '=', Eval('model')),
++    ('relation', 'in', ['res.user', 'party.party', 'web.user', 'company.employee']),
++]
+ 
+ class Email(ModelSQL, ModelView):
+     "Email Notitification"
+@@ -34,10 +38,7 @@ class Email(ModelSQL, ModelView):
+         help="Leave empty for the value defined in the configuration file.")
+     recipients = fields.Many2One(
+         'ir.model.field', "Recipients",
+-        domain=[
+-            ('model.model', '=', Eval('model')),
+-            ('relation', 'in', ['res.user', 'party.party', 'web.user']),
+-            ],
++        domain=DOMAIN,
+         depends=['model'],
+         help="The field that contains the recipient(s).")
+     fallback_recipients = fields.Many2One(
+@@ -52,10 +53,7 @@ class Email(ModelSQL, ModelView):
+         help="User notified when no recipients e-mail is found")
+     recipients_secondary = fields.Many2One(
+         'ir.model.field', "Secondary Recipients",
+-        domain=[
+-            ('model.model', '=', Eval('model')),
+-            ('relation', 'in', ['res.user', 'party.party', 'web.user']),
+-            ],
++        domain=DOMAIN,
+         depends=['model'],
+         help="The field that contains the secondary recipient(s).")
+     fallback_recipients_secondary = fields.Many2One(
+@@ -70,10 +68,7 @@ class Email(ModelSQL, ModelView):
+         help="User notified when no secondary recipients e-mail is found")
+     recipients_hidden = fields.Many2One(
+         'ir.model.field', "Hidden Recipients",
+-        domain=[
+-            ('model.model', '=', Eval('model')),
+-            ('relation', 'in', ['res.user', 'party.party', 'web.user']),
+-            ],
++        domain=DOMAIN,
+         depends=['model'],
+         help="The field that contains the hidden recipient(s).")
+     fallback_recipients_hidden = fields.Many2One(
+@@ -149,6 +144,16 @@ class Email(ModelSQL, ModelView):
+             WebUser = pool.get('web.user')
+         except KeyError:
+         except KeyError:
+             WebUser = None
++        
++        try:
++            Employee = pool.get('company.employee')
++        except KeyError:
++            Employee = None
++        if isinstance(record, Employee):
++            if record.primary_email:
++                return _formataddr(record.rec_name, record.primary_email)
++            record = record.party
++
+         if isinstance(record, User) and record.email:
+             return _formataddr(record.rec_name, record.email)

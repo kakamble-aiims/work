@@ -1,0 +1,215 @@
+<?xml version="1.0"?>
+<tryton>
+    <data>
+        <!-- User Groups -->
+        <record id="group_technical_admin" model="res.group">
+            <field name="name">Technical Admin</field>
+        </record>
+        <record id="group_loanee" model="res.group">
+            <field name="name">Loanee</field>
+        </record>
+        <record id="group_junior_accounts_officer" model="res.group">
+            <field name="name">Junior Accounts Officer</field>
+        </record>
+        <record id="group_accounts_officer" model="res.group">
+            <field name="name">Accounts Officer</field>
+        </record>
+
+        
+        <!-- User-Group Linking for Admin -->
+        <record id="user_technical_admin" model="res.user-res.group">
+            <field name="user" ref="res.user_admin"/>
+            <field name="group" ref="group_technical_admin"/>
+        </record>
+
+        
+        <!-- Buttons -->
+        <!-- Computer Loan -->
+        <record id="button_computer_submitted_to_ao" model="ir.model.button">
+            <field name="name">submitted_to_ao</field>
+            <field name="model" search="[('model', '=', 'computer.loan')]"/>
+        </record>
+        <record id="button_computer_forward_to_jo" model="ir.model.button">
+            <field name="name">forward_to_jo</field>
+            <field name="model" search="[('model', '=', 'computer.loan')]"/>
+        </record>
+        <record id="button_computer_forward_to_ao" model="ir.model.button">
+            <field name="name">forward_to_ao</field>
+            <field name="model" search="[('model', '=', 'computer.loan')]"/>
+        </record>
+        <record id="button_computer_cancel" model="ir.model.button">
+            <field name="name">cancel</field>
+            <field name="model" search="[('model', '=', 'computer.loan')]"/>
+        </record>
+
+        <!-- HBA Loan -->
+        <record id="button_hba_submitted_to_ao" model="ir.model.button">
+            <field name="name">submitted_to_ao</field>
+            <field name="model" search="[('model', '=', 'hba.loan')]"/>
+        </record>
+        <record id="button_hba_forward_to_jo" model="ir.model.button">
+            <field name="name">forward_to_jo</field>
+            <field name="model" search="[('model', '=', 'hba.loan')]"/>
+        </record>
+        <record id="button_hba_forward_to_ao" model="ir.model.button">
+            <field name="name">forward_to_ao</field>
+            <field name="model" search="[('model', '=', 'hba.loan')]"/>
+        </record>
+        <record id="button_hba_cancel" model="ir.model.button">
+            <field name="name">cancel</field>
+            <field name="model" search="[('model', '=', 'hba.loan')]"/>
+        </record>
+
+        
+        <!-- Button-Group Access -->
+        <!-- Computer Loan -->
+        <record model="ir.model.button-res.group"
+            id="button_access_computer_submitted_to_ao_loanee">
+            <field name="button" ref="button_computer_submitted_to_ao"/>
+            <field name="group" ref="group_loanee"/>
+        </record>
+        <record model="ir.model.button-res.group"
+            id="button_access_computer_forward_to_jo_junior_accounts_officer">
+            <field name="button" ref="button_computer_forward_to_jo"/>
+            <field name="group" ref="group_junior_accounts_officer"/>
+        </record>
+        <record model="ir.model.button-res.group"
+            id="button_access_computer_forward_to_ao_accounts_officer">
+            <field name="button" ref="button_computer_forward_to_ao"/>
+            <field name="group" ref="group_accounts_officer"/>
+        </record>
+        <record model="ir.model.button-res.group"
+            id="button_access_computer_cancel_accounts_officer">
+            <field name="button" ref="button_computer_cancel"/>
+            <field name="group" ref="group_accounts_officer"/>
+        </record>
+
+        <!-- HBA Loan -->
+        <record model="ir.model.button-res.group"
+            id="button_access_hba_submitted_to_ao_loanee">
+            <field name="button" ref="button_hba_submitted_to_ao"/>
+            <field name="group" ref="group_loanee"/>
+        </record>
+        <record model="ir.model.button-res.group"
+            id="button_access_hba_forward_to_jo_junior_accounts_officer">
+            <field name="button" ref="button_hba_forward_to_jo"/>
+            <field name="group" ref="group_junior_accounts_officer"/>
+        </record>
+        <record model="ir.model.button-res.group"
+            id="button_access_hba_forward_to_ao_accounts_officer">
+            <field name="button" ref="button_hba_forward_to_ao"/>
+            <field name="group" ref="group_accounts_officer"/>
+        </record>
+        <record model="ir.model.button-res.group"
+            id="button_access_hba_cancel_accounts_officer">
+            <field name="button" ref="button_hba_cancel"/>
+            <field name="group" ref="group_accounts_officer"/>
+        </record>
+
+        
+        <!-- Menu-Group Access -->
+        <!-- Computer Loan -->
+        <record model="ir.ui.menu-res.group" id="computer_loan_admin">
+            <field name="menu" ref="menu_computer_loan"/>
+            <field name="group" ref="group_technical_admin"/>
+        </record>
+        <record model="ir.ui.menu-res.group" id="computer_loan_junior_accounts_officer">
+            <field name="menu" ref="menu_computer_loan"/>
+            <field name="group" ref="group_junior_accounts_officer"/>
+        </record>
+        <record model="ir.ui.menu-res.group" id="computer_loan_accounts_officer">
+            <field name="menu" ref="menu_computer_loan"/>
+            <field name="group" ref="group_accounts_officer"/>
+        </record>
+
+        <!-- HBA Loan -->
+        <record model="ir.ui.menu-res.group" id="hba_loan_admin">
+            <field name="menu" ref="menu_hba_loan"/>
+            <field name="group" ref="group_technical_admin"/>
+        </record>
+        <record model="ir.ui.menu-res.group" id="hba_loan_junior_accounts_officer">
+            <field name="menu" ref="menu_hba_loan"/>
+            <field name="group" ref="group_junior_accounts_officer"/>
+        </record>
+        <record model="ir.ui.menu-res.group" id="hba_loan_accounts_officer">
+            <field name="menu" ref="menu_hba_loan"/>
+            <field name="group" ref="group_accounts_officer"/>
+        </record>
+
+        <!-- Loan Cancel Reason -->
+        <record model="ir.ui.menu-res.group" id="loan_reason_admin">
+            <field name="menu" ref="menu_loan_reason"/>
+            <field name="group" ref="group_technical_admin"/>
+        </record>
+        <record model="ir.ui.menu-res.group" id="loan_reason_junior_accounts_officer">
+            <field name="menu" ref="menu_loan_reason"/>
+            <field name="group" ref="group_junior_accounts_officer"/>
+        </record>
+        <record model="ir.ui.menu-res.group" id="loan_reason_accounts_officer">
+            <field name="menu" ref="menu_loan_reason"/>
+            <field name="group" ref="group_accounts_officer"/>
+        </record>
+
+        <!-- HBA Loan Cancel Reason Field Access -->
+        <record id="cancel_reason_field_hba_loan_junior_accounts_officer"
+            model="ir.model.field.access">
+            <field name="field" 
+                search="[('model.model', '=', 'hba.loan'), ('name', '=', 'cancel_reason')]"/>
+            <field name="group" ref="group_junior_accounts_officer"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>   
+        </record>
+
+        <record id="group_loan_employee" model="ir.model.access">
+            <field name="model" search="[('model', '=', 'computer.loan')]"/>
+            <field name="group" ref="group_loanee"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+        <record id="group_loan_jao" model="ir.model.access">
+            <field name="model" search="[('model', '=', 'computer.loan')]"/>
+            <field name="group" ref="group_junior_accounts_officer"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+        <record id="group_loan_ao" model="ir.model.access">
+            <field name="model" search="[('model', '=', 'computer.loan')]"/>
+            <field name="group" ref="group_accounts_officer"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+
+        <record id="group_hba_loan_employee" model="ir.model.access">
+            <field name="model" search="[('model', '=', 'hba.loan')]"/>
+            <field name="group" ref="group_loanee"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+        <record id="group_hba_loan_jao" model="ir.model.access">
+            <field name="model" search="[('model', '=', 'hba.loan')]"/>
+            <field name="group" ref="group_junior_accounts_officer"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+        <record id="group_hba_loan_ao" model="ir.model.access">
+            <field name="model" search="[('model', '=', 'hba.loan')]"/>
+            <field name="group" ref="group_accounts_officer"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+    </data>
+</tryton>

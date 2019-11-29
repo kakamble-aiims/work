@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+
+<form>
+    <label name="salary_code"/>
+    <field name="salary_code"/>
+    <label name="employee"/>
+    <field name="employee"/>
+    <label name="number"/>
+    <field name="number"/>
+    <label name="payslip_month_year"/>
+    <field name="payslip_month_year"/>
+    <newline/>
+    <label name="name"/>
+    <field name="name"/>
+    <label name="structure"/>
+    <field name="structure"/>
+    <label name="contract"/>
+    <field name="contract"/>
+    <label name="state"/>
+    <field name="state"/>
+    <group id="verify" col="4" colspan="2">
+        <button name="verify" string="Verify"/>
+        <button name="cancel" string="Cancel"/>
+        <button name="confirm" string="Confirm"/>
+        <button name="done" string="Done"/>
+    </group>
+        <!-- <button name="_compute_salary" string="Compute Salary" colspan="2" col="2"/> -->
+    <notebook colspan="6">
+        <page id="_salary_computation" string="Salary Computation">
+            <field name="lines" view_ids="payroll.payslip_line_view_tree"/>
+        </page>
+        <page id="_details_by_salary_rule_category" string="Details By Salary Rule Category">
+            <field name="details_by_salary_rule_category" view_ids="payroll.payslip_line_view_tree_sequence"/>
+        </page>
+        <page id="_accounting_information" string="Accounting Information">
+            <group id="_miscellaneous" string="Bank Account Details">
+                <label name="bank_name"/>
+                <field name="bank_name"/>
+                <label name="ifsc"/>
+                <field name="ifsc"/>
+                <label name="bank_address"/>
+                <field name="bank_address"/>
+                <label name="account_no"/>
+                <field name="account_no"/>
+                <label name="bank_status"/>
+                <field name="bank_status"/>
+            </group>
+        </page>
+    </notebook>
+</form>

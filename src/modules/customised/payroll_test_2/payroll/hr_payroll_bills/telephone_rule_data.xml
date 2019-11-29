@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<tryton>
+    <data>
+        <record id="hr_rule_tele" model="hr.salary.rule">
+            <field name="name">Telephone Allowance</field>
+            <field name="priority" eval="4300"/>
+            <field name="code">TELE_BILL</field>
+            <field name="category" ref="hr_payroll.salaryrule_rem"/>
+            <field name="condition_select">python_code</field>
+            <field name="amount_select">code</field>
+        </record>
+    </data>    
+</tryton>    

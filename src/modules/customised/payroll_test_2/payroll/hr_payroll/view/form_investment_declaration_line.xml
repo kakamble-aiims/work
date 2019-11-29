@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+
+<form>
+    <label name="scheme"/>
+    <field name="scheme"/>
+    <label name="section"/>
+    <field name="section"/>
+    <label name="actual_amount"/>
+    <field name="actual_amount"/>
+    <label name="remarks"/>
+    <field name="remarks"/>
+</form>

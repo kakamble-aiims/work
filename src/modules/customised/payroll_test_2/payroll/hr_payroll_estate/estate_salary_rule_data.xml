@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+
+<tryton>
+    <data>
+         <record id="hr_rule_license_fee" model="hr.salary.rule">
+            <field name="name">License Fee</field>
+            <field name="priority" eval="2900"/>
+            <field name="code">LICF</field>
+            <field name="category" ref="hr_payroll.salaryrule_ded"/>
+            <field name="condition_select">always_true</field>
+            <field name="amount_select">code</field>
+        </record>
+        <record id="hr_rule_water_charges" model="hr.salary.rule">
+            <field name="name">Water Charges</field>
+            <field name="priority" eval="3000"/>
+            <field name="code">WTR</field>
+            <field name="category" ref="hr_payroll.salaryrule_ded"/>
+            <field name="condition_select">always_true</field>
+            <field name="amount_select">code</field>
+        </record>
+    </data>
+</tryton>

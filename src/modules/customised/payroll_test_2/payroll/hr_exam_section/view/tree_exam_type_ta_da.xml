@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<tree>
+    <field name="group"/>
+    <field name="hotel_charges"/>
+    <field name="food_charges"/>
+    <field name="maximum"/>
+    <field name="minimum"/>
+</tree>

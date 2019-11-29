@@ -1,0 +1,166 @@
+<?xml version="1.0"?>
+<tryton>
+    <data>
+        <menuitem id="menu_exam_section" name="Exam Section"/>
+        <menuitem id="menu_exam_section_config" name="Configuration" parent="menu_exam_section" sequence="3"/>
+        
+        <record id="form_exam_center_view" model="ir.ui.view">
+            <field name="name">form_exam_center</field>
+            <field name="model">exam_section.exam_center</field>
+            <field name="type">form</field>
+        </record>
+        <record id="tree_exam_center_view" model="ir.ui.view">
+            <field name="name">tree_exam_center</field>
+            <field name="model">exam_section.exam_center</field>
+            <field name="type">tree</field>
+        </record>
+
+        <record id="act_exam_center" model="ir.action.act_window">
+            <field name="name">Exam Centers</field>
+            <field name="res_model">exam_section.exam_center</field>
+        </record>
+        <record id="act_exam_center_form" model="ir.action.act_window.view">
+            <field name="sequence" eval="20"/>
+            <field name="act_window" ref="act_exam_center"/>
+            <field name="view" ref="form_exam_center_view"/>
+        </record>
+        <record id="act_exam_center_tree" model="ir.action.act_window.view">
+            <field name="sequence" eval="10"/>
+            <field name="act_window" ref="act_exam_center"/>
+            <field name="view" ref="tree_exam_center_view"/>
+        </record>
+        <menuitem id="menu_exam_section_exam_center" name="Exam Centers" 
+            parent="menu_exam_section_config" sequence="1"
+            action="act_exam_center"/>
+
+        <record id="form_exam_view" model="ir.ui.view">
+            <field name="name">form_exam</field>
+            <field name="model">exam_section.exam</field>
+            <field name="type">form</field>
+        </record>
+        <record id="tree_exam_view" model="ir.ui.view">
+            <field name="name">tree_exam</field>
+            <field name="model">exam_section.exam</field>
+            <field name="type">tree</field>
+        </record>
+        
+        <record id="act_exam" model="ir.action.act_window">
+            <field name="name">Exam</field>
+            <field name="res_model">exam_section.exam</field>
+        </record>
+        <record id="act_exam_form" model="ir.action.act_window.view">
+            <field name="sequence" eval="20"/>
+            <field name="act_window" ref="act_exam"/>
+            <field name="view" ref="form_exam_view"/>
+        </record>
+        <record id="act_exam_tree" model="ir.action.act_window.view">
+            <field name="sequence" eval="10"/>
+            <field name="act_window" ref="act_exam"/>
+            <field name="view" ref="tree_exam_view"/>
+        </record>
+
+        <record id="tree_exam_centers_view" model="ir.ui.view">
+            <field name="name">tree_exam_centers</field>
+            <field name="model">exam.centers</field>
+            <field name="type">tree</field>
+        </record>
+        <record id="form_exam_centers_view" model="ir.ui.view">
+            <field name="name">form_exam_centers</field>
+            <field name="model">exam.centers</field>
+            <field name="type">form</field>
+        </record>
+        <record id="tree_exam_employee_minimal" model="ir.ui.view">
+            <field name="name">tree_exam_employee_minimal</field>
+            <field name="model">exam.employees</field>
+            <field name="type">tree</field>
+        </record>
+        <record id="tree_exam_employee_basic" model="ir.ui.view">
+            <field name="name">tree_exam_employee_basic</field>
+            <field name="model">exam.employees</field>
+            <field name="type">tree</field>
+        </record>
+        <record id="tree_exam_employees_view" model="ir.ui.view">
+            <field name="name">tree_exam_employees</field>
+            <field name="model">exam.employees</field>
+            <field name="type">tree</field>
+        </record>
+        <menuitem id="menu_exam" name="Exam" parent="menu_exam_section" action="act_exam" sequence="1"/>
+
+        <record id="form_exam_employee_view" model="ir.ui.view">
+            <field name="name">form_exam_employee</field>
+            <field name="model">exam.employees</field>
+            <field name="type">form</field>
+            <!-- <field name="domain"
+                eval="
+                    ['OR', 
+                     ('employee', '=', Eval('user', {}).get('employee', None)),
+                     ('employee', '=', Eval('employee', None))]" 
+                pyson="1"/> -->
+            
+        </record>
+        <record id="tree_exam_employee_view" model="ir.ui.view">
+            <field name="name">tree_exam_employee</field>
+            <field name="model">exam.employees</field>
+            <field name="type">tree</field>
+            <!-- <field name="domain"
+                eval="
+                    ['OR', 
+                     ('employee', '=', Eval('user', {}).get('employee', None)),
+                     ('employee', '=', Eval('employee', None))]" 
+                pyson="1"/> -->
+        </record>
+        
+        <record id="act_employee_exam" model="ir.action.act_window">
+            <field name="name">Exam</field>
+            <field name="res_model">exam.employees</field>
+            <field name="domain"
+                eval="
+                    ['OR', 
+                     ('employee', '=', Eval('user', {}).get('employee', None)),
+                     ('employee', '=', Eval('employee', None))]" 
+                pyson="1"/>
+        </record>
+        <record id="act_exam_employee_form" model="ir.action.act_window.view">
+            <field name="sequence" eval="20"/>
+            <field name="act_window" ref="act_employee_exam"/>
+            <field name="view" ref="form_exam_employee_view"/>
+        </record>
+        <record id="act_exam_employee_tree" model="ir.action.act_window.view">
+            <field name="sequence" eval="10"/>
+            <field name="act_window" ref="act_employee_exam"/>
+            <field name="view" ref="tree_exam_employee_view"/>
+        </record>
+        
+        <menuitem id="menu_exam_employee" name="Exam" parent="menu_exam_section" action="act_employee_exam" sequence="1"/>
+        
+         
+        <!-- Renumeration Report -->
+        <record id="report_renumeration_bill" model="ir.action.report">
+            <field name="name">Renumeration Bill</field>
+            <field name="model">exam_section.exam</field>
+            <field name="report_name">exam_section.exam</field>
+            <field name="report">exam_section/report_renumeration_bill.fodt</field>
+            <field name="extension">pdf</field>
+        </record>
+        <record id="print_hr_batches_keyword_report" model="ir.action.keyword">
+            <field name="keyword">form_print</field>
+            <field name="model">exam_section.exam,-1</field>
+            <field name="action" ref="report_renumeration_bill"/>
+        </record>
+
+        <!-- TA/DA Report -->
+        <record id="report_ta/da_bill" model="ir.action.report">
+            <field name="name">TA/DA Bill</field>
+            <field name="model">exam_section.exam</field>
+            <field name="report_name">exam_section.exam</field>
+            <field name="report">exam_section/report_tada_bill.fodt</field>
+            <field name="extension">pdf</field>
+        </record>
+        <record id="print_ta/da_bill_keyword_report" model="ir.action.keyword">
+            <field name="keyword">form_print</field>
+            <field name="model">exam_section.exam,-1</field>
+            <field name="action" ref="report_ta/da_bill"/>
+        </record>
+
+    </data>
+</tryton>

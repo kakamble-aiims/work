@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<form>
+    <label name="raised_by"/>
+    <field name="raised_by"/>
+    <label name="raised_on"/>
+    <field name="raised_on"/>
+    <label name="name"/>
+    <field name="name"/>
+    <label name="file_number"/>
+    <field name="file_number"/>
+    <label name="e_office_file_number"/>
+    <field name="e_office_file_number"/>
+    <label name="department"/>
+    <field name="department"/>
+            <notebook>
+            <page string="Line" id="line">
+                   <field name="line"/>
+            </page>
+        </notebook>
+    <label name="state"/>
+    <field name="state"/>        
+    <button name="confirm" string="Confirm" colspan="2"/>
+    <button name="cancel" string="Cancel" colspan="2"/>
+    <button name="submit" string="Submit" colspan="2"/>
+    <button name="reject" string="Reject" colspan="2"/>
+    <button name="approve" string="Approved" colspan="2"/>
+    
+</form>

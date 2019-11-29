@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+
+<tryton>
+    <data>
+        <record id="hr_rule_nps" model="hr.salary.rule">
+            <field name="name">National Pension Fund</field>
+            <field name="priority" eval="2800"/>
+            <field name="code">NPS</field>
+            <field name="category" ref="hr_payroll.salaryrule_ded"/>
+            <field name="condition_select">python_code</field>
+            <field name="amount_select">code</field>
+        </record>
+    </data>
+</tryton>

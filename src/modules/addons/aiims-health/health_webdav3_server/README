@@ -1,0 +1,7 @@
+WebDAV3 package for GNU Health
+==============================
+
+The package if the continuation of the CalDAV functionality
+for GNU Health and Python 3
+
+It has been ported to be used with GNU Health.

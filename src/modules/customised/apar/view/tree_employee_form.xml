@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+	<tree>
+		<field name="employee"/>
+        <field name="designation"/>
+        <field name="date_from" />
+        <field name="date_to"/>
+        <field name="department"/>
+        <field name="reporting_officer"/>
+        <field name="reviewing_officer"/>
+        <field name="acceptance_authority"/>
+        <field name="state"/>
+        <button name="forward_to_employee" string="Forward to Employee"
+         confirm="Are you sure to forward the form to the employee"/>
+	</tree>

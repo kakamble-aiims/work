@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<tree>    
+    <field name="raised_by"/>
+    <field name="raised_on" widget="date"/>
+    <field name="name"/>
+    <field name="file_number"/>
+    <field name="e_office_file_number"/>
+    <field name="department"/>
+    <field name="line"/>
+    <field name="state"/>    
+    
+</tree>

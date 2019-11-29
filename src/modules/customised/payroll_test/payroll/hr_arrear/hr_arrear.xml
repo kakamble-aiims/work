@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+
+<tryton>
+    <data>
+        <!-- Form View -->
+        <record id="form_hr_arrear_view" model="ir.ui.view">
+            <field name="name">form_hr_arrear</field>
+            <field name="model">hr.arrear</field>
+            <field name="type">form</field>
+        </record>
+
+        <!-- Tree View -->
+        <record id="tree_hr_arrear_view" model="ir.ui.view">
+            <field name="name">tree_hr_arrear</field>
+            <field name="model">hr.arrear</field>
+            <field name="type">tree</field>
+        </record>
+
+        <!-- Action -->
+        <record id="action_hr_arrear" model="ir.action.act_window">
+            <field name="name">hr Arrear</field>
+            <field name="res_model">hr.arrear</field>
+        </record>
+
+        <!-- Link to Tree -->
+        <record id="act_hr_arrear_tree" model="ir.action.act_window.view">
+            <field name="act_window" ref="action_hr_arrear"/>
+            <field name="view" ref="tree_hr_arrear_view"/>
+            <field name="sequence" eval="10"/>
+        </record>
+
+        <!-- Link to Form -->
+        <record id="act_hra_form" model="ir.action.act_window.view">
+            <field name="act_window" ref="action_hr_arrear"/>
+            <field name="view" ref="form_hr_arrear_view"/>
+            <field name="sequence">20</field>
+        </record>
+
+        <!-- Menu -->
+        <menuitem id="menu_hr_arrear" name="Arrear" parent="hr.menu_hr" sequence="6"/>
+        <menuitem id="menu_hr_arrear_subitem" name="Arrear"
+            parent="menu_hr_arrear"
+            action="action_hr_arrear" sequence="1"/>
+    </data>
+</tryton>

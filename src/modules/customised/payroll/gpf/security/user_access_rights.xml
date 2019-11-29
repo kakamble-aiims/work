@@ -1,0 +1,97 @@
+<?xml version="1.0"?>
+<tryton>
+    <data>
+        <!-- Create group to the GPF -->
+        <record model="res.group" id="group_admin_of_GPF">
+            <field name="name">Admin of GPF</field>
+        </record>
+        <record model="res.group" id="group_gpf_emp">
+            <field name="name">GPF Employee</field>
+        </record>
+        <record model="res.group" id="group_gpf_ao">
+            <field name="name"> GPF Account Officer</field>
+        </record>
+        <record id="user_admin_gpf" model="res.user-res.group">
+            <field name="user" ref="res.user_admin"/>
+            <field name="group" ref="group_admin_of_GPF"/>
+        </record>
+
+        <!-- Access Rights for the menu -->
+        <record model="ir.ui.menu-res.group" id="menu_gpf_admin">
+            <field name="menu" ref="menu_gpf"/>
+            <field name="group" ref="group_admin_of_GPF"/>
+        </record>
+        <record model="ir.ui.menu-res.group" id="menu_gpf_emp">
+            <field name="menu" ref="menu_gpf"/>
+            <field name="group" ref="group_gpf_emp"/>
+        </record>
+
+        <!-- Assign the GPF Employee for gpf.subscription model -->
+        
+        <record id="group_gpf_employee" model="ir.model.access">
+            <field name="model" search="[('model', '=', 'gpf.subscription')]"/>
+            <field name="group" ref="group_gpf_emp"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+
+        <!-- Assign the GPF Account Officer for gpf.subscription model -->
+        <record id="group_gpf_acc" model="ir.model.access">
+            <field name="model" search="[('model', '=', 'gpf.subscription')]"/>
+            <field name="group" ref="group_gpf_ao"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+
+        <!--Access rights to the Buttons -->
+        <record model="ir.model.button"
+            id="button_waiting_for_otp">
+            <field name="name">waiting_for_otp</field>
+            <field name="model"
+                search="[('model', '=', 'gpf.subscription')]"/>
+        </record>
+        <record model="ir.model.button-res.group"
+            id="button_access_waiting_for_otp">
+            <field name="button" ref="button_waiting_for_otp"/>
+            <field name="group" ref="group_gpf_emp"/>
+        </record>
+        <record model="ir.model.button"
+            id="button_submitted_to_ao">
+            <field name="name">submitted_to_ao</field>
+            <field name="model"
+                search="[('model', '=', 'gpf.subscription')]"/>
+        </record>
+        <record model="ir.model.button-res.group"
+            id="button_access_submitted_to_ao">
+            <field name="button" ref="button_submitted_to_ao"/>
+            <field name="group" ref="group_gpf_emp"/>
+        </record>
+        <record model="ir.model.button"
+            id="button_approved">
+            <field name="name">approved</field>
+            <field name="model"
+                search="[('model', '=', 'gpf.subscription')]"/>
+        </record>
+        <record model="ir.model.button-res.group"
+            id="button_access_approved">
+            <field name="button" ref="button_approved"/>
+            <field name="group" ref="group_gpf_ao"/>
+        </record>
+        <record model="ir.model.button"
+            id="button_cancel_gpf">
+            <field name="name">cancel_gpf</field>
+            <field name="model"
+                search="[('model', '=', 'gpf.subscription')]"/>
+        </record>
+        <record model="ir.model.button-res.group"
+            id="button_access_cancel_gpf">
+            <field name="button" ref="button_cancel_gpf"/>
+            <field name="group" ref="group_gpf_ao"/>
+        </record>
+        
+    </data>
+</tryton>    

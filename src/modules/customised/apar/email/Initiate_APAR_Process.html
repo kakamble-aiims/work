@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:py="http://genshi.edgewall.org/">
+    <head>
+        <title>Initiate APAR Process</title>
+    </head>
+    <body>
+        <py:for each="record in records">
+            <div style="display: block; text-align: center">
+                <div>
+                    <p>Dear ${record.head.party.name},</p>
+                    <br/>
+                The APAR Process for your department has been Initiated.
+                Please update the Reporting Officer, Reviewing Officer and Accepting Authority for the
+                employees in your department and forward the forms to employees.
+                </div>
+                <hr style="margin-top: 20px; border-style: solid none none; border-color: #EEE"></hr>
+
+            </div>
+        </py:for>
+    </body>
+</html>

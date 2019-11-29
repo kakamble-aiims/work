@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+
+<tree editable = "top">
+    <field name="body_date"/>
+    <field name="deceased_name"/>
+    <field name="age"/>
+    <field name="sex"/>
+    <field name="receipt_no"/>
+    <field name="receipt_date"/>
+    <field name="receipt_amount"/>
+    <field name="autopsy"/>
+    <field name="amount"/>
+</tree>

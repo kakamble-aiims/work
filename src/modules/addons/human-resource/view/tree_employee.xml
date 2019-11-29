@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+
+<tree>
+    <field name="salary_code"/>
+    <field name="party" string="Employee"/>
+    <field name="designation" />
+    <field name="department"/>
+    <field name="center"/>
+</tree>

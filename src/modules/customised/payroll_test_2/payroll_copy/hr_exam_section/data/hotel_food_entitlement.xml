@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<tryton>
+    <data>
+        <record id="hotel_food_entitlement_lvl_13" model="exam_section.ta_da.hotel_food_entitlement">
+            <field name="group">A</field>
+            <field name="pay_level"></field>
+            <field name="hotel_charges"></field>
+            <field name="food_charges"></field>
+        </record>
+        <record id="hotel_food_entitlement_lvl_13" model="exam_section.ta_da.hotel_food_entitlement">
+            <field name="group">A</field>
+            <field name="pay_level"></field>
+            <field name="hotel_charges"></field>
+            <field name="food_charges"></field>
+        </record>
+        <record id="hotel_food_entitlement_lvl_13" model="exam_section.ta_da.hotel_food_entitlement">
+            <field name="group">A</field>
+            <field name="pay_level"></field>
+            <field name="hotel_charges"></field>
+            <field name="food_charges"></field>
+        </record>
+        <record id="hotel_food_entitlement_lvl_13" model="exam_section.ta_da.hotel_food_entitlement">
+            <field name="group">A</field>
+            <field name="pay_level"></field>
+            <field name="hotel_charges"></field>
+            <field name="food_charges"></field>
+        </record>
+        <record id="hotel_food_entitlement_lvl_13" model="exam_section.ta_da.hotel_food_entitlement">
+            <field name="group">A</field>
+            <field name="pay_level"></field>
+            <field name="hotel_charges"></field>
+            <field name="food_charges"></field>
+        </record>
+    </data>
+</tryton>

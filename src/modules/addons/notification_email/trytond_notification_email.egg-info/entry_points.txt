@@ -1,0 +1,4 @@
+
+    [trytond.modules]
+    notification_email = trytond.modules.notification_email
+    

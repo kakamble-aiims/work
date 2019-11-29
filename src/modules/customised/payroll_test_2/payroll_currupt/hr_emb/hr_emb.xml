@@ -1,0 +1,80 @@
+<?xml version="1.0"?>
+
+<tryton>
+    <data>
+        <menuitem id="menu_emb" name="EMB Bill"/>
+        <!-- Form View -->
+        <record id="form_employee_emb_bill_view" model="ir.ui.view">
+            <field name="name">form_employee_emb_bill</field>
+            <field name="model">emb.employee.details</field>
+            <field name="type">form</field>
+        </record>
+
+        <!-- Tree View -->
+        <record id="tree_employee_emb_bill_view" model="ir.ui.view">
+            <field name="name">tree_employee_emb_bill</field>
+            <field name="model">emb.employee.details</field>
+            <field name="type">tree</field>
+        </record>
+
+        <!-- Action -->
+        <record id="action_employee_emb_bill" model="ir.action.act_window">
+            <field name="name">E.M.B Bill</field>
+            <field name="res_model">emb.employee.details</field>
+        </record>
+
+        <!-- Link to Tree -->
+        <record id="act_employee_emb_bill_tree" model="ir.action.act_window.view">
+            <field name="act_window" ref="action_employee_emb_bill"/>
+            <field name="view" ref="tree_employee_emb_bill_view"/>
+            <field name="sequence" eval="10"/>
+        </record>
+
+        <!-- Link to Form -->
+        <record id="act_employee_emb_bill_form" model="ir.action.act_window.view">
+            <field name="act_window" ref="action_employee_emb_bill"/>
+            <field name="view" ref="form_employee_emb_bill_view"/>
+            <field name="sequence">20</field>
+        </record>
+
+        <!-- Tree View of E.M.B bill class--> 
+        <record id="tree_emb_view" model="ir.ui.view">
+            <field name="name">tree_emb</field>
+            <field name="model">emb.bill</field>
+            <field name="type">tree</field>
+        </record>
+        <!-- Buttons -->
+        <!-- Hr Emb -->
+        <record id="button_computer_submit_to_hod" model="ir.model.button">
+            <field name="name">submit_to_hod</field>
+            <field name="model" search="[('model', '=', 'emb.employee.details')]"/>
+        </record>
+        <record id="button_computer_confirm" model="ir.model.button">
+            <field name="name">confirm</field>
+            <field name="model" search="[('model', '=', 'emb.employee.details')]"/>
+        </record>
+        <record id="button_computer_cancel" model="ir.model.button">
+            <field name="name">cancel</field>
+            <field name="model" search="[('model', '=', 'emb.employee.details')]"/>
+        </record>
+        <record id="button_computer_cancel_submission_hod" model="ir.model.button">
+            <field name="name">cancel_submission_hod</field>
+            <field name="model" search="[('model', '=', 'emb.employee.details')]"/>
+        </record>
+        <record id="button_computer_submit_to_ao" model="ir.model.button">
+            <field name="name">submit_to_ao</field>
+            <field name="model" search="[('model', '=', 'emb.employee.details')]"/>
+        </record>
+        <record id="button_computer_approve_for_ao" model="ir.model.button">
+            <field name="name">approve_for_ao</field>
+            <field name="model" search="[('model', '=', 'emb.employee.details')]"/>
+        </record>
+        <record id="button_computer_cancel_submission_ao" model="ir.model.button">
+            <field name="name">cancel_submission_ao</field>
+            <field name="model" search="[('model', '=', 'emb.employee.details')]"/>
+        </record>
+        <!--Menu -->
+        <menuitem id="menu_emb_bill_subitem" name="E.M.B bill details"
+        parent="menu_emb" action="action_employee_emb_bill"/>
+    </data>
+</tryton>

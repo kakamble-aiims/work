@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+
+<tryton>
+    <data>
+
+        <record id="form_contract_view_inherit" model="ir.ui.view">
+            <field name="name">form_contract_inherit</field>
+            <field name="model">hr.contract</field>
+            <field name="inherit" ref="contract.form_contract_view"/>
+            <!-- ref = "module_name.xml_id" -->
+            <!-- <field name="type">form</field> -->
+        </record>
+
+    </data>
+</tryton>

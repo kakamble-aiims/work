@@ -1,0 +1,560 @@
+<?xml version="1.0"?>
+
+<tryton>
+    <data>
+
+        <!--Tree-->
+        <record id="tree_payslip_view" model="ir.ui.view">
+            <field name="name">tree_payslip</field>
+            <field name="model">hr.payslip</field>
+            <field name="type">tree</field>
+        </record>
+
+        <!-- Form View -->
+        <record id="form_payslip_view" model="ir.ui.view">
+            <field name="name">form_payslip</field>
+            <field name="model">hr.payslip</field>
+            <field name="type">form</field>
+        </record>
+
+        <!-- Action -->
+        <record id="action_payslip" model="ir.action.act_window">
+            <field name="name">Payslip</field>
+            <field name="res_model">hr.payslip</field>
+        </record>
+
+         <!-- Action link to tree -->
+        <record id="act_payslip_tree" model="ir.action.act_window.view">
+            <field name="sequence" eval="10"/>
+            <field name="view" ref="tree_payslip_view"/>
+            <field name="act_window" ref="action_payslip"/>
+        </record>
+
+        <!-- Link to Form -->
+        <record id="act_payslip_form" model="ir.action.act_window.view">
+            <field name="sequence">20</field>
+            <field name="view" ref="form_payslip_view"/>
+            <field name="act_window" ref="action_payslip"/>
+        </record>
+
+        <record id="payslip_button_verify" model="ir.model.button">
+            <field name="name">verify</field>
+            <field name="model"
+                search="[('model', '=', 'hr.payslip')]"/>
+        </record>
+
+        <record id="payslip_button_cancel" model="ir.model.button">
+            <field name="name">cancel</field>
+            <field name="model"
+                search="[('model', '=', 'hr.payslip')]"/>
+        </record>
+
+        <record id="payslip_button_confirm" model="ir.model.button">
+            <field name="name">confirm</field>
+            <field name="model"
+                search="[('model', '=', 'hr.payslip')]"/>
+        </record>
+
+        <record id="payslip_button_done" model="ir.model.button">
+            <field name="name">done</field>
+            <field name="model"
+                search="[('model', '=', 'hr.payslip')]"/>
+        </record>
+
+        <!--Tree-->
+        <record id="tree_salary_rule_view" model="ir.ui.view">
+            <field name="name">tree_salary_rule</field>
+            <field name="model">hr.salary.rule</field>
+            <field name="type">tree</field>
+        </record>
+
+        <!-- Form View -->
+        <record id="form_salary_rule_view" model="ir.ui.view">
+            <field name="name">form_salary_rule</field>
+            <field name="model">hr.salary.rule</field>
+            <field name="type">form</field>
+        </record>
+
+        <!-- Action -->
+        <record id="action_salary_rule" model="ir.action.act_window">
+            <field name="name">Salary Rule</field>
+            <field name="res_model">hr.salary.rule</field>
+        </record>
+
+         <!-- Action link to tree -->
+        <record id="act_salary_rule_tree" model="ir.action.act_window.view">
+            <field name="sequence" eval="10"/>
+            <field name="view" ref="tree_salary_rule_view"/>
+            <field name="act_window" ref="action_salary_rule"/>
+        </record>
+
+        <!-- Link to Form -->
+        <record id="act_salary_rule_form" model="ir.action.act_window.view">
+            <field name="sequence">20</field>
+            <field name="view" ref="form_salary_rule_view"/>
+            <field name="act_window" ref="action_salary_rule"/>
+        </record>
+
+        <!-- Salary Category -->
+        <!-- Tree View-->
+        <record id="tree_salary_category_view" model="ir.ui.view">
+            <field name="name">tree_salary_category</field>
+            <field name="model">hr.salary.rule.category</field>
+            <field name="type">tree</field>
+        </record>
+
+        <!-- Form View -->
+        <record id="form_salary_category_view" model="ir.ui.view">
+            <field name="name">form_salary_category</field>
+            <field name="model">hr.salary.rule.category</field>
+            <field name="type">form</field>
+        </record>
+
+        <!-- Action -->
+        <record id="act_salary_category" model="ir.action.act_window">
+            <field name="name">Salary Rule Category</field>
+            <field name="res_model">hr.salary.rule.category</field>
+        </record>
+
+        <!-- Action link to tree -->
+        <record id="act_tree_view_salary_category" model="ir.action.act_window.view">
+            <field name="sequence" eval="10"/>
+            <field name="view" ref="tree_salary_category_view"/>
+            <field name="act_window" ref="act_salary_category"/>
+        </record>
+
+        <!-- Action link to form -->
+        <record id="act_form_view_salary_category" model="ir.action.act_window.view">
+            <field name="view" ref="form_salary_category_view"/>
+            <field name="act_window" ref="act_salary_category"/>
+            <field name="sequence" eval="20"/>
+        </record>
+
+        <!-- Salary structure -->
+        <!-- Tree View-->
+        <record id="tree_salary_structure_view" model="ir.ui.view">
+            <field name="name">tree_salary_structure</field>
+            <field name="model">hr.salary.structure</field>
+            <field name="type">tree</field>
+        </record>
+
+        <!-- Form View -->
+        <record id="form_salary_structure_view" model="ir.ui.view">
+            <field name="name">form_salary_structure</field>
+            <field name="model">hr.salary.structure</field>
+            <field name="type">form</field>
+        </record>
+
+        <!-- Action -->
+        <record id="act_salary_structure" model="ir.action.act_window">
+            <field name="name">Salary Structure</field>
+            <field name="res_model">hr.salary.structure</field>
+        </record>
+
+        <!-- Action link to tree -->
+        <record id="act_tree_view_salary_structure" model="ir.action.act_window.view">
+            <field name="sequence" eval="10"/>
+            <field name="view" ref="tree_salary_structure_view"/>
+            <field name="act_window" ref="act_salary_structure"/>
+        </record>
+
+        <!-- Action link to form -->
+        <record id="act_form_view_salary_structure" model="ir.action.act_window.view">
+            <field name="view" ref="form_salary_structure_view"/>
+            <field name="act_window" ref="act_salary_structure"/>
+            <field name="sequence" eval="20"/>
+        </record>
+
+        <!-- Payslip Line -->
+        <record model="ir.ui.view" id="payslip_line_view_form">
+            <field name="model">hr.payslip.line</field>
+            <field name="type">form</field>
+            <field name="name">form_payslipline</field>
+        </record>
+
+        <record model="ir.ui.view" id="payslip_line_view_tree">
+            <field name="model">hr.payslip.line</field>
+            <field name="type">tree</field>
+            <field name="priority" eval="10"/>
+            <field name="name">tree_payslipline</field>
+        </record>
+
+        <!-- Invoice Line -->
+        <record model="ir.ui.view" id="payslip_line_view_tree_sequence">
+            <field name="model">hr.payslip.line</field>
+            <field name="type">tree</field>
+            <field name="priority" eval="20"/>
+            <field name="name">payslip_line_view_tree_sequence</field>
+        </record>
+
+        <!-- Payslip Batches -->
+        <!-- Tree View-->
+        <record id="tree_batches_view" model="ir.ui.view">
+            <field name="name">tree_batches</field>
+            <field name="model">hr.payslip.batch</field>
+            <field name="type">tree</field>
+        </record>
+
+        <!-- Form View -->
+        <record id="form_batches_view" model="ir.ui.view">
+            <field name="name">form_batches</field>
+            <field name="model">hr.payslip.batch</field>
+            <field name="type">form</field>
+        </record>
+
+        <!-- Action -->
+        <record id="act_batches" model="ir.action.act_window">
+            <field name="name">Payslip Batches</field>
+            <field name="res_model">hr.payslip.batch</field>
+        </record>
+
+        <!-- Action link to tree -->
+        <record id="act_tree_view_batches" model="ir.action.act_window.view">
+            <field name="sequence" eval="10"/>
+            <field name="view" ref="tree_batches_view"/>
+            <field name="act_window" ref="act_batches"/>
+        </record>
+
+        <!-- Action link to form -->
+        <record id="act_form_view_batches" model="ir.action.act_window.view">
+            <field name="view" ref="form_batches_view"/>
+            <field name="act_window" ref="act_batches"/>
+            <field name="sequence" eval="20"/>
+        </record>
+
+
+        <!-- Payslip show in payslip batch -->
+        <record model="ir.ui.view" id="payslipbatch_view_tree">
+            <field name="model">hr.payslip</field>
+            <field name="type">tree</field>
+            <field name="priority" eval="30"/>
+            <field name="name">payslipbatch_view_tree</field>
+        </record>
+
+        <record id="tree_salary_batch_view" model="ir.ui.view">
+            <field name="name">tree_salary_batch</field>
+            <field name="model">hr.salary.batch</field>
+            <field name="type">tree</field>
+        </record>
+
+        <!-- Form View -->
+        <record id="form_salary_batch_view" model="ir.ui.view">
+            <field name="name">form_salary_batch</field>
+            <field name="model">hr.salary.batch</field>
+            <field name="type">form</field>
+        </record>
+
+        <!-- Action -->
+        <record id="action_salary_batch" model="ir.action.act_window">
+            <field name="name">Salary Batch</field>
+            <field name="res_model">hr.salary.batch</field>
+        </record>
+
+         <!-- Action link to tree -->
+        <record id="act_salary_batch_tree" model="ir.action.act_window.view">
+            <field name="sequence" eval="10"/>
+            <field name="view" ref="tree_salary_batch_view"/>
+            <field name="act_window" ref="action_salary_batch"/>
+        </record>
+
+        <!-- Link to Form -->
+        <record id="act_salary_batch_form" model="ir.action.act_window.view">
+            <field name="sequence">20</field>
+            <field name="view" ref="form_salary_batch_view"/>
+            <field name="act_window" ref="action_salary_batch"/>
+        </record>
+
+        <record id="salary_batch_button_generate_payslip_batch" model="ir.model.button">
+            <field name="name">generate_payslip_batch</field>
+            <field name="model"
+                search="[('model', '=', 'hr.salary.batch')]"/>
+        </record>
+
+        <record id="salary_batch_button_batch_excel_workbook" model="ir.model.button">
+            <field name="name">batch_excel_workbook</field>
+            <field name="model"
+                search="[('model', '=', 'hr.salary.batch')]"/>
+        </record>
+
+        <!-- salary rules designation -->
+        <!--Tree-->
+        <record id="tree_salary_rules_designation_view" model="ir.ui.view">
+            <field name="name">tree_salary_rules_designation</field>
+            <field name="model">hr.salary.rules.designation</field>
+            <field name="type">tree</field>
+            <field name="priority" eval="2"/>
+        </record>
+
+        <!-- Investment Scheme -->
+        <!--Tree-->
+        <record id="tree_investment_scheme_view" model="ir.ui.view">
+            <field name="name">tree_investment_scheme</field>
+            <field name="model">investment.scheme</field>
+            <field name="type">tree</field>
+        </record>
+
+        <!-- Form View -->
+        <record id="form_investment_scheme_view" model="ir.ui.view">
+            <field name="name">form_investment_scheme</field>
+            <field name="model">investment.scheme</field>
+            <field name="type">form</field>
+        </record>
+
+        <!-- Action -->
+        <record id="action_investment_scheme" model="ir.action.act_window">
+            <field name="name">Investment Scheme</field>
+            <field name="res_model">investment.scheme</field>
+        </record>
+
+         <!-- Action link to tree -->
+        <record id="act_investment_scheme_tree" model="ir.action.act_window.view">
+            <field name="sequence" eval="10"/>
+            <field name="view" ref="tree_investment_scheme_view"/>
+            <field name="act_window" ref="action_investment_scheme"/>
+        </record>
+
+        <!-- Action Link to Form -->
+        <record id="act_investment_scheme_form" model="ir.action.act_window.view">
+            <field name="sequence">20</field>
+            <field name="view" ref="form_investment_scheme_view"/>
+            <field name="act_window" ref="action_investment_scheme"/>
+        </record>
+
+        <!-- Investment Section -->
+        <!--Tree-->
+        <record id="tree_investment_section_view" model="ir.ui.view">
+            <field name="name">tree_investment_section</field>
+            <field name="model">investment.section</field>
+            <field name="type">tree</field>
+        </record>
+
+        <!-- Form View -->
+        <record id="form_investment_section_view" model="ir.ui.view">
+            <field name="name">form_investment_section</field>
+            <field name="model">investment.section</field>
+            <field name="type">form</field>
+        </record>
+
+        <!-- Action -->
+        <record id="action_investment_section" model="ir.action.act_window">
+            <field name="name">Investment section</field>
+            <field name="res_model">investment.section</field>
+        </record>
+
+         <!-- Action link to tree -->
+        <record id="act_investment_section_tree" model="ir.action.act_window.view">
+            <field name="sequence" eval="10"/>
+            <field name="view" ref="tree_investment_section_view"/>
+            <field name="act_window" ref="action_investment_section"/>
+        </record>
+
+        <!-- Action Link to Form -->
+        <record id="act_investment_section_form" model="ir.action.act_window.view">
+            <field name="sequence">20</field>
+            <field name="view" ref="form_investment_section_view"/>
+            <field name="act_window" ref="action_investment_section"/>
+        </record>
+
+
+        <!-- Income tax slab -->
+        <!--Tree-->
+        <record id="payslip_rule_lines_view_tree" model="ir.ui.view">
+            <field name="name">tree_income_tax_slab</field>
+            <field name="model">income_tax.slab</field>
+            <field name="type">tree</field>
+        </record>
+
+        <!-- Annual income taxable amount projections line -->
+        <!--Tree-->
+        <record id="annual_taxable_income_amount_lines_view_tree" model="ir.ui.view">
+            <field name="name">annual_taxable_income_amount_lines</field>
+            <field name="model">income_tax.taxable_amount_lines</field>
+            <field name="type">tree</field>
+        </record>
+
+        <!-- Action -->
+        <!-- <record id="action_income_tax_slab" model="ir.action.act_window">
+            <field name="name">Investment declaration</field>
+            <field name="res_model">income_tax.slab</field>
+        </record> -->
+
+         <!-- Action link to tree -->
+        <!-- <record id="act_income_tax_slab_tree" model="ir.action.act_window.view">
+            <field name="sequence" eval="10"/>
+            <field name="view" ref="tree_income_tax_slab_view"/>
+            <field name="act_window" ref="action_income_tax_slab"/>
+        </record> -->
+
+
+        <!-- Income Tax Rule -->
+        <!--Tree-->
+        <record id="tree_income_tax_rule_view" model="ir.ui.view">
+            <field name="name">tree_income_tax_rule</field>
+            <field name="model">income_tax.rule</field>
+            <field name="type">tree</field>
+        </record>
+
+        <!-- Form View -->
+        <record id="form_income_tax_rule_view" model="ir.ui.view">
+            <field name="name">form_income_tax_rule</field>
+            <field name="model">income_tax.rule</field>
+            <field name="type">form</field>
+        </record>
+
+        <!-- Action -->
+        <record id="action_income_tax_rule" model="ir.action.act_window">
+            <field name="name">Income Tax Rules</field>
+            <field name="res_model">income_tax.rule</field>
+        </record>
+
+         <!-- Action link to tree -->
+        <record id="act_income_tax_rule_tree" model="ir.action.act_window.view">
+            <field name="sequence" eval="10"/>
+            <field name="view" ref="tree_income_tax_rule_view"/>
+            <field name="act_window" ref="action_income_tax_rule"/>
+        </record>
+
+        <!-- Action Link to Form -->
+        <record id="act_income_tax_rule_form" model="ir.action.act_window.view">
+            <field name="sequence">20</field>
+            <field name="view" ref="form_income_tax_rule_view"/>
+            <field name="act_window" ref="action_income_tax_rule"/>
+        </record>
+
+        <!-- Income Tax Deductions -->
+        <!--Tree-->
+        <record id="tree_income_tax_deduction_view" model="ir.ui.view">
+            <field name="name">tree_income_tax_deduction</field>
+            <field name="model">income_tax.deduction</field>
+            <field name="type">tree</field>
+        </record>
+
+        <!-- Form View -->
+        <record id="form_income_tax_deduction_view" model="ir.ui.view">
+            <field name="name">form_income_tax_deduction</field>
+            <field name="model">income_tax.deduction</field>
+            <field name="type">form</field>
+        </record>
+
+        <!-- Action -->
+        <record id="action_income_tax_deduction" model="ir.action.act_window">
+            <field name="name">Income Tax Deduction</field>
+            <field name="res_model">income_tax.deduction</field>
+        </record>
+
+         <!-- Action link to tree -->
+        <record id="act_income_tax_deduction_tree" model="ir.action.act_window.view">
+            <field name="sequence" eval="10"/>
+            <field name="view" ref="tree_income_tax_deduction_view"/>
+            <field name="act_window" ref="action_income_tax_deduction"/>
+        </record>
+
+        <!-- Action Link to Form -->
+        <record id="act_income_tax_deduction_form" model="ir.action.act_window.view">
+            <field name="sequence">20</field>
+            <field name="view" ref="form_income_tax_deduction_view"/>
+            <field name="act_window" ref="action_income_tax_deduction"/>
+        </record>
+
+        
+        <record id="income_tax_deduction_button_batch_calculate_income_tax_sheet" model="ir.model.button">
+            <field name="name">calculate_income_tax_sheet</field>
+            <field name="model"
+                search="[('model', '=', 'income_tax.deduction')]"/>
+        </record>
+
+
+        <!-- Form View -->
+        <!-- <record id="form_salary_rules_designation_view" model="ir.ui.view">
+            <field name="name">form_salary_rules_designation</field>
+            <field name="model">hr.salary.rules.designation</field>
+            <field name="type">form</field>
+        </record> -->
+
+        <!-- Action -->
+        <!-- <record id="action_salary_rules_designation" model="ir.action.act_window">
+            <field name="name">salary_rules_designation</field>
+            <field name="res_model">hr.salary.rules.designation</field>
+        </record> -->
+
+         <!-- Action link to tree -->
+        <!-- <record id="act_salary_rules_designation_tree" model="ir.action.act_window.view">
+            <field name="sequence" eval="10"/>
+            <field name="view" ref="tree_salary_rules_designation_view"/>
+            <field name="act_window" ref="action_salary_rules_designation"/>
+        </record> -->
+
+        <!-- Link to Form -->
+        <!-- <record id="act_salary_rules_designation_form" model="ir.action.act_window.view">
+            <field name="sequence">20</field>
+            <field name="view" ref="form_salary_rules_designation_view"/>
+            <field name="act_window" ref="action_salary_rules_designation"/>
+        </record>
+ -->
+
+        <!-- rules in designation of an employee -->
+        <record model="ir.ui.view" id="employee_designation_rule_view_form">
+            <field name="model">employee.designation</field>
+            <field name="inherit" ref="hr.form_designation_view" />
+            <field name="name">employee_designation_rules</field>
+        </record>
+
+         <!-- Deputation status of an employee -->
+        <record model="ir.ui.view" id="employee_deputation_status_view_form">
+            <field name="model">company.employee</field>
+            <field name="inherit" ref="hr.form_employee_view" />
+            <field name="name">employee_deputation_status</field>
+        </record>
+
+        <!-- Assessment year of an employee -->
+        <record model="ir.ui.view" id="fiscal_year_assessment_year_view_form">
+            <field name="model">account.fiscalyear</field>
+            <field name="inherit" ref="account.fiscalyear_view_form" />
+            <field name="name">fiscal_year_assessment_year</field>
+        </record>
+
+        <!-- Menu -->
+        <menuitem id="menu_payroll" name="Payroll" parent="hr.menu_hr" sequence="3"/>
+        <menuitem id="menu_payslip" name="Payslip" parent="menu_payroll" action="action_payslip" sequence="10"/>
+        <menuitem id="menu_batches" name="Payslip Batches" parent="menu_payroll" action="act_batches" sequence="11"/>
+        <menuitem id="menu_tax_deduction" name="Tax Deduction" parent="menu_payroll" action="action_income_tax_deduction" sequence="12"/>
+        <menuitem id="menu_configuration" name="Configuration" parent="menu_payroll" sequence="20"/>
+        <menuitem id="menu_tax" name="Tax calculation" parent="menu_payroll" sequence="13"/>
+        <menuitem id="menu_hr_salary_rule" name="Salary Rule" parent="menu_configuration" action="action_salary_rule" sequence="15"/>
+        <menuitem id="menu_salary_rule_category" name="Salary Rule Category" parent="menu_configuration" action="act_salary_category" sequence="20"/>
+        <menuitem id="menu_salary_rule_structure" name="Salary Structure" parent="menu_configuration" action="act_salary_structure" sequence="30"/>
+        <menuitem id="menu_salary_batch" name="Salary Batch" parent="menu_configuration" action="action_salary_batch" sequence="40"/>
+        <menuitem id="menu_tax_rule" name="Income Tax Rules/Slabs" parent="menu_configuration" action="action_income_tax_rule" sequence="50"/>
+        <menuitem id="menu_investment_declaration" name="Investment Declaration" parent="menu_tax" action="hr_payroll.action_investment_declaration" sequence="60"/>
+        <menuitem id="menu_investment_scheme" name="Investment Scheme" parent="menu_tax" action="action_investment_scheme" sequence="70"/>
+        <menuitem id="menu_investment_section" name="Investment Section" parent="menu_tax" action="action_investment_section" sequence="80"/>
+
+        <!-- Report-->
+        <record id="report_hr_payslip" model="ir.action.report">
+            <field name="name">Payslip</field>
+            <field name="model">hr.payslip</field>
+            <field name="report_name">hr.payslip</field>
+            <field name="report">payroll/hr_payslip.fodt</field>
+            <field name="extension">pdf</field>
+        </record>
+        <record id="print_hr_payslip_keyword_report" model="ir.action.keyword">
+            <field name="keyword">form_print</field>
+            <field name="model">hr.payslip,-1</field>
+            <field name="action" ref="report_hr_payslip"/>
+        </record>
+
+        <!-- Report-->
+        <record id="report_hr_batches" model="ir.action.report">
+            <field name="name">Payslip Batch</field>
+            <field name="model">hr.payslip.batch</field>
+            <field name="report_name">hr.payslip.batch</field>
+            <field name="report">payroll/hr_payslip_batch.fodt</field>
+            <field name="extension">pdf</field>
+        </record>
+        <record id="print_hr_batches_keyword_report" model="ir.action.keyword">
+            <field name="keyword">form_print</field>
+            <field name="model">hr.payslip.batch,-1</field>
+            <field name="action" ref="report_hr_batches"/>
+        </record>
+    </data>
+</tryton>

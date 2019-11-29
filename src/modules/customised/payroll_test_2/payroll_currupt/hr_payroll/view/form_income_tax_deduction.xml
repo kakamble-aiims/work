@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+
+<form>
+    <label name="salary_code"/>
+    <field name="salary_code"/>
+    <label name="employee"/>
+    <field name="employee"/>
+    <label name="designation"/>
+    <field name="designation"/>
+    <label name="department"/>
+    <field name="department"/>
+    <label name="start_date"/>
+    <field name="start_date"/>
+    <label name="end_date"/>
+    <field name="end_date"/>
+    <group id="annual_tax" colspan="4" col="6">
+        <label name="annual_salary_ytd" string="Annual (Year to Date): Salary"/>
+        <field name="annual_salary_ytd"/>
+        <label name="income_from_other_source"  string="(+) Income from other sources"/>
+        <field name="income_from_other_source"/>
+        <label name="annual_taxable_income_ytd" string="(=) Annual Taxable Income"/>
+        <field name="annual_taxable_income_ytd"/>
+
+        <label name="annual_salary_projected" string="Annual:  (Projected): Salary"/>
+        <field name="annual_salary_projected"/>
+        <label name="income_from_other_source" string="(+) Income from Other Sources"/>
+        <field name="income_from_other_source"/>
+        <label name="annual_taxable_income_projected" string="(=) Projected Taxable Income"/>
+        <field name="annual_taxable_income_projected"/>
+    </group>
+    <newline/>
+    <label name="income_tax_ytd"/>
+    <field name="income_tax_ytd"/>
+    <label name="income_tax_projected"/>
+    <field name="income_tax_projected"/>
+    <button name="calculate_income_tax_sheet" string="Calculate" colspan="2"/>
+    <newline/>
+    <group id="taxable_income_projections" colspan="4">
+        <field name="tds_lines"/> 
+    </group>
+</form>

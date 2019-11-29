@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<tree>
+    <field name="name"/>
+    <field name="date_from"/>
+    <field name="date_to"/>
+    <field name="total_renumeration_cost"/>
+    <field name="total_ta_da_cost"/>
+    <field name="state"/>
+</tree>

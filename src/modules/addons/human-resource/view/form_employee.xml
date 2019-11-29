@@ -1,0 +1,87 @@
+<?xml version="1.0"?>
+
+<form col="6">
+    <label name="salary_code" />
+    <field name="salary_code" />
+    <label name="party" string="Employee"/>
+    <field name="party" />
+    <notebook>
+        <page id="personnel" string="Basic Information">
+            <label name="center" />
+            <field name="center" />
+            <label name="department" />
+            <field name="department" />
+            <label name="designation" />
+            <field name="designation" />
+            <label name="employee_status" />
+            <field name="employee_status" />
+            <label name="employee_group" />
+            <field name="employee_group" />
+            <label name="grade"/>
+            <field name="grade"/>
+            <label name="grade_pay"/>
+            <field name="grade_pay"/>
+            <label name="pay_in_band"/>
+            <field name="pay_in_band"/>
+            <label name="date_of_joining"/>
+            <field name="date_of_joining"/>
+            <label name="date_of_resignation"/>
+            <field name="date_of_resignation"/>
+            <label name="date_of_retirement"/>
+            <field name="date_of_retirement"/>
+            <label name="ehs"/>
+            <field name="ehs"/>
+            <label name="category"/>
+            <field name="category"/>
+            <label name="is_eligible_for_hometown" />
+            <field name="is_eligible_for_hometown" />
+            <label name="is_ehs_availed" />
+            <field name="is_ehs_availed" />
+            <label name="is_exservicemen" />
+            <field name="is_exservicemen" />
+            <label name="personal_file_no"/>
+            <field name="personal_file_no"/>
+            <label name="permission_file_no"/>
+            <field name="permission_file_no"/>
+            <label name="gpf_num"/>
+            <field name="gpf_num"/>
+            <label name="pran_num"/>
+            <field name="pran_num"/>
+            <label name="gpf_nominee"/>
+            <field name="gpf_nominee"/>
+            <label name="bank_accounts"/>
+            <field name="bank_accounts" />
+        </page>
+        <page id="personal" string="Personal Information">
+            <label name="primary_phone" />
+            <field name="primary_phone" />
+            <label name="primary_email" />
+            <field name="primary_email" />
+            <label name="father_name" />
+            <field name="father_name" />
+            <label name="mother_name" />
+            <field name="mother_name" />
+            <label name="marital" />
+            <field name="marital" />
+            <label name="spouse_name"/>
+            <field name="spouse_name"/>
+            <label name="pan_number" />
+            <field name="pan_number" />
+            <label name="driving_licence_number" />
+            <field name="driving_licence_number" />
+            <label name="identification_mark" />
+            <field name="identification_mark" />
+            <label name="height" />
+            <field name="height" />
+            <label name="blood_group" />
+            <field name="blood_group" />
+        </page>
+        <page string="Postings &amp; Promotions" id="postings">
+            <field name="postings"/>
+        </page>
+        <page string="Qualifications" id="qualifications">
+            <field name="education_qualification"/>
+        </page>
+    </notebook>
+
+</form>

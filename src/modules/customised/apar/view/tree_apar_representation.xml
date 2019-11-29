@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+	<tree>
+		<field name="representation_id"/>
+		<field name="raised_by"/>
+		<field name="raised_on"/>
+		<field name="state"/>
+	</tree>

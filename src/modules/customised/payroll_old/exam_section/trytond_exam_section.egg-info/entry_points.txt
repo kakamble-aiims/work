@@ -1,0 +1,4 @@
+
+    [trytond.modules]
+    exam_section = trytond.modules.exam_section 
+    

@@ -1,0 +1,42 @@
+ <record model="res.group" id="group_admin_officer_estate">
+            <field name="name">AO(Estate)</field>
+        </record>
+        <record model="res.group" id="group_asst_admin_officer_estate">
+            <field name="name">Asst. AO(Estate)</field>
+        </record>
+        <record model="res.group" id="group_section officer">
+            <field name="name">Section Officer</field>
+        </record>
+        <record model="res.group" id="group_asst_engg">
+            <field name="name">Asst. Engineer</field>
+        </record>
+        <record model="res.group" id="group_executive_engg">
+            <field name="name">Executive Engineer</field>
+        </record>
+        <record model="res.group" id="group_jr_engineer">
+            <field name="name">Junior Engineer</field>
+        </record>
+        <record model="res.group" id="group_admin_officer_estb">
+            <field name="name">AO(Establishment)</field>
+        </record>
+        <record model="res.group" id="group_asst_admin_officer_estb">
+            <field name="name">Asst. AO(Establishment)</field>
+        </record>
+
+ <record id="group_ao_estate_access" model="ir.model.access">
+            <field name="model" search="[('model', '=', 'estate.allotment')]"/>
+            <field name="group" ref="group_admin_officer_estate"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+
+        <record id="group_aao_estate_access" model="ir.model.access">
+            <field name="model" search="[('model', '=', 'estate.allotment')]"/>
+            <field name="group" ref="group_asst_admin_officer_estate"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>

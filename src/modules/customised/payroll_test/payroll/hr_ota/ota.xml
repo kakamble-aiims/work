@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+
+<tryton>
+    <data>
+        <!-- Form View -->
+        <record id="form_ota_view" model="ir.ui.view">
+            <field name="name">form_ota</field>
+            <field name="model">hr.allowance.ota</field>
+            <field name="type">form</field>
+        </record>
+
+        <!-- Tree View -->
+        <record id="tree_ota_view" model="ir.ui.view">
+            <field name="name">tree_ota</field>
+            <field name="model">hr.allowance.ota</field>
+            <field name="type">tree</field>
+        </record>
+
+        <!-- Action -->
+        <record id="action_ota" model="ir.action.act_window">
+            <field name="name">Children Education Allowance</field>
+            <field name="res_model">hr.allowance.ota</field>
+        </record>
+
+        <!-- Link to Tree -->
+        <record id="act_ota_tree" model="ir.action.act_window.view">
+            <field name="act_window" ref="action_ota"/>
+            <field name="view" ref="tree_ota_view"/>
+            <field name="sequence" eval="10"/>
+        </record>
+
+        <!-- Link to Form -->
+        <record id="act_ota_form" model="ir.action.act_window.view">
+            <field name="act_window" ref="action_ota"/>
+            <field name="view" ref="form_ota_view"/>
+            <field name="sequence">20</field>
+        </record>
+
+        <!-- Menu -->
+        <menuitem id="menu_ota_subitem" name="Over Time Allowance" parent="hra.menu_allowance" action="action_ota"/>
+    </data>
+</tryton>

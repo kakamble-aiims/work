@@ -1,0 +1,349 @@
+<?xml version="1.0"?>
+
+<tryton>
+    <data>
+        <!-- Users -->
+        <record model="res.group" id="group_employee">
+            <field name="name">Employee</field>
+        </record>
+        <record model="res.group" id="group_jao_officer">
+            <field name="name">Junior Accounts Officer(GPF) </field>
+        </record>
+        <record model="res.group" id="group_ao_officer">
+            <field name="name">Accounts Officer </field>
+        </record>
+        
+
+        <menuitem id="menu_gpf" name="GPF" parent="hr.menu_hr" sequence="4"/>
+
+        <!-- Tree View-->
+        <record id="tree_gpf_subscription_view" model="ir.ui.view">
+            <field name="name">gpf_subscription_tree_view</field>
+            <field name="model">gpf.subscription</field>
+            <field name="type">tree</field>
+        </record>
+        
+        <!-- Form View -->
+        <record id="form_gpf_subscription_view" model="ir.ui.view">
+            <field name="name">gpf_subscription_form_view</field>
+            <field name="model">gpf.subscription</field>
+            <field name="type">form</field>
+        </record>
+
+         <!-- Action -->
+        <record id="action_gpf_subscription" model="ir.action.act_window">
+            <field name="name">Increase/Decrease GPF Subscription</field>
+            <field name="res_model">gpf.subscription</field>
+        </record>
+        
+        <!-- Action link to tree -->
+        <record id="act_tree_view_gpf_subscription" model="ir.action.act_window.view">
+            <field name="view" ref="tree_gpf_subscription_view"/>
+            <field name="act_window" ref="action_gpf_subscription"/>
+            <field name="sequence" eval="10"/>
+        </record>
+
+        <!-- Action link to form -->
+        <record id="act_form_view_gpf_subscription" model="ir.action.act_window.view">
+            <field name="view" ref="form_gpf_subscription_view"/>
+            <field name="act_window" ref="action_gpf_subscription"/>
+            <field name="sequence" eval="20"/>
+        </record>
+
+        <!--create form and tree for tree view tabs -->
+        <record model="ir.ui.view" id="gpf_change_view_form">
+            <field name="model">gpf.subscription</field>
+            <field name="type">form</field>
+            <field name="name">form_gpf_subscription_view</field>
+        </record>
+        <record model="ir.ui.view" id="gpf_change_view_tree">
+            <field name="model">gpf.subscription</field>
+            <field name="type">tree</field>
+            <field name="name">tree_gpf_subscription_view</field>
+        </record>
+
+        <!--create the tabs on the tree view-->
+        <record model="ir.action.act_window.domain" id="act_gpf_change_form_domain_draft">
+            <field name="name">Draft</field>
+            <field name="sequence" eval="10"/>
+            <field name="domain"
+                eval="[('state', '=', 'draft')]"
+                pyson="1"/>
+            <field name="count" eval="True"/>
+            <field name="act_window" ref="action_gpf_subscription"/>
+        </record>
+        <record model="ir.action.act_window.domain" id="act_gpf_change_form_domain_forwarded_to_jo">
+            <field name="name">Forwarded to JO</field>
+            <field name="sequence" eval="20"/>
+            <field name="domain"
+                eval="[('state', '=', 'forwarded_to_jo')]"
+                pyson="1"/>
+            <field name="count" eval="True"/>
+            <field name="act_window" ref="action_gpf_subscription"/>
+        </record>
+        <record model="ir.action.act_window.domain" id="act_gpf_change_form_domain_forwarded_to_ao">
+            <field name="name">Forwarded to AO</field>
+            <field name="sequence" eval="30"/>
+            <field name="domain"
+                eval="[('state', '=', 'forwarded_to_ao')]"
+                pyson="1"/>
+            <field name="count" eval="True"/>
+            <field name="act_window" ref="action_gpf_subscription"/>
+        </record>
+        <record model="ir.action.act_window.domain" id="act_gpf_change_form_domain_cash_cancel">
+            <field name="name">Cancel</field>
+            <field name="sequence" eval="40"/>
+            <field name="domain"
+                eval="[('state', '=', 'cancel')]"
+                pyson="1"/>
+            <field name="count" eval="True"/>
+            <field name="act_window" ref="action_gpf_subscription"/>
+        </record>
+        <record model="ir.action.act_window.domain" id="act_gpf_change_form_domain_approved">
+            <field name="name">Approved</field>
+            <field name="sequence" eval="50"/>
+            <field name="domain"
+                eval="[('state', '=', 'Approved')]"
+                pyson="1"/>
+            <field name="count" eval="True"/>
+            <field name="act_window" ref="action_gpf_subscription"/>
+        </record> 
+
+
+        <!-- Advance -->
+
+        <!-- Tree View-->
+        <record id="tree_gpf_advance_view" model="ir.ui.view">
+            <field name="name">gpf_advance_tree_view</field>
+            <field name="model">gpf.advance</field>
+            <field name="type">tree</field>
+        </record>
+        
+        <!-- Form View -->
+        <record id="form_gpf_advance_view" model="ir.ui.view">
+            <field name="name">gpf_advance_form_view</field>
+            <field name="model">gpf.advance</field>
+            <field name="type">form</field>
+        </record>
+
+         <!-- Action -->
+        <record id="action_gpf_advance" model="ir.action.act_window">
+            <field name="name">GPF Advance/Withdrawal</field>
+            <field name="res_model">gpf.advance</field>
+        </record>
+        
+        <!-- Action link to tree -->
+        <record id="act_tree_view_gpf_advance" model="ir.action.act_window.view">
+            <field name="view" ref="tree_gpf_advance_view"/>
+            <field name="act_window" ref="action_gpf_advance"/>
+            <field name="sequence" eval="10"/>
+        </record>
+
+        <!-- Action link to form -->
+        <record id="act_form_view_gpf_advance" model="ir.action.act_window.view">
+            <field name="view" ref="form_gpf_advance_view"/>
+            <field name="act_window" ref="action_gpf_advance"/>
+            <field name="sequence" eval="20"/>
+        </record>
+
+        <!--create form and tree for tree view tabs -->
+        <record model="ir.ui.view" id="gpf_advance_view_form">
+            <field name="model">gpf.advance</field>
+            <field name="type">form</field>
+            <field name="name">form_gpf_advance_view</field>
+        </record>
+        <record model="ir.ui.view" id="gpf_advance_view_tree">
+            <field name="model">gpf.advance</field>
+            <field name="type">tree</field>
+            <field name="name">tree_gpf_advance_view</field>
+        </record>
+
+        <!--create the tabs on the tree view-->
+        <record model="ir.action.act_window.domain" id="act_gpf_advance_form_domain_draft">
+            <field name="name">Draft</field>
+            <field name="sequence" eval="10"/>
+            <field name="domain"
+                eval="[('state', '=', 'draft')]"
+                pyson="1"/>
+            <field name="count" eval="True"/>
+            <field name="act_window" ref="action_gpf_advance"/>
+        </record>
+        <record model="ir.action.act_window.domain" id="act_gpf_advance_form_domain_forwarded_to_jo">
+            <field name="name">Forwarded to JO</field>
+            <field name="sequence" eval="20"/>
+            <field name="domain"
+                eval="[('state', '=', 'forwarded_to_jo')]"
+                pyson="1"/>
+            <field name="count" eval="True"/>
+            <field name="act_window" ref="action_gpf_advance"/>
+        </record>
+        <record model="ir.action.act_window.domain" id="act_gpf_advance_form_domain_forwarded_to_ao">
+            <field name="name">Forwarded to AO</field>
+            <field name="sequence" eval="30"/>
+            <field name="domain"
+                eval="[('state', '=', 'forwarded_to_ao')]"
+                pyson="1"/>
+            <field name="count" eval="True"/>
+            <field name="act_window" ref="action_gpf_advance"/>
+        </record>
+        <record model="ir.action.act_window.domain" id="act_gpf_advance_form_domain_cash_cancel">
+            <field name="name">Cancel</field>
+            <field name="sequence" eval="40"/>
+            <field name="domain"
+                eval="[('state', '=', 'cancel')]"
+                pyson="1"/>
+            <field name="count" eval="True"/>
+            <field name="act_window" ref="action_gpf_advance"/>
+        </record>
+        <record model="ir.action.act_window.domain" id="act_gpf_advance_form_domain_approved">
+            <field name="name">Approved</field>
+            <field name="sequence" eval="50"/>
+            <field name="domain"
+                eval="[('state', '=', 'Approved')]"
+                pyson="1"/>
+            <field name="count" eval="True"/>
+            <field name="act_window" ref="action_gpf_advance"/>
+        </record> 
+
+
+        <!-- GPF REASON -->
+        <!-- Tree View-->
+        <record id="tree_gpf_reason_view" model="ir.ui.view">
+            <field name="name">gpf_reason_tree_view</field>
+            <field name="model">gpf.reason</field>
+            <field name="type">tree</field>
+        </record>
+        
+        <!-- Form View -->
+        <record id="form_gpf_reason_view" model="ir.ui.view">
+            <field name="name">gpf_reason_form_view</field>
+            <field name="model">gpf.reason</field>
+            <field name="type">form</field>
+        </record>
+
+         <!-- Action -->
+        <record id="action_gpf_reason" model="ir.action.act_window">
+            <field name="name">GPF Reason</field>
+            <field name="res_model">gpf.reason</field>
+        </record>
+        
+        <!-- Action link to tree -->
+        <record id="act_tree_view_gpf_reason" model="ir.action.act_window.view">
+            <field name="view" ref="tree_gpf_reason_view"/>
+            <field name="act_window" ref="action_gpf_reason"/>
+            <field name="sequence" eval="10"/>
+        </record>
+
+        <!-- Action link to form -->
+        <record id="act_form_view_gpf_reason" model="ir.action.act_window.view">
+            <field name="view" ref="form_gpf_reason_view"/>
+            <field name="act_window" ref="action_gpf_reason"/>
+            <field name="sequence" eval="20"/>
+        </record>
+
+        <!-- GPF Cancel REASON -->
+        <!-- Tree View-->
+        <record id="tree_gpf_cancel_reason_view" model="ir.ui.view">
+            <field name="name">gpf_cancel_reason_tree_view</field>
+            <field name="model">gpf.cancel.reason</field>
+            <field name="type">tree</field>
+        </record>
+        
+        <!-- Form View -->
+        <record id="form_gpf_cancel_reason_view" model="ir.ui.view">
+            <field name="name">gpf_cancel_reason_form_view</field>
+            <field name="model">gpf.cancel.reason</field>
+            <field name="type">form</field>
+        </record>
+
+         <!-- Action -->
+        <record id="action_gpf_cancel_reason" model="ir.action.act_window">
+            <field name="name">GPF Cancel Reason</field>
+            <field name="res_model">gpf.cancel.reason</field>
+        </record>
+        
+        <!-- Action link to tree -->
+        <record id="act_tree_view_gpf_cancel_reason" model="ir.action.act_window.view">
+            <field name="view" ref="tree_gpf_cancel_reason_view"/>
+            <field name="act_window" ref="action_gpf_cancel_reason"/>
+            <field name="sequence" eval="10"/>
+        </record>
+
+        <!-- Action link to form -->
+        <record id="act_form_view_gpf_cancel_reason" model="ir.action.act_window.view">
+            <field name="view" ref="form_gpf_cancel_reason_view"/>
+            <field name="act_window" ref="action_gpf_cancel_reason"/>
+            <field name="sequence" eval="20"/>
+        </record>
+
+         <!-- GPF Advance Lines -->
+        <!-- Tree View-->
+        <record id="tree_gpf_advance_line_view" model="ir.ui.view">
+            <field name="name">gpf_advance_line_tree</field>
+            <field name="model">gpf.advance.line</field>
+            <field name="type">tree</field>
+        </record>
+        
+        <!-- Form View -->
+        <record id="form_gpf_advance_line_view" model="ir.ui.view">
+            <field name="name">gpf_advance_line_form</field>
+            <field name="model">gpf.advance.line</field>
+            <field name="type">form</field>
+        </record>
+
+         <!-- Action -->
+        <record id="action_gpf_advance_line" model="ir.action.act_window">
+            <field name="name">GPF Advance Line</field>
+            <field name="res_model">gpf.advance.line</field>
+        </record>
+        
+        <!-- Action link to tree -->
+        <record id="act_tree_view_gpf_advance_line" model="ir.action.act_window.view">
+            <field name="view" ref="tree_gpf_advance_line_view"/>
+            <field name="act_window" ref="action_gpf_advance_line"/>
+            <field name="sequence" eval="10"/>
+        </record>
+
+        <!-- Action link to form -->
+        <record id="act_form_view_gpf_advance_line" model="ir.action.act_window.view">
+            <field name="view" ref="form_gpf_advance_line_view"/>
+            <field name="act_window" ref="action_gpf_advance_line"/>
+            <field name="sequence" eval="20"/>
+        </record>
+
+        <!-- Modify Installment date-->
+         <!-- <record model="ir.action.wizard" id="wizard_modify_installment">
+            <field name="name">Modify Installment</field>
+            <field name="wiz_name">gpf.modify_installment</field>
+            <field name="model">gpf.advance</field>
+        </record> -->
+        <!-- END -->
+
+        <menuitem id="menu_gpf_subscription" name="Alter GPF Subscription"
+            parent="menu_gpf"
+            action="action_gpf_subscription" sequence="10"/>
+        <menuitem id="menu_gpf_advance" name="GPF Advance"
+            parent="menu_gpf"
+            action="action_gpf_advance" sequence="20"/>
+        <menuitem id="gpf_reason" name="GPF Reason"
+            parent="menu_gpf" sequence="30"/>
+        <menuitem id="menu_gpf_reason" name="GPF Reason"
+            parent="gpf_reason"
+            action="action_gpf_reason" sequence="10"/>
+        <menuitem id="menu_gpf_cancel_reason" name="GPF Cancel Reason"
+            parent="gpf_reason"
+            action="action_gpf_cancel_reason" sequence="20"/>
+
+        <record model="ir.ui.view" id="contract_view_form">
+            <field name="model">hr.contract</field>
+            <field name="inherit" ref="hr_contract.form_contract_view" />
+            <field name="name">contract_view</field>
+        </record>
+
+        <record model="ir.ui.view" id="employee_view_form">
+            <field name="model">company.employee</field>
+            <field name="inherit" ref="hr.form_employee_view" />
+            <field name="name">employee_view</field>
+        </record>
+    </data>
+</tryton>

@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+
+<form col="6">
+    <label name="name"/>
+    <field name="name"/>
+    <label name="month"/>
+    <field name="month"/>
+    <label name="year"/>
+    <field name="year"/>
+    <notebook colspan="6">
+        <page id="_payslips_for_batches" string="Payslips">
+            <field name="slips" view_ids="hr_payroll.payslipbatch_view_tree"/>
+        </page>
+    </notebook>
+</form>

@@ -1,0 +1,99 @@
+<?xml version="1.0"?>
+
+<form>
+    <group id="apar_verification_form" colspan="6" col="6">
+        <group id="header" colspan="6" col="6">
+            <label name="form_name"/>
+            <field name="form_name" colspan="3"/>
+            <label name="state"/>
+            <field name="state"/>
+            <label name="department" />
+            <field name="department" />
+            <label name="date_from" />
+            <field name="date_from" />
+            <label name="date_to" />
+            <field name="date_to" />
+            <label name="employee_code"/>
+            <field name="employee_code"/>
+            <label name="employee" />
+            <field name="employee"/>
+            <label name="designation" />
+            <field name="designation" />
+            <label name="date_of_birth" />
+            <field name="date_of_birth" />
+            <label name="date_of_joining" />
+            <field name="date_of_joining" />
+            <label name="category" />
+            <field name="category" />
+        </group>
+        <group id="officers" colspan="6">
+            <label name="reporting_officer" />
+            <field name="reporting_officer" />
+            <label name="reporting_officer_period" />
+            <field name="reporting_officer_period" />
+
+            <label name="reviewing_officer" />
+            <field name="reviewing_officer" />
+            <label name="reviewing_officer_period" />
+            <field name="reviewing_officer_period" />
+
+            <label name="acceptance_authority" />
+            <field name="acceptance_authority" />
+            <label name="accepting_authority_period" />
+            <field name="accepting_authority_period" />
+        </group>
+    </group>
+    <notebook>
+        <page string="Basic Information" id="page_part_1" >
+            <group id="part1" string="Part 1 - Personal Data (to be filled by the Administrative section)" colspan="6">
+                <label name="present_grade" />
+                <field name="present_grade" />
+                <label name="date_appointment" string="Date of continuous appointment on present grade"/>
+                <field name="date_appointment" />
+                <label name="present_post" />
+                <field name="present_post" />
+                <label name="date_posting_present_post" />
+                <field name="date_posting_present_post" />
+                <label name="grade_pay" />
+                <field name="grade_pay" />
+                <label name="pay_in_band" />
+                <field name="pay_in_band" />
+                <label name="discontinuity_period_leave" />
+                <field name="discontinuity_period_leave" />
+                <label name="discontinuity_period_official" />
+                <field name="discontinuity_period_official" />
+                <label name="qualification" />
+                <field name="qualification" />
+                <label name="courses_undertaken" />
+                <field name="courses_undertaken" />
+                <label name="professional_bodies" />
+                <field name="professional_bodies" />
+            </group>
+        <!-- <button name="submit_to_hod" string="Forward to Department" confirm="Are you sure to forward the form to the department"/> -->
+        <!-- <button name="forward_to_employee" string="Forward to Employee" confirm="Are you sure to forward the form to the employee"/> -->
+        <button name="sign_and_submit" string="Sign and Submit" confirm="I declare that the completed APAR has been disclosed to me, and I have seen it thoroughly.
+            If I wish to represent against the content of APAR, then I have 15 days to do so.
+            By Pressing Ok button, I sign the APAR and submit it to ACR Cell."/>
+        <button name="raise_representation" string="Raise Representation" confirm="Are you sure to Raise Representation"/>
+        </page>
+        <page string="Self Appraisal" id="self_appraisal">
+            <field name="part_self_appraisal" colspan="6" height="-1" mode="form" />
+        </page>
+        <page string="Reporting" id="appraisal">
+            <field name="part_appraisal" colspan="6" height="-1" mode="form"/>
+        </page>
+        <page string="Reviewing" id="reviewing">
+            <field name="part_review" colspan="6" height="-1" mode="form"/>
+        </page>
+        <page string="Tracking" id="tracking">
+            <field name="signatures" colspan="4" mode="tree"/>
+        </page>
+    </notebook>
+
+    <group colspan="4" id="grades">
+        <label name="grade" colspan="1"/>
+        <field name="grade" colspan="1"/>
+        <label name="grade_label" colspan="1"/>
+        <field name="grade_label" colspan="1"/>
+    </group>
+</form>

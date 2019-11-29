@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<tree editable="top">
+    <field name="journey_type"/>
+    <field name="mode_of_transport"/>
+    <field name="departure_place"/>
+    <field name="departure_date"/>
+    <field name="departure_time"/>
+    <field name="arrival_place"/>
+    <field name="arrival_date"/>
+    <field name="arrival_time"/>
+    <field name="amount"/>
+</tree>

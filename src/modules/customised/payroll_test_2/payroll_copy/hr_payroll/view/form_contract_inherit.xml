@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<data>
+    <!-- position = after, before, inside, replace-->
+    <xpath expr="/form/field[@name='department']" position="after">
+        <label name="structure"/>
+        <field name="structure"/>
+    </xpath>
+    
+    
+</data>

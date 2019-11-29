@@ -1,0 +1,123 @@
+<tryton>
+    <data>
+        <menuitem id="menu_nps" name="NPS" parent="hr.menu_hr" sequence="5"/>
+        <!--  Form View  -->
+        <record id="form_nps_view" model="ir.ui.view">
+            <field name="name">form_nps</field>
+            <field name="model">npsdetails.nps</field>
+            <field name="type">form</field>
+        </record>
+        <!--  Tree View  -->
+        <record id="tree_nps_view" model="ir.ui.view">
+            <field name="name">tree_nps</field>
+            <field name="model">npsdetails.nps</field>
+            <field name="type">tree</field>
+        </record>
+        <!--  Action  -->
+        <record id="action_nps" model="ir.action.act_window">
+            <field name="name">NPS Details</field>
+            <field name="res_model">npsdetails.nps</field>
+        </record>
+        <!--  Link to Tree  -->
+        <record id="act_nps_tree" model="ir.action.act_window.view">
+            <field name="act_window" ref="action_nps"/>
+            <field name="view" ref="tree_nps_view"/>
+            <field name="sequence" eval="10"/>
+        </record>
+      <!--  Link to Form  -->
+        <record id="act_nps_form" model="ir.action.act_window.view">
+            <field name="act_window" ref="action_nps"/>
+            <field name="view" ref="form_nps_view"/>
+            <field name="sequence">10</field>
+        </record>
+
+        <!-- Buttons -->
+        <!-- NPS Details -->
+        <record id="button_nps_details_confirm" model="ir.model.button">
+            <field name="name">confirm</field>
+            <field name="model" search="[('model', '=', 'npsdetails.nps')]"/>
+        </record>
+        <record id="button_nps_details_cancel" model="ir.model.button">
+            <field name="name">cancel</field>
+            <field name="model" search="[('model', '=', 'npsdetails.nps')]"/>
+        </record>
+        <record id="button_nps_details_done" model="ir.model.button">
+            <field name="name">done</field>
+            <field name="model" search="[('model', '=', 'npsdetails.nps')]"/>
+        </record>
+
+        <!--  Form View  -->
+        <record id="form_npsline_view" model="ir.ui.view">
+            <field name="name">form_npsline</field>
+            <field name="model">npsline.nps</field>
+            <field name="type">form</field>
+        </record>
+        <!--  Tree View  -->
+        <record id="tree_npsline_view" model="ir.ui.view">
+            <field name="name">tree_npsline</field>
+            <field name="model">npsline.nps</field>
+            <field name="type">tree</field>
+        </record>
+        <!--  Action  -->
+        <record id="action_npsline" model="ir.action.act_window">
+            <field name="name">NPS Line Details</field>
+            <field name="res_model">npsline.nps</field>
+        </record>
+        <!--  Link to Tree  -->
+        <record id="act_npsline_tree" model="ir.action.act_window.view">
+            <field name="act_window" ref="action_npsline"/>
+            <field name="view" ref="tree_npsline_view"/>
+            <field name="sequence" eval="10"/>
+        </record>
+        <!--  Link to Form  -->
+        <record id="act_npsline_form" model="ir.action.act_window.view">
+            <field name="act_window" ref="action_npsline"/>
+            <field name="view" ref="form_npsline_view"/>
+            <field name="sequence">10</field>
+        </record>
+
+    <!-- DDO Details -->
+            <!--  Form View  -->
+        <record id="form_nps_ddo_view" model="ir.ui.view">
+            <field name="name">form_nps_ddo</field>
+            <field name="model">nps.ddo</field>
+            <field name="type">form</field>
+        </record>
+        <!--  Tree View  -->
+        <record id="tree_nps_ddo_view" model="ir.ui.view">
+            <field name="name">tree_nps_ddo</field>
+            <field name="model">nps.ddo</field>
+            <field name="type">tree</field>
+        </record>
+        <!--  Action  -->
+        <record id="action_nps_ddo" model="ir.action.act_window">
+            <field name="name">DDO Details</field>
+            <field name="res_model">nps.ddo</field>
+        </record>
+        <!--  Link to Tree  -->
+        <record id="act_nps_ddo_tree" model="ir.action.act_window.view">
+            <field name="act_window" ref="action_nps_ddo"/>
+            <field name="view" ref="tree_nps_ddo_view"/>
+            <field name="sequence" eval="20"/>
+        </record>
+        <!--  Link to Form  -->
+        <record id="act_nps_ddo_form" model="ir.action.act_window.view">
+            <field name="act_window" ref="action_nps_ddo"/>
+            <field name="view" ref="form_nps_ddo_view"/>
+            <field name="sequence">20</field>
+        </record>
+
+        <!-- DDO details in employee.py -->
+        <record model="ir.ui.view" id="employee_nps_view_form">
+            <field name="model">company.employee</field>
+            <field name="inherit" ref="hr.form_employee_view"/>
+            <field name="name">employee_nps_form_view</field>
+        </record>
+
+        <!--  Menu  -->
+        <menuitem id="menu_nps_subitem" name="NPS Details" parent="menu_nps" action="action_nps" sequence="10"/>
+        <menuitem id="menu_npsline_subitem" name="NPS Line" parent="menu_nps" action="action_npsline" sequence="20"/>
+        <menuitem id="menu_nps_ddo_subitem" name="DDO" parent="menu_nps" action="action_nps_ddo" sequence="30"/>
+   
+    </data>
+</tryton>

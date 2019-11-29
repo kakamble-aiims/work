@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<form>
+    <group id="wiz_form_view" colspan="4" col="4">
+        <label name="name"/>
+        <field name="name"/>
+        <label name="start_date"/>
+        <field name="start_date"/>
+        <label name="end_date"/>
+        <field name="end_date"/>
+    </group>
+    <newline/>
+    <group id="employee_form_view" colspan="4" col="4">
+        <field name="employee"/>
+    </group>
+</form>

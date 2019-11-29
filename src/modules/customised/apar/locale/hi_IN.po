@@ -1,0 +1,677 @@
+#
+msgid ""
+msgstr "Content-Type: text/plain; charset=utf-8\n"
+
+#  msgctxt
+#  msgid
+#  msgstr
+
+# Apar Employee Form
+
+msgctxt "field:apar.employee.form,form_name:"
+msgid "Form Name"
+msgstr "फ़ार्म का नाम"
+
+msgctxt "field:apar.employee.form,employee_code:"
+msgid "Employee Code"
+msgstr "कर्मचारी कोड"
+
+msgctxt "field:apar.employee.form,employee:"
+msgid "Employee"
+msgstr "कर्मचारी"
+
+msgctxt "field:apar.employee.form,reporting_officer:"
+msgid "Reporting Officer"
+msgstr "रिपोर्टिंग अधिकारी"
+
+msgctxt "field:apar.employee.form,reporting_officer_period:"
+msgid "Period covered under Reporting Officer"
+msgstr "रिपोर्टिंग अधिकारी के अधीन अवधि"
+
+msgctxt "field:apar.employee.form,reviewing_officer:"
+msgid "Reviewing Officer"
+msgstr "पुनः निरीक्षण अधिकारी "
+
+msgctxt "field:apar.employee.form,reviewing_officer_period:"
+msgid "Period covered under Reviewing Officer"
+msgstr "पुनः निरीक्षण अधिकारी के अधीन अवधि"
+
+msgctxt "field:apar.employee.form,acceptance_authority:"
+msgid "Acceptance Authority"
+msgstr "स्वीकृति प्राधिकरण"
+
+msgctxt "field:apar.employee.form,accepting_authority_period:"
+msgid "Period covered under Accepting Authority"
+msgstr "स्वीकारकर्ता प्राधिकारी के अधीन अवधि"
+
+msgctxt "field:apar.employee.form,department_form:"
+msgid "Department Forms"
+msgstr "विभाग के प्रपत्र"
+
+msgctxt "field:apar.employee.form,department:"
+msgid "Department / Section / Unit"
+msgstr "विभाग / अनुभाग / खण्ड:"
+
+msgctxt "field:apar.employee.form,date_from:"
+msgid "Date From"
+msgstr "दिनांक से"
+
+msgctxt "field:apar.employee.form,date_to:"
+msgid "Date To"
+msgstr "दिनांक तक"
+
+msgctxt "field:apar.employee.form,designation:"
+msgid "Designation"
+msgstr "पद"
+
+msgctxt "field:apar.employee.form,date_of_joining:"
+msgid "Date of Joining the Service"
+msgstr "सेवा में कार्यग्रहण की तारीख:"
+
+msgctxt "field:apar.employee.form,date_of_birth:"
+msgid "Date of Birth"
+msgstr "जन्म तिथि:"
+
+msgctxt "field:apar.employee.form,category:"
+msgid "Category"
+msgstr "वर्ग"
+
+msgctxt "selection:apar.employee.form,general:"
+msgid "General"
+msgstr "सामान्य"
+
+msgctxt "selection:apar.employee.form,sc:"
+msgid "Scheduled Caste"
+msgstr "अनुसूचित जाति"
+
+msgctxt "selection:apar.employee.form,st:"
+msgid "Scheduled Tribe"
+msgstr "अनुसूचित जनजाति"
+
+msgctxt "selection:apar.employee.form,obc:"
+msgid "Other Backward Classes"
+msgstr "अन्य पिछड़ा वर्ग"
+
+msgctxt "selection:apar.employee.form,ph:"
+msgid "Physically Handicapped"
+msgstr "शारीरिक रूप से विकलांग"
+
+msgctxt "field:apar.employee.form,date_appointment:"
+msgid "Appointment"
+msgstr "नियुक्ति"
+
+msgctxt "field:apar.employee.form,present_grade:"
+msgid "Present Grade"
+msgstr "वर्तमान ग्रेड"
+
+msgctxt "field:apar.employee.form,present_post:"
+msgid "Present Post"
+msgstr "वर्तमान पद"
+
+msgctxt "field:apar.employee.form,date_posting_present_post:"
+msgid "Date of Posting on Present Post"
+msgstr "वर्तमान पोस्ट पर पोस्टिंग की तारीख"
+
+msgctxt "field:apar.employee.form,discontinuity_period_leave:"
+msgid "Period of Discontinuity (Leave)"
+msgstr "ड्यूटि से अनुपस्थित रहने के अवधि: (छुट्टी )"
+
+msgctxt "field:apar.employee.form,discontinuity_period_official:"
+msgid "Period of Discontinuity (Official)"
+msgstr "ड्यूटि से अनुपस्थित रहने के अवधि: (आधिकारिक )"
+
+msgctxt "field:apar.employee.form,qualification:"
+msgid "Academic and Professional Qualifications"
+msgstr "शैक्षणिक एवं व्यावसायिक संबंधी आहर्ताएँ"
+
+msgctxt "field:apar.employee.form,courses_undertaken:"
+msgid "Training and Courses Undertaken"
+msgstr "प्रशिक्षण और पाठ्यक्रम"
+
+msgctxt "field:apar.employee.form,professional_bodies:"
+msgid "Membership of Professional Bodies"
+msgstr "पेशेवर निकायों की सदस्यता"
+
+msgctxt "field:apar.employee.form,pay_in_band:"
+msgid "Pay in the Pay Band"
+msgstr "वर्तमान मूल वेतन "
+
+msgctxt "field:apar.employee.form,grade_pay:"
+msgid "Grade Pay"
+msgstr "ग्रेड वेतन"
+
+msgctxt "field:apar.employee.form,parts:"
+msgid "Parts"
+msgstr "भाग"
+
+msgctxt "field:apar.employee.form,signatures:"
+msgid "Signatures"
+msgstr "हस्ताक्षर"
+
+msgctxt "field:apar.employee.form,template:"
+msgid "Template"
+msgstr "नमूना"
+
+msgctxt "field:apar.employee.form,state:"
+msgid "State"
+msgstr "स्थिति "
+
+msgctxt "selection:apar.employee.form,draft:"
+msgid "Draft"
+msgstr "मसौदा"
+
+msgctxt "selection:apar.employee.form,no_initiation:"
+msgid "No Inititation Certificate"
+msgstr "कोई प्रारंभिक प्रमाण पत्र नहीं"
+
+msgctxt "selection:apar.employee.form,self_appraisal:"
+msgid "Self Appraisal"
+msgstr "स्वः मूल्यांकन "
+
+msgctxt "selection:apar.employee.form,reporting_officer:"
+msgid "Reporting Officer"
+msgstr "रिपोर्टिंग अधिकारी "
+
+msgctxt "selection:apar.employee.form,reviewing_officer:"
+msgid "Reviewing Officer"
+msgstr "पुनः निरीक्षण अधिकारी"
+
+msgctxt "selection:apar.employee.form,accepting_authority:"
+msgid "Accepting Authority"
+msgstr "स्वीकृति प्राधिकारी"
+
+msgctxt "selection:apar.employee.form,disclose:"
+msgid "Disclose"
+msgstr "खुलासा"
+
+msgctxt "selection:apar.employee.form,signed:"
+msgid "Signed by Ratee Officer"
+msgstr "रेटे अधिकारी द्वारा हस्ताक्षरित "
+
+msgctxt "selection:apar.employee.form,representation:"
+msgid "Raised Representation"
+msgstr "उठाया प्रतिनिधित्व"
+
+# Apar Department Form
+
+msgctxt "field:apar.department.form,department:"
+msgid "Department"
+msgstr "विभाग"
+
+msgctxt "field:apar.department.form,establishment:"
+msgid "Establishment"
+msgstr "स्थापना"
+
+msgctxt "field:apar.department.form,head:"
+msgid "Head of Department"
+msgstr "विभाग के प्रमुख"
+
+msgctxt "field:apar.department.form,date_from:"
+msgid "Date From"
+msgstr "दिनांक से"
+
+msgctxt "field:apar.department.form,date_to:"
+msgid "Date To"
+msgstr "दिनांक तक"
+
+msgctxt "field:apar.department.form,date_forward_to_employee:"
+msgid "Forwarded to Employees on"
+msgstr "पर कर्मचारियों को अग्रेषित"
+
+msgctxt "field:apar.department.form,forward_to_employee_by:"
+msgid "Forwarded to Employees by"
+msgstr "द्वारा कर्मचारियों को अग्रेषित"
+
+msgctxt "field:apar.department.form,employee_forms:"
+msgid "Verification Officer"
+msgstr "सत्यापन अधिकारी"
+
+msgctxt "field:apar.department.form,state:"
+msgid "Status"
+msgstr "हैसियत"
+
+msgctxt "selection:apar.department.form,state:"
+msgid "Forwarded to HOD"
+msgstr "HOD को अग्रेषित किया गया"
+
+msgctxt "selection:apar.department.form,state:"
+msgid "In Progress"
+msgstr "प्रगति में"
+
+msgctxt "selection:apar.department.form,state:"
+msgid "Completed"
+msgstr "पूरा हुआ"
+
+# Employee Form Part
+
+msgctxt "field:apar.department.form,number:"
+msgid "Number"
+msgstr "संख्या"
+
+msgctxt "field:apar.department.form,name:"
+msgid "Name"
+msgstr "नाम"
+
+msgctxt "field:apar.department.form,is_sections:"
+msgid "Have Sections?"
+msgstr "अनुभाग हैं?"
+
+msgctxt "field:apar.department.form,questions:"
+msgid "Questions"
+msgstr "प्रशन"
+
+msgctxt "field:apar.department.form,sections:"
+msgid "Sections"
+msgstr "वर्गों"
+
+msgctxt "field:apar.department.form,overall_score_reporting:"
+msgid "Overall Grade - Reviewing"
+msgstr "ओवरऑल ग्रेड - समीक्षा"
+
+msgctxt "field:apar.department.form,signatures:"
+msgid "Signatures"
+msgstr "हस्ताक्षर"
+
+msgctxt "field:apar.department.form,employee_form:"
+msgid "Employee Form"
+msgstr "कर्मचारी फॉर्म"
+
+# EmployeeFormPartSignature
+
+msgctxt "field:apar.employee.form.signature,signed_by_user:"
+msgid "Signed By"
+msgstr "द्वारा हस्ताक्षर किए"
+
+msgctxt "field:apar.employee.form.signature,signed_by_employee:"
+msgid "Signed By Employee"
+msgstr "कर्मचारी द्वारा हस्ताक्षरित"
+
+msgctxt "field:apar.employee.form.signature,signed_on:"
+msgid "Signed On"
+msgstr "पर हस्ताक्षर किए"
+
+msgctxt "field:apar.employee.form.signature,note:"
+msgid "Remarks"
+msgstr "टिप्पणियों"
+
+msgctxt "field:apar.employee.form.signature,designation:"
+msgid "Designation"
+msgstr "पद"
+
+msgctxt "field:apar.employee.form.signature,place:"
+msgid "Place"
+msgstr "जगह"
+
+msgctxt "field:apar.employee.form.signature,employee_form:"
+msgid "Employee Form"
+msgstr "कर्मचारी फॉर्म"
+
+msgctxt "field:apar.employee.form.signature,action:"
+msgid "Action"
+msgstr "कार्य"
+
+# Employee Form Line
+
+msgctxt "field:apar.employee.form.line,question:"
+msgid "Question"
+msgstr "प्रशन"
+
+msgctxt "field:apar.employee.form.line,answer:"
+msgid "Answer"
+msgstr "उत्तर"
+
+msgctxt "field:apar.employee.form.line,part:"
+msgid "Part"
+msgstr "भाग"
+
+# Apar Employee Form Section
+
+msgctxt "field:apar.employee.form.section,name:"
+msgid "Name"
+msgstr "नाम"
+
+msgctxt "field:apar.employee.form.section,number:"
+msgid "Number"
+msgstr "संख्या"
+
+msgctxt "field:apar.employee.form.section,questions:"
+msgid "Questions"
+msgstr "प्रशन"
+
+msgctxt "field:apar.employee.form.section,average_score_reporting:"
+msgid "Average Score Reporting"
+msgstr "औसत स्कोर रिपोर्टिंग"
+
+msgctxt "field:apar.employee.form.section,average_score_reviewing:"
+msgid "Average Score Reviewing"
+msgstr "औसत स्कोर समीक्षा"
+
+msgctxt "field:apar.employee.form.section,weightage:"
+msgid "Weightage"
+msgstr "महत्व"
+
+msgctxt "field:apar.employee.form.section,part:"
+msgid "Part"
+msgstr "भाग"
+
+# Apar Employee Form Section Line
+
+msgctxt "field:apar.employee.form.section.line,question:"
+msgid "Question"
+msgstr "प्रशन"
+
+msgctxt "field:apar.employee.form.section.line,grade_reporting:"
+msgid "Grades by Reporting Authority"
+msgstr "रिपोर्टिंग प्राधिकरण द्वारा ग्रेड"
+
+msgctxt "field:apar.employee.form.section.line,grade_reviewing:"
+msgid "Grades by Reviewing Authority"
+msgstr "समीक्षा प्राधिकरण द्वारा ग्रेड"
+
+msgctxt "field:apar.employee.form.section.line,section:"
+msgid "Section"
+msgstr "अनुभाग"
+
+# APAR Generate Forms
+
+msgctxt "wizard_button:apar.generate_forms,tryton-cancel,end:"
+msgid "Cancel"
+msgstr "रद्द करना"
+
+msgctxt "wizard_button:apar.generate_forms,tryton-go-next,create_forms:"
+msgid "Generate APAR Forms"
+msgstr "APAR फॉर्म जनरेट करें"
+
+msgctxt "error:apar.generate_forms,missing_template:"
+msgid "Designation '%s' has no form associated to it. Contact Administrator."
+msgstr "पदनाम '%s' का इससे जुड़ा कोई फॉर्म नहीं है। व्यवस्थापक से संपर्क करें"
+
+# APAR Generate Department View
+
+msgctxt "field:apar.generate_forms.show,department:"
+msgid "Department"
+msgstr "विभाग"
+
+msgctxt "field:apar.generate_forms.show,establishment:"
+msgid "Establishment"
+msgstr "स्थापना"
+
+msgctxt "field:apar.generate_forms.show,establishments:"
+msgid "Establishment"
+msgstr "स्थापना"
+
+
+# Representation
+# APAR Representation Form
+
+msgctxt "field:apar.representation,mail:"
+msgid "Mail"
+msgstr "मेल"
+
+msgctxt "field:apar.representation,representation_id:"
+msgid "Representation Number"
+msgstr "प्रतिनिधित्व संख्या"
+
+msgctxt "field:apar.representation,raised_by:"
+msgid "Employee"
+msgstr "कर्मचारी"
+
+msgctxt "field:apar.representation,subject:"
+msgid "Subject"
+msgstr "विषय"
+
+msgctxt "field:apar.representation,text:"
+msgid "Details"
+msgstr "विवरण"
+
+msgctxt "field:apar.representation,raised_on:"
+msgid "Raised On"
+msgstr "पर उठाया गया"
+
+msgctxt "field:apar.representation,state:"
+msgid "Status"
+msgstr "स्थिति"
+
+msgctxt "selection:apar.representation,draft:"
+msgid "Draft"
+msgstr "मसौदा"
+
+msgctxt "selection:apar.representation,reporting_officer:"
+msgid "Reporting Officer"
+msgstr "रिपोर्टिंग अधिकारी"
+
+msgctxt "selection:apar.representation,reviewing_officer:"
+msgid "Reviewing Officer"
+msgstr "पुनः निरीक्षण अधिकारी"
+
+msgctxt "selection:apar.representation,hod:"
+msgid "HOD"
+msgstr "विभागाध्यक्ष"
+
+msgctxt "selection:apar.representation,accepting_authority:"
+msgid "Accepting Authority"
+msgstr "स्वीकृति प्राधिकारी"
+
+msgctxt "selection:apar.representation,acr_cell:"
+msgid "ACR Cell"
+msgstr "एसीआर सेल"
+
+msgctxt "selection:apar.representation,submitted_to_acr_cell:"
+msgid "Submitted to ACR Cell"
+msgstr "ACR सेल को प्रस्तुत"
+
+msgctxt "selection:apar.representation,director:"
+msgid "Director"
+msgstr "निदेशक"
+
+msgctxt "selection:apar.representation,closed:"
+msgid "Closed"
+msgstr "बंद"
+
+msgctxt "field:apar.representation,comments_reporting:"
+msgid "Comments by Reporting Officer"
+msgstr "रिपोर्टिंग अधिकारी द्वारा टिप्पणियां"
+
+msgctxt "field:apar.representation,comments_reviewing:"
+msgid "Comments by Reviewing Officer"
+msgstr "समीक्षा अधिकारी द्वारा टिप्पणियां"
+
+msgctxt "field:apar.representation,comments_accepting:"
+msgid "Comments by Accepting Authority"
+msgstr "स्वीकृति प्राधिकरण द्वारा टिप्पणियां"
+
+msgctxt "field:apar.representation,comments_hod:"
+msgid "Comments by HoD"
+msgstr "HoD द्वारा टिप्पणियां"
+
+msgctxt "field:apar.representation,comments_director:"
+msgid "Comments by Director"
+msgstr "निदेशक द्वारा टिप्पणियां"
+
+msgctxt "field:apar.representation,present_score:"
+msgid "Present Score"
+msgstr "वर्तमान स्कोर"
+
+msgctxt "field:apar.representation,score:"
+msgid "Final Score"
+msgstr "अंतिम स्कोर"
+
+msgctxt "field:apar.representation,signatures:"
+msgid "Signatures"
+msgstr "हस्ताक्षर"
+
+msgctxt "model:apar.representation,place:"
+msgid "Delhi"
+msgstr "दिल्ली"
+
+# Apar Representation Signatures
+
+msgctxt "field:apar.representation.signatures,signed_by_user:"
+msgid "Signed By"
+msgstr "द्वारा हस्ताक्षर किए"
+
+msgctxt "field:apar.representation.signatures,signed_by_employee:"
+msgid "Signed By Employee"
+msgstr "कर्मचारी द्वारा हस्ताक्षरित"
+
+msgctxt "field:apar.representation.signatures,signed_on:"
+msgid "Signed On"
+msgstr "पर हस्ताक्षर किए"
+
+msgctxt "field:apar.representation.signatures,designation:"
+msgid "Designation"
+msgstr "पद"
+
+msgctxt "field:apar.representation.signatures,place:"
+msgid "Place"
+msgstr "स्थान"
+
+msgctxt "field:apar.representation.signatures,representation:"
+msgid "Representation"
+msgstr "प्रतिनिधित्व"
+
+# APAR Representation Show
+
+msgctxt "field:apar.representation.raise.show,subject:"
+msgid "Subject"
+msgstr "विषय"
+
+msgctxt "field:apar.representation.raise.show,details:"
+msgid "Details"
+msgstr "विवरण"
+
+msgctxt "field:apar.representation.raise.show,representation:"
+msgid "Representation"
+msgstr "प्रतिनिधित्व"
+
+# APAR Representation Wizard
+
+msgctxt "wizard_button:apar.representation.raise,tryton-cancel,end:"
+msgid "Cancel"
+msgstr "रद्द करना"
+
+msgctxt "wizard_button:apar.representation.raise,tryton-go-next,create_repr:"
+msgid "Generate Representation"
+msgstr "प्रतिनिधित्व उत्पन्न"
+
+# Templates
+# Apar Form Template
+
+msgctxt "field:apar.form.template,name:"
+msgid "Name"
+msgstr "नाम"
+
+msgctxt "field:apar.form.template,form_number:"
+msgid "Form Number"
+msgstr "फॉर्म नंबर"
+
+msgctxt "field:apar.form.template,designations:"
+msgid "Designations"
+msgstr "पद"
+
+msgctxt "field:apar.form.template,parts:"
+msgid "Parts for APAR"
+msgstr "APAR के लिए भागों"
+
+# Employee Designation
+
+msgctxt "field:employee.designation,template:"
+msgid "APAR Template"
+msgstr "APAR टेम्पलेट"
+
+# Apar Form Template Part
+
+msgctxt "field:apar.form.template.part,name:"
+msgid "Name"
+msgstr "नाम"
+
+msgctxt "field:apar.form.template.part,number:"
+msgid "Number"
+msgstr "संख्या"
+
+msgctxt "field:apar.form.template.part,questions:"
+msgid "Questions"
+msgstr "प्रशन"
+
+msgctxt "field:apar.form.template.part,template:"
+msgid "Template"
+msgstr "नमूना"
+
+msgctxt "field:apar.form.template.part,sections:"
+msgid "Sections"
+msgstr "अनुभाग"
+
+msgctxt "field:apar.form.template.part,is_self_appraisal:"
+msgid "Is Self Appraisal"
+msgstr "स्वः मूल्यांकन "
+
+# Apar Form Template Section
+
+msgctxt "field:apar.form.template.section,name:"
+msgid "Section Name"
+msgstr "अनुभाग नाम"
+
+msgctxt "field:apar.form.template.section,number:"
+msgid "Section Number"
+msgstr "अनुभाग संख्या"
+
+msgctxt "field:apar.form.template.section,weightage:"
+msgid "Weightage (in percentage)"
+msgstr "वेटेज (प्रतिशत में)"
+
+msgctxt "field:apar.form.template.section,questions:"
+msgid "Questions"
+msgstr "प्रशन"
+
+msgctxt "field:apar.form.template.section,part:"
+msgid "Part"
+msgstr "भाग"
+
+# Apar Form Template Questions
+
+msgctxt "field:apar.form.template.question,question_no:"
+msgid "Question Number"
+msgstr "प्रशन संख्या"
+
+msgctxt "field:apar.form.template.question,name:"
+msgid "Question"
+msgstr "प्रशन"
+
+msgctxt "field:apar.form.template.question,section:"
+msgid "Section"
+msgstr "अनुभाग"
+
+msgctxt "field:apar.form.template.question,part:"
+msgid "Part"
+msgstr "भाग"
+
+# Configuration
+# Apar Template Configuration
+
+msgctxt "field:apar.form.template.configuration,start_date_apar:"
+msgid "Start Date of APAR"
+msgstr "APAR की तिथि प्रारंभ करें"
+
+msgctxt "field:apar.form.template.configuration,last_date_emp_fill:"
+msgid "Last Date to Fill APAR by Employee"
+msgstr "कर्मचारी द्वारा APAR भरने की अंतिम तिथि"
+
+msgctxt "field:apar.form.template.configuration,last_date_reporting:"
+msgid "Last Date for Reporting Officer"
+msgstr "रिपोर्टिंग अधिकारी के लिए अंतिम तिथि"
+
+msgctxt "field:apar.form.template.configuration,last_date_reviewing:"
+msgid "Last Date for Reviewing Officer"
+msgstr "समीक्षा अधिकारी के लिए अंतिम तिथि"
+
+msgctxt "field:apar.form.template.configuration,last_date_accepting:"
+msgid "Last Date for Accepting Authority"
+msgstr "प्राधिकरण को स्वीकार करने की अंतिम तिथि"
+
+msgctxt "field:apar.form.template.configuration,last_date_emp_sign:"
+msgid "Last Date to Sign APAR by Employee"
+msgstr "कर्मचारी द्वारा APAR पर हस्ताक्षर करने की अंतिम तिथि"
+
+msgctxt "field:apar.form.template.configuration,last_date_emp_represent:"
+msgid "Last Date to Raise Representation by Employee"
+msgstr "कर्मचारी द्वारा प्रतिनिधित्व बढ़ाने की अंतिम तिथि"

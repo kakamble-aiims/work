@@ -1,0 +1,4 @@
+
+    [trytond.modules]
+    estate = trytond.modules.estate 
+    

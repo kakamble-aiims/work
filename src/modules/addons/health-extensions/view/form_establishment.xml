@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+
+<form>
+    <label name="name" />
+    <field name="name"/>
+    <label name="center" />
+    <field name="center" />
+    <label name="admin"/>
+    <field name="admin"/>
+    <newline/>
+    <field name="departments" colspan="4"/>
+</form>

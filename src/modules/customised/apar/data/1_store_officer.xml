@@ -1,0 +1,213 @@
+<?xml version="1.0"?>
+<tryton>
+    <data>
+
+        <record id="template_store_officer" model="apar.form.template">
+            <field name="name">For Senior Administrative Officer/ Senior Store Officer and Administrative Officer/ Store Officer and other Group A Officers</field>
+            <field name="form_number">1</field>
+        </record>
+
+        <record id="template_store_officer_part2" model="apar.form.template.part">
+            <field name="name">Self Appraisal for the Year(To be filled by the Ratee Officer)</field>
+            <field name="number">2</field>
+            <field name="template" ref="template_store_officer"/>
+            <field name="type_">self_appraisal</field>
+        </record>
+        <record id="template_store_officer_part3" model="apar.form.template.part">
+            <field name="name">Appraisal(To be filled by Reporting Officer and To be reviewed by Reviewing Officer)</field>
+            <field name="number">3 and 4</field>
+            <field name="template" ref="template_store_officer"/>
+            <field name="type_">appraisal</field>
+        </record>
+        <record id="template_store_officer_part5" model="apar.form.template.part">
+            <field name="name">Review(To be filled by the Reviewing Officer)</field>
+            <field name="number">5</field>
+            <field name="template" ref="template_store_officer"/>
+            <field name="type_">reviewing</field>
+        </record>
+
+        <record id="section_store_officer_1" model="apar.form.template.section">
+            <field name="name">Assessment of work output</field>
+            <field name="weightage">40</field>
+            <field name="number">3.1</field>
+            <field name="part" ref="template_store_officer_part3"/>
+        </record>
+
+        <record id="section_store_officer_2" model="apar.form.template.section">
+            <field name="name">Assessment of Personal Attributes</field>
+            <field name="weightage">30</field>
+            <field name="number">3.2</field>
+            <field name="part" ref="template_store_officer_part3"/>
+        </record>
+        <record id="section_store_officer_3" model="apar.form.template.section">
+            <field name="name">Assessment of functional Competency</field>
+            <field name="weightage">30</field>
+            <field name="number">3.3</field>
+            <field name="part" ref="template_store_officer_part3"/>
+        </record>
+
+
+        <record id="template_store_officer_question1" model="apar.form.template.question">
+            <field name="question_no">2.1</field>
+            <field name="name">Brief description of duties of post:</field>
+            <field name="part" ref="template_store_officer_part2"/>
+        </record>
+        <record id="template_store_officer_question2" model="apar.form.template.question">
+            <field name="question_no">2.2</field>
+            <field name="name">Brief resume of work done and achievements with particular mention of the specific &#xA; tasks and actions assigned to your during the period in about 100 words</field>
+            <field name="part" ref="template_store_officer_part2"/>
+        </record>
+        <record id="template_store_officer_question3" model="apar.form.template.question">
+            <field name="question_no">2.3</field>
+            <field name="name">Have you filled your immovable property return as due? If yes, please mention date.</field>
+            <field name="part" ref="template_store_officer_part2"/>
+        </record>
+        <record id="template_store_officer_question4" model="apar.form.template.question">
+            <field name="question_no">4.1</field>
+            <field name="name">Relations with the public (wherever applicable) /Please comment on the officer’s &#xA; accessibility to the public and responsiveness to their needs)</field>
+            <field name="part" ref="template_store_officer_part3"/>
+        </record>
+        <record id="template_store_officer_question5" model="apar.form.template.question">
+            <field name="question_no">4.2</field>
+            <field name="name">Training/Please give recommendations for training with a view to future improving the &#xA; effectiveness and capabilities to the officer)</field>
+            <field name="part" ref="template_store_officer_part3"/>
+        </record>
+        <record id="template_store_officer_question6" model="apar.form.template.question">
+            <field name="question_no">4.3</field>
+            <field name="name">State of Health</field>
+            <field name="part" ref="template_store_officer_part3"/>
+        </record>
+        <record id="template_store_officer_question7" model="apar.form.template.question">
+            <field name="question_no">4.4</field>
+            <field name="name">Integrity/Please comment on the integrity of the officer)</field>
+            <field name="part" ref="template_store_officer_part3"/>
+        </record>
+        <record id="template_store_officer_question8" model="apar.form.template.question">
+            <field name="question_no">4.5</field>
+            <field name="name">Pen Picture by Reporting Officer (in about 100 words) on the overall qualities of &#xA; the officer including area of strength and lesser strength, extraordinarily achievements, &#xA;significant failures (ref: 2.1 &amp; 2.2 of Part-2) and attitude towards weaker sections.</field>
+            <field name="part" ref="template_store_officer_part3"/>
+        </record>
+        <record id="template_store_officer_question10" model="apar.form.template.question">
+            <field name="question_no">5.1</field>
+            <field name="name">Length of service under Reviewing Authority:</field>
+            <field name="part" ref="template_store_officer_part5"/>
+        </record>
+        <record id="template_store_officer_question11" model="apar.form.template.question">
+            <field name="question_no">5.2</field>
+            <field name="name">Do you agree with assessment made by the Reporting Officer with respect to the &#xA; work output and various attributes in Part-III. In case you do not agree with any of the &#xA; numerical assessment or attitudes, please record your assessments in column &#xA; provided for in that Part and initial your entries.</field>
+            <field name="part" ref="template_store_officer_part5"/>
+        </record>
+        <record id="template_store_officer_question12" model="apar.form.template.question">
+            <field name="question_no">5.3</field>
+            <field name="name">In case of difference of opinion, details and reasons for the same may be given remarks</field>
+            <field name="part" ref="template_store_officer_part5"/>
+        </record>
+        <record id="template_store_officer_question13" model="apar.form.template.question">
+            <field name="question_no">5.4</field>
+            <field name="name">Remarks/ Observation on the Pen Picture by the Reporting Officer:</field>
+            <field name="part" ref="template_store_officer_part5"/>
+        </record>
+        <record id="template_store_officer_question14" model="apar.form.template.question">
+            <field name="question_no">i</field>
+            <field name="name">Attitude to work</field>
+            <field name="section" ref="section_store_officer_1"/>
+        </record>
+        <record id="template_store_officer_question15" model="apar.form.template.question">
+            <field name="question_no">ii</field>
+            <field name="name">Sense of responsibility</field>
+            <field name="section" ref="section_store_officer_1"/>
+        </record>
+        <record id="template_store_officer_question16" model="apar.form.template.question">
+            <field name="question_no">iii</field>
+            <field name="name">Maintenance of discipline</field>
+            <field name="section" ref="section_store_officer_1"/>
+        </record>
+        <record id="template_store_officer_question17" model="apar.form.template.question">
+            <field name="question_no">iv</field>
+            <field name="name">Communication Skills</field>
+            <field name="section" ref="section_store_officer_1"/>
+        </record>
+        <record id="template_store_officer_question18" model="apar.form.template.question">
+            <field name="question_no">v</field>
+            <field name="name">Capacity to work in team spirit</field>
+            <field name="section" ref="section_store_officer_1"/>
+        </record>
+        <record id="template_store_officer_question19" model="apar.form.template.question">
+            <field name="question_no">vi</field>
+            <field name="name">Capacity to work in time schedule</field>
+            <field name="section" ref="section_store_officer_1"/>
+        </record>
+        <record id="template_store_officer_question20" model="apar.form.template.question">
+            <field name="question_no">vii</field>
+            <field name="name">Inter-personal relations with indoor and outdoor patients </field>
+            <field name="section" ref="section_store_officer_1"/>
+        </record>
+        <record id="template_store_officer_question21" model="apar.form.template.question">
+            <field name="question_no">viii</field>
+            <field name="name">Dependability and willingness to take responsibility </field>
+            <field name="section" ref="section_store_officer_1"/>
+        </record>
+        <record id="template_store_officer_question22" model="apar.form.template.question">
+            <field name="question_no">i</field>
+            <field name="name">Strategic planning ability</field>
+            <field name="section" ref="section_store_officer_2"/>
+        </record>
+        <record id="template_store_officer_question23" model="apar.form.template.question">
+            <field name="question_no">ii</field>
+            <field name="name">Decision making ability</field>
+            <field name="section" ref="section_store_officer_2"/>
+        </record>
+        <record id="template_store_officer_question24" model="apar.form.template.question">
+            <field name="question_no">iii</field>
+            <field name="name">Analytical ability</field>
+            <field name="section" ref="section_store_officer_2"/>
+        </record>
+        <record id="template_store_officer_question25" model="apar.form.template.question">
+            <field name="question_no">iv</field>
+            <field name="name">Coordination ability</field>
+            <field name="section" ref="section_store_officer_2"/>
+        </record>
+        <record id="template_store_officer_question26" model="apar.form.template.question">
+            <field name="question_no">v</field>
+            <field name="name">Ability to motivate and develop subordinates</field>
+            <field name="section" ref="section_store_officer_2"/>
+        </record>
+        <record id="template_store_officer_question27" model="apar.form.template.question">
+            <field name="question_no">vi</field>
+            <field name="name">Management organization and supervision of works</field>
+            <field name="section" ref="section_store_officer_2"/>
+        </record>
+        <record id="template_store_officer_question28" model="apar.form.template.question">
+            <field name="question_no">i</field>
+            <field name="name">Knowledge of Rules/Regulations/Procedures in the area of function and &#xA; ability to apply them effectively.</field>
+            <field name="section" ref="section_store_officer_3"/>
+        </record>
+        <record id="template_store_officer_question29" model="apar.form.template.question">
+            <field name="question_no">ii</field>
+            <field name="name">Strategic planning ability</field>
+            <field name="section" ref="section_store_officer_3"/>
+        </record>
+        <record id="template_store_officer_question30" model="apar.form.template.question">
+            <field name="question_no">iii</field>
+            <field name="name">Decision making ability</field>
+            <field name="section" ref="section_store_officer_3"/>
+        </record>
+        <record id="template_store_officer_question31" model="apar.form.template.question">
+            <field name="question_no">iv</field>
+            <field name="name">Coordination ability</field>
+            <field name="section" ref="section_store_officer_3"/>
+        </record>
+        <record id="template_store_officer_question32" model="apar.form.template.question">
+            <field name="question_no">v</field>
+            <field name="name">Ability to motivate and develop subordinates</field>
+            <field name="section" ref="section_store_officer_3"/>
+        </record>
+        <record id="template_store_officer_question33" model="apar.form.template.question">
+            <field name="question_no">vi</field>
+            <field name="name">Initiative</field>
+            <field name="section" ref="section_store_officer_3"/>
+        </record>
+
+
+    </data>
+</tryton>

@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+
+<form>
+   <group id="apar_template_configuration_form">
+        <label name="start_date_apar"/>
+        <field name="start_date_apar"/>
+        <label name="last_date_emp_fill"/>
+        <field name="last_date_emp_fill"/>     
+        <label name="last_date_reporting"/>
+        <field name="last_date_reporting"/> 
+        <label name="last_date_reviewing"/>
+        <field name="last_date_reviewing"/> 
+        <label name="last_date_accepting"/>
+        <field name="last_date_accepting"/>
+        <label name="last_date_emp_sign"/>
+        <field name="last_date_emp_sign"/>
+        <label name="last_date_emp_represent"/>
+        <field name="last_date_emp_represent"/>
+    </group>
+</form>

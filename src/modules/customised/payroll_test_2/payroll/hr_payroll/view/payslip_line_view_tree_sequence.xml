@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+
+<tree sequence="sequence" editable="top">
+    <field name="category"/>
+    <field name="name"/>
+    <field name="code"/>
+    <field name="total"/>
+</tree>

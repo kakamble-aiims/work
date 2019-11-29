@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+
+<tree editable="top">
+    <field name="employee"/>
+    <field name="date_from"/>
+    <field name="date_to"/>
+    <field name="designation"/>
+    <field name="department"/>
+    <field name="reporting_officer"/>
+    <!-- <field name=""/> -->
+</tree>

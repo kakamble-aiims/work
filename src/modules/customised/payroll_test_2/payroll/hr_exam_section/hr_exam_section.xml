@@ -1,0 +1,283 @@
+<?xml version="1.0"?>
+<tryton>
+    <data>
+        <!-- Exam Section Menu -->
+        <menuitem id="menu_exam_section" name="Exam Section"/>
+
+        <!-- Exam Section Configuration Menu -->
+        <menuitem id="menu_exam_section_config" name="Configuration" parent="menu_exam_section" sequence="3"/>
+        
+        <!-- Exam Center Tree View -->
+        <record id="tree_exam_center_address_view" model="ir.ui.view">
+            <field name="name">tree_exam_center_address</field>
+            <field name="model">exam_section.exam_center.address</field>
+            <field name="type">tree</field>
+        </record>
+        
+        <!-- Exam Center Form View -->
+        <record id="form_exam_center_view" model="ir.ui.view">
+            <field name="name">form_exam_center</field>
+            <field name="model">exam_section.exam_center</field>
+            <field name="type">form</field>
+        </record>
+
+        <!-- Exam Center Tree View -->
+        <record id="tree_exam_center_view" model="ir.ui.view">
+            <field name="name">tree_exam_center</field>
+            <field name="model">exam_section.exam_center</field>
+            <field name="type">tree</field>
+        </record>
+
+        <!-- Exam Center Action -->
+        <record id="act_exam_center" model="ir.action.act_window">
+            <field name="name">Exam Centers</field>
+            <field name="res_model">exam_section.exam_center</field>
+        </record>
+
+        <!-- Exam Center Action Link to Form View -->
+        <record id="act_exam_center_form" model="ir.action.act_window.view">
+            <field name="sequence" eval="20"/>
+            <field name="act_window" ref="act_exam_center"/>
+            <field name="view" ref="form_exam_center_view"/>
+        </record>
+
+        <!-- Exam Center Action Link to Tree View -->
+        <record id="act_exam_center_tree" model="ir.action.act_window.view">
+            <field name="sequence" eval="10"/>
+            <field name="act_window" ref="act_exam_center"/>
+            <field name="view" ref="tree_exam_center_view"/>
+        </record>
+
+        <!-- Exam Center Menu -->
+        <menuitem id="menu_exam_section_exam_center" name="Exam Centers" 
+            parent="menu_exam_section_config" sequence="1"
+            action="act_exam_center"/>
+
+        <!-- Renumeration Bill Form View -->
+        <record id="form_renumeration_bill_view" model="ir.ui.view">
+            <field name="name">form_renumeration_bill</field>
+            <field name="model">exam_section.renumeration_bill</field>
+            <field name="type">form</field>
+        </record>
+
+        <!-- Renumeration Bill Tree View -->
+        <record id="tree_renumeration_bill_view" model="ir.ui.view">
+            <field name="name">tree_renumeration_bill</field>
+            <field name="model">exam_section.renumeration_bill</field>
+            <field name="type">tree</field>
+        </record>
+
+        <!-- TA/DA Bill Form View -->
+        <record id="form_ta_da_bill_view" model="ir.ui.view">
+            <field name="name">form_ta_da_bill</field>
+            <field name="model">exam_section.ta_da_bill</field>
+            <field name="type">form</field>
+        </record>
+
+        <!-- TA/DA Bill Tree View -->
+        <record id="tree_ta_da_bill_view" model="ir.ui.view">
+            <field name="name">tree_ta_da_bill</field>
+            <field name="model">exam_section.ta_da_bill</field>
+            <field name="type">tree</field>
+        </record>
+
+        <!-- TA/DA Journey Tree View -->
+        <record id="tree_ta_da_journey_view" model="ir.ui.view">
+            <field name="name">tree_ta_da_journey</field>
+            <field name="model">exam_section.ta_da.journey</field>
+            <field name="type">tree</field>
+        </record>
+
+        <!-- TA/DA Local Transport Tree View -->
+        <record id="tree_ta_da_local_transport_view" model="ir.ui.view">
+            <field name="name">tree_ta_da_local_transport</field>
+            <field name="model">exam_section.ta_da.local_transport</field>
+            <field name="type">tree</field>
+        </record>
+
+        <!-- TA/DA Hotel Food Tree View -->
+        <record id="tree_ta_da_hotel_food_view" model="ir.ui.view">
+            <field name="name">tree_ta_da_hotel_food</field>
+            <field name="model">exam_section.ta_da.hotel_food</field>
+            <field name="type">tree</field>
+        </record>
+
+        <!-- Contingency Bill Form View -->
+        <record id="form_contingency_bill_view" model="ir.ui.view">
+            <field name="name">form_contingency_bill</field>
+            <field name="model">exam_section.contingency_bill</field>
+            <field name="type">form</field>
+        </record>
+
+        <!-- Contingency Tree View -->
+        <record id="tree_contingency_bill_view" model="ir.ui.view">
+            <field name="name">tree_contingency_bill</field>
+            <field name="model">exam_section.contingency_bill</field>
+            <field name="type">tree</field>
+        </record>
+
+        <!-- Contingency Journey Tree View -->
+        <record id="tree_contingency_journey_view" model="ir.ui.view">
+            <field name="name">tree_contingency_journey</field>
+            <field name="model">exam_section.contingency.journey</field>
+            <field name="type">tree</field>
+        </record>
+
+        <!-- Exam Form View -->
+        <record id="form_exam_view" model="ir.ui.view">
+            <field name="name">form_exam</field>
+            <field name="model">exam_section.exam</field>
+            <field name="type">form</field>
+        </record>
+
+        <!-- Exam Tree View -->
+        <record id="tree_exam_view" model="ir.ui.view">
+            <field name="name">tree_exam</field>
+            <field name="model">exam_section.exam</field>
+            <field name="type">tree</field>
+        </record>
+        
+        <!-- Exam Action -->
+        <record id="act_exam" model="ir.action.act_window">
+            <field name="name">Exam</field>
+            <field name="res_model">exam_section.exam</field>
+        </record>
+
+        <!-- Exam Action Link to Form View -->
+        <record id="act_exam_form" model="ir.action.act_window.view">
+            <field name="sequence" eval="20"/>
+            <field name="act_window" ref="act_exam"/>
+            <field name="view" ref="form_exam_view"/>
+        </record>
+
+        <!-- Exam Action Link to Tree View -->
+        <record id="act_exam_tree" model="ir.action.act_window.view">
+            <field name="sequence" eval="10"/>
+            <field name="act_window" ref="act_exam"/>
+            <field name="view" ref="tree_exam_view"/>
+        </record>
+
+        <!-- Exam Centers Tree View -->
+        <record id="tree_exam_centers_view" model="ir.ui.view">
+            <field name="name">tree_exam_centers</field>
+            <field name="model">exam.centers</field>
+            <field name="type">tree</field>
+        </record>
+
+        <!-- Exam Centers Form View -->
+        <record id="form_exam_centers_view" model="ir.ui.view">
+            <field name="name">form_exam_centers</field>
+            <field name="model">exam.centers</field>
+            <field name="type">form</field>
+        </record>
+
+        <!--Exam Employees Minimal Tree View-->
+        <record id="tree_exam_employee_minimal" model="ir.ui.view">
+            <field name="name">tree_exam_employee_minimal</field>
+            <field name="model">exam.employees</field>
+            <field name="type">tree</field>
+        </record>
+        
+        <!--Exam Employees Basic Tree View-->
+        <record id="tree_exam_employee_basic" model="ir.ui.view">
+            <field name="name">tree_exam_employee_basic</field>
+            <field name="model">exam.employees</field>
+            <field name="type">tree</field>
+        </record>
+
+        <!--Exam Employees Tree View-->
+        <record id="tree_exam_employees_view" model="ir.ui.view">
+            <field name="name">tree_exam_employees</field>
+            <field name="model">exam.employees</field>
+            <field name="type">tree</field>
+        </record>
+
+        <!--Exam Menu-->
+        <menuitem id="menu_exam" name="Exam" parent="menu_exam_section" action="act_exam" sequence="1"/>
+
+        <!--Exam Employees Form View for Current Employee-->
+        <record id="form_exam_employee_view" model="ir.ui.view">
+            <field name="name">form_exam_employee</field>
+            <field name="model">exam.employees</field>
+            <field name="type">form</field>
+            <!-- <field name="domain"
+                eval="
+                    ['OR', 
+                     ('employee', '=', Eval('user', {}).get('employee', None)),
+                     ('employee', '=', Eval('employee', None))]" 
+                pyson="1"/> -->
+            
+        </record>
+
+        <!--Exam Employees Tree View for Current Employee-->
+        <record id="tree_exam_employee_view" model="ir.ui.view">
+            <field name="name">tree_exam_employee</field>
+            <field name="model">exam.employees</field>
+            <field name="type">tree</field>
+            <!-- <field name="domain"
+                eval="
+                    ['OR', 
+                     ('employee', '=', Eval('user', {}).get('employee', None)),
+                     ('employee', '=', Eval('employee', None))]" 
+                pyson="1"/> -->
+        </record>
+
+        <!--Exam Employees Action for Current Employee-->
+        <record id="act_employee_exam" model="ir.action.act_window">
+            <field name="name">Exam</field>
+            <field name="res_model">exam.employees</field>
+            <field name="domain"
+                eval="
+                    ['OR', 
+                     ('employee', '=', Eval('user', {}).get('employee', None)),
+                     ('employee', '=', Eval('employee', None))]" 
+                pyson="1"/>
+        </record>
+
+        <!--Exam Employees Action Link to Form View for Current Employee-->
+        <record id="act_exam_employee_form" model="ir.action.act_window.view">
+            <field name="sequence" eval="20"/>
+            <field name="act_window" ref="act_employee_exam"/>
+            <field name="view" ref="form_exam_employee_view"/>
+        </record>
+
+        <!--Exam Employees Action Link to Tree View for Current Employee-->
+        <record id="act_exam_employee_tree" model="ir.action.act_window.view">
+            <field name="sequence" eval="10"/>
+            <field name="act_window" ref="act_employee_exam"/>
+            <field name="view" ref="tree_exam_employee_view"/>
+        </record>
+
+        <!--Exam Employees Menu for Current Employee-->
+        <menuitem id="menu_exam_employee" name="Exam" parent="menu_exam_section" action="act_employee_exam" sequence="1"/>
+         
+        <!-- Renumeration Report -->
+        <record id="report_renumeration_bill" model="ir.action.report">
+            <field name="name">Renumeration Bill</field>
+            <field name="model">exam_section.exam</field>
+            <field name="report_name">exam_section.exam</field>
+            <field name="report">exam_section/report_renumeration_bill.fodt</field>
+            <field name="extension">pdf</field>
+        </record>
+        <record id="print_hr_batches_keyword_report" model="ir.action.keyword">
+            <field name="keyword">form_print</field>
+            <field name="model">exam_section.exam,-1</field>
+            <field name="action" ref="report_renumeration_bill"/>
+        </record>
+
+        <!-- TA/DA Report -->
+        <record id="report_ta/da_bill" model="ir.action.report">
+            <field name="name">TA/DA Bill</field>
+            <field name="model">exam_section.exam</field>
+            <field name="report_name">exam_section.exam</field>
+            <field name="report">exam_section/report_tada_bill.fodt</field>
+            <field name="extension">pdf</field>
+        </record>
+        <record id="print_ta/da_bill_keyword_report" model="ir.action.keyword">
+            <field name="keyword">form_print</field>
+            <field name="model">exam_section.exam,-1</field>
+            <field name="action" ref="report_ta/da_bill"/>
+        </record>
+
+    </data>
+</tryton>

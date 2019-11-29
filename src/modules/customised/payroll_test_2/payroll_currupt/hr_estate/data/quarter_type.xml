@@ -1,0 +1,80 @@
+<?xml version="1.0"?>
+<tryton>
+    <data>
+        <record id="i_type" model="estate.quarter_type">
+            <field name="name">I Type</field>
+            <field name="license_fee" eval="150"/>
+            <field name="water_charges" eval="82.20"/>
+        </record>
+        <record id="a_type" model="estate.quarter_type">
+            <field name="name">A Type</field>
+            <field name="license_fee" eval="150"/>
+            <field name="water_charges" eval="82.20"/>
+        </record>
+        <record id="b_type" model="estate.quarter_type">
+            <field name="name">B-Type</field>
+            <field name="license_fee" eval="310"/>
+            <field name="water_charges" eval="82.20"/>
+        </record>
+        <record id="g_type" model="estate.quarter_type">
+            <field name="name">G Type</field>
+            <field name="license_fee" eval="310"/>
+            <field name="water_charges" eval="82.20"/>
+        </record>
+        <record id="type_2" model="estate.quarter_type">
+            <field name="name">Type-II</field>
+            <field name="license_fee" eval="310"/>
+            <field name="water_charges" eval="82.20"/>
+        </record>
+        <record id="type_3" model="estate.quarter_type">
+            <field name="name">Type-III</field>
+            <field name="license_fee" eval="470"/>
+            <field name="water_charges" eval="82.20"/>
+        </record>
+        <record id="type_f" model="estate.quarter_type">
+            <field name="name">Type-F</field>
+            <field name="license_fee" eval="470"/>
+            <field name="water_charges" eval="82.20"/>
+        </record>
+        <record id="faculty_type_accomodation" model="estate.quarter_type">
+            <field name="name">Faculty Type Accomodation(FTA)</field>
+            <field name="license_fee" eval="470"/>
+            <field name="water_charges" eval="82.20"/>
+        </record>
+        <record id="type_e" model="estate.quarter_type">
+            <field name="name">Type-E</field>
+            <field name="license_fee" eval="640"/>
+            <field name="water_charges" eval="180.40"/>
+        </record>
+        <record id="type_4" model="estate.quarter_type">
+            <field name="name">Type-IV(E)</field>
+            <field name="license_fee" eval="640"/>
+            <field name="water_charges" eval="180.40"/>
+        </record>
+        <record id="type_d_2" model="estate.quarter_type">
+            <field name="name">Type D-II</field>
+            <field name="license_fee" eval="1190"/>
+            <field name="water_charges" eval="180.40"/>
+        </record>
+        <record id="type_c_2" model="estate.quarter_type">
+            <field name="name">Type C-II</field>
+            <field name="license_fee" eval="1560"/>
+            <field name="water_charges" eval="470.60"/>
+        </record>
+        <record id="type_c_1" model="estate.quarter_type">
+            <field name="name">Type C-I</field>
+            <field name="license_fee" eval="1870"/>
+            <field name="water_charges" eval="470.60"/>
+        </record>
+        <record id="director_bunglow_including_garage" model="estate.quarter_type">
+            <field name="name">Director's Bunglow(including garage)</field>
+            <field name="license_fee" eval="3960"/>
+            <field name="water_charges" eval="470.60"/>
+        </record>
+        <record id="s_type" model="estate.quarter_type">
+            <field name="name">S-Type</field>
+            <field name="license_fee" eval="640"/>
+            <field name="water_charges" eval="180.40"/>
+        </record>
+    </data>
+</tryton>

@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<tryton>
+    <data>
+
+        <!-- Investment Declaration -->
+        <!--Tree-->
+        <record id="tree_investment_declaration_view" model="ir.ui.view">
+            <field name="name">tree_investment_declaration</field>
+            <field name="model">investment.declaration</field>
+            <field name="type">tree</field>
+        </record>
+
+        <!-- Form View -->
+        <record id="form_investment_declaration_view" model="ir.ui.view">
+            <field name="name">form_investment_declaration</field>
+            <field name="model">investment.declaration</field>
+            <field name="type">form</field>
+        </record>
+
+        <!-- Action -->
+        <record id="action_investment_declaration" model="ir.action.act_window">
+            <field name="name">Investment declaration</field>
+            <field name="res_model">investment.declaration</field>
+        </record>
+
+         <!-- Action link to tree -->
+        <record id="act_investment_declaration_tree" model="ir.action.act_window.view">
+            <field name="sequence" eval="10"/>
+            <field name="view" ref="tree_investment_declaration_view"/>
+            <field name="act_window" ref="action_investment_declaration"/>
+        </record>
+
+        <!-- Action Link to Form -->
+        <record id="act_investment_declaration_form" model="ir.action.act_window.view">
+            <field name="sequence">20</field>
+            <field name="view" ref="form_investment_declaration_view"/>
+            <field name="act_window" ref="action_investment_declaration"/>
+        </record>
+        <!-- <menuitem id="menu_investment_declaration" name="Investment Declaration" parent="payroll.menu_tax" action="action_investment_declaration" sequence="60"/> -->
+        <!-- Investment declaration Line -->
+        <record model="ir.ui.view" id="investment_declaration_line_view_form">
+            <field name="model">investment_declaration.line</field>
+            <field name="type">form</field>
+            <field name="name">form_investment_declaration_line</field>
+        </record>
+
+        <record model="ir.ui.view" id="investment_declaration_line_view_tree">
+            <field name="model">investment_declaration.line</field>
+            <field name="type">tree</field>
+            <field name="priority" eval="10"/>
+            <field name="name">tree_investment_declaration_line</field>
+        </record>
+        <record model="ir.ui.view" id="tree_income_declaration">
+            <field name="model">hr.payroll.income.decalartion</field>
+            <field name="type">tree</field>
+            <field name="priority" eval="10"/>
+            <field name="name">tree_income_declaration</field>
+        </record>
+    </data>
+</tryton>

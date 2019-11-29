@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+	<tree sequence="sequence">
+		<field name="salary_rule"/>
+        <field name="is_applicable"/>
+        <field name="amount"/>
+        <field name="designation"/>
+	</tree>

@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<tree editable="top">
+	
+    <field name="stage"/>
+    <field name="section"/> 
+    <field name="particulars"/>  
+    <field name="comments"/>
+    <field name="remarks"/>
+    <field name="page_number"/>
+   
+</tree>

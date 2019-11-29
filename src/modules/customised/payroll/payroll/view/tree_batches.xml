@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+
+<tree>
+    <field name="name"/>
+    <field name="designation"/>
+    <field name="department"/>
+    <field name="net_salary"/>
+    <field name="date_from"/>
+    <field name="date_to"/>
+    <field name="state"/>
+</tree>

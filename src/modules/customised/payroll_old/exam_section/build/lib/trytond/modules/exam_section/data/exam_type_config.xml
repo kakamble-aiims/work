@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<tryton>
+    <data>
+        <record id="exam_type_phd" model="exam_section.exam_type">
+            <field name="name">PhD</field>
+            <field name="type_exam">phd</field>
+            <!-- <field name="payment_basis">per_copy</field> -->
+            <field name="active" eval="True"/>
+            <field name="is_ta_applicable" eval="True"/>
+            <!--<field name="renumeration"></field>-->
+            <!--<field name="ta_da"></field>-->
+        </record>
+        <record id="exam_type_pg_1" model="exam_section.exam_type">
+            <field name="name">MD/MS/MDS/MHS/M.Sc/M.Biotechnology</field>
+            <field name="type_exam">pg</field>
+            <!-- <field name="payment_basis">per_copy</field> -->
+            <field name="active" eval="True"/>
+            <field name="is_ta_applicable" eval="True"/>
+            <!--<field name="renumeration"></field>-->
+            <!--<field name="ta_da"></field>-->
+        </record>
+        <record id="exam_type_pg_2" model="exam_section.exam_type">
+            <field name="name">D.M./M.Ch/MD/MS/MDS/MHA/M.Biotechnology</field>
+            <field name="type_exam">pg</field>
+            <!-- <field name="payment_basis">per_copy</field> -->
+            <field name="active" eval="True"/>
+            <field name="is_ta_applicable" eval="True"/>
+            <!--<field name="renumeration"></field>-->
+            <!--<field name="ta_da"></field>-->
+        </record>
+        <record id="exam_type_professional_theory" model="exam_section.exam_type">
+            <field name="name">Professional Examination(Theory)</field>
+            <field name="type_exam">professional</field>
+            <!-- <field name="payment_basis">per_session</field> -->
+            <field name="active" eval="True"/>
+            <field name="is_ta_applicable" eval="True"/>
+            <!--<field name="renumeration"></field>-->
+            <!--<field name="ta_da"></field>-->
+        </record>
+        <record id="exam_type_ug" model="exam_section.exam_type">
+            <field name="name">All Undergraduate Exams</field>
+            <field name="type_exam">ug</field>
+            <!-- <field name="payment_basis">per_session</field> -->
+            <field name="active" eval="True"/>
+            <field name="is_ta_applicable" eval="True"/>
+            <!--<field name="renumeration"></field>-->
+            <!--<field name="ta_da"></field>-->
+        </record>
+        <record id="exam_type_professional_practical" model="exam_section.exam_type">
+            <field name="name">Professional Examination(Practical)</field>
+            <field name="type_exam">professional</field>
+            <!-- <field name="payment_basis">per_session</field> -->
+            <field name="active" eval="True"/>
+            <field name="is_ta_applicable" eval="True"/>
+            <!--<field name="renumeration"></field>-->
+            <!--<field name="ta_da"></field>-->
+        </record>
+    </data>
+</tryton>

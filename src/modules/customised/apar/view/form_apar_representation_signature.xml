@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+
+<form>
+   <group id="apar_representation_signature_form" >
+   		<label name="signed_by_user"/>
+   		<field name="signed_by_user"/>
+   		<label name="signed_by_employee"/>
+		<field name="signed_by_employee"/>
+		<label name="signed_on"/>
+		<field name="signed_on"/>
+		<label name="designation"/>
+		<field name="designation"/>
+		<label name="place"/>
+		<field name="place"/>
+		<label name="representation"/>
+		<field name="representation"/>
+    </group>
+</form>

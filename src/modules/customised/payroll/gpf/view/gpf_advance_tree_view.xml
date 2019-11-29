@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+
+<tree>
+	<field name="employee"/>
+    <field name="doj"/>
+    <field name="gpf_number"/>
+</tree>

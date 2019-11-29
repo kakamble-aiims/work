@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+
+<form>
+        <label name="salary_code"/>
+        <field name="salary_code"/>
+        <label name="employee"/>
+        <field name="employee"/>
+        <label name="designation"/>
+        <field name="designation"/>
+        <label name="department"/>
+        <field name="department"/>
+        <label name="children_no"/>
+        <field name="children_no"/>
+        <label name="from_date"/>
+        <field name="from_date"/>
+        <label name="to_date"/>
+        <field name="to_date"/>
+        <label name="amount"/>
+        <field name="amount"/>
+        <label name="state"/>
+        <field name="state"/>
+        <button colspan="2" name="submit" string="Submit" confirm="Are you sure you want to submit?"/>
+        <button colspan="2" name="cash_section_officer_approval" string="Send for Cash Section Officer Approval"/>
+	<button colspan="2" name="cancel" string="Cancel" confirm="Are you sure you want to cancel?"/>
+        <button colspan="2" name="approve" string="Approve" confirm="Are you sure you want to approve?"/> 
+</form>

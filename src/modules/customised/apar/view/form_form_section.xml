@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+
+<form>
+    <label name="name"/>
+    <field name="name" readonly="1"/>
+    <label name="number"/>
+    <field name="number"  readonly="1"/>
+    <field name="questions" colspan="4"/>
+    <label name="average_score_reporting"/>
+    <field name="average_score_reporting"/>
+    <label name="average_score_reviewing"/>
+    <field name="average_score_reviewing"/>
+    <label name="weightage"/>
+    <field name="weightage"  readonly="1"/>
+</form>

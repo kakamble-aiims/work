@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<data>
+    <xpath expr="/form/notebook/page/field[@name='date_of_joining']" position="after">
+        <label name="gpf_nps"/>
+        <field name="gpf_nps"/>
+    </xpath>
+    <xpath expr="/form/notebook/page[@id='qualifications']" position="after">
+        <page id="employee_gpf_details" string="GPF details">
+            <label name="gpf_number"/>
+            <field name="gpf_number"/>
+            <label name="gpf_balance"/>
+            <field name="gpf_balance"/>
+        </page>
+    </xpath>
+</data>

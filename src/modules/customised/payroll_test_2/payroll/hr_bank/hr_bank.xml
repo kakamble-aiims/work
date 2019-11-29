@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+
+<tryton>
+    <data>
+
+        <!--Tree-->
+        <record id="tree_bank_view" model="ir.ui.view">
+            <field name="name">tree_bank</field>
+            <field name="model">res.bank</field>
+            <field name="type">tree</field>
+        </record>
+
+        <!-- Form View -->
+        <record id="form_bank_view" model="ir.ui.view">
+            <field name="name">form_bank</field>
+            <field name="model">res.bank</field>
+            <field name="type">form</field>
+        </record>
+
+        <!-- Action -->
+        <!-- <record id="action_bank" model="ir.action.act_window">
+            <field name="name">Salary Details</field>
+            <field name="res_model">hr.bank</field>
+        </record> -->
+
+         <!-- Action link to tree -->
+        <!-- <record id="act_bank_tree" model="ir.action.act_window.view">
+            <field name="sequence" eval="10"/>
+            <field name="view" ref="tree_bank_view"/>
+            <field name="act_window" ref="action_bank"/>
+        </record> -->
+
+        <!--Action Link to Form -->
+        <!-- <record id="act_bank_form" model="ir.action.act_window.view">
+            <field name="sequence">20</field>
+            <field name="view" ref="form_bank_view"/>
+            <field name="act_window" ref="action_bank"/>
+        </record> -->
+
+        <!-- bank in employee -->
+        <record model="ir.ui.view" id="employee_bank_view_form">
+            <field name="model">company.employee</field>
+            <field name="inherit" ref="hr.form_employee_view" />
+            <field name="name">employee_bank_form_view</field>
+        </record>
+         <!-- Buttons -->
+        <!-- Hr Hra -->
+        <record id="button_to_verify_ifsc" model="ir.model.button">
+            <field name="name">verify_ifsc_button</field>
+            <field name="model" search="[('model', '=', 'company.employee')]"/>
+        </record>
+        <record id="button_to_verify_account_number" model="ir.model.button">
+            <field name="name">verify_account_number</field>
+            <field name="model" search="[('model', '=', 'company.employee')]"/>
+        </record>
+
+    </data>        
+</tryton>

@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+
+<form>
+        <label name="salary_code"/>
+        <field name="salary_code"/>
+        <label name="employee"/>
+        <field name="employee"/>
+        <label name="designation"/>
+        <field name="designation"/>
+        <label name="department"/>
+        <field name="department"/>
+        <label name="children_no"/>
+        <field name="children_no"/>
+        <label name="amount"/>
+        <field name="amount"/>
+        <label name="state"/>
+        <field name="state"/>
+</form>

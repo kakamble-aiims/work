@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+
+<form>
+    <group id="salary_structure" col="6" colspan="4">
+        <field name="structure" />
+        <field name="rules"/>
+    </group>
+</form>

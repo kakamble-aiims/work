@@ -1,0 +1,117 @@
+<?xml version="1.0"?>
+
+<tryton>
+    <data>
+        <menuitem id="menu_allowance" name="Allowances"/>
+        <!-- Form View -->
+        <record id="form_hra_view" model="ir.ui.view">
+            <field name="name">form_hra</field>
+            <field name="model">hr.allowance.hra</field>
+            <field name="type">form</field>
+        </record>
+
+        <!-- Tree View -->
+        <record id="tree_hra_view" model="ir.ui.view">
+            <field name="name">tree_hra</field>
+            <field name="model">hr.allowance.hra</field>
+            <field name="type">tree</field>
+        </record>
+
+        <!-- Action -->
+        <record id="action_hra" model="ir.action.act_window">
+            <field name="name">House Rent Allowance</field>
+            <field name="res_model">hr.allowance.hra</field>
+        </record>
+
+        <!-- Link to Tree -->
+        <record id="act_hra_tree" model="ir.action.act_window.view">
+            <field name="act_window" ref="action_hra"/>
+            <field name="view" ref="tree_hra_view"/>
+            <field name="sequence" eval="10"/>
+        </record>
+
+        <!-- Link to Form -->
+        <record id="act_hra_form" model="ir.action.act_window.view">
+            <field name="act_window" ref="action_hra"/>
+            <field name="view" ref="form_hra_view"/>
+            <field name="sequence">20</field>
+        </record>
+        
+        <!--create form and tree for tree view tabs -->
+        <record model="ir.ui.view" id="hra_view_form">
+            <field name="model">hr.allowance.hra</field>
+            <field name="type">form</field>
+            <field name="name">form_hra</field>
+        </record>
+        <record model="ir.ui.view" id="hra_view_tree">
+            <field name="model">hr.allowance.hra</field>
+            <field name="type">tree</field>
+            <field name="name">tree_hra</field>
+        </record>
+
+        <!--create the tabs on the tree view-->
+        <record model="ir.action.act_window.domain" id="act_hra_form_domain_draft">
+            <field name="name">Draft</field>
+            <field name="sequence" eval="10"/>
+            <field name="domain"
+                eval="[('state', '=', 'draft')]"
+                pyson="1"/>
+            <field name="count" eval="True"/>
+            <field name="act_window" ref="action_hra"/>
+        </record>
+        <record model="ir.action.act_window.domain" id="act_hra_form_domain_submit">
+            <field name="name">Submit</field>
+            <field name="sequence" eval="20"/>
+            <field name="domain"
+                eval="[('state', '=', 'submit')]"
+                pyson="1"/>
+            <field name="count" eval="True"/>
+            <field name="act_window" ref="action_hra"/>
+        </record>
+        <record model="ir.action.act_window.domain" id="act_hra_form_domain_cancel">
+            <field name="name">Cancel</field>
+            <field name="sequence" eval="40"/>
+            <field name="domain"
+                eval="[('state', '=', 'cancel')]"
+                pyson="1"/>
+            <field name="count" eval="True"/>
+            <field name="act_window" ref="action_hra"/>
+        </record>
+        <record model="ir.action.act_window.domain" id="act_hra_form_domain_cash_section_officer">
+            <field name="name">Cash section officer</field>
+            <field name="sequence" eval="30"/>
+            <field name="domain"
+                eval="[('state', '=', 'cash_section_officer')]"
+                pyson="1"/>
+            <field name="count" eval="True"/>
+            <field name="act_window" ref="action_hra"/>
+        </record>
+        <record model="ir.action.act_window.domain" id="act_hra_form_domain_approved">
+            <field name="name">Approved</field>
+            <field name="sequence" eval="60"/>
+            <field name="domain"
+                eval="[('state', '=', 'Approved')]"
+                pyson="1"/>
+            <field name="count" eval="True"/>
+            <field name="act_window" ref="action_hra"/>
+        </record>
+
+        <!-- Menu -->
+        <menuitem id="menu_hra_subitem" name="House Rent Allowance" parent="menu_allowance" action="action_hra"/>
+
+        <!-- Buttons -->
+        <!-- Hr Hra -->
+        <record id="button_computer_submitted_to_cashsection" model="ir.model.button">
+            <field name="name">submit</field>
+            <field name="model" search="[('model', '=', 'hr.allowance.hra')]"/>
+        </record>
+        <record id="button_computer_cancelled_by_cashsection" model="ir.model.button">
+            <field name="name">cancel</field>
+            <field name="model" search="[('model', '=', 'hr.allowance.hra')]"/>
+        </record>
+        <record id="button_computer_approved_by_cashsection" model="ir.model.button">
+            <field name="name">approve</field>
+            <field name="model" search="[('model', '=', 'hr.allowance.hra')]"/>
+        </record>
+    </data>
+</tryton>

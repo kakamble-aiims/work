@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+
+<tryton>
+    <data>
+        <menuitem id="menu_conveyance" name="conveyance" parent="hra.menu_allowance" sequence="6"/>
+        <!-- Form View -->
+        <record id="form_conveyance_view" model="ir.ui.view">
+            <field name="name">form_conveyance</field>
+            <field name="model">employee_conveyance.allowance</field>
+            <field name="type">form</field>
+        </record>
+
+        <!-- Tree View -->
+        <record id="tree_conveyance_view" model="ir.ui.view">
+            <field name="name">tree_conveyance</field>
+            <field name="model">employee_conveyance.allowance</field>
+            <field name="type">tree</field>
+        </record>
+
+        <!-- Action -->
+        <record id="action_conveyance" model="ir.action.act_window">
+            <field name="name">conveyance Allowance</field>
+            <field name="res_model">employee_conveyance.allowance</field>
+        </record>
+
+        <!-- Link to Tree -->
+        <record id="act_conveyance_tree" model="ir.action.act_window.view">
+            <field name="act_window" ref="action_conveyance"/>
+            <field name="view" ref="tree_conveyance_view"/>
+            <field name="sequence" eval="10"/>
+        </record>
+
+        <!-- Link to Form -->
+        <record id="act_conveyance_form" model="ir.action.act_window.view">
+            <field name="act_window" ref="action_conveyance"/>
+            <field name="view" ref="form_conveyance_view"/>
+            <field name="sequence">20</field>
+        </record>
+
+        <!-- Menu -->
+        <menuitem id="menu_conveyance_subitem" name="conveyance Allowance" parent="menu_conveyance" action="action_conveyance"/>
+    </data>
+</tryton>

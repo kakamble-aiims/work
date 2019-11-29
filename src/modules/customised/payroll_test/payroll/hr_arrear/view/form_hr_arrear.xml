@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+
+<form>
+    <label name="employee_name"/>
+    <field name="employee_name"/>
+    <label name="code"/>
+    <field name="code"/>
+    <label name="department"/>
+    <field name="department"/>
+    <label name="designation"/>
+    <field name="designation"/>
+    <label name="gpf_code"/>
+    <field name="gpf_code"/>
+    <label name="grade_pay"/>
+    <field name="grade_pay"/>
+</form>

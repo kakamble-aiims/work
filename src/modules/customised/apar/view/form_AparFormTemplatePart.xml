@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+
+<form>
+    <group id="apar_template_part_form" col="6" colspan="4">
+        <label name="number"/>
+        <field name="number"/>
+        <label name="name"/>
+        <field name="name"/>
+        <label name="template"/>
+        <field name="template"/>
+        <label name="type_" />
+        <field name="type_" />
+    </group>
+    <field name="questions" colspan="4"/>
+    <field name="sections" colspan="4"/>
+</form>

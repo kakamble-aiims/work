@@ -1,0 +1,158 @@
+<?xml version="1.0"?>
+
+<tryton>
+    <data>
+        <!-- Form View -->
+        <record id="form_cea_view" model="ir.ui.view">
+            <field name="name">form_children_edu</field>
+            <field name="model">hr.allowance.cea</field>
+            <field name="type">form</field>
+        </record>
+
+        <!-- Tree View -->
+        <record id="tree_cea_view" model="ir.ui.view">
+            <field name="name">tree_children_edu</field>
+            <field name="model">hr.allowance.cea</field>
+            <field name="type">tree</field>
+        </record>
+
+        <!-- Action -->
+        <record id="action_cea" model="ir.action.act_window">
+            <field name="name">Children Education Allowance</field>
+            <field name="res_model">hr.allowance.cea</field>
+        </record>
+
+        <!-- Link to Tree -->
+        <record id="act_cea_tree" model="ir.action.act_window.view">
+            <field name="act_window" ref="action_cea"/>
+            <field name="view" ref="tree_cea_view"/>
+            <field name="sequence" eval="10"/>
+        </record>
+
+        <!-- Link to Form -->
+        <record id="act_cea_form" model="ir.action.act_window.view">
+            <field name="act_window" ref="action_cea"/>
+            <field name="view" ref="form_cea_view"/>
+            <field name="sequence">20</field>
+        </record>
+        <!-- Buttons -->
+        <!-- Hr Cea -->
+        <record id="button_computer_submitted" model="ir.model.button">
+            <field name="name">submit</field>
+            <field name="model" search="[('model', '=', 'hr.allowance.cea')]"/>
+        </record>
+        <record id="button_computer_cashsection_approval" model="ir.model.button">
+            <field name="name">cash_section_officer_approval</field>
+            <field name="model" search="[('model', '=', 'hr.allowance.cea')]"/>
+        </record>
+        <record id="button_computer_approved_by_cashsection" model="ir.model.button">
+            <field name="name">approve</field>
+            <field name="model" search="[('model', '=', 'hr.allowance.cea')]"/>
+        </record>
+        <record id="button_computer_cancelled_by_cashsection" model="ir.model.button">
+            <field name="name">cancel</field>
+            <field name="model" search="[('model', '=', 'hr.allowance.cea')]"/>
+        </record>
+
+        
+        <!--create form and tree for tree view tabs -->
+        <record model="ir.ui.view" id="children_education_view_form">
+            <field name="model">hr.allowance.cea</field>
+            <field name="type">form</field>
+            <field name="name">form_cea_view</field>
+        </record>
+        <record model="ir.ui.view" id="children_education_view_tree">
+            <field name="model">hr.allowance.cea</field>
+            <field name="type">tree</field>
+            <field name="name">tree_cea_view</field>
+        </record>
+
+        <!--create the tabs on the tree view-->
+        <record model="ir.action.act_window.domain" id="act_cea_form_domain_draft">
+            <field name="name">Draft</field>
+            <field name="sequence" eval="10"/>
+            <field name="domain"
+                eval="[('state', '=', 'draft')]"
+                pyson="1"/>
+            <field name="count" eval="True"/>
+            <field name="act_window" ref="action_cea"/>
+        </record>
+        <record model="ir.action.act_window.domain" id="act_cea_form_domain_submit">
+            <field name="name">Submit</field>
+            <field name="sequence" eval="20"/>
+            <field name="domain"
+                eval="[('state', '=', 'submit')]"
+                pyson="1"/>
+            <field name="count" eval="True"/>
+            <field name="act_window" ref="action_cea"/>
+        </record>
+        <record model="ir.action.act_window.domain" id="act_cea_form_domain_cash_section_officer">
+            <field name="name">Cash Section Officer</field>
+            <field name="sequence" eval="30"/>
+            <field name="domain"
+                eval="[('state', '=', 'cash_section_officer')]"
+                pyson="1"/>
+            <field name="count" eval="True"/>
+            <field name="act_window" ref="action_cea"/>
+        </record>
+        <record model="ir.action.act_window.domain" id="act_cea_form_domain_cancel">
+            <field name="name">Cancel</field>
+            <field name="sequence" eval="40"/>
+            <field name="domain"
+                eval="[('state', '=', 'cancel')]"
+                pyson="1"/>
+            <field name="count" eval="True"/>
+            <field name="act_window" ref="action_cea"/>
+        </record>
+        <record model="ir.action.act_window.domain" id="act_cea_form_domain_approved">
+            <field name="name">Approved</field>
+            <field name="sequence" eval="50"/>
+            <field name="domain"
+                eval="[('state', '=', 'approve')]"
+                pyson="1"/>
+            <field name="count" eval="True"/>
+            <field name="act_window" ref="action_cea"/>
+        </record>
+
+        <!-- Children Education LIST -->
+        <record id="form_childrenlist_view" model="ir.ui.view">
+            <field name="name">form_childrenlist</field>
+            <field name="model">children.list</field>
+            <field name="type">form</field>
+        </record>
+        <record id="tree_childrenlist_view" model="ir.ui.view">
+            <field name="name">tree_children_list</field>
+            <field name="model">children.list</field>
+            <field name="type">tree</field>
+        </record>
+
+        <!-- wiz class -->
+        <record id="form_wiz_children_view" model="ir.ui.view">
+            <field name="name">form_wiz</field>
+            <field name="model">children.employee.list</field>
+            <field name="type">form</field>
+        </record>
+        <record id="tree_wiz_children_view" model="ir.ui.view">
+            <field name="name">tree_wiz</field>
+            <field name="model">company.employee</field>
+            <field name="type">tree</field>
+        </record>
+
+         <!--XML Record Wizard-->
+         <record id="act_wizard_children_education_allowance_wizard" model="ir.action.wizard">
+            <field name="name">Children Education Allowance</field>
+            <field name="wiz_name">children.allowance.wiz</field>
+            <field name="window" eval="True"/>
+        </record>
+
+        <!-- Menu for wizard-->
+
+        <menuitem id="menu_cea_subitem_wiz" name="Children Eduaction Allowance" 
+            parent="hr_hra.menu_allowance" action="act_wizard_children_education_allowance_wizard"/>
+
+        <!-- Menu -->
+        <menuitem id="menu_cea_subitem" name="Children Education Allowance" 
+            parent="hr_hra.menu_allowance" action="action_cea"/>
+
+    </data>
+</tryton>

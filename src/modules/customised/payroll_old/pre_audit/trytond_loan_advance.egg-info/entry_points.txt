@@ -1,0 +1,4 @@
+
+    [trytond.modules]
+    loan_advance = trytond.modules.loan_advance 
+    

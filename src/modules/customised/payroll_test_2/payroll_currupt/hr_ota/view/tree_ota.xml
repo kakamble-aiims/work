@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<tree>
+    <field name="salary_code"/>
+    <field name="employee"/>
+    <field name="designation"/>
+    <field name="department"/>
+    <field name="amount"/>
+    <field name="state"/>
+    <!-- <notebook>
+        <page id="bills" string="Draft">
+            <field name="domain"
+                eval="[('state','=','draft')]"
+                pyson="1"/>
+        </page>
+    </notebook> -->
+</tree>

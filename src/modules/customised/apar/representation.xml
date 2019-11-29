@@ -1,0 +1,117 @@
+<?xml version="1.0"?>
+<tryton>
+    <data>
+
+        <!-- Tree View-->
+        <record id="tree_apar_representation_view" model="ir.ui.view">
+            <field name="name">tree_apar_representation</field>
+            <field name="model">apar.representation</field>
+            <field name="type">tree</field>
+        </record>
+        
+        <!-- Form View -->
+        <record id="form_apar_representation_view" model="ir.ui.view">
+            <field name="name">form_apar_representation</field>
+            <field name="model">apar.representation</field>
+            <field name="type">form</field>
+        </record>
+        
+        <!-- Action -->
+        <record id="act_apar_representation" model="ir.action.act_window">
+            <field name="name">Representation</field>
+            <field name="res_model">apar.representation</field>
+        </record>
+        
+        <!-- Action link to tree -->
+        <record id="act_tree_view_apar_representation" 
+            model="ir.action.act_window.view">
+            <field name="view" ref="tree_apar_representation_view"/>
+            <field name="act_window" ref="act_apar_representation"/>
+            <field name="sequence" eval="10"/>
+        </record>
+
+        <!-- Action link to form -->
+        <record id="act_form_view_apar_representation" 
+            model="ir.action.act_window.view">
+            <field name="view" ref="form_apar_representation_view"/>
+            <field name="act_window" ref="act_apar_representation"/>
+            <field name="sequence" eval="20"/>
+        </record>
+
+        <!-- Action -->
+        <record id="act_apar_representations" model="ir.action.act_window">
+            <field name="name">Representations</field>
+            <field name="res_model">apar.representation</field>
+        </record>
+        
+        <!-- Action link to tree -->
+        <record id="act_tree_view_apar_representations" 
+            model="ir.action.act_window.view">
+            <field name="view" ref="tree_apar_representation_view"/>
+            <field name="act_window" ref="act_apar_representations"/>
+            <field name="sequence" eval="10"/>
+        </record>
+
+        <!-- Action link to form -->
+        <record id="act_form_view_apar_representations" 
+            model="ir.action.act_window.view">
+            <field name="view" ref="form_apar_representation_view"/>
+            <field name="act_window" ref="act_apar_representations"/>
+            <field name="sequence" eval="20"/>
+        </record>
+
+
+        <!-- Tree View -->
+        <record id="tree_apar_representation_signature_view" 
+            model="ir.ui.view">
+            <field name="name">tree_apar_representation_signature</field>
+            <field name="model">apar.representation.signatures</field>
+            <field name="type">tree</field>
+        </record>
+        
+        <!-- Form View -->
+        <record id="form_apar_representation_signature_view" 
+            model="ir.ui.view">
+            <field name="name">form_apar_representation_signature</field>
+            <field name="model">apar.representation.signatures</field>
+            <field name="type">form</field>
+        </record>
+
+        <record model="ir.action.report" id="report_email_apar_sample_mail">
+            <field name="name">Sample Mail for APAR</field>
+            <field name="model">apar.representation</field>
+            <field name="report_name">apar.sample_mail</field>
+            <field name="report">apar/contents.html</field>
+            <field name="template_extension">html</field>
+        </record>
+
+        <!-- Form View for Representation-->
+        <record id="form_apar_representationshow_view" model="ir.ui.view">
+            <field name="name">form_apar_representation_wiz</field>
+            <field name="model">apar.representation.raise.show</field>
+            <field name="type">form</field>
+        </record>
+        <!--XML Record Wizard-->
+         <record id="act_wizard_generate_res_wizard" model="ir.action.wizard">
+            <field name="name">Generate Representation wizard</field>
+            <field name="wiz_name">apar.representation.raise</field>
+            <field name="window" eval="True"/>
+        </record>
+
+        <!-- Shortcut to the Employee Form -->
+        <record model="ir.action.act_window" 
+            id="act_employee_form_link_representation">
+            <field name="name">Employee Form</field>
+            <field name="res_model">apar.employee.form</field>
+            <field name="domain" 
+                eval="[('representation', '=', Eval('active_id'))]" pyson="1"/>
+        </record>
+        <record model="ir.action.keyword"
+            id="act_open_employee_form_link_representation">
+            <field name="keyword">form_relate</field>
+            <field name="model">apar.representation,-1</field>
+            <field name="action" ref="act_employee_form_link_representation"/>
+        </record>
+
+    </data>
+</tryton>

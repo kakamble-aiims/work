@@ -1,0 +1,330 @@
+<?xml version="1.0"?>
+<tryton>
+    <data>
+        <record model="res.group" id="group_administrator">
+            <field name="name">Administrator</field>
+        </record>
+        <record model="res.group" id="group_anatomy_employee">
+            <field name="name">Anatomy Employee</field>
+        </record>
+        <record model="res.group" id="group_hod">
+            <field name="name">Head Of Department</field>
+        </record>
+        <record model="res.group" id="group_account_officer">
+            <field name="name">Account Officer</field>
+        </record>
+        <record id="user_admin_emb" model="res.user-res.group">
+            <field name="user" ref="res.user_admin"/>
+            <field name="group" ref="group_administrator"/>
+        </record>
+
+        <!-- Assign the Administrative officer to the emb.employee.details model -->
+        <record id="group_an_emp" model="ir.model.access">
+            <field name="model" search="[('model', '=', 'emb.employee.details')]"/>
+            <field name="group" ref="group_anatomy_employee"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+
+        <!-- Assign the Head of Department to the emb.employee.details model -->
+        <record id="group_hod_access" model="ir.model.access">
+            <field name="model" search="[('model', '=', 'emb.employee.details')]"/>
+            <field name="group" ref="group_hod"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+
+        <!-- Assign the Account officer to the emb.employee.details model -->
+        <record id="group_ao_access" model="ir.model.access">
+            <field name="model" search="[('model', '=', 'emb.employee.details')]"/>
+            <field name="group" ref="group_account_officer"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+
+        <!-- Assign the Administrative officer to the emb.bill model -->
+        <record id="group_an_bill_emp" model="ir.model.access">
+            <field name="model" search="[('model', '=', 'emb.bill')]"/>
+            <field name="group" ref="group_anatomy_employee"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+
+        <!-- Assign the Head of Department to the emb.bill model -->
+        <record id="group_hod_bill_access" model="ir.model.access">
+            <field name="model" search="[('model', '=', 'emb.bill')]"/>
+            <field name="group" ref="group_hod"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+
+        <!-- Assign the Account officer to the emb.bill model -->
+        <record id="group_ao_bill_access" model="ir.model.access">
+            <field name="model" search="[('model', '=', 'emb.bill')]"/>
+            <field name="group" ref="group_account_officer"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+
+        <!-- Access the groups to Menus -->
+        <record model="ir.ui.menu-res.group" id="menu_admin">
+            <field name="menu" ref="menu_emb_bill_subitem"/>
+            <field name="group" ref="group_administrator"/>
+        </record>
+        <record model="ir.ui.menu-res.group" id="menu_emp_ad">
+            <field name="menu" ref="menu_emb_bill_subitem"/>
+            <field name="group" ref="group_anatomy_employee"/>
+        </record>
+        <record model="ir.ui.menu-res.group" id="menu_hod">
+            <field name="menu" ref="menu_emb_bill_subitem"/>
+            <field name="group" ref="group_hod"/>
+        </record>
+        <record model="ir.ui.menu-res.group" id="menu_account_officer">
+            <field name="menu" ref="menu_emb_bill_subitem"/>
+            <field name="group" ref="group_account_officer"/>
+        </record>
+        
+        <!-- Access rights apply on fields -->
+         <record model="ir.model.field.access" 
+            id="field_access_emp_details">
+            <field name="field" 
+                search="[('model.model', '=', 'emb.employee.details'), ('name', '=', 'bill_month'),]"/>
+            <field name="group" ref="group_anatomy_employee"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_delete" eval="True"/>
+        </record>
+
+        <record model="ir.model.field.access" 
+            id="field_access_remarks">
+            <field name="field" 
+                search="[('model.model', '=', 'emb.employee.details'), ('name', '=', 'remarks'),]"/>
+            <field name="group" ref="group_account_officer"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_delete" eval="True"/>
+        </record>
+
+        <record model="ir.model.field.access" 
+            id="field_access_emp_serial_no">
+            <field name="field" 
+                search="[('model.model', '=', 'emb.bill'), ('name', '=', 'serial_no')]"/>
+            <field name="group" ref="group_anatomy_employee"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_delete" eval="True"/>
+        </record>
+        
+        <record model="ir.model.field.access" 
+            id="field_access_emp_body_date">
+            <field name="field" 
+                search="[('model.model', '=', 'emb.bill'), ('name', '=', 'body_date'),]"/>
+            <field name="group" ref="group_anatomy_employee"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_delete" eval="True"/>
+        </record>
+
+        <record model="ir.model.field.access" 
+            id="field_access_emp_deceased_name">
+            <field name="field" 
+                search="[('model.model', '=', 'emb.bill'), ('name', '=', 'deceased_name'),]"/>
+            <field name="group" ref="group_anatomy_employee"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_delete" eval="True"/>
+        </record>
+
+        <record model="ir.model.field.access" 
+            id="field_access_emp_age">
+            <field name="field" 
+                search="[('model.model', '=', 'emb.bill'), ('name', '=', 'age'),]"/>
+            <field name="group" ref="group_anatomy_employee"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_delete" eval="True"/>
+        </record>
+
+        <record model="ir.model.field.access" 
+            id="field_access_emp_sex">
+            <field name="field" 
+                search="[('model.model', '=', 'emb.bill'), ('name', '=', 'sex'),]"/>
+            <field name="group" ref="group_anatomy_employee"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_delete" eval="True"/>
+        </record>
+        
+        <record model="ir.model.field.access" 
+            id="field_access_emp_receipt_no">
+            <field name="field" 
+                search="[('model.model', '=', 'emb.bill'), ('name', '=', 'receipt_no'),]"/>
+            <field name="group" ref="group_anatomy_employee"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_delete" eval="True"/>
+        </record>
+
+        <record model="ir.model.field.access" 
+            id="field_access_emp_receipt_date">
+            <field name="field" 
+                search="[('model.model', '=', 'emb.bill'), ('name', '=', 'receipt_date'),]"/>
+            <field name="group" ref="group_anatomy_employee"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_delete" eval="True"/>
+        </record>
+
+        <record model="ir.model.field.access" 
+            id="field_access_emp_receipt_amount">
+            <field name="field" 
+                search="[('model.model', '=', 'emb.bill'), ('name', '=', 'receipt_amount'),]"/>
+            <field name="group" ref="group_anatomy_employee"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_delete" eval="True"/>
+        </record>
+
+        <record model="ir.model.field.access" 
+            id="field_access_emp_autopsy">
+            <field name="field" 
+                search="[('model.model', '=', 'emb.bill'), ('name', '=', 'autopsy'),]"/>
+            <field name="group" ref="group_anatomy_employee"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_delete" eval="True"/>
+        </record>
+
+        <record model="ir.model.field.access" 
+            id="field_access_emp_amount">
+            <field name="field" 
+                search="[('model.model', '=', 'emb.bill'), ('name', '=', 'amount'),]"/>
+            <field name="group" ref="group_anatomy_employee"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_delete" eval="True"/>
+        </record>
+
+        <record model="ir.model.field.access" 
+            id="field_access_emp_bill">
+            <field name="field" 
+                search="[('model.model', '=', 'emb.bill'), ('name', '=', 'bill'),]"/>
+            <field name="group" ref="group_anatomy_employee"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_delete" eval="True"/>
+        </record>
+
+        <!--Access rights to the Buttons -->
+
+        <record model="ir.model.button"
+            id="button_confirm">
+            <field name="name">confirm</field>
+            <field name="model"
+                search="[('model', '=', 'emb.employee.details')]"/>
+        </record>
+        <record model="ir.model.button-res.group"
+            id="button_access_confirm_emp">
+            <field name="button" ref="button_confirm"/>
+            <field name="group" ref="group_anatomy_employee"/>
+        </record>
+
+        <record model="ir.model.button"
+            id="button_submit_to_hod">
+            <field name="name">submit_to_hod</field>
+            <field name="model"
+                search="[('model', '=', 'emb.employee.details')]"/>
+        </record>
+        <record model="ir.model.button-res.group"
+            id="button_access_submit_to_hod">
+            <field name="button" ref="button_submit_to_hod"/>
+            <field name="group" ref="group_anatomy_employee"/>
+        </record>
+
+        <record model="ir.model.button"
+            id="button_cancel">
+            <field name="name">cancel</field>
+            <field name="model"
+                search="[('model', '=', 'emb.employee.details')]"/>
+        </record>
+        <record model="ir.model.button-res.group"
+            id="button_access_cancel">
+            <field name="button" ref="button_cancel"/>
+            <field name="group" ref="group_anatomy_employee"/>
+        </record>
+
+        <record model="ir.model.button"
+            id="button_submit_to_ao">
+            <field name="name">submit_to_ao</field>
+            <field name="model"
+                search="[('model', '=', 'emb.employee.details')]"/>
+        </record>
+        <record model="ir.model.button-res.group"
+            id="button_access_submit_to_ao">
+            <field name="button" ref="button_submit_to_ao"/>
+            <field name="group" ref="group_hod"/>
+        </record>
+
+        <record model="ir.model.button"
+            id="button_cancel_hod">
+            <field name="name">cancel_submission_hod</field>
+            <field name="model"
+                search="[('model', '=', 'emb.employee.details')]"/>
+        </record>
+        <record model="ir.model.button-res.group"
+            id="button_access_cancel_hod">
+            <field name="button" ref="button_cancel_hod"/>
+            <field name="group" ref="group_hod"/>
+        </record>
+
+        <record model="ir.model.button"
+            id="button_approve_for_ao">
+            <field name="name">approve_for_ao</field>
+            <field name="model"
+                search="[('model', '=', 'emb.employee.details')]"/>
+        </record>
+        <record model="ir.model.button-res.group"
+            id="button_access_approve_for_ao">
+            <field name="button" ref="button_approve_for_ao"/>
+            <field name="group" ref="group_account_officer"/>
+        </record>
+        
+        <record model="ir.model.button"
+            id="button_cancel_ao">
+            <field name="name">cancel_submission_ao</field>
+            <field name="model"
+                search="[('model', '=', 'emb.employee.details')]"/>
+        </record>
+        <record model="ir.model.button-res.group"
+            id="button_cancel_submission_ao">
+            <field name="button" ref="button_cancel_ao"/>
+            <field name="group" ref="group_account_officer"/>
+        </record>
+
+    </data>
+</tryton>        

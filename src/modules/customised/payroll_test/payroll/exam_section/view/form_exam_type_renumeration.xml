@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<form>
+    <label name="name"/>
+    <field name="name"/>
+    <label name="type_pay"/>
+    <field name="type_pay"/>
+    <label name="code"/>
+    <field name="code"/>
+    <label name="type_amount_fix"/>
+    <field name="type_amount_fix"/>
+    <label name="condition_pay"/>
+    <field name="condition_pay"/>
+    <label name="employee_group"/>
+    <field name="employee_group"/>
+    <label name="max_range"/>
+    <field name="max_range"/>
+    <label name="min_range"/>
+    <field name="min_range"/>
+    <label name="is_external"/>
+    <field name="is_external"/>
+    <label name="payment_basis"/>
+    <field name="payment_basis"/>
+</form>

@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+
+<form>
+        <label name="salary_rule"/>
+        <field name="salary_rule"/>
+        <label name="payslip"/>
+        <field name="payslip"/>
+        <label name="category"/>
+        <field name="category"/>
+        <label name="amount"/>
+        <field name="amount"/>
+</form>

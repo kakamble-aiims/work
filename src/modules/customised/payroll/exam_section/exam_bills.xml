@@ -1,0 +1,203 @@
+<?xml version="1.0"?>
+<tryton>
+    <data>
+        <!-- Tree View - Renumeration Purpose and Pay -->
+        <record id="tree_renumeration_purpose_and_pay_view" model="ir.ui.view">
+            <field name="name">tree_renumeration_purpose_and_pay</field>
+            <field name="model">exam_type.purpose_and_pay_renum</field>
+            <field name="type">tree</field>
+        </record>
+
+        <!-- Tree View - Exam Bills Menu -->
+        <record id="tree_menu_exam_bills_view" model="ir.ui.view">
+            <field name="name">tree_menu_exam_bills</field>
+            <field name="model">exam_section.exam</field>
+            <field name="type">tree</field>
+        </record>
+
+        <!-- Action - Exam Bills Menu -->
+        <record id="act_exam_bills" model="ir.action.act_window">
+            <field name="name">Exam Bills</field>
+            <field name="res_model">exam_section.exam</field>
+        </record>
+        
+        <!-- Tree View Link to Action - Exam Bills Menu -->
+        <record id="act_exam_bills_tree" model="ir.action.act_window.view">
+            <field name="sequence" eval="10"/>
+            <field name="act_window" ref="act_exam_bills"/>
+            <field name="view" ref="tree_menu_exam_bills_view"/>
+        </record>
+        
+        <!-- Exam Bills Menu -->
+        <menuitem id="menu_exam_bills" name="Exam Bills" parent="menu_exam_section" action="act_exam_bills" sequence="2"/>
+        
+        <!-- Action - My Renumeration Bills -->
+        <record id="act_my_exam_renumeration_bill" model="ir.action.act_window">
+            <field name="name">My Renumeration Bills</field>
+            <field name="res_model">exam_section.renumeration_bill</field>
+            <field name="domain"
+                eval="['AND',
+                        ('state', '=', 'draft'),
+                        ['OR', 
+                            ('employee', '=', Eval('user', {}).get('employee', None)),
+                            ('employee', '=', Eval('employee', {}))]]" 
+                pyson="1"/>
+        </record>
+
+        <!-- Form View Link To Action - My Renumeration Bills -->
+        <record id="act_my_renumeration_bill_form" model="ir.action.act_window.view">
+            <field name="sequence" eval="20"/>
+            <field name="act_window" ref="act_my_exam_renumeration_bill"/>
+            <field name="view" ref="exam_section.form_renumeration_bill_view"/>
+        </record>
+
+        <!-- Tree View Link To Action - My Renumeration Bills -->
+        <record id="act_my_renumeration_bill_tree" model="ir.action.act_window.view">
+            <field name="sequence" eval="10"/>
+            <field name="act_window" ref="act_my_exam_renumeration_bill"/>
+            <field name="view" ref="exam_section.tree_renumeration_bill_view"/>
+        </record>
+
+        <!-- My Renumeration Bills Menu -->
+        <menuitem id="menu_exam_renumeration_bill_employee" name="My Renumeration Bills"
+            parent="menu_exam_bills" action="act_my_exam_renumeration_bill" sequence="100"/>
+        
+        <!-- Action - My TA/DA Bills -->
+        <record id="act_my_exam_ta_da_bill" model="ir.action.act_window">
+            <field name="name">My TA/DA Bills</field>
+            <field name="res_model">exam_section.ta_da_bill</field>
+            <field name="domain"
+                eval="['AND',
+                        ('state', '=', 'draft'),
+                        ['OR', 
+                            ('employee', '=', Eval('user', {}).get('employee', None)),
+                            ('employee', '=', Eval('employee', {}))]]" 
+                pyson="1"/>
+        </record>
+
+        <!-- Form View Link To Action - My TA/DA Bills -->
+        <record id="act_my_ta_da_bill_form" model="ir.action.act_window.view">
+            <field name="sequence" eval="20"/>
+            <field name="act_window" ref="act_my_exam_ta_da_bill"/>
+            <field name="view" ref="exam_section.form_ta_da_bill_view"/>
+        </record>
+
+        <!-- Tree View Link To Action - My TA/DA Bills -->
+        <record id="act_my_ta_da_bill_tree" model="ir.action.act_window.view">
+            <field name="sequence" eval="10"/>
+            <field name="act_window" ref="act_my_exam_ta_da_bill"/>
+            <field name="view" ref="exam_section.tree_ta_da_bill_view"/>
+        </record>
+
+        <!-- My Renumeration Bills Menu -->
+        <menuitem id="menu_exam_ta_da_bill_employee" name="My TA/DA Bills"
+            action="act_my_exam_ta_da_bill" parent="menu_exam_bills" sequence="110"/>
+        
+        <!-- Action - Renumeration Bills to Approve -->
+        <record id="act_my_exam_renumeration_bill_approve" model="ir.action.act_window">
+            <field name="name">Renumeration Bills To Approve</field>
+            <field name="res_model">exam_section.renumeration_bill</field>
+            <field name="domain"
+                eval="  ['AND',
+                            ('state', '!=', 'confirm'),
+                            ('state', '!=', 'draft')]" 
+                pyson="1"/>
+        </record>
+
+        <!-- Form View Link To Action - Renumeration Bills to Approve -->
+        <record id="act_my_renumeration_bill_form_approve" model="ir.action.act_window.view">
+            <field name="sequence" eval="20"/>
+            <field name="act_window" ref="act_my_exam_renumeration_bill_approve"/>
+            <field name="view" ref="exam_section.form_renumeration_bill_view"/>
+        </record>
+
+        <!-- Tree View Link To Action - Renumeration Bills to Approve -->
+        <record id="act_renumeration_bill_tree_approve" model="ir.action.act_window.view">
+            <field name="sequence" eval="10"/>
+            <field name="act_window" ref="act_my_exam_renumeration_bill_approve"/>
+            <field name="view" ref="exam_section.tree_renumeration_bill_view"/>
+        </record>
+        
+        <!-- Renumeration Bills To Approve Menu -->
+        <menuitem id="menu_exam_renumeration_bill_employee_approve" name="Renumeration Bills To Approve"
+            action="act_my_exam_renumeration_bill_approve" parent="menu_exam_bills" sequence="100"/>
+        
+        <!-- Action - TA/DA Bills to Approve -->
+        <record id="act_my_exam_ta_da_bill_approve" model="ir.action.act_window">
+            <field name="name">TA/DA Bills To Approve</field>
+            <field name="res_model">exam_section.ta_da_bill</field>
+            <field name="domain"
+                eval="['AND',
+                            ('state', '!=', 'confirm'),
+                            ('state', '!=', 'draft')]"
+                pyson="1"/>
+        </record>
+
+        <!-- Form View Link To Action - TA/DA Bills to Approve -->
+        <record id="act_my_ta_da_bill_form_approve" model="ir.action.act_window.view">
+            <field name="sequence" eval="20"/>
+            <field name="act_window" ref="act_my_exam_ta_da_bill_approve"/>
+            <field name="view" ref="exam_section.form_ta_da_bill_view"/>
+        </record>
+
+        <!-- Tree View Link To Action - TA/DA Bills to Approve -->
+        <record id="act_my_ta_da_bill_tree_approve" model="ir.action.act_window.view">
+            <field name="sequence" eval="10"/>
+            <field name="act_window" ref="act_my_exam_ta_da_bill_approve"/>
+            <field name="view" ref="exam_section.tree_ta_da_bill_view"/>
+        </record>
+
+        <!-- TA/DA Bills to Approve Menu -->
+        <menuitem id="menu_exam_ta_da_bill_employee_approve" name="TA/DA Bills To Approve"
+            action="act_my_exam_ta_da_bill_approve" parent="menu_exam_bills" sequence="110"/>
+        
+        <!-- Action - Renumeration Bills -->
+        <record id="act_renumeration_bill" model="ir.action.act_window">
+            <field name="name">Renumeration Bills</field>
+            <field name="res_model">exam_section.renumeration_bill</field>
+        </record>
+
+        <!-- Form View Link To Action - Renumeration Bills -->
+        <record id="act_renumeration_bill_form" model="ir.action.act_window.view">
+            <field name="sequence" eval="20"/>
+            <field name="act_window" ref="act_renumeration_bill"/>
+            <field name="view" ref="form_renumeration_bill_view"/>
+        </record>
+
+        <!-- Tree View Link To Action - Renumeration Bills -->
+        <record id="act_renumeration_bill_tree" model="ir.action.act_window.view">
+            <field name="sequence" eval="10"/>
+            <field name="act_window" ref="act_renumeration_bill"/>
+            <field name="view" ref="tree_renumeration_bill_view"/>
+        </record>
+
+        <!-- Renumeration Bills Menu -->
+        <menuitem id="menu_renumerationation_bill" name="Renumeration Bills"
+            action="act_renumeration_bill" parent="menu_exam_bills" sequence="100"/>
+
+        <!-- Action - TA/DA Bills -->
+        <record id="act_ta_da_bill" ref="ir.action.act_window">
+            <field name="name">TA/DA Bills</field>
+            <field name="res_model">exam_section.ta_da_bill</field>
+        </record>
+
+        <!-- Form View Link To Action - TA/DA Bills -->
+        <record id="act_ta_da_bill_form" model="ir.action.act_window.view">
+            <field name="sequence" eval="20"/>
+            <field name="act_window" ref="act_ta_da_bill"/>
+            <field name="view" ref="form_ta_da_bill_view"/>
+        </record>
+
+        <!-- Tree View Link To Action - TA/DA Bills -->
+        <record id="act_ta_da_bill_tree" model="ir.action.act_window.view">
+            <field name="sequence" eval="10"/>
+            <field name="act_window" ref="act_ta_da_bill"/>
+            <field name="view" ref="tree_ta_da_bill_view"/>
+        </record>
+
+        <!-- TA/DA Bills Menu -->
+        <menuitem id="menu_exam_ta_da_bill" name="TA/DA Bills"
+            action="act_ta_da_bill" parent="menu_exam_bills" sequence="110"/>
+
+    </data>
+</tryton>

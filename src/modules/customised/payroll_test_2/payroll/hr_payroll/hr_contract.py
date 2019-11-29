@@ -1,0 +1,12 @@
+from trytond.model import fields
+from trytond.pool import PoolMeta
+
+__all__ = ['Contract']
+
+
+class Contract(metaclass=PoolMeta):
+
+    __name__ = 'hr.contract'
+
+    structure = fields.Many2One('hr.salary.structure', 'Salary Structure')
+    payslips = fields.One2Many('hr.payslip', 'contract', 'Payslips')

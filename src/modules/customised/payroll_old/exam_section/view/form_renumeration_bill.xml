@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<form>
+    <label name="type_of_examiner"/>
+    <field name="type_of_examiner"/>
+    <group id="examiner" colspan="2">
+        <label name="employee"/>
+        <field name="employee"/>
+        <label name="examiner_name"/>
+        <field name="examiner_name"/>
+    </group>
+    
+    <group id="details" colspan="4" col="6">
+        <label name="designation"/>
+        <field name="designation"/>
+        <label name="exam"/>
+        <field name="exam"/>
+        <label name="course_name"/>
+        <field name="course_name"/>
+    </group>
+    
+    <label name="address"/>
+    <field name="address" colspan="3"/>
+    
+    <label name="pincode"/>
+    <field name="pincode"/>
+    
+    
+    
+    <field name="purpose" colspan="4"/>
+    <!-- <label name="no_of_papers_set"/>
+    <field name="no_of_papers_set"  />
+    <label name="papers_set_amount_payable" />
+    <field name="papers_set_amount_payable" />
+    <label name="no_of_ans_books_evaluated"/>
+    <field name="no_of_ans_books_evaluated" />
+    <label name="no_of_students_examined"/>
+    <field name="no_of_students_examined" />
+    <label name="evaluation_amount_payable"/>
+    <field name="evaluation_amount_payable" /> -->
+    
+    <label name="total_amount"/>
+    <field name="total_amount" colspan="1"/>
+    <label name="net_amount"/>
+    <field name="net_amount" colspan="1"/>
+    
+    <label name="bank_name"/>
+    <field name="bank_name"/>
+    
+    <label name="account_number"/>
+    <field name="account_number"/>
+    
+    <label name="ifsc_code"/>
+    <field name="ifsc_code"/>
+    
+    <group id="buttons" colspan="4">
+        <button name="confirm_data" string="Confirm"
+            confirm="Are you sure the provided information is correct? After clicking OK, you will NOT be allowed to make changes"/>
+        <button name="send_for_aao_approval" string="Send for AAO Approval"/>
+        <button name="send_for_ao_approval" string="Send for AO Approval"/>
+        <button name="send_for_ace_approval" string="Send for ACE Approval"/>
+        <button name="send_for_adean_approval" string="Send for Assistant Dean Approval"/>
+        <button name="send_for_dean_approval" string="Send for Dean Approval"/>
+        <button name="send_for_ao_approval_2" string="Send for Final AO Approval"/>
+    </group>
+</form>

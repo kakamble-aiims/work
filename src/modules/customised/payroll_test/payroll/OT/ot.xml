@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+
+<tryton>
+    <data>
+        <menuitem id="menu_ot" name="OT Allowance"/>
+        <!-- Form View -->
+        <record id="form_employee_ot_allowance_view" model="ir.ui.view">
+            <field name="name">form_employee_ot_allowance</field>
+            <field name="model">ot.employee.details</field>
+            <field name="type">form</field>
+        </record>
+
+        <!-- Tree View -->
+        <record id="tree_employee_ot_allowance_view" model="ir.ui.view">
+            <field name="name">tree_employee_ot_allowance</field>
+            <field name="model">ot.employee.details</field>
+            <field name="type">tree</field>
+        </record>
+
+        <!-- Action -->
+        <record id="action_employee_ot_allowance" model="ir.action.act_window">
+            <field name="name">OT Allowance</field>
+            <field name="res_model">ot.employee.details</field>
+        </record>
+
+        <!-- Link to Tree -->
+        <record id="act_employee_ot_allowance_tree" model="ir.action.act_window.view">
+            <field name="act_window" ref="action_employee_ot_allowance"/>
+            <field name="view" ref="tree_employee_ot_allowance_view"/>
+            <field name="sequence" eval="10"/>
+        </record>
+
+        <!-- Link to Form -->
+        <record id="act_employee_ot_allowance_form" model="ir.action.act_window.view">
+            <field name="act_window" ref="action_employee_ot_allowance"/>
+            <field name="view" ref="form_employee_ot_allowance_view"/>
+            <field name="sequence">20</field>
+        </record>
+
+        <!-- Tree View of OT Log class--> 
+        <record id="tree_ot_log_view" model="ir.ui.view">
+            <field name="name">tree_ot_log</field>
+            <field name="model">ot.employee.log</field>
+            <field name="type">tree</field>
+        </record>
+        <!--Menu -->
+        <menuitem id="menu_ot_allowance_subitem" name="OT Employee Details"
+        parent="menu_ot" action="action_employee_ot_allowance"/>
+    </data>
+</tryton>

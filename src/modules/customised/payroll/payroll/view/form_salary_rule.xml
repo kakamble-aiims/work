@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+
+<form col="6">
+    <group id="salary_rule" col="6" colspan="4">
+        <label name="name"/>
+        <field name="name"/>
+        <label name="category"/>
+        <field name="category"/>
+        <label name="code"/>
+        <field name="code"/>
+        <label name="priority"/>
+        <field name="priority"/>
+        <label name="active"/>
+        <field name="active"/>
+    </group>    
+    <notebook colspan="6">
+        <page id="_general" string="General">
+            <group id="_conditions" string="Conditions">
+                <label name="condition_select"/>
+                <field name="condition_select"/>
+                <label name="condition_range"/>
+                <field name="condition_range"/>
+                <label name="maximum_range"/>
+                <field name="maximum_range"/>
+                <label name="minimum_range"/>
+                <field name="minimum_range"/>
+                <label name="python_expression"/>
+                <field name="python_expression"/>
+            </group>
+            <group id="_computation" string="Computations" colspan="4">
+                <label name="amount_select"/>
+                <field name="amount_select"/>
+                <label name="percentage_based_on"/>
+                <field name="percentage_based_on"/>
+                <label name="amount_python_code"/>
+                <field name="amount_python_code"/>
+                <label name="amount_percentage"/>
+                <field name="amount_percentage"/>
+                <label name="amount_fix"/>
+                <field name="amount_fix"/>
+                <label name="quantity"/>
+                <field name="quantity"/>
+            </group>
+        </page>
+    </notebook>
+</form>

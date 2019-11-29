@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<form>
+    <label name="location"/>
+    <field name="location"/>
+    <label name="exam"/>
+    <field name="exam"/>
+    <label name="location_code"/>
+    <field name="location_code"/>
+    <label name="employee_count"/>
+    <field name="employee_count"/>
+    <newline/>
+    <field name="employees" colspan="4"
+    view_ids="exam_section.tree_exam_employee_minimal"/>
+</form>

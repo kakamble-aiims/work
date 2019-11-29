@@ -1,0 +1,110 @@
+<?xml version="1.0"?>
+<tryton>
+    <data>
+        <record id="i_type_eastern_campus_ansari_nagar"
+            model="estate.quarter_type_location">
+            <field name="quarter_type" ref="i_type"/>
+            <field name="name">ansari_nagar_east</field>
+        </record>
+        <record id="i_type_western_campus_ansari_nagar"
+            model="estate.quarter_type_location">
+            <field name="quarter_type" ref="i_type"/>
+            <field name="name">ansari_nagar_west</field>
+        </record>
+        <record id="a_type_a_v_nagar_old"
+            model="estate.quarter_type_location">
+            <field name="quarter_type" ref="a_type"/>
+            <field name="name">a_v_nagar_old</field>
+        </record>
+        <record id="new_a_type_a_v_nagar_new"
+            model="estate.quarter_type_location">
+            <field name="quarter_type" ref="a_type"/>
+            <field name="name">a_v_nagar_new</field>
+        </record>
+        <record id="b_type_a_v_nagar_old"
+            model="estate.quarter_type_location">
+            <field name="quarter_type" ref="b_type"/>
+            <field name="name">a_v_nagar_old</field>
+        </record>
+        <record id="b_type_a_v_nagar_new"
+            model="estate.quarter_type_location">
+            <field name="quarter_type" ref="b_type"/>
+            <field name="name">a_v_nagar_new</field>
+        </record>
+        <record id="g_type_ansari_nagar_east"
+            model="estate.quarter_type_location">
+            <field name="quarter_type" ref="b_type"/>
+            <field name="name">ansari_nagar_east</field>
+        </record>
+        <record id="type_2_masjid_moth"
+            model="estate.quarter_type_location">
+            <field name="quarter_type" ref="type_2"/>
+            <field name="name">masjid_moth</field>
+        </record>
+        <record id="type_3_a_v_nagar_old"
+            model="estate.quarter_type_location">
+            <field name="quarter_type" ref="type_3"/>
+            <field name="name">a_v_nagar_old</field>
+        </record>
+        <record id="type_3_a_v_nagar_new"
+            model="estate.quarter_type_location">
+            <field name="quarter_type" ref="type_3"/>
+            <field name="name">a_v_nagar_new</field>
+        </record>
+        <record id="type_f_ansari_nagar_east"
+            model="estate.quarter_type_location">
+            <field name="quarter_type" ref="type_f"/>
+            <field name="name">ansari_nagar_east</field>
+        </record>
+        <record id="type_4_e_a_v_nagar_old"
+            model="estate.quarter_type_location">
+            <field name="quarter_type" ref="type_4"/>
+            <field name="name">a_v_nagar_old</field>
+        </record>
+        <record id="faculty_type_accomodation_a_v_nagar"
+            model="estate.quarter_type_location">
+            <field name="quarter_type" ref="faculty_type_accomodation"/>
+            <field name="name">a_v_nagar_old</field>
+        </record>
+        <record id="type_d_2_ansari_nagar_east"
+            model="estate.quarter_type_location">
+            <field name="quarter_type" ref="type_d_2"/>
+            <field name="name">ansari_nagar_east</field>
+        </record>
+        <record id="type_c_2_ansari_nagar_west"
+            model="estate.quarter_type_location">
+            <field name="quarter_type" ref="type_c_2"/>
+            <field name="name">ansari_nagar_west</field>
+        </record>
+        <record id="type_c_1_ansari_nagar_west"
+            model="estate.quarter_type_location">
+            <field name="quarter_type" ref="type_c_1"/>
+            <field name="name">ansari_nagar_west</field>
+        </record>
+        <record id="director_bunglow_ansari_nagar_east"
+            model="estate.quarter_type_location">
+            <field name="quarter_type" ref="director_bunglow_including_garage"/>
+            <field name="name">ansari_nagar_east</field>
+        </record>
+        <record id="type_s_1_s_2_asiad_village_complex"
+            model="estate.quarter_type_location">
+            <field name="quarter_type" ref="type_d_2"/>
+            <field name="name">asiad_village_complex</field>
+        </record>
+        <record id="type_s_3_asiad_village_complex"
+            model="estate.quarter_type_location">
+            <field name="quarter_type" ref="type_c_2"/>
+            <field name="name">asiad_village_complex</field>
+        </record>
+        <record id="s_type_ballabhgarh"
+            model="estate.quarter_type_location">
+            <field name="quarter_type" ref="type_e"/>
+            <field name="name">ballabhgarh</field>
+        </record>
+        <record id="newly_constructed_f_type_qtrs_ballabhgarh"
+            model="estate.quarter_type_location">
+            <field name="quarter_type" ref="type_f"/>
+            <field name="name">ballabhgarh</field>
+        </record>
+    </data>
+</tryton>

@@ -1,0 +1,196 @@
+<?xml version="1.0"?>
+<tryton>
+    <data>
+
+        <record id="template_sno" model="apar.form.template">
+            <field name="name">For Chief Nursing Officer/Nursing Superintendent/Deputy Nursing Superintendent and Assistant Nursing Superintendent</field>
+            <field name="form_number">2</field>
+        </record>
+
+         <record id="template_sno_part2" model="apar.form.template.part">
+            <field name="name">Self Appraisal for the Year(To be filled by the Ratee Officer)</field>
+            <field name="number">2</field>
+            <field name="template" ref="template_sno"/>
+            <field name="type_">self_appraisal</field>
+        </record>
+        <record id="template_sno_part3" model="apar.form.template.part">
+            <field name="name">Appraisal(To be filled by Reporting Officer and To be reviewed by Reviewing Officer)</field>
+            <field name="number">3 and 4</field>
+            <field name="template" ref="template_sno"/>
+            <field name="type_">appraisal</field>
+        </record>
+         <record id="section_sno_1" model="apar.form.template.section">
+            <field name="name">Assessment of work output</field>
+            <field name="weightage">40</field>
+            <field name="number">3.1</field>
+            <field name="part" ref="template_sno_part3"/>
+        </record>
+
+        <record id="section_sno_2" model="apar.form.template.section">
+            <field name="name">Assessment of Personal Attributes</field>
+            <field name="weightage">30</field>
+            <field name="number">3.2</field>
+            <field name="part" ref="template_sno_part3"/>
+        </record>
+        <record id="section_sno_3" model="apar.form.template.section">
+            <field name="name">Assessment of functional Competency</field>
+            <field name="weightage">30</field>
+            <field name="number">3.3</field>
+            <field name="part" ref="template_sno_part3"/>
+        </record>
+<record id="template_sno_question1" model="apar.form.template.question">
+            <field name="question_no">2.1</field>
+            <field name="name">Brief resume of the work done by you during the APAR period &#xA; (The resume to be furnished should be limited to 100 words)</field>
+            <field name="part" ref="template_sno_part2"/>
+        </record>
+<record id="template_sno_question2" model="apar.form.template.question">
+            <field name="question_no">2.2</field>
+            <field name="name">Please also indicate items in which there have been significantly higher achievements and your contribution thereto.</field>
+            <field name="part" ref="template_sno_part2"/>
+        </record>
+<record id="template_sno_question3" model="apar.form.template.question">
+            <field name="question_no">2.3</field>
+            <field name="name">Please state, briefly, the shortfalls in your input and reasons, if any.</field>
+            <field name="part" ref="template_sno_part2"/>
+        </record>
+<record id="template_sno_question4" model="apar.form.template.question">
+            <field name="question_no">2.4</field>
+            <field name="name">Please state whether the annual return on immovable property for the preceding calendar &#xA; year was filled within the prescribed date i.e. 31st January of the year &#xA; following the calendar year. If not, the date of filing the return should be given.</field>
+            <field name="part" ref="template_sno_part2"/>
+        </record>
+<record id="template_sno_question6" model="apar.form.template.question">
+            <field name="question_no">4.1</field>
+            <field name="name">Relations with the public (wherever applicable)(Please comment on the &#xA; officer’s accessibility to the public and responsiveness to their needs)</field>
+            <field name="part" ref="template_sno_part3"/>
+        </record>
+<record id="template_sno_question7" model="apar.form.template.question">
+            <field name="question_no">4.2</field>
+            <field name="name">Training (Please give recommendations for training with a view to future improving the &#xA; effectiveness and capabilities to the officer)</field>
+            <field name="part" ref="template_sno_part3"/>
+        </record>
+<record id="template_sno_question8" model="apar.form.template.question">
+            <field name="question_no">4.3</field>
+            <field name="name">State of Health</field>
+            <field name="part" ref="template_sno_part3"/>
+        </record>
+<record id="template_sno_question9" model="apar.form.template.question">
+            <field name="question_no">4.4</field>
+            <field name="name">Integrity (Please comment on the integrity of the officer)</field>
+            <field name="part" ref="template_sno_part3"/>
+        </record>
+<record id="template_sno_question10" model="apar.form.template.question">
+            <field name="question_no">4.5</field>
+            <field name="name">Pen Picture by Reporting Officer (in about 100 words) on the overall qualities of the officer &#xA; including area of strength and lesser strength, extraordinary achievements, &#xA; significant failures and attitude towards weaker sections</field>
+            <field name="part" ref="template_sno_part3"/>
+        </record>
+
+<record id="template_sno_question11" model="apar.form.template.question">
+            <field name="question_no">3.1</field>
+            <field name="name">Does the Reporting Officer agree with the statement made in part -2?  If not, the extent &#xA; of disagreement and reasons thereof.</field>
+            <field name="section" ref="section_sno_3"/>
+        </record>
+<record id="template_sno_question12" model="apar.form.template.question">
+            <field name="question_no">3.2</field>
+            <field name="name">Numerical grading is to be awarded for each of the attribute by the reporting authority &#xA; which should be on a scale of 1-10, where 1 refers to the lowest grade and &#xA; 10 to the highest. / Please read carefully the guidelines before filling the entries)</field>
+            <field name="section" ref="section_sno_3"/>
+        </record>
+<record id="template_sno_question13" model="apar.form.template.question">
+            <field name="question_no">3.2.1</field>
+            <field name="name">Assessment of work output (weightage to this section would be 40%)</field>
+            <field name="section" ref="section_sno_3"/>
+        </record>
+<record id="template_sno_question14" model="apar.form.template.question">
+            <field name="question_no">3.2.1.1</field>
+            <field name="name">Quality of work</field>
+            <field name="section" ref="section_sno_3"/>
+        </record>
+<record id="template_sno_question15" model="apar.form.template.question">
+            <field name="question_no">3.2.1.2</field>
+            <field name="name">Level of professional skill</field>
+            <field name="section" ref="section_sno_3"/>
+        </record>
+<record id="template_sno_question16" model="apar.form.template.question">
+            <field name="question_no">3.2.1.3</field>
+            <field name="name">Trust worthiness in handling secret and top secret matters and papers</field>
+            <field name="section" ref="section_sno_3"/>
+        </record>
+<record id="template_sno_question17" model="apar.form.template.question">
+            <field name="question_no">3.2.1.4</field>
+            <field name="name">Maintenance of engagement diary and timely submission of necessary papers for meeting, interviews, etc.</field>
+            <field name="section" ref="section_sno_3"/>
+        </record>
+<record id="template_sno_question18" model="apar.form.template.question">
+            <field name="question_no">3.2.2</field>
+            <field name="name">Assessment of Personal Attributes (weightage to this Section would be 30%)</field>
+            <field name="section" ref="section_sno_3"/>
+        </record>
+<record id="template_sno_question19" model="apar.form.template.question">
+            <field name="question_no">3.2.2.1</field>
+            <field name="name">Attitude to work</field>
+            <field name="section" ref="section_sno_3"/>
+        </record>
+<record id="template_sno_question20" model="apar.form.template.question">
+            <field name="question_no">3.2.2.2</field>
+            <field name="name">Intelligence, keenness</field>
+            <field name="section" ref="section_sno_3"/>
+        </record>
+<record id="template_sno_question21" model="apar.form.template.question">
+            <field name="question_no">3.2.2.3</field>
+            <field name="name">Maintenance of discipline</field>
+            <field name="section" ref="section_sno_3"/>
+        </record>
+<record id="template_sno_question22" model="apar.form.template.question">
+            <field name="question_no">3.2.2.4</field>
+            <field name="name">Sense of responsibility</field>
+            <field name="section" ref="section_sno_3"/>
+        </record>
+<record id="template_sno_question23" model="apar.form.template.question">
+            <field name="question_no">3.2.2.5</field>
+            <field name="name">Communication skills</field>
+            <field name="section" ref="section_sno_3"/>
+        </record>
+<record id="template_sno_question24" model="apar.form.template.question">
+            <field name="question_no">3.2.2.6</field>
+            <field name="name">Ability to work in team skills</field>
+            <field name="section" ref="section_sno_3"/>
+        </record>
+<record id="template_sno_question25" model="apar.form.template.question">
+            <field name="question_no">3.2.2.7</field>
+            <field name="name">Ability to meet deadline.</field>
+            <field name="section" ref="section_sno_3"/>
+        </record>
+<record id="template_sno_question26" model="apar.form.template.question">
+            <field name="question_no">3.2.2.8</field>
+            <field name="name">Regularity and Punctuality in attendance </field>
+            <field name="section" ref="section_sno_3"/>
+        </record>
+<record id="template_sno_question27" model="apar.form.template.question">
+            <field name="question_no">3.2.3</field>
+            <field name="name">Assessment of functional Competency (weightage to this Section would be 30%)</field>
+            <field name="section" ref="section_sno_3"/>
+        </record>
+<record id="template_sno_question28" model="apar.form.template.question">
+            <field name="question_no">3.2.3.1</field>
+            <field name="name">Proficiency and accuracy in Stenographic work </field>
+            <field name="section" ref="section_sno_3"/>
+        </record>
+<record id="template_sno_question29" model="apar.form.template.question">
+            <field name="question_no">3.2.3.2</field>
+            <field name="name">Inter-personal relations</field>
+            <field name="section" ref="section_sno_3"/>
+        </record>
+<record id="template_sno_question30" model="apar.form.template.question">
+            <field name="question_no">3.2.3.3</field>
+            <field name="name">Coordination ability</field>
+            <field name="section" ref="section_sno_3"/>
+        </record>
+<record id="template_sno_question31" model="apar.form.template.question">
+            <field name="question_no">3.2.3.4</field>
+            <field name="name">Effective liaison, Initiative and tact in dealing with telephone calls visitors.</field>
+            <field name="section" ref="section_sno_3"/>
+        </record>
+       
+
+
+    </data>
+</tryton>

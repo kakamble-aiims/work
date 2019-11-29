@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<tree editable="top">
+    <field name="mode"/>
+    <field name="from_"/>
+    <field name="to"/>
+    <field name="km"/>
+    <field name="amount"/>
+    <field name="have_receipt"/>
+    <field name="receipt"/>
+</tree>

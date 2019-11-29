@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<tryton>
+    <data>
+        <record id="form_exam_type_view" model="ir.ui.view">
+            <field name="name">form_exam_type</field>
+            <field name="model">exam_section.exam_type</field>
+            <field name="type">form</field>
+        </record>
+        <record id="tree_exam_type_view" model="ir.ui.view">
+            <field name="name">tree_exam_type</field>
+            <field name="model">exam_section.exam_type</field>
+            <field name="type">tree</field>
+        </record>
+        
+        <record id="act_exam_type" model="ir.action.act_window">
+            <field name="name">Exam Type</field>
+            <field name="res_model">exam_section.exam_type</field>
+        </record>
+        <record id="act_exam_type_form" model="ir.action.act_window.view">
+            <field name="sequence" eval="20"/>
+            <field name="act_window" ref="act_exam_type"/>
+            <field name="view" ref="form_exam_type_view"/>
+        </record>
+        <record id="act_exam_type_tree" model="ir.action.act_window.view">
+            <field name="sequence" eval="10"/>
+            <field name="act_window" ref="act_exam_type"/>
+            <field name="view" ref="tree_exam_type_view"/>
+        </record>
+
+        <menuitem id="menu_exam_type" name="Exam Type" parent="menu_exam_section_config" action="act_exam_type"/>
+        
+        <record id="tree_exam_type_renumeration_view" model="ir.ui.view">
+            <field name="name">tree_exam_type_renumeration</field>
+            <field name="model">exam_section.exam_type.renumeration</field>
+            <field name="type">tree</field>
+        </record>
+        <record id="form_exam_type_renumeration_view" model="ir.ui.view">
+            <field name="name">form_exam_type_renumeration</field>
+            <field name="model">exam_section.exam_type.renumeration</field>
+            <field name="type">form</field>
+        </record>
+
+        <record id="tree_exam_type_ta_da_view" model="ir.ui.view">
+            <field name="name">tree_exam_type_ta_da</field>
+            <field name="model">exam_section.exam_type.ta_da</field>
+            <field name="type">tree</field>
+        </record>
+        <record id="form_exam_type_ta_da_view" model="ir.ui.view">
+            <field name="name">form_exam_type_ta_da</field>
+            <field name="model">exam_section.exam_type.ta_da</field>
+            <field name="type">form</field>
+        </record>
+
+        <record id="tree_exam_type_ta_da_grade_pay_view" model="ir.ui.view">
+            <field name="name">tree_exam_type_ta_da_grade_pay</field>
+            <field name="model">exam.type.tada_grade.pay</field>
+            <field name="type">tree</field>
+        </record>
+        <record id="tree_exam_type_ta_da_pay_level_view" model="ir.ui.view">
+            <field name="name">tree_exam_type_ta_da_pay_level</field>
+            <field name="model">exam.type.tada_pay.level</field>
+            <field name="type">tree</field>
+        </record>
+    </data>
+</tryton>

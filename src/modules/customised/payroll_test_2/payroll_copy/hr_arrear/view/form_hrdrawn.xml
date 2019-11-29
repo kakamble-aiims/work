@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+
+<form>
+    <group id="hrdrawn" col="10">
+        <label name="month_year"/>
+        <field name="month_year"/>
+        <label name="bpay"/>
+        <field name="bpay"/>
+        <label name="npay"/>
+        <field name="npay"/>
+        <label name="da"/>
+        <field name="da"/>
+        <label name="hra"/>
+        <field name="hra"/>
+        <label name="spay"/>
+        <field name="spay"/>
+        <label name="drpa"/>
+        <field name="drpa"/>
+        <label name="cca"/>
+        <field name="cca"/>
+        <label name="trans"/>
+        <field name="trans"/>
+        <label name="gross"/>
+        <field name="gross"/>
+        <label name="hrdrawn"/>
+        <field name="hrdrawn"/>
+    </group>   
+</form>

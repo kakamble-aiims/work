@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<form col="6" >
+    <label name="exam_type" />
+    <field name="exam_type" colspan="3"/>
+    <label name="state" />
+    <field name="state" />
+    <label name="name" />
+    <field name="name" />
+    <label name="date_from" />
+    <field name="date_from" />
+    <label name="date_to" />
+    <field name="date_to" />
+    <label name="total_renumeration_cost"/>
+    <field name="total_renumeration_cost"/>
+    <label name="total_ta_da_cost"/>
+    <field name="total_ta_da_cost"/>
+    <newline/>
+    <notebook colspan="6">
+        <page id="_centers" string="Centers">
+            <field name="centers"/>
+        </page>
+        <page id="_employees" string="Employees">
+            <field name="employees" 
+            view_ids="exam_section.tree_exam_employee_basic"/>
+        </page>
+        <page id="_renumeration" string="Renumeration Bills">
+            <field name="renumeration_bills"/>
+        </page>
+        <page id="_ta_da" string="TA/DA Bills">
+            <field name="ta_da_bills"/>
+        </page>
+    </notebook>
+    <button name="confirm_data" string="Confirm" colspan="2"/>
+    <button name="approve" string="Approve" colspan="2"/>
+    <button name="send_in_progress" string="Start Process" colspan="2"/>
+    <button name="generate_ta_da_bills" string="Generate TA/DA Bills" colspan="2"/>
+    <button name="submit_ta_da_bills" string="TA/DA Bills Submitted" colspan="2"/>
+    <button name="send_for_aao_approval" string="Send for AAO Approval" colspan="2"/>
+    <button name="send_for_ao_approval" string="Send for AO Approval" colspan="2"/>
+    <button name="send_for_ace_approval" string="Send for ACE Approval" colspan="2"/>
+    <button name="send_for_adean_approval" string="Send for Assistant Dean Approval" colspan="2"/>
+    <button name="send_for_dean_approval" string="Send for Dean Approval" colspan="2"/>
+    <button name="send_for_ao_approval_2" string="Send for AO Approval" colspan="2"/>
+    <button name="approve_ta_da" string="Approve TA/DA Bills" colspan="2"/>
+    <button name="send_for_budget_allocation" string="Send for Budget Allocation" colspan="2"/>
+    <button name="send_for_final_process" string="Send for Final Process" colspan="2"/>
+</form>

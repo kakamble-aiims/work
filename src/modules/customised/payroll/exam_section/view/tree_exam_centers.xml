@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<tree editable="top">
+    <field name="location"/>
+    <field name="name" tree_invisible="1"/>
+    <field name="exam"/>
+    <field name="location_code"/>
+</tree>

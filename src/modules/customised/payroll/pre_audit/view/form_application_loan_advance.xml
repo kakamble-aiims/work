@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<form>
+    <label name="state"/>
+    <field name="state"/>
+    <newline/>
+    <label name="employee"/>
+    <field name="employee"/>
+    <newline/>
+    <separator id="_s1" colspan="4"/>
+    <label name="type_of_advance"/>
+    <field name="type_of_advance"/>
+    <newline/>
+    <separator id="_s2" colspan="4"/>
+    <label name="anticipated_price"/>
+    <field name="anticipated_price"/>
+    <newline/>
+    <label name="amt_advance_reqd"/>
+    <field name="amt_advance_reqd"/>
+    <label name="no_of_instalments_desired"/>
+    <field name="no_of_instalments_desired"/>
+    <newline/>
+    <separator id="_s3" colspan="4"/>
+    <label name="advance_similar"/>
+    <field name="advance_similar"/>
+    <newline/>
+    <label name="similar_if_so_date_drawal"/>
+    <field name="similar_if_so_date_drawal"/>
+    <label name="amount_of_advance"/>
+    <field name="amount_of_advance"/>
+    <label name="interest_withstanding"/>
+    <field name="interest_withstanding"/>
+    <newline/>
+    <separator id="_s4" colspan="4"/>
+    <label name="intention_to_purchase_new_old_comp"/>
+    <field name="intention_to_purchase_new_old_comp"/>
+    <newline/>
+    <label name="purchase_through_reputed_agency"/>
+    <field name="purchase_through_reputed_agency"/>
+    <newline/>
+    <separator id="_s5" colspan="4"/>
+    <label name="whether_officer_leave"/>
+    <field name="whether_officer_leave"/>
+    <newline/>
+    <label name="leave_start_date"/>
+    <field name="leave_start_date"/>
+    <label name="leave_end_date"/>
+    <field name="leave_end_date"/>
+    <newline/>
+    <separator id="_s6" colspan="4"/>
+    <label name="negotiations"/>
+    <field name="negotiations"/>
+    <newline/>
+    <separator id="_s7" colspan="4"/>
+    <label name="certified_info_true"/>
+    <field name="certified_info_true"/>
+    <newline/>
+    <separator id="_s8" colspan="4"/>
+    <label name="certified_purchase"/>
+    <field name="certified_purchase"/>
+    <separator id="_s9" colspan="4"/>
+    <field name="signatures" mode="form"/>
+    <newline/>
+    <button name="confirm" string="Confirm" colspan="1" confirm="Are you sure? If you click OK, you will NOT be allowed to make ant changes"/>
+    <button name="send_to_dealing" colspan="1" string="Send to Dealing"/>
+    <button name="send_to_pre_audit" colspan="1" string="Send to Pre-Audit"/>
+    <button name="approve" colspan="1" string="Approve"/>
+    <button name="generate_sanction_bill" colspan="1" string="Generate Sanction Bill"/>
+    <button name="release_loan" colspan="1" string="Release Loan"/> 
+</form>

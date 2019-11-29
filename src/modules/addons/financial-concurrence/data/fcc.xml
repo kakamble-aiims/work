@@ -1,0 +1,292 @@
+<?xml version="1.0"?>
+<tryton>
+<data>
+<record id="particulars_1" model="account.concurrence.checklist.line.item">
+    <field name="name">1. Name of Equipment/Item</field>
+    <field name="stage" ref="fcc_stage_1"/>
+</record>
+<record id="particulars_2" model="account.concurrence.checklist.line.item">
+    <field name="name">2. Amount of foreign component(If information available</field>
+    <field name="stage" ref="fcc_stage_1"/>
+</record>
+<record id="particulars_3" model="account.concurrence.checklist.line.item">
+    <field name="name">3. Estimate cost of the subject item (including  installation &amp; commisioning) with justification/source: based on Privious rates/Last supplies (Like to Like) in Aiims/Govt/PSU hospital/Cost Analysis</field>
+    <field name="stage" ref="fcc_stage_1"/>
+</record>
+<record id="particulars_4" model="account.concurrence.checklist.line.item">
+    <field name="name">4. Whether budget available: As per Annaul Procurement Plan approved by Budget Allocation committee at the start of the year or reviwed later</field>
+    <field name="stage" ref="fcc_stage_1"/>
+</record>
+<record id="particulars_5" model="account.concurrence.checklist.line.item">
+    <field name="name">5. Competent Authority:As per Delegation of Administrative &amp; Finacial Powers</field>
+    <field name="stage" ref="fcc_stage_1"/>
+</record>
+<record id="particulars_6" model="account.concurrence.checklist.line.item">
+    <field name="name">6. TSEC recommendation: Board base specification certificate</field>
+    <field name="stage" ref="fcc_stage_1"/>
+</record>
+<record id="particulars_7" model="account.concurrence.checklist.line.item">
+    <field name="name">7. Whether required site/space available for installation: ESD’s NOC if applicable</field>
+    <field name="stage" ref="fcc_stage_1"/>
+</record>
+<record id="particulars_8" model="account.concurrence.checklist.line.item">
+    <field name="name">8. Whether required Manpower available for fruitful utilization of equipment</field>
+    <field name="stage" ref="fcc_stage_1"/>
+</record>
+<record id="particulars_9" model="account.concurrence.checklist.line.item">
+    <field name="name">9. Whether administrative approval of the competent authority has been obtain to undertake/initialte proposal of procurement</field>
+    <field name="stage" ref="fcc_stage_1"/>
+</record>
+<record id="particulars_10" model="account.concurrence.checklist.line.item">
+    <field name="name">10. Data of approval of SFC(whenever applicable copy of minutes)</field>
+    <field name="stage" ref="fcc_stage_1"/>
+</record>
+<record id="particulars_11" model="account.concurrence.checklist.line.item">
+    <field name="name">1. Whether list of identified/potential suplliers maintained</field>
+    <field name="stage" ref="fcc_stage_2"/>
+</record>
+<record id="particulars_12" model="account.concurrence.checklist.line.item">
+    <field name="name">2. EMD (if not provisioned need explanation)</field>
+    <field name="stage" ref="fcc_stage_2"/>
+</record>
+<record id="particulars_13" model="account.concurrence.checklist.line.item">
+    <field name="name">3. PBG  (if not provisioned need explanation)</field>
+    <field name="stage" ref="fcc_stage_2"/>
+</record>
+<record id="particulars_14" model="account.concurrence.checklist.line.item">
+    <field name="name">4. whether sufficient time has been provided to suppliers as per GFR/PM of AIIMS(specify opening &amp; closing date of tender)</field>
+    <field name="stage" ref="fcc_stage_2"/>
+</record>
+<record id="particulars_15" model="account.concurrence.checklist.line.item">
+    <field name="name">5.whether intimation for Quotation/Tender have been sent to the identified suppliers/service providers</field>
+    <field name="stage" ref="fcc_stage_2"/>
+</record>
+<record id="particulars_16" model="account.concurrence.checklist.line.item">
+    <field name="name">6. whether potential supppliers have been provided with an opportunity to correct unintentianal errors in form(if any) between the opening of submission and any decisions, the same opportunity was provided to all participating potential suppliers</field>
+    <field name="stage" ref="fcc_stage_2"/>
+</record>
+<record id="particulars_17" model="account.concurrence.checklist.line.item">
+    <field name="name">7. Whether pre-bit meeting for addressing concerns of the bidders has been organised (in case of turn-keys contract(s)  of special nature for procurement of sophisticated and costly equipment)</field>
+    <field name="stage" ref="fcc_stage_2"/>
+</record>
+<record id="particulars_18" model="account.concurrence.checklist.line.item">
+    <field name="name">8. Amendment to bid documents(if any) has been carried out and communicated to all concerned and uploaded on the web site</field>
+    <field name="stage" ref="fcc_stage_2"/>
+</record>
+<record id="particulars_19" model="account.concurrence.checklist.line.item">
+    <field name="name">9. Numbers of participated of bidders/bidds recieved</field>
+    <field name="stage" ref="fcc_stage_2"/>
+</record>
+<record id="particulars_20" model="account.concurrence.checklist.line.item">
+    <field name="name">10. Whether technical-bid opening at the scheduled date and time has been done in the presence of the trade repersentative.</field>
+    <field name="stage" ref="fcc_stage_2"/>
+</record>
+<record id="particulars_21" model="account.concurrence.checklist.line.item">
+    <field name="name">1.Whether technical evaluation of the bids. i.e comparing the technical specifaication of quoted items vis-a-vis tender enquiry specification has been done by Technical Experts</field>
+    <field name="stage" ref="fcc_stage_3"/>
+</record>
+<record id="particulars_22" model="account.concurrence.checklist.line.item">
+    <field name="name">2. The Evaluation criteria, weightings and methology as set out in the quatation /tender documents have been used to evaluate the quotes (Deviation) if any pointed out specifically with detailed justification)</field>
+    <field name="stage" ref="fcc_stage_3"/>
+</record>
+<record id="particulars_23" model="account.concurrence.checklist.line.item">
+    <field name="name">3. The detailed reasons for not accepting any quote (technical or financial) have been clearly documneted and accepted by committee concerned</field>
+    <field name="stage" ref="fcc_stage_3"/>
+</record>
+<record id="particulars_24" model="account.concurrence.checklist.line.item">
+    <field name="name">4.An evaluation report has been completed and signed by all members of the Evaluation committee</field>
+    <field name="stage" ref="fcc_stage_3"/>
+</record>
+<record id="particulars_25" model="account.concurrence.checklist.line.item">
+    <field name="name">5. Number of technical shortlisted/Approved bidders</field>
+    <field name="stage" ref="fcc_stage_3"/>
+</record>
+<record id="particulars_26" model="account.concurrence.checklist.line.item">
+    <field name="name">6. Comparitive statement on the basis of the financail bids have been completed and signed by all members of the Evaluation committee</field>
+    <field name="stage" ref="fcc_stage_3"/>
+</record>
+<record id="particulars_27" model="account.concurrence.checklist.line.item">
+    <field name="name">7. Wheter comparative statements submitted by user department have been rechecked and signed by store department</field>
+    <field name="stage" ref="fcc_stage_3"/>
+</record>
+<record id="particulars_28" model="account.concurrence.checklist.line.item">
+    <field name="name">8. Whether equipments falls under Propriety items</field>
+    <field name="stage" ref="fcc_stage_3"/>
+</record>
+<record id="particulars_29" model="account.concurrence.checklist.line.item">
+    <field name="name">9. Whether Proprietary Artical certificate issued by OEM is accepted by Deptt. &amp; HoD, enclosed</field>
+    <field name="stage" ref="fcc_stage_3"/>
+</record>
+<record id="particulars_30" model="account.concurrence.checklist.line.item">
+    <field name="name">10. Whether Proprietary reasonability certificate signed by Deptt. &amp; approved by HoD, enclosed</field>
+    <field name="stage" ref="fcc_stage_3"/>
+</record>
+<record id="particulars_31" model="account.concurrence.checklist.line.item">
+    <field name="name">11.Whether the proposal have Buy-back provision(if yes)</field>
+    <field name="stage" ref="fcc_stage_3"/>
+</record>
+<record id="particulars_32" model="account.concurrence.checklist.line.item">
+    <field name="name">12. Whether shelf life completed (if not, please specify reason for untimely disposal of M &amp; E)</field>
+    <field name="stage" ref="fcc_stage_3"/>
+</record>
+<record id="particulars_33" model="account.concurrence.checklist.line.item">
+    <field name="name">13. Total Cost ( including taxes installation expenditure ) and year of procurementinstallation of Buy-back equipement</field>
+    <field name="stage" ref="fcc_stage_3"/>
+</record>
+<record id="particulars_34" model="account.concurrence.checklist.line.item">
+    <field name="name">14. details of stock entry of buy-back equipments/items. i.e Stock register No. And page no.</field>
+    <field name="stage" ref="fcc_stage_3"/>
+</record>
+<record id="particulars_35" model="account.concurrence.checklist.line.item">
+    <field name="name">15. whether buy-back equipments/items cover under warrenty/CAMC/AMC at the time of disposal(if yes, specify detailed justification of condemnation of old equipment within warrenty/CAMC/AMC period) as accepted by the competent authority</field>
+    <field name="stage" ref="fcc_stage_3"/>
+</record>
+<record id="particulars_36" model="account.concurrence.checklist.line.item">
+    <field name="name">16. Whether recommandations of the Condemnation Committee Placed on records(if yes mentioned page no)</field>
+    <field name="stage" ref="fcc_stage_3"/>
+</record>
+<record id="particulars_37" model="account.concurrence.checklist.line.item">
+    <field name="name">17. Reserve price of the buy-back equipments</field>
+    <field name="stage" ref="fcc_stage_3"/>
+</record>
+<record id="particulars_38" model="account.concurrence.checklist.line.item">
+    <field name="name">18. Statulory requirements/approval of  authority concerned (if any) completed before condemnation buy-back equipments/items</field>
+    <field name="stage" ref="fcc_stage_3"/>
+</record>
+<record id="particulars_39" model="account.concurrence.checklist.line.item">
+    <field name="name">19. No support certificate from original Euipt Manufacturer (OEM)</field>
+    <field name="stage" ref="fcc_stage_3"/>
+</record>
+<record id="particulars_40" model="account.concurrence.checklist.line.item">
+    <field name="name">1. Whether equipment is closed systemi.e requires regent &amp; consumable of rates/ranking</field>
+    <field name="stage" ref="fcc_stage_4"/>
+</record>
+<record id="particulars_41" model="account.concurrence.checklist.line.item">
+    <field name="name">2.If yes: Whether rates of consumable/regents consider for coparision of rate/ranking</field>
+    <field name="stage" ref="fcc_stage_4"/>
+</record>
+<record id="particulars_42" model="account.concurrence.checklist.line.item">
+    <field name="name">3.Whether RC for consumables (M &amp; S) entered in to simultaneously</field>
+    <field name="stage" ref="fcc_stage_4"/>
+</record>
+<record id="particulars_43" model="account.concurrence.checklist.line.item">
+    <field name="name">1.Whether similar equipments have been procured during last 3 years at the institute (Centres/Main Hospital) </field>
+    <field name="stage" ref="fcc_stage_5"/>
+</record>
+<record id="particulars_44" model="account.concurrence.checklist.line.item">
+    <field name="name">2. Whether Bidder has enclosed SO’s  of same/somewhat similar items for claming that he has quoted his best rates</field>
+    <field name="stage" ref="fcc_stage_5"/>
+</record>
+<record id="particulars_45" model="account.concurrence.checklist.line.item">
+    <field name="name">3. If Yes: copies of supply order and price</field>
+    <field name="stage" ref="fcc_stage_5"/>
+</record>
+<record id="particulars_46" model="account.concurrence.checklist.line.item">
+    <field name="name">1. Whether any complaints/representations have been received</field>
+    <field name="stage" ref="fcc_stage_6"/>
+</record>
+<record id="particulars_47" model="account.concurrence.checklist.line.item">
+    <field name="name">2. Whether fully address by user departments and dispose off by technical Evaluation Committee and Stotre Purchase Committe.</field>
+    <field name="stage" ref="fcc_stage_6"/>
+</record>
+<record id="particulars_48" model="account.concurrence.checklist.line.item">
+    <field name="name">3. Whether comments of the user departments to complaints/representations communicated to all concerns</field>
+    <field name="stage" ref="fcc_stage_6"/>
+</record>
+<record id="particulars_49" model="account.concurrence.checklist.line.item">
+    <field name="name">1. Whether justification of rates quoted by lowest evaluated bidder w.r.t last purchase price (LPP) purchase price of othre organisations for similar equipments i.e like to like comparision and estimated price has been placed on record</field>
+    <field name="stage" ref="fcc_stage_7"/>
+</record>
+<record id="particulars_50" model="account.concurrence.checklist.line.item">
+    <field name="name">2.  Whether rates are reasonable as copare to last procurment price (if any) or supply orders issued by any other goverment Institution/hospital/reputed private institution/hospital</field>
+    <field name="stage" ref="fcc_stage_7"/>
+</record>
+<record id="particulars_51" model="account.concurrence.checklist.line.item">
+    <field name="name">3. Whether reasonability certificate (if recommended by Store purchase Committe etc.) issued by user department and placed on records(Please mentioned specific page no.)</field>
+    <field name="stage" ref="fcc_stage_7"/>
+</record>
+<record id="particulars_52" model="account.concurrence.checklist.line.item">
+    <field name="name">1. Reference for last tenders(if any)(All references)</field>
+    <field name="stage" ref="fcc_stage_8"/>
+</record>
+<record id="particulars_53" model="account.concurrence.checklist.line.item">
+    <field name="name">2. Reasons of non-finalization of last tender</field>
+    <field name="stage" ref="fcc_stage_8"/>
+</record>
+<record id="particulars_54" model="account.concurrence.checklist.line.item">
+    <field name="name">3. Whether financial bid of last tender were opened</field>
+    <field name="stage" ref="fcc_stage_8"/>
+</record>
+<record id="particulars_55" model="account.concurrence.checklist.line.item">
+    <field name="name">4. Whether current raytes have been compared with earlier quotes rates.(with prior approval of the competent authority in case earlier financial bids were not opened)</field>
+    <field name="stage" ref="fcc_stage_8"/>
+</record>
+<record id="particulars_56" model="account.concurrence.checklist.line.item">
+    <field name="name">1. CAMC charges (in percentage)</field>
+    <field name="stage" ref="fcc_stage_9"/>
+</record>
+<record id="particulars_57" model="account.concurrence.checklist.line.item">
+    <field name="name">2. Detail justification of higher CAMC charges (in case of CAMC charges are above 5 percent of equipment cost)</field>
+    <field name="stage" ref="fcc_stage_9"/>
+</record>
+<record id="particulars_58" model="account.concurrence.checklist.line.item">
+    <field name="name">Proposed period of RC</field>
+    <field name="stage" ref="fcc_stage_10"/>
+</record>
+<record id="particulars_59" model="account.concurrence.checklist.line.item">
+    <field name="name">If more than 2 years detailed justification of longer RC period </field>
+    <field name="stage" ref="fcc_stage_10"/>
+</record>
+<record id="particulars_60" model="account.concurrence.checklist.line.item">
+    <field name="name">1. Exchnage rate of currencies used in financial bids (as on date of opening of financial bids) and source of exchange rate.</field>
+    <field name="stage" ref="fcc_stage_11"/>
+</record>
+<record id="particulars_61" model="account.concurrence.checklist.line.item">
+    <field name="name">1.Rate of Custom Duty (In case of important items)</field>
+    <field name="stage" ref="fcc_stage_12"/>
+</record>
+<record id="particulars_62" model="account.concurrence.checklist.line.item">
+    <field name="name">1. Whether recommendation of Store Purchase Committee required</field>
+    <field name="stage" ref="fcc_stage_13"/>
+</record>
+<record id="particulars_63" model="account.concurrence.checklist.line.item">
+    <field name="name">2. If yes: date of approval of Store Purchase &amp; minutes</field>
+    <field name="stage" ref="fcc_stage_13"/>
+</record>
+<record id="particulars_64" model="account.concurrence.checklist.line.item">
+    <field name="name">3. Whether recommendation of Negotiation Committee required</field>
+    <field name="stage" ref="fcc_stage_13"/>
+</record>
+<record id="particulars_65" model="account.concurrence.checklist.line.item">
+    <field name="name">4. If yes: date of approval of Negotiation Committee &amp; minutes</field>
+    <field name="stage" ref="fcc_stage_13"/>
+</record>
+<record id="particulars_66" model="account.concurrence.checklist.line.item">
+    <field name="name">1. Cost of the equipment/items (before negotiation</field>
+    <field name="stage" ref="fcc_stage_14"/>
+</record>
+<record id="particulars_67" model="account.concurrence.checklist.line.item">
+    <field name="name">2. Final cost after Negotiation</field>
+    <field name="stage" ref="fcc_stage_14"/>
+</record>
+<record id="particulars_68" model="account.concurrence.checklist.line.item">
+    <field name="name">3. Detail of freebies offered by lowest bidder and accepted by User Deaprtment/SPC etc. (if any)</field>
+    <field name="stage" ref="fcc_stage_14"/>
+</record>
+<record id="particulars_69" model="account.concurrence.checklist.line.item">
+    <field name="name">4. Approval of SFC required (whenever applicable)</field>
+    <field name="stage" ref="fcc_stage_14"/>
+</record>
+<record id="particulars_70" model="account.concurrence.checklist.line.item">
+    <field name="name">1.Will check whether attachments, page no.</field>
+    <field name="stage" ref="fcc_stage_15"/>
+</record>
+<record id="particulars_71" model="account.concurrence.checklist.line.item">
+    <field name="name">2.Verify and check against Rules/Rcs/MoU and submit to AO</field>
+</record>
+<record id="particulars_72" model="account.concurrence.checklist.line.item">
+    <field name="name">3. Will approve or comment &amp; submit for approval of competent financial authority, as per delegation of financial power in this regard. Work flow/ submission will be based on Delegations &amp; FIFO. Proposals required to expedite over FIFO shall require permission of Sr.FA. Overall time being proposed for response in FD is 5-7 Working Day i.e max at DA/JAO/AAO level, max 2 days at AO/ &amp; CAO  max 1-2 days at FA/SrFA level</field>
+    <field name="stage" ref="fcc_stage_15"/>
+</record>
+</data>
+</tryton>

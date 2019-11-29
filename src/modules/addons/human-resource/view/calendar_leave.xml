@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<calendar dtstart="from_date" dtend="to_date">
+    <field name="employee"/>
+    <field name="type_of_leave"/>
+    <field name="remarks"/>
+</calendar>

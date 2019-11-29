@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<tryton>
+    <data>
+
+        <record model="res.user" id="user_managing_crons">
+            <field name="login">user_cron_manage_apar</field>
+            <field name="name">Cron Manage APAR</field>
+            <field name="signature"></field>
+            <field name="active" eval="False"/>
+        </record>
+    </data>
+</tryton>

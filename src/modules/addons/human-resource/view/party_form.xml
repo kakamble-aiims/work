@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<data>
+    <xpath expr="/form/field[@name='name']" position="replace">
+        <group id="party_name">
+            <field name="appellation"/>
+            <field name="name"  xexpand="1"/>
+        </group>
+    </xpath>
+    <xpath expr="/form/group[@id=&quot;checkboxes&quot;]" position="inside">
+        <label name="is_employee"/>
+        <field name="is_employee"/>
+    </xpath>
+</data>

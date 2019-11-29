@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+
+<tryton>
+    <data>
+
+        <!-- Users -->
+        <record model="res.group" id="group_establishment_admin">
+            <field name="name">Establishment Admin</field>
+        </record>
+        <record model="res.group" id="group_head_of_department">
+            <field name="name">Head of Department</field>
+        </record>
+
+        <!-- Tree View-->
+        <record id="tree_department_view" model="ir.ui.view">
+            <field name="name">tree_department</field>
+            <field name="inherit" ref="hr.tree_department_view"/>
+            <field name="model">company.department</field>
+        </record>
+        
+        <!-- Form View -->
+        <record id="form_department_view" model="ir.ui.view">
+            <field name="name">form_department</field>
+            <field name="inherit" ref="hr.form_department_view"/>
+            <field name="model">company.department</field>
+        </record>
+        
+        <!-- Tree View-->
+        <record id="tree_establishment_view" model="ir.ui.view">
+            <field name="name">tree_establishment</field>
+            <field name="model">health.establishment</field>
+            <field name="type">tree</field>
+        </record>
+        
+        <!-- Form View -->
+        <record id="form_establishment_view" model="ir.ui.view">
+            <field name="name">form_establishment</field>
+            <field name="model">health.establishment</field>
+            <field name="type">form</field>
+        </record>
+        
+        <!-- Action -->
+        <record id="action_health_establishment" model="ir.action.act_window">
+            <field name="name">Establishment</field>
+            <field name="res_model">health.establishment</field>
+        </record>
+        
+        <!-- Action link to tree -->
+        <record id="act_tree_view_establishment" model="ir.action.act_window.view">
+            <field name="view" ref="tree_establishment_view"/>
+            <field name="act_window" ref="action_health_establishment"/>
+            <field name="sequence" eval="10"/>
+        </record>
+
+        <!-- Action link to form -->
+        <record id="act_form_view_establishment" model="ir.action.act_window.view">
+            <field name="view" ref="form_establishment_view"/>
+            <field name="act_window" ref="action_health_establishment"/>
+            <field name="sequence" eval="20"/>
+        </record>
+        
+        <menuitem id="menu_establishment"
+            parent="hr.menu_hr_configuration" action="action_health_establishment" sequence="100"/>
+    </data>
+</tryton>
+

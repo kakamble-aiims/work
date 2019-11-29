@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+
+<tryton>
+    <data>
+        <menuitem id="menu_lra" name="lra"/>
+        <!-- Form View -->
+        <record id="form_lra_view" model="ir.ui.view">
+            <field name="name">form_lra</field>
+            <field name="model">lra.allowance</field>
+            <field name="type">form</field>
+        </record>
+
+        <!-- Tree View -->
+        <record id="tree_lra_view" model="ir.ui.view">
+            <field name="name">tree_lra</field>
+            <field name="model">lra.allowance</field>
+            <field name="type">tree</field>
+        </record>
+
+        <!-- Action -->
+        <record id="action_lra" model="ir.action.act_window">
+            <field name="name">lra Allowance</field>
+            <field name="res_model">lra.allowance</field>
+        </record>
+
+        <!-- Link to Tree -->
+        <record id="act_lra_tree" model="ir.action.act_window.view">
+            <field name="act_window" ref="action_lra"/>
+            <field name="view" ref="tree_lra_view"/>
+            <field name="sequence" eval="10"/>
+        </record>
+
+        <!-- Link to Form -->
+        <record id="act_lra_form" model="ir.action.act_window.view">
+            <field name="act_window" ref="action_lra"/>
+            <field name="view" ref="form_lra_view"/>
+            <field name="sequence">20</field>
+        </record>
+
+        <!-- Menu -->
+        <menuitem id="menu_lra_subitem" name="Lra Allowance" parent="menu_lra" action="action_lra"/>
+    </data>
+</tryton>

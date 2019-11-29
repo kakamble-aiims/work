@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<tree editable="top">
+    <field name="date_time_journey" widget="date"/>
+    <field name="date_time_journey" widget="time"/>
+    <field name="from_location"/>
+    <field name="to_location"/>
+    <field name="mode_of_journey"/>
+    <field name="sharing"/>
+    <field name="journey_distance"/>
+    <field name="journey_amount"/>
+</tree>

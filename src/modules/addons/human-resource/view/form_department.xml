@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<form>
+    <group id="department_header">
+        <label name="name"/>
+        <field name="name"/>
+        <label name="code"/>
+        <field name="code"/>
+        <label name="parent"/>
+        <field name="parent"/>
+        <label name="head"/>
+        <field name="head"/>
+    </group>
+    <notebook>
+        <page string="Employees" id="employees">
+            <field name="employees" colspan="4"/>
+        </page>
+        <page string="Postings" id="postings">
+            <field name="postings" colspan="4"/>
+        </page>
+        <page string="Sub-Departments" id="subdepartments">
+            <field name="childs" colspan="4"/>
+            <field name="note" colspan="4"/>
+        </page>
+    </notebook>
+</form>

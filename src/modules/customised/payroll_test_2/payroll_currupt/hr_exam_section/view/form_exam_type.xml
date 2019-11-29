@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<form>
+    <label name="name"/>
+    <field name="name"/>
+    <label name="type_exam"/>
+    <field name="type_exam"/>
+    <label name="payment_basis"/>
+    <field name="payment_basis" widget="selection"/>
+    <label name="active"/>
+    <field name="active"/>
+    <label name="is_ta_applicable"/>
+    <field name="is_ta_applicable"/>
+    <notebook>
+        <page id="_renumeration" string="Renumeration">
+            <field name="renumeration"/>
+        </page>
+        <page id="_ta_da" string="TA/DA">
+            <field name="ta_da"/>
+        </page>
+    </notebook>
+</form>

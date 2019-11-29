@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<tryton>
+    <data>
+        <record id="salaryrule_basic" model="hr.salary.rule.category">
+            <field name="name">Basic</field>
+            <field name="code">BASIC</field>
+        </record>
+        <record id="salaryrule_alw" model="hr.salary.rule.category">
+            <field name="name">Allowance</field>
+            <field name="code">ALW</field>
+        </record>
+        <record id="salaryrule_gross" model="hr.salary.rule.category">
+            <field name="name">Gross</field>
+            <field name="code">GROSS</field>
+        </record>
+        <record id="salaryrule_ded" model="hr.salary.rule.category">
+            <field name="name">Deduction</field>
+            <field name="code">DED</field>
+        </record>
+        <record id="salaryrule_tax" model="hr.salary.rule.category">
+            <field name="name">Tax</field>
+            <field name="code">TAX</field>
+        </record>
+        <record id="salaryrule_net" model="hr.salary.rule.category">
+            <field name="name">Net</field>
+            <field name="code">NET</field>
+        </record>
+        <record id="salaryrule_rem" model="hr.salary.rule.category">
+            <field name="name">Remuneration</field>
+            <field name="code">REM</field>
+        </record>
+        <record id="salaryrule_tds" model="hr.salary.rule.category">
+            <field name="name">Tds</field>
+            <field name="code">TDS</field>
+        </record>
+
+    </data>
+</tryton>

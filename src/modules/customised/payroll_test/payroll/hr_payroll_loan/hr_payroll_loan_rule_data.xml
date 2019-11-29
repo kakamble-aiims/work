@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+
+<tryton>
+    <data>
+         <record id="hr_rule_computer_loan" model="salary.rule">
+            <field name="name">COMPUTER Loan</field>
+            <field name="priority" eval="51003"/>
+            <field name="code">COM_Loan</field>
+            <field name="category" ref="payroll.salaryrule_ded"/>
+            <field name="condition_select">always_true</field>
+            <field name="amount_select">code</field>
+        </record>
+       <record id="hr_rule_hba_loan" model="salary.rule">
+            <field name="name">HBA Loan</field>
+            <field name="priority" eval="51004"/>
+            <field name="code">HBA_Loan</field>
+            <field name="category" ref="payroll.salaryrule_ded"/>
+            <field name="condition_select">always_true</field>
+            <field name="amount_select">code</field>
+        </record>
+    </data>
+</tryton>

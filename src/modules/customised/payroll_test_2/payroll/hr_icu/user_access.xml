@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<tryton>
+    <data>
+        <!-- Button-Group Access -->
+        <record model="ir.model.button"
+            id="button_icu_submit">
+            <field name="name">submit</field>
+            <field name="model"
+                search="[('model', '=', 'hr.allowance.icu')]"/>
+        </record>
+        <record model="ir.model.button-res.group"
+            id="button_access_icu_submit">
+            <field name="button" ref="button_icu_submit"/>
+            <field name="group" ref="base.group_employee_admin"/>
+        </record>
+        <record model="ir.model.button"
+            id="button_icu_section_officer">
+            <field name="name">send_for_cash_section_officer_approval</field>
+            <field name="model"
+                search="[('model', '=', 'hr.allowance.icu')]"/>
+        </record>
+        <record model="ir.model.button-res.group"
+            id="button_access_cash_section_officer">
+            <field name="button" ref="button_icu_section_officer"/>
+            <field name="group" ref="base.group_employee_admin"/>
+        </record>
+        <record model="ir.model.button"
+            id="button_icu_approve">
+            <field name="name">approve</field>
+            <field name="model"
+                search="[('model', '=', 'hr.allowance.icu')]"/>
+        </record>
+        <record model="ir.model.button-res.group"
+            id="button_access_icu_approve">
+            <field name="button" ref="button_icu_approve"/>
+            <field name="group" ref="base.group_cash_section_officer"/>
+        </record>
+        <record model="ir.model.button"
+            id="button_icu_cancel">
+            <field name="name">cancel</field>
+            <field name="model"
+                search="[('model', '=', 'hr.allowance.icu')]"/>
+        </record>
+    </data>
+</tryton>

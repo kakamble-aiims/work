@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+
+<form>
+    <group id="apar_template_question_form">
+        <label name="question_no" />
+        <field name="question_no"/>
+        <newline/>
+        <label name="name" />
+        <field name="name" colspan="3"/>
+        <label name="section"/>
+        <field name="section"/>
+        <label name="part"/>
+        <field name="part"/>
+    </group>
+</form>

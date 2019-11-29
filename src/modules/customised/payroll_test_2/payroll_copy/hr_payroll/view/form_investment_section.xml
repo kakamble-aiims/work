@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+
+<form>
+    <label name="name"/>
+    <field name="name"/>
+    <label name="allowed_limit"/>
+    <field name="allowed_limit"/>
+    <newline/>
+    <group id="income_tax_schemes" colspan="4" col="4">
+        <field name="schemes"/>
+    </group>
+</form>

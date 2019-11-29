@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+
+<tree>
+	<field name="employee"/>
+	<field name="salary_code"/>
+    <field name="designation"/>
+    <field name="department"/>
+    <field name="gpf_number"/>
+</tree>

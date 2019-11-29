@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<form>
+    <group id="gpf_reason">
+        <label name="name"/>
+        <field name="name"/>
+        <label name="refund"/>
+        <field name="refund"/>
+    </group>
+</form>

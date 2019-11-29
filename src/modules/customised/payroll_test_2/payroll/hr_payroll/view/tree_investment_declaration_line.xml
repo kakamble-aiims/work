@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+	<tree editable = "top">
+		<field name="scheme"/>
+        <field name="section"/>
+        <field name="actual_amount"/>
+        <field name="remarks"/>
+	</tree>

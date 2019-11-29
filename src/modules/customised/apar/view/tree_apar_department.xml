@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<tree>
+    <field name="establishment"/>
+    <field name="department" />
+    <field name="head" />
+    <field name="date_from" />
+    <field name="date_to" />
+    <field name="state"/>
+</tree>

@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+	<tree>
+		<field name="salary_code"/>
+        <field name="employee"/>
+        <field name="designation"/>
+        <field name="department"/>
+        <field name="start_date"/>
+        <field name="end_date"/>
+	</tree>

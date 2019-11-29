@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+
+<form>
+    <group id="employee_details_form">
+        <label name="salary_code"/>
+        <field name="salary_code"/>
+        <label name="employee"/>
+        <field name="employee"/>
+        <label name="date"/>
+        <field name="date"/>
+        <label name="bill_month"/>
+        <field name="bill_month"/>
+        <label name="state"/>
+        <field name="state"/>
+        <label name="remarks"/>
+        <field name="remarks"/>
+    </group>
+    <newline/>
+    <field name="emb_fee"/>
+    <newline/>
+    <group id="emb_workflow_ids" colspan="4" col="6">
+        <button name="submit_to_hod" string="Forward to HOD" colspan="2"/>
+        <button name="confirm" string="Confirm"/>
+        <button name="cancel" string="Cancel"/>
+        <button name="cancel_submission_hod" string="Cancel"/>
+        <button name="submit_to_ao" string="Forward to AO"/>
+        <button name="approve_for_ao" string="Approve" colspan="2"/>
+        <button name="cancel_submission_ao" string="Cancel"/>
+    </group>
+</form>

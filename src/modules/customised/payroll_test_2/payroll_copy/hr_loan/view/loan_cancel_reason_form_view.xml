@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<form>
+    <group id="laon_cancel_reason">
+        <label name="name"/>
+        <field name="name"/>
+    </group>
+</form>

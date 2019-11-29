@@ -1,0 +1,117 @@
+<?xml version="1.0"?>
+
+<tryton>
+    <data>
+        <menuitem id="menu_loan" name="Loan" parent="hr.menu_hr" sequence="8"/>
+
+        <!-- Tree View-->
+        <record id="tree_computer_loan_view" model="ir.ui.view">
+            <field name="name">computer_loan_tree_view</field>
+            <field name="model">computer.loan</field>
+            <field name="type">tree</field>
+        </record>
+        
+        <!-- Form View -->
+        <record id="form_computer_loan_view" model="ir.ui.view">
+            <field name="name">computer_loan_form_view</field>
+            <field name="model">computer.loan</field>
+            <field name="type">form</field>
+        </record>
+
+         <!-- Action -->
+        <record id="action_computer_loan" model="ir.action.act_window">
+            <field name="name">Computer Loan</field>
+            <field name="res_model">computer.loan</field>
+        </record>
+        
+        <!-- Action link to tree -->
+        <record id="act_tree_view_computer_loan" model="ir.action.act_window.view">
+            <field name="view" ref="tree_computer_loan_view"/>
+            <field name="act_window" ref="action_computer_loan"/>
+            <field name="sequence" eval="10"/>
+        </record>
+
+        <!-- Action link to form -->
+        <record id="act_form_view_computer_loan" model="ir.action.act_window.view">
+            <field name="view" ref="form_computer_loan_view"/>
+            <field name="act_window" ref="action_computer_loan"/>
+            <field name="sequence" eval="20"/>
+        </record>
+        <!-- Loan Cancel REASON -->
+        <!-- Tree View-->
+        <record id="tree_loan_cancel_reason_view" model="ir.ui.view">
+            <field name="name">loan_cancel_reason_tree_view</field>
+            <field name="model">loan.cancel.reason</field>
+            <field name="type">tree</field>
+        </record>
+        
+        <!-- Form View -->
+        <record id="form_loan_cancel_reason_view" model="ir.ui.view">
+            <field name="name">loan_cancel_reason_form_view</field>
+            <field name="model">loan.cancel.reason</field>
+            <field name="type">form</field>
+        </record>
+
+         <!-- Action -->
+        <record id="action_loan_cancel_reason" model="ir.action.act_window">
+            <field name="name">Loan Cancel Reason</field>
+            <field name="res_model">loan.cancel.reason</field>
+        </record>
+        
+        <!-- Action link to tree -->
+        <record id="act_tree_view_loan_cancel_reason" model="ir.action.act_window.view">
+            <field name="view" ref="tree_loan_cancel_reason_view"/>
+            <field name="act_window" ref="action_loan_cancel_reason"/>
+            <field name="sequence" eval="10"/>
+        </record>
+
+        <!-- Action link to form -->
+        <record id="act_form_view_loan_cancel_reason" model="ir.action.act_window.view">
+            <field name="view" ref="form_loan_cancel_reason_view"/>
+            <field name="act_window" ref="action_loan_cancel_reason"/>
+            <field name="sequence" eval="20"/>
+        </record>
+
+         <!-- Loan Lines -->
+        <!-- Tree View-->
+        <record id="tree_loan_line_view" model="ir.ui.view">
+            <field name="name">loan_line_tree</field>
+            <field name="model">loan.line</field>
+            <field name="type">tree</field>
+        </record>
+        
+        <!-- Form View -->
+        <record id="form_loan_line_view" model="ir.ui.view">
+            <field name="name">loan_line_form</field>
+            <field name="model">loan.line</field>
+            <field name="type">form</field>
+        </record>
+
+         <!-- Action -->
+        <record id="action_loan_line" model="ir.action.act_window">
+            <field name="name">Loan Line</field>
+            <field name="res_model">loan.line</field>
+        </record>
+        
+        <!-- Action link to tree -->
+        <record id="act_tree_view_loan_line" model="ir.action.act_window.view">
+            <field name="view" ref="tree_loan_line_view"/>
+            <field name="act_window" ref="action_loan_line"/>
+            <field name="sequence" eval="10"/>
+        </record>
+
+        <!-- Action link to form -->
+        <record id="act_form_view_loan_line" model="ir.action.act_window.view">
+            <field name="view" ref="form_loan_line_view"/>
+            <field name="act_window" ref="action_loan_line"/>
+            <field name="sequence" eval="20"/>
+        </record>
+
+        <menuitem id="menu_computer_loan" name="Computer Loan"
+            parent="menu_loan"
+            action="action_computer_loan" sequence="1"/>
+        <menuitem id="menu_loan_reason" name="Loan Cancel Reason"
+            parent="menu_loan"
+            action="action_loan_cancel_reason" sequence="2"/>
+        </data>
+    </tryton>

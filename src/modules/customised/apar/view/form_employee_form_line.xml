@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+
+<form>
+    <field name="question_text" readonly="1" colspan="4"/>
+    <separator string="Answer:" colspan="4" id="sep_answer"/>
+    <field name="answer" colspan="4"/>
+</form>

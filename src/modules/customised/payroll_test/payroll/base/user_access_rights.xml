@@ -1,0 +1,212 @@
+<?xml version="1.0"?>
+
+<tryton>
+    <data>
+<!-- Create the Account Officer group -->
+        <record model="res.group" id="group_account_officer">
+            <field name="name"> Base Account Officer</field>
+        </record>
+<!-- Assign the Group to the "admin" user -->
+        <record model="res.user-res.group" id="user_admin_group_account">
+            <field name="user" ref="res.user_admin"/>
+            <field name="group" ref="group_account_officer"/>
+        </record>
+<!-- Create the Junior Account Officer group -->
+        <record model="res.group" id="group_junior_account_officer">
+            <field name="name">Junior Account Officer</field>
+        </record>
+<!-- Assign the Group to the "admin" user -->
+        <record model="res.user-res.group" id="admin_group_junior_account">
+            <field name="user" ref="res.user_admin"/>
+            <field name="group" ref="group_junior_account_officer"/>
+        </record>
+<!-- Create the Employee group -->
+        <record model="res.group" id="group_employee_admin">
+            <field name="name"> Base Employee</field>
+        </record>
+<!-- Assign the Group to the "employee" user -->
+      <record model="res.user-res.group" id="admin_group_employee">
+            <field name="user" ref="res.user_admin"/>
+            <field name="group" ref="group_employee_admin"/>
+        </record>
+<!-- Create the Administrative officer group -->
+        <record model="res.group" id="group_Administrative officer">
+            <field name="name">Administrative Officer</field>
+        </record>
+<!-- Assign the Group to the "admin" user -->
+        <record model="res.user-res.group" 
+        id="admin_group_Administrative_officer">
+            <field name="user" ref="res.user_admin"/>
+            <field name="group" ref="group_Administrative officer"/>
+        </record>
+<!-- Create the Exam Administrative officer group -->
+        <record model="res.group" id="group_Exam_Administrative officer">
+            <field name="name">Exam Administrative officer</field>
+        </record>
+<!-- Assign the Group to the "admin" user -->
+        <record model="res.user-res.group" 
+        id="admin_group_Exam_Administrative officer">
+            <field name="user" ref="res.user_admin"/>
+            <field name="group" ref="group_Exam_Administrative officer"/>
+        </record>        
+<!-- Create the Assistant Exam Administrative officer group -->
+        <record model="res.group"
+        id="group_Assistant_Exam_Administrative officer">
+            <field name="name">Assistant Exam Administrative officer </field>
+        </record>
+<!-- Assign the Group to the "admin" user -->
+        <record model="res.user-res.group"
+        id="admin_group_Assistant_Exam_Administrative officer">
+            <field name="user" ref="res.user_admin"/>
+            <field name="group" ref="group_Assistant_Exam_Administrative officer"/>
+        </record>        
+<!-- Create the Assistant Controller Exam group -->
+        <record model="res.group" id="group_Assistant_Controller_Exam">
+            <field name="name">Assistant Controller Exam</field>
+        </record>
+<!-- Assign the Group to the "admin" user -->
+        <record model="res.user-res.group"
+        id="admin_group_Assistant_Exam_Controller">
+            <field name="user" ref="res.user_admin"/>
+            <field name="group" ref="group_Assistant_Controller_Exam"/>
+        </record>        
+<!-- Create the Assistant Dean Exam group -->
+        <record model="res.group" id="group_Assistant_Dean_Exam">
+            <field name="name">Assistant Dean Exam</field>
+        </record>
+<!-- Assign the Group to the "admin" user -->
+        <record model="res.user-res.group" id="admin_group_Assistant_Exam_Dean">
+            <field name="user" ref="res.user_admin"/>
+            <field name="group" ref="group_Assistant_Dean_Exam"/>
+        </record>        
+<!-- Create the Dean group -->
+        <record model="res.group" id="group_Dean">
+            <field name="name">Dean</field>
+        </record>
+<!-- Assign the Group to the "admin" user -->
+        <record model="res.user-res.group" id="admin_group_Dean">
+            <field name="user" ref="res.user_admin"/>
+            <field name="group" ref="group_Dean"/>
+        </record>  
+<!-- Create the Head of Department group -->
+        <record model="res.group" id="group_HOD">
+            <field name="name">Head of Department</field>
+        </record>
+<!-- Assign the Group to the "admin" user -->
+        <record model="res.user-res.group" id="admin_group_HOD">
+            <field name="user" ref="res.user_admin"/>
+            <field name="group" ref="group_HOD"/>
+        </record> 
+<!-- Create the Administrative officer Estate group -->
+        <record model="res.group" id="group_Estate">
+            <field name="name">Administrative officer Estate</field>
+        </record>
+<!-- Assign the Group to the "admin" user -->
+        <record model="res.user-res.group" id="admin_group_Estate">
+            <field name="user" ref="res.user_admin"/>
+            <field name="group" ref="group_Estate"/>
+        </record>  
+<!-- Create the Assistant Administrative officer Estate group -->
+        <record model="res.group" id="group_Assistant_Estate">
+            <field name="name">Assistant Administrative officer Estate</field>
+        </record>
+<!-- Assign the Group to the "admin" user -->
+        <record model="res.user-res.group" id="admin_group_Assistant_Estate">
+            <field name="user" ref="res.user_admin"/>
+            <field name="group" ref="group_Assistant_Estate"/>
+        </record>  
+<!-- Create the Dealing Cash Section group -->
+        <record model="res.group" id="group_Dealing_Cash_Section">
+            <field name="name">Dealing Cash Section</field>
+        </record>
+<!-- Assign the Group to the "admin" user -->
+        <record model="res.user-res.group" id="admin_group_Dealing_Cash_Section">
+            <field name="user" ref="res.user_admin"/>
+            <field name="group" ref="group_Dealing_Cash_Section"/>
+        </record> 
+<!-- Create the Dealing Pre_Audit group -->
+        <record model="res.group" id="group_Dealing_Pre_Audit">
+            <field name="name">Dealing Pre audit</field>
+        </record>
+<!-- Assign the Group to the "admin" user -->
+        <record model="res.user-res.group" id="admin_group_Dealing_Pre_Audit">
+            <field name="user" ref="res.user_admin"/>
+            <field name="group" ref="group_Dealing_Pre_Audit"/>
+        </record> 
+<!-- Create the GPF Office Incharge group -->
+        <record model="res.group" id="group_GPF_Officer_Incharge">
+            <field name="name">GPF Office Incharge</field>
+        </record>
+<!-- Assign the Group to the "admin" user -->
+        <record model="res.user-res.group" id="admin_group_GPF_Officer_Incharge">
+            <field name="user" ref="res.user_admin"/>
+            <field name="group" ref="group_GPF_Officer_Incharge"/>
+        </record> s 
+<!-- Create the Financial Advisor and Chief Accounts Officer group -->
+        <record model="res.group" 
+        id="group_Financial_Advisor_Chief_Accounts_Officer">
+            <field name="name">Financial Advisor and Chief Accounts Officer</field>
+        </record>
+<!-- Assign the Group to the "admin" user -->
+        <record model="res.user-res.group"
+        id="admin_group_Financial_Advisor_Chief_Accounts_Officer">
+            <field name="user" ref="res.user_admin"/>
+            <field name="group" ref="group_Financial_Advisor_Chief_Accounts_Officer"/>
+        </record> 
+<!-- Create the Dealing Tax group -->
+        <record model="res.group" id="group_Dealing_Tax">
+            <field name="name">Dealing Tax</field>
+        </record>
+<!-- Assign the Group to the "admin" user -->
+        <record model="res.user-res.group" id="admin_group_Dealing_Tax">
+            <field name="user" ref="res.user_admin"/>
+            <field name="group" ref="group_Dealing_Tax"/>
+        </record>  
+<!-- Create the Junior Account Officer Arrear group -->
+        <record model="res.group" id="group_Junior_Account_Officer_Arrear">
+            <field name="name">Junior Account Officer Arrear</field>
+        </record>
+<!-- Assign the Group to the "admin" user -->
+        <record model="res.user-res.group" 
+        id="admin_group_Junior_Account_Officer_Arrear">
+            <field name="user" ref="res.user_admin"/>
+            <field name="group" ref="group_Junior_Account_Officer_Arrear"/>
+        </record>    
+<!-- Create the Account Officer Arrear group -->
+        <record model="res.group" id="group_Account_Officer_Arrear">
+            <field name="name">Account Officer Arrear</field>
+        </record>
+<!-- Assign the Group to the "admin" user -->
+        <record model="res.user-res.group" id="admin_group_Account_Officer_Arrear">
+            <field name="user" ref="res.user_admin"/>
+            <field name="group" ref="group_Account_Officer_Arrear"/>
+        </record> 
+<!-- Create the Account Officer Academic group -->
+        <record model="res.group" id="group_Account_Officer_Academic">
+            <field name="name">Account Officer Academic</field>
+        </record>
+<!-- Assign the Group to the "admin" user -->
+        <record model="res.user-res.group" id="admin_group_Account_Officer_Academic">
+            <field name="user" ref="res.user_admin"/>
+            <field name="group" ref="group_Account_Officer_Academic"/>
+        </record> 
+<!-- Create the Head of Department anatomy group -->
+        <record model="res.group" id="group_HOD_Anatomy">
+            <field name="name">Head of Department anatomy</field>
+        </record>
+<!-- Assign the Group to the "admin" user -->
+        <record model="res.user-res.group" id="admin_HOD_Anatomy">
+            <field name="user" ref="res.user_admin"/>
+            <field name="group" ref="group_HOD_Anatomy"/>
+        </record>  
+<!-- Create the Account Officer Embalming group -->
+        <record model="res.group" id="group_Account_Officer_Embalming">
+            <field name="name">Account Officer Embalming</field>
+        </record>
+<!-- Assign the Group to the "admin" user -->
+        <record model="res.user-res.group" id="admin_Account Officer Embalming">
+            <field name="user" ref="res.user_admin"/>
+            <field name="group" ref="group_Account_Officer_Embalming"/>
+        </record>                                                                                              
+    </data>
+</tryton>   

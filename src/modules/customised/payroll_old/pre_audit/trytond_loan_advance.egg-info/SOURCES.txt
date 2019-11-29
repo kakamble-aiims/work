@@ -1,0 +1,15 @@
+setup.py
+./__init__.py
+./loan_advance.py
+./loan_advance.xml
+./tryton.cfg
+./view/form_application_loan_advance.xml
+./view/form_application_signature.xml
+./view/tree_application_loan_advance.xml
+trytond_loan_advance.egg-info/PKG-INFO
+trytond_loan_advance.egg-info/SOURCES.txt
+trytond_loan_advance.egg-info/dependency_links.txt
+trytond_loan_advance.egg-info/entry_points.txt
+trytond_loan_advance.egg-info/not-zip-safe
+trytond_loan_advance.egg-info/requires.txt
+trytond_loan_advance.egg-info/top_level.txt

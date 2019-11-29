@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<tree>
+    <field name="employee"/>
+    <field name="type_of_leave"/>
+    <field name="from_date"/>
+    <field name="to_date"/>
+    <field name="remarks"/>
+</tree>

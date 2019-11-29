@@ -1,0 +1,246 @@
+<?xml version="1.0"?>
+<tryton>
+    <data>
+
+         <record id="template_tutor_nursing" model="apar.form.template">
+            <field name="name">Senior Tutor in Nursing / Tutor in Nursing</field>
+            <field name="form_number">13</field>
+        </record>
+
+        <record id="template_tutor_nursing_part2" model="apar.form.template.part">
+            <field name="name">Self Appraisal for the Year(To be filled by the Ratee Officer)</field>
+            <field name="number">2</field>
+            <field name="template" ref="template_tutor_nursing"/>
+            <field name="type_">self_appraisal</field>
+        </record>
+        <record id="template_tutor_nursing_part3" model="apar.form.template.part">
+            <field name="name">Appraisal(To be filled by Reporting Officer and To be reviewed by Reviewing Officer)</field>
+            <field name="number">3 and 4</field>
+            <field name="template" ref="template_tutor_nursing"/>
+            <field name="type_">appraisal</field>
+        </record>
+        <record id="template_tutor_nursing_part5" model="apar.form.template.part">
+            <field name="name">Review(To be filled by the Reviewing Officer)</field>
+            <field name="number">5</field>
+            <field name="template" ref="template_tutor_nursing"/>
+            <field name="type_">reviewing</field>
+        </record>
+
+        <record id="section_tutor_nursing_1" model="apar.form.template.section">
+            <field name="name">Assessment of work output</field>
+            <field name="weightage">40</field>
+            <field name="number">3.1</field>
+            <field name="part" ref="template_tutor_nursing_part3"/>
+        </record>
+
+        <record id="section_tutor_nursing_2" model="apar.form.template.section">
+            <field name="name">Assessment of Personal Attributes</field>
+            <field name="weightage">30</field>
+            <field name="number">3.2</field>
+            <field name="part" ref="template_tutor_nursing_part3"/>
+        </record>
+        <record id="section_tutor_nursing_3" model="apar.form.template.section">
+            <field name="name">Assessment of functional Competency</field>
+            <field name="weightage">30</field>
+            <field name="number">3.3</field>
+            <field name="part" ref="template_tutor_nursing_part3"/>
+        </record>
+<record id="template_tutor_nursing_question1" model="apar.form.template.question">
+            <field name="question_no">2.1</field>
+            <field name="name">Brief description of duties of post:</field>
+            <field name="part" ref="template_tutor_nursing_part2"/>
+        </record>
+<record id="template_tutor_nursing_question2" model="apar.form.template.question">
+            <field name="question_no">2.2</field>
+            <field name="name">Clinical/ Teaching (Hours per week/ Year Spent by you in clinical teaching, &#xA; demonstrations/ tutorials):</field>
+            <field name="part" ref="template_tutor_nursing_part2"/>
+        </record>
+<record id="template_tutor_nursing_question3" model="apar.form.template.question">
+            <field name="question_no">2.3</field>
+            <field name="name">Undergraduate/ P.G. Training:</field>
+            <field name="part" ref="template_tutor_nursing_part2"/>
+        </record>
+<record id="template_tutor_nursing_question4" model="apar.form.template.question">
+            <field name="question_no">2.3.1</field>
+            <field name="name">No. of lectures allotted to the official </field>
+            <field name="part" ref="template_tutor_nursing_part2"/>
+        </record>
+<record id="template_tutor_nursing_question5" model="apar.form.template.question">
+            <field name="question_no">2.3.2</field>
+            <field name="name">No. of lectures taken by the official</field>
+            <field name="part" ref="template_tutor_nursing_part2"/>
+        </record>
+<record id="template_tutor_nursing_question6" model="apar.form.template.question">
+            <field name="question_no">2.4</field>
+            <field name="name">Research:</field>
+            <field name="part" ref="template_tutor_nursing_part2"/>
+        </record>
+<record id="template_tutor_nursing_question7" model="apar.form.template.question">
+            <field name="question_no">2.4.a</field>
+            <field name="name">Title of Research projects in which you have been involved &#xA; in the previous year as:</field>
+            <field name="part" ref="template_tutor_nursing_part2"/>
+        </record>
+<record id="template_tutor_nursing_question8" model="apar.form.template.question">
+            <field name="question_no">2.4.a.i</field>
+            <field name="name">Chief Investigator</field>
+            <field name="part" ref="template_tutor_nursing_part2"/>
+        </record>
+<record id="template_tutor_nursing_question9" model="apar.form.template.question">
+            <field name="question_no">2.4.a.ii</field>
+            <field name="name">Co-investigation </field>
+            <field name="part" ref="template_tutor_nursing_part2"/>
+        </record>
+<record id="template_tutor_nursing_question10" model="apar.form.template.question">
+            <field name="question_no">2.4.b</field>
+            <field name="name">Mention list of publications by the official</field>
+            <field name="part" ref="template_tutor_nursing_part2"/>
+        </record>
+<record id="template_tutor_nursing_question11" model="apar.form.template.question">
+            <field name="question_no">2.4.b</field>
+            <field name="name">Describe list of papers presented by official in conference/workshops</field>
+            <field name="part" ref="template_tutor_nursing_part2"/>
+        </record>
+<record id="template_tutor_nursing_question12" model="apar.form.template.question">
+            <field name="question_no">2.5</field>
+            <field name="name">Have you filed your immovable property return as due? If yes, please mention date:</field>
+            <field name="part" ref="template_tutor_nursing_part2"/>
+        </record>
+<record id="template_tutor_nursing_question13" model="apar.form.template.question">
+            <field name="question_no">2.6</field>
+            <field name="name">Any other additional and unforeseen assignments carried out/ Initiatives &#xA; undertaken worth mentioning:</field>
+            <field name="part" ref="template_tutor_nursing_part2"/>
+        </record>
+<record id="template_tutor_nursing_question14" model="apar.form.template.question">
+            <field name="question_no">4.1</field>
+            <field name="name">Integrity: Please comment on integrity of the officer:</field>
+            <field name="part" ref="template_tutor_nursing_part3"/>
+        </record>
+<record id="template_tutor_nursing_question15" model="apar.form.template.question">
+            <field name="question_no">4.2.i</field>
+            <field name="name">Sate of Health</field>
+            <field name="part" ref="template_tutor_nursing_part3"/>
+        </record>
+<record id="template_tutor_nursing_question16" model="apar.form.template.question">
+            <field name="question_no">4.2.ii</field>
+            <field name="name">Attitude towards weaker section and SC/ST/OBC</field>
+            <field name="part" ref="template_tutor_nursing_part3"/>
+        </record>
+<record id="template_tutor_nursing_question17" model="apar.form.template.question">
+            <field name="question_no">4.2.iii</field>
+            <field name="name">Aptitude and potential please mention about the aptitude of the officer and areas &#xA; in which he/she has potential to develop along with training needs. </field>
+            <field name="part" ref="template_tutor_nursing_part3"/>
+        </record>
+<record id="template_tutor_nursing_question18" model="apar.form.template.question">
+            <field name="question_no">4.3</field>
+            <field name="name">Pen Picture in about 70 words:</field>
+            <field name="part" ref="template_tutor_nursing_part3"/>
+        </record>
+<record id="template_tutor_nursing_question19" model="apar.form.template.question">
+            <field name="question_no">5.1</field>
+            <field name="name">Length of Service under Reviewing Authority:</field>
+            <field name="part" ref="template_tutor_nursing_part5"/>
+        </record>
+<record id="template_tutor_nursing_question20" model="apar.form.template.question">
+            <field name="question_no">5.2</field>
+            <field name="name">Do you agree with the assessment made by the Reporting Officer with respect to the &#xA; work output and various attributes in Part-III. In case you do not agree with any of the &#xA; numerical assessment or attitudes, please record your assessments in column provided for in that Part &#xA; and initial your entries.</field>
+            <field name="part" ref="template_tutor_nursing_part5"/>
+        </record>
+<record id="template_tutor_nursing_question21" model="apar.form.template.question">
+            <field name="question_no">5.3</field>
+            <field name="name">In case of difference of opinion details and reasons for the same may be given ?</field>
+            <field name="part" ref="template_tutor_nursing_part5"/>
+        </record>
+<record id="template_tutor_nursing_question22" model="apar.form.template.question">
+            <field name="question_no">5.4</field>
+            <field name="name">Remarks/observation on the Pen Picture by the Reporting Officer:</field>
+            <field name="part" ref="template_tutor_nursing_part5"/>
+        </record>
+<record id="template_tutor_nursing_question24" model="apar.form.template.question">
+            <field name="question_no">3.1.1</field>
+            <field name="name">Extent of accomplishment of planned work as per para 2.2 above</field>
+            <field name="section" ref="section_tutor_nursing_1"/>
+        </record>
+<record id="template_tutor_nursing_question25" model="apar.form.template.question">
+            <field name="question_no">3.1.2</field>
+            <field name="name">Quality of output</field>
+            <field name="section" ref="section_tutor_nursing_1"/>
+        </record>
+<record id="template_tutor_nursing_question26" model="apar.form.template.question">
+            <field name="question_no">3.1.3</field>
+            <field name="name">Accomplishment of exceptional work/ unforeseen tasks performed as per para 2.6 above</field>
+            <field name="section" ref="section_tutor_nursing_1"/>
+        </record>
+<record id="template_tutor_nursing_question27" model="apar.form.template.question">
+            <field name="question_no">3.2.1</field>
+            <field name="name">Attitude to work</field>
+            <field name="section" ref="section_tutor_nursing_2"/>
+        </record>
+<record id="template_tutor_nursing_question28" model="apar.form.template.question">
+            <field name="question_no">3.2.2</field>
+            <field name="name">Initiative, drive and resourcefulness  </field>
+            <field name="section" ref="section_tutor_nursing_2"/>
+        </record>
+<record id="template_tutor_nursing_question29" model="apar.form.template.question">
+            <field name="question_no">3.2.3</field>
+            <field name="name">Discipline </field>
+            <field name="section" ref="section_tutor_nursing_2"/>
+        </record>
+<record id="template_tutor_nursing_question30" model="apar.form.template.question">
+            <field name="question_no">3.2.4</field>
+            <field name="name">Communication Skills </field>
+            <field name="section" ref="section_tutor_nursing_2"/>
+        </record>
+<record id="template_tutor_nursing_question31" model="apar.form.template.question">
+            <field name="question_no">3.2.5</field>
+            <field name="name">Capacity to work in team spirit   </field>
+            <field name="section" ref="section_tutor_nursing_2"/>
+        </record>
+<record id="template_tutor_nursing_question32" model="apar.form.template.question">
+            <field name="question_no">3.2.6</field>
+            <field name="name">Capacity to work in time lines</field>
+            <field name="section" ref="section_tutor_nursing_2"/>
+        </record>
+<record id="template_tutor_nursing_question33" model="apar.form.template.question">
+            <field name="question_no">3.2.7</field>
+            <field name="name">Inter-personal relations with student, colleagues and seniors </field>
+            <field name="section" ref="section_tutor_nursing_2"/>
+        </record>
+<record id="template_tutor_nursing_question34" model="apar.form.template.question">
+            <field name="question_no">3.2.8</field>
+            <field name="name">Dependability and willingness to take responsibility</field>
+            <field name="section" ref="section_tutor_nursing_2"/>
+        </record>
+<record id="template_tutor_nursing_question35" model="apar.form.template.question">
+            <field name="question_no">3.3.1</field>
+            <field name="name">Interest in Teaching</field>
+            <field name="section" ref="section_tutor_nursing_3"/>
+        </record>
+<record id="template_tutor_nursing_question36" model="apar.form.template.question">
+            <field name="question_no">3.3.2</field>
+            <field name="name">Teaching Ability/ effectiveness</field>
+            <field name="section" ref="section_tutor_nursing_3"/>
+        </record>
+<record id="template_tutor_nursing_question37" model="apar.form.template.question">
+            <field name="question_no">3.3.3</field>
+            <field name="name">Punctuality and regularity at assigned classes</field>
+            <field name="section" ref="section_tutor_nursing_3"/>
+        </record>
+<record id="template_tutor_nursing_question38" model="apar.form.template.question">
+            <field name="question_no">3.3.4</field>
+            <field name="name">Knowledge of current advances in his/her subject</field>
+            <field name="section" ref="section_tutor_nursing_3"/>
+        </record>
+<record id="template_tutor_nursing_question39" model="apar.form.template.question">
+            <field name="question_no">3.3.5</field>
+            <field name="name">Competence in clinical laboratory skills in his/her subject</field>
+            <field name="section" ref="section_tutor_nursing_3"/>
+        </record>
+<record id="template_tutor_nursing_question40" model="apar.form.template.question">
+            <field name="question_no">3.3.6</field>
+            <field name="name">Extent of participation in Academic/ Administratively/ extracurricular activities of the College </field>
+            <field name="section" ref="section_tutor_nursing_3"/>
+        </record>
+
+
+    </data>
+</tryton>

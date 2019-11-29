@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<form>
+    <label name="state" colspan="1"/>
+    <field name="state" colspan="1"/>
+    <newline/>
+    <label name="name" colspan="1"/>
+    <field name="name" colspan="1"/>
+    <newline/>
+    <label name="exam_type" colspan="1"/>
+    <field name="exam_type" colspan="1"/>
+    <newline/>
+    <label name="date_from" colspan="1"/>
+    <field name="date_from" colspan="1"/>
+    <label name="date_to" colspan="1"/>
+    <field name="date_to" colspan="1"/>
+    <notebook>
+        <page id="_centers" string="Centers">
+            <field name="centers"/>
+        </page>
+        <page id="_employees" string="Employees">
+            <field name="employees" 
+            view_ids="exam_section.tree_exam_employee_basic"/>
+        </page>
+        <!-- <page id="_renumeration" string="Renumeration Bills"
+            states="{
+            'readonly': ~Eval('state').in_(['draft']),
+            'invisible': ~Eval('state').in_([
+                'draft',
+                'confirm',
+                'approved',
+                'in_progress'
+            ])
+        }">
+            <field name="renumeration_bills"/>
+        </page>
+        <page id="_ta_da" string="TA/DA Bills"
+            states="{
+            'readonly': ~Eval('state').in_(['draft']),
+            'invisible': ~Eval('state').in_([
+                'draft',
+                'confirm',
+                'approved',
+                'in_progress'
+            ])
+        }">
+            <field name="ta_da_bills"/>
+        </page> -->
+    </notebook>
+    <label name="total_renumeration_cost"/>
+    <field name="total_renumeration_cost"/>
+    <label name="total_ta_da_cost"/>
+    <field name="total_ta_da_cost"/>
+    <button name="confirm_data" string="Confirm" colspan="2"/>
+    <button name="approve" string="Approve" colspan="2"/>
+    <button name="send_in_progress" string="Start Process" colspan="2"/>
+    <button name="generate_ta_da_bills" string="Generate TA/DA Bills" colspan="2"/>
+    <button name="submit_ta_da_bills" string="Submit TA/DA Bills" colspan="2"/>
+    <button name="approve_ta_da" string="Approve TA/DA Bills" colspan="2"/>
+    <button name="send_for_budget_allocation" string="Send for Budget Allocation" colspan="2"/>
+    <button name="send_for_final_process" string="Send for Final Process" colspan="2"/>
+</form>

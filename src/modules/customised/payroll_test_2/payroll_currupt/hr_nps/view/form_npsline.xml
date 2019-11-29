@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+
+<form>
+    <label name="employee"/>
+    <field name="employee"/>
+    <label name="designation"/>
+    <field name="designation"/>
+    <label name="department"/>
+    <field name="department"/>
+    <label name="pay_month"/>
+    <field name="pay_month"/>
+    <label name="nps_deduction"/>
+    <field name="nps_deduction"/>
+    <label name="amount"/>
+    <field name="amount"/>
+    <label name="nps_fund"/>
+    <field name="nps_fund"/>
+    <label name="payslip"/>
+    <field name="payslip"/>
+    
+</form>

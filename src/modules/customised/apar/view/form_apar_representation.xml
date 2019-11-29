@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<form>
+	<group id="apar_representation_form" colspan="4" col="6">
+		<label name="representation_id"/>
+		<field name="representation_id"/>
+		<label name="raised_by"/>
+		<field name="raised_by"/>
+		<label name="raised_on"/>
+		<field name="raised_on"/>
+		<label name="subject"/>
+		<field name="subject" colspan="5"/>
+		<label name="text"/>
+		<field name="text" colspan="5"/>
+		<label name="present_score"/>
+		<field name="present_score"/>
+		<label name="score"/>
+		<field name="score"/>
+		<label name="state"/>
+		<field name="state"/>
+	</group>
+	<notebook>
+		<page string="Comments" id="comments">
+			<group id="grp_comments">
+				<label name="comments_reporting"/>
+				<field name="comments_reporting" colspan="3"/>
+				<label name="comments_reviewing"/>
+				<field name="comments_reviewing" colspan="3"/>
+				<label name="comments_accepting"/>
+				<field name="comments_accepting" colspan="3"/>
+				<label name="comments_hod"/>
+				<field name="comments_hod" colspan="3"/>
+				<label name="comments_director"/>
+				<field name="comments_director" colspan="3"/>
+			</group>
+		</page>
+		<page string="Signatures" id="signs">
+			<field colspan="4" name="signatures"/>
+		</page>
+	</notebook>
+	<group id="buttons">
+		<button name="submit" string="Submit" confirm="Are you sure you want to submit?"/>
+        <button name="forward_to_reporting" string="Forward to Reporting Officer" confirm="Are you sure you want to forward to the Reporting Officer"/>
+        <button name="forward_to_reviewing" string="Forward to Reviewing Officer" confirm="Are you sure you want to forward to the Reviewing Officer"/>
+        <button name="forward_to_accepting" string="Forward to Accepting Authority" confirm="Are you sure you want to forward to the Accepting Authority"/>
+        <button name="forward_to_HoD" string="Forward to Head of Department" confirm="Are you sure you want to forward to the Head of the Department"/>
+		<button name="forward_to_acr" string="Forward to ACR Cell" confirm="Are you sure you want to forward to the ACR Cell"/>
+		<button name="forward_to_director" string="Forward to Director" confirm="Are you sure you want to forward to Director"/>
+		<button name="close" string="Close" confirm="Are you sure you want to Close"/>
+    </group>
+</form>

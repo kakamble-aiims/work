@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+	<tree editable="top">
+		<field name="signed_by_user"/>
+		<field name="signed_by_employee"/>
+		<field name="signed_on"/>
+		<field name="designation"/>
+		<field name="place"/>
+		<field name="representation"/>
+	</tree>

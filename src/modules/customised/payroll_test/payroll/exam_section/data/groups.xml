@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<tryton>
+    <data>
+        <record id="grp_a">
+            <field name="name">A</field>
+        </record>
+        <record id="grp_b">
+            <field name="name">B</field>
+        </record>
+        <record id="grp_c">
+            <field name="name">C</field>
+        </record>
+        <record id="grp_d">
+            <field name="name">D</field>
+        </record>
+    </data>
+</tryton>

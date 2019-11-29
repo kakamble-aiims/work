@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+
+<form>
+    <label name="establishment"/>
+    <field name="establishment" widget="selection"/>
+    <label name="department"/>
+    <field name="department" widget="selection"/>
+    <field name="establishments" colspan="4" invisible="1"/>
+</form>

@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<form>
+    <group id="payroll_gpf">
+        <group id="advance_withdrawal" colspan="4" col="4">
+            <label name="salary_code"/>
+            <field name="salary_code"/>
+            <label name="employee"/>
+            <field name="employee"/>
+            <label name="dob"/>
+            <field name="dob"/>
+            <label name="doj"/>
+            <field name="doj"/>
+            <label name="father_husband_name"/>
+            <field name="father_husband_name"/>
+            <label name="designation"/>
+            <field name="designation"/>
+            <label name="gpf_number"/>
+            <field name="gpf_number"/>
+            <label name="gpf_balance"/>
+            <field name="gpf_balance"/>
+            <label name="account_no"/>
+            <field name="account_no"/>
+            <label name="basic_pay"/>
+            <field name="basic_pay"/>
+            <label name="amount_required"/>
+            <field name="amount_required"/>
+            <label name="refund"/>
+            <field name="refund"/>
+        </group>
+        <newline/>
+        <newline/>
+        <group id="gpf_reason" colspan="4" col="1" string="Reason for which advance/withdrawal is Required">
+            <!-- <label name="reason"/> -->
+            <field name="gpf_reason"/> 
+        </group>
+        <newline/>
+            <label name="installment_no"/>
+            <field name="installment_no"/>
+            <label name="payout"/>
+            <field name="payout"/>
+            <label name="pending"/>
+            <field name="pending"/>
+            <label name="reschedule"/>
+            <field name="reschedule"/>
+            <label name="state"/>
+            <field name="state"/>
+            <label name="cancel_reason"/>
+            <field name="cancel_reason"/>
+        <group id="advance_button_ids" colspan="4" col="6">
+        <button name="submitted_to_ao" string="Submit" colspan="2"/>
+        <button name="forward_to_jo" string="Forward to AO"/>
+        <button name="forward_to_ao" string="Approve"/>
+        <button name="cancel" string="Cancel"/>
+        <notebook colspan="6">
+            <page string="Details" id="details">
+                <group id="advance_detail" string="For House Building / Built-up house etc.following information may be given" colspan="4" col="6">
+                    <label name="location"/>
+                    <field name="location"/>
+                    <label name="hold"/>
+                    <field name="hold"/>
+                    <label name="cost"/>
+                    <field name="cost"/>
+                </group>
+            </page>
+            <page string="GPF advance installment" id="gpf_advance_line">
+                <field name="gpf_line" colspan="4"
+                view_ids="gpf.tree_gpf_advance_line_view"/>
+            </page>
+        </notebook>
+    </group>
+    </group>
+</form>
