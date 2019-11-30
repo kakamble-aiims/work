@@ -32,11 +32,11 @@
    <button name="submit" string="Submit" colspan="4"
       confirm="Are you sure? If you press OK, you will NOT be allowed to make changes"/>
    <button name="send_for_aao_approval" string="Approve and Send for AAO Approval" colspan="4"/>
-   <button name="send_for_ao_approval" string="Approve and Send for AO Approval" colspan="4"/>
-   <button name="send_for_ace_approval" string="Approve and Send for ACE Approval" colspan="4"/>
-   <button name="send_for_adean_approval" string="Approve and Send for Associate Dean Approval" colspan="4"/>
-   <button name="send_for_dean_approval" string="Approve and Send for Dean Approval" colspan="4"/>
-   <button name="send_for_ao_approval_2" string="Approve and Send for AO Approval" colspan="4"/>
+   <button name="send_for_ao_approval" string="Approved by AAO" colspan="4"/>
+   <button name="send_for_ace_approval" string="Approved by AO" colspan="4"/>
+   <button name="send_for_adean_approval" string="Approved by ACE" colspan="4"/>
+   <button name="send_for_dean_approval" string="Approved by Assistant Dean" colspan="4"/>
+   <button name="send_for_ao_approval_2" string="Approved by Dean" colspan="4"/>
    <button name="approve" string="Approve" colspan="4"/>
    <field name="recovery" invisible="1"/>
    <field name="net_paid" invisible="1"/>

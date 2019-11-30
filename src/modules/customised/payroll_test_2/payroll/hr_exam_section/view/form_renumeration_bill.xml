@@ -41,11 +41,12 @@
     <group id="buttons" colspan="4">
         <button name="confirm_data" string="Confirm"
             confirm="Are you sure the provided information is correct? After clicking OK, you will NOT be allowed to make changes"/>
+        <button name="approve" string="Approve"/>
         <button name="send_for_aao_approval" string="Send for AAO Approval"/>
-        <button name="send_for_ao_approval" string="Send for AO Approval"/>
-        <button name="send_for_ace_approval" string="Send for ACE Approval"/>
-        <button name="send_for_adean_approval" string="Send for Assistant Dean Approval"/>
-        <button name="send_for_dean_approval" string="Send for Dean Approval"/>
-        <button name="send_for_ao_approval_2" string="Send for Final AO Approval"/>
+        <button name="send_for_ao_approval" string="Approved by AAO"/>
+        <button name="send_for_ace_approval" string="Approved by AO"/>
+        <button name="send_for_adean_approval" string="Approved by ACE"/>
+        <button name="send_for_dean_approval" string="Approved by Assistant Dean"/>
+        <button name="send_for_ao_approval_2" string="Approved by Dean"/>
     </group>
 </form>

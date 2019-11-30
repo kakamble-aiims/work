@@ -1,5 +1,5 @@
 from datetime import date
-from trytond.model import ModelView, ModelSQL, fields, Workflow
+from trytond.model import ModelView, ModelSQL, fields, Workflow, Unique
 from trytond.pyson import Eval
 from trytond.pool import Pool
 from trytond.transaction import Transaction
@@ -495,6 +495,16 @@ class Employees(ModelSQL, ModelView):
     )
     date_payable = fields.Date('Date')
 
+    @classmethod
+    def __setup__(cls):
+        super(Employees, cls).__setup__()
+        t = cls.__table__()
+        cls._sql_constraints = [
+            ('employee_exam_unique', Unique(t, t.employee, t.exam),
+                'Same Employee cannot be added again in the same exam'
+            ),
+        ]
+    
     @fields.depends('exam')
     def on_change_with_centers(self, name=None):
         '''Get centers selected for current exam'''
@@ -518,3 +528,4 @@ class Employees(ModelSQL, ModelView):
         '''Get current location for current exam'''
         if self.center:
             return self.center.location.id
+    

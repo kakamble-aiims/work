@@ -144,6 +144,7 @@ class RenumerationBill(Workflow, ModelSQL, ModelView):
         })
         cls._transitions = set((
             ('draft', 'confirm'),
+            ('confirm', 'approved'),
             ('confirm', 'aao_approval'),
             ('aao_approval', 'ao_approval'),
             ('ao_approval', 'ace_approval'),
@@ -173,6 +174,10 @@ class RenumerationBill(Workflow, ModelSQL, ModelView):
             },
             'send_for_ao_approval_2': {
                 'invisible': ~Eval('state').in_(['dean_approval'])
+            },
+            'approve': {
+                'invisible': ~Eval('state').in_(['confirm']) \
+                    and ~Eval('type_of_examiner').in_(['external'])
             },
         })
 
@@ -217,6 +222,11 @@ class RenumerationBill(Workflow, ModelSQL, ModelView):
     @classmethod
     @Workflow.transition('ao_approval_2')
     def send_for_ao_approval_2(cls, records):
+        '''Change status of bill to ao_approval_2'''
+        pass
+    @classmethod
+    @Workflow.transition('approved')
+    def approve(cls, records):
         '''Change status of bill to ao_approval_2'''
         pass
 
@@ -665,6 +675,11 @@ class TADAJourney(ModelSQL, ModelView):
         'Amount',
         required=True
     )
+    have_ticket_receipt = fields.Boolean('Ticket/Receipt Present?')
+    bill = fields.Binary('Upload Ticket/Receipt', states={
+        'invisible': Eval('have_ticket_receipt') != '1',
+        'required': Eval('have_ticket_receipt') == '1',
+    }, depends=['have_bill'])
 
     @staticmethod
     def default_amount():
@@ -736,8 +751,8 @@ class TADAHotelFood(ModelSQL, ModelView):
         'Amount',
         required=True
     )
-    have_bill = fields.Boolean('Bill?')
-    bill = fields.Many2One('ir.attachment', 'Bill', states={
+    have_bill = fields.Boolean('Bill Present?')
+    bill = fields.Binary('Upload Bill', states={
         'invisible': Eval('have_bill') != '1',
         'required': Eval('have_bill') == '1',
     }, depends=['have_bill'])
@@ -815,8 +830,8 @@ class TADALocalTransport(ModelSQL, ModelView):
         fields.Float('Amount'),
         'on_change_with_amount'
     )
-    have_receipt = fields.Boolean('Receipt?')
-    receipt = fields.Many2One('ir.attachment', 'Receipt', states={
+    have_receipt = fields.Boolean('Receipt Present?')
+    receipt = fields.Binary('Upload Receipt', states={
         'invisible': Eval('have_receipt') != '1',
         'required': Eval('have_receipt') == '1',
     }, depends=['have_receipt'])
@@ -856,7 +871,7 @@ class ContingencyBill(ModelSQL, ModelView):
     '''Examination Contingency Bill'''
 
     __name__ = 'exam_section.contingency_bill'
-    exam_center = fields.Many2One('exam_section.exam_center', 'Exam Center')
+    exam_center = fields.Many2One('exam.centers', 'Exam Center')
     journey = fields.One2Many(
         'exam_section.contingency.journey',
         'contingency',

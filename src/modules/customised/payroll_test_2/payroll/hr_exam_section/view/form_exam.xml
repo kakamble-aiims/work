@@ -37,11 +37,11 @@
     <button name="generate_ta_da_bills" string="Generate TA/DA Bills" colspan="2"/>
     <button name="submit_ta_da_bills" string="TA/DA Bills Submitted" colspan="2"/>
     <button name="send_for_aao_approval" string="Send for AAO Approval" colspan="2"/>
-    <button name="send_for_ao_approval" string="Send for AO Approval" colspan="2"/>
-    <button name="send_for_ace_approval" string="Send for ACE Approval" colspan="2"/>
-    <button name="send_for_adean_approval" string="Send for Assistant Dean Approval" colspan="2"/>
-    <button name="send_for_dean_approval" string="Send for Dean Approval" colspan="2"/>
-    <button name="send_for_ao_approval_2" string="Send for AO Approval" colspan="2"/>
+    <button name="send_for_ao_approval" string="Approved by AAO" colspan="2"/>
+    <button name="send_for_ace_approval" string="Approved by AO" colspan="2"/>
+    <button name="send_for_adean_approval" string="Approved by ACE" colspan="2"/>
+    <button name="send_for_dean_approval" string="Approved by Assistant Dean" colspan="2"/>
+    <button name="send_for_ao_approval_2" string="Approved by Dean" colspan="2"/>
     <button name="approve_ta_da" string="Approve TA/DA Bills" colspan="2"/>
     <button name="send_for_budget_allocation" string="Send for Budget Allocation" colspan="2"/>
     <button name="send_for_final_process" string="Send for Final Process" colspan="2"/>

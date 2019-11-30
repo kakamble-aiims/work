@@ -9,4 +9,6 @@
     <field name="arrival_date"/>
     <field name="arrival_time"/>
     <field name="amount"/>
+    <field name="have_ticket_receipt"/>
+    <field name="bill"/>
 </tree>

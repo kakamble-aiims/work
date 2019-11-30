@@ -37,8 +37,8 @@
         </record>
 
         <!-- Cash Section User Group -->
-        <record model="res.group" id="group_cash">
-            <field name="name">Cash Section</field>
+        <record model="res.group" id="group_ao_cash">
+            <field name="name">Accounts Officer(Cash Section)</field>
         </record>
 
         <!-- Payee Officer/Employee User Group -->
@@ -88,6 +88,12 @@
             <field name="group" ref="group_dean_exam"/>
         </record>
 
+        <!-- AO(Cash Section) Exam Type Menu Access -->
+        <record model="ir.ui.menu-res.group" id="exam_type_cash">
+            <field name="menu" ref="menu_exam_type"/>
+            <field name="group" ref="group_ao_cash"/>
+        </record>
+
         <!-- Administrator(Exam) Exam Menu Access -->
         <record model="ir.ui.menu-res.group" id="exam_admin">
             <field name="menu" ref="menu_exam"/>
@@ -122,6 +128,12 @@
         <record model="ir.ui.menu-res.group" id="exam_de">
             <field name="menu" ref="menu_exam"/>
             <field name="group" ref="group_dean_exam"/>
+        </record>
+
+        <!-- Dean(Exam Section) Exam Menu Access -->
+        <record model="ir.ui.menu-res.group" id="exam_cash">
+            <field name="menu" ref="menu_exam"/>
+            <field name="group" ref="group_ao_cash"/>
         </record>
 
         <!-- Payee Officer Exam Menu Access -->
@@ -166,6 +178,12 @@
             <field name="group" ref="group_dean_exam"/>
         </record>
 
+        <!-- AO(Cash Section) Renumeration Bills Menu Access -->
+        <record model="ir.ui.menu-res.group" id="renumeration_cash">
+            <field name="menu" ref="menu_exam_renumeration_bill"/>
+            <field name="group" ref="group_ao_cash"/>
+        </record>
+
         <!-- Administrator(Exam) Renumeration Bills To Approve Menu Access -->
         <record model="ir.ui.menu-res.group" id="renumeration_approve_admin">
             <field name="menu" ref="menu_exam_renumeration_bill_employee_approve"/>
@@ -200,6 +218,12 @@
         <record model="ir.ui.menu-res.group" id="renumeration_approve_de">
             <field name="menu" ref="menu_exam_renumeration_bill_employee_approve"/>
             <field name="group" ref="group_dean_exam"/>
+        </record>
+
+        <!-- Dean(Exam) Renumeration Bills To Approve Menu Access -->
+        <record model="ir.ui.menu-res.group" id="renumeration_approve_cash">
+            <field name="menu" ref="menu_exam_renumeration_bill_employee_approve"/>
+            <field name="group" ref="group_ao_cash"/>
         </record>
 
         <!-- Administrator(Exam) TA/DA Bills Menu Access -->
@@ -238,6 +262,12 @@
             <field name="group" ref="group_dean_exam"/>
         </record>
 
+        <!-- AO(Cash Section) TA/DA Bills Menu Access -->
+        <record model="ir.ui.menu-res.group" id="ta_da_cash">
+            <field name="menu" ref="menu_exam_ta_da_bill"/>
+            <field name="group" ref="group_ao_cash"/>
+        </record>
+
         <!--TA/DA Bills To Approve Menu Access-->
 
         <record model="ir.ui.menu-res.group" id="ta_da_approve_admin">
@@ -263,6 +293,10 @@
         <record model="ir.ui.menu-res.group" id="ta_da_approve_de">
             <field name="menu" ref="menu_exam_ta_da_bill_employee_approve"/>
             <field name="group" ref="group_dean_exam"/>
+        </record>
+        <record model="ir.ui.menu-res.group" id="ta_da_approve_cash">
+            <field name="menu" ref="menu_exam_ta_da_bill_employee_approve"/>
+            <field name="group" ref="group_ao_cash"/>
         </record>
 
 
@@ -291,6 +325,10 @@
         <record model="ir.ui.menu-res.group" id="config_de">
             <field name="menu" ref="menu_exam_section_config"/>
             <field name="group" ref="group_dean_exam"/>
+        </record>
+        <record model="ir.ui.menu-res.group" id="config_cash">
+            <field name="menu" ref="menu_exam_section_config"/>
+            <field name="group" ref="group_ao_cash"/>
         </record>
 
 
@@ -334,6 +372,15 @@
         </record>
         <record id="access_exam_de" model="ir.model.access">
             <field name="group" ref="group_dean_exam"/>
+            <field name="model"
+                search="[('model', '=', 'exam_section.exam')]"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+        <record id="access_exam_cash" model="ir.model.access">
+            <field name="group" ref="group_ao_cash"/>
             <field name="model"
                 search="[('model', '=', 'exam_section.exam')]"/>
             <field name="perm_read" eval="True"/>
@@ -526,9 +573,9 @@
                 search="[('model', '=', 'exam_section.ta_da_bill')]"/>
         </record>
         <record model="ir.model.button-res.group"
-            id="button_access_approve_ta_da_admin_officer_exam">
+            id="button_access_approve_ta_da_cash">
             <field name="button" ref="button_approve_ta_da"/>
-            <field name="group" ref="group_admin_officer_exam"/>
+            <field name="group" ref="group_ao_cash"/>
         </record>
         <record model="ir.model.button-res.group"
             id="button_access_approve_ta_da_admin_exam">
@@ -641,9 +688,9 @@
                 search="[('model', '=', 'exam_section.renumeration_bill')]"/>
         </record>
         <record model="ir.model.button-res.group"
-            id="button_access_approve_renumeration_admin_officer_exam">
+            id="button_access_approve_renumeration_cash">
             <field name="button" ref="button_approve_renumeration"/>
-            <field name="group" ref="group_admin_officer_exam"/>
+            <field name="group" ref="group_ao_cash"/>
         </record>
         <record model="ir.model.button-res.group"
             id="button_access_approve_renumeration_admin_exam">
@@ -806,9 +853,9 @@
                 search="[('model', '=', 'exam_section.exam')]"/>
         </record>
         <record model="ir.model.button-res.group"
-            id="button_access_approve_exam_admin_officer_exam">
+            id="button_access_approve_exam_cash">
             <field name="button" ref="button_approve_ta_da_exam"/>
-            <field name="group" ref="group_admin_officer_exam"/>
+            <field name="group" ref="group_ao_cash"/>
         </record>
         <record model="ir.model.button-res.group"
             id="button_access_approve_exam_admin_exam">
