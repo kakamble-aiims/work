@@ -15,11 +15,13 @@ class EMBEmployeeDetails(Workflow, ModelSQL, ModelView):
 
     __name__ = 'emb.employee.details'
 
-    salary_code = fields.Char('Salary Code', states={
+    salary_code = fields.Char('Salary Code', required=True, 
+        states={
         'readonly': ~Eval('state').in_(['draft'])
     },
         depends=['state'])
-    employee = fields.Many2One('company.employee', 'Employee', states={
+    employee = fields.Many2One('company.employee', 'Employee', required=True,
+        states={
         'readonly': ~Eval('state').in_(['draft'])
     },
         depends=['state'])
@@ -31,7 +33,8 @@ class EMBEmployeeDetails(Workflow, ModelSQL, ModelView):
         'readonly': ~Eval('state').in_(['draft'])
     },
         depends=['state'])
-    emb_fee = fields.One2Many('emb.bill', 'bill', 'E.M.B Fee', states={
+    emb_fee = fields.One2Many('emb.bill', 'bill', 'E.M.B Fee',
+        states={
         'readonly': ~Eval('state').in_(['draft'])
     }, depends=['state'])
     state = fields.Selection([
@@ -186,7 +189,7 @@ class EMB(ModelSQL, ModelView):
         ('male', 'Male'),
         ('female', 'Female'),
         ('other', 'Other'),
-    ], 'Sex')
+    ], 'Sex', required=True)
     receipt_no = fields.Char('Cashier Vide receipt No.')
     receipt_date = fields.Date('Receipt Date')
     receipt_amount = fields.Integer('Receipt Amount Rs')

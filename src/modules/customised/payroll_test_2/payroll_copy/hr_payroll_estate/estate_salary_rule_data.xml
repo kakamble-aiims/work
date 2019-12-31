@@ -4,7 +4,7 @@
     <data>
          <record id="hr_rule_license_fee" model="hr.salary.rule">
             <field name="name">License Fee</field>
-            <field name="priority" eval="51002"/>
+            <field name="priority" eval="2900"/>
             <field name="code">LICF</field>
             <field name="category" ref="hr_payroll.salaryrule_ded"/>
             <field name="condition_select">always_true</field>
@@ -12,7 +12,7 @@
         </record>
         <record id="hr_rule_water_charges" model="hr.salary.rule">
             <field name="name">Water Charges</field>
-            <field name="priority" eval="51003"/>
+            <field name="priority" eval="3000"/>
             <field name="code">WTR</field>
             <field name="category" ref="hr_payroll.salaryrule_ded"/>
             <field name="condition_select">always_true</field>

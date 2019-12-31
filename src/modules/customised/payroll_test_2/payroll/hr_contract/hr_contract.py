@@ -11,17 +11,17 @@ class HrContract(ModelSQL, ModelView):
 
     __name__ = 'hr.contract'
 
-    salary_code = fields.Char('Salary Code')
+    salary_code = fields.Char('Salary Code', required=True)
     employee = fields.Many2One('company.employee', 'Employee', required=True)
     name = fields.Char('Salary detail Reference', required=True)
     center = fields.Many2One('gnuhealth.institution', 'Center')
-    department = fields.Many2One('company.department', 'Department')
-    designation = fields.Many2One('employee.designation', 'Designation')
+    department = fields.Many2One('company.department', 'Department', required=True)
+    designation = fields.Many2One('employee.designation', 'Designation', required=True)
     date_start = fields.Date('Start Date', required=True)
     date_end = fields.Date('End Date')
     notes = fields.Text('Notes')
     is_active = fields.Boolean('Active')
-    basic = fields.Float('Basic Pay')
+    basic = fields.Float('Basic Pay', required=True)
     approve_date = fields.Date('Date of Approval')
     approve_by = fields.Many2One('res.user', 'Approved By')
 

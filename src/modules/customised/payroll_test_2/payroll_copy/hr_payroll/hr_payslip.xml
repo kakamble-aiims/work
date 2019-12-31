@@ -2,7 +2,6 @@
 
 <tryton>
     <data>
-
         <!--Tree-->
         <record id="tree_payslip_view" model="ir.ui.view">
             <field name="name">tree_payslip</field>
@@ -513,8 +512,34 @@
             <field name="name">fiscal_year_assessment_year</field>
         </record>
 
+         <!-- wiz class -->
+        <record id="form_wiz_income_tax_schedule_view" model="ir.ui.view">
+            <field name="name">form_wiz</field>
+            <field name="model">income.tax.schedule</field>
+            <field name="type">form</field>
+        </record>
+
+        <!--XML Record Wizard-->
+        <record id="act_wiz_income_tax_wizard" model="ir.action.wizard">
+            <field name="name">Income Tax Schedule</field>
+            <field name="wiz_name">bank.schedule.wiz</field>
+            <field name="window" eval="False"/>
+        </record>
+    
+        <!-- Report Schedule -->
+        <record id="report_income_tax" model="ir.action.report">
+            <field name="name">Income Tax Schedule</field>
+            <field name="model">income_tax.deduction</field>
+            <field name="report_name">income.tax.report</field>
+            <field name="report">hr_payroll/income_tax_schedule.fodt</field>
+            <field name="extension">pdf</field>
+        </record>
+
+        <menuitem id="menu_income_tax_wiz" name="Income Tax Schedule" parent="hr_estate.menu_schedule" action="act_wiz_income_tax_wizard"/> -->
+
+
         <!-- Menu -->
-        <menuitem id="menu_payroll" name="Payroll" parent="hr.menu_hr" sequence="3"/>
+        <menuitem id="menu_payroll" name="Payroll" parent="hr.menu_hr" sequence="2"/>
         <menuitem id="menu_payslip" name="Payslip" parent="menu_payroll" action="action_payslip" sequence="10"/>
         <menuitem id="menu_batches" name="Payslip Batches" parent="menu_payroll" action="act_batches" sequence="11"/>
         <menuitem id="menu_tax_deduction" name="Tax Deduction" parent="menu_payroll" action="action_income_tax_deduction" sequence="12"/>
@@ -528,33 +553,20 @@
         <menuitem id="menu_investment_declaration" name="Investment Declaration" parent="menu_tax" action="hr_payroll.action_investment_declaration" sequence="60"/>
         <menuitem id="menu_investment_scheme" name="Investment Scheme" parent="menu_tax" action="action_investment_scheme" sequence="70"/>
         <menuitem id="menu_investment_section" name="Investment Section" parent="menu_tax" action="action_investment_section" sequence="80"/>
-
+        <menuitem id="menu_allowance" name="Allowances" parent="hr.menu_hr" sequence="10"/>
+        <menuitem id="menu_schedule" name="Schedules" parent="hr.menu_hr" sequence="11"/>
         <!-- Report-->
         <record id="report_hr_payslip" model="ir.action.report">
             <field name="name">Payslip</field>
             <field name="model">hr.payslip</field>
-            <field name="report_name">hr.payslip</field>
-            <field name="report">payroll/hr_payslip.fodt</field>
+            <field name="report_name">payslip_report</field>
+            <field name="report">hr_payroll/hr_payslip.fodt</field>
             <field name="extension">pdf</field>
         </record>
         <record id="print_hr_payslip_keyword_report" model="ir.action.keyword">
             <field name="keyword">form_print</field>
             <field name="model">hr.payslip,-1</field>
             <field name="action" ref="report_hr_payslip"/>
-        </record>
-
-        <!-- Report-->
-        <record id="report_hr_batches" model="ir.action.report">
-            <field name="name">Payslip Batch</field>
-            <field name="model">hr.payslip.batch</field>
-            <field name="report_name">hr.payslip.batch</field>
-            <field name="report">payroll/hr_payslip_batch.fodt</field>
-            <field name="extension">pdf</field>
-        </record>
-        <record id="print_hr_batches_keyword_report" model="ir.action.keyword">
-            <field name="keyword">form_print</field>
-            <field name="model">hr.payslip.batch,-1</field>
-            <field name="action" ref="report_hr_batches"/>
         </record>
     </data>
 </tryton>

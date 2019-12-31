@@ -2,17 +2,10 @@
 <tryton>
     <data>
         <!-- Exam Section Menu -->
-        <menuitem id="menu_exam_section" name="Exam Section"/>
+        <menuitem id="menu_exam_section" name="Exam Section" parent="hr.menu_hr" sequence="6"/>
 
         <!-- Exam Section Configuration Menu -->
         <menuitem id="menu_exam_section_config" name="Configuration" parent="menu_exam_section" sequence="3"/>
-        
-        <!-- Exam Center Tree View -->
-        <record id="tree_exam_center_address_view" model="ir.ui.view">
-            <field name="name">tree_exam_center_address</field>
-            <field name="model">exam_section.exam_center.address</field>
-            <field name="type">tree</field>
-        </record>
         
         <!-- Exam Center Form View -->
         <record id="form_exam_center_view" model="ir.ui.view">
@@ -99,27 +92,6 @@
         <record id="tree_ta_da_hotel_food_view" model="ir.ui.view">
             <field name="name">tree_ta_da_hotel_food</field>
             <field name="model">exam_section.ta_da.hotel_food</field>
-            <field name="type">tree</field>
-        </record>
-
-        <!-- Contingency Bill Form View -->
-        <record id="form_contingency_bill_view" model="ir.ui.view">
-            <field name="name">form_contingency_bill</field>
-            <field name="model">exam_section.contingency_bill</field>
-            <field name="type">form</field>
-        </record>
-
-        <!-- Contingency Tree View -->
-        <record id="tree_contingency_bill_view" model="ir.ui.view">
-            <field name="name">tree_contingency_bill</field>
-            <field name="model">exam_section.contingency_bill</field>
-            <field name="type">tree</field>
-        </record>
-
-        <!-- Contingency Journey Tree View -->
-        <record id="tree_contingency_journey_view" model="ir.ui.view">
-            <field name="name">tree_contingency_journey</field>
-            <field name="model">exam_section.contingency.journey</field>
             <field name="type">tree</field>
         </record>
 

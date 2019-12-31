@@ -1,6 +1,7 @@
 <?xml version="1.0"?>
 
 <form>
+     <group id ="fields_one" col="4">
     <label name="salary_code"/>
     <field name="salary_code"/>
     <label name="employee"/>
@@ -9,14 +10,16 @@
     <field name="designation"/>
     <label name="department"/>
     <field name="department"/>
+    <label name="from_date"/>
+    <field name="from_date"/>
+    <label name="to_date"/>
+    <field name="to_date"/>
     <label name="rent"/> 
     <field name="rent"/>
     <label name="state"/>
     <field name="state"/>
-    <!-- <label name="date"/>
-    <field name="date"/>
-    <label name="address"/>
-    <field name="address"/> -->
+    </group>
+    <newline/>
 	<button colspan="2" name="submit" string="Submit" confirm="Are you sure you want to submit?"/>
 	<button colspan="2" name="cancel" string="Cancel" confirm="Are you sure you want to cancel?"/>
     <button colspan="2" name="approve" string="Approve" confirm="Are you sure you want to approve?"/>

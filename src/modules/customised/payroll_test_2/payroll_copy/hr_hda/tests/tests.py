@@ -6,12 +6,11 @@ import unittest
 import trytond.tests.test_tryton
 from trytond.tests.test_tryton import ModuleTestCase
 
+
 class HrHdaTestCase(ModuleTestCase):
 
-    'Test Hr Loan module'
-
+    'Test Base module'
     module = 'hr_hda'
-
 
 
 def suite():
@@ -19,4 +18,3 @@ def suite():
     suite.addTests(unittest.TestLoader().loadTestsFromTestCase(
      HrHdaTestCase))
     return suite
-

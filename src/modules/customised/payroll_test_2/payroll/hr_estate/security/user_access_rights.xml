@@ -1,33 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <tryton>
     <data>
-
-        <!-- Create the Groups for Estate -->    
-        <record model="res.group" id="group_technical_admin">
-            <field name="name">Technical Administrator</field>
-        </record>
-        <record model="res.group" id="group_admin_officer_estate">
-            <field name="name">AO(Estate)</field>
-        </record>
-        <record model="res.group" id="group_asst_admin_officer_estate">
-            <field name="name">Asst. AO(Estate)</field>
-        </record>
-        <record model="res.group" id="group_admin_officer_estb">
-            <field name="name">AO(Establishment)</field>
-        </record>
-        <record model="res.group" id="group_asst_admin_officer_estb">
-            <field name="name">Asst. AO(Establishment)</field>
-        </record>
-
-        <record id="user_admin_exam" model="res.user-res.group">
-            <field name="user" ref="res.user_admin"/>
-            <field name="group" ref="group_technical_admin"/>
-        </record>
-        
         <!-- Assign the Administrative officer to the estate.allotment model -->
         <record id="group_ao_estate_access" model="ir.model.access">
             <field name="model" search="[('model', '=', 'estate.allotment')]"/>
-            <field name="group" ref="group_admin_officer_estate"/>
+            <field name="group" ref="base.group_admin_officer_estate"/>
             <field name="perm_read" eval="True"/>
             <field name="perm_write" eval="True"/>
             <field name="perm_create" eval="False"/>
@@ -37,7 +14,7 @@
         <!-- Assign the Assistant Administrative officer to the estate.allotment model -->
         <record id="group_aao_estate_access" model="ir.model.access">
             <field name="model" search="[('model', '=', 'estate.allotment')]"/>
-            <field name="group" ref="group_asst_admin_officer_estate"/>
+            <field name="group" ref="base.group_asst_admin_officer_estate"/>
             <field name="perm_read" eval="True"/>
             <field name="perm_write" eval="True"/>
             <field name="perm_create" eval="False"/>
@@ -47,7 +24,7 @@
         <!-- Assign the Administrative officer to the estate.allotment model -->
         <record id="group_ao_estb_access" model="ir.model.access">
             <field name="model" search="[('model', '=', 'estate.allotment')]"/>
-            <field name="group" ref="group_admin_officer_estb"/>
+            <field name="group" ref="base.group_admin_officer_estb"/>
             <field name="perm_read" eval="True"/>
             <field name="perm_write" eval="True"/>
             <field name="perm_create" eval="False"/>
@@ -56,7 +33,7 @@
         <!-- Assign the AO(Exstablishment) to the estate.allotment model -->
         <record id="group_aao_estb_access" model="ir.model.access">
             <field name="model" search="[('model', '=', 'estate.allotment')]"/>
-            <field name="group" ref="group_asst_admin_officer_estb"/>
+            <field name="group" ref="base.group_asst_admin_officer_estb"/>
             <field name="perm_read" eval="True"/>
             <field name="perm_write" eval="True"/>
             <field name="perm_create" eval="False"/>
@@ -65,7 +42,7 @@
         <!-- Assign the Assistant AO (Exstablishment) to the estate.quarter_type model -->
         <record id="group_ao_estate_qua_access" model="ir.model.access">
             <field name="model" search="[('model', '=', 'estate.quarter_type')]"/>
-            <field name="group" ref="group_admin_officer_estate"/>
+            <field name="group" ref="base.group_admin_officer_estate"/>
             <field name="perm_read" eval="True"/>
             <field name="perm_write" eval="True"/>
             <field name="perm_create" eval="False"/>
@@ -74,7 +51,7 @@
         <!-- Assign the Administrative officer to the estate.quarter_type model  -->
         <record id="group_aao_estate_qua_access" model="ir.model.access">
             <field name="model" search="[('model', '=', 'estate.quarter_type')]"/>
-            <field name="group" ref="group_asst_admin_officer_estate"/>
+            <field name="group" ref="base.group_asst_admin_officer_estate"/>
             <field name="perm_read" eval="True"/>
             <field name="perm_write" eval="True"/>
             <field name="perm_create" eval="False"/>
@@ -83,7 +60,7 @@
         <!-- Assign the Administrative officer to the estate.quarter_type model -->
         <record id="group_ao_estb_qua_access" model="ir.model.access">
             <field name="model" search="[('model', '=', 'estate.quarter_type')]"/>
-            <field name="group" ref="group_admin_officer_estb"/>
+            <field name="group" ref="base.group_admin_officer_estb"/>
             <field name="perm_read" eval="True"/>
             <field name="perm_write" eval="True"/>
             <field name="perm_create" eval="False"/>
@@ -92,7 +69,7 @@
         <!-- Assign the AO(Exstablishment) to the estate.quarter_type model -->
         <record id="group_aao_estb_qua_access" model="ir.model.access">
             <field name="model" search="[('model', '=', 'estate.quarter_type')]"/>
-            <field name="group" ref="group_asst_admin_officer_estb"/>
+            <field name="group" ref="base.group_asst_admin_officer_estb"/>
             <field name="perm_read" eval="True"/>
             <field name="perm_write" eval="True"/>
             <field name="perm_create" eval="False"/>
@@ -101,7 +78,7 @@
         <!-- Assign the Assistant AO (Exstablishment) to the estate.quarter_type_location model -->
         <record id="group_ao_estate_loc_access" model="ir.model.access">
             <field name="model" search="[('model', '=', 'estate.quarter_type_location')]"/>
-            <field name="group" ref="group_admin_officer_estate"/>
+            <field name="group" ref="base.group_admin_officer_estate"/>
             <field name="perm_read" eval="True"/>
             <field name="perm_write" eval="True"/>
             <field name="perm_create" eval="False"/>
@@ -110,7 +87,7 @@
         <!-- Assign the Administrative officer to the estate.quarter_type_location model -->
         <record id="group_aao_estate_loc_access" model="ir.model.access">
             <field name="model" search="[('model', '=', 'estate.quarter_type_location')]"/>
-            <field name="group" ref="group_asst_admin_officer_estate"/>
+            <field name="group" ref="base.group_asst_admin_officer_estate"/>
             <field name="perm_read" eval="True"/>
             <field name="perm_write" eval="True"/>
             <field name="perm_create" eval="False"/>
@@ -119,7 +96,7 @@
         <!-- Assign the AO(Exstablishment) to the estate.quarter_type_location model -->
         <record id="group_ao_estb_loc_access" model="ir.model.access">
             <field name="model" search="[('model', '=', 'estate.quarter_type_location')]"/>
-            <field name="group" ref="group_admin_officer_estb"/>
+            <field name="group" ref="base.group_admin_officer_estb"/>
             <field name="perm_read" eval="True"/>
             <field name="perm_write" eval="True"/>
             <field name="perm_create" eval="False"/>
@@ -128,7 +105,7 @@
         <!-- Assign the AO(Exstablishment) to the estate.quarter_type_location model -->
         <record id="group_aao_estb_loc_access" model="ir.model.access">
             <field name="model" search="[('model', '=', 'estate.quarter_type_location')]"/>
-            <field name="group" ref="group_asst_admin_officer_estb"/>
+            <field name="group" ref="base.group_asst_admin_officer_estb"/>
             <field name="perm_read" eval="True"/>
             <field name="perm_write" eval="True"/>
             <field name="perm_create" eval="False"/>
@@ -138,23 +115,23 @@
         <!-- Access the groups to Menus -->
         <record model="ir.ui.menu-res.group" id="menu_technical_admin">
             <field name="menu" ref="menu_estate_allotment"/>
-            <field name="group" ref="group_technical_admin"/>
+            <field name="group" ref="base.group_technical_admin"/>
         </record>
         <record model="ir.ui.menu-res.group" id="menu_admin_officer_estate">
             <field name="menu" ref="menu_estate_allotment"/>
-            <field name="group" ref="group_admin_officer_estate"/>
+            <field name="group" ref="base.group_admin_officer_estate"/>
         </record>
         <record model="ir.ui.menu-res.group" id="menu_asst_admin_officer_estate">
             <field name="menu" ref="menu_estate_allotment"/>
-            <field name="group" ref="group_asst_admin_officer_estate"/>
+            <field name="group" ref="base.group_asst_admin_officer_estate"/>
         </record>
         <record model="ir.ui.menu-res.group" id="menu_admin_officer_estb">
             <field name="menu" ref="menu_estate_allotment"/>
-            <field name="group" ref="group_admin_officer_estb"/>
+            <field name="group" ref="base.group_admin_officer_estb"/>
         </record>
         <record model="ir.ui.menu-res.group" id="menu_asst_admin_officer_estb">
             <field name="menu" ref="menu_estate_allotment"/>
-            <field name="group" ref="group_asst_admin_officer_estb"/>
+            <field name="group" ref="base.group_asst_admin_officer_estb"/>
         </record>
     <!-- Access the groups to button  -->  
         <record model="ir.model.button"
@@ -166,27 +143,27 @@
         <record model="ir.model.button-res.group"
             id="button_access_confirm_admin">
             <field name="button" ref="button_confirm"/>
-            <field name="group" ref="group_technical_admin"/>
+            <field name="group" ref="base.group_technical_admin"/>
         </record>
         <record model="ir.model.button-res.group"
             id="button_access_confirm_ao">
             <field name="button" ref="button_confirm"/>
-            <field name="group" ref="group_admin_officer_estate"/>
+            <field name="group" ref="base.group_admin_officer_estate"/>
         </record>
         <record model="ir.model.button-res.group"
             id="button_access_confirm_aao">
             <field name="button" ref="button_confirm"/>
-            <field name="group" ref="group_asst_admin_officer_estate"/>
+            <field name="group" ref="base.group_asst_admin_officer_estate"/>
         </record>    
         <record model="ir.model.button-res.group"
             id="button_access_confirm_ao_estb">
             <field name="button" ref="button_confirm"/>
-            <field name="group" ref="group_admin_officer_estb"/>
+            <field name="group" ref="base.group_admin_officer_estb"/>
          </record>
         <record model="ir.model.button-res.group"
             id="button_access_confirm_aao_estb">
             <field name="button" ref="button_confirm"/>
-            <field name="group" ref="group_asst_admin_officer_estb"/>
+            <field name="group" ref="base.group_asst_admin_officer_estb"/>
          </record>
         -->
     </data>

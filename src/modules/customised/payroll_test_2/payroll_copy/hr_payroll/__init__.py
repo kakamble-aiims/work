@@ -5,7 +5,7 @@ from .hr_salaryrules import *
 from .hr_contract import *
 from .hr_payroll_investment_declaration import *
 from .hr_tds import *
-
+from .hr_payslip_report import *
 
 
 def register():
@@ -33,4 +33,11 @@ def register():
         IncomeTaxDeduction,
         FiscalYear,
         TaxableIncomeProjectionsLine,
+        IncomeTaxSchedule,
         module='hr_payroll', type_='model')
+    Pool.register(
+        IncomeTaxScheduleWiz,
+        module='hr_payroll', type_='wizard')
+    Pool.register(
+        IncomeTaxReport,
+        module='hr_payroll', type_='report')

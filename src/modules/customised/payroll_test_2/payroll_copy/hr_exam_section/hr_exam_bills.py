@@ -1,8 +1,6 @@
-from datetime import datetime, date
+from datetime import date
 from trytond.model import ModelView, ModelSQL, fields, Workflow
-from trytond.pyson import Eval, PYSONEncoder
-from trytond.pool import Pool
-from trytond.transaction import Transaction
+from trytond.pyson import Eval
 
 __all__ = [
     'RenumerationBill', 'TADABill', 'TADAJourney',
@@ -10,6 +8,7 @@ __all__ = [
     'ContingencyJourney', 'TADAllowancePerDay',
     'TADAHotelFoodEntitlement', 'RenumerationPurposeandPay'
 ]
+
 
 class RenumerationBill(Workflow, ModelSQL, ModelView):
     '''Examination Renumeration Bill'''
@@ -59,7 +58,6 @@ class RenumerationBill(Workflow, ModelSQL, ModelView):
         'invisible': Eval('type_of_examiner') == 'internal',
         'readonly': ~Eval('state').in_(['draft'])
     }, depends=['type_of_examiner', 'state'])
-    
     exam = fields.Many2One('exam_section.exam', 'Exam', states={
             'readonly': ~Eval('state').in_(['draft']),
         }, depends=['state']
@@ -106,15 +104,15 @@ class RenumerationBill(Workflow, ModelSQL, ModelView):
     @staticmethod
     def default_state():
         return 'draft'
-    
+
     @fields.depends('employee')
     def on_change_with_designation(self):
-        '''Fill up employee designation field 
+        '''Fill up employee designation field
            as soon as employee field is changed'''
         if self.employee:
             if self.employee.designation:
                 return self.employee.designation.name
-    
+
     def get_total_amount(self, name):
         '''Calculate total amount of Renumeration Bill'''
         res = 0
@@ -134,7 +132,7 @@ class RenumerationBill(Workflow, ModelSQL, ModelView):
         else:
             res = total_amount
         return res
-    
+
     @classmethod
     def __setup__(cls):
         '''Setup error messages, workflow transitions, and button properties
@@ -182,19 +180,19 @@ class RenumerationBill(Workflow, ModelSQL, ModelView):
        (except delete)'''
     @classmethod
     @Workflow.transition('confirm')
-    def confirm_data(cls,records):
+    def confirm_data(cls, records):
         '''Change status of bill to confirm'''
         pass
-    
+
     @classmethod
     @Workflow.transition('aao_approval')
-    def send_for_aao_approval(cls,records):
+    def send_for_aao_approval(cls, records):
         '''Change status of bill to aao_approval'''
         pass
 
     @classmethod
     @Workflow.transition('ao_approval')
-    def send_for_ao_approval(cls,records):
+    def send_for_ao_approval(cls, records):
         '''Change status of bill to ao_approval'''
         pass
 
@@ -275,7 +273,7 @@ class RenumerationPurposeandPay(ModelSQL, ModelView):
             'amt_lt_0': 'Amount is less than zero',
             'max_range': 'Maximum Amount exceeded',
         })
-    
+
     @classmethod
     def validate(cls, records):
         super(RenumerationPurposeandPay, cls).validate(records)
@@ -283,9 +281,9 @@ class RenumerationPurposeandPay(ModelSQL, ModelView):
             record.check_amount()
 
     def check_amount(self):
-        '''Check whether: 
+        '''Check whether:
                 (i) amount is less thanm zero or not
-                (ii) amount exceeds maximum amount 
+                (ii) amount exceeds maximum amount
                      allowed for spefific purpose or not'''
         amount = self.amount
         purpose = self.purpose
@@ -295,26 +293,21 @@ class RenumerationPurposeandPay(ModelSQL, ModelView):
             elif purpose.max_range != 0 and amount > purpose.max_range:
                 self.raise_user_error('max_range')
 
-    # @classmethod
-    # def show_exam_type(cls, records):
-    #     for rec in records:
-    #         print(rec.renumeration.exam.exam_type)
-    
     @fields.depends('renumeration')
     def on_change_with_external(self, name=None):
-        '''Function for hidden field to determine whether bill 
+        '''Function for hidden field to determine whether bill
            is for AIIMS Employee or external examiner'''
         if self.renumeration:
             if self.renumeration.type_of_examiner == 'external':
                 return True
         return False
-    
+
     @fields.depends('renumeration')
     def on_change_with_exam_type(self, name=None):
         '''Function for hidden field to fetch type of examination'''
         if self.renumeration and self.renumeration.exam:
             return self.renumeration.exam.exam_type.id
-    
+
     @fields.depends('purpose')
     def on_change_with_payment_basis(self):
         '''Function for fetching payment basis
@@ -332,13 +325,14 @@ class RenumerationPurposeandPay(ModelSQL, ModelView):
                 res = self.purpose.min_range
         return res
 
+
 class TADABill(Workflow, ModelSQL, ModelView):
     '''Examination TA/DA Bill'''
 
     __name__ = 'exam_section.ta_da_bill'
 
-    employee = fields.Many2One('company.employee', 'Employee',
-        states={
+    employee = fields.Many2One(
+        'company.employee', 'Employee', states={
             'readonly': ~Eval('state').in_(['draft'])
         }, depends=['state']
     )
@@ -358,14 +352,13 @@ class TADABill(Workflow, ModelSQL, ModelView):
             'draft', 'confirm',
         ])}
     )
-    approved_date = fields.Date('Approved Date',
-        states={
+    approved_date = fields.Date('Approved Date', states={
             'readonly': Eval('state').in_(['approved'])
         }
     )
     center = fields.Many2One('exam.centers', 'Center')
-    designation = fields.Many2One('employee.designation', 'Designation',
-        states={
+    designation = fields.Many2One(
+        'employee.designation', 'Designation', states={
             'readonly': ~Eval('state').in_(['draft'])
         }, depends=['state']
     )
@@ -435,15 +428,6 @@ class TADABill(Workflow, ModelSQL, ModelView):
         fields.Float('Net Paid'),
         'calculate_net_paid'
     )
-    # signatures = fields.One2Many(
-    #     'exam_section.ta_da_signature',
-    #     'ta_da',
-    #     'Signature',
-    #     states={
-    #         'readonly': ~Eval('state').in_(['draft'])
-    #     },
-    #     depends=['state']
-    # )
     exam = fields.Many2One(
         'exam_section.exam',
         'Exam',
@@ -453,15 +437,6 @@ class TADABill(Workflow, ModelSQL, ModelView):
         depends=['state'],
         required=True
     )
-
-    # @fields.depends('employee')
-    # def on_change_with_designation(self):
-    #     return self.employee.designation.name if self.employee else ''
-
-    # @fields.depends('employee')
-    # def on_change_with_department(self):
-    #     return self.employee.department.name if self.employee else ''
-    
 
     @property
     def total_hotel_amount(self):
@@ -528,16 +503,16 @@ class TADABill(Workflow, ModelSQL, ModelView):
         ))
 
     def get_total_journey_amount(self, name):
-        '''Calculate the total amount for journey 
+        '''Calculate the total amount for journey
            entered in TA/DA Bill by employee'''
         total = 0
         if self.journey:
             for journey in self.journey:
                 total += journey.amount
         return total
-    
+
     def get_total_hotel_food_amount(self, name):
-        '''Calculate the total amount for hotel and food 
+        '''Calculate the total amount for hotel and food
            entered in TA/DA Bill by employee'''
         total = 0
         if self.hotel_food:
@@ -546,20 +521,21 @@ class TADABill(Workflow, ModelSQL, ModelView):
         return total
 
     def get_total_local_transport_amount(self, name):
-        '''Calculate the total amount for hotel and food 
+        '''Calculate the total amount for hotel and food
            entered in Hotel/Food section of TA/DA Bill by employee'''
         total = 0
         if self.local_transport:
             for record in self.local_transport:
                 total += record.amount
         return total
-    
+
     def get_total_amount(self, name):
         '''Calculate the total amount of TA/DA Bill'''
-        return (self.total_journey + self.total_hotel_food + self.total_local_transport)
+        return (self.total_journey
+                + self.total_hotel_food + self.total_local_transport)
 
     def calculate_recovery(self, name):
-        '''Calculate the recovery for hotel stay, food and journey 
+        '''Calculate the recovery for hotel stay, food and journey
            entered in TA/DA Bill by employee'''
         global days_hotel
         global days_food
@@ -580,48 +556,25 @@ class TADABill(Workflow, ModelSQL, ModelView):
                         food_entitlement = line.food_charges
         for hotel_food in self.hotel_food:
             days_hotel += hotel_food.no_of_nights_stayed \
-                        if hotel_food.type_ in ['hotel'] else 0 
+                if hotel_food.type_ in ['hotel'] else 0
             days_food += hotel_food.no_of_days_food \
-                        if hotel_food.type_ in ['food'] else 0
+                if hotel_food.type_ in ['food'] else 0
         total_hotel = days_hotel * hotel_entitlement
         total_food = days_food * food_entitlement
         hotel_amount = self.total_hotel_amount
         food_amount = self.total_food_amount
         recovery_hotel = total_hotel - hotel_amount \
-                        if total_hotel > hotel_amount else 0
+            if total_hotel > hotel_amount else 0
         recovery_food = total_food - food_amount \
-                        if total_food > food_amount else 0
+            if total_food > food_amount else 0
         res = recovery_food + recovery_hotel
         return res
-    
-    
+
     def calculate_net_paid(self, name):
         '''Calculate net paid amount, i.e.
            total amount - recovery amount'''
         return self.total_amount - self.recovery
-    
-    @property
-    def total_hotel_amount(self):
-        '''Calculate the total amount for hotel stay entered in
-           Hotel/Food section of TA/DA Bill by employee'''
-        res = 0
-        if self.hotel_food:
-            for record in self.hotel_food:
-                if record.type_ in ['hotel']:
-                    res += record.amount
-        return res
 
-    @property
-    def total_food_amount(self):
-        '''Calculate the total amount for food entries entered in
-           Hotel/Food section of TA/DA Bill by employee'''
-        res = 0
-        if self.hotel_food:
-            for record in self.hotel_food:
-                if record.type_ in ['food']:
-                    res += record.amount
-        return res
-    
     @classmethod
     @Workflow.transition('confirm')
     def submit(cls, records):
@@ -634,13 +587,13 @@ class TADABill(Workflow, ModelSQL, ModelView):
     '''Button functions for executing workflow transitions'''
     @classmethod
     @Workflow.transition('aao_approval')
-    def send_for_aao_approval(cls,records):
+    def send_for_aao_approval(cls, records):
         '''Change status of bill to aao_approval'''
         pass
 
     @classmethod
     @Workflow.transition('ao_approval')
-    def send_for_ao_approval(cls,records):
+    def send_for_ao_approval(cls, records):
         '''Change status of bill to ao_approval'''
         pass
 
@@ -733,7 +686,7 @@ class TADAJourney(ModelSQL, ModelView):
             record.check_amount()
 
     def check_date(self):
-        '''Check whether departure date is greater than 
+        '''Check whether departure date is greater than
            arrival date or not'''
         if self.departure_date > self.arrival_date:
             self.raise_user_error('date_error')
@@ -742,7 +695,6 @@ class TADAJourney(ModelSQL, ModelView):
         '''Check whether amount is less than zero or not'''
         if self.amount < 0:
             self.raise_user_error('amount_lt_0')
-        
 
 
 class TADAHotelFood(ModelSQL, ModelView):
@@ -809,7 +761,7 @@ class TADAHotelFood(ModelSQL, ModelView):
         if self.type_ == 'hotel':
             if self.from_date:
                 if self.to_date:
-                    no_of_days_delta = self.to_date - self.from_date 
+                    no_of_days_delta = self.to_date - self.from_date
                     return int(no_of_days_delta.days)
         return 0
 
@@ -820,7 +772,7 @@ class TADAHotelFood(ModelSQL, ModelView):
         if self.type_ == 'food':
             if self.from_date:
                 if self.to_date:
-                    no_of_days_delta = self.to_date - self.from_date 
+                    no_of_days_delta = self.to_date - self.from_date
                     return int(no_of_days_delta.days)
         return 0
 
@@ -879,7 +831,7 @@ class TADALocalTransport(ModelSQL, ModelView):
         cls._error_messages.update({
             'amount_lt_0': 'Amount cannot be less than 0'
         })
-    
+
     @classmethod
     def validate(cls, records):
         super(TADALocalTransport, cls).validate(records)
@@ -974,5 +926,3 @@ class TADAHotelFoodEntitlement(ModelSQL, ModelView):
     pay_level = fields.Char('Pay Level')
     hotel_charges = fields.Float('Hotel Charges')
     food_charges = fields.Float('Food Charges')
-
-

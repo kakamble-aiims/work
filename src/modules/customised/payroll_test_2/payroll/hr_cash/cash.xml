@@ -127,9 +127,9 @@
 
         <!-- Menu for wizard-->
 
-        <menuitem id="menu_cash_subitem_wiz" name="Cash Handling and Treasury Allowance" parent="hr_hra.menu_allowance" action="act_wizard_cash_allowance_wizard"/>
+        <menuitem id="menu_cash_subitem_wiz" name="Cash Handling and Treasury Allowance" parent="hr_payroll.menu_allowance" action="act_wizard_cash_allowance_wizard"/>
 
         <!-- Menu -->
-        <menuitem id="menu_cash_subitem" name="Cash Handling and Treasury Allowance" parent="hr_hra.menu_allowance" action="action_cash"/>
+        <menuitem id="menu_cash_subitem" name="Cash Handling and Treasury Allowance" parent="hr_payroll.menu_allowance" action="action_cash"/>
     </data>
 </tryton>

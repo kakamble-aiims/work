@@ -1,10 +1,10 @@
 from trytond.model import ModelSQL, ModelView, Workflow, fields
 from trytond.pyson import Eval
-from trytond.pool import Pool
+
 
 __all__ = [
-        'EstateAllotment', 'QuarterType',
-        'QuarterTypeLocation']
+    'EstateAllotment', 'QuarterType',
+    'QuarterTypeLocation']
 
 
 class EstateAllotment(Workflow, ModelSQL, ModelView):
@@ -16,21 +16,22 @@ class EstateAllotment(Workflow, ModelSQL, ModelView):
         ('draft', 'Draft'),
         ('confirm', 'Confirm'),
     ], 'Status', readonly=True)
-    employee = fields.Many2One('company.employee', 'Employee', states={
+    employee = fields.Many2One('company.employee', 'Employee', 
+        states={
         'readonly': ~Eval('state').in_(['draft'])
-    }, depends=['state'])
+    }, depends=['state'], required=True)
     center = fields.Many2One(
         'gnuhealth.institution',
         'Center Name',
         states={
             'readonly': ~Eval('state').in_(['draft'])
-        }, depends=['state'])
+        }, depends=['state'], required=True)
     department = fields.Many2One(
         'company.department',
         'Department',
         states={
             'readonly': ~Eval('state').in_(['draft'])
-        }, depends=['state'])
+        }, depends=['state'], required=True)
     salary_code = fields.Char(
         'Salary Code',
         states={
@@ -38,7 +39,7 @@ class EstateAllotment(Workflow, ModelSQL, ModelView):
         }, depends=['state'])
     quarter_no = fields.Char('Quarter No.', states={
         'readonly': ~Eval('state').in_(['draft'])
-    }, depends=['state'])
+    }, depends=['state'], required=True)
     location = fields.Selection(
         [
             ('ansari_nagar_east', 'Ansari Nagar(E)'),
@@ -132,20 +133,21 @@ class EstateAllotment(Workflow, ModelSQL, ModelView):
     def default_servant_quarter_fee():
         return 0
 
-    @fields.depends('employee', 'center_name', 'department_name', 'salary_code')
+    @fields.depends('employee', 'center_name',
+                    'department_name', 'salary_code')
     def on_change_employee(self):
         if self.employee:
             self.center = self.employee.center if self.employee.center else None
             self.department = self.employee.department if self.employee.department else None
             self.salary_code = self.employee.salary_code if self.employee.salary_code else ''
-    
+
     def get_license_fee(self, name):
         if self.quarter_type:
             return self.quarter_type.license_fee
         else:
             return 0
-        return self.quarter_type.license_fee    
-    
+        return self.quarter_type.license_fee
+
     def get_water_charges(self, name):
         if self.quarter_type:
             return self.quarter_type.water_charges
@@ -153,11 +155,8 @@ class EstateAllotment(Workflow, ModelSQL, ModelView):
             return 0
         return self.quarter_type.water_charges
 
-    
-    
     @fields.depends('garage')
     def on_change_with_garage_fee(self, name=None):
-        # import pdb;pdb.set_trace()
         garage_fee = 0
         if self.garage:
             garage_fee = 40
@@ -172,18 +171,12 @@ class EstateAllotment(Workflow, ModelSQL, ModelView):
             servant_quarter_fee = 70
         else:
             servant_quarter_fee = 0
-        return servant_quarter_fee  
-    
+        return servant_quarter_fee
 
     @classmethod
     @Workflow.transition('confirm')
     def confirm_details(cls, records):
         pass
-
-    # @classmethod
-    # @Workflow.transition('submit')
-    # def submit(cls, records):
-    #     pass
 
 
 class QuarterType(ModelSQL, ModelView):
@@ -203,18 +196,8 @@ class QuarterType(ModelSQL, ModelView):
 
 class QuarterTypeLocation(ModelSQL, ModelView):
     '''Quarter Type Location'''
-    
+
     __name__ = 'estate.quarter_type_location'
 
     quarter_type = fields.Many2One('estate.quarter_type', 'Quarter Type')
     name = fields.Char('Location')
-# class Quarter(ModelSQL, ModelView):
-#     '''Quarter'''
-#     name = fields.Char('Name')
-#     quarter_type = fields.Char('Quarter Type')
-
-
-# class OccupationReport(Report):
-#     '''Occupation Report'''
-
-#     __name__ = 'hr.estate.occupation_report'

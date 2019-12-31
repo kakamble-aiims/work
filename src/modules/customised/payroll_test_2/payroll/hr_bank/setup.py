@@ -68,7 +68,7 @@ setup(name=name,
           'trytond.modules.hr_bank':
           (info.get('xml', [])
            + ['tryton.cfg', 'view/*.xml', 'locale/*.po', 'icons/*.svg',
-              'hr_banks/*.rst']),
+              'hr_banks/*.rst', '*.fodt']),
       },
       platforms='any',
       license='GPL-3',

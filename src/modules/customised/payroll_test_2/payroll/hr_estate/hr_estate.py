@@ -1,6 +1,7 @@
 from trytond.model import ModelSQL, ModelView, Workflow, fields
 from trytond.pyson import Eval
 
+
 __all__ = [
     'EstateAllotment', 'QuarterType',
     'QuarterTypeLocation']
@@ -15,21 +16,22 @@ class EstateAllotment(Workflow, ModelSQL, ModelView):
         ('draft', 'Draft'),
         ('confirm', 'Confirm'),
     ], 'Status', readonly=True)
-    employee = fields.Many2One('company.employee', 'Employee', states={
+    employee = fields.Many2One('company.employee', 'Employee', 
+        states={
         'readonly': ~Eval('state').in_(['draft'])
-    }, depends=['state'])
+    }, depends=['state'], required=True)
     center = fields.Many2One(
         'gnuhealth.institution',
         'Center Name',
         states={
             'readonly': ~Eval('state').in_(['draft'])
-        }, depends=['state'])
+        }, depends=['state'], required=True)
     department = fields.Many2One(
         'company.department',
         'Department',
         states={
             'readonly': ~Eval('state').in_(['draft'])
-        }, depends=['state'])
+        }, depends=['state'], required=True)
     salary_code = fields.Char(
         'Salary Code',
         states={
@@ -37,7 +39,7 @@ class EstateAllotment(Workflow, ModelSQL, ModelView):
         }, depends=['state'])
     quarter_no = fields.Char('Quarter No.', states={
         'readonly': ~Eval('state').in_(['draft'])
-    }, depends=['state'])
+    }, depends=['state'], required=True)
     location = fields.Selection(
         [
             ('ansari_nagar_east', 'Ansari Nagar(E)'),

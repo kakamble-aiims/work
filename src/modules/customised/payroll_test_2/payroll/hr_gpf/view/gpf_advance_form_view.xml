@@ -6,6 +6,12 @@
             <field name="salary_code"/>
             <label name="employee"/>
             <field name="employee"/>
+            <label name="gpf_file_no"/>
+            <field name="gpf_file_no"/>
+            <label name="department"/>
+            <field name="department"/>
+            <label name="designation"/>
+            <field name="designation"/>
             <label name="dob"/>
             <field name="dob"/>
             <label name="doj"/>
@@ -44,6 +50,8 @@
             <field name="state"/>
             <label name="cancel_reason"/>
             <field name="cancel_reason"/>
+            <label name="age"/>
+            <field name="age"/>
             <label name="check"/>
             <field name="check"/>
         <group id="advance_button_ids" colspan="4" col="6">

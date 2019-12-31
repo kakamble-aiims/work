@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+
+<tryton>
+    <data>
+       <menuitem id="menu_hba_wiz" name="HBA Schedule" 
+            parent="hr_payroll.menu_schedule" action="hr_loan.act_wizard_hba_schedule_wizard"/>
+        <menuitem id="menu_computer_wiz" name="Computer Loan Schedule" 
+            parent="hr_payroll.menu_schedule" action="hr_loan.act_wizard_computer_loan_schedule_wizard"/>
+    </data>
+</tryton>

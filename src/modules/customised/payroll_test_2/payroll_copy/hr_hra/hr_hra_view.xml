@@ -2,7 +2,6 @@
 
 <tryton>
     <data>
-        <menuitem id="menu_allowance" name="Allowances"/>
         <!-- Form View -->
         <record id="form_hra_view" model="ir.ui.view">
             <field name="name">form_hra</field>
@@ -96,9 +95,36 @@
             <field name="act_window" ref="action_hra"/>
         </record>
 
-        <!-- Menu -->
-        <menuitem id="menu_hra_subitem" name="House Rent Allowance" parent="menu_allowance" action="action_hra"/>
+        <!-- HRA LIST -->
+        <record id="form_hralist_view" model="ir.ui.view">
+            <field name="name">form_hralist</field>
+            <field name="model">hra.list</field>
+            <field name="type">form</field>
+        </record>
+        <record id="tree_hralist_view" model="ir.ui.view">
+            <field name="name">tree_hra_list</field>
+            <field name="model">hra.list</field>
+            <field name="type">tree</field>
+        </record>
 
+        <!-- wiz class -->
+        <record id="form_wiz_hra_view" model="ir.ui.view">
+            <field name="name">form_wiz</field>
+            <field name="model">hra.employee.list</field>
+            <field name="type">form</field>
+        </record>
+        <record id="tree_wiz_hra_view" model="ir.ui.view">
+            <field name="name">tree_wiz</field>
+            <field name="model">company.employee</field>
+            <field name="type">tree</field>
+        </record>
+
+         <!--XML Record Wizard-->
+         <record id="act_wizard_House_Rent_Allowance_wizard" model="ir.action.wizard">
+            <field name="name">House Rent Allowance</field>
+            <field name="wiz_name">hra.allowance.wiz</field>
+            <field name="window" eval="True"/>
+        </record>
         <!-- Buttons -->
         <!-- Hr Hra -->
         <record id="button_computer_submitted_to_cashsection" model="ir.model.button">

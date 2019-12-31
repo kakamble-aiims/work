@@ -1,5 +1,4 @@
 from trytond.pool import Pool, PoolMeta
-from trytond.pyson import Eval
 
 __all__ = ['SalaryRule']
 
@@ -22,11 +21,11 @@ class SalaryRule(metaclass=PoolMeta):
         if employee_estate_details != []:
             current_estate_details_for_employee = employee_estate_details[0]
         return current_estate_details_for_employee
-    
-    
+
     def calculate_LICF(self, payslip, employee, contract):
-        employee_estate_details = self.get_estate_details_for_employee(employee)
-        amount = None
+        employee_estate_details = self.get_estate_details_for_employee(
+            employee)
+        amount = 0
         if employee_estate_details:
             license_fee = employee_estate_details.license_fee
             garage_fee = employee_estate_details.garage_fee
@@ -34,9 +33,10 @@ class SalaryRule(metaclass=PoolMeta):
             amount = license_fee + garage_fee + servant_quarter_fee
         return amount
 
-
-
     def calculate_WTR(self, payslip, employee, contract):
-        employee_estate_details = self.get_estate_details_for_employee(employee)
-        amount = employee_estate_details.water_charges
+        amount = 0
+        employee_estate_details = self.get_estate_details_for_employee(
+            employee)
+        if employee_estate_details:
+            amount = employee_estate_details.water_charges
         return amount

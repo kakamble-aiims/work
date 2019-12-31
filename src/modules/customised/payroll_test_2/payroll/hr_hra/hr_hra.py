@@ -18,16 +18,18 @@ class HouseRentAllowance(Workflow, ModelSQL, ModelView):
 
     __name__ = 'hr.allowance.hra'
 
-    salary_code = fields.Char('Salary Code', states={
+    salary_code = fields.Char('Salary Code', required=True,
+        states={
         'readonly': ~Eval('state').in_(['draft'])
     },
         depends=['state'])
-    employee = fields.Many2One('company.employee', 'Employee', states={
+    employee = fields.Many2One('company.employee', 'Employee', required=True,
+        states={
         'readonly': ~Eval('state').in_(['draft'])
     },
         depends=['state'])
-    designation = fields.Many2One('employee.designation', 'Designation')
-    department = fields.Many2One('company.department', 'Department')
+    designation = fields.Many2One('employee.designation', 'Designation', required=True)
+    department = fields.Many2One('company.department', 'Department', required=True,)
     from_date = fields.Date('From Date', states={
         'readonly': ~Eval('state').in_(['draft'])
     },
@@ -40,7 +42,8 @@ class HouseRentAllowance(Workflow, ModelSQL, ModelView):
         'readonly': ~Eval('state').in_(['draft'])
     },
         depends=['state'])
-    rent = fields.Float('Expenditure On Rent', states={
+    amount = fields.Float('Expenditure On Rent',required=True, 
+        states={
         'readonly': ~Eval('state').in_(['draft'])
     },
         depends=['state'])
@@ -172,8 +175,10 @@ class HraList(ModelSQL, ModelView):
     employee = fields.Many2One('company.employee', 'Employee')
     designation = fields.Many2One('employee.designation', 'Designation')
     department = fields.Many2One('company.department', 'Department')
-    amount = fields.Float('Amount')
     salary_code = fields.Char('Salary Code')
+    list_start_date = fields.Date('Start Date')
+    list_end_date = fields.Date('End Date')
+    amount = fields.Float('Amount')
     hremployee_list = fields.Many2One('hra.employee.list', 'Employee List')
 
     @fields.depends('employee')
@@ -182,6 +187,10 @@ class HraList(ModelSQL, ModelView):
             self.salary_code = self.employee.salary_code if self.employee.salary_code else None
             self.designation = self.employee.designation if self.employee.designation else None
             self.department = self.employee.department if self.employee.department else None
+
+    @staticmethod
+    def default_list__start_date():
+        return datetime.date.today()
 
 
 class HouseRentAllowanceWiz(Wizard):
@@ -217,6 +226,7 @@ class HouseRentAllowanceWiz(Wizard):
                 'employee': employee.employee,
                 'designation': employee.designation,
                 'department': employee.department,
+                'amount': employee.amount
             }
             create_hra_form.append(Hra.create([vals]))
         self.raises.hra_form = create_hra_form

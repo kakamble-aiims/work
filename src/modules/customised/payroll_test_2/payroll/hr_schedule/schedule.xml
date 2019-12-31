@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+
+<tryton>
+    <data>
+        <!-- wiz  OA class -->
+        <record id="form_wiz_oa_view" model="ir.ui.view">
+            <field name="name">form_wiz</field>
+            <field name="model">oa.schedule</field>
+            <field name="type">form</field>
+        </record>
+         <!--XML Record  OA Wizard-->
+         <record id="act_wizard_OA_deduction_wizard" model="ir.action.wizard">
+            <field name="name">Off. Association Fund</field>
+            <field name="wiz_name">oa.schedule.wiz</field>
+            <field name="window" eval="False"/>
+        </record>
+         <!--  OA Report-->
+        <record id="report_oa" model="ir.action.report">
+            <field name="name">Off. Association Fund Schedule</field>
+            <field name="model">hr.payslip</field>
+            <field name="report_name">oa.report</field>
+            <field name="report">hr_schedule/oa_report.fodt</field>
+            <field name="extension">pdf</field>
+        </record>
+        <!-- wiz  EHS class -->
+        <record id="form_wiz_ehs_view" model="ir.ui.view">
+            <field name="name">form_wiz</field>
+            <field name="model">ehs.schedule</field>
+            <field name="type">form</field>
+        </record>
+         <!--XML Record  EHS Wizard-->
+         <record id="act_wizard_ehs_deduction_wizard" model="ir.action.wizard">
+            <field name="name">EHS/EIS Schedule</field>
+            <field name="wiz_name">ehs.schedule.wiz</field>
+            <field name="window" eval="False"/>
+        </record>
+         <!--  EHS Report-->
+        <record id="report_ehs" model="ir.action.report">
+            <field name="name">EHS/EIS Schedule</field>
+            <field name="model">hr.payslip</field>
+            <field name="report_name">ehs.report</field>
+            <field name="report">hr_schedule/ehs_report.fodt</field>
+            <field name="extension">pdf</field>
+        </record>
+        <!-- Menu -->
+        <menuitem id="menu_oa_wiz" name="Off. Association Fund" 
+         parent="hr_estate.menu_schedule" action="act_wizard_OA_deduction_wizard"/>
+        <menuitem id="menu_ehs_wiz" name="EHS/EIS Schedule" 
+         parent="hr_estate.menu_schedule" action="act_wizard_ehs_deduction_wizard"/>
+    </data>
+</tryton>

@@ -145,14 +145,32 @@
             <field name="window" eval="True"/>
         </record>
 
+        <!-- wiz class -->
+        <record id="form_wiz_tution_fee_schedule_view" model="ir.ui.view">
+            <field name="name">form_report</field>
+            <field name="model">tution.fee.schedule</field>
+            <field name="type">form</field>
+        </record>
+
+         <!--XML Record Wizard-->
+        <record id="act_wizard_tution_fee_schedule_wizard" model="ir.action.wizard">
+            <field name="name">Tution Fee Schedule</field>
+            <field name="wiz_name">tution.fee.schedule.wiz</field>
+            <field name="window" eval="False"/>
+        </record>
+
+        <!-- Report-->
+        <record id="report_tution_fee" model="ir.action.report">
+            <field name="name">Tution Fee Schedule</field>
+            <field name="model">hr.allowance.cea</field>
+            <field name="report_name">tution.fee.report</field>
+            <field name="report">hr_cea/hr_cea.fodt</field>
+            <field name="extension">pdf</field>
+        </record>
+
         <!-- Menu for wizard-->
 
-        <menuitem id="menu_cea_subitem_wiz" name="Children Eduaction Allowance" 
-            parent="hr_hra.menu_allowance" action="act_wizard_children_education_allowance_wizard"/>
-
-        <!-- Menu -->
-        <menuitem id="menu_cea_subitem" name="Children Education Allowance" 
-            parent="hr_hra.menu_allowance" action="action_cea"/>
+        
 
     </data>
 </tryton>

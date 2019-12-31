@@ -3,6 +3,7 @@ from .hr_exam_section import *
 from .hr_exams import *
 from .hr_exam_bills import *
 
+
 def register():
     Pool.register(
         RenumerationBill,

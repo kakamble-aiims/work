@@ -231,6 +231,17 @@ class HrSalaryRule(ModelSQL, ModelView):
             amount = 7200
         return amount
 
+    def calculate_NPS(self, payslip, employee, contract):
+        '''
+        Takes Parameters - payslip, employee and contract
+
+        returns the value of Nursing Allowance to be added
+        '''
+        amount = 0
+        if employee.gpf_nps == 'nps':
+            amount = (10 * self.basic)/100
+        return amount
+
     def calculate_TRANSPORT_ALW(self, payslip, employee, contract):
         '''
         Takes Parameters - payslip, employee and contract
@@ -240,7 +251,8 @@ class HrSalaryRule(ModelSQL, ModelView):
         # TODO: Write the condition if the employee is handicapped
         trans_alw_factor = 0
         if not employee.grade:
-            self.raise_user_error("{employee}'s Pay Matrix Level is missing.".format(employee=employee.party.name))
+            self.raise_user_error("{employee}'s Pay Matrix Level is missing.".format(
+                employee=employee.party.name))
 
         grade_range1 = [str(x) for x in range(9, 14)]
         grade_range1.extend(['13 A1', '13 A2'])
@@ -257,7 +269,8 @@ class HrSalaryRule(ModelSQL, ModelView):
         else:
             trans_alw_factor = 3600
 
-        trans_alw = trans_alw_factor + self.calculate_DA(payslip, employee, contract)
+        trans_alw = trans_alw_factor + \
+            self.calculate_DA(payslip, employee, contract)
         if employee.category in ("ph", 'ph_general', 'ph_sc', 'ph_st', 'ph_obc'):
             trans_alw *= 2
         return trans_alw
@@ -464,7 +477,7 @@ class HrSalaryRule(ModelSQL, ModelView):
             amount = 500
         return amount
 
-    def calculate_EIS_DED(self, payslip, employee, contract):
+    def calculate_EIS(self, payslip, employee, contract):
         # TODO : In which year EIS deduction stopped
         '''
         Takes Parameters - payslip, employee and contract

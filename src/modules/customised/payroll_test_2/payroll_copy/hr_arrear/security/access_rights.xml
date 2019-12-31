@@ -16,6 +16,33 @@
         <field name="group" ref="group_admin_of_arrear"/>
         </record>
 
+        <!-- Access Rights of menu for the admin  -->
+        <record model="ir.ui.menu-res.group" id="menu_admin_arrear">
+            <field name="menu" ref="menu_hr_arrear"/>
+            <field name="group" ref="group_admin_of_arrear"/>
+        </record>
+
+        <!-- Access Rights of menu for the ao_arrear -->
+        <record model="ir.ui.menu-res.group" id="menu_ao_arrear">
+            <field name="menu" ref="menu_hr_arrear"/>
+            <field name="group" ref="group_ao_arrear"/>
+        </record>
+        <record model="ir.ui.menu-res.group" id="menu_ao_arrear_hr">
+            <field name="menu" ref="hr.menu_hr"/>
+            <field name="group" ref="group_ao_arrear"/>
+        </record>
+
+        <!-- Access Rights of menu for the jo_arrear -->
+        <record model="ir.ui.menu-res.group" id="menu_jo_arrear">
+            <field name="menu" ref="menu_hr_arrear"/>
+            <field name="group" ref="group_jo_arrear"/>
+        </record>
+        <record model="ir.ui.menu-res.group" id="menu_jo_arrear_hr">
+            <field name="menu" ref="hr.menu_hr"/>
+            <field name="group" ref="group_jo_arrear"/>
+        </record>
+
+
         <!-- Assign the rights of Admin -->
         <record id="group_admin_access" model="ir.model.access">
         <field name="model" search="[('model', '=', 'hr.arrear')]"/>
@@ -44,24 +71,6 @@
         <field name="perm_write" eval="True"/>
         <field name="perm_create" eval="True"/>
         <field name="perm_delete" eval="False"/>
-        </record>
-
-        <!-- Access Rights of menu for the admin  -->
-        <record model="ir.ui.menu-res.group" id="menu_admin_arrear">
-        <field name="menu" ref="menu_hr_arrear"/>
-        <field name="group" ref="group_admin_of_arrear"/>
-        </record>
-
-        <!-- Access Rights of menu for the ao_arrear -->
-        <record model="ir.ui.menu-res.group" id="menu_ao_arrear">
-        <field name="menu" ref="menu_hr_arrear"/>
-        <field name="group" ref="group_ao_arrear"/>
-        </record>
-
-        <!-- Access Rights of menu for the jo_arrear -->
-        <record model="ir.ui.menu-res.group" id="menu_jo_arrear">
-        <field name="menu" ref="menu_hr_arrear"/>
-        <field name="group" ref="group_jo_arrear"/>
         </record>
 
         <!--Access rights to the Buttons for the ao_arrear -->
@@ -115,6 +124,22 @@
         </record>
         <record model="ir.model.button-res.group" id="button_admin_admin">
         <field name="button" ref="button_submit"/>
+        <field name="group" ref="group_admin_of_arrear"/>
+        </record>
+        <record model="ir.model.button" id="button_drawn">
+        <field name="name">drawn_per_month</field>
+        <field name="model" search="[('model', '=', 'hr.arrear')]"/>
+        </record>
+        <record model="ir.model.button-res.group" id="button_admin_drawn">
+        <field name="button" ref="button_drawn"/>
+        <field name="group" ref="group_admin_of_arrear"/>
+        </record>
+        <record model="ir.model.button" id="button_due">
+        <field name="name">due_per_month</field>
+        <field name="model" search="[('model', '=', 'hr.arrear')]"/>
+        </record>
+        <record model="ir.model.button-res.group" id="button_admin_due">
+        <field name="button" ref="button_due"/>
         <field name="group" ref="group_admin_of_arrear"/>
         </record>
     </data>

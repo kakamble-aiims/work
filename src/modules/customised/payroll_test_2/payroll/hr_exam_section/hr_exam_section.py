@@ -1,11 +1,11 @@
 from datetime import date
-from trytond.model import ModelView, ModelSQL, fields, Workflow, Unique
+from trytond.model import ModelView, ModelSQL, fields, Workflow
 from trytond.pyson import Eval
 from trytond.pool import Pool
 from trytond.transaction import Transaction
 
 __all__ = [
-    'ExamCenter', 'ExamCenterAddress', 'Exam', 'Centers', 'Employees'
+    'ExamCenter', 'Exam', 'Centers', 'Employees'
     ]
 
 
@@ -21,24 +21,7 @@ class ExamCenter(ModelSQL, ModelView):
         )
     name = fields.Char('City')
     code = fields.Char('Code', required="True")
-    centers = fields.One2Many(
-        'exam_section.exam_center.address', 'center', 'Centers'
-    )
-
-    @classmethod
-    def __setup__(cls):
-        super().__setup__()
-        cls.__repr__ = 'code'
-
-
-class ExamCenterAddress(ModelSQL, ModelView):
-    '''Exam Center'''
-
-    __name__ = 'exam_section.exam_center.address'
-
-    center = fields.Many2One('exam_section.exam_center', 'Center')
-    code = fields.Char('Code', required="True")
-    name = fields.Text('Address')
+    address = fields.Char('Address')
 
     @classmethod
     def __setup__(cls):
@@ -118,13 +101,6 @@ class Exam(Workflow, ModelSQL, ModelView):
         'exam_section.ta_da_bill',
         'exam',
         'TA/DA Bills',
-        states=_TA_DA_PAGE_STATES,
-        depends=['state']
-    )
-    contingency_bills = fields.One2Many(
-        'exam_section.contingency_bill',
-        'exam',
-        'Contingency Bills',
         states=_TA_DA_PAGE_STATES,
         depends=['state']
     )
@@ -310,12 +286,8 @@ class Exam(Workflow, ModelSQL, ModelView):
     @classmethod
     @Workflow.transition('awaiting_ta_da')
     def generate_ta_da_bills(cls, records):
-        '''
-        Generate TA/DA and Contingency Bills for employees
-        involved in current exam
-        '''
+        '''Generate TA/DA Bills for employees involved in current exam'''
         TADA = Pool().get('exam_section.ta_da_bill')
-        Contingency = Pool().get('exam_section.contingency_bill')
         current_exam = cls.get_current_exam()
         current_date_from = current_exam.date_from
         current_date_to = current_exam.date_to
@@ -337,13 +309,6 @@ class Exam(Workflow, ModelSQL, ModelView):
             }])[0]
             current_employee.ta_da_bill = ta_da_bill_for_employee
             current_employee.ta_da_bill.save()
-            contingency_bill_for_employee = Contingency.create([{
-                'employee': current_employee.employee,
-                'exam': current_exam,
-                'exam_center': current_employee.center,
-            }])[0]
-            current_employee.contingency_bill = contingency_bill_for_employee
-            current_employee.contingency_bill.save()
             current_employee.save()
 
     @classmethod
@@ -458,23 +423,11 @@ class Employees(ModelSQL, ModelView):
     __name__ = 'exam.employees'
 
     employee = fields.Many2One('company.employee', 'Employee')
-    group = fields.Char('Group')
-    grade = fields.Many2One('company.employee.grade', 'Pay Matrix Level')
     center = fields.Many2One(
         'exam.centers',
-        'City',
+        'Center',
         domain=[('id', 'in', Eval('centers'))],
         depends=['centers']
-    )
-    address = fields.Many2One(
-        'exam_section.exam_center.address',
-        'Center',
-        domain=[('center', '=', Eval('location'))],
-        depends=['centers']
-    )
-    location = fields.Function(
-        fields.Many2One('exam_section.exam_center', 'Location'),
-        'on_change_with_location',
     )
     centers = fields.Function(
         fields.One2Many(
@@ -488,44 +441,12 @@ class Employees(ModelSQL, ModelView):
     renumeration_bill = fields.Many2One(
         'exam_section.renumeration_bill',
         'Renumeration Bill'
-    )
+        )
     ta_da_bill = fields.Many2One('exam_section.ta_da_bill', 'TA/DA Bill')
-    contingency_bill = fields.Many2One(
-        'exam_section.contingency_bill', 'Contingency Bill'
-    )
     date_payable = fields.Date('Date')
 
-    @classmethod
-    def __setup__(cls):
-        super(Employees, cls).__setup__()
-        t = cls.__table__()
-        cls._sql_constraints = [
-            ('employee_exam_unique', Unique(t, t.employee, t.exam),
-                'Same Employee cannot be added again in the same exam'
-            ),
-        ]
-    
     @fields.depends('exam')
     def on_change_with_centers(self, name=None):
         '''Get centers selected for current exam'''
         if self.exam and self.exam.centers:
             return [center.id for center in self.exam.centers]
-
-    @fields.depends('employee')
-    def on_change_with_group(self):
-        '''Get group of employee'''
-        if self.employee and self.employee.employee_group:
-            return self.employee.employee_group
-    
-    @fields.depends('employee')
-    def on_change_with_grade(self):
-        '''Get pay matrix level of employee'''
-        if self.employee and self.employee.grade:
-            return self.employee.grade.id
-    
-    @fields.depends('center')
-    def on_change_with_location(self, name=None):
-        '''Get current location for current exam'''
-        if self.center:
-            return self.center.location.id
-    

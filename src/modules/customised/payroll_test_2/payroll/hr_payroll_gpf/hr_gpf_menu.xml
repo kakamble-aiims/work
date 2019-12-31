@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+
+<tryton>
+    <data>
+       <menuitem id="menu_gpf_wiz" name="GPF Schedule" 
+            parent="hr_payroll.menu_schedule" action="hr_gpf.act_wizard_gpf_schedule_wizard"/>
+    </data>
+</tryton>

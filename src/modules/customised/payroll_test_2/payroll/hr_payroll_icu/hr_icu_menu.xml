@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+
+<tryton>
+    <data>
+        <!-- Menu -->
+        <menuitem id="menu_icu_subitem_wiz" name="ICU Allowance" parent="hr_payroll.menu_allowance" action="hr_icu.act_wizard_icu_allowance_wizard"/>
+        <menuitem id="menu_icu_subitem" name="ICU Allowance" parent="hr_payroll.menu_allowance" action="hr_icu.action_icu"/>
+    </data>
+</tryton>

@@ -3,12 +3,11 @@
     <data>
         <record id="hr_rule_news" model="hr.salary.rule">
             <field name="name">Newspaper Allowance</field>
-            <field name="priority" eval="420"/>
+            <field name="priority" eval="4200"/>
             <field name="code">NEWS_BILL</field>
-            <field name="category" ref="hr_payroll.salaryrule_alw"/>
+            <field name="category" ref="hr_payroll.salaryrule_rem"/>
             <field name="condition_select">python_code</field>
             <field name="amount_select">code</field>
-            <!-- <field name="amount_python_code"></field> -->
         </record>
     </data>    
 </tryton>    

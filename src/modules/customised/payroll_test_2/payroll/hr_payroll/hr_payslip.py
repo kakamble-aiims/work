@@ -67,24 +67,6 @@ class HrPayslip(Workflow, ModelSQL, ModelView):
             'readonly': ~Eval('state').in_(['draft'])
         }, depends=['state']
     )
-    # pay_and_allowance = fields.One2Many(
-    #     'hr.payslip.line',
-    #     'payslip', string='Payslip Lines',
-    #     #domain=[('category.code', 'in', ['BASIC', 'ALW', 'REM'])],
-    #     states={
-    #         'readonly': ~Eval('state').in_(['draft'])
-    #     },
-    #     depends=['state']
-    # )
-    # deductions = fields.One2Many(
-    #     'hr.payslip.line',
-    #     'payslip', string='Payslip Lines',
-    #     #domain=[('category.code', 'in', ['DED'])],
-    #     states={
-    #         'readonly': ~Eval('state').in_(['draft'])
-    #     },
-    #     depends=['state']
-    # )
     details_by_salary_rule_category = fields.One2Many(
         'hr.payslip.line', 'payslip',
         string='Details by Salary Rule', states={
@@ -107,6 +89,15 @@ class HrPayslip(Workflow, ModelSQL, ModelView):
         },
         depends=['state'], readonly=True
     )
+    department = fields.Many2One('company.department', 'Department')
+    employee_group = fields.Selection(
+        [
+            ('A', 'A'),
+            ('B', 'B'),
+            ('C', 'C'),
+            ('D', 'D'),
+            ('All', 'All')
+        ], "Employee Group", sort=False)
     ifsc = fields.Char(
         'IFSC Code',
         states={
@@ -140,10 +131,12 @@ class HrPayslip(Workflow, ModelSQL, ModelView):
     def on_change_employee(self):
         if self.employee:
             self.salary_code = self.employee.salary_code
-            self.bank_name = self.employee.bank_name.bank
+            self.department = self.employee.department
+            self.bank_name = self.employee.bank_name.bank if self.employee.bank_name else None
             self.bank_address = self.employee.bank_address
             self.account_no = self.employee.account_no
             self.bank_status = self.employee.bank_status
+            self.employee_group = self.employee.employee_group
 
     def get_pay_and_allowances(self):
         allowances_lines = []
@@ -277,7 +270,6 @@ class HrPayslip(Workflow, ModelSQL, ModelView):
                 'amount': amount,
                 'total': amount,
                 'priority': rule.priority,
-
             }
             line = PayslipLine.create([vals])
 
@@ -406,7 +398,9 @@ class SalaryStructure(ModelSQL, ModelView):
             'month': str(month_no),
             'year': year,
             'fiscal_year': current_fiscal_year,
-            'state': 'draft'
+            'department': employee.department,
+            'state': 'draft',
+            'employee_group': employee.employee_group
         }
         if payslip_batch:
             vals['payslip_batch'] = payslip_batch
@@ -446,7 +440,8 @@ class SalaryStructure(ModelSQL, ModelView):
             'month': str(month_no),
             'year': year,
             'fiscal_year': current_fiscal_year,
-            'state':  'draft'
+            'state':  'draft',
+            'employee_group': employee.employee_group
         }
         if payslip_batch:
             vals['payslip_batch'] = payslip_batch.id

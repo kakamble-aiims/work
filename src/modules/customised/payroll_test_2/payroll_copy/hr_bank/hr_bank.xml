@@ -54,9 +54,29 @@
             <field name="model" search="[('model', '=', 'company.employee')]"/>
         </record>
 
-        <!-- Menu -->
-        <!-- <menuitem id="menu_bank" name="Salary Details" parent="hr.menu_hr" sequence="3"/>
-        <menuitem id="menu_bank_details" name="My Salary Details" parent="menu_bank" action="action_bank" sequence="10"/> -->
+        <!-- wiz class -->
+        <record id="form_wiz_bank_statement_schedule_view" model="ir.ui.view">
+            <field name="name">form_wiz</field>
+            <field name="model">bank.statement.schedule</field>
+            <field name="type">form</field>
+        </record>
 
+        <!--XML Record Wizard-->
+        <record id="act_wiz_bank_statement_wizard" model="ir.action.wizard">
+            <field name="name">Bank Statement</field>
+            <field name="wiz_name">bank.schedule.wiz</field>
+            <field name="window" eval="False"/>
+        </record>
+    
+        <!-- Report-->
+        <record id="report_bank_statement" model="ir.action.report">
+            <field name="name">Bank Statement Schedule</field>
+            <field name="model">hr.payslip</field>
+            <field name="report_name">bank.statement.report</field>
+            <field name="report">hr_bank/hr_bank.fodt</field>
+            <field name="extension">pdf</field>
+        </record>
+
+        <menuitem id="menu_bank_statement_wiz" name="Bank Statement" parent="hr_payroll.menu_schedule" action="act_wiz_bank_statement_wizard"/>
     </data>        
 </tryton>

@@ -2,7 +2,6 @@
 
 <tryton>
     <data>
-        <!-- <menuitem id="menu_hda" name="HDA" parent="hra.menu_allowance" sequence="6"/> -->
         <!-- Form View -->
         <record id="form_hda_view" model="ir.ui.view">
             <field name="name">form_hda</field>
@@ -141,10 +140,5 @@
             <field name="wiz_name">hda.allowance.wiz</field>
             <field name="window" eval="True"/>
         </record>
-
-        <!-- Menu for wizard-->
-        <menuitem id="menu_hda_subitem_wiz" name="High Degree Allowance" parent="hr_hra.menu_allowance" action="act_wizard_high_degree_Allowance_wizard"/>
-        <!-- Menu -->
-        <menuitem id="menu_hda_subitem" name="High Degree Allowance" parent="hr_hra.menu_allowance" action="action_hda"/>
     </data>
 </tryton>

@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+    <tree>
+        <field name="due_date"/>
+        <field name="bpay"/>
+        <field name="npay"/>
+        <field name="da"/>
+        <field name="hra"/>
+        <field name="trans"/>
+        <field name="gross"/>
+    </tree>

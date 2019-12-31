@@ -7,13 +7,13 @@ import trytond.tests.test_tryton
 from trytond.tests.test_tryton import ModuleTestCase
 
 
-class HrCeaTestCase(ModuleTestCase):
+class HrCEATestCase(ModuleTestCase):
 
-    'Test Hr Cea module'
+    'Test Hr CEA module'
     module = 'hr_cea'
 
 
 def suite():
     suite = trytond.tests.test_tryton.suite()
-    suite.addTests(unittest.TestLoader().loadTestsFromTestCase(HrCeaTestCase))
+    suite.addTests(unittest.TestLoader().loadTestsFromTestCase(HrCEATestCase))
     return suite

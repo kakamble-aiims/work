@@ -36,7 +36,38 @@
             <field name="sequence">20</field>
         </record>
 
+        <!--ICU LIST -->
+        <record id="form_iculist_view" model="ir.ui.view">
+            <field name="name">form_iculist</field>
+            <field name="model">icu.list</field>
+            <field name="type">form</field>
+        </record>
+        <record id="tree_iculist_view" model="ir.ui.view">
+            <field name="name">tree_icu_list</field>
+            <field name="model">icu.list</field>
+            <field name="type">tree</field>
+        </record>
 
+        <!-- wiz class -->
+        <record id="form_wiz_icu_view" model="ir.ui.view">
+            <field name="name">form_wiz</field>
+            <field name="model">icu.employee.list</field>
+            <field name="type">form</field>
+        </record>
+        <record id="tree_wiz_icu_view" model="ir.ui.view">
+            <field name="name">tree_wiz</field>
+            <field name="model">company.employee</field>
+            <field name="type">tree</field>
+        </record>
+
+         <!--XML Record Wizard-->
+         <record id="act_wizard_icu_allowance_wizard" model="ir.action.wizard">
+            <field name="name">ICU Allowance</field>
+            <field name="wiz_name">icu.allowance.wiz</field>
+            <field name="window" eval="True"/>
+        </record>
+
+        <!--Create the form and tree for the tabs-->
         <record model="ir.ui.view" id="icu_view_form">
             <field name="model">hr.allowance.icu</field>
             <field name="type">form</field>
@@ -94,6 +125,6 @@
             <field name="act_window" ref="action_icu"/>
         </record>
         <!-- Menu -->
-        <menuitem id="menu_icu_subitem" name="ICU Allowance" parent="hr_hra.menu_allowance" action="action_icu"/>
+        
     </data>
 </tryton>

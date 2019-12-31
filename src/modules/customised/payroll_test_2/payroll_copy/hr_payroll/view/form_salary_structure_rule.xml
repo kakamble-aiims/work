@@ -4,5 +4,6 @@
     <group id="salary_structure" col="6" colspan="4">
         <field name="structure" />
         <field name="rules"/>
+        <field name="priority"/>
     </group>
 </form>

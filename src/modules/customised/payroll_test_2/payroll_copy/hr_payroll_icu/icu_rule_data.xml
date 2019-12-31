@@ -3,12 +3,11 @@
     <data>
         <record id="hr_rule_icu" model="hr.salary.rule">
             <field name="name">ICU Allowance</field>
-            <field name="priority" eval="2100"/>
+            <field name="priority" eval="500"/>
             <field name="code">ICU</field>
             <field name="category" ref="hr_payroll.salaryrule_alw"/>
             <field name="condition_select">python_code</field>
             <field name="amount_select">code</field>
-            <!-- <field name="amount_python_code"></field> -->
         </record>
     </data>    
 </tryton>    

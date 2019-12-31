@@ -78,7 +78,7 @@
         </record>
 
         <!-- Menu -->
-        <menuitem id="menu_hr_arrear" name="Arrear" parent="hr.menu_hr" sequence="6"/>
+        <menuitem id="menu_hr_arrear" name="Arrear" parent="hr.menu_hr" sequence="8"/>
         <menuitem id="menu_hr_arrear_subitem" name="Arrear"
             parent="menu_hr_arrear"
             action="action_hr_arrear" sequence="1"/>

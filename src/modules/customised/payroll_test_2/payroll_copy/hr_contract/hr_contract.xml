@@ -45,8 +45,8 @@
         </record>
 
         <!-- Menu -->
-        <menuitem id="menu_contract" name="Salary Details" parent="hr.menu_hr" sequence="3"/>
-        <menuitem id="menu_contract_details" name="My Salary Details" parent="menu_contract" action="action_contract" sequence="10"/>
+        <menuitem id="menu_contract" name="Salary Details" parent="hr.menu_hr" sequence="1"/>
+        <menuitem id="menu_contract_details" name="Salary Details" parent="menu_contract" action="action_contract" sequence="10"/>
 
     </data>        
 </tryton>

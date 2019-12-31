@@ -1,7 +1,5 @@
 import datetime
 from trytond.model import (ModelSQL, ModelView, fields)
-# from trytond.pyson import Eval
-# from trytond.model import Workflow
 from trytond.pool import Pool, PoolMeta
 from trytond.transaction import Transaction
 
@@ -10,7 +8,7 @@ __all__ = [
     'IncomeTaxSlab', 'IncomeTaxRule',
     'IncomeTaxDeduction', 'FiscalYear',
     'TaxableIncomeProjectionsLine',
-    ]
+]
 
 
 class InvestmentScheme(ModelSQL, ModelView):
@@ -53,7 +51,7 @@ class IncomeTaxSlab(ModelSQL, ModelView):
     __name__ = 'income_tax.slab'
 
     income_tax_rule = fields.Many2One(
-                    'income_tax.rule', 'IT Rule')
+        'income_tax.rule', 'IT Rule')
     from_amount = fields.Float('From')
     to_amount = fields.Float('To')
     base = fields.Float('Base')
@@ -103,6 +101,7 @@ class IncomeTaxRule(ModelSQL, ModelView):
         '''Calculate the income tax based on employee's record,
         current fiscal year and applicable tax slab
         '''
+        projected_income_tax = 0
         taxable_income = income
         pool = Pool()
         fiscal = pool.get('account.fiscalyear')
@@ -110,8 +109,8 @@ class IncomeTaxRule(ModelSQL, ModelView):
         current_fiscal_year = fiscal.find(company)
         tax_rule = pool.get('income_tax.rule')
         tax_rules = tax_rule.search([
-                ('fiscal_year', '=', current_fiscal_year),
-            ])
+            ('fiscal_year', '=', current_fiscal_year),
+        ])
         for rule in tax_rules:
             for slab in rule.rule_lines:
                 if slab.from_amount <= taxable_income and \
@@ -204,7 +203,6 @@ class IncomeTaxDeduction(ModelSQL, ModelView):
         'Deducted Income Taxable Amount Lines',
         domain=[('state', '=', 'deducted')]
     )
-    # For calculation purpose only - End
 
     @staticmethod
     def default_employee():
@@ -234,17 +232,19 @@ class IncomeTaxDeduction(ModelSQL, ModelView):
         return fiscal(current_fiscal_year).start_date \
             if current_fiscal_year else None
 
-    @staticmethod
-    def default_fiscal_year():
-        '''
-        returns start_date as this year's current
-        fiscal year's start_date value.
-        '''
-        pool = Pool()
-        fiscal = pool.get('account.fiscalyear')
-        company = Transaction().context.get('company')
-        current_fiscal_year = fiscal.find(company)
-        return current_fiscal_year
+    # @staticmethod
+    # def default_fiscal_year():
+    #     '''
+    #     returns start_date as this year's current
+    #     fiscal year's start_date value.
+    #     '''
+    #     current_fiscal_year = None
+    #     pool = Pool()
+    #     fiscal = pool.get('account.fiscalyear')
+    #     company = Transaction().context.get('company')
+    #     if fiscal.find(company):
+    #         current_fiscal_year = fiscal.find(company)
+    #     return current_fiscal_year
 
     @staticmethod
     def default_end_date():
@@ -263,6 +263,7 @@ class IncomeTaxDeduction(ModelSQL, ModelView):
         '''Get the tax exemption from the current
         year's investment declaration'''
         pool = Pool()
+        tax_exemption = 0
         current_inv_declaration_1 = None
         fiscal = pool.get('account.fiscalyear')
         inv_declaration = pool.get('investment.declaration')
@@ -270,15 +271,16 @@ class IncomeTaxDeduction(ModelSQL, ModelView):
         current_fiscal_year = fiscal.find(company)
         current_date = datetime.date(year, int(month), 1)
         current_inv_declaration = inv_declaration.search([
-           ('employee', '=', self.employee),
-           ('fiscal_year', '=', current_fiscal_year)
+            ('employee', '=', self.employee),
+            ('fiscal_year', '=', current_fiscal_year)
         ], order=[('write_date', 'DESC')])
         for declaration in current_inv_declaration:
             date = declaration.write_date.date()
             if date <= current_date:
                 current_inv_declaration_1 = declaration
                 break
-        tax_exemption = current_inv_declaration_1.net_tax_exempted
+        if current_inv_declaration_1:
+            tax_exemption = current_inv_declaration_1.net_tax_exempted
         return tax_exemption
 
     def get_tds_line(self, month, year):
@@ -322,7 +324,10 @@ class IncomeTaxDeduction(ModelSQL, ModelView):
             str(current_month), current_year
         )
         # Saving Projected Income Tax for current fiscal year
-        self.income_tax_projected = annual_tax
+        if annual_tax:
+            self.income_tax_projected = annual_tax
+        else:
+            self.raise_user_error('No Income Tax Rule defined')
         if not self.tds_lines:
             # If there are no tds lines, then create the new sheet
             TDSLines = pool.get('income_tax.taxable_amount_lines')
@@ -346,7 +351,10 @@ class IncomeTaxDeduction(ModelSQL, ModelView):
                             'taxable_amount_projections': self
                         }
                     ])
-            monthly_tds = (annual_tax / 12) - (tax_exemption / 12)
+            if tax_exemption:
+                monthly_tds = (annual_tax / 12) - (tax_exemption / 12)
+            else:
+                monthly_tds = (annual_tax / 12)
             if current_month >= 4:
                 for month in range(current_month, 13):
                     TDSLines.create([
@@ -458,7 +466,7 @@ class IncomeTaxDeduction(ModelSQL, ModelView):
         in the current financial year
         '''
         current_month = month
-        if current_month < 12 and current_month > 3:
+        if current_month <= 12 and current_month > 3:
             remaining_months = (12-current_month)+4
             # 3 months in the next year and 1 to include the current month
             return remaining_months
@@ -491,8 +499,10 @@ class IncomeTaxDeduction(ModelSQL, ModelView):
         )
         if investments:
             employee_investment = investments[0]
-        self.income_from_other_source =  \
-            employee_investment.total_income_declared
+            self.income_from_other_source = \
+                employee_investment.total_income_declared
+        else:
+            self.income_from_other_source = 0
 
     def calculate_taxable_salary_ytd(self):
         '''Get taxable salary from the payslips in current fiscal year'''
@@ -509,9 +519,9 @@ class IncomeTaxDeduction(ModelSQL, ModelView):
         company = Transaction().context.get('company')
         current_fiscal_year = fiscal.find(company)
         vals = [
-                    ('employee', '=', self.employee),
-                    ('fiscal_year', '=', current_fiscal_year),
-                ]
+            ('employee', '=', self.employee),
+            ('fiscal_year', '=', current_fiscal_year),
+        ]
         payslips = Payslip.search(
             vals, order=[('year', 'ASC')]
         )
@@ -530,7 +540,6 @@ class IncomeTaxDeduction(ModelSQL, ModelView):
             2. Multiply last salary in remaining months
             3. Add the YTD salary
         '''
-        # import pdb; pdb.set_trace()
         pool = Pool()
         vals = []
         current_month = datetime.date.today().month

@@ -2,7 +2,6 @@
 
 <tryton>
     <data>
-        <!-- <menuitem id="menu_hda" name="HDA" parent="hra.menu_allowance" sequence="6"/> -->
         <!-- Form View -->
         <record id="form_hda_view" model="ir.ui.view">
             <field name="name">form_hda</field>
@@ -111,8 +110,35 @@
             <field name="act_window" ref="action_hda"/>
         </record>
 
-        
-        <!-- Menu -->
-        <menuitem id="menu_hda_subitem" name="High Degree Allowance" parent="hr_hra.menu_allowance" action="action_hda"/>
+        <!-- HDA LIST -->
+        <record id="form_hdalist_view" model="ir.ui.view">
+            <field name="name">form_hdalist</field>
+            <field name="model">hda.list</field>
+            <field name="type">form</field>
+        </record>
+        <record id="tree_hdalist_view" model="ir.ui.view">
+            <field name="name">tree_hda_list</field>
+            <field name="model">hda.list</field>
+            <field name="type">tree</field>
+        </record>
+
+        <!-- wiz class -->
+        <record id="form_wiz_hda_view" model="ir.ui.view">
+            <field name="name">form_wiz</field>
+            <field name="model">hda.employee.list</field>
+            <field name="type">form</field>
+        </record>
+        <record id="tree_wiz_hda_view" model="ir.ui.view">
+            <field name="name">tree_wiz</field>
+            <field name="model">company.employee</field>
+            <field name="type">tree</field>
+        </record>
+
+         <!--XML Record Wizard-->
+         <record id="act_wizard_high_degree_Allowance_wizard" model="ir.action.wizard">
+            <field name="name">High Degree Allowance</field>
+            <field name="wiz_name">hda.allowance.wiz</field>
+            <field name="window" eval="True"/>
+        </record>
     </data>
 </tryton>

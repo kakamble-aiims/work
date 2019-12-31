@@ -15,7 +15,6 @@ def register():
         ContingencyBill,
         ContingencyJourney,
         ExamCenter,
-        ExamCenterAddress,
         TADAllowancePerDay,
         TADAHotelFoodEntitlement,
         ExamType,

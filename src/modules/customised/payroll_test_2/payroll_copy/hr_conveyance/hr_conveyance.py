@@ -1,12 +1,15 @@
 from trytond.model import ModelSQL, ModelView, fields
-from trytond.pyson import Eval, Bool
 from trytond.model import Workflow
-from trytond.pool import Pool
 from trytond.transaction import Transaction
-
+from datetime import datetime
+from trytond.pool import Pool, PoolMeta
+from trytond.wizard import Wizard, StateTransition, StateView, StateAction, \
+    Button
+from trytond.pyson import Eval, PYSONEncoder
 
 _all_ = [
-    'Conveyance_Allowance',
+    'Conveyance_Allowance', 'ConveyanceEmployeeList', 'ConveyanceEmployee',
+    'ConveyanceAllowanceWiz', 'ConveyanceList'
 ]
 
 
@@ -15,47 +18,30 @@ class Conveyance_Allowance(Workflow, ModelSQL, ModelView):
 
     __name__ = 'employee_conveyance.allowance'
 
-    salary_code = fields.Char('Salary Code',
+    salary_code = fields.Char(
+        'Salary Code', required=True, states={
+            'readonly': ~Eval('state').in_(['draft']),
+        }, depends=['state'])
+    employee = fields.Many2One(
+        'company.employee', 'Employee Name', required=True,
         states={
             'readonly': ~Eval('state').in_(['draft']),
         }, depends=['state'])
-    employee = fields.Many2One('company.employee', 'Employee Name',
+    designation = fields.Many2One('employee.designation', 'Designation', required=True)
+    department = fields.Many2One('company.department', 'Department', required=True)
+    transport_amount = fields.Float(
+        'Transport Amount', required=True,
         states={
             'readonly': ~Eval('state').in_(['draft']),
         }, depends=['state'])
-    designation = fields.Many2One('company.employee','Designation')
-    department = fields.Many2One('company.employee','Department')
-    transport_amount = fields.Float('Transport Amount',
-        states={
-            'readonly': ~Eval('state').in_(['draft']),
-        }, depends=['state'])
-    # vehicle = fields.Selection(
-    #     [
-    #         ('yes','Yes'),
-    #         ('no','No')
-    #     ], 'Do you have own vehicle')
-    # transport = fields.Boolean('Transport') 
-
-    # vehicle_selection = fields.Selection(
-    #     [
-    #         ('motor_car', 'Motor Car'),
-    #         ('non_vehicle', 'Non Vehicle'),
-    #         ('scooter', 'Scooter')
-    #     ], 'Select Type Of Vehicle', states={
-    #         'invisible': ~Bool(Eval('vehicle')),
-    #         'required': ~Bool(Eval('vehicle')),
-    #     }, depends=['vehicle'])
-    
-    # vehicle_regno = fields.Char('Vehicle Registration No.')
-    # distance = fields.Selection(
-    #     [
-    #         ('1', '201-300 kilometers'),
-    #         ('2', '301-450 kilometers '),
-    #         ('3', '451-600 kilometers'),
-    #         ('3', '601-800 kilometers'),
-    #         ('3', 'Above 800 kilometers')
-    #     ], 'Select Travel Distance')
-
+    from_date = fields.Date('From Date', states={
+        'readonly': ~Eval('state').in_(['draft'])
+    },
+        depends=['state'])
+    to_date = fields.Date('To Date', states={
+        'readonly': ~Eval('state').in_(['draft'])
+    },
+        depends=['state'])
     state = fields.Selection(
         [
             ('draft', 'Draft'),
@@ -63,7 +49,6 @@ class Conveyance_Allowance(Workflow, ModelSQL, ModelView):
             ('account_officer', 'Account Officer'),
             ('cancel', 'Cancel'),
             ('approve', 'Approve'),
-            
         ], 'Status', readonly=True)
 
     @classmethod
@@ -75,26 +60,20 @@ class Conveyance_Allowance(Workflow, ModelSQL, ModelView):
                     ['draft'
                      ]),
             },
-
             "submit": {
                 'invisible': ~Eval('state').in_(
                     ['confirm'
                      ]),
             },
-
-
             "cancel": {
                 'invisible': ~Eval('state').in_(
                     ['draft', 'account_officer'
                      ]),
-                
             },
-
             "approve": {
                 'invisible': ~Eval('state').in_(
                     ['account_officer'
                      ]),
-                
             },
         })
         cls._transitions |= set((
@@ -104,10 +83,15 @@ class Conveyance_Allowance(Workflow, ModelSQL, ModelView):
             ('account_officer', 'approve'),
             ('account_officer', 'cancel'),
         ))
-            
+
     @staticmethod
     def default_state():
         return 'draft'
+
+    @staticmethod
+    def default_from_date():
+        return datetime.now()
+
 
     @classmethod
     @ModelView.button
@@ -136,9 +120,9 @@ class Conveyance_Allowance(Workflow, ModelSQL, ModelView):
     @fields.depends('employee')
     def on_change_employee(self):
         if self.employee:
-            self.salary_code = self.employee.salary_code
-            self.designation = self.employee.designation
-            self.department = self.employee.department
+            self.salary_code = self.employee.salary_code if self.employee.salary_code else None
+            self.designation = self.employee.designation if self.employee.designation else None
+            self.department = self.employee.department if self.employee.department else None
 
     @staticmethod
     def default_employee():
@@ -153,11 +137,90 @@ class Conveyance_Allowance(Workflow, ModelSQL, ModelView):
         if employee != []:
             current_employee = employee[0]
         return current_employee.id if current_employee else None
-    
 
-    # @fields.depends('vehicle', 'vehicle_selection')
-    # def on_change_vehicle(self):
-    #     if self.vehicle != '1':
-    #         self.vehicle_selection = ''
 
-    
+class ConveyanceEmployee(metaclass=PoolMeta):
+
+    __name__ = 'company.employee'
+
+    employee_list = fields.Many2One('conveyance.list', 'Employee List')
+
+
+class ConveyanceEmployeeList(ModelView):
+    'Conveyance Employee List'
+
+    __name__ = 'conveyance.employee.list'
+
+    name = fields.Char('Name')
+    start_date = fields.Date('Start Date')
+    end_date = fields.Date('End Date')
+    employee = fields.One2Many(
+        'conveyance.list', 'conveyance_employee_list', 'Employee')
+
+    @staticmethod
+    def default_start_date():
+        return datetime.date.today()
+
+
+class ConveyanceList(ModelSQL, ModelView):
+    'Conveyance List'
+
+    __name__ = 'conveyance.list'
+
+    employee = fields.Many2One('company.employee', 'Employee')
+    designation = fields.Many2One('employee.designation', 'Designation')
+    department = fields.Many2One('company.department', 'Department')
+    amount = fields.Float('Amount')
+    salary_code = fields.Char('Salary Code')
+    conveyance_employee_list = fields.Many2One(
+        'conveyance.employee.list', 'Employee List')
+
+    @fields.depends('employee')
+    def on_change_employee(self):
+        if self.employee:
+            self.salary_code = self.employee.salary_code if self.employee.salary_code else None
+            self.designation = self.employee.designation if self.employee.designation else None
+            self.department = self.employee.department if self.employee.department else None
+
+
+class ConveyanceAllowanceWiz(Wizard):
+    'Conveyance Allowance Wizard'
+
+    __name__ = 'conveyance.allowance.wiz'
+
+    start_state = 'raises'
+    raises = StateView(
+        'conveyance.employee.list',
+        'hr_conveyance.form_wiz_conveyance_view',
+        [
+            Button('Cancel', 'end', 'tryton-cancel'),
+            Button(
+                'submit',
+                'create_conveyance_form',
+                'tryton-go-next',
+                default=True,
+            )
+        ]
+    )
+    create_conveyance_form = StateTransition()
+    open_ = StateAction('hr_conveyance.action_conveyance')
+
+    def transition_create_conveyance_form(self):
+        pool = Pool()
+        vals = {}
+        create_conveyance_form = []
+        conveyance = pool.get('employee_conveyance.allowance')
+        for employee in self.raises.employee:
+            vals = {
+                'salary_code': employee.salary_code,
+                'employee': employee.employee,
+                'designation': employee.designation,
+                'department': employee.department,
+            }
+            create_conveyance_form.append(conveyance.create([vals]))
+        self.raises.conveyance_form = create_conveyance_form
+        return 'open_'
+
+    def do_open_(self, action):
+        action['pyson_domain'] = PYSONEncoder().encode([])
+        return action, {}

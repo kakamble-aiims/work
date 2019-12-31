@@ -17,12 +17,13 @@ class GPFSubscription(Workflow, ModelSQL, ModelView):
     'GPF Subscription'
     __name__ = 'gpf.subscription'
 
-    salary_code = fields.Char('Salary Code',
+    salary_code = fields.Char('Salary Code', required=True,
         states={
             'readonly': ~Eval('state').in_(['draft']),
         }, depends=['state']
         )
-    employee = fields.Many2One('company.employee', 'Employee',
+    employee = fields.Many2One('company.employee', 'Employee', required=True,
+        domain=[('gpf_number', '!=', None)],
         states={
             'readonly': ~Eval('state').in_(['draft']),
         }, depends=['state']
@@ -32,17 +33,19 @@ class GPFSubscription(Workflow, ModelSQL, ModelView):
             'readonly': ~Eval('state').in_(['draft']),
         }, depends=['state']
         )
-    designation = fields.Many2One('employee.designation', 'Designation',
+    designation = fields.Many2One('employee.designation', 
+                'Designation', required=True,
         states={
             'readonly': ~Eval('state').in_(['draft']),
         }, depends=['state']
         )
-    department = fields.Many2One('company.department', 'Department',
+    department = fields.Many2One('company.department', 
+                'Department', required=True,
         states={
             'readonly': ~Eval('state').in_(['draft']),
         }, depends=['state']
         )
-    gpf_number = fields.Char('G.P.F.Number',
+    gpf_number = fields.Char('G.P.F.Number', required=True,
         states={
             'readonly': ~Eval('state').in_(['draft']),
         }, depends=['state']
@@ -263,7 +266,7 @@ class GPFSubscription(Workflow, ModelSQL, ModelView):
         if not contact:
             self.raise_user_error("missing_contact")
         number = contact.value
-        number = 9716823391
+        number = 8171733480
         params = {
             'msg': message + " (%s)" % contact.value,
             'mobile': number,
@@ -291,8 +294,9 @@ class GPFSubscription(Workflow, ModelSQL, ModelView):
     @Workflow.transition('waiting_for_otp')
     def waiting_for_otp(cls, records):
         for record in records:
+            record.state = 'draft'
+            record.save()
             record.generate_otp()
-        pass
 
     @classmethod
     @ModelView.button
@@ -307,6 +311,7 @@ class GPFSubscription(Workflow, ModelSQL, ModelView):
     @Workflow.transition('approved')
     def approved(cls, records):
         cls.set_gpf_amount(records)
+        cls.generate_gpf_lines(records)
        
 
     @classmethod
@@ -335,7 +340,7 @@ class GPFSubscription(Workflow, ModelSQL, ModelView):
                     'gpf_amount': gpf.curr_amount,
                     })
 
-
+    
 class HrContract(metaclass=PoolMeta):
     "HR Contract"
 
@@ -345,8 +350,9 @@ class HrContract(metaclass=PoolMeta):
 
     @fields.depends('basic')
     def on_change_basic(self, name=None):
-        if self.basic:
-            self.gpf_amount = (6 * self.basic)/100
+        if self.employee.gpf_nps == 'gpf':
+            if self.basic and self.gpf_amount == None:
+                self.gpf_amount = (6 * self.basic)/100
 
 
 class HrEmployee(metaclass=PoolMeta):
@@ -357,15 +363,16 @@ class HrEmployee(metaclass=PoolMeta):
     gpf_number = fields.Char('G.P.F.Number')
     gpf_balance = fields.Float('G.P.F.Balance')
     gpf_nps = fields.Selection([
-        (None, ''),
         ('gpf', 'GPF'),
         ('nps', 'NPS'),
     ], 'Status', sort=False)
+    gpf_book = fields.One2Many(
+        'hr.gpf.lines',
+        'gpf_lines', string='Employee GPF Book')
 
     @fields.depends('date_of_joining')
     def on_change_date_of_joining(self, name=None):
         if self.date_of_joining:
-            print(self.date_of_joining.year, "self.date_of_joining.year", type(self.date_of_joining.year))
             if self.date_of_joining.year <= 2004:
                 self.gpf_nps = 'gpf'
             elif self.date_of_joining.year >= 2004:
@@ -380,3 +387,23 @@ class HrEmployee(metaclass=PoolMeta):
         ]
         return attribute
 
+    
+    @classmethod
+    def set_gpf_interest(cls):
+        pool = Pool()
+        gpf_lines_data = pool.get('hr.gpf.lines')
+        records = cls.search([()])
+        # year = datetime.now().year
+        # start_date = datetime(year, 4, 1).date()
+        # end_date = datetime((year+1), 3, 31).date()
+        for record in records:
+            if record.gpf_balance:
+                vals = {
+                    'amount': (float(record.gpf_balance) * 7.9)/(12 * 100),
+                    'date' : datetime.now().date(),
+                    'description' : 'ABCCCCCCCC',
+                    'gpf_lines' : record.id,
+                    'gpf_type' : 'interest'
+                }
+                line = gpf_lines_data.create([vals])
+        

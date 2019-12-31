@@ -1,6 +1,6 @@
 <tryton>
     <data>
-        <menuitem id="menu_nps" name="NPS" parent="hr.menu_hr" sequence="5"/>
+        <menuitem id="menu_nps" name="NPS" parent="hr.menu_hr" sequence="4"/>
         <!--  Form View  -->
         <record id="form_nps_view" model="ir.ui.view">
             <field name="name">form_nps</field>

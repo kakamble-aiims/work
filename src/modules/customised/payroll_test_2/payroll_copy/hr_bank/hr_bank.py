@@ -1,14 +1,9 @@
 import requests
-import json
-from trytond.model import Workflow
 from trytond.model import (ModelSQL, ModelView, fields)
-from trytond.pyson import Eval, Bool, PYSONEncoder, If, Or, Not, And
-import datetime
-from trytond.model import Workflow
-from trytond.pool import Pool, PoolMeta
-from trytond.transaction import Transaction
+from trytond.pool import PoolMeta
 
 __all__ = ['BankDetails', 'HrEmployee']
+
 
 class BankDetails(ModelSQL, ModelView):
     '''Banks'''
@@ -25,8 +20,7 @@ class HrEmployee(metaclass=PoolMeta):
     __name__ = 'company.employee'
 
     bank_name = fields.Many2One('res.bank', 'Bank Name')
-    ifsc = fields.Char('IFSC Code',
-                        help="Enter your IFSC code")
+    ifsc = fields.Char('IFSC Code', help="Enter your IFSC code")
     bank_address = fields.Text('Bank Address', size=16)
     account_no = fields.Char('Account Number')
     bank_status = fields.Selection(
@@ -45,7 +39,7 @@ class HrEmployee(metaclass=PoolMeta):
             'verify_ifsc_button': {},
             'verify_account_number': {},
         })
-    
+
     @classmethod
     def verify_ifsc_button(cls, records):
         '''To generate bank address'''
@@ -56,9 +50,7 @@ class HrEmployee(metaclass=PoolMeta):
             response = requests.get(uri)
             res_dict = response.json()
             if res_dict != 'Not Found':
-                cls.write(records,
-                    {'bank_address': res_dict['ADDRESS']}
-                    )
+                cls.write(records, {'bank_address': res_dict['ADDRESS']})
             else:
                 cls.raise_user_error('Please Enter Valid IFSC Number')
 
@@ -72,8 +64,8 @@ class HrEmployee(metaclass=PoolMeta):
         super(HrEmployee, cls).validate(records)
         for record in records:
             if record.account_no:
-                test_account_number=record.account_no.isdigit()
+                test_account_number = record.account_no.isdigit()
                 if not test_account_number:
                     cls.raise_user_error('Enter Valid Account Number')
-                if len(record.account_no)<9:
+                if len(record.account_no) < 9:
                     cls.raise_user_error('Enter Valid Account Number')

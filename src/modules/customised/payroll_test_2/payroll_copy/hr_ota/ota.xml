@@ -47,6 +47,41 @@
             <field name="name">tree_ota</field>
         </record>
 
+        <!-- OTA LIST -->
+        <record id="form_otalist_view" model="ir.ui.view">
+            <field name="name">form_otalist</field>
+            <field name="model">ota.list</field>
+            <field name="type">form</field>
+        </record>
+        <record id="tree_otalist_view" model="ir.ui.view">
+            <field name="name">tree_ota_list</field>
+            <field name="model">ota.list</field>
+            <field name="type">tree</field>
+        </record>
+
+        <!-- wiz class -->
+        <record id="form_wiz_ota_view" model="ir.ui.view">
+            <field name="name">form_wiz</field>
+            <field name="model">ota.employee.list</field>
+            <field name="type">form</field>
+        </record>
+        <record id="tree_wiz_ota_view" model="ir.ui.view">
+            <field name="name">tree_wiz</field>
+            <field name="model">company.employee</field>
+            <field name="type">tree</field>
+        </record>
+
+         <!--XML Record Wizard-->
+         <record id="act_wizard_overtime_Allowance_wizard" model="ir.action.wizard">
+            <field name="name">Over Time Allowance</field>
+            <field name="wiz_name">ota.allowance.wiz</field>
+            <field name="window" eval="True"/>
+        </record>
+
+        <!-- Menu -->
+
+        
+
         <!--create the tabs on the tree view-->
         <record model="ir.action.act_window.domain" id="act_ota_form_domain_draft">
             <field name="name">Draft</field>
@@ -94,7 +129,27 @@
             <field name="act_window" ref="action_ota"/>
         </record>
 
-        <!-- Menu -->
-        <menuitem id="menu_ota_subitem" name="Over Time Allowance" parent="hr_hra.menu_allowance" action="action_ota"/>
+         <!-- wiz class -->
+        <record id="form_wiz_ota_schedule_view" model="ir.ui.view">
+            <field name="name">form_ota_wiz</field>
+            <field name="model">ota.schedule</field>
+            <field name="type">form</field>
+        </record>
+
+         <!--XML Record Wizard-->
+        <record id="act_wizard_ota_schedule_wizard" model="ir.action.wizard">
+            <field name="name">Over-Time Schedule</field>
+            <field name="wiz_name">ota.schedule.wiz</field>
+            <field name="window" eval="False"/>
+        </record>
+
+        <!-- Report-->
+        <record id="report_ota" model="ir.action.report">
+            <field name="name">OTA Schedule</field>
+            <field name="model">hr.allowance.ota</field>
+            <field name="report_name">ota.report</field>
+            <field name="report">hr_ota/ota_report.fodt</field>
+            <field name="extension">pdf</field>
+        </record>
     </data>
 </tryton>

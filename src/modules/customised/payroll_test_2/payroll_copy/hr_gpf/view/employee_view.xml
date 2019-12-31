@@ -6,10 +6,17 @@
     </xpath>
     <xpath expr="/form/notebook/page[@id='qualifications']" position="after">
         <page id="employee_gpf_details" string="GPF details">
-            <label name="gpf_number"/>
-            <field name="gpf_number"/>
-            <label name="gpf_balance"/>
-            <field name="gpf_balance"/>
+            <group id="gpf_details">
+                <label name="gpf_number"/>
+                <field name="gpf_number"/>
+                <label name="gpf_balance"/>
+                <field name="gpf_balance"/>
+            </group>
+            <newline/>
+            <group id="gpf_employee_book">
+                <field name="gpf_book"/>
+            </group>
+            <!-- <field name="gpf_book"/> -->
         </page>
     </xpath>
 </data>

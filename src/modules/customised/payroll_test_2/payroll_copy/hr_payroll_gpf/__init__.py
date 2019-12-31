@@ -4,7 +4,9 @@
 from trytond.pool import Pool
 from .gpf_payroll import *
 
+
 def register():
     Pool.register(
         SalaryRule,
+        HrPayslip,
         module='hr_payroll_gpf', type_='model')

@@ -50,8 +50,35 @@
             <field name="name">tree_hrdrawn</field>
         </record>
 
+        <!-- Hr Due-->
+        <record model="ir.ui.view" id="hr_due_view_form">
+            <field name="model">hr.due</field>
+            <field name="type">form</field>
+            <field name="name">form_hrdue</field>
+        </record>
+        <record model="ir.ui.view" id="hr_due_view_tree">
+            <field name="model">hr.due</field>
+            <field name="type">tree</field>
+            <field name="priority" eval="10"/>
+            <field name="name">tree_hrdue</field>
+        </record>
+
+        <!-- Report of Arrear-->
+        <record id="report_arrear" model="ir.action.report">
+            <field name="name">Report</field>
+            <field name="model">hr.arrear</field>
+            <field name="report_name">hr.arrear</field>
+            <field name="report">hr_arrear/report.fodt</field>
+            <field name="extension">pdf</field>
+        </record>
+        <record id="print_arrear_report" model="ir.action.keyword">
+            <field name="keyword">form_print</field>
+            <field name="model">hr.arrear,-1</field>
+            <field name="action" ref="report_arrear"/>
+        </record>
+
         <!-- Menu -->
-        <menuitem id="menu_hr_arrear" name="Arrear" parent="hr.menu_hr" sequence="6"/>
+        <menuitem id="menu_hr_arrear" name="Arrear" parent="hr.menu_hr" sequence="8"/>
         <menuitem id="menu_hr_arrear_subitem" name="Arrear"
             parent="menu_hr_arrear"
             action="action_hr_arrear" sequence="1"/>

@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+
+<tryton>
+    <data>
+          <menuitem id="menu_license_fee_wiz" name="License Fee" parent="hr_payroll.menu_schedule" action="hr_estate.act_wizard_license_fee_schedule_wizard"/>
+    </data>
+</tryton>

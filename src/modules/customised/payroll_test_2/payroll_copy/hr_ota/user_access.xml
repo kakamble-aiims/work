@@ -11,7 +11,7 @@
         <record model="ir.model.button-res.group"
             id="button_access_ota_submit">
             <field name="button" ref="button_ota_submit"/>
-            <field name="group" ref="base.group_employee_admin"/>
+            <field name="group" ref="base.group_employee"/>
         </record>
         <record model="ir.model.button"
             id="button_ota_section_officer">
@@ -22,7 +22,7 @@
         <record model="ir.model.button-res.group"
             id="button_access_cash_section_officer">
             <field name="button" ref="button_ota_section_officer"/>
-            <field name="group" ref="base.group_employee_admin"/>
+            <field name="group" ref="base.group_employee"/>
         </record>
         <record model="ir.model.button"
             id="button_ota_approve">

@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+
+<tryton>
+    <data>
+        <menuitem id="menu_bills" name="Bills" parent="hr_payroll.menu_allowance"/>
+        <menuitem id="menu_bills_subitem" name="Newspaper Bill" parent="menu_bills" action="hr_bills.action_bills"/>
+        <menuitem id="menu_newspaper_subitem_wiz" name="Newspaper Bill" parent="menu_bills" action="hr_bills.act_wizard_Newspaper_Allowance_wizard"/>
+        <menuitem id="menu_telephone_subitem" name="Telephone Bill" parent="menu_bills" action="hr_bills.action_telephone"/>
+         <menuitem id="menu_telephone_subitem_wiz" name="Telephone Bill" parent="menu_bills" action="hr_bills.act_wizard_telephone_Allowance_wizard"/>
+    </data>
+</tryton>

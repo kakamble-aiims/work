@@ -6,5 +6,6 @@ def register():
     Pool.register(
         HrPayslipLines,
         HRArrear,
-        HrDrawn, 
+        HrDrawn,
+        HrDue,
         module='hr_arrear', type_='model')

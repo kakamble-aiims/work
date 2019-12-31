@@ -4,9 +4,9 @@
 	    <label name="name"/>
 		<field name="name"/>
 		<button name="generate_payslip_batch_ytd" string="Generate Payslip Batch YTD" confirm="Are you sure you want to generate Payslips for this Batch?" colspan="2"/>
-		<nextline/>
+		<newline/>
 	    <button name="generate_payslip_batch" string="Generate Payslip Batch" confirm="Are you sure you want to generate Payslip for this Batch?" colspan="2"/>
-	    <nextline/>
+	    <newline/>
 		<button name="batch_excel_workbook" string="Create Batch Report" colspan="2"/>
 	    <field name="employees" colspan="4"/>
     </group>

@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<tryton>
+    <data>
+    	<record model="ir.ui.menu-res.group" id="menu_payroll_access">
+            <field name="menu" ref="hr_payroll.menu_payroll"/>
+            <field name="group" ref="base.group_employee"/>
+        </record>
+        <record model="ir.ui.menu-res.group" id="menu_payslip_access">
+            <field name="menu" ref="hr_payroll.menu_payslip"/>
+            <field name="group" ref="base.group_employee"/>
+        </record>
+    </data>
+</tryton>

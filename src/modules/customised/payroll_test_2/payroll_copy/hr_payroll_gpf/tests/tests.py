@@ -6,6 +6,7 @@ import unittest
 import trytond.tests.test_tryton
 from trytond.tests.test_tryton import ModuleTestCase
 
+
 class HrpayrollGpfTestCase(ModuleTestCase):
 
     'Test Hr Payroll Gpf module'
@@ -13,10 +14,8 @@ class HrpayrollGpfTestCase(ModuleTestCase):
     module = 'hr_payroll_gpf'
 
 
-
 def suite():
     suite = trytond.tests.test_tryton.suite()
-    suite.addTests(unittest.TestLoader().loadTestsFromTestCase(
-     HrpayrollGpfTestCase))
+    suite.addTests(unittest.TestLoader(
+    ).loadTestsFromTestCase(HrpayrollGpfTestCase))
     return suite
-

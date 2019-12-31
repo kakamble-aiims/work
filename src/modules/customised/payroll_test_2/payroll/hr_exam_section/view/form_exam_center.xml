@@ -7,6 +7,6 @@
     <label name="state"/>
     <field name="state"/>
     <newline/>
-    <label name="centers"/>
-    <field name="centers" colspan="3"/>
+    <label name="address"/>
+    <field name="address" colspan="3"/>
 </form>

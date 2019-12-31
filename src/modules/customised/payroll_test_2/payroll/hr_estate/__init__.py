@@ -1,5 +1,6 @@
 from trytond.pool import Pool
 from .hr_estate import *
+from .estate_report import *
 
 
 def register():
@@ -7,4 +8,11 @@ def register():
         EstateAllotment,
         QuarterType,
         QuarterTypeLocation,
-        module="hr_estate", type_="model")
+        LicenseFeeSchedule,
+        module='hr_estate', type_="model")
+    Pool.register(
+        LicenseFeeScheduleWiz,
+        module='hr_estate', type_='wizard')
+    Pool.register(
+        LicenseFeeReport,
+        module='hr_estate', type_='report')

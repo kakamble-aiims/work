@@ -1,10 +1,11 @@
-import datetime
+from datetime import datetime
 from trytond.model import Workflow
 from trytond.model import (
     ModelView, ModelSQL, fields)
 from trytond.pool import Pool
 from trytond.pyson import Eval
 from trytond.transaction import Transaction
+from dateutil import relativedelta
 
 __all__ = ['ComputerLoan', 'LoanCancelreason', 'ComputerloanLine']
 
@@ -14,84 +15,90 @@ class ComputerLoan(Workflow, ModelSQL, ModelView):
     __name__ = 'computer.loan'
 
     salary_code = fields.Char('Salary Code',
-        states={
-            'readonly': ~Eval('state').in_(['draft']),
-        }, depends=['state'], required=True)
+                              states={
+                                  'readonly': ~Eval('state').in_(['draft']),
+                              }, depends=['state'], required=True)
     employee = fields.Many2One('company.employee', 'Name of Applicant',
-        states={
-            'readonly': ~Eval('state').in_(['draft']),
-        }, depends=['state'], required=True)
-    designation = fields.Many2One("employee.designation",
+                               states={
+                                   'readonly': ~Eval('state').in_(['draft']),
+                               }, depends=['state'], required=True)
+    designation = fields.Many2One(
+        "employee.designation",
         "Applicant's Designation",
         states={
             'readonly': ~Eval('state').in_(['draft']),
-        }, depends=['state'])
+        }, depends=['state'], required=True)
     department = fields.Many2One('company.department', 'Department',
-        states={
-            'readonly': ~Eval('state').in_(['draft']),
-        }, depends=['state'])
+                                 states={
+                                     'readonly': ~Eval('state').in_(['draft']),
+                                 }, depends=['state'], required=True)
     pay_in_band = fields.Char('Pay in the Pay Band',
-        states={
-            'readonly': ~Eval('state').in_(['draft']),
-        }, depends=['state'])
+                              states={
+                                  'readonly': ~Eval('state').in_(['draft']),
+                              }, depends=['state'])
     price = fields.Float('Price of Personal Computer',
-        required=True,
-        states={
-            'readonly': ~Eval('state').in_(['draft']),
-        }, depends=['state'])
-    amount_required = fields.Float("Amount Required",
+                         required=True,
+                         states={
+                             'readonly': ~Eval('state').in_(['draft']),
+                         }, depends=['state'])
+    amount_required = fields.Float(
+        "Amount Required",
         states={
             'readonly': ~Eval('state').in_(['draft']),
         }, depends=['state'], required=True)
-    date_of_retirement = fields.Date('Date of Retirement',
+    date_of_retirement = fields.Date(
+        'Date of Retirement',
         required=True,
         states={
             'readonly': ~Eval('state').in_(['draft']),
         }, depends=['state'])
     dob = fields.Date("Date of Birth",
-        states={
-            'readonly': ~Eval('state').in_(['draft']),
-        }, depends=['state'], required=True)
-    installment_no = fields.Integer("Number of installment",
-        required=True)
+                      states={
+                          'readonly': ~Eval('state').in_(['draft']),
+                      }, depends=['state'], required=True)
+    installment_no = fields.Integer("Number of instalment",
+                                    required=True)
     purpose = fields.Selection([
         ('yes', 'Yes'),
         ('no', 'No'),
     ], string='Purpose',
         states={
-                'readonly': ~Eval('state').in_(['draft']),
-            }, depends=['state'], required=True)
+        'readonly': ~Eval('state').in_(['draft']),
+    }, depends=['state'], required=True)
     drawal_date = fields.Date('Date of drawal of advance',
-        states={
-            'invisible': ~Eval('purpose').in_(['yes']),
-            'required': Eval('purpose').in_(['yes']),
-        }, depends=['purpose'])
+                              states={
+                                  'invisible': ~Eval('purpose').in_(['yes']),
+                                  'required': Eval('purpose').in_(['yes']),
+                              }, depends=['purpose'])
     interest = fields.Float('Interest',
-        states={
-            'invisible': ~Eval('purpose').in_(['yes']),
-            'required': Eval('purpose').in_(['yes']),
-        }, depends=['purpose'])
+                            states={
+                                'invisible': ~Eval('purpose').in_(['yes']),
+                                'required': Eval('purpose').in_(['yes']),
+                            }, depends=['purpose'])
     basic_pay = fields.Float("Basic Pay",
-        states={
-            'readonly': ~Eval('state').in_(['draft']),
-        }, depends=['state'])
-    cancel_reason = fields.Many2One('loan.cancel.reason', 'Cancel Reason',
+                             states={
+                                 'readonly': ~Eval('state').in_(['draft']),
+                             }, depends=['state'])
+    cancel_reason = fields.Many2One(
+        'loan.cancel.reason', 'Cancel Reason',
         states={
             'invisible': ~Eval(
                 'state').in_(['forwarded_to_ao', 'cancel']),
             'readonly': ~Eval('state').in_(['forwarded_to_ao']),
-             }, depends=['state'],)
+        }, depends=['state'],)
     payout = fields.Float('Payout',
+                          states={
+                              'readonly': ~Eval('state').in_(['draft']),
+                              'invisible': ~Eval('refund').in_(['refundable']),
+                          }, depends=['state'])
+    pending = fields.Float(
+        'Pending',
         states={
             'readonly': ~Eval('state').in_(['draft']),
             'invisible': ~Eval('refund').in_(['refundable']),
         }, depends=['state'])
-    pending = fields.Float('Pending',
-        states={
-            'readonly': ~Eval('state').in_(['draft']),
-            'invisible': ~Eval('refund').in_(['refundable']),
-        }, depends=['state'])
-    reschedule = fields.Float('Reschedule',
+    reschedule = fields.Float(
+        'Reschedule',
         states={
             'readonly': ~Eval('state').in_(['draft']),
             'invisible': ~Eval('refund').in_(['refundable']),
@@ -102,15 +109,14 @@ class ComputerLoan(Workflow, ModelSQL, ModelView):
             'readonly': ~Eval('state').in_(['draft']),
         }, depends=['state'])
     approve_date = fields.Date('Date of Approval',
+                               states={
+                                   'invisible': ~Eval('state').in_(['approve'])
+                               }, depends=['state'], readonly=True)
+    approve_by = fields.Many2One(
+        'res.user', 'Approved By',
         states={
-            'readonly': ~Eval('state').in_(['approve']),
             'invisible': ~Eval('state').in_(['approve'])
-        }, depends=['state'])
-    approve_by = fields.Many2One('res.user', 'Approved By',
-        states={
-            'readonly': ~Eval('state').in_(['approve']),
-            'invisible': ~Eval('state').in_(['approve'])
-        }, depends=['state'])
+        }, depends=['state'], readonly=True)
     state = fields.Selection(
         [
             ('draft', 'Draft'),
@@ -120,19 +126,41 @@ class ComputerLoan(Workflow, ModelSQL, ModelView):
             ('cancel', 'Cancel')
         ], 'Status', readonly=True
     )
+    check = fields.Boolean('Check',
+                           states={
+                               'invisible': Eval('state').in_(['draft', 'forwarded_to_ao', 'forwarded_to_jo', 'approve', 'cancel']),
+                           }, depends=['state'])
 
     @classmethod
     def validate(cls, records):
         """Method to validate records(rows) in a model(table)"""
-        
-        super(ComputerLoan, cls).validate(records)
+        super().validate(records)
         for record in records:
-            if record.price < record.amount_required:
-                cls.raise_user_error('Computer price less then required amount')
+            if record.installment_no < 1:
+                cls.raise_user_error(
+                    'Number of Installment can not less than 1. Please correct it.')
+            if record.price > float(50000) and record.amount_required > float(50000):
+                cls.raise_user_error(
+                    'The Required Amount can not be greater than Rs. 50,000/-. Please correct it.')
+
+            if record.installment_no > 150:
+                cls.raise_user_error(
+                    'As per GoI rules, there can not be more than 150 insallments. Please correct it.')
+            computer_loan = cls.search([
+                ('id', '!=', record.id),
+                ('employee', '=', record.employee),
+                ('state', '=', 'approve')])
+            if computer_loan and len(computer_loan) >= 5:
+                cls.raise_user_error(
+                    'You are not allowed to take computer loan more than 5 times.')
+            approvedate = datetime.now().date()
+            approve = approvedate.replace(year=approvedate.year-3)
+            if computer_loan and computer_loan[-1].approve_date > approve:
+                cls.raise_user_error(
+                    'You are not allowed to take computer loan with in 3 years from the previous computer loan.')
 
     @classmethod
     def __setup__(cls):
-
         """Setup workflow transitions and button properties
            when an instance of this class is initialized"""
         super().__setup__()
@@ -141,42 +169,88 @@ class ComputerLoan(Workflow, ModelSQL, ModelView):
             ('forwarded_to_jo', 'forwarded_to_ao'),
             ('forwarded_to_ao', 'approve'),
             ('forwarded_to_ao', 'cancel'),
-            ))
+        ))
         cls._buttons.update({
-            'submitted_to_ao': {
+            'calculate_instalment': {},
+            'submitted_to_jo': {
                 'invisible': ~Eval('state').in_(
                     ['draft']),
                 'depends': ['state'],
-                },
+            },
             'forward_to_jo': {
                 'invisible': ~Eval('state').in_(
                     ['forwarded_to_jo']),
                 'depends': ['state'],
-                },
+            },
             'forward_to_ao': {
                 'invisible': ~Eval('state').in_(
                     ['forwarded_to_ao']),
                 'depends': ['state'],
-                },
+            },
             'cancel': {
-                    'invisible': ~Eval('state').in_(
-                        ['forwarded_to_ao']),
-                    'depends': ['state'],
-                    },
-            })
+                'invisible': ~Eval('state').in_(
+                    ['forwarded_to_ao']),
+                'depends': ['state'],
+            },
+        })
 
     @staticmethod
     def default_state():
         return 'draft'
 
+    @staticmethod
+    def default_employee():
+        pool = Pool()
+        User = pool.get('res.user')
+        user = User(Transaction().user)
+        employee = user.employee
+        return employee.id if employee else None
 
+    @staticmethod
+    def default_salary_code():
+        pool = Pool()
+        User = pool.get('res.user')
+        user = User(Transaction().user)
+        employee = user.employee
+        return employee.salary_code if employee else None
+
+    @staticmethod
+    def default_designation():
+        pool = Pool()
+        User = pool.get('res.user')
+        user = User(Transaction().user)
+        employee = user.employee
+        return employee.designation.id if employee else None
+
+    @staticmethod
+    def default_department():
+        pool = Pool()
+        User = pool.get('res.user')
+        user = User(Transaction().user)
+        employee = user.employee
+        return employee.department.id if employee else None
+
+    @staticmethod
+    def default_pay_in_band():
+        pool = Pool()
+        User = pool.get('res.user')
+        user = User(Transaction().user)
+        employee = user.employee
+        return employee.pay_in_band if employee else None
+
+    @classmethod
+    def calculate_instalment(cls, records):
+        for record in records:
+            if record.check == False:
+                cls.loan_installment(records)
+                record.check = True
+                record.save()
 
     @classmethod
     @ModelView.button
     @Workflow.transition('forwarded_to_jo')
-    def submitted_to_ao(cls, records):
+    def submitted_to_jo(cls, records):
         """Change status of loan application to forwarded_to_jo"""
-        cls.loan_installment(records)
         pass
 
     @classmethod
@@ -191,8 +265,8 @@ class ComputerLoan(Workflow, ModelSQL, ModelView):
     @Workflow.transition('approve')
     def forward_to_ao(cls, records):
         """Change status of loan application to approve"""
-        cls.set_approvedby(records)
-        pass
+        for record in records:
+            record.set_approvedby()
 
     @classmethod
     @ModelView.button
@@ -222,18 +296,32 @@ class ComputerLoan(Workflow, ModelSQL, ModelView):
             pool = Pool()
             hrcontract = pool.get('hr.contract')
             contracts = hrcontract.search([
-                ('employee', '=', self.employee),
-                ('active', '<=', True)
-                ])
+                ('employee', '=', self.employee)
+            ])
             for contract in contracts:
                 self.basic_pay = contract.basic
+            loan = pool.get('computer.loan')
+            loans = loan.search([
+                ('employee', '=', self.employee)
+            ])
+            interest = 0
+            for computer_loan in loans:
+                for line in computer_loan.loan_line:
+                    if line.status != 'done':
+                        interest += line.amount
+                if interest > 0:
+                    self.purpose = 'yes'
+                    self.drawal_date = computer_loan.approve_date
+                    self.interest = interest
+                else:
+                    self.purpose = 'no'
 
     @classmethod
     def write(cls, *args):
         """ Override default write method of model """
         actions = iter(args)
         for mechanisms, values in zip(actions, actions):
-            if  'installment_no' in values.keys():
+            if 'installment_no' in values.keys() or 'amount_required' in values.keys() or 'price' in values.keys():
                 cls.change_loan_installment(mechanisms, values)
         super(ComputerLoan, cls).write(*args)
 
@@ -242,30 +330,63 @@ class ComputerLoan(Workflow, ModelSQL, ModelView):
         """Change number of installments pending for loan"""
         cursor = Transaction().connection.cursor()
         LoanLine = Pool().get('computer.loan.line')
+        amount = 0
         for loan in records:
-            cursor.execute('SELECT sum(amount) FROM computer_loan_line WHERE loan=%s \
-                AND status = %s', (loan.id, 'done'))
+            cursor.execute('SELECT sum(amount) FROM computer_loan_line \
+                WHERE loan=%s AND status = %s', (loan.id, 'done'))
             total_amount = cursor.fetchone()
             if total_amount[0]:
-                reschedule = loan.amount_required - total_amount[0]
+                amount_value = min(loan.amount_required, loan.price)
+                reschedule = amount_value - total_amount[0]
                 cls.write(records, {'payout': total_amount[0],
                                     'reschedule': reschedule})
                 amount = (reschedule/values['installment_no'])
             else:
-                amount = (loan.amount_required/values['installment_no'])
+                if 'installment_no' in values.keys():
+                    amount_value = min(loan.amount_required, loan.price)
+                    amount = (amount_value/values['installment_no'])
+                elif 'amount_required' in values.keys():
+                    amount_value = min(values['amount_required'], loan.price)
+                    amount = (amount_value/loan.installment_no)
+                elif 'price' in values.keys():
+                    amount_value = min(loan.amount_required, values['price'])
+                    amount = (amount_value/loan.installment_no)
+                elif 'installment_no' in values.keys() and 'price' in values.keys() and 'amount_required' in values.keys():
+                    amount_value = min(
+                        values['amount_required'], values['price'])
+                    amount = (amount_value/values['installment_no'])
+                elif 'installment_no' in values.keys() and 'price' in values.keys():
+                    amount_value = min(loan.amount_required, values['price'])
+                    amount = (amount_value/values['installment_no'])
+                elif 'installment_no' in values.keys() and 'amount_required' in values.keys():
+                    amount_value = min(values['amount_required'], loan.price)
+                    amount = (amount_value/values['installment_no'])
+                elif 'price' in values.keys() and 'amount_required' in values.keys():
+                    amount_value = min(
+                        values['amount_required'],  values['price'])
+                    amount = (amount_value/loan.installment_no)
             cursor.execute('delete FROM computer_loan_line WHERE loan=%s \
             AND status != %s', (loan.id, 'done'))
             count = 0
-            for line in range(1, int(values['installment_no'])+1):
-                mydate = datetime.datetime.now().month
-                month = mydate - 1
+            installment_no = 0
+            if 'installment_no' in values.keys():
+                installment_no = values['installment_no']
+            else:
+                installment_no = loan.installment_no
+            for line in range(1, int(installment_no)+1):
+                mydate = datetime.now().month
+                if total_amount[0]:
+                    month = mydate
+                else:
+                    month = mydate - 1
                 if month+line > 12:
-                    count +=1
+                    count += 1
                     if count > 12:
                         count = 1
-                    months = datetime.date(1900, count, 1).strftime('%B')
+                    months = datetime(1900, count, 1).date().strftime('%B')
                 else:
-                    months = datetime.date(1900, month+line, 1).strftime('%B')
+                    months = datetime(1900, month+line,
+                                      1).date().strftime('%B')
                 vals = {
                     'month': months,
                     'amount': amount,
@@ -280,17 +401,19 @@ class ComputerLoan(Workflow, ModelSQL, ModelView):
         count = 0
         LoanLine = Pool().get('computer.loan.line')
         for loan in records:
-            amount = (loan.amount_required/loan.installment_no)
+            amount_value = min(loan.amount_required, loan.price)
+            amount = (amount_value/loan.installment_no)
             for line in range(1, int(loan.installment_no)+1):
-                mydate = datetime.datetime.now().month
+                mydate = datetime.now().month
                 month = mydate - 1
                 if month + line > 12:
                     count += 1
                     if count > 12:
                         count = 1
-                    months = datetime.date(1900, count, 1).strftime('%B')
+                    months = datetime(1900, count, 1).date().strftime('%B')
                 else:
-                    months = datetime.date(1900, month+line, 1).strftime('%B')
+                    months = datetime(1900, month+line,
+                                      1).date().strftime('%B')
                 vals = {
                     'month': months,
                     'amount': amount,
@@ -299,20 +422,18 @@ class ComputerLoan(Workflow, ModelSQL, ModelView):
                 }
                 line = LoanLine.create([vals])
 
-    @classmethod
-    def set_approvedby(cls, computerloan):
+    def set_approvedby(self):
         '''
         Fill the approved by and approve date field
         '''
-        approve_date = datetime.datetime.now().date()
-        for loan in computerloan:
-            pool = Pool()
-            User = pool.get('res.user')
-            user = User(Transaction().user)
-            print(approve_date, "approve_date", user.id,"fdsfhsdgfjhgsdf", loan.date_of_retirement)
-            loan.approve_date = approve_date
-            loan.approve_by = user.id
-        cls.save(computerloan)
+        approve_date = datetime.now().date()
+        pool = Pool()
+        User = pool.get('res.user')
+        user = User(Transaction().user)
+        self.approve_date = approve_date
+        self.approve_by = user.id
+        self.save()
+
 
 class LoanCancelreason(ModelSQL, ModelView):
     'Loan Cancel Reason'
@@ -333,6 +454,7 @@ class ComputerloanLine(ModelSQL, ModelView):
     amount = fields.Float("Amount")
     status = fields.Selection([
         ('pending', 'Pending'),
+        ('inprogress', 'Inprogress'),
         ('done', 'Done'),
     ], string='Status',)
     loan = fields.Many2One("computer.loan", "Loan")

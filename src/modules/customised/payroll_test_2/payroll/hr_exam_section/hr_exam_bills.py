@@ -1,4 +1,4 @@
-from datetime import date, datetime
+from datetime import date
 from trytond.model import ModelView, ModelSQL, fields, Workflow
 from trytond.pyson import Eval
 
@@ -144,7 +144,6 @@ class RenumerationBill(Workflow, ModelSQL, ModelView):
         })
         cls._transitions = set((
             ('draft', 'confirm'),
-            ('confirm', 'approved'),
             ('confirm', 'aao_approval'),
             ('aao_approval', 'ao_approval'),
             ('ao_approval', 'ace_approval'),
@@ -174,10 +173,6 @@ class RenumerationBill(Workflow, ModelSQL, ModelView):
             },
             'send_for_ao_approval_2': {
                 'invisible': ~Eval('state').in_(['dean_approval'])
-            },
-            'approve': {
-                'invisible': ~Eval('state').in_(['confirm']) \
-                    and ~Eval('type_of_examiner').in_(['external'])
             },
         })
 
@@ -222,11 +217,6 @@ class RenumerationBill(Workflow, ModelSQL, ModelView):
     @classmethod
     @Workflow.transition('ao_approval_2')
     def send_for_ao_approval_2(cls, records):
-        '''Change status of bill to ao_approval_2'''
-        pass
-    @classmethod
-    @Workflow.transition('approved')
-    def approve(cls, records):
         '''Change status of bill to ao_approval_2'''
         pass
 
@@ -675,11 +665,6 @@ class TADAJourney(ModelSQL, ModelView):
         'Amount',
         required=True
     )
-    have_ticket_receipt = fields.Boolean('Ticket/Receipt Present?')
-    bill = fields.Binary('Upload Ticket/Receipt', states={
-        'invisible': Eval('have_ticket_receipt') != '1',
-        'required': Eval('have_ticket_receipt') == '1',
-    }, depends=['have_bill'])
 
     @staticmethod
     def default_amount():
@@ -751,8 +736,8 @@ class TADAHotelFood(ModelSQL, ModelView):
         'Amount',
         required=True
     )
-    have_bill = fields.Boolean('Bill Present?')
-    bill = fields.Binary('Upload Bill', states={
+    have_bill = fields.Boolean('Bill?')
+    bill = fields.Many2One('ir.attachment', 'Bill', states={
         'invisible': Eval('have_bill') != '1',
         'required': Eval('have_bill') == '1',
     }, depends=['have_bill'])
@@ -830,8 +815,8 @@ class TADALocalTransport(ModelSQL, ModelView):
         fields.Float('Amount'),
         'on_change_with_amount'
     )
-    have_receipt = fields.Boolean('Receipt Present?')
-    receipt = fields.Binary('Upload Receipt', states={
+    have_receipt = fields.Boolean('Receipt?')
+    receipt = fields.Many2One('ir.attachment', 'Receipt', states={
         'invisible': Eval('have_receipt') != '1',
         'required': Eval('have_receipt') == '1',
     }, depends=['have_receipt'])
@@ -871,12 +856,12 @@ class ContingencyBill(ModelSQL, ModelView):
     '''Examination Contingency Bill'''
 
     __name__ = 'exam_section.contingency_bill'
-    exam_center = fields.Many2One('exam.centers', 'Exam Center')
+    exam_center = fields.Many2One('exam_section.exam_center', 'Exam Center')
     journey = fields.One2Many(
-        'exam_section.contingency.journey',
+        'exam_section.contigency.journey',
         'contingency',
         'Journey'
-    )
+        )
     journey_total_distance = fields.Function(
         fields.Float('Total Distance'),
         'get_total_distance')
@@ -885,25 +870,19 @@ class ContingencyBill(ModelSQL, ModelView):
         'get_total_amount')
     employee = fields.Many2One('company.employee', 'Employee')
     date = fields.Date('Date')
-    exam = fields.Many2One(
-        'exam_section.exam',
-        'Exam',
-    )
 
-    def get_total_distance(self, name=None):
+    def get_total_distance(self, name):
         '''Calculate total distance travelled'''
         res = 0
-        if self.journey:
-            for journey in self.journey:
-                res += journey.journey_distance
+        for journey in self.journey:
+            res += journey.journey_distance
         return res
 
-    def get_total_amount(self, name=None):
+    def get_total_amount(self, name):
         '''Calculate total amount'''
         res = 0
-        if self.journey:
-            for journey in self.journey:
-                res += journey.journey_amount
+        for journey in self.journey:
+            res += journey.journey_amount
         return res
 
 

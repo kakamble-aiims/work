@@ -4,6 +4,7 @@
 from trytond.pool import Pool
 from .hr_payroll_loan import *
 
+
 def register():
     Pool.register(
         SalaryRule,

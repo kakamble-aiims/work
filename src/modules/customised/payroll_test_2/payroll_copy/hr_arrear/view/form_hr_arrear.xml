@@ -24,14 +24,26 @@
     <field name="state"/>
     </group>
     <newline/>
+    <group id="calculate_arrear_buttons" col="2">
     <button  name="drawn_per_month" string="Fetch Data For Drawn Per Month"/>
+    <button  name="due_per_month" string="Calculate Due Per Month"/>
+    </group>
     <newline/>
     <group id="fields" col="2">
     <field name="drawn"/>
     <field name="due"/>
     </group>
     <newline/>
-    <group id="buttons" colspan="2">
+    <group id="total_of_gross" colspan="2" col="6">
+    <label name="gross_total_drawn"/>
+    <field name="gross_total_drawn" readonly="1"/>
+    <label name="gross_total_due"/>
+    <field name="gross_total_due" readonly="1"/>
+    <label name="difference"/>
+    <field name="difference" readonly="1"/>
+    </group>
+    <newline/>
+    <group id="buttons" colspan="6">
         <button  name="submit" string="Submit"/>
         <button  name="forward_to_ao" string="Forward To AO"/>
         <button  name="approve" string="Approve"/>

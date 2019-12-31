@@ -21,11 +21,11 @@ class NewspaperAllowance(ModelSQL, ModelView):
 
     __name__ = 'newspaper.bill'
 
-    salary_code = fields.Char('Salary Code')
-    employee = fields.Many2One('company.employee', 'Employee')
-    designation = fields.Many2One('employee.designation', 'Designation')
-    department = fields.Many2One('company.department', 'Department')
-    bill_amount = fields.Float('Bill Claim Amount')
+    salary_code = fields.Char('Salary Code', required=True)
+    employee = fields.Many2One('company.employee', 'Employee', required=True)
+    designation = fields.Many2One('employee.designation', 'Designation', required=True)
+    department = fields.Many2One('company.department', 'Department', required=True)
+    bill_amount = fields.Float('Bill Claim Amount' , required=True)
     bill_attachment = fields.Char('Bill Attachment')
 
     @fields.depends('employee')
@@ -142,11 +142,11 @@ class TelephoneAllowance(ModelSQL, ModelView):
 
     __name__ = 'telephone.bill'
 
-    salary_code = fields.Char('Salary Code')
-    employee = fields.Many2One('company.employee', 'Employee')
-    designation = fields.Many2One('employee.designation', 'Designation')
-    department = fields.Many2One('company.department', 'Department')
-    bill_claim_amount = fields.Float('Bill Claim Amount')
+    salary_code = fields.Char('Salary Code', required=True)
+    employee = fields.Many2One('company.employee', 'Employee', required=True)
+    designation = fields.Many2One('employee.designation', 'Designation', required=True)
+    department = fields.Many2One('company.department', 'Department', required=True)
+    bill_claim_amount = fields.Float('Bill Claim Amount', required=True)
     bill_attachment = fields.Char('Bill Attachment')
 
     @fields.depends('employee')

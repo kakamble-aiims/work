@@ -3,9 +3,10 @@
     <field name="employee"/>
     <field name="designation"/>
     <field name="department"/>
-    <field name="pay_month"/>
+    <field name="date"/>
     <field name="nps_deduction"/>
+    <field name="govt_contribution"/>
     <field name="amount"/>
-    <field name="nps_fund"/>
+    <field name="nps_fund"/> 
     <field name="payslip"/>
 </tree>

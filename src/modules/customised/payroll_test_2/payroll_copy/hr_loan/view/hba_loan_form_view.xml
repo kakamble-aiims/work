@@ -32,10 +32,18 @@
             <field name="advance_needed"/>
             <label name="amount_required"/>
             <field name="amount_required"/>
-            <label name="num_installment"/>
-            <field name="num_installment"/>
+            <label name="installment_no"/>
+            <field name="installment_no"/>
             <label name="state"/>
             <field name="state"/>
+            <field name="check"/>
+            <label name="payout"/>
+            <field name="payout"/>
+            <label name="pending"/>
+            <field name="pending"/>
+            <label name="reschedule"/>
+            <field name="reschedule"/>
+
         </group>
         <group id="hba_notebook" colspan="4" col="4">
             <notebook colspan="6">
@@ -107,7 +115,8 @@
       <group id="state" colspan="4" col="4">
             <label name="cancel_reason"/>
             <field name="cancel_reason"/>
-            <button name="submitted_to_ao" string="Submit"/>
+            <button name="calculate_instalment" string="Calculate"/>
+            <button name="submitted_to_jo" string="Submit"/>
             <button name="forward_to_jo" string="Forward to AO"/>
             <button name="forward_to_ao" string="Approve"/>
             <button name="cancel" string="Cancel"/>

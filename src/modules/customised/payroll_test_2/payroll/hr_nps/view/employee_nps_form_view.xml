@@ -2,12 +2,18 @@
 <data>
     <xpath expr="/form/notebook/page[@id='qualifications']" position="after">
         <page id="employee_nps_ddo_details" string="NPS details">
-            <label name="ddo"/>
-            <field name="ddo"/>
-            <label name="pran_no"/>
-            <field name="pran_no"/>
-            <label name="nps_no"/>
-            <field name="nps_no"/>
+            <group id="nps_details">
+                <label name="ddo"/>
+                <field name="ddo"/>
+                <label name="pran_no"/>
+                <field name="pran_no"/>
+                <label name="nps_no"/>
+                <field name="nps_no"/>
+            </group>
+            <newline/>
+            <group id="nps_employee_book">
+                <field name="nps_book"/>
+            </group>   
         </page>
     </xpath>
 </data>

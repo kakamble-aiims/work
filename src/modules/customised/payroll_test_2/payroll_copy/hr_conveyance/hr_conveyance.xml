@@ -114,7 +114,40 @@
             <field name="count" eval="True"/>
             <field name="act_window" ref="action_conveyance"/>
         </record>
-    <!-- Menu -->
-        <menuitem id="menu_conveyance_subitem" name="Conveyance Allowance" parent="hr_hra.menu_allowance" action="action_conveyance"/>
+
+
+        <!-- Conveyance LIST -->
+        <record id="form_conveyance_list_view" model="ir.ui.view">
+            <field name="name">form_conveyance_list</field>
+            <field name="model">conveyance.list</field>
+            <field name="type">form</field>
+        </record>
+        <record id="tree_conveyancelist_view" model="ir.ui.view">
+            <field name="name">tree_conveyance_list</field>
+            <field name="model">conveyance.list</field>
+            <field name="type">tree</field>
+        </record>
+
+        <!-- wiz class -->
+        <record id="form_wiz_conveyance_view" model="ir.ui.view">
+            <field name="name">form_wiz</field>
+            <field name="model">conveyance.employee.list</field>
+            <field name="type">form</field>
+        </record>
+        <record id="tree_wiz_conveyance_view" model="ir.ui.view">
+            <field name="name">tree_wiz</field>
+            <field name="model">company.employee</field>
+            <field name="type">tree</field>
+        </record>
+
+         <!--XML Record Wizard-->
+         <record id="act_wizard_conveyance_Allowance_wizard" model="ir.action.wizard">
+            <field name="name">conveyance Allowance</field>
+            <field name="wiz_name">conveyance.allowance.wiz</field>
+            <field name="window" eval="True"/>
+        </record>
+
+        <!-- Menu for wizard-->
+        
     </data>
 </tryton>

@@ -67,10 +67,6 @@
             <field name="window" eval="True"/>
         </record>
 
-        <!-- Menu -->
-
-        <menuitem id="menu_icu_subitem_wiz" name="ICU Allowance" parent="hr_hra.menu_allowance" action="act_wizard_icu_allowance_wizard"/>
-
         <!--Create the form and tree for the tabs-->
         <record model="ir.ui.view" id="icu_view_form">
             <field name="model">hr.allowance.icu</field>
@@ -129,6 +125,6 @@
             <field name="act_window" ref="action_icu"/>
         </record>
         <!-- Menu -->
-        <menuitem id="menu_icu_subitem" name="ICU Allowance" parent="hr_hra.menu_allowance" action="action_icu"/>
+        
     </data>
 </tryton>

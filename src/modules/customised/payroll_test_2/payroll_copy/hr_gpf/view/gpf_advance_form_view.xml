@@ -6,6 +6,12 @@
             <field name="salary_code"/>
             <label name="employee"/>
             <field name="employee"/>
+            <label name="gpf_file_no"/>
+            <field name="gpf_file_no"/>
+            <label name="department"/>
+            <field name="department"/>
+            <label name="designation"/>
+            <field name="designation"/>
             <label name="dob"/>
             <field name="dob"/>
             <label name="doj"/>
@@ -44,6 +50,10 @@
             <field name="state"/>
             <label name="cancel_reason"/>
             <field name="cancel_reason"/>
+            <label name="age"/>
+            <field name="age"/>
+            <label name="check"/>
+            <field name="check"/>
         <group id="advance_button_ids" colspan="4" col="6">
         <notebook colspan="6">
             <page string="Details" id="details">
@@ -60,6 +70,7 @@
                 <field name="gpf_line" colspan="4" mode="tree"/>
             </page>
         </notebook>
+        <button name="calculate" string="Calculate" colspan="2"/>
         <button name="submitted_to_ao" string="Submit" colspan="2"/>
         <button name="forward_to_jo" string="Forward to AO"/>
         <button name="forward_to_ao" string="Approve"/>

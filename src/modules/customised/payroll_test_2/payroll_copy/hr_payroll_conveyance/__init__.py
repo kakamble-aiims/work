@@ -4,6 +4,7 @@
 from trytond.pool import Pool
 from .conveyance_payroll import *
 
+
 def register():
     Pool.register(
         SalaryRule,

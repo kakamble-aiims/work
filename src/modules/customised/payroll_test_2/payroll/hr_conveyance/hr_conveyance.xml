@@ -148,8 +148,6 @@
         </record>
 
         <!-- Menu for wizard-->
-        <menuitem id="menu_conveyance_subitem_wiz" name="Conveyance Allowance" parent="hr_hra.menu_allowance" action="act_wizard_conveyance_Allowance_wizard"/>
-        <!-- Menu -->
-        <menuitem id="menu_conveyance_subitem" name="Conveyance Allowance" parent="hr_hra.menu_allowance" action="action_conveyance"/>
+        
     </data>
 </tryton>

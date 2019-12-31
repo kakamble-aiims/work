@@ -9,12 +9,14 @@
     <field name="designation"/>
     <label name="department"/>
     <field name="department"/>
+    <label name="from_date"/>
+    <field name="from_date"/>
+    <label name="to_date"/>
+    <field name="to_date"/>
     <label name="hda_amount"/>
     <field name="hda_amount"/>
     <label name="state"/>
     <field name="state"/>
-    <!-- <label name="qualification"/>
-    <field name="qualification"/> -->
     <button name="submit" string="Submit" colspan="2"
     confirm="Are you sure you want to submit?"/>
     <button name="cancel" string="Cancel" colspan="2"

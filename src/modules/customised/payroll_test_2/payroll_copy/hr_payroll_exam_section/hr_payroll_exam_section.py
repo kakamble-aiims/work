@@ -1,6 +1,5 @@
 from trytond.pool import Pool, PoolMeta
-from trytond.pyson import Eval
-from datetime import datetime
+import datetime
 
 __all__ = ['HrSalaryRule']
 
@@ -17,26 +16,35 @@ class HrSalaryRule(metaclass=PoolMeta):
         current_exam = None
         exam_table = pool.get('exam_section.exam')
         exam_employee_table = pool.get('exam.employees')
-        pattern_for_year_matching = "%{}".format(datetime.now().year)
+        current_year = datetime.date.today().year
+        start_date = datetime.date(current_year, 1, 1)
+        end_date = datetime.date.today()
         exam_details = exam_table.search(
             [
-                ('name', 'like', pattern_for_year_matching),
-                ('employees', '=', employee),
-            ]
+                ('date_from', '>=', start_date),
+                ('date_to', '<=', end_date),
+                ('state', '=', 'final_process'),
+            ], order=[('create_date', 'DESC')]
         )
         if exam_details != []:
-            current_exam = exam_details[0]
-            employee_current_exam_details = exam_employee_table.search(
-                [
-                    ('employee', '=', employee),
-                    ('exam', '=', current_exam)
-                ]
-            )[0]
+            for current_exam in exam_details:
+                employee_current_exam = exam_employee_table.search(
+                    [
+                        ('employee', '=', employee),
+                        ('exam', '=', current_exam)
+                    ]
+                )
+                if employee_current_exam:
+                    employee_current_exam_details = employee_current_exam[0]
         return employee_current_exam_details
-    
+
     def calculate_HONR(self, payslip, employee, contract):
+        amount = 0
         employee_exam = self.get_exam_details_for_employee(employee)
-        renumeration_amount = employee_exam.renumeration_bill.net_amount
-        ta_da_amount = employee_exam.ta_da_bill.total_amount
-        amount = renumeration_amount + ta_da_amount
+        if employee_exam:
+            renumeration_amount = employee_exam.renumeration_bill.net_amount \
+                if employee_exam.renumeration_bill else 0
+            # ta_da_amount = employee_exam.ta_da_bill.total_amount \
+            #     if employee_exam.ta_da_bill else 0
+            amount = renumeration_amount  # + ta_da_amount
         return amount

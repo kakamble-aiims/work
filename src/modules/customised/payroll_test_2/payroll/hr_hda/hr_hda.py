@@ -18,11 +18,12 @@ class HighDegreeAllowance(Workflow, ModelSQL, ModelView):
 
     __name__ = 'hr.allowance.hda'
 
-    salary_code = fields.Char('Salary Code')
-    employee = fields.Many2One('company.employee', 'Employee Name')
-    designation = fields.Many2One('employee.designation', 'Designation')
-    department = fields.Many2One('company.department', 'Department')
-    hda_amount = fields.Float('Final HDA Amount', states={
+    salary_code = fields.Char('Salary Code', required=True)
+    employee = fields.Many2One('company.employee', 'Employee Name', required=True)
+    designation = fields.Many2One('employee.designation', 'Designation', required=True)
+    department = fields.Many2One('company.department', 'Department', required=True)
+    hda_amount = fields.Float('Final HDA Amount', required=True,
+        states={
         'readonly': ~Eval('state').in_(['draft']),
     }, depends=['state'])
     from_date = fields.Date('From Date', states={

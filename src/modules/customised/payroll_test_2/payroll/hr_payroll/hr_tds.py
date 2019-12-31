@@ -157,33 +157,52 @@ class IncomeTaxDeduction(ModelSQL, ModelView):
     end_date = fields.Date('End Date')
     fiscal_year = fields.Many2One('account.fiscalyear', 'Fiscal Year')
     annual_salary_ytd = fields.Float(
-        'Annual Salary (YTD)'
+        'Annual Salary (YTD)',
+        digits=(10, 2)
     )
     annual_salary_projected = fields.Float(
-        'Annual Salary (Projected)'
+        'Annual Salary (Projected)',
+        digits=(10, 2)
     )
     income_from_other_source = fields.Float(
-        'Income from other Sources'
+        'Income from other Sources',
+        digits=(10, 2)
     )
     annual_taxable_income_ytd = fields.Float(
         'Annual Taxable Income (YTD)',
         help="Annual Taxable Income on which "
-        "we calculate the income tax."
+        "we calculate the income tax.",
+        digits=(10, 2)
     )
     annual_taxable_income_projected = fields.Float(
         'Annual Taxable Income (Projected)',
         help="Projected Annual Taxable Income on "
-        "which we calculate the income tax."
+        "which we calculate the income tax.",
+        digits=(10, 2)
     )
     income_tax_projected = fields.Float(
-        'Projected Income Tax',
+        'Projected Income Tax (Before Exemption)',
         help="This is subjected to variations based on "
         "the Income Tax Declarations, change in Salary "
-        "or any Govt. Rules or policies")
+        "or any Govt. Rules or policies.",
+        digits=(10, 2))
+    tax_exemption = fields.Float(
+        'Tax Exemption',
+        help="Annual Tax Exemption calculated "
+        "from the employee's current investment declaration.",
+        digits=(10, 2)
+    )
+    income_tax_projected_exemption = fields.Float(
+        'Projected Income Tax (After Exemption)',
+        help="This is subjected to variations based on "
+        "the Income Tax Declarations, change in Salary "
+        "or any Govt. Rules or policies.",
+        digits=(10, 2))
     income_tax_ytd = fields.Float(
         'Income Tax (Year To Date)',
         help="This is the actual TDS deducted in "
-        "the current financial year.")
+        "the current financial year.",
+        digits=(10, 2))
     tds_lines = fields.One2Many(
         'income_tax.taxable_amount_lines',
         'taxable_amount_projections',
@@ -238,10 +257,12 @@ class IncomeTaxDeduction(ModelSQL, ModelView):
         returns start_date as this year's current
         fiscal year's start_date value.
         '''
+        current_fiscal_year = None
         pool = Pool()
         fiscal = pool.get('account.fiscalyear')
         company = Transaction().context.get('company')
-        current_fiscal_year = fiscal.find(company)
+        if fiscal.find(company):
+            current_fiscal_year = fiscal.find(company)
         return current_fiscal_year
 
     @staticmethod
@@ -256,7 +277,7 @@ class IncomeTaxDeduction(ModelSQL, ModelView):
         current_fiscal_year = fiscal.find(company)
         return fiscal(current_fiscal_year).end_date \
             if current_fiscal_year else None
-
+    
     def get_tax_exemption(self, month, year):
         '''Get the tax exemption from the current
         year's investment declaration'''
@@ -310,20 +331,19 @@ class IncomeTaxDeduction(ModelSQL, ModelView):
         # Get payslips of current fiscal year
         payslips = Payslip.search([
             ('employee', '=', self.employee),
-            ('fiscal_year', '=', current_fiscal_year)
+            ('fiscal_year', '=', current_fiscal_year),
         ], order=[('year', 'ASC')])
         annual_tax = TaxSlab.get_annual_income_tax(
             self.employee,
             self.annual_taxable_income_projected
         )
         current_month = datetime.date.today().month
-        current_year = datetime.date.today().year
-        tax_exemption = self.get_tax_exemption(
-            str(current_month), current_year
-        )
+        tax_exemption = self.tax_exemption
         # Saving Projected Income Tax for current fiscal year
         if annual_tax:
             self.income_tax_projected = annual_tax
+            self.income_tax_projected_exemption = self.income_tax_projected \
+                - self.tax_exemption
         else:
             self.raise_user_error('No Income Tax Rule defined')
         if not self.tds_lines:
@@ -343,9 +363,9 @@ class IncomeTaxDeduction(ModelSQL, ModelView):
                         {
                             'month': payslip.month,
                             'year': payslip.year,
-                            'amount': payslip_tds.amount
+                            'amount': round(payslip_tds.amount, 2)
                             if payslip_tds else 0,
-                            'state': 'deducted',
+                            'state': 'projected',
                             'taxable_amount_projections': self
                         }
                     ])
@@ -359,7 +379,7 @@ class IncomeTaxDeduction(ModelSQL, ModelView):
                         {
                             'month': str(month),
                             'year': datetime.date.today().year,
-                            'amount': monthly_tds,
+                            'amount': round(monthly_tds, 2),
                             'state': 'projected',
                             'taxable_amount_projections': self
                         }
@@ -370,7 +390,7 @@ class IncomeTaxDeduction(ModelSQL, ModelView):
                         {
                             'month': str(month),
                             'year': datetime.date.today().year + 1,
-                            'amount': monthly_tds,
+                            'amount': round(monthly_tds, 2),
                             'state': 'projected',
                             'taxable_amount_projections': self
                         }
@@ -408,18 +428,19 @@ class IncomeTaxDeduction(ModelSQL, ModelView):
                         )
                         remaining_months = 12 \
                             if month == 4 else self.get_remaining_months(month)
-                        tds_month = remaining_tax / remaining_months \
+                        tds = remaining_tax / remaining_months \
                             - exemption / remaining_months
+                        tds_month = round(tds, 2)
                         payslip_tds.amount = tds_month
                         payslip_tds.save()
-                    for line in self.tds_lines:
-                        if line.month == payslip.month \
-                                and line.year == payslip.year:
-                            line.amount = tds_month
-                            if line.state == 'projected':
-                                line.state = 'deducted'
-                            line.save()
-                            break
+                        for line in self.tds_lines:
+                            if line.month == payslip.month \
+                                    and line.year == payslip.year:
+                                line.amount = tds_month
+                                if line.state == 'projected':
+                                    line.state = 'deducted'
+                                line.save()
+                                break
             deducted = 0
             for line in self.tds_lines:
                 if line.state == 'deducted':
@@ -430,6 +451,7 @@ class IncomeTaxDeduction(ModelSQL, ModelView):
             remaining_months = self.get_remaining_months(current_month)
             remaining_monthly_tds = remaining_tax / remaining_months \
                 - tax_exemption/remaining_months
+            remaining_monthly_tds = round(remaining_monthly_tds, 2)
             for pline in self.tds_lines:
                 if pline.state == 'projected':
                     pline.amount = remaining_monthly_tds
@@ -464,7 +486,7 @@ class IncomeTaxDeduction(ModelSQL, ModelView):
         in the current financial year
         '''
         current_month = month
-        if current_month < 12 and current_month > 3:
+        if current_month <= 12 and current_month > 3:
             remaining_months = (12-current_month)+4
             # 3 months in the next year and 1 to include the current month
             return remaining_months
@@ -602,6 +624,31 @@ class IncomeTaxDeduction(ModelSQL, ModelView):
         '''
         self.annual_taxable_income_projected = (
             self.annual_salary_projected + self.income_from_other_source)
+    
+    def calculate_tax_exemption(self):
+        '''Get the tax exemption from the current
+        year's investment declaration'''
+        pool = Pool()
+        tax_exemption = 0
+        current_inv_declaration_1 = None
+        fiscal = pool.get('account.fiscalyear')
+        inv_declaration = pool.get('investment.declaration')
+        company = Transaction().context.get('company')
+        current_fiscal_year = fiscal.find(company)
+        current_date = datetime.date.today()
+        current_inv_declaration = inv_declaration.search([
+            ('employee', '=', self.employee),
+            ('fiscal_year', '=', current_fiscal_year)
+        ], order=[('write_date', 'DESC')])
+        for declaration in current_inv_declaration:
+            date = declaration.write_date.date()
+            if date <= current_date:
+                current_inv_declaration_1 = declaration
+                break
+        if current_inv_declaration_1:
+            tax_exemption = current_inv_declaration_1.net_tax_exempted
+        self.tax_exemption = tax_exemption
+        self.save()
 
     @classmethod
     def calculate_income_tax_sheet(cls, records):
@@ -612,6 +659,7 @@ class IncomeTaxDeduction(ModelSQL, ModelView):
             record.calculate_taxable_salary_projected()
             record.calculate_annual_taxable_income_ytd()
             record.calculate_annual_taxable_income_projected()
+            record.calculate_tax_exemption()
             record.calculate_income_tax_ytd()
             record.calculate_monthly_tds()
             record.save()
@@ -646,7 +694,7 @@ class TaxableIncomeProjectionsLine(ModelSQL, ModelView):
         ], 'Month'
     )
     year = fields.Integer('Year')
-    amount = fields.Float('Annual Taxable Amount')
+    amount = fields.Float('Annual Taxable Amount', digits=(10, 2))
     state = fields.Selection(
         [
             ('projected', 'Projected'),

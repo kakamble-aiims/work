@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+
+<tryton>
+    <data>
+        <!-- Menu -->
+        <menuitem id="menu_cea_subitem_wiz" name="Children Eduaction Allowance" 
+            parent="hr_payroll.menu_allowance" action="hr_cea.act_wizard_children_education_allowance_wizard"/>
+        <menuitem id="menu_tution_fee_wiz" name="Tution Fee" parent="hr_payroll.menu_schedule" action="hr_cea.act_wizard_tution_fee_schedule_wizard"/>
+
+        <!-- Menu -->
+        <menuitem id="menu_cea_subitem" name="Children Education Allowance" 
+            parent="hr_payroll.menu_allowance" action="hr_cea.action_cea"/>
+    </data>
+</tryton>

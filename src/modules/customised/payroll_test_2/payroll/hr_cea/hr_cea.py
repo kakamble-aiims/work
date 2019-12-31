@@ -18,17 +18,17 @@ class ChildernEductionAllowance(Workflow, ModelSQL, ModelView):
 
     __name__ = 'hr.allowance.cea'
 
-    salary_code = fields.Char('Salary Code')
-    employee = fields.Many2One('company.employee', 'Employee Name')
-    designation = fields.Many2One('employee.designation', 'Designation')
-    department = fields.Many2One('company.department', 'Department')
+    salary_code = fields.Char('Salary Code', required=True)
+    employee = fields.Many2One('company.employee', 'Employee Name', required=True)
+    designation = fields.Many2One('employee.designation', 'Designation', required=True)
+    department = fields.Many2One('company.department', 'Department', required=True)
     children_no = fields.Selection(
         [
             ('1', 'One'),
             ('2', 'Two'),
-        ], 'Number of Children')
+        ], 'Number of Children', required=True)
     amount = fields.Function(
-        fields.Float('Education Amount'),
+        fields.Float('Education Amount', required=True),
         'on_change_with_amount'
     )
     from_date = fields.Date('From Date', states={

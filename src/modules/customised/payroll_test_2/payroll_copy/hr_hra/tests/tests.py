@@ -3,17 +3,16 @@ import doctest
 import trytond.tests.test_tryton
 from trytond.tests.test_tryton import ModuleTestCase, with_transaction
 from trytond.pool import Pool
-from trytond.exceptions import UserError
-from trytond.transaction import Transaction
 from trytond.tests.test_tryton import doctest_teardown
 from trytond.tests.test_tryton import doctest_checker
-from trytond.modules.company.tests import create_company, set_company
+from trytond.modules.company.tests import create_company
+
 
 class HraTestCase(ModuleTestCase):
 
     'Test Hra module'
     module = 'hr_hra'
-    
+
     @with_transaction()
     def test_employee_data(self):
         'Create employee'
@@ -37,7 +36,7 @@ class HraTestCase(ModuleTestCase):
         if employee != []:
             employee_cur = employee[0]
         self.assertTrue(employee_cur.id)
-    
+
     @with_transaction()
     def test_salary_code(self):
         'Test salary code constraint'
@@ -55,7 +54,6 @@ class HraTestCase(ModuleTestCase):
         employee = Employee.create([{
             'company': company,
             'party': party_cur,
-            # 'salary_code': '5555',
             'employee_group': 'A',
             'employee_status': 'Regular',
             'primary_phone': '9935164850'
@@ -64,13 +62,10 @@ class HraTestCase(ModuleTestCase):
             employee_cur = employee[0]
         salary_code = 5555
 
-        # employee2, = employee.create([{
-        #             'party': 'employee2[1]',
-        #             }])
-
         self.assertRaises(Exception, Employee.write, [employee_cur], {
                 'salary_code':  salary_code,
                 })
+
 
 def suite():
     suite = trytond.tests.test_tryton.suite()

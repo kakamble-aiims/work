@@ -21,18 +21,19 @@ class OverTimeAllowance(Workflow, ModelSQL, ModelView):
         'readonly': ~Eval('state').in_(['draft'])
     }
     _DEPENDS = ['state']
-    salary_code = fields.Char('Salary Code', states=_STATES, depends=_DEPENDS)
+    salary_code = fields.Char('Salary Code', 
+        states=_STATES, required=True, depends=_DEPENDS)
     employee = fields.Many2One(
         'company.employee', 'Employee Name',
-        states=_STATES, depends=_DEPENDS
+        states=_STATES, required=True, depends=_DEPENDS
     )
     designation = fields.Many2One(
         'employee.designation', 'Designation',
-        states=_STATES, depends=_DEPENDS
+        states=_STATES, required=True, depends=_DEPENDS
     )
     department = fields.Many2One(
         'company.department', 'Department',
-        states=_STATES, depends=_DEPENDS
+        states=_STATES, required=True, depends=_DEPENDS
     )
 
     from_date = fields.Date('From Date',
@@ -43,7 +44,8 @@ class OverTimeAllowance(Workflow, ModelSQL, ModelView):
                           )
     from_date = fields.Date('From Date', states=_STATES, depends=_DEPENDS)
     to_date = fields.Date('To Date', states=_STATES, depends=_DEPENDS)
-    amount = fields.Integer('Amount', states=_STATES, depends=_DEPENDS)
+    amount = fields.Integer('Amount', 
+            states=_STATES, required=True, depends=_DEPENDS)
     state = fields.Selection(
         [
             ('draft', 'Draft'),

@@ -94,8 +94,42 @@
             <field name="count" eval="True"/>
             <field name="act_window" ref="action_cash"/>
         </record>
+        <!-- Cash LIST -->
+        <record id="form_cashlist_view" model="ir.ui.view">
+            <field name="name">form_cashlist</field>
+            <field name="model">cash.list</field>
+            <field name="type">form</field>
+        </record>
+        <record id="tree_cashlist_view" model="ir.ui.view">
+            <field name="name">tree_cash_list</field>
+            <field name="model">cash.list</field>
+            <field name="type">tree</field>
+        </record>
+
+        <!-- wiz class -->
+        <record id="form_wiz_cash_view" model="ir.ui.view">
+            <field name="name">form_wiz</field>
+            <field name="model">cash.employee.list</field>
+            <field name="type">form</field>
+        </record>
+        <record id="tree_wiz_cash_view" model="ir.ui.view">
+            <field name="name">tree_wiz</field>
+            <field name="model">company.employee</field>
+            <field name="type">tree</field>
+        </record>
+
+         <!--XML Record Wizard-->
+         <record id="act_wizard_cash_allowance_wizard" model="ir.action.wizard">
+            <field name="name">Cash Handling and Treasury Allowance</field>
+            <field name="wiz_name">cash.allowance.wiz</field>
+            <field name="window" eval="True"/>
+        </record>
+
+        <!-- Menu for wizard-->
+
+        <menuitem id="menu_cash_subitem_wiz" name="Cash Handling and Treasury Allowance" parent="hr_payroll.menu_allowance" action="act_wizard_cash_allowance_wizard"/>
 
         <!-- Menu -->
-        <menuitem id="menu_cash_subitem" name="Cash Handling and Treasury Allowance" parent="hr_hra.menu_allowance" action="action_cash"/>
+        <menuitem id="menu_cash_subitem" name="Cash Handling and Treasury Allowance" parent="hr_payroll.menu_allowance" action="action_cash"/>
     </data>
 </tryton>

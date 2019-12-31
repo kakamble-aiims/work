@@ -1380,8 +1380,5 @@
             <field name="pay_level" ref="pay_level_1"/>
             <field name="ta_da_line" ref="group_c_ta_da_professional_practical"/>
         </record>
-
-
-        <!--  -->
     </data>
 </tryton>

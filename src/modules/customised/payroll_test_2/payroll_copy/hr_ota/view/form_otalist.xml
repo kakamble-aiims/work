@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+
+<form>
+    <label name="employee"/>
+    <field name="employee"/>
+     <label name="amount"/>
+    <field name="amount"/>
+</form>

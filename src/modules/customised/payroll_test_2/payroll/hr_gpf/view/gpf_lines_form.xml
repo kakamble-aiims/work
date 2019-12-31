@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+
+<form>
+    <label name="gpf_lines"/>
+    <field name="gpf_lines"/>
+    <label name="amount"/>
+    <field name="amount"/>
+    <label name="date"/>
+    <field name="date"/>
+    <label name="description"/>
+    <field name="description"/>
+    <label name="gpf_type"/>
+    <field name="gpf_type"/>
+</form>

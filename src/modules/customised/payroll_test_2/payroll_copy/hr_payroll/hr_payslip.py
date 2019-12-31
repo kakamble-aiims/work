@@ -1,10 +1,7 @@
-# import pandas as pd
-# from pdfrw import PdfWriter
-from trytond.model import (ModelSQL, ModelView, fields)
-from trytond.pyson import Eval
+from trytond.model import (ModelSQL, ModelView, fields, Workflow)
 from trytond.transaction import Transaction
 import datetime
-from trytond.model import Workflow
+from trytond.pyson import Eval
 from trytond.pool import Pool, PoolMeta
 import xlsxwriter
 
@@ -70,24 +67,6 @@ class HrPayslip(Workflow, ModelSQL, ModelView):
             'readonly': ~Eval('state').in_(['draft'])
         }, depends=['state']
     )
-    pay_and_allowance = fields.One2Many(
-        'hr.payslip.line',
-        'payslip', string='Payslip Lines',
-        domain=[('category.code', 'in', ['Basic', 'Allowance'])],
-        states={
-            'readonly': ~Eval('state').in_(['draft'])
-        },
-        depends=['state']
-    )
-    deductions = fields.One2Many(
-        'hr.payslip.line',
-        'payslip', string='Payslip Lines',
-        domain=[('category.code', 'in', ['Deduction'])],
-        states={
-            'readonly': ~Eval('state').in_(['draft'])
-        },
-        depends=['state']
-    )
     details_by_salary_rule_category = fields.One2Many(
         'hr.payslip.line', 'payslip',
         string='Details by Salary Rule', states={
@@ -102,7 +81,7 @@ class HrPayslip(Workflow, ModelSQL, ModelView):
             'readonly': ~Eval('state').in_(['draft'])
         },
         depends=['state']
-    )  # batches in payslip.run
+    )
     bank_name = fields.Char(
         'Bank Name',
         states={
@@ -110,6 +89,15 @@ class HrPayslip(Workflow, ModelSQL, ModelView):
         },
         depends=['state'], readonly=True
     )
+    department = fields.Many2One('company.department', 'Department')
+    employee_group = fields.Selection(
+        [
+            ('A', 'A'),
+            ('B', 'B'),
+            ('C', 'C'),
+            ('D', 'D'),
+            ('All', 'All')
+        ], "Employee Group", sort=False)
     ifsc = fields.Char(
         'IFSC Code',
         states={
@@ -132,24 +120,23 @@ class HrPayslip(Workflow, ModelSQL, ModelView):
         depends=['state'], readonly=True
     )
     bank_status = fields.Char('Bank Account Status', states={
-            'readonly': ~Eval('state').in_(['draft'])
-        },
+        'readonly': ~Eval('state').in_(['draft'])
+    },
         depends=['state'], readonly=True)
+    taxable_salary = fields.Float('Taxable Salary')
+    net_salary = fields.Float('Net Salary')
+    tds = fields.Float('TDS')
 
     @fields.depends('employee')
     def on_change_employee(self):
         if self.employee:
             self.salary_code = self.employee.salary_code
-            # self.number = self.id
-            self.bank_name = self.employee.bank_name.bank
+            self.department = self.employee.department
+            self.bank_name = self.employee.bank_name.bank if self.employee.bank_name else None
             self.bank_address = self.employee.bank_address
             self.account_no = self.employee.account_no
             self.bank_status = self.employee.bank_status
-            # start_date = datetime.date.today()
-            # contract = Pool().get('hr.contract')
-            # contracts = contract.search([('employee', '=', self.employee),
-            # ('date_start', '<=', start_date),
-            # ('date_end', '>=', start_date)])
+            self.employee_group = self.employee.employee_group
 
     def get_pay_and_allowances(self):
         allowances_lines = []
@@ -185,25 +172,6 @@ class HrPayslip(Workflow, ModelSQL, ModelView):
                     if salary_rule.amount else 0
         return res
 
-    # def get_monthly_tax_exemption(self):
-    #     Deduction = Pool().get('income_tax.deduction')
-    #     month_no = int(self.month)
-    #     current_date = datetime.date(self.year, month_no, 1)
-    #     projected_tax_exemption = 0
-    #     deduction = Deduction.search([
-    #       ('employee', '<=', self.employee),
-    #       ('start_date', '<=', current_date),
-    #       ('end_date', '>=', current_date)
-    #         ], limit=1)
-    #     if deduction:
-    #         projected_tax_exemption = \
-    #             deduction[0].get_projected_tax_exemption()
-    #         remaining_months = deduction[0].get_remaining_months()
-    #         print(remaining_months, "----"*20, projected_tax_exemption)
-    #         monthly_tax_exemption = projected_tax_exemption/remaining_months
-    #         return monthly_tax_exemption
-    #         TODO: review if income declaration tax exemption is also required
-
     def get_taxable_salary_amount(self):
         return self.get_total_gross_amount()  \
             - self.get_total_deduction_amount()
@@ -219,36 +187,36 @@ class HrPayslip(Workflow, ModelSQL, ModelView):
         super().__setup__()
         cls._order = [
             ('salary_code', 'ASC'),
-            ]
+        ]
         cls._transitions |= set((
             ('draft', 'verify'),
             ('verify', 'confirm'),
             ('confirm', 'paid'),
             ('confirm', 'cancel'),
             ('verify', 'cancel'),
-            ))
+        ))
         cls._buttons.update({
-                'verify': {
-                    'invisible': ~Eval('state').in_(
-                        ['draft']),
-                    'depends': ['state'],
-                    },
-                'cancel': {
-                    'invisible': ~Eval('state').in_(
-                        ['confirm', 'verify']),
-                    'depends': ['state'],
-                    },
-                'confirm': {
-                    'invisible': ~Eval('state').in_(
-                        ['verify']),
-                    'depends': ['state'],
-                    },
-                'done': {
-                    'invisible': ~Eval('state').in_(
-                        ['confirm']),
-                    'depends': ['state'],
-                    },
-                })
+            'verify': {
+                'invisible': ~Eval('state').in_(
+                    ['draft']),
+                'depends': ['state'],
+            },
+            'cancel': {
+                'invisible': ~Eval('state').in_(
+                    ['confirm', 'verify']),
+                'depends': ['state'],
+            },
+            'confirm': {
+                'invisible': ~Eval('state').in_(
+                    ['verify']),
+                'depends': ['state'],
+            },
+            'done': {
+                'invisible': ~Eval('state').in_(
+                    ['confirm']),
+                'depends': ['state'],
+            },
+        })
 
     @classmethod
     @ModelView.button
@@ -286,7 +254,6 @@ class HrPayslip(Workflow, ModelSQL, ModelView):
     def calculate_rules(self):
         structure = self.structure
         PayslipLine = Pool().get('hr.payslip.line')
-
         for rule in structure.rules:
             condition = rule.check(self, self.employee, self.contract,)
             if not condition:
@@ -300,23 +267,19 @@ class HrPayslip(Workflow, ModelSQL, ModelView):
                 'payslip': self.id,
                 'salary_rule': rule.id,
                 'category': rule.category.id,
-                # 'employee': self.employee.id,
                 'amount': amount,
                 'total': amount,
                 'priority': rule.priority,
             }
             line = PayslipLine.create([vals])
-            print(line)
 
     @classmethod
-    # @ModelView.button_action('payroll.payslip_line_view_tree')
     def _compute_salary(cls, records):
         pass
 
     @classmethod
     def default_date_from(cls):
         start_date = datetime.date.today().replace(day=1)
-        # y=datetime.datetime(x.year,x.month,1)
         return start_date
 
     @classmethod
@@ -359,7 +322,7 @@ class HrPayslipLine(ModelSQL, ModelView):
     name = fields.Char('Name', required=True)
     code = fields.Char('Code', required=True)
     # TODO: name, code is required
-    payslip = fields.Many2One('hr.payslip', string='PaySlip', required=True)
+    payslip = fields.Many2One('hr.payslip', string='PaySlip', ondelete='CASCADE')
     salary_rule = fields.Many2One(
         'hr.salary.rule', string='Rule', required=True
     )
@@ -369,6 +332,12 @@ class HrPayslipLine(ModelSQL, ModelView):
     total = fields.Float('Total')
     priority = fields.Integer('Priority', required=True)
     payslip_report = fields.Many2One('hr.payslip', string='PaySlip')
+    tds = fields.Float('TDS')
+
+    @classmethod
+    def __setup__(cls):
+        super(HrPayslipLine, cls).__setup__()
+        cls._order.insert(0, ('priority', 'ASC'))
 
 
 class SalaryRuleCategory(ModelSQL, ModelView):
@@ -394,7 +363,9 @@ class SalaryStructure(ModelSQL, ModelView):
         'hr.salary.structure-hr.salary.rule',
         'structure',
         'rule',
-        'Salary Rules')
+        'Salary Rules',
+        order=[('rule.priority', 'ASC')],
+    )
 
     def generate_pay_slip(self, employee, contract, payslip_batch=None):
         '''Generate a pay slip
@@ -410,25 +381,26 @@ class SalaryStructure(ModelSQL, ModelView):
         current_fiscal_year = Fiscal.find(company)
         Payslip = Pool().get('hr.payslip')
         vals = {
-            # 'number': 'SLIP-{}'.format(),
             'name': 'Salary Slip of {} for {}'.format(
-                            employee.party.name, date_),
+                employee.party.name, date_),
             'salary_code': employee.salary_code,
             'employee': employee,
-            'structure': self,
+            'structure': self.id,
             'contract': contract,
-            'bank_name': employee.bank_name.bank \
-                    if employee.bank_name.bank else None,
+            'bank_name': employee.bank_name.bank
+            if employee.bank_name else None,
             'ifsc': employee.ifsc if employee.ifsc else None,
-            'bank_address': employee.bank_address \
-                    if employee.bank_address else None,
-            'account_no': employee.account_no \
-                    if employee.account_no else None,
+            'bank_address': employee.bank_address
+            if employee.bank_address else None,
+            'account_no': employee.account_no
+            if employee.account_no else None,
             'bank_status': employee.bank_status,
             'month': str(month_no),
             'year': year,
             'fiscal_year': current_fiscal_year,
-            'state': 'draft'
+            'department': employee.department,
+            'state': 'draft',
+            'employee_group': employee.employee_group
         }
         if payslip_batch:
             vals['payslip_batch'] = payslip_batch
@@ -451,29 +423,30 @@ class SalaryStructure(ModelSQL, ModelView):
         current_fiscal_year = Fiscal.find(company)
         Payslip = Pool().get('hr.payslip')
         vals = {
-            # 'number': 'SLIP-{}'.format(),
             'name': 'Salary Slip of {} for {}'.format(
-                            employee.party.name, date_),
+                employee.party.name, date_),
             'salary_code': employee.salary_code,
             'employee': employee,
             'structure': self,
             'contract': contract,
-            'bank_name': employee.bank_name.bank \
-                    if employee.bank_name.bank else None,
+            'bank_name': employee.bank_name.bank
+            if employee.bank_name.bank else None,
             'ifsc': employee.ifsc if employee.ifsc else None,
-            'bank_address': employee.bank_address \
-                    if employee.bank_address else None,
-            'account_no': employee.account_no \
-                    if employee.account_no else None,
+            'bank_address': employee.bank_address
+            if employee.bank_address else None,
+            'account_no': employee.account_no
+            if employee.account_no else None,
             'bank_status': employee.bank_status,
             'month': str(month_no),
             'year': year,
             'fiscal_year': current_fiscal_year,
-            'state':  'draft'
+            'state':  'draft',
+            'employee_group': employee.employee_group
         }
         if payslip_batch:
-            vals['payslip_batch'] = payslip_batch
+            vals['payslip_batch'] = payslip_batch.id
         payslip = Payslip.create([vals])[0]
+
         return payslip
 
 
@@ -518,17 +491,18 @@ class SalaryBatch(ModelSQL, ModelView):
             month_no = datetime.date.today().month
             year = datetime.date.today().year
             date_ = month + " " + str(year)
-            # slipbatch = PayslipBatch.search([('name', '=', name)])
-            # if not slipbatch:
             payslip_batch = PayslipBatch.create([{
                 'name': '{} - {}'.format(record.name, date_),
                 'year': '{}'.format(year),
                 'month': '{}'.format(month_no)
-                # 'date_from':
             }])[0]
             for batch_employee in record.employees:
                 employee = batch_employee.employee
-                contract = employee.contracts[0]
+                if employee.contracts:
+                    contract = employee.contracts[0]
+                else:
+                    cls.raise_user_error(
+                        employee.party.name, 'have no salary details')
                 structure = contract.structure
                 salary_slip = structure.generate_pay_slip(
                     employee,
@@ -552,7 +526,6 @@ class SalaryBatch(ModelSQL, ModelView):
                     'name': '{} - {}'.format(record.name, date_),
                     'year': '{}'.format(year),
                     'month': '{}'.format(iter_month)
-                    # 'date_from':
                 }])[0]
                 for batch_employee in record.employees:
                     employee = batch_employee.employee
@@ -570,7 +543,7 @@ class SalaryBatch(ModelSQL, ModelView):
     def batch_excel_workbook(cls, records):
         workbook = xlsxwriter.Workbook('test.xlsx')
         worksheet = workbook.add_worksheet()
-        PayslipRule = Pool().get('salary.rule')
+        PayslipRule = Pool().get('hr.salary.rule')
         PayslipRules = PayslipRule.search([])
         col = 1
         row = 0

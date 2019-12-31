@@ -2,7 +2,7 @@
 
 <tryton>
     <data>
-        <menuitem id="menu_emb" name="EMB Bill"/>
+        <menuitem id="menu_emb" name="EMB Bill" parent="hr.menu_hr" sequence="9"/>
         <!-- Form View -->
         <record id="form_employee_emb_bill_view" model="ir.ui.view">
             <field name="name">form_employee_emb_bill</field>

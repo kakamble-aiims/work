@@ -2,6 +2,15 @@
 
 <tryton>
     <data>
+        <!-- Loan Module User Group -->
+        <!-- User Groups -->
+        <record model="res.group" id="group_junior_accounts_officer_loan">
+            <field name="name">Junior Accounts Officer Loan</field>
+        </record>
+        <record model="res.group" id="group_accounts_officer_loan">
+            <field name="name">Accounts Officer Loan</field>
+        </record>
+        <!-- END -->
 <!-- Create the Account Officer group -->
         <record model="res.group" id="group_account_officer">
             <field name="name">Account Officer</field>
@@ -21,14 +30,9 @@
             <field name="group" ref="group_junior_account_officer"/>
         </record>
 <!-- Create the Employee group -->
-        <record model="res.group" id="group_employee">
+        <!-- <record model="res.group" id="group_employee">
             <field name="name">Employee</field>
-        </record>
-<!-- Assign the Group to the "employee" user -->
-      <record model="res.user-res.group" id="admin_group_employee">
-            <field name="user" ref="res.user_admin"/>
-            <field name="group" ref="group_employee_admin"/>
-        </record>
+        </record> -->
 <!-- Create the Administrative officer group -->
         <record model="res.group" id="group_Administrative officer">
             <field name="name">Administrative Officer</field>

@@ -11,6 +11,10 @@
         <field name="department"/>
         <label name="children_no"/>
         <field name="children_no"/>
+        <label name="from_date"/>
+        <field name="from_date"/>
+        <label name="to_date"/>
+        <field name="to_date"/>
         <label name="amount"/>
         <field name="amount"/>
         <label name="state"/>

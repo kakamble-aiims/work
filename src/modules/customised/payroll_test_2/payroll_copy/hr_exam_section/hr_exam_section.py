@@ -1,14 +1,13 @@
-from datetime import date 
+from datetime import date
 from trytond.model import ModelView, ModelSQL, fields, Workflow
-from trytond.wizard import Wizard, StateView, StateTransition, \
-    StateAction, Button
-from trytond.pyson import Eval, PYSONEncoder
+from trytond.pyson import Eval
 from trytond.pool import Pool
 from trytond.transaction import Transaction
 
 __all__ = [
     'ExamCenter', 'Exam', 'Centers', 'Employees'
     ]
+
 
 class ExamCenter(ModelSQL, ModelView):
     '''Exam Center'''
@@ -210,10 +209,13 @@ class Exam(Workflow, ModelSQL, ModelView):
 
     @classmethod
     def view_attributes(cls):
-        '''States given for Renumeration and TA/DA bills notebook pages in form view'''
+        '''States given for Renumeration and TA/DA bills
+        notebook pages in form view'''
         return [
-            ('/form/notebook/page[@id="_renumeration"]', 'states', cls._RENUM_PAGE_STATES),
-            ('/form/notebook/page[@id="_ta_da"]', 'states', cls._TA_DA_PAGE_STATES),
+            ('/form/notebook/page[@id="_renumeration"]',
+                'states', cls._RENUM_PAGE_STATES),
+            ('/form/notebook/page[@id="_ta_da"]',
+                'states', cls._TA_DA_PAGE_STATES),
         ]
 
     @staticmethod
@@ -237,7 +239,7 @@ class Exam(Workflow, ModelSQL, ModelView):
         '''Change the state of all bills from old state to new state'''
         for record in records:
             bills_bundle = zip(
-                record.renumeration_bills, record.ta_da_bills 
+                record.renumeration_bills, record.ta_da_bills
             )
             for (renumeration_bill, ta_da_bill) in bills_bundle:
                 if renumeration_bill.state in [old_state]:
@@ -250,7 +252,7 @@ class Exam(Workflow, ModelSQL, ModelView):
                     ta_da_bill.save()
                 else:
                     cls.raise_user_error('bill_not_submitted')
-    
+
     @classmethod
     @Workflow.transition('confirm')
     def confirm_data(cls, records):
@@ -260,7 +262,7 @@ class Exam(Workflow, ModelSQL, ModelView):
     @classmethod
     @Workflow.transition('approved')
     def approve(cls, records):
-        '''Approve exam details and generate Renumeration Bills 
+        '''Approve exam details and generate Renumeration Bills
            for employees involved in current exam'''
         current_exam = cls.get_current_exam()
         Renum = Pool().get('exam_section.renumeration_bill')
@@ -274,7 +276,6 @@ class Exam(Workflow, ModelSQL, ModelView):
             current_employee.renumeration_bill = renum_bill_for_employee
             current_employee.renumeration_bill.save()
             current_employee.save()
-
 
     @classmethod
     @Workflow.transition('in_progress')
@@ -293,7 +294,7 @@ class Exam(Workflow, ModelSQL, ModelView):
         for current_employee in current_exam.employees:
             ta_da_bill_for_employee = TADA.create([{
                 'employee': current_employee.employee,
-                'designation': 
+                'designation':
                     current_employee.employee.designation,
                 'department':
                     current_employee.employee.department,
@@ -320,10 +321,10 @@ class Exam(Workflow, ModelSQL, ModelView):
             )
             for (bill1, bill2) in all_bills:
                 if bill1.state in ['draft'] or \
-                    bill2.state in ['draft']:
+                        bill2.state in ['draft']:
                     cls.raise_user_error('bill_not_submitted')
         pass
-    
+
     '''Button functions for executing workflow transitions'''
     @classmethod
     @Workflow.transition('aao_approval')
@@ -336,19 +337,19 @@ class Exam(Workflow, ModelSQL, ModelView):
     def send_for_ao_approval(cls, records):
         '''Change status of exam and bills to ao_approval'''
         cls.change_state_of_bills(records, 'aao_approval', 'ao_approval')
-    
+
     @classmethod
     @Workflow.transition('ace_approval')
     def send_for_ace_approval(cls, records):
         '''Change status of exam and bills to ace_approval'''
         cls.change_state_of_bills(records, 'ao_approval', 'ace_approval')
-    
+
     @classmethod
     @Workflow.transition('adean_approval')
     def send_for_adean_approval(cls, records):
         '''Change status of exam and bills to adean_approval'''
         cls.change_state_of_bills(records, 'ace_approval', 'adean_approval')
-    
+
     @classmethod
     @Workflow.transition('dean_approval')
     def send_for_dean_approval(cls, records):
@@ -367,7 +368,6 @@ class Exam(Workflow, ModelSQL, ModelView):
         '''Change status of exam to approval and status bills to approved'''
         cls.change_state_of_bills(records, 'ao_approval_2', 'approved')
 
-
     @classmethod
     @Workflow.transition('budget_allocation')
     def send_for_budget_allocation(cls, records):
@@ -385,7 +385,7 @@ class Centers(ModelSQL, ModelView):
     '''Exam Centers'''
 
     __name__ = 'exam.centers'
-    
+
     location = fields.Many2One('exam_section.exam_center', 'Location')
     exam = fields.Many2One('exam_section.exam', 'Exam')
     employees = fields.One2Many('exam.employees', 'center', 'Employees')
@@ -393,7 +393,6 @@ class Centers(ModelSQL, ModelView):
     employee_count = fields.Function(
         fields.Integer('Count'),
         'on_change_with_employee_count')
-    
     center_hidden = fields.Many2One(
         'exam.employees',
         'Employee-Center'
@@ -411,7 +410,7 @@ class Centers(ModelSQL, ModelView):
         '''Get current center name'''
         if self.location:
             return self.location.name if self.location.name else ''
-     
+
     @fields.depends('employees')
     def on_change_with_employee_count(self, name=None):
         '''Calculate number of employees involved in current exam'''
@@ -422,7 +421,6 @@ class Employees(ModelSQL, ModelView):
     '''Employees'''
 
     __name__ = 'exam.employees'
-    # _rec_name = "employee"
 
     employee = fields.Many2One('company.employee', 'Employee')
     center = fields.Many2One(

@@ -4,8 +4,10 @@
 
 
 try:
-    from trytond.modules.hr_cea.tests.tests import suite
+    from trytond.modules.hr_cash.tests.tests import suite
 except ImportError:
     from .tests import suite
 
 __all__ = ['suite']
+
+

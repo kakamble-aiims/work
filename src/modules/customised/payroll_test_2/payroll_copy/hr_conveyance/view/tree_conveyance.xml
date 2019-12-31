@@ -6,6 +6,5 @@
     <field name="department"/>
     <field name="transport_amount"/>
     <field name="state"/>
-    <!-- <field name="vehicle"/> -->
     
 </tree>

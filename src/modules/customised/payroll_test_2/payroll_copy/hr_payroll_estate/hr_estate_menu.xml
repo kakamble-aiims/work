@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+
+<tryton>
+    <data>
+        <menuitem id="menu_conveyance_subitem_wiz" name="Conveyance Allowance" parent="hr_payroll.menu_allowance" action="hr_conveyance.act_wizard_conveyance_Allowance_wizard"/>
+        <!-- Menu -->
+        <menuitem id="menu_conveyance_subitem" name="Conveyance Allowance" parent="hr_payroll.menu_allowance" action="hr_conveyance.action_conveyance"/>
+    </data>
+</tryton>

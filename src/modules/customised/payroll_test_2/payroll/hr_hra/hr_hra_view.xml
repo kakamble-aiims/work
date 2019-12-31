@@ -2,7 +2,6 @@
 
 <tryton>
     <data>
-        <menuitem id="menu_allowance" name="Allowances"/>
         <!-- Form View -->
         <record id="form_hra_view" model="ir.ui.view">
             <field name="name">form_hra</field>
@@ -126,10 +125,6 @@
             <field name="wiz_name">hra.allowance.wiz</field>
             <field name="window" eval="True"/>
         </record>
-
-        <!-- Menu -->
-        <menuitem id="menu_hra_subitem" name="House Rent Allowance" parent="menu_allowance" action="action_hra"/>
-        <menuitem id="menu_hra_subitem_wiz" name="House Rent Allowance" parent="menu_allowance" action="act_wizard_House_Rent_Allowance_wizard"/>
         <!-- Buttons -->
         <!-- Hr Hra -->
         <record id="button_computer_submitted_to_cashsection" model="ir.model.button">

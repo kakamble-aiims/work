@@ -2,9 +2,45 @@
 
 <tryton>
     <data>
+        <!-- Employee Group -->
+        <record model="res.group" id="group_employee">
+            <field name="name">Employee</field>
+        </record>
+        <record model="res.group" id="group_technical_admin">
+            <field name="name">Technical Administrator</field>
+        </record>
+        <record model="res.group" id="group_payroll_helpdesk">
+            <field name="name">Help Desk</field>
+        </record>
+        <record id="user_admin_exam" model="res.user-res.group">
+            <field name="user" ref="res.user_admin"/>
+            <field name="group" ref="group_technical_admin"/>
+        </record>
+        
+        <!-- END -->
+
+
+
+
+
+
+
+
+
+
+
+        <!-- Loan Module User Group -->
+        <!-- User Groups -->
+        <record model="res.group" id="group_junior_accounts_officer_loan">
+            <field name="name">Junior Accounts Officer Loan</field>
+        </record>
+        <record model="res.group" id="group_accounts_officer_loan">
+            <field name="name">Accounts Officer Loan</field>
+        </record>
+        <!-- END -->
 <!-- Create the Account Officer group -->
         <record model="res.group" id="group_account_officer">
-            <field name="name"> Base Account Officer</field>
+            <field name="name">Account Officer</field>
         </record>
 <!-- Assign the Group to the "admin" user -->
         <record model="res.user-res.group" id="user_admin_group_account">
@@ -15,23 +51,18 @@
         <record model="res.group" id="group_cash_section_officer">
             <field name="name">Cash Section Officer</field>
         </record>
-<!-- Create the Junior Account Officer group -->
-        <!-- <record model="res.group" id="group_junior_account_officer">
-            <field name="name">Junior Account Officer</field>
-        </record> -->
-<!-- Assign the Group to the "admin" user -->
-        <!-- <record model="res.user-res.group" id="admin_group_junior_account">
-            <field name="user" ref="res.user_admin"/>
-            <field name="group" ref="group_junior_account_officer"/>
-        </record> -->
+
+
 <!-- Create the Employee group -->
-        <record model="res.group" id="group_employee_admin">
-            <field name="name"> Base Employee</field>
+        
+        <record model="ir.ui.menu-res.group" id="menu_hr_employee">
+            <field name="menu" ref="hr.menu_hr"/>
+            <field name="group" ref="base.group_employee"/>
         </record>
 <!-- Assign the Group to the "employee" user -->
       <record model="res.user-res.group" id="admin_group_employee">
             <field name="user" ref="res.user_admin"/>
-            <field name="group" ref="group_employee_admin"/>
+            <field name="group" ref="group_employee"/>
         </record>
 <!-- Create the Administrative officer group -->
         <record model="res.group" id="group_Administrative officer">
@@ -211,6 +242,20 @@
         <record model="res.user-res.group" id="admin_Account Officer Embalming">
             <field name="user" ref="res.user_admin"/>
             <field name="group" ref="group_Account_Officer_Embalming"/>
-        </record>                                                                                              
+        </record>    
+        <!-- 00 -->
+        <record model="res.group" id="group_admin_officer_estate">
+            <field name="name">AO(Estate)</field>
+        </record>
+        <record model="res.group" id="group_asst_admin_officer_estate">
+            <field name="name">Asst. AO(Estate)</field>
+        </record>
+        <record model="res.group" id="group_admin_officer_estb">
+            <field name="name">AO(Establishment)</field>
+        </record>
+        <record model="res.group" id="group_asst_admin_officer_estb">
+            <field name="name">Asst. AO(Establishment)</field>
+        </record>
+                                                                                          
     </data>
 </tryton>   

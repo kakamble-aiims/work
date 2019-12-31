@@ -2,19 +2,7 @@
 
 <tryton>
     <data>
-        <!-- Users -->
-        <record model="res.group" id="group_employee">
-            <field name="name">Employee</field>
-        </record>
-        <record model="res.group" id="group_jao_officer">
-            <field name="name">Junior Accounts Officer(GPF) </field>
-        </record>
-        <record model="res.group" id="group_ao_officer">
-            <field name="name">Accounts Officer </field>
-        </record>
-        
-
-        <menuitem id="menu_gpf" name="GPF" parent="hr.menu_hr" sequence="4"/>
+        <menuitem id="menu_gpf" name="GPF" parent="hr.menu_hr" sequence="3"/>
 
         <!-- Tree View-->
         <record id="tree_gpf_subscription_view" model="ir.ui.view">
@@ -32,7 +20,7 @@
 
          <!-- Action -->
         <record id="action_gpf_subscription" model="ir.action.act_window">
-            <field name="name">Increase/Decrease GPF Subscription</field>
+            <field name="name">Change Subscription Amount</field>
             <field name="res_model">gpf.subscription</field>
         </record>
         
@@ -73,15 +61,15 @@
             <field name="act_window" ref="action_gpf_subscription"/>
         </record>
         <record model="ir.action.act_window.domain" id="act_gpf_change_form_domain_forwarded_to_jo">
-            <field name="name">Forwarded to JO</field>
+            <field name="name">Waiting For OTP</field>
             <field name="sequence" eval="20"/>
             <field name="domain"
-                eval="[('state', '=', 'forwarded_to_jo')]"
+                eval="[('state', '=', 'waiting_for_otp')]"
                 pyson="1"/>
             <field name="count" eval="True"/>
             <field name="act_window" ref="action_gpf_subscription"/>
         </record>
-        <record model="ir.action.act_window.domain" id="act_gpf_change_form_domain_forwarded_to_ao">
+        <!-- <record model="ir.action.act_window.domain" id="act_gpf_change_form_domain_forwarded_to_ao">
             <field name="name">Forwarded to AO</field>
             <field name="sequence" eval="30"/>
             <field name="domain"
@@ -89,12 +77,12 @@
                 pyson="1"/>
             <field name="count" eval="True"/>
             <field name="act_window" ref="action_gpf_subscription"/>
-        </record>
+        </record> -->
         <record model="ir.action.act_window.domain" id="act_gpf_change_form_domain_cash_cancel">
             <field name="name">Cancel</field>
             <field name="sequence" eval="40"/>
             <field name="domain"
-                eval="[('state', '=', 'cancel')]"
+                eval="[('state', '=', 'cancel_gpf')]"
                 pyson="1"/>
             <field name="count" eval="True"/>
             <field name="act_window" ref="action_gpf_subscription"/>
@@ -103,7 +91,7 @@
             <field name="name">Approved</field>
             <field name="sequence" eval="50"/>
             <field name="domain"
-                eval="[('state', '=', 'Approved')]"
+                eval="[('state', '=', 'approved')]"
                 pyson="1"/>
             <field name="count" eval="True"/>
             <field name="act_window" ref="action_gpf_subscription"/>
@@ -310,16 +298,74 @@
             <field name="act_window" ref="action_gpf_advance_line"/>
             <field name="sequence" eval="20"/>
         </record>
+        <!-- wiz class -->
+        <record id="form_wiz_gpf_schedule_view" model="ir.ui.view">
+            <field name="name">form_wiz</field>
+            <field name="model">gpf.schedule</field>
+            <field name="type">form</field>
+        </record>
+
+         <!--XML Record Wizard-->
+        <record id="act_wizard_gpf_schedule_wizard" model="ir.action.wizard">
+            <field name="name">License Fee Schedule</field>
+            <field name="wiz_name">gpf.schedule.wiz</field>
+            <field name="window" eval="False"/>
+        </record>
+
+        <!-- Report-->
+        <record id="report_gpf" model="ir.action.report">
+            <field name="name">GPF Schedule</field>
+            <field name="model">hr.payslip</field>
+            <field name="report_name">gpf.report</field>
+            <field name="report">hr_gpf/hr_gpf.fodt</field>
+            <field name="extension">pdf</field>
+        </record>
 
         <!-- Modify Installment date-->
          <!-- <record model="ir.action.wizard" id="wizard_modify_installment">
             <field name="name">Modify Installment</field>
-            <field name="wiz_name">gpf.modify_installment</field>
-            <field name="model">gpf.advance</field>
+            <field name="wiz_name">.modify_installment</field>
+            <field name="model">.advance</field>
         </record> -->
         <!-- END -->
+        <!-- GPF Lines -->
+        <!-- Tree View-->
+        <record id="tree_gpf_lines_view" model="ir.ui.view">
+            <field name="name">gpf_lines_tree</field>
+            <field name="model">hr.gpf.lines</field>
+            <field name="type">tree</field>
+        </record>
+        
+        <!-- Form View -->
+        <record id="form_gpf_lines_view" model="ir.ui.view">
+            <field name="name">gpf_lines_form</field>
+            <field name="model">hr.gpf.lines</field>
+            <field name="type">form</field>
+        </record>
+
+         <!-- Action -->
+        <record id="action_gpf_lines" model="ir.action.act_window">
+            <field name="name">GPF Lines</field>
+            <field name="res_model">hr.gpf.lines</field>
+        </record>
+        
+        <!-- Action link to tree -->
+        <record id="act_tree_view_gpf_lines" model="ir.action.act_window.view">
+            <field name="view" ref="tree_gpf_lines_view"/>
+            <field name="act_window" ref="action_gpf_lines"/>
+            <field name="sequence" eval="10"/>
+        </record>
+
+        <!-- Action link to form -->
+        <record id="act_form_view_gpf_lines" model="ir.action.act_window.view">
+            <field name="view" ref="form_gpf_lines_view"/>
+            <field name="act_window" ref="action_gpf_lines"/>
+            <field name="sequence" eval="20"/>
+        </record>
+
 
         <menuitem id="menu_gpf_subscription" name="Alter GPF Subscription"
+
             parent="menu_gpf"
             action="action_gpf_subscription" sequence="10"/>
         <menuitem id="menu_gpf_advance" name="GPF Advance"
@@ -333,6 +379,10 @@
         <menuitem id="menu_gpf_cancel_reason" name="GPF Cancel Reason"
             parent="gpf_reason"
             action="action_gpf_cancel_reason" sequence="20"/>
+        <menuitem id="menu_gpf_lines" name="GPF Lines" 
+            parent="menu_gpf" 
+            action="action_gpf_lines" sequence="45"/>
+        
 
         <record model="ir.ui.view" id="contract_view_form">
             <field name="model">hr.contract</field>
@@ -345,5 +395,34 @@
             <field name="inherit" ref="hr.form_employee_view" />
             <field name="name">employee_view</field>
         </record>
+
+        <!--Code for creating new user for cron job -->
+        <record model="res.user" id="user_run_cron_job_gpf_interest">
+            <field name="login">user_cron_gpf_interest</field>
+            <field name="name">Calculate GPF Interest</field>
+            <field name="signature"></field>
+            <field name="active" eval="False"/>
+        </record>
+        <record model="res.group" id="group_gpf_interest">
+            <field name="name">Interest</field>
+        </record>
+        <record model="res.user-res.group"
+            id="user_gpf_interest_group_account">
+            <field name="user" ref="user_run_cron_job_gpf_interest"/>
+            <field name="group" ref="hr_gpf.group_gpf_interest"/>
+        </record>
+
+        <!-- Cron job for Purging the Vishram Sadan Waiting list-->
+        <record model="ir.cron" id="cron_for_gpf_interest">
+            <field name="name">GPF Interest</field>
+            <field name="request_user" ref="res.user_admin"/>
+            <field name="user" ref="user_run_cron_job_gpf_interest"/>
+            <field name="interval_number" eval="12"/>
+            <field name="interval_type">months</field>
+            <field name="repeat_missed" eval="False"/>
+            <field name="model">company.employee</field>
+            <field name="function">set_gpf_interest</field>
+        </record>
+
     </data>
 </tryton>

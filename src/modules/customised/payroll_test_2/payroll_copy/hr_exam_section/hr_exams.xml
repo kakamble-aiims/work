@@ -1,61 +1,80 @@
 <?xml version="1.0"?>
 <tryton>
     <data>
+
+        <!-- Exam Type Form View -->
         <record id="form_exam_type_view" model="ir.ui.view">
             <field name="name">form_exam_type</field>
             <field name="model">exam_section.exam_type</field>
             <field name="type">form</field>
         </record>
+
+        <!-- Exam Type Tree View -->
         <record id="tree_exam_type_view" model="ir.ui.view">
             <field name="name">tree_exam_type</field>
             <field name="model">exam_section.exam_type</field>
             <field name="type">tree</field>
         </record>
         
+        <!-- Exam Type Action -->
         <record id="act_exam_type" model="ir.action.act_window">
             <field name="name">Exam Type</field>
             <field name="res_model">exam_section.exam_type</field>
         </record>
+
+        <!-- Exam Type Action Link to Form View -->
         <record id="act_exam_type_form" model="ir.action.act_window.view">
             <field name="sequence" eval="20"/>
             <field name="act_window" ref="act_exam_type"/>
             <field name="view" ref="form_exam_type_view"/>
         </record>
+
+        <!-- Exam Type Action Link to Tree View -->
         <record id="act_exam_type_tree" model="ir.action.act_window.view">
             <field name="sequence" eval="10"/>
             <field name="act_window" ref="act_exam_type"/>
             <field name="view" ref="tree_exam_type_view"/>
         </record>
 
+        <!-- Exam Type Menu -->
         <menuitem id="menu_exam_type" name="Exam Type" parent="menu_exam_section_config" action="act_exam_type"/>
         
+        <!-- Exam Type Renumeration Lines Tree View -->
         <record id="tree_exam_type_renumeration_view" model="ir.ui.view">
             <field name="name">tree_exam_type_renumeration</field>
             <field name="model">exam_section.exam_type.renumeration</field>
             <field name="type">tree</field>
         </record>
+
+        <!-- Exam Type Renumeration Lines Form View -->
         <record id="form_exam_type_renumeration_view" model="ir.ui.view">
             <field name="name">form_exam_type_renumeration</field>
             <field name="model">exam_section.exam_type.renumeration</field>
             <field name="type">form</field>
         </record>
 
+        <!-- Exam Type TA/DA Lines Tree View -->
         <record id="tree_exam_type_ta_da_view" model="ir.ui.view">
             <field name="name">tree_exam_type_ta_da</field>
             <field name="model">exam_section.exam_type.ta_da</field>
             <field name="type">tree</field>
         </record>
+
+        <!-- Exam Type TA/DA Lines Form View -->
         <record id="form_exam_type_ta_da_view" model="ir.ui.view">
             <field name="name">form_exam_type_ta_da</field>
             <field name="model">exam_section.exam_type.ta_da</field>
             <field name="type">form</field>
         </record>
 
+        <!-- Exam Type TA/DA Lines Grade Pay Tree View -->
         <record id="tree_exam_type_ta_da_grade_pay_view" model="ir.ui.view">
             <field name="name">tree_exam_type_ta_da_grade_pay</field>
             <field name="model">exam.type.tada_grade.pay</field>
             <field name="type">tree</field>
         </record>
+
+        <!-- Exam Type TA/DA Lines Pay Level Tree View -->
         <record id="tree_exam_type_ta_da_pay_level_view" model="ir.ui.view">
             <field name="name">tree_exam_type_ta_da_pay_level</field>
             <field name="model">exam.type.tada_pay.level</field>

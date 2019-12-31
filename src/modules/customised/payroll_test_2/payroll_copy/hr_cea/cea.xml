@@ -52,6 +52,7 @@
         <record id="button_computer_cancelled_by_cashsection" model="ir.model.button">
             <field name="name">cancel</field>
             <field name="model" search="[('model', '=', 'hr.allowance.cea')]"/>
+        </record>
 
         
         <!--create form and tree for tree view tabs -->
@@ -113,7 +114,63 @@
             <field name="act_window" ref="action_cea"/>
         </record>
 
-        <!-- Menu -->
-        <menuitem id="menu_cea_subitem" name="Children Education Allowance" parent="hr_hra.menu_allowance" action="action_cea"/>
+        <!-- Children Education LIST -->
+        <record id="form_childrenlist_view" model="ir.ui.view">
+            <field name="name">form_childrenlist</field>
+            <field name="model">children.list</field>
+            <field name="type">form</field>
+        </record>
+        <record id="tree_childrenlist_view" model="ir.ui.view">
+            <field name="name">tree_children_list</field>
+            <field name="model">children.list</field>
+            <field name="type">tree</field>
+        </record>
+
+        <!-- wiz class -->
+        <record id="form_wiz_children_view" model="ir.ui.view">
+            <field name="name">form_wiz</field>
+            <field name="model">children.employee.list</field>
+            <field name="type">form</field>
+        </record>
+        <record id="tree_wiz_children_view" model="ir.ui.view">
+            <field name="name">tree_wiz</field>
+            <field name="model">company.employee</field>
+            <field name="type">tree</field>
+        </record>
+
+         <!--XML Record Wizard-->
+         <record id="act_wizard_children_education_allowance_wizard" model="ir.action.wizard">
+            <field name="name">Children Education Allowance</field>
+            <field name="wiz_name">children.allowance.wiz</field>
+            <field name="window" eval="True"/>
+        </record>
+
+        <!-- wiz class -->
+        <record id="form_wiz_tution_fee_schedule_view" model="ir.ui.view">
+            <field name="name">form_report</field>
+            <field name="model">tution.fee.schedule</field>
+            <field name="type">form</field>
+        </record>
+
+         <!--XML Record Wizard-->
+        <record id="act_wizard_tution_fee_schedule_wizard" model="ir.action.wizard">
+            <field name="name">Tution Fee Schedule</field>
+            <field name="wiz_name">tution.fee.schedule.wiz</field>
+            <field name="window" eval="False"/>
+        </record>
+
+        <!-- Report-->
+        <record id="report_tution_fee" model="ir.action.report">
+            <field name="name">Tution Fee Schedule</field>
+            <field name="model">hr.allowance.cea</field>
+            <field name="report_name">tution.fee.report</field>
+            <field name="report">hr_cea/hr_cea.fodt</field>
+            <field name="extension">pdf</field>
+        </record>
+
+        <!-- Menu for wizard-->
+
+        
+
     </data>
 </tryton>

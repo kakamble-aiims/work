@@ -9,6 +9,10 @@
         <field name="designation"/>
         <label name="department"/>
         <field name="department"/>
+        <label name="from_date"/>
+        <field name="from_date"/>
+        <label name="to_date"/>
+        <field name="to_date"/>
         <label name="amount"/>
         <field name="amount"/>
         <label name="state"/>

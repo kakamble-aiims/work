@@ -29,13 +29,13 @@
         </group>
             <newline/>
         <group id="computer_loan_purpose" colspan="4" col="2">
-            <label name="purpose" string="Whether advance for similar purpose was obtained proviosly and if so"/>
+            <label name="purpose" string="Whether advance for similar purpose was obtained previously and if so:"/>
             <field name="purpose"/>
         </group>
             <newline/>
             <label name="drawal_date"/>
             <field name="drawal_date"/>
-            <label name="interest" string="The amount of advance and or interest thereon still outstanding if any"/>
+            <label name="interest" string="The amount of advance and or interest there on still outstanding if any."/>
             <field name="interest"/>
             <label name="basic_pay"/>
             <field name="basic_pay"/>
@@ -49,11 +49,13 @@
             <field name="pending"/>
             <label name="reschedule"/>
             <field name="reschedule"/>
+            <field name="check"/>
         <group id="loan_line" colspan="4">
             <field name="loan_line"/>
         </group>
         <group id="loan_button_ids" colspan="4" col="6">
-        <button name="submitted_to_ao" string="Submit" colspan="2" confirm="Are you sure you want to submit?"/>
+        <button name="calculate_instalment" string="Calculate" colspan="2"/>
+        <button name="submitted_to_jo" string="Submit" colspan="2" confirm="Are you sure you want to submit?"/>
         <button name="forward_to_jo" string="Forward to AO" confirm="Do you want to forward this Account Officer?"/>
         <button name="forward_to_ao" string="Approve" confirm="Are you sure you want to approve?"/>
         <button name="cancel" string="Cancel" confirm="Are you sure you want to cancel?"/>

@@ -17,12 +17,13 @@ class GPFSubscription(Workflow, ModelSQL, ModelView):
     'GPF Subscription'
     __name__ = 'gpf.subscription'
 
-    salary_code = fields.Char('Salary Code',
+    salary_code = fields.Char('Salary Code', required=True,
         states={
             'readonly': ~Eval('state').in_(['draft']),
         }, depends=['state']
         )
-    employee = fields.Many2One('company.employee', 'Employee',
+    employee = fields.Many2One('company.employee', 'Employee', required=True,
+        domain=[('gpf_number', '!=', None)],
         states={
             'readonly': ~Eval('state').in_(['draft']),
         }, depends=['state']
@@ -32,17 +33,19 @@ class GPFSubscription(Workflow, ModelSQL, ModelView):
             'readonly': ~Eval('state').in_(['draft']),
         }, depends=['state']
         )
-    designation = fields.Many2One('employee.designation', 'Designation',
+    designation = fields.Many2One('employee.designation', 
+                'Designation', required=True,
         states={
             'readonly': ~Eval('state').in_(['draft']),
         }, depends=['state']
         )
-    department = fields.Many2One('company.department', 'Department',
+    department = fields.Many2One('company.department', 
+                'Department', required=True,
         states={
             'readonly': ~Eval('state').in_(['draft']),
         }, depends=['state']
         )
-    gpf_number = fields.Char('G.P.F.Number',
+    gpf_number = fields.Char('G.P.F.Number', required=True,
         states={
             'readonly': ~Eval('state').in_(['draft']),
         }, depends=['state']
@@ -50,7 +53,7 @@ class GPFSubscription(Workflow, ModelSQL, ModelView):
     basic_pay = fields.Float('Basic Pay',
         states={
             'readonly': ~Eval('state').in_(['draft']),
-        }, depends=['state']
+        }, depends=['state'], required=True
         )
     change_sub = fields.Selection([
         ('increase', 'Increase'),
@@ -63,7 +66,7 @@ class GPFSubscription(Workflow, ModelSQL, ModelView):
     pre_amount = fields.Float('Current Subscription',
         states={
             'readonly': ~Eval('state').in_(['draft']),
-        }, depends=['state']
+        }, depends=['state'], required=True
         )
     curr_amount = fields.Float('Request Subscription', required=True,
         states={
@@ -122,8 +125,7 @@ class GPFSubscription(Workflow, ModelSQL, ModelView):
             pool = Pool()
             hrcontract = pool.get('hr.contract')
             contracts = hrcontract.search([
-                ('employee', '=', self.employee),
-                # ('active', '<=', True)
+                ('employee', '=', self.employee)
                 ])
             for contract in contracts:
                 self.contract = contract.id
@@ -143,30 +145,43 @@ class GPFSubscription(Workflow, ModelSQL, ModelView):
         super(GPFSubscription, cls).validate(records)
         for record in records:
             approvedate = datetime.now() - relativedelta(months=3)
-            # gpf = cls.search([
-            #         ('id', '!=', record.id),
-            #         ('employee', '=', record.employee),
-            #         ('approve_date', '>=', approvedate),
-            #         ('state', '=', 'approved')
-            #         ])
-            gpf_increase = cls.search([
+            year = datetime.now().year
+            start_date = datetime(year, 4, 1).date()
+            end_date = datetime((year+1), 3, 31).date()
+            gpf_sub = cls.search([
                     ('id', '!=', record.id),
                     ('employee', '=', record.employee),
-                    ('change_sub', '=', 'increase'),
                     ('state', '=', 'approved')
                     ])
-            gpf_decrease = cls.search([
-                    ('id', '!=', record.id),
-                    ('employee', '=', record.employee),
-                    ('change_sub', '=', 'decrease'),
-                    ('state', '=', 'approved')
-                    ])
-            # if gpf:
-            #     cls.raise_user_error('Need for 3 Month GAP')
-            if record.change_sub == 'increase' and len(gpf_increase) >= 2:
-                cls.raise_user_error('Already 2 times increase')
-            elif record.change_sub == 'decrease' and len(gpf_decrease) >= 1:
-                cls.raise_user_error('Already 1 times decrease')
+            if gpf_sub:
+                gpf = cls.search([
+                        ('id', '!=', record.id),
+                        ('employee', '=', record.employee),
+                        ('state', '=', 'approved'),
+                        ('approve_date', '>=', approvedate.date()),
+                        ])
+                gpf_increase = cls.search([
+                        ('id', '!=', record.id),
+                        ('employee', '=', record.employee),
+                        ('change_sub', '=', 'increase'),
+                        ('state', '=', 'approved'),
+                        ('approve_date', '>=', start_date),
+                        ('approve_date', '<=', end_date)
+                        ])
+                gpf_decrease = cls.search([
+                        ('id', '!=', record.id),
+                        ('employee', '=', record.employee),
+                        ('change_sub', '=', 'decrease'),
+                        ('state', '=', 'approved'),
+                        ('approve_date', '>=', start_date),
+                        ('approve_date', '<=', end_date)
+                        ])
+                if gpf:
+                    cls.raise_user_error('Need for 3 Month GAP')
+                if record.change_sub == 'increase' and len(gpf_increase) >= 2:
+                    cls.raise_user_error('Already 2 times increase in the year')
+                elif record.change_sub == 'decrease' and len(gpf_decrease) >= 1:
+                    cls.raise_user_error('Already 1 times decrease in the year')
             record.valid_curr_amount()
 
     def valid_curr_amount(self):
@@ -251,7 +266,7 @@ class GPFSubscription(Workflow, ModelSQL, ModelView):
         if not contact:
             self.raise_user_error("missing_contact")
         number = contact.value
-        number = 9811292339
+        number = 8171733480
         params = {
             'msg': message + " (%s)" % contact.value,
             'mobile': number,
@@ -279,8 +294,9 @@ class GPFSubscription(Workflow, ModelSQL, ModelView):
     @Workflow.transition('waiting_for_otp')
     def waiting_for_otp(cls, records):
         for record in records:
+            record.state = 'draft'
+            record.save()
             record.generate_otp()
-        pass
 
     @classmethod
     @ModelView.button
@@ -295,6 +311,7 @@ class GPFSubscription(Workflow, ModelSQL, ModelView):
     @Workflow.transition('approved')
     def approved(cls, records):
         cls.set_gpf_amount(records)
+        cls.generate_gpf_lines(records)
        
 
     @classmethod
@@ -323,7 +340,7 @@ class GPFSubscription(Workflow, ModelSQL, ModelView):
                     'gpf_amount': gpf.curr_amount,
                     })
 
-
+    
 class HrContract(metaclass=PoolMeta):
     "HR Contract"
 
@@ -333,8 +350,9 @@ class HrContract(metaclass=PoolMeta):
 
     @fields.depends('basic')
     def on_change_basic(self, name=None):
-        if self.basic:
-            self.gpf_amount = (6 * self.basic)/100
+        if self.employee.gpf_nps == 'gpf':
+            if self.basic and self.gpf_amount == None:
+                self.gpf_amount = (6 * self.basic)/100
 
 
 class HrEmployee(metaclass=PoolMeta):
@@ -345,15 +363,16 @@ class HrEmployee(metaclass=PoolMeta):
     gpf_number = fields.Char('G.P.F.Number')
     gpf_balance = fields.Float('G.P.F.Balance')
     gpf_nps = fields.Selection([
-        (None, ''),
         ('gpf', 'GPF'),
         ('nps', 'NPS'),
     ], 'Status', sort=False)
+    gpf_book = fields.One2Many(
+        'hr.gpf.lines',
+        'gpf_lines', string='Employee GPF Book')
 
     @fields.depends('date_of_joining')
     def on_change_date_of_joining(self, name=None):
         if self.date_of_joining:
-            print(self.date_of_joining.year, "self.date_of_joining.year", type(self.date_of_joining.year))
             if self.date_of_joining.year <= 2004:
                 self.gpf_nps = 'gpf'
             elif self.date_of_joining.year >= 2004:
@@ -368,3 +387,23 @@ class HrEmployee(metaclass=PoolMeta):
         ]
         return attribute
 
+    
+    @classmethod
+    def set_gpf_interest(cls):
+        pool = Pool()
+        gpf_lines_data = pool.get('hr.gpf.lines')
+        records = cls.search([()])
+        # year = datetime.now().year
+        # start_date = datetime(year, 4, 1).date()
+        # end_date = datetime((year+1), 3, 31).date()
+        for record in records:
+            if record.gpf_balance:
+                vals = {
+                    'amount': (float(record.gpf_balance) * 7.9)/(12 * 100),
+                    'date' : datetime.now().date(),
+                    'description' : 'ABCCCCCCCC',
+                    'gpf_lines' : record.id,
+                    'gpf_type' : 'interest'
+                }
+                line = gpf_lines_data.create([vals])
+        

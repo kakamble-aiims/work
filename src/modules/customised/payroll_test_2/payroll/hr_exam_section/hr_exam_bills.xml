@@ -1,6 +1,43 @@
 <?xml version="1.0"?>
 <tryton>
     <data>
+        <!-- <record id="form_renumeration_bill_view" model="ir.ui.view">
+            <field name="name">form_renumeration_bill</field>
+            <field name="model">exam_section.renumeration_bill</field>
+            <field name="type">form</field>
+        </record>
+        <record id="tree_renumeration_bill_view" model="ir.ui.view">
+            <field name="name">tree_renumeration_bill</field>
+            <field name="model">exam_section.renumeration_bill</field>
+            <field name="type">tree</field>
+        </record>
+        
+        <record id="form_ta_da_bill_view" model="ir.ui.view">
+            <field name="name">form_ta_da_bill</field>
+            <field name="model">exam_section.ta_da_bill</field>
+            <field name="type">form</field>
+        </record>
+        <record id="tree_ta_da_bill_view" model="ir.ui.view">
+            <field name="name">tree_ta_da_bill</field>
+            <field name="model">exam_section.ta_da_bill</field>
+            <field name="type">tree</field>
+        </record>
+        <record id="tree_ta_da_journey_view" model="ir.ui.view">
+            <field name="name">tree_ta_da_journey</field>
+            <field name="model">exam_section.ta_da.journey</field>
+            <field name="type">tree</field>
+        </record>
+        <record id="tree_ta_da_local_transport_view" model="ir.ui.view">
+            <field name="name">tree_ta_da_local_transport</field>
+            <field name="model">exam_section.ta_da.local_transport</field>
+            <field name="type">tree</field>
+        </record>
+        <record id="tree_ta_da_hotel_food_view" model="ir.ui.view">
+            <field name="name">tree_ta_da_hotel_food</field>
+            <field name="model">exam_section.ta_da.hotel_food</field>
+            <field name="type">tree</field>
+        </record> -->
+
         <!-- Tree View - Renumeration Purpose and Pay -->
         <record id="tree_renumeration_purpose_and_pay_view" model="ir.ui.view">
             <field name="name">tree_renumeration_purpose_and_pay</field>
@@ -104,30 +141,6 @@
                 pyson="1"/>
         </record>
 
-        <!-- Renumeration Bills to Approve Pending Bucket -->
-        <record model="ir.action.act_window.domain"
-            id="act_my_exam_renumeration_bill_approve_domain_pending">
-            <field name="name">Pending</field>
-            <field name="sequence" eval="10"/>
-            <field name="domain"
-                eval="[('state', '!=', 'approved')]"
-                pyson="1"/>
-            <field name="count" eval="True"/>
-            <field name="act_window" ref="act_my_exam_renumeration_bill_approve"/>
-        </record>
-
-        <!-- Renumeration Bills to Approve Approved Bucket -->
-        <record model="ir.action.act_window.domain"
-            id="act_my_exam_renumeration_bill_approve_domain_approved">
-            <field name="name">Approved</field>
-            <field name="sequence" eval="10"/>
-            <field name="domain"
-                eval="[('state', '=', 'approved')]"
-                pyson="1"/>
-            <field name="count" eval="True"/>
-            <field name="act_window" ref="act_my_exam_renumeration_bill_approve"/>
-        </record>
-
         <!-- Form View Link To Action - Renumeration Bills to Approve -->
         <record id="act_my_renumeration_bill_form_approve" model="ir.action.act_window.view">
             <field name="sequence" eval="20"/>
@@ -155,30 +168,6 @@
                             ('state', '!=', 'confirm'),
                             ('state', '!=', 'draft')]"
                 pyson="1"/>
-        </record>
-
-        <!-- TA/DA Bills to Approve Pending Bucket -->
-        <record model="ir.action.act_window.domain"
-            id="act_my_exam_ta_da_bill_approve_domain_pending">
-            <field name="name">Pending</field>
-            <field name="sequence" eval="10"/>
-            <field name="domain"
-                eval="[('state', '!=', 'approved')]"
-                pyson="1"/>
-            <field name="count" eval="True"/>
-            <field name="act_window" ref="act_my_exam_ta_da_bill_approve"/>
-        </record>
-
-        <!-- TA/DA Bills to Approve Approved Bucket -->
-        <record model="ir.action.act_window.domain"
-            id="act_my_exam_ta_da_bill_approve_domain_approved">
-            <field name="name">Approved</field>
-            <field name="sequence" eval="10"/>
-            <field name="domain"
-                eval="[('state', '=', 'approved')]"
-                pyson="1"/>
-            <field name="count" eval="True"/>
-            <field name="act_window" ref="act_my_exam_ta_da_bill_approve"/>
         </record>
 
         <!-- Form View Link To Action - TA/DA Bills to Approve -->
@@ -246,7 +235,6 @@
         <!-- TA/DA Bills Menu -->
         <menuitem id="menu_exam_ta_da_bill" name="TA/DA Bills"
             action="act_ta_da_bill" parent="menu_exam_bills" sequence="110"/>
-        
-        
+
     </data>
 </tryton>

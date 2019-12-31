@@ -19,18 +19,18 @@ class Conveyance_Allowance(Workflow, ModelSQL, ModelView):
     __name__ = 'employee_conveyance.allowance'
 
     salary_code = fields.Char(
-        'Salary Code', states={
+        'Salary Code', required=True, states={
             'readonly': ~Eval('state').in_(['draft']),
         }, depends=['state'])
     employee = fields.Many2One(
-        'company.employee', 'Employee Name',
+        'company.employee', 'Employee Name', required=True,
         states={
             'readonly': ~Eval('state').in_(['draft']),
         }, depends=['state'])
-    designation = fields.Many2One('employee.designation', 'Designation')
-    department = fields.Many2One('company.department', 'Department')
+    designation = fields.Many2One('employee.designation', 'Designation', required=True)
+    department = fields.Many2One('company.department', 'Department', required=True)
     transport_amount = fields.Float(
-        'Transport Amount',
+        'Transport Amount', required=True,
         states={
             'readonly': ~Eval('state').in_(['draft']),
         }, depends=['state'])
@@ -90,7 +90,8 @@ class Conveyance_Allowance(Workflow, ModelSQL, ModelView):
 
     @staticmethod
     def default_from_date():
-        return datetime.date.today()
+        return datetime.now()
+
 
     @classmethod
     @ModelView.button

@@ -1,10 +1,10 @@
-import datetime
+from datetime import datetime
 from trytond.model import Workflow
 from trytond.model import (
     ModelView, ModelSQL, fields)
 from trytond.pool import Pool
 from trytond.pyson import Eval
-
+from trytond.transaction import Transaction
 
 __all__ = ['HouseBuildingLoan', 'Construction', 'OwnHouse', 'HBAloanLine']
 
@@ -58,7 +58,7 @@ class HouseBuildingLoan(Workflow, ModelSQL, ModelView):
     advance = fields.Selection([
         ('yes', 'Yes'),
         ('no', 'No')],
-        string='Any Other advance/Final withdrawal taken \
+        string='Any Other advance/Final withdrawal taken\
         for purchase of land/construction', sort=False,
         required=True)
     advance_needed = fields.Selection([
@@ -127,7 +127,7 @@ class HouseBuildingLoan(Workflow, ModelSQL, ModelView):
             'invisible': ~Eval('advance_needed').in_(['plot']),
         }, depends=['advance_needed'])
     amount_required = fields.Float('Amount of advance required', required=True)
-    num_installment = fields.Integer(
+    installment_no = fields.Integer(
         'No. of instalments for repayment', required=True)
     construction = fields.One2Many(
         'construction', 'hba_loan', 'Construction',
@@ -155,6 +155,23 @@ class HouseBuildingLoan(Workflow, ModelSQL, ModelView):
     loan_line = fields.One2Many(
         'hba.loan.line', 'loan', 'Installment Lines',
         readonly=True)
+    payout = fields.Float('Payout',
+                          states={
+                              'readonly': ~Eval('state').in_(['draft']),
+                              'invisible': ~Eval('refund').in_(['refundable']),
+                          }, depends=['state'])
+    pending = fields.Float(
+        'Pending',
+        states={
+            'readonly': ~Eval('state').in_(['draft']),
+            'invisible': ~Eval('refund').in_(['refundable']),
+        }, depends=['state'])
+    reschedule = fields.Float(
+        'Reschedule',
+        states={
+            'readonly': ~Eval('state').in_(['draft']),
+            'invisible': ~Eval('refund').in_(['refundable']),
+        }, depends=['state'])
     state = fields.Selection(
         [
             ('draft', 'Draft'),
@@ -171,11 +188,76 @@ class HouseBuildingLoan(Workflow, ModelSQL, ModelView):
                 'state').in_(['forwarded_to_ao', 'cancel']),
             'readonly': ~Eval('state').in_(['forwarded_to_ao']),
         }, depends=['state'],)
+    check = fields.Boolean('Check',
+                           states={
+                               'invisible': Eval('state').in_(['draft', 'forwarded_to_ao', 'forwarded_to_jo', 'approve', 'cancel']),
+                           }, depends=['state'])
 
     @staticmethod
     def default_state():
-
         return 'draft'
+
+    @staticmethod
+    def default_employee():
+        pool = Pool()
+        User = pool.get('res.user')
+        user = User(Transaction().user)
+        employee = user.employee
+        return employee.id if employee else None
+
+    @staticmethod
+    def default_salary_code():
+        pool = Pool()
+        User = pool.get('res.user')
+        user = User(Transaction().user)
+        employee = user.employee
+        return employee.salary_code if employee else None
+
+    @staticmethod
+    def default_designation():
+        pool = Pool()
+        User = pool.get('res.user')
+        user = User(Transaction().user)
+        employee = user.employee
+        return employee.designation.id if employee.designation else None
+
+    @staticmethod
+    def default_department():
+        pool = Pool()
+        User = pool.get('res.user')
+        user = User(Transaction().user)
+        employee = user.employee
+        return employee.department.id if employee.department else None
+
+    @staticmethod
+    def default_pay_in_band():
+        pool = Pool()
+        User = pool.get('res.user')
+        user = User(Transaction().user)
+        employee = user.employee
+        return employee.pay_in_band if employee else None
+
+    @staticmethod
+    def default_pension_rule():
+        pool = Pool()
+        User = pool.get('res.user')
+        user = User(Transaction().user)
+        employee = user.employee
+        return employee.gpf_nps if employee else None
+
+    @classmethod
+    def validate(cls, records):
+        """Method to validate records(rows) in a model(table)"""
+        super().validate(records)
+        for record in records:
+            house_loan = cls.search([
+                ('id', '!=', record.id),
+                ('employee', '=', record.employee),
+                ('state', '=', 'approve')
+            ])
+            if house_loan:
+                cls.raise_user_error(
+                    'You have alraedy take house loan')
 
     @classmethod
     def view_attributes(cls):
@@ -205,6 +287,8 @@ class HouseBuildingLoan(Workflow, ModelSQL, ModelView):
             self.designation = self.employee.designation
             self.department = self.employee.department
             self.pay_in_band = self.employee.pay_in_band
+            if self.employee.gpf_nps:
+                self.pension_rule = self.employee.gpf_nps
 
     @classmethod
     def __setup__(cls):
@@ -218,7 +302,8 @@ class HouseBuildingLoan(Workflow, ModelSQL, ModelView):
             ('forwarded_to_ao', 'cancel'),
         ))
         cls._buttons.update({
-            'submitted_to_ao': {
+            'calculate_instalment': {},
+            'submitted_to_jo': {
                 'invisible': ~Eval('state').in_(
                     ['draft']),
                 'depends': ['state'],
@@ -241,11 +326,18 @@ class HouseBuildingLoan(Workflow, ModelSQL, ModelView):
         })
 
     @classmethod
+    def calculate_instalment(cls, records):
+        for record in records:
+            if record.check == False:
+                cls.loan_installment(records)
+                record.check = True
+                record.save()
+
+    @classmethod
     @ModelView.button
     @Workflow.transition('forwarded_to_jo')
-    def submitted_to_ao(cls, records):
+    def submitted_to_jo(cls, records):
         """Change status of loan application to forwarded_to_jo"""
-        cls.loan_installment(records)
         pass
 
     @classmethod
@@ -278,17 +370,79 @@ class HouseBuildingLoan(Workflow, ModelSQL, ModelView):
         count = 0
         LoanLine = Pool().get('hba.loan.line')
         for loan in records:
-            amount = (loan.amount_required/loan.num_installment)
-            for line in range(1, int(loan.num_installment)+1):
-                mydate = datetime.datetime.now().month
+            amount = (loan.amount_required/loan.installment_no)
+            for line in range(1, int(loan.installment_no)+1):
+                mydate = datetime.now().month
                 month = mydate - 1
                 if month + line > 12:
                     count += 1
                     if count > 12:
                         count = 1
-                    months = datetime.date(1900, count, 1).strftime('%B')
+                    months = datetime.now().date(1900, count, 1).strftime('%B')
                 else:
-                    months = datetime.date(1900, month+line, 1).strftime('%B')
+                    months = datetime.now().date(1900, month+line, 1).strftime('%B')
+                vals = {
+                    'month': months,
+                    'amount': amount,
+                    'status': 'pending',
+                    'loan': loan.id
+                }
+                line = LoanLine.create([vals])
+
+    @classmethod
+    def write(cls, *args):
+        """ Override default write method of model """
+        actions = iter(args)
+        for mechanisms, values in zip(actions, actions):
+            if 'installment_no' in values.keys() or 'amount_required' in values.keys():
+                cls.change_loan_installment(mechanisms, values)
+        super().write(*args)
+
+    @classmethod
+    def change_loan_installment(cls, records, values):
+        """Change number of installments pending for loan"""
+        cursor = Transaction().connection.cursor()
+        LoanLine = Pool().get('hba.loan.line')
+        amount = 0
+        for loan in records:
+            cursor.execute('SELECT sum(amount) FROM hba_loan_line \
+                WHERE loan=%s AND status != %s', (loan.id, 'pending'))
+            total_amount = cursor.fetchone()
+            if total_amount[0]:
+                reschedule = loan.amount_required - total_amount[0]
+                cls.write(records, {'payout': total_amount[0],
+                                    'reschedule': reschedule})
+                amount = (reschedule/values['installment_no'])
+            else:
+                if 'installment_no' in values.keys():
+                    amount = (loan.amount_required/values['installment_no'])
+                elif 'amount_required' in values.keys():
+                    amount = (values['amount_required']/loan.installment_no)
+                elif 'installment_no' in values.keys() and 'amount_required' in values.keys():
+                    amount = (values['amount_required'] /
+                              values['installment_no'])
+            cursor.execute('delete FROM hba_loan_line WHERE loan=%s \
+            AND status = %s', (loan.id, 'pending'))
+            count = 0
+            installment_no = 0
+            if 'installment_no' in values.keys():
+                installment_no = values['installment_no']
+            else:
+                installment_no = loan.installment_no
+            for line in range(1, int(installment_no)+1):
+                mydate = datetime.now().month
+                if total_amount[0]:
+                    month = mydate
+                else:
+                    month = mydate - 1
+                if month+line > 12:
+                    count += 1
+                    if count > 12:
+                        count = 1
+                    months = datetime(1900, count, 1).date().strftime('%B')
+                else:
+                    months = datetime(1900, month+line,
+                                      1).date().strftime('%B')
                 vals = {
                     'month': months,
                     'amount': amount,
@@ -335,6 +489,7 @@ class HBAloanLine(ModelSQL, ModelView):
     amount = fields.Float("Amount")
     status = fields.Selection([
         ('pending', 'Pending'),
+        ('inprogress', 'Inprogress'),
         ('done', 'Done'),
     ], string='Status',)
     loan = fields.Many2One("hba.loan", "Loan")

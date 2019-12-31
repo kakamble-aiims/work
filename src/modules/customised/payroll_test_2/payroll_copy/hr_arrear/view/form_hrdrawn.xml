@@ -3,26 +3,22 @@
 <form>
     <group id="hrdrawn" col="10">
         <label name="month_year"/>
-        <field name="month_year"/>
+        <field name="month_year" readonly="1"/>
         <label name="bpay"/>
-        <field name="bpay"/>
+        <field name="bpay" readonly="1"/>
         <label name="npay"/>
-        <field name="npay"/>
+        <field name="npay" readonly="1"/>
         <label name="da"/>
-        <field name="da"/>
+        <field name="da" readonly="1"/>
         <label name="hra"/>
-        <field name="hra"/>
-        <label name="spay"/>
-        <field name="spay"/>
-        <label name="drpa"/>
-        <field name="drpa"/>
-        <label name="cca"/>
-        <field name="cca"/>
+        <field name="hra" readonly="1"/>
         <label name="trans"/>
-        <field name="trans"/>
+        <field name="trans" readonly="1"/>
         <label name="gross"/>
-        <field name="gross"/>
-        <label name="hrdrawn"/>
-        <field name="hrdrawn"/>
+        <field name="gross" readonly="1"/>
+        <label name="year"/>
+        <field name="year" readonly="1"/>
+        <label name="month"/>
+        <field name="month" readonly="1"/>
     </group>   
 </form>

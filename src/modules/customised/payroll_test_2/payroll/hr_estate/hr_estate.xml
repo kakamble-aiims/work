@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <tryton>
     <data>
-        <menuitem id="menu_estate" name="Estate"/>
+        <menuitem id="menu_estate" name="Estate" parent="hr.menu_hr" sequence="7"/>
 
         <record id="form_allotment_view" model="ir.ui.view">
             <field name="model">estate.allotment</field>
@@ -41,6 +41,30 @@
             <field name="sequence">10</field>
         </record>
 
+        <!-- wiz class -->
+        <record id="form_wiz_license_fee_schedule_view" model="ir.ui.view">
+            <field name="name">form_wiz</field>
+            <field name="model">license.fee.schedule</field>
+            <field name="type">form</field>
+        </record>
+
+         <!--XML Record Wizard-->
+        <record id="act_wizard_license_fee_schedule_wizard" model="ir.action.wizard">
+            <field name="name">License Fee Schedule</field>
+            <field name="wiz_name">license.fee.schedule.wiz</field>
+            <field name="window" eval="False"/>
+        </record>
+
+        <!-- Report-->
+        <record id="report_license_fee" model="ir.action.report">
+            <field name="name">License Fee Schedule</field>
+            <field name="model">estate.allotment</field>
+            <field name="report_name">license.fee.report</field>
+            <field name="report">hr_estate/hr_estate.fodt</field>
+            <field name="extension">pdf</field>
+        </record>
+
+        <!-- Menu -->
         <menuitem id="menu_estate_allotment" name="Allotment" parent="menu_estate" action="action_estate_allotment"/>
     </data>
 </tryton>

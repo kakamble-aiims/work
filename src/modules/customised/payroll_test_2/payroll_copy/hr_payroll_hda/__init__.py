@@ -1,6 +1,7 @@
 from trytond.pool import Pool
 from .hr_payroll_hda import *
 
+
 def register():
     Pool.register(
         HrSalaryRule,

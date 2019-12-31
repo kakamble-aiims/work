@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+
+<tryton>
+    <data>
+        <!-- Menu -->
+        <menuitem id="menu_hra_subitem" name="House Rent Allowance" parent="hr_payroll.menu_allowance" action="hr_hra.action_hra"/>
+        <menuitem id="menu_hra_subitem_wiz" name="House Rent Allowance" parent="hr_payroll.menu_allowance" action="hr_hra.act_wizard_House_Rent_Allowance_wizard"/>
+    </data>
+</tryton>

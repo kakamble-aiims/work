@@ -9,6 +9,8 @@
     <field name="designation"/>
     <label name="department"/>
     <field name="department"/>
+    <label name="fiscal_year"/>
+    <field name="fiscal_year"/>
     <label name="start_date"/>
     <field name="start_date"/>
     <label name="end_date"/>
@@ -27,12 +29,15 @@
         <field name="income_from_other_source"/>
         <label name="annual_taxable_income_projected" string="(=) Projected Taxable Income"/>
         <field name="annual_taxable_income_projected"/>
+        <label name="income_tax_projected"/>
+        <field name="income_tax_projected"/>
+        <label name="tax_exemption" string="(-) Tax Exemption"/>
+        <field name="tax_exemption"/>
+        <label name="income_tax_projected_exemption" string="(=) Projected Income Tax (After Exemption)"/>
+        <field name="income_tax_projected_exemption"/>
+        <label name="income_tax_ytd"/>
+        <field name="income_tax_ytd"/>
     </group>
-    <newline/>
-    <label name="income_tax_ytd"/>
-    <field name="income_tax_ytd"/>
-    <label name="income_tax_projected"/>
-    <field name="income_tax_projected"/>
     <button name="calculate_income_tax_sheet" string="Calculate" colspan="2"/>
     <newline/>
     <group id="taxable_income_projections" colspan="4">

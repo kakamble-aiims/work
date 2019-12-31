@@ -1,8 +1,7 @@
 from trytond.model import (ModelSQL, ModelView, fields)
 from trytond.pyson import Eval
 import datetime
-# from trytond.model import Workflow
-from trytond.pool import Pool  # , PoolMeta
+from trytond.pool import Pool
 
 __all__ = ['HrSalaryRule']
 
@@ -23,10 +22,10 @@ class HrSalaryRule(ModelSQL, ModelView):
             ('python_code', 'Python Code'),
         ], 'Condition Type', required=True)
     condition_range_max = fields.Float('Maximum Range', states={
-            'invisible': ~Eval('condition_select').in_(['range'])
+        'invisible': ~Eval('condition_select').in_(['range'])
     }, depends=['condition_select'])
     condition_range_min = fields.Float('Minimum Range', states={
-            'invisible': ~Eval('condition_select').in_(['range'])
+        'invisible': ~Eval('condition_select').in_(['range'])
     }, depends=['condition_select'])
     amount_select = fields.Selection(
         [
@@ -35,11 +34,11 @@ class HrSalaryRule(ModelSQL, ModelView):
             ('code', 'Code')
         ], 'Amount Type', required=True)
     amount_fix = fields.Float('Fix Amount', states={
-            'invisible': ~Eval('amount_select').in_(['fix'])
-        }, depends=['amount_select'])
+        'invisible': ~Eval('amount_select').in_(['fix'])
+    }, depends=['amount_select'])
     amount_percentage = fields.Float('Percentage(%)', states={
-            'invisible': ~Eval('amount_select').in_(['percentage'])
-        }, depends=['amount_select'])
+        'invisible': ~Eval('amount_select').in_(['percentage'])
+    }, depends=['amount_select'])
     percentage_based = fields.Many2One(
         'hr.salary.rule', 'Percentage Based on', states={
             'invisible': ~Eval('amount_select').in_(['percentage'])
@@ -58,6 +57,11 @@ class HrSalaryRule(ModelSQL, ModelView):
             if record.amount_select == 'amount_percentage':
                 if record.amount_percentage not in range(0, 101):
                     cls.raise_user_error('Invalid Amount')
+
+    @classmethod
+    def __setup__(cls):
+        super().__setup__()
+        cls._order.insert(0, ('priority', 'ASC'))
 
     @staticmethod
     def default_condition_select():
@@ -85,9 +89,7 @@ class HrSalaryRule(ModelSQL, ModelView):
         method_name = "calculate_" + str(self.code)
         if hasattr(self, method_name):
             method = getattr(self, method_name)
-            print(method, "methodmethod")
             res = method(payslip, employee, contract)
-            print(res, "RESESE")
             return res
 
     def calculate_GROSS(self, payslip, employee, contract):
@@ -95,14 +97,32 @@ class HrSalaryRule(ModelSQL, ModelView):
         payslip_line = Pool().get('hr.payslip.line')
         payslip_lines = payslip_line.search([
             ('category.code', 'in', ('BASIC', 'ALW'))])
-        if payslip_lines:
-            for line in payslip_lines:
-                if line.payslip == payslip:
-                    amount += line.amount
+        for line in payslip_lines:
+            amount += line.amount
         return amount
 
     def calculate_BASIC(self, payslip, employee, contract):
         return self.calculate_NEW_BASIC(payslip, employee, contract)
+
+    def calculate_NBT(self, payslip, employee, categories):
+        '''
+        Takes Parameters - payslip, employee and #categories
+
+        returns the value of Non Practicing Allowance to be added
+        '''
+        # TODO: categories to be corrected
+        deduction = 0
+        gross = 0
+        payslip_line = Pool().get('hr.payslip.line')
+        payslip_lines = payslip_line.search([
+            ('payslip', '=', payslip),
+            ('category.code', 'in', ('DED', 'GROSS'))])
+        for line in payslip_lines:
+            if line.category.code == 'DED':
+                deduction += line.amount
+            elif line.category.code == 'GROSS':
+                gross += line.amount
+        return gross - deduction
 
     def calculate_NET(self, payslip, employee, categories):
         amount = 0
@@ -145,6 +165,7 @@ class HrSalaryRule(ModelSQL, ModelView):
 
         returns the value of Non Practicing Allowance to be added
         '''
+        npa = 0
         if employee.designation.name in ("Scientist I",
                                          "Scientist I (Absorption)",
                                          "Scientist II",
@@ -160,26 +181,23 @@ class HrSalaryRule(ModelSQL, ModelView):
                                          "Lecturer",
                                          "Principal",
                                          "Director",
-        ):
+                                         ):
             # TODO: Check for faculty designations, might
             # coincide with nursing faculty. Requires only MBBS
             npa = (0.2 * contract.basic)
-            return npa
-        else:
-            npa = 0
-            return npa
+        return npa
 
     def calculate_NEW_BASIC(self, payslip, employee, contract):
         npa = self.calculate_NPA(payslip, employee, contract)
+        new_basic = 0
         if npa:
             # TODO: change the rules for new_basic if any
             new_basic = npa + contract.basic
             if new_basic > 23750:
                 new_basic = 23750
-            return new_basic
         else:
             new_basic = contract.basic
-            return new_basic
+        return new_basic
 
     def calculate_DA(self, payslip, employee, contract):
         '''
@@ -187,15 +205,9 @@ class HrSalaryRule(ModelSQL, ModelView):
 
         returns the value of Dearness Allowance to be added
         '''
-        if self.calculate_NEW_BASIC(payslip, employee, contract):
-            # TODO: change the rules for new_basic
-            dear_alw = (0.12 * self.calculate_NEW_BASIC(
-                payslip, employee, contract
-            ))
-            return dear_alw
-        else:
-            dear_alw = (0.12 * contract.basic)
-            return dear_alw
+        new_basic = self.calculate_NEW_BASIC(payslip, employee, contract)
+        basic = new_basic if new_basic else contract.basic
+        return (0.12 * basic)
 
     def calculate_NURSING_ALW(self, payslip, employee, contract):
         '''
@@ -203,6 +215,7 @@ class HrSalaryRule(ModelSQL, ModelView):
 
         returns the value of Nursing Allowance to be added
         '''
+        amount = 0
         if employee.designation.name in ("Assistant Nursing Superintendent",
                                          "Chief Nursing Officer",
                                          "Deputy Nursing Superintendent",
@@ -214,10 +227,20 @@ class HrSalaryRule(ModelSQL, ModelView):
                                          "Tutor in Nursing",
                                          "Senior Nursing Tutor",
                                          "Senior Nursing Officer",
-                                    ):
-            nurse_alw = 7200
-            return nurse_alw
-        return None
+                                         ):
+            amount = 7200
+        return amount
+
+    def calculate_NPS(self, payslip, employee, contract):
+        '''
+        Takes Parameters - payslip, employee and contract
+
+        returns the value of Nursing Allowance to be added
+        '''
+        amount = 0
+        if employee.gpf_nps == 'nps':
+            amount = (10 * self.basic)/100
+        return amount
 
     def calculate_TRANSPORT_ALW(self, payslip, employee, contract):
         '''
@@ -226,21 +249,30 @@ class HrSalaryRule(ModelSQL, ModelView):
         returns the value of Transport Allowance to be added
         '''
         # TODO: Write the condition if the employee is handicapped
-        # if employee.handicap_status == True:
-        trans_alw = 0
-        if int(employee.grade_pay.name) >= 5400:
-            trans_alw = 7200 + self.calculate_DA(payslip, employee, contract)
-        elif int(employee.grade_pay.name) < 5400:
-            trans_alw = 3600 + self.calculate_DA(payslip, employee, contract)
-        elif (employee.pay_in_band) > 17:
-            trans_alw = 14400 + self.calculate_DA(payslip, employee, contract)
-        elif (employee.designation.name) == 'Centre Chief':
-            trans_alw = 15750 + self.calculate_DA(payslip, employee, contract)
-        if employee.category == "ph":
-            trans = trans_alw * 2
-            trans_alw = trans
+        trans_alw_factor = 0
+        if not employee.grade:
+            self.raise_user_error("{employee}'s Pay Matrix Level is missing.".format(
+                employee=employee.party.name))
+
+        grade_range1 = [str(x) for x in range(9, 14)]
+        grade_range1.extend(['13 A1', '13 A2'])
+
+        grade_range2 = [str(x) for x in range(14, 17)]
+        grade_range2.extend(['14 A'])
+
+        if (employee.designation.name) == 'Centre Chief':
+            trans_alw_factor = 15750
+        elif employee.grade.name in grade_range2:
+            trans_alw_factor = 14400
+        elif employee.grade.name in grade_range1:
+            trans_alw_factor = 7200
         else:
-            trans_alw = trans_alw
+            trans_alw_factor = 3600
+
+        trans_alw = trans_alw_factor + \
+            self.calculate_DA(payslip, employee, contract)
+        if employee.category in ("ph", 'ph_general', 'ph_sc', 'ph_st', 'ph_obc'):
+            trans_alw *= 2
         return trans_alw
 
     def calculate_HPCA(self, payslip, employee, contract):
@@ -269,7 +301,7 @@ class HrSalaryRule(ModelSQL, ModelView):
                                          "Lecturer",
                                          "Principal",
                                          "Director",
-                                    ):
+                                         ):
             acad_alw = 22500
             return acad_alw
         return None
@@ -291,13 +323,12 @@ class HrSalaryRule(ModelSQL, ModelView):
                                          "Tutor in Nursing",
                                          "Senior Nursing Tutor",
                                          "Senior Nursing Officer",
-                                    ):
+                                         ):
             uni_alw = 1800
             return uni_alw
         return None
 
     def calculate_DEP_ALW(self, payslip, employee, contract):
-
         '''
         Takes Parameters - payslip, employee and contract
 
@@ -319,7 +350,7 @@ class HrSalaryRule(ModelSQL, ModelView):
                                              "Wireman",
                                              "Foreman",
                                              "Mechanic",
-                                        ):
+                                             ):
                 tool_alw = 10
                 return tool_alw
             elif employee.designation.name == "Carpenter":
@@ -329,14 +360,6 @@ class HrSalaryRule(ModelSQL, ModelView):
                 tool_alw = 180
                 return tool_alw
         return None
-
-    def calculate_OT(self, payslip, employee, contract):
-        '''
-        Takes Parameters - payslip, employee and contract
-
-        returns the value of Overtime Allowance to be added
-        '''
-        pass
 
     def calculate_QPAY(self, payslip, employee, contract):
         '''
@@ -359,7 +382,7 @@ class HrSalaryRule(ModelSQL, ModelView):
                                              "Sanitary Attendant Grade I",
                                              "Sanitary Attendant Grade II",
                                              "Sanitary Attendant Grade III",
-                                        ):
+                                             ):
                 dress_alw = 5000
                 return dress_alw
         else:
@@ -383,19 +406,19 @@ class HrSalaryRule(ModelSQL, ModelView):
 
         returns the value of EHS to be deducted
         '''
-        if int(employee.grade_pay.name) >= 7600:
-            ehs = 1000
-            return ehs
-        elif int(employee.grade_pay.name) >= 4600 and \
-                int(employee.grade_pay.name) <= 6600:
-            ehs = 650
-            return ehs
-        elif int(employee.grade_pay.name) == 4200:
-            ehs = 450
-            return ehs
-        elif int(employee.grade_pay.name) < 4200:
-            ehs = 250
-            return ehs
+
+        ehs = 0
+        if employee.grade_pay:
+            if int(employee.grade_pay.name) >= 7600:
+                ehs = 1000
+            elif int(employee.grade_pay.name) >= 4600 and \
+                    int(employee.grade_pay.name) <= 6600:
+                ehs = 650
+            elif int(employee.grade_pay.name) == 4200:
+                ehs = 450
+            elif int(employee.grade_pay.name) < 4200:
+                ehs = 250
+        return ehs
 
     def calculate_KU(self, payslip, employee, contract):
         '''
@@ -403,10 +426,10 @@ class HrSalaryRule(ModelSQL, ModelView):
 
         returns the value of KARMCHARI UNION to be deducted
         '''
+        amount = 0
         if employee.employee_group in ("C", "D"):
-            karmchari_ded = 10
-            return karmchari_ded
-        return None
+            amount = 10
+        return amount
 
     def calculate_OA(self, payslip, employee, contract):
         '''
@@ -414,10 +437,10 @@ class HrSalaryRule(ModelSQL, ModelView):
 
         returns the value of OFFICER ASSOCIATION to be deducted
         '''
+        amount = 0
         if employee.employee_group in ("A", "B"):
-            officer_ded = 20
-            return officer_ded
-        return None
+            amount = 20
+        return amount
 
     def calculate_NU(self, payslip, employee, contract):
         '''
@@ -425,6 +448,7 @@ class HrSalaryRule(ModelSQL, ModelView):
 
         returns the value of NURSING UNION to be deducted
         '''
+        amount = 0
         if employee.designation.name in ("Assistant Nursing Superintendent",
                                          "Chief Nursing Officer",
                                          "Deputy Nursing Superintendent",
@@ -436,10 +460,9 @@ class HrSalaryRule(ModelSQL, ModelView):
                                          "Tutor in Nursing",
                                          "Senior Nursing Tutor",
                                          "Senior Nursing Officer",
-                                    ):
-            nurse_ded = 20
-            return nurse_ded
-        return None
+                                         ):
+            amount = 20
+        return amount
 
     def calculate_FAC_FUND_CLUB(self, payslip, employee, contract):
         # TODO : In which month Faculty Fund will be deducted
@@ -448,36 +471,34 @@ class HrSalaryRule(ModelSQL, ModelView):
 
         returns the value of Faculity Fund to be deducted
         '''
-        if employee.employee_group in ("A", "B", "C", "D"):
-            faculity_fund = 500
-            return faculity_fund
-        return None
+        amount = 0
+        if employee.employee_group == 'A' and employee.designation.name \
+                in ('Assistant Professor', 'Additional Professor'):
+            amount = 500
+        return amount
 
-    def calculate_EIS_DED(self, payslip, employee, contract):
+    def calculate_EIS(self, payslip, employee, contract):
         # TODO : In which year EIS deduction stopped
         '''
         Takes Parameters - payslip, employee and contract
 
         returns the value of EIS to be deducted
         '''
+        eis = 0
         if employee.employee_group == 'A':
             eis = 100
-            return eis
         elif employee.employee_group == 'B':
             eis = 60
-            return eis
         elif employee.employee_group == 'C':
             eis = 30
-            return eis
         elif employee.employee_group == 'D':
             eis = 20
-            return eis
+        return eis
 
     def check_BASIC(self, payslip, employee, contract):
         return contract.basic
 
     def check_NET(self, payslip, employee, categories):
-        # categories.name.BASIC + categories.ALW + categories.DED
         return True
 
     def check_NPA(self, payslip, employee, contract):

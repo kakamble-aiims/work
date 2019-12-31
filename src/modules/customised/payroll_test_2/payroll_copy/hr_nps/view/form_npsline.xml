@@ -7,10 +7,12 @@
     <field name="designation"/>
     <label name="department"/>
     <field name="department"/>
-    <label name="pay_month"/>
-    <field name="pay_month"/>
+    <label name="date"/>
+    <field name="date"/>
     <label name="nps_deduction"/>
     <field name="nps_deduction"/>
+    <label name="govt_contribution"/>
+    <field name="govt_contribution"/>
     <label name="amount"/>
     <field name="amount"/>
     <label name="nps_fund"/>

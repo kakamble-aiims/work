@@ -2,7 +2,7 @@
 
 <tryton>
     <data>
-        <menuitem id="menu_bills" name="Bills" parent="hr_hra.menu_allowance"/>
+        
         <!-- Form View -->
         <record id="form_bills_view" model="ir.ui.view">
             <field name="name">form_bills</field>
@@ -133,12 +133,5 @@
             <field name="wiz_name">telephone.allowance.wiz</field>
             <field name="window" eval="True"/>
         </record>
-
-
-        <!-- Menu -->
-        <menuitem id="menu_bills_subitem" name="Newspaper Bill" parent="menu_bills" action="action_bills"/>
-        <menuitem id="menu_newspaper_subitem_wiz" name="Newspaper Bill" parent="menu_bills" action="act_wizard_Newspaper_Allowance_wizard"/>
-        <menuitem id="menu_telephone_subitem" name="Telephone Bill" parent="menu_bills" action="action_telephone"/>
-         <menuitem id="menu_telephone_subitem_wiz" name="Telephone Bill" parent="menu_bills" action="act_wizard_telephone_Allowance_wizard"/>
     </data>
 </tryton>

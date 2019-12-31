@@ -2,7 +2,7 @@
 
 <tryton>
     <data>
-        <menuitem id="menu_loan" name="Loan" parent="hr.menu_hr" sequence="8"/>
+        <menuitem id="menu_loan" name="Loan" parent="hr.menu_hr" sequence="5"/>
 
         <!-- Tree View-->
         <record id="tree_computer_loan_view" model="ir.ui.view">
@@ -226,6 +226,53 @@
             <field name="sequence" eval="20"/>
         </record>
 
+        <!-- wiz  hba class -->
+        <record id="form_wiz_hba_schedule_view" model="ir.ui.view">
+            <field name="name">form_wiz</field>
+            <field name="model">hba.schedule</field>
+            <field name="type">form</field>
+        </record>
+
+         <!--XML Record  hba Wizard-->
+        <record id="act_wizard_hba_schedule_wizard" model="ir.action.wizard">
+            <field name="name">HBA Schedule</field>
+            <field name="wiz_name">hba.schedule.wiz</field>
+            <field name="window" eval="False"/>
+        </record>
+
+        <!--  HBA Loan Report-->
+        <record id="report_hba" model="ir.action.report">
+            <field name="name">HBA Schedule</field>
+            <field name="model">hba.loan</field>
+            <field name="report_name">hba.report</field>
+            <field name="report">hr_loan/hr_hba.fodt</field>
+            <field name="extension">pdf</field>
+        </record>
+
+        <!-- wiz Computer Loan class -->
+        <record id="form_wiz_computer_loan_schedule_view" model="ir.ui.view">
+            <field name="name">form_computer_wiz</field>
+            <field name="model">computer.loan.schedule</field>
+            <field name="type">form</field>
+        </record>
+
+         <!--XML Record  computer_loan Wizard-->
+        <record id="act_wizard_computer_loan_schedule_wizard" model="ir.action.wizard">
+            <field name="name">Computer Loan Schedule</field>
+            <field name="wiz_name">computer.loan.schedule.wiz</field>
+            <field name="window" eval="False"/>
+        </record>
+
+        <!--  computer_loan Loan Report-->
+        <record id="report_computer_loan" model="ir.action.report">
+            <field name="name">Computer Loan Schedule</field>
+            <field name="model">computer.loan</field>
+            <field name="report_name">computer.loan.report</field>
+            <field name="report">hr_loan/computer_loan.fodt</field>
+            <field name="extension">pdf</field>
+        </record>
+
+        
         <menuitem id="menu_computer_loan" name="Computer Loan"
             parent="menu_loan"
             action="action_computer_loan" sequence="2"/>

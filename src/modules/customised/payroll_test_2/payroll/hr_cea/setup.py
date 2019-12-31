@@ -70,7 +70,7 @@ setup(name=name,
           'trytond.modules.hr_cea':
           (info.get('xml', [])
            + ['tryton.cfg', 'view/*.xml', 'locale/*.po', 'icons/*.svg',
-              'tests/*.rst', 'email/*.html', '*.fodt']),
+              'hr_cea/*.rst', '*.fodt']),
       },
       platforms='any',
       license='GPL-3',

@@ -72,7 +72,7 @@ setup(name=name,
           'trytond.modules.hr_estate':
           (info.get('xml', [])
            + ['tryton.cfg', 'view/*.xml', 'locale/*.po', 'icons/*.svg',
-              'hr_estates/*.rst']),
+              'hr_estates/*.rst', '*.fodt']),
       },
       platforms='any',
       license='GPL-3',

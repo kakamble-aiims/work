@@ -73,7 +73,7 @@ setup(name=name,
       package_data={
           'trytond.modules.hr_gpf':
           (info.get('xml', [])
-           + ['tryton.cfg', 'view/*.xml', 'locale/*.po', 'icons/*.svg']),
+           + ['tryton.cfg', 'view/*.xml', 'locale/*.po', 'icons/*.svg', '*.fodt']),
       },
       classifiers=[
           'Development Status :: 5 - Production/Stable',

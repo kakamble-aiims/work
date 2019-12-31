@@ -3,26 +3,26 @@
     <data>
 
 <!-- Create the Bills Adminstrative group -->
-        <record model="res.group" id="group_Bills_admin">
+        <!-- <record model="res.group" id="group_Bills_admin">
             <field name="name">Bills Allowance</field>
-        </record>
+        </record> -->
 
 <!-- Assign the Group to the "admin" user -->
 
-        <record model="res.user-res.group" id="user_admin_group_Bills">
+        <!-- <record model="res.user-res.group" id="user_admin_group_Bills">
             <field name="user" ref="res.user_admin"/>
             <field name="group" ref="group_Bills_admin"/>
-        </record>
+        </record> -->
 
 <!-- Access to Menus -->
-        <record model="ir.ui.menu-res.group" id="menu_bills_group_bills_admin">
+        <!-- <record model="ir.ui.menu-res.group" id="menu_bills_group_bills_admin">
             <field name="menu" ref="menu_bills_subitem"/>
             <field name="group" ref="group_Bills_admin"/>
         </record>
        <record model="ir.ui.menu-res.group" id="menu_health_conf_group_health_admin">
             <field name="menu" ref="menu_telephone_subitem"/>
             <field name="group" ref="group_Bills_admin"/>
-        </record>        
+        </record>         -->
 
     </data>
 </tryton>   

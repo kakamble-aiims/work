@@ -22,20 +22,20 @@ class ICUAllowance(Workflow, ModelSQL, ModelView):
     }
     _DEPENDS = ['state']
     salary_code = fields.Char(
-        'Salary Code', states=_STATES, depends=_DEPENDS)
+        'Salary Code', required=True, states=_STATES, depends=_DEPENDS)
     employee = fields.Many2One(
-        'company.employee', 'Employee Name',
+        'company.employee', 'Employee Name', required=True,
         states=_STATES, depends=_DEPENDS
     )
     designation = fields.Many2One(
-        'employee.designation', 'Designation',
+        'employee.designation', 'Designation', required=True,
         states=_STATES, depends=_DEPENDS
     )
     department = fields.Many2One(
-        'company.department', 'Department',
+        'company.department', 'Department', required=True,
         states=_STATES, depends=_DEPENDS
     )
-    amount = fields.Integer('ICU Amount', states=_STATES, depends=_DEPENDS)
+    amount = fields.Integer('ICU Amount', states=_STATES, required=True, depends=_DEPENDS)
     from_date = fields.Date(
         'From Date',
         states=_STATES, depends=_DEPENDS

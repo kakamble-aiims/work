@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+
+<tryton>
+    <data>
+        <!-- Menu -->
+        <menuitem id="menu_ota_subitem_wiz" name="Over Time Allowance" parent="hr_payroll.menu_allowance" action="hr_ota.act_wizard_overtime_Allowance_wizard"/>
+        <menuitem id="menu_ota_subitem" name="Over Time Allowance" parent="hr_payroll.menu_allowance" action="hr_ota.action_ota"/>
+        <menuitem id="menu_ota_wiz" name="OTA Schedule" 
+            parent="hr_payroll.menu_schedule" action="hr_ota.act_wizard_ota_schedule_wizard"/>
+    </data>
+</tryton>

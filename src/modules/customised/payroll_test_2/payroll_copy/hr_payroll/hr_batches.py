@@ -1,5 +1,4 @@
 from trytond.model import (ModelSQL, ModelView, fields)
-import datetime
 
 __all__ = ['HrPayslipBatch']
 
@@ -27,7 +26,7 @@ class HrPayslipBatch(ModelSQL, ModelView):
             ('12', 'December')
         ], 'Month', required=True
     )
-    year = fields.Integer('Year',required=True)
+    year = fields.Integer('Year', required=True)
     state = fields.Selection([
         ('draft', 'Draft'),
         ('close', 'Close'),
@@ -36,18 +35,3 @@ class HrPayslipBatch(ModelSQL, ModelView):
     @staticmethod
     def default_state():
         return 'draft'
-
-    # @classmethod
-    # def default_date_from(cls):
-    #     start_date = datetime.date.today().replace(day=1)
-    #     # y=datetime.datetime(x.year,x.month,1)
-    #     return start_date
-
-    # @classmethod
-    # def default_date_to(cls):
-    #     today = datetime.date.today().month
-    #     end_date = datetime.date.today().replace(month=today+1, day=1)
-    #     - datetime.timedelta(days=1)
-    #     return end_date
-
-

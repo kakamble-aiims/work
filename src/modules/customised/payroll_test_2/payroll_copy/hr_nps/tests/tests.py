@@ -6,6 +6,7 @@ import unittest
 import trytond.tests.test_tryton
 from trytond.tests.test_tryton import ModuleTestCase
 
+
 class HrNpsTestCase(ModuleTestCase):
 
     'Test Hr Nps module'
@@ -13,10 +14,8 @@ class HrNpsTestCase(ModuleTestCase):
     module = 'hr_nps'
 
 
-
 def suite():
     suite = trytond.tests.test_tryton.suite()
     suite.addTests(unittest.TestLoader().loadTestsFromTestCase(
-     HrNpsTestCase))
+        HrNpsTestCase))
     return suite
-

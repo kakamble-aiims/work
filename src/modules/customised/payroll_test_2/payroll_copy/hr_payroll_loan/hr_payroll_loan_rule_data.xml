@@ -4,7 +4,7 @@
     <data>
          <record id="hr_rule_computer_loan" model="hr.salary.rule">
             <field name="name">COMPUTER Loan</field>
-            <field name="priority" eval="51003"/>
+            <field name="priority" eval="3300"/>
             <field name="code">COM_Loan</field>
             <field name="category" ref="hr_payroll.salaryrule_ded"/>
             <field name="condition_select">always_true</field>
@@ -12,7 +12,7 @@
         </record>
        <record id="hr_rule_hba_loan" model="hr.salary.rule">
             <field name="name">HBA Loan</field>
-            <field name="priority" eval="51004"/>
+            <field name="priority" eval="3400"/>
             <field name="code">HBA_Loan</field>
             <field name="category" ref="hr_payroll.salaryrule_ded"/>
             <field name="condition_select">always_true</field>
